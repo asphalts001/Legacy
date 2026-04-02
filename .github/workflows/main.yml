@@ -32,8 +32,8 @@ jobs:
 
       - name: Pin Gradle to 8.7
         run: |
-          sed -i 's|distributionUrl=.*|distributionUrl=https\\://services.gradle.org/distributions/gradle-8.7-all.zip|' \
-          platforms/android/gradle/wrapper/gradle-wrapper.properties
+          find platforms/android -name "gradle-wrapper.properties" -exec \
+          sed -i 's|distributionUrl=.*|distributionUrl=https\\://services.gradle.org/distributions/gradle-8.7-all.zip|' {} \;
 
       - name: Build APK
         run: cordova build android --debug
@@ -44,18 +44,3 @@ jobs:
           name: legacy-app-debug
           path: platforms/android/app/build/outputs/apk/debug/*.apk
           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
