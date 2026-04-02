@@ -18,18 +18,22 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install Cordova
-        run: npm install -g cordova
-
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Install Cordova
+        run: npm install -g cordova@12
+
       - name: Add Android Platform
-        # This creates the 'android' folder that was missing
-        run: cordova platform add android
+        run: cordova platform add android@12.0.1
+
+      - name: Pin Gradle to 8.7
+        run: |
+          sed -i 's|distributionUrl=.*|distributionUrl=https\\://services.gradle.org/distributions/gradle-8.7-all.zip|' \
+          platforms/android/gradle/wrapper/gradle-wrapper.properties
 
       - name: Build APK
         run: cordova build android --debug
@@ -38,6 +42,20 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: legacy-app-debug
-          # Cordova puts the APK in this specific folder
           path: platforms/android/app/build/outputs/apk/debug/*.apk
           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
