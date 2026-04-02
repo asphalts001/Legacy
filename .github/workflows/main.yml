@@ -27,10 +27,18 @@ jobs:
       - name: Install Cordova
         run: npm install -g cordova@12
 
+      - name: Install Gradle 8.7
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.7'
+
       - name: Add Android Platform
         run: cordova platform add android@12.0.1
+        env:
+          GRADLE_HOME: /opt/gradle/gradle-8.7
+          PATH: /opt/gradle/gradle-8.7/bin:${{ env.PATH }}
 
-      - name: Pin Gradle to 8.7
+      - name: Pin Gradle wrapper to 8.7
         run: |
           find platforms/android -name "gradle-wrapper.properties" -exec \
           sed -i 's|distributionUrl=.*|distributionUrl=https\\://services.gradle.org/distributions/gradle-8.7-all.zip|' {} \;
