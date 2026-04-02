@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget id="com.yourname.appname"
+        version="1.0.0"
+        xmlns="http://www.w3.org/ns/widgets"
+        xmlns:cdv="http://cordova.apache.org/ns/1.0">
+
+  <name>Legacy</name>
+  <description>Short thjngs in small manner </description>
+  <author>bakka</author>
+
+  <!-- Entry point -->
+  <content src="index.html" />
+
+  <!-- Allow all local navigation -->
+  <access origin="*" />
+  <allow-intent href="http://*/*" />
+  <allow-intent href="https://*/*" />
+
+  <!-- Icons (place your icon.png in www/) -->
+  <icon src="www/icon.png" />
+
+  <!-- Android specific -->
+  <platform name="android">
+    <icon src="www/icon.png" density="mdpi" />
+    <icon src="www/icon.png" density="hdpi" />
+    <icon src="www/icon.png" density="xhdpi" />
+    <icon src="www/icon.png" density="xxhdpi" />
+    <icon src="www/icon.png" density="xxxhdpi" />
+
+    <!-- Full screen, no browser chrome -->
+    <preference name="Fullscreen" value="false" />
+    <preference name="android-minSdkVersion" value="29" />
+    <preference name="android-targetSdkVersion" value="34" />
+  </platform>
+
+  <!-- General preferences -->
+  <preference name="DisallowOverscroll" value="true" />
+  <preference name="BackgroundColor" value="0xff0a0a0f" />
+  <preference name="LoadingDialog" value="Loading,Please wait..." />
+  <preference name="ShowSplashScreenSpinner" value="false" />
+
+<engine name="android" spec="^12.0.0" />
+</widget>

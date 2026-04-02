@@ -1,0 +1,255 @@
+========================================================================
+  QUESTION SET 10   —   Generated 2026-03-26 07:43
+========================================================================
+
+Q1.  The fluid mosaic model of the plasma membrane was proposed by
+     Singer and Nicolson in 1972. According to this model, the membrane
+     has a quasi-fluid lipid bilayer. The erythrocyte membrane has been
+     studied extensively. What is the approximate protein content of
+     the erythrocyte membrane? A) 20% protein, 70% lipids B) 52%
+     protein, 40% lipids C) 40% protein, 52% lipids D) 70% protein, 20%
+     lipids
+
+Q2.  A child has blood group O (genotype ii). The father has blood
+     group A. The mother has blood group B. What are the POSSIBLE
+     genotypes of the parents?
+     A) Father IAiA, Mother IBiB — impossible
+     B) Father IAIA or IAi, Mother IBIB or IBi — but to produce 'ii'
+        child, both must carry 'i': Father IAi, Mother IBi
+     C) Father ii, Mother IBi
+     D) Father IAIA, Mother IBIB only
+
+Q3.  The proximal convoluted tubule (PCT) is lined by a simple cuboidal
+     brush border epithelium that increases the surface area for
+     reabsorption. The PCT reabsorbs what percentage of electrolytes
+     and water from the filtrate? A) 40–50% B) 70–80% C) 90–95% D) 99%
+
+Q4.  In gymnosperms, the megaspore mother cell is differentiated from
+     which tissue of the ovule?
+     A) Integument
+     B) Micropyle
+     C) Nucellus
+     D) Chalaza
+
+Q5.  The ability of plants to grow throughout their life due to the
+     presence of meristems is referred to as:
+     A) Determinate growth
+     B) Indeterminate (open) growth
+     C) Secondary growth
+     D) Intercalary growth
+
+Q6.  The forebrain of a frog includes olfactory lobes, paired cerebral
+     hemispheres, and an unpaired structure. This unpaired forebrain
+     component is: A) Medulla oblongata B) Cerebellum C) Diencephalon
+     D) Optic lobe
+
+Q7.  A remarkable fact about fungal species diversity is that the
+     number of fungal species exceeds the combined total of which group
+     of organisms? A) All plants combined B) All bacteria combined C)
+     Combined fishes, amphibians, reptiles, and mammals D) All
+     invertebrates combined
+
+Q8.  Bacillus thuringiensis (Bt) is used as a BIOCONTROL agent. Its
+     mechanism of action against insect larvae is:
+     A) It produces a volatile toxin that repels insects
+     B) Dried Bt spores are sprayed on plants; when eaten by insect
+        larvae, the toxin is released in the gut, KILLING the larvae —
+        but is harmless to other insects
+     C) It parasitises adult insects and sterilises them
+     D) It produces ethylene that destroys insect eggs
+
+Q9.  In translation, the enzyme that catalyses PEPTIDE BOND formation
+     between amino acids is:
+     A) Aminoacyl-tRNA synthetase
+     B) 23S rRNA of the large ribosomal subunit (acting as a ribozyme)
+     C) Release factor
+     D) DNA polymerase
+
+Q10.  The PRIMARY respiratory rhythm centre is located in:
+     A) The pons (pneumotaxic centre)
+     B) The cerebral cortex
+     C) The medulla oblongata
+     D) The cerebellum
+
+Q11.  The Photosynthetically Active Radiation (PAR) constitutes less
+      than 50% of total solar radiation incident on Earth. Of this PAR,
+      what fraction do producers typically capture for photosynthesis?
+      A) 50% of PAR B) 25% of PAR C) 2–10% of PAR D) Less than 0.5% of
+      PAR
+
+Q12.  Griffith's transformation experiment (1928) used Streptococcus
+      pneumoniae. Which combination resulted in MICE DYING?
+     A) Live R strain alone
+     B) Heat-killed S strain alone
+     C) Heat-killed S strain + Live R strain (R bacteria transformed to
+        virulent S by "transforming principle")
+     D) Live S strain heated to 100°C
+
+Q13.  In Aschelminthes (roundworms), the sexes are separate (dioecious)
+      and females are often longer than males. Wastes are removed from
+      the body through a specialised structure called:
+     A) Flame cells
+     B) Nephridia
+     C) Excretory tube opening through excretory pore
+     D) Malpighian tubules
+
+Q14.  In the predator-prey interaction, prickly pear cactus (Opuntia)
+      introduced in Australia in the 1920s spread over millions of
+      hectares of land. This invasive species was eventually controlled
+      by the introduction of a moth from the cactus's native habitat.
+      This biological control is an example of: A) Commensalism B)
+      Mutualism C) Predator controlling prey population — an ecological
+      principle of biological control D) Competition between two
+      herbivores
+
+Q15.  The correct balanced equation for photosynthesis using 12 water
+      molecules (as proved by radioisotope studies) is:
+     A) 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂
+     B) 6CO₂ + 12H₂O → C₆H₁₂O₆ + 6H₂O + 6O₂
+     C) 6CO₂ + 12H₂O → C₆H₁₂O₆ + 12O₂
+     D) CO₂ + 2H₂O → (CH₂O) + O₂ + H₂O
+
+Q16.  In a resting neuron, the axonal membrane maintains a specific
+      ionic distribution through the Na-K pump. The resting axoplasm
+      has HIGH concentration of K+ and negatively charged proteins, and
+      LOW concentration of Na+. The Na-K pump actively transports: A) 2
+      Na+ outward for 3 K+ inward B) 3 Na+ outward for 2 K+ inward C)
+      Equal Na+ and K+ in both directions D) 3 Na+ inward for 2 K+
+      outward
+
+Q17.  Zinc is a metal ion co-factor required for the activity of which
+      of the following enzymes? A) Carbonic anhydrase B)
+      Carboxypeptidase C) Succinic dehydrogenase D) Peroxidase
+
+Q18.  The three small bones present in the middle ear that are involved
+      in sound transmission are called ossicles. These three ossicles,
+      from the eardrum inward, are: A) Malleus, incus, stapes B)
+      Stapes, incus, malleus C) Incus, malleus, stapes D) Stapes,
+      malleus, incus
+
+Q19.  For a permanent cure of ADA deficiency through gene therapy, the
+      introduced gene should be present in all cells from the
+      beginning. This would require the gene to be introduced at which
+      stage of the patient's life? A) During adolescence when the
+      immune system is fully developed B) At early embryonic stages for
+      a permanent cure C) After birth when lymphocytes are fully formed
+      D) At adult stage using bone marrow transplantation
+
+Q20.  Coelacanth, a lobefin fish thought to be extinct, was found
+      living in:
+     A) Amazon river, 1938
+     B) South Africa, 1938
+     C) Galapagos Islands, 1938
+     D) Indian Ocean, 1958
+
+Q21.  In diplotene of meiosis I, the synaptonemal complex dissolves and
+      the recombined homologous chromosomes begin to separate, but
+      remain attached at certain points. These X-shaped attachment
+      points where crossing over occurred are called: A) Bivalents B)
+      Tetrads C) Chiasmata D) Synaptonemal nodes
+
+Q22.  A typical angiosperm anther is bilobed (dithecous) with four
+      microsporangia — two per lobe — making it tetrasporangiate. Each
+      microsporangium is surrounded by four wall layers from outside to
+      inside. The innermost layer that nourishes the developing pollen
+      grains, has cells with dense cytoplasm and generally more than
+      one nucleus (bi-nucleate tapetal cells), is called the: A)
+      Endothecium B) Middle layer C) Epidermis D) Tapetum
+
+Q23.  Mendel's Law of Independent Assortment states that:
+     A) Two genes on the same chromosome always segregate together
+     B) When two pairs of traits are combined in a hybrid, the
+        segregation of one pair of characters is INDEPENDENT of the
+        other pair
+     C) Characters do not blend in heterozygotes
+     D) Each gamete receives only one allele per gene
+
+Q24.  The vector for malaria, filariasis, and dengue respectively is:
+     A) Malaria: Aedes mosquito; Filariasis: Anopheles; Dengue: Culex
+     B) Malaria: female Anopheles; Filariasis: female mosquito vectors;
+        Dengue: Aedes mosquito
+     C) All three: Culex mosquito
+     D) Malaria: housefly; Filariasis: Aedes; Dengue: Anopheles
+
+Q25.  The frog is described as a ureotelic animal. This means the
+      primary nitrogenous excretory product of frogs is: A) Ammonia B)
+      Uric acid C) Urea D) Creatinine
+
+Q26.  Histones are positively charged proteins that help package DNA in
+      eukaryotic cells. Their positive charge is due to richness in
+      which amino acids?
+     A) Aspartate and glutamate (acidic)
+     B) Lysine and arginine (basic)
+     C) Cysteine and methionine (sulphur-containing)
+     D) Glycine and alanine (non-polar)
+
+Q27.  The stomatal aperture, the guard cells, and the surrounding
+      subsidiary cells together constitute a functional unit called
+      the: A) Stomatal complex B) Stomatal apparatus C) Guard cell
+      apparatus D) Epidermal unit
+
+Q28.  Which of the following correctly states the principle about
+      taxonomic rank and shared characteristics? A) Higher the
+      category, more common characteristics are shared B) Lower taxa
+      have fewer shared characteristics among members C) Higher the
+      category, FEWER common characteristics are shared among members
+      D) All taxa at any level share equal numbers of characteristics
+
+Q29.  Ctenophores are exclusively marine animals that show
+      bioluminescence. Their locomotion is achieved by:
+     A) Nematocysts on tentacles
+     B) Eight external rows of ciliated comb plates
+     C) Parapodia on body surface
+     D) Tube feet of water vascular system
+
+Q30.  Which of the four bacterial shapes is described as "spiral"? A)
+      Coccus B) Bacillus C) Vibrium D) Spirillum
+
+Q31.  Nereis, an aquatic annelid, possesses lateral appendages for
+      swimming. These structures are called:
+     A) Setae
+     B) Suckers
+     C) Parapodia
+     D) Claspers
+
+Q32.  In oogenesis, oogonia are formed during embryonic development —
+      approximately 2 million oogonia are formed in each fetal ovary.
+      After birth, no more oogonia are formed. At puberty, how many
+      primary follicles per ovary are typically present? A) 2 million
+      per ovary B) 200,000 per ovary C) 60,000–80,000 per ovary D)
+      10,000 per ovary
+
+Q33.  Steroid hormones and iodothyronines (thyroid hormones) use
+      intracellular receptors mostly located in the nucleus. When the
+      hormone-receptor complex forms, it regulates cellular metabolism
+      by: A) Generating second messengers like cyclic AMP B) Directly
+      regulating gene expression or chromosome function C) Opening ion
+      channels in the plasma membrane D) Activating adenylate cyclase
+      at the cell surface CHAPTER 20 — SEXUAL REPRODUCTION IN FLOWERING
+      PLANTS
+
+Q34.  Basophils (0.5–1% of WBCs) secrete which substances involved in
+      inflammatory reactions?
+     A) Histamine, serotonin, heparin
+     B) Antibodies (IgG and IgM)
+     C) Perforin and granzymes
+     D) Lysozyme and defensins
+
+Q35.  The thread-like extensions of epidermal cells in the root
+      maturation zone that are responsible for absorption of water and
+      minerals from soil are called:
+     A) Root hairs
+     B) Lenticels
+     C) Hydathodes
+     D) Stipules
+
+Q36.  In one complete turn of the Krebs cycle (starting from one acetyl
+      CoA), how many molecules of CO₂ are released?
+     A) 1
+     B) 2
+     C) 3
+     D) 4
+
+------------------------------------------------------------------------
+  Total questions in this set: 36
+========================================================================

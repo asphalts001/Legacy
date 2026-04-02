@@ -1,0 +1,336 @@
+========================================================================
+  QUESTION SET 03   —   Generated 2026-03-26 07:43
+========================================================================
+
+Q1.  Tetany is a condition characterised by rapid, uncontrolled muscle
+     spasms. This condition is caused by: A) Excess uric acid crystals
+     in joints B) Low Ca++ levels in body fluid C) Autoimmune attack on
+     the neuromuscular junction D) Progressive genetic degeneration of
+     skeletal muscles
+
+Q2.  Branchiostoma, also known as Amphioxus or Lancelet, belongs to
+     which sub-phylum of Chordata?
+     A) Urochordata
+     B) Vertebrata
+     C) Cephalochordata
+     D) Hemichordata
+
+Q3.  At higher taxonomic categories, relationships are harder to
+     determine. Why? A) Higher categories contain fewer organisms,
+     making comparison difficult B) With fewer shared characters,
+     finding common ancestry and relationships becomes more complex C)
+     Higher categories have not been studied as thoroughly as lower
+     categories D) Classification tools are inadequate for higher
+     category determination
+
+Q4.  A key feature of the origin of replication (ori) sequence in
+     cloning vectors is that it controls the copy number of the linked
+     DNA. If a high copy number is required to obtain large amounts of
+     the target DNA, which type of ori should be chosen? A) Low copy
+     ori with many restriction sites B) High copy ori for many target
+     DNA copies C) Ori with selectable marker integrated into it D) Ori
+     without any palindromic sequences
+
+Q5.  Cortisol is the main glucocorticoid secreted by the adrenal
+     cortex. Among the following, which action of cortisol is related
+     to blood cell production? A) Cortisol inhibits RBC production to
+     maintain blood viscosity B) Cortisol stimulates RBC production
+     (erythropoiesis) C) Cortisol stimulates WBC production only D)
+     Cortisol has no effect on blood cell production
+
+Q6.  Paper chromatography of leaf pigments separates them in which
+     order from top to bottom on the chromatography strip (highest to
+     lowest Rf)?
+     A) Chlorophyll a, Chlorophyll b, Xanthophylls, Carotenoids
+     B) Carotenoids, Xanthophylls, Chlorophyll a, Chlorophyll b
+     C) Chlorophyll b, Chlorophyll a, Xanthophylls, Carotenoids
+     D) Xanthophylls, Carotenoids, Chlorophyll a, Chlorophyll b
+
+Q7.  In male frogs, the testes are adhered to the upper part of the
+     kidneys by a double fold of peritoneum called mesorchium. From the
+     testes, vasa efferentia (10–12 in number) arise and enter the
+     kidneys, opening into a canal called: A) Urinogenital duct B)
+     Ureter C) Bidder's canal D) Oviduct
+
+Q8.  In the geological timeline, which of the following is the CORRECT
+     order of evolutionary events (earliest to most recent)?
+     A) First cellular forms → jawless fish → first amphibians →
+        reptiles → dinosaurs extinct → mammals dominate
+     B) Dinosaurs → jawless fish → amphibians → reptiles → mammals
+     C) First cellular forms → mammals → jawless fish → amphibians
+     D) Reptiles → fish → amphibians → first cellular forms
+
+Q9.  In a cloning vector like pBR322, there are two antibiotic
+     resistance genes — one for ampicillin and one for tetracycline
+     resistance. If a foreign DNA is inserted at the BamH I site (which
+     lies within the tetracycline resistance gene), the recombinant
+     bacteria can be identified because they: A) Grow on both
+     ampicillin and tetracycline plates B) Are resistant to ampicillin
+     but sensitive to tetracycline (tetracycline resistance gene
+     inactivated) C) Are sensitive to both antibiotics D) Are resistant
+     to tetracycline but sensitive to ampicillin
+
+Q10.  In the context of cyanobacteria as biofertilisers in PADDY
+      FIELDS, which genera are most important for nitrogen fixation?
+     A) Chlorella and Chlamydomonas
+     B) Anabaena, Nostoc, and Oscillatoria
+     C) Spirogyra and Ulva
+     D) Volvox and Euglena
+
+Q11.  Approximately what percentage of CO₂ is transported in the blood
+      as bicarbonate ions (HCO₃⁻)?
+     A) 7%
+     B) 20–25%
+     C) 70%
+     D) 97%
+
+Q12.  Somatic hybridisation involves the fusion of protoplasts from two
+      different plant varieties to form a hybrid protoplast that can be
+      grown into a new plant. When protoplasts from tomato and potato
+      were fused, the resulting hybrid plant was called pomato.
+      However, this experiment ultimately showed that: A) Pomato was
+      commercially very successful with desired characteristics of both
+      B) Pomato lacked the desired characteristics of either parent and
+      was not commercially useful C) Pomato could only be propagated
+      vegetatively D) Pomato produced both potato tubers and tomatoes
+      simultaneously
+
+Q13.  The summer sleep undergone by frogs during extreme heat, where
+      they take shelter in deep burrows, is called: A) Hibernation B)
+      Torpor C) Aestivation D) Diapause
+
+Q14.  The cortical portions of the kidney that extend between the
+      medullary pyramids are called: A) Renal papillae B) Calyces C)
+      Columns of Bertini D) Renal pyramids
+
+Q15.  The nuclear envelope has two parallel membranes separated by a
+      perinuclear space of 10–50 nm. The outer membrane of the nuclear
+      envelope is continuous with the ER and bears ribosomes.
+      Interruptions in the nuclear envelope where the two membranes
+      fuse are called nuclear pores. These pores allow movement of: A)
+      Only RNA outward from nucleus B) RNA and proteins in both
+      directions C) Only proteins into the nucleus D) Only DNA
+      replication machinery
+
+Q16.  Which among the following gymnosperm trees is known as one of the
+      tallest tree species in the world?
+     A) Cycas
+     B) Pinus
+     C) Sequoia (Giant Redwood)
+     D) Cedrus
+
+Q17.  The Convention on Biological Diversity (CBD), also known as the
+      Earth Summit, was held in which city and year, committing nations
+      to conservation and sustainable use of biodiversity? A)
+      Johannesburg, 2002 B) Rio de Janeiro, 1992 C) Stockholm, 1972 D)
+      Kyoto, 1997
+
+Q18.  Which chromosome has the MOST genes, and which has the FEWEST,
+      according to the Human Genome Project data?
+     A) Chromosome 21 most, Y fewest
+     B) Chromosome 1 most (2968 genes), Y fewest (231 genes)
+     C) X chromosome most, chromosome 22 fewest
+     D) Chromosome 2 most, chromosome 21 fewest
+
+Q19.  In eukaryotic pre-mRNA (hnRNA), introns and exons are both
+      present. After splicing:
+     A) Exons are removed; introns are retained and translated
+     B) Introns are REMOVED; exons are JOINED to form the final mature
+        mRNA
+     C) Both introns and exons are translated
+     D) Introns are converted to tRNA molecules
+
+Q20.  Myelinated nerve fibres are enveloped by Schwann cells that form
+      a myelin sheath around the axon. The gaps between adjacent myelin
+      sheaths where the axon is exposed are called: A) Synaptic clefts
+      B) Nodes of Ranvier C) Neuromuscular junctions D) Perineurium
+      gaps
+
+Q21.  Abrin and ricin are classified as which type of secondary
+      metabolites that are harmful to organisms? A) Lectins B)
+      Essential oils C) Drugs D) Toxins
+
+Q22.  Which statement about the respiratory balance sheet is CORRECT
+      per the text?
+     A) The theoretical calculations are exactly valid in living
+        systems
+     B) Calculations assume sequential pathways, no intermediate
+        withdrawal, and only glucose as substrate — conditions NOT
+        valid in living systems
+     C) The 38 ATP figure has been experimentally confirmed in every
+        cell type
+     D) Fermentation produces more ATP per glucose than aerobic
+        respiration
+
+Q23.  In ABO blood grouping, a person with Group AB blood has:
+     A) Antigens A and B on RBCs; antibodies anti-A and anti-B in
+        plasma
+     B) Antigens A and B on RBCs; NO antibodies in plasma — hence
+        universal recipient
+     C) No antigens on RBCs; antibodies anti-A and anti-B in plasma
+     D) Antigen A only; antibody anti-B in plasma
+
+Q24.  Which of the following pairs of international codes governs the
+      naming of plants and animals respectively? A) ICZN for plants,
+      ICBN for animals B) ICBN for plants, ICZN for animals C) ICBN for
+      both plants and animals D) ICZN for both plants and animals
+
+Q25.  Cuscuta is a parasitic plant that has lost its chlorophyll and
+      leaves and grows on hedge plants. The female mosquito is often
+      given as an example of what is NOT a true parasite. Why is the
+      female mosquito NOT considered a true parasite? A) The mosquito
+      does not harm the host at all B) The mosquito needs blood only
+      for egg development/reproduction, not for its own survival — it
+      does not live on the host permanently C) The mosquito is too
+      large to be a parasite D) The mosquito has its own digestive
+      system
+
+Q26.  In the S phase of interphase, DNA synthesis (replication) occurs.
+      If a diploid cell (2n) at G1 has a DNA content of 2C, what is the
+      DNA content at the end of S phase, and what is the chromosome
+      number during S phase? A) DNA = 4C; Chromosomes = 4n B) DNA = 4C;
+      Chromosomes remain 2n C) DNA = 2C; Chromosomes = 2n D) DNA = 8C;
+      Chromosomes = 4n
+
+Q27.  Heterophylly refers to the presence of different leaf forms on
+      the same plant. In buttercup (Ranunculus), leaves above water
+      differ from those submerged. This is an example of:
+     A) Genetic mutation causing leaf variation
+     B) Plasticity — the ability of a plant to follow different
+        developmental pathways in response to the environment
+     C) Apical dominance affecting leaf shape
+     D) Photoperiodism CHAPTER 14 — BREATHING AND EXCHANGE OF GASES
+
+Q28.  Entamoeba histolytica causes amoebiasis. The MECHANICAL CARRIER
+      that transmits the parasite from infected faeces to food is:
+     A) Female Anopheles mosquito
+     B) Female Aedes mosquito
+     C) Housefly
+     D) Tsetse fly
+
+Q29.  During the menstrual cycle, a surge in LH secretion (LH surge)
+      occurs at approximately the 14th day. This LH surge is
+      responsible for which key event? A) Growth of primary follicles
+      into secondary follicles B) Rupture of the mature Graafian
+      follicle and ovulation C) Formation of the corpus luteum from the
+      follicle D) Proliferation of the endometrium
+
+Q30.  In Cyclostomata, which of the following is a correct
+      characteristic — these animals are ectoparasites on fish, have a
+      sucking circular mouth without jaws, and after spawning they:
+     A) Migrate to sea and live long lives
+     B) Return to sea and breed again
+     C) Die after spawning
+     D) Undergo metamorphosis in freshwater permanently
+
+Q31.  In honey bee sex determination (haplodiploid system):
+     A) Males are diploid (32 chromosomes), females haploid (16)
+     B) Females are diploid (32 chromosomes), males are haploid (16);
+        males develop from UNFERTILISED eggs by parthenogenesis
+     C) Both sexes are diploid; sex determined by ZW mechanism
+     D) Males are produced from fertilised eggs, females from
+        unfertilised
+
+Q32.  In a dorsiventral dicot leaf, the abaxial epidermis (lower
+      surface) generally bears MORE stomata than the adaxial (upper)
+      epidermis. The vascular bundles in the veins are surrounded by a
+      layer called: A) Mesophyll sheath B) Bundle sheath C) Endodermis
+      D) Palisade layer CHAPTER 7 — STRUCTURAL ORGANISATION IN ANIMALS
+
+Q33.  Apple and strawberry are called false fruits because part of the
+      fruit develops from the thalamus rather than only from the ovary.
+      Banana is an example of a parthenocarpic fruit (develops without
+      fertilisation). Parthenocarpy can be induced by application of:
+      A) Cytokinins only B) Growth hormones (growth substances) C)
+      Gibberellins only and not auxins D) Abscisic acid
+
+Q34.  Among the following arthropods, which one is referred to as a
+      "living fossil"?
+     A) Apis (Honey bee)
+     B) Limulus (King crab)
+     C) Locusta (Locust)
+     D) Laccifer (Lac insect)
+
+Q35.  Phenylketonuria is an example of PLEIOTROPY because a SINGLE gene
+      mutation (affecting phenylalanine hydroxylase) causes:
+     A) Two separate phenotypes: mental retardation AND reduction in
+        hair/skin pigmentation
+     B) Only one phenotype: mental retardation
+     C) Two entirely unrelated gene loci to mutate simultaneously
+     D) The gene to produce two different proteins
+
+Q36.  Medical Termination of Pregnancy (MTP) was legalised in India in
+      which year? According to the MTP Amendment Act 2017, termination
+      within 12 weeks requires how many registered medical
+      practitioners' opinion? A) Legalised 1971; one practitioner's
+      opinion B) Legalised 1961; two practitioners' opinions C)
+      Legalised 1971; two practitioners' opinions required throughout
+      D) Legalised 1981; one practitioner's opinion
+
+Q37.  The seed coat of a dicotyledonous seed consists of two layers.
+      The outer layer is called testa and the inner layer is called:
+     A) Hilum
+     B) Tegmen
+     C) Micropyle
+     D) Endosperm
+
+Q38.  Meselson and Stahl (1958) proved semiconservative DNA replication
+      in E. coli. After ONE generation of replication in ¹⁴N medium
+      (after growing in ¹⁵N), what density of DNA was observed?
+     A) All light (¹⁴N/¹⁴N) DNA
+     B) All heavy (¹⁵N/¹⁵N) DNA
+     C) Hybrid density DNA (¹⁵N/¹⁴N) only — one parental heavy strand +
+        one new light strand
+     D) A mix of heavy and light DNA, no hybrid
+
+Q39.  An ecosystem is a functional unit of nature where living
+      organisms interact with each other and with the physical
+      environment. The biosphere is considered the largest ecosystem.
+      Which of the following is an example of a man-made ecosystem? A)
+      Coral reef B) Mangrove forest C) Crop field and aquarium D)
+      Alpine meadow
+
+------------------------------------------------------------------------
+  Total questions in this set: 39
+========================================================================
+Here is the answer key for Question Set 03:
+
+1. b
+2. c
+3. b
+4. b
+5. b
+6. b
+7. c
+8. a
+9. b
+10. b
+11. c
+12. b
+13. c
+14. c
+15. b
+16. c
+17. b
+18. b
+19. b
+20. b
+21. d
+22. b
+23. b
+24. b
+25. b
+26. b
+27. b
+28. c
+29. b
+30. c
+31. b
+32. b
+33. b
+34. b
+35. a
+36. a
+37. b
+38. c
+39. c

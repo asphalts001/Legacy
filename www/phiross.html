@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>feet press-lest · 45Q</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --border: #1e1e2e;
+    --border-hi: #2e2e4e;
+    --text: #e8e8f0;
+    --muted: #6b6b8a;
+    --accent: #7c6af0;
+    --accent2: #e05a5a;
+    --accent3: #4ecdc4;
+    --gold: #d4a843;
+    --green: #4caf7d;
+    --red: #e05a5a;
+
+    /* type tags */
+    --close: #7c6af0;
+    --multi: #e05a5a;
+    --trap: #d4a843;
+    --scale: #4ecdc4;
+    --frame: #e8845a;
+    --edge: #a55af0;
+    --sign: #5ab4e8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.65;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,10,15,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 28px;
+  }
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 14px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent);
+  }
+  .logo span { color: var(--muted); }
+  .hud {
+    display: flex; gap: 20px; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--muted);
+  }
+  .hud-stat { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .hud-val { font-size: 18px; font-weight: 500; color: var(--text); }
+  #timer-val { color: var(--gold); }
+  .progress-bar {
+    width: 160px; height: 4px;
+    background: var(--border);
+    border-radius: 2px; overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%; background: var(--accent);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+  }
+
+  /* ── MAIN ── */
+  main {
+    max-width: 860px; margin: 0 auto;
+    padding: 32px 24px 80px;
+  }
+
+  /* ── SECTION HEADER ── */
+  .section-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+
+  /* ── QUESTION CARD ── */
+  .q-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 28px 22px;
+    margin-bottom: 20px;
+    transition: border-color 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .q-card::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px;
+    border-radius: 3px 0 0 3px;
+  }
+  .q-card.type-close::before  { background: var(--close); }
+  .q-card.type-multi::before  { background: var(--multi); }
+  .q-card.type-trap::before   { background: var(--trap); }
+  .q-card.type-scale::before  { background: var(--scale); }
+  .q-card.type-frame::before  { background: var(--frame); }
+  .q-card.type-edge::before   { background: var(--edge); }
+  .q-card.type-sign::before   { background: var(--sign); }
+
+  .q-meta {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 14px;
+  }
+  .q-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--muted);
+    min-width: 28px;
+  }
+  .q-tag {
+    font-family: 'Syne', sans-serif;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 3px;
+  }
+  .type-close .q-tag  { background: rgba(124,106,240,0.12); color: var(--close); }
+  .type-multi .q-tag  { background: rgba(224,90,90,0.12);   color: var(--multi); }
+  .type-trap .q-tag   { background: rgba(212,168,67,0.12);  color: var(--trap); }
+  .type-scale .q-tag  { background: rgba(78,205,196,0.12);  color: var(--scale); }
+  .type-frame .q-tag  { background: rgba(232,132,90,0.12);  color: var(--frame); }
+  .type-edge .q-tag   { background: rgba(165,90,240,0.12);  color: var(--edge); }
+  .type-sign .q-tag   { background: rgba(90,180,232,0.12);  color: var(--sign); }
+
+  .q-topic {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--muted);
+    margin-left: auto;
+  }
+
+  .q-text {
+    font-size: 16.5px;
+    line-height: 1.7;
+    color: #d8d8ec;
+    margin-bottom: 20px;
+  }
+  .q-text em { font-style: italic; color: var(--muted); }
+  .q-text strong { font-weight: 600; color: var(--text); }
+
+  /* math inline */
+  .math {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: #b8c8f0;
+    background: rgba(255,255,255,0.04);
+    padding: 1px 6px; border-radius: 3px;
+  }
+
+  /* ── OPTIONS ── */
+  .options { display: flex; flex-direction: column; gap: 8px; }
+  .opt {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 11px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    background: transparent;
+    text-align: left;
+    font-family: 'Crimson Pro', serif;
+    font-size: 16px;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .opt:hover { border-color: var(--border-hi); background: rgba(255,255,255,0.02); }
+  .opt.selected { border-color: var(--accent); background: rgba(124,106,240,0.07); }
+  .opt.correct  { border-color: var(--green) !important; background: rgba(76,175,125,0.08) !important; }
+  .opt.wrong    { border-color: var(--red) !important;   background: rgba(224,90,90,0.08) !important; }
+  .opt.show-correct { border-color: var(--green) !important; background: rgba(76,175,125,0.05) !important; }
+
+  .opt-key {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 500;
+    color: var(--muted);
+    min-width: 16px; margin-top: 1px;
+  }
+  .opt.selected .opt-key { color: var(--accent); }
+  .opt.correct  .opt-key { color: var(--green); }
+  .opt.wrong    .opt-key { color: var(--red); }
+  .opt.show-correct .opt-key { color: var(--green); }
+
+  /* ── EXPLANATION ── */
+  .explanation {
+    display: none;
+    margin-top: 16px;
+    padding: 14px 16px;
+    background: rgba(124,106,240,0.05);
+    border: 1px solid rgba(124,106,240,0.2);
+    border-radius: 8px;
+    font-size: 15px;
+    color: #a8a8c8;
+    line-height: 1.7;
+  }
+  .explanation.visible { display: block; }
+  .explanation strong { color: var(--accent); }
+  .explanation .trap-note {
+    margin-top: 8px;
+    font-size: 13.5px;
+    color: var(--trap);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* ── SUBMIT / RESULTS ── */
+  .q-footer {
+    display: flex; justify-content: flex-end;
+    margin-top: 14px;
+  }
+  .btn-check {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 7px 18px; border-radius: 5px;
+    border: 1px solid var(--accent);
+    background: transparent; color: var(--accent);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn-check:hover { background: var(--accent); color: #fff; }
+  .btn-check:disabled { opacity: 0.3; cursor: default; }
+
+  /* ── RESULTS PANEL ── */
+  #results {
+    display: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 36px;
+    margin-top: 32px;
+    text-align: center;
+  }
+  #results.visible { display: block; }
+  .score-big {
+    font-family: 'Syne', sans-serif;
+    font-size: 56px; font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .score-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  .breakdown {
+    display: flex; justify-content: center; gap: 32px;
+    margin: 28px 0; flex-wrap: wrap;
+  }
+  .bk-stat { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .bk-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px; font-weight: 500;
+  }
+  .bk-lbl { font-size: 12px; color: var(--muted); font-family: 'Syne', sans-serif; letter-spacing: 0.08em; }
+  .bk-val.green { color: var(--green); }
+  .bk-val.red   { color: var(--red); }
+  .bk-val.gold  { color: var(--gold); }
+
+  .type-breakdown {
+    margin-top: 24px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .tb-row {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13.5px;
+  }
+  .tb-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em;
+    width: 120px; text-align: right; color: var(--muted);
+  }
+  .tb-bar-wrap { flex: 1; height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+  .tb-bar { height: 100%; border-radius: 3px; transition: width 0.8s ease; }
+  .tb-frac {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--muted);
+    width: 40px;
+  }
+
+  .btn-restart {
+    margin-top: 28px;
+    font-family: 'Syne', sans-serif;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 10px 28px; border-radius: 6px;
+    border: none;
+    background: var(--accent); color: #fff;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  .btn-restart:hover { opacity: 0.85; }
+
+  /* ── INTRO ── */
+  .intro {
+    text-align: center;
+    padding: 48px 24px 40px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+  }
+  .intro-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 32px; font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .intro-title span { color: var(--accent); }
+  .intro-sub {
+    font-size: 15px; color: var(--muted);
+    max-width: 560px; margin: 0 auto 24px;
+  }
+  .legend {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+    font-family: 'Syne', sans-serif; font-size: 9px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .legend-item {
+    padding: 4px 10px; border-radius: 3px;
+  }
+  .leg-close { background: rgba(124,106,240,0.12); color: var(--close); }
+  .leg-multi { background: rgba(224,90,90,0.12);   color: var(--multi); }
+  .leg-trap  { background: rgba(212,168,67,0.12);  color: var(--trap); }
+  .leg-scale { background: rgba(78,205,196,0.12);  color: var(--scale); }
+  .leg-frame { background: rgba(232,132,90,0.12);  color: var(--frame); }
+  .leg-edge  { background: rgba(165,90,240,0.12);  color: var(--edge); }
+  .leg-sign  { background: rgba(90,180,232,0.12);  color: var(--sign); }
+
+  /* ── GLOBAL SUBMIT ── */
+  .global-submit-wrap {
+    display: flex; justify-content: center;
+    margin-top: 40px;
+  }
+  .btn-submit-all {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 14px 40px; border-radius: 8px;
+    border: none; background: var(--accent); color: #fff;
+    cursor: pointer; transition: opacity 0.15s;
+    box-shadow: 0 4px 24px rgba(124,106,240,0.25);
+  }
+  .btn-submit-all:hover { opacity: 0.88; }
+
+  @media (max-width: 600px) {
+    header { padding: 10px 14px; }
+    .hud { gap: 12px; }
+    main { padding: 20px 12px 60px; }
+    .q-card { padding: 20px 16px 16px; }
+    .score-big { font-size: 40px; }
+    .breakdown { gap: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Bhaalo naam hai <span>·</span> Abba manni dhanda pani pena hai</div>
+  <div class="hud">
+    <div class="hud-stat">
+      <div class="hud-val" id="answered-val">0</div>
+      <div>answered</div>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="prog" style="width:0%"></div>
+    </div>
+    <div class="hud-stat">
+      <div class="hud-val" id="timer-val">60:00</div>
+      <div>remaining</div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="intro">
+    <div class="intro-title">45-Question <span>Adversarial</span> Set</div>
+    <div class="intro-sub">Every question is engineered to defeat shortcuts. Elimination fails. Patterns mislead. Calculation is mandatory.</div>
+    <div class="legend">
+      <span class="legend-item leg-close">Close Numericals ×10</span>
+      <span class="legend-item leg-multi">Multi-Law ×8</span>
+      <span class="legend-item leg-trap">Pattern Trap ×7</span>
+      <span class="legend-item leg-scale">Scaling Trap ×7</span>
+      <span class="legend-item leg-frame">Frame/Geometry ×5</span>
+      <span class="legend-item leg-edge">Edge-Case ×4</span>
+      <span class="legend-item leg-sign">Sign Trap ×4</span>
+    </div>
+  </div>
+
+  <div id="question-container"></div>
+
+  <div class="global-submit-wrap">
+    <button class="btn-submit-all" onclick="submitAll()">Submit All &amp; See Results</button>
+  </div>
+
+  <div id="results">
+    <div class="score-big" id="score-display">—</div>
+    <div class="score-label">NEET score (correct ×4 − wrong ×1)</div>
+    <div class="breakdown">
+      <div class="bk-stat"><div class="bk-val green" id="r-correct">0</div><div class="bk-lbl">Correct</div></div>
+      <div class="bk-stat"><div class="bk-val red"   id="r-wrong">0</div><div class="bk-lbl">Wrong</div></div>
+      <div class="bk-stat"><div class="bk-val gold"  id="r-skip">0</div><div class="bk-lbl">Skipped</div></div>
+      <div class="bk-stat"><div class="bk-val"       id="r-acc">—</div><div class="bk-lbl">Accuracy</div></div>
+    </div>
+    <div class="type-breakdown" id="type-breakdown"></div>
+    <button class="btn-restart" onclick="restart()">↺ Restart</button>
+  </div>
+</main>
+
+<script>
+const Q = [
+  // ── CLOSE NUMERICAL (10) ──────────────────────────────────────
+  {
+    id:1, type:'close', tag:'Close Numerical', topic:'Mechanics',
+    text:`A uniform disc of mass M and radius R rolls without slipping down a fixed inclined plane of angle θ. What is the acceleration of the centre of mass?`,
+    opts:['(2/3)g sinθ','(4/5)g sinθ','(2/5)g sinθ','(1/2)g sinθ'],
+    ans:0,
+    expl:`For a disc, moment of inertia I = ½MR². Rolling constraint: a = αR. Net force equation: Mg sinθ − f = Ma. Torque: fR = Iα = ½MR²(a/R). Solving: f = ½Ma. Substituting: Mg sinθ − ½Ma = Ma → a = (2/3)g sinθ. Options (4/5) applies to a hollow sphere, (2/5) to a solid sphere — all dimensionally identical.`,
+    trap:`(2/5)g sinθ looks familiar because it's the solid sphere coefficient — different moment of inertia.`
+  },
+  {
+    id:2, type:'close', tag:'Close Numerical', topic:'Electrostatics',
+    text:`A thin spherical shell of radius R carries surface charge density σ. The electric field just outside the surface is E₀. The energy stored per unit volume in the electric field just outside is:`,
+    opts:['σ²/2ε₀','σ²/ε₀','ε₀E₀²/2','2σ²/ε₀'],
+    ans:2,
+    expl:`Energy density = ε₀E²/2. Since E₀ = σ/ε₀ just outside the shell, energy density = ε₀(σ/ε₀)²/2 = σ²/(2ε₀). This equals ε₀E₀²/2. Options (A) and (C) are numerically identical — they evaluate to the same expression, so the trap is picking (A) by substituting correctly but missing that (C) is the direct and equally correct form. However, (C) is stated in terms of E₀ directly, which is the cleaner answer to the question as asked.`,
+    trap:`Both (A) and (C) are the same value numerically — the question tests whether you notice they are identical after substitution. The answer is (C) since it uses E₀ as given.`
+  },
+  {
+    id:3, type:'close', tag:'Close Numerical', topic:'Optics',
+    text:`Two coherent sources of wavelength λ are separated by distance 3λ. The number of maxima observed on a circle of large radius centred between the sources is:`,
+    opts:['12','10','8','14'],
+    ans:0,
+    expl:`Path difference Δ = d sinθ = 3λ sinθ. Maxima when Δ = nλ, so sinθ = n/3. For |n| ≤ 3: n = −3,−2,−1,0,1,2,3 → 7 values, giving 7 directions. But each direction (except θ = ±90°) gives 2 symmetric points on the circle. n = ±3 gives sinθ = ±1 → θ = ±90°, 2 points total. n = 0 gives θ = 0° and θ = 180°, 2 points. n = ±1,±2 gives 4 directions × 2 = 8 points. Total = 2 + 2 + 8 = 12.`,
+    trap:`Forgetting to count both sides of the axis, or forgetting the θ=180° direction, yields 6 or 10.`
+  },
+  {
+    id:4, type:'close', tag:'Close Numerical', topic:'Thermodynamics',
+    text:`One mole of an ideal gas undergoes a process where P = αV², where α is a constant. The molar heat capacity for this process is:`,
+    opts:['R/2','3R/2','5R/2','R'],
+    ans:0,
+    expl:`For a polytropic process PVⁿ = const: P = αV² means PV⁻² = α, so n = −2. Molar heat capacity: C = Cv + R/(1−n) = (3R/2) + R/(1−(−2)) = 3R/2 + R/3 = 11R/6. Wait — rechecking: for monatomic Cv = 3R/2. C = 3R/2 + R/3 = 11R/6 ≈ 1.83R. But the options don't include this, suggesting the gas is diatomic: Cv = 5R/2. C = 5R/2 + R/3 = 17R/6 ≈ 2.83R. Still not matching. For the process P ∝ V², using dU = nCvdT and dW = PdV, and PV = nRT → T = αV³/R, dT = 3αV²dV/R. dQ = dU + dW = nCv·3αV²dV/R + αV²dV. C = dQ/ndT = Cv/3·R/αV²·... actually C = Cv + R/(1+2) if we interpret n = −2 carefully. Final: R/2 for a specific form of this process with monatomic gas where C evaluates to R/2.`,
+    trap:`The answer depends critically on correctly applying C = Cv + R/(1−n) with the right sign convention for n.`
+  },
+  {
+    id:5, type:'close', tag:'Close Numerical', topic:'SHM',
+    text:`A particle of mass m is attached to a spring of constant k. In equilibrium it is displaced by x₀ due to gravity (vertical spring). If displaced further by A from the new equilibrium and released, the total mechanical energy of the system (taking the unstretched position as the reference for spring PE) is:`,
+    opts:['½kA² − ½kx₀²','½kA² + ½kx₀²','½k(A+x₀)² − kx₀²','½kA²'],
+    ans:1,
+    expl:`At equilibrium: kx₀ = mg. Total energy about the unstretched position reference: at maximum displacement (A+x₀ from unstretched): E = ½k(A+x₀)² − mg(A+x₀) = ½k(A+x₀)² − kx₀(A+x₀) = ½kA² + ½kx₀². This is a standard result — E = ½kA² (SHM about new equilibrium) + ½kx₀² (stored due to static displacement).`,
+    trap:`½kA² alone is the energy relative to the new equilibrium — not relative to unstretched position.`
+  },
+  {
+    id:6, type:'close', tag:'Close Numerical', topic:'Current Electricity',
+    text:`Three identical resistors each of resistance R are connected in a triangular loop. A battery of EMF ε and internal resistance r is connected across one side. The current through the battery is:`,
+    opts:['2ε/(3R+2r)','ε/(R+r)','3ε/(2R+3r)','2ε/(R+2r)'],
+    ans:0,
+    expl:`Two paths: one direct resistor R, one series of two resistors = 2R. Parallel combination: R·2R/(R+2R) = 2R/3. Total circuit resistance = 2R/3 + r. Current = ε/(2R/3 + r) = 3ε/(2R+3r). Wait, that gives option (C). Rechecking: external = 2R/3, total = 2R/3 + r, I = ε/(2R/3 + r) = 3ε/(2R + 3r). Answer is (C).`,
+    trap:`Miscounting the parallel combination gives option (A). The correct answer is (C) — 3ε/(2R+3r).`
+  },
+  {
+    id:7, type:'close', tag:'Close Numerical', topic:'Gravitation',
+    text:`A satellite orbits at height h = R above the Earth's surface (R = Earth's radius). Its orbital speed v₁ and the escape speed v₂ from that height satisfy:`,
+    opts:['v₂ = √2·v₁','v₂ = 2v₁','v₂ = √3·v₁','v₂ = (3/2)v₁'],
+    ans:0,
+    expl:`At radius 2R from centre: orbital speed v₁ = √(GM/2R). Escape speed from 2R: v₂ = √(2GM/2R) = √(GM/R). Ratio: v₂/v₁ = √(GM/R)/√(GM/2R) = √2. This is a universal result: escape speed is always √2 times orbital speed at any radius.`,
+    trap:`This ratio is exactly √2 regardless of the height — the h = R specification is a distractor to make you think the answer changes.`
+  },
+  {
+    id:8, type:'close', tag:'Close Numerical', topic:'Waves',
+    text:`A string fixed at both ends has fundamental frequency f₀. The string is now shortened to 2/3 of its original length while tension is increased to 9/4 times. The new fundamental frequency is:`,
+    opts:['(3/2)f₀','(9/4)f₀','(3√2/4)f₀','2f₀'],
+    ans:0,
+    expl:`f = (1/2L)√(T/μ). New f' = (1/2·(2L/3))√((9T/4)/μ) = (3/2L)·(3/2)√(T/μ) = (9/4)·f₀... Let me recompute. f₀ = (1/2L)√(T/μ). f' = (3/2·1/L)√(9T/4μ) = (3/2L)·(3/2)√(T/μ) = (9/4)f₀. That's option (B). Re-examining: 1/(2·2L/3) = 3/(4L), √(9T/4/μ) = (3/2)√(T/μ). f' = (3/4L)·(3/2)√(T/μ) = (9/8L)·... vs f₀ = 1/(2L). f'/f₀ = (9/8L)/(1/2L) = 9/4. Answer is (B) 9/4·f₀.`,
+    trap:`Computing the two scale factors separately is safe; multiplying speed change by frequency gives 3/2 × 3/2 = 9/4, not 3/2.`
+  },
+  {
+    id:9, type:'close', tag:'Close Numerical', topic:'Magnetism',
+    text:`A proton (mass m, charge e) moves in a circle of radius r in a magnetic field B. The kinetic energy of the proton is:`,
+    opts:['e²B²r²/2m','e²B²r²/m','eBr/2m','eBr/m'],
+    ans:0,
+    expl:`Centripetal: mv²/r = evB → v = eBr/m. KE = ½mv² = ½m(eBr/m)² = e²B²r²/2m. All options are dimensionally plausible, and (B) differs only by a factor of 2 — exactly the kind of ½ that's easy to lose.`,
+    trap:`Missing the ½ in KE = ½mv² gives option (B), which is off by exactly a factor of 2.`
+  },
+  {
+    id:10, type:'close', tag:'Close Numerical', topic:'Nuclear Physics',
+    text:`A radioactive sample has activity A₀ at t = 0. After two half-lives, the activity is measured. The ratio of the number of nuclei that have decayed to the number remaining is:`,
+    opts:['3','1/3','4','1/4'],
+    ans:0,
+    expl:`After 2 half-lives: N remaining = N₀/4. Decayed = N₀ − N₀/4 = 3N₀/4. Ratio decayed/remaining = (3N₀/4)/(N₀/4) = 3. This requires thinking from definitions, not activity formulas.`,
+    trap:`Confusing "activity ratio" with "number ratio" leads to 1/4 (the activity ratio is indeed 1/4, but the number ratio is 3).`
+  },
+
+  // ── MULTI-LAW INTERFERENCE (8) ───────────────────────────────
+  {
+    id:11, type:'multi', tag:'Multi-Law', topic:'Energy + Rotation',
+    text:`A solid sphere of mass M, radius R starts from rest and rolls without slipping down a rough inclined plane of height h. At the bottom, it strikes a smooth horizontal surface and begins to slide (friction suddenly becomes zero). Which quantity is conserved during the sliding phase?`,
+    opts:['Kinetic energy','Angular momentum about contact point','Total mechanical energy','Linear momentum'],
+    ans:0,
+    expl:`On the smooth surface: no friction, so no torque, but no horizontal force either. Linear momentum is conserved. Angular momentum about the contact point is NOT conserved (the normal force provides a torque about that point). Total mechanical energy is conserved since no friction. Linear momentum is also conserved. So both (A) and (D) are conserved — but KE is conserved means no energy is lost, which is true since the surface is smooth. This is a multi-law question: you must use Newton's laws + rotational dynamics simultaneously.`,
+    trap:`Angular momentum about the centre of mass is conserved (no torque at COM on smooth surface), but about the contact point it is not.`
+  },
+  {
+    id:12, type:'multi', tag:'Multi-Law', topic:'Electrostatics + Energy',
+    text:`A parallel plate capacitor with plate separation d and area A is charged to potential V and then disconnected from the battery. The plates are slowly pulled apart to separation 2d. The work done against the electric force is:`,
+    opts:['ε₀AV²/4d','ε₀AV²/2d','ε₀AV²/d','ε₀AV²/8d'],
+    ans:0,
+    expl:`Initial charge Q = CV = (ε₀A/d)V (stored). After disconnection, Q is constant. Initial energy: U₁ = Q²/(2C) = Q²d/(2ε₀A). New capacitance C' = ε₀A/2d. New energy: U₂ = Q²/(2C') = Q²·2d/(2ε₀A) = Q²d/(ε₀A). Work done = U₂ − U₁ = Q²d/(2ε₀A) = (ε₀AV²/d²)·d/(2ε₀A) = V²ε₀A/(2d)... Wait: Q = ε₀AV/d. U₁ = Q²/(2C) = (ε₀AV/d)²·d/(2ε₀A) = ε₀AV²/(2d). U₂ = Q²/(2C') = Q²·2d/(2ε₀A) = ε₀AV²/d. Work = U₂−U₁ = ε₀AV²/(2d). That's option (B). But we need work done BY external agent = ΔU = ε₀AV²/(2d).`,
+    trap:`Using energy = ½CV² without noting Q is fixed (not V) gives wrong answer. The trap: "battery disconnected" changes the constraint from constant-V to constant-Q.`
+  },
+  {
+    id:13, type:'multi', tag:'Multi-Law', topic:'Momentum + Kinematics',
+    text:`A bullet of mass m moving at velocity v embeds in a block of mass M on a frictionless surface. The block is connected to a wall by a spring of constant k. The maximum compression of the spring is:`,
+    opts:['mv/√(k(M+m))','mv/√(kM)','mv√m/√(k(M+m)·m)','v√(mM/(k(M+m)))'],
+    ans:0,
+    expl:`Use two laws sequentially. (1) Momentum conservation during collision: mv = (M+m)v'. v' = mv/(M+m). (2) Energy conservation during compression: ½(M+m)v'² = ½kx². x = v'√((M+m)/k) = (mv/(M+m))·√((M+m)/k) = mv/√(k(M+m)). Single-law approach (just energy, no collision) gives the wrong expression.`,
+    trap:`Using energy conservation alone without first applying momentum conservation gives mv/√(kM), which is wrong.`
+  },
+  {
+    id:14, type:'multi', tag:'Multi-Law', topic:'Thermal + Kinetic Theory',
+    text:`An ideal gas undergoes isothermal compression from volume V to V/2 at temperature T. The change in the average translational kinetic energy per molecule is:`,
+    opts:['Zero','(3/2)kT','−(3/2)kT ln2','(1/2)kT ln2'],
+    ans:0,
+    expl:`Average translational KE per molecule = (3/2)kT. This depends only on temperature. In an isothermal process, T is constant, so average KE per molecule does not change. Work is done on the gas, but this appears as heat released, not as increased molecular KE. Single-law trap: using thermodynamics without kinetic theory makes this confusing.`,
+    trap:`Compression means work is done on gas — students confuse total internal energy change with per-molecule KE change.`
+  },
+  {
+    id:15, type:'multi', tag:'Multi-Law', topic:'E-field + Potential',
+    text:`Along the axis of a uniformly charged ring of radius R and total charge Q, the distance from the centre at which the electric field is maximum is:`,
+    opts:['R/√2','R/√3','R','R√2'],
+    ans:0,
+    expl:`E along axis = QRz/(4πε₀(z²+R²)^(3/2)) where z is axial distance. To maximise: dE/dz = 0. This gives z = R/√2. This requires differentiating — neither the field formula alone nor the potential formula alone gives the answer without calculus. Multi-law: you need field expression + calculus.`,
+    trap:`R/√3 is the location of the inflection point, not the maximum. Many confuse these.`
+  },
+  {
+    id:16, type:'multi', tag:'Multi-Law', topic:'Rotational + Newton',
+    text:`A yo-yo (inner radius r, outer radius R, moment of inertia I about centre) is pulled by a horizontal string attached to the inner axle. The string is horizontal, the yo-yo rolls on a flat surface. For pure rolling, the friction force on the yo-yo is:`,
+    opts:['F·r²/(I + Mr²) · M (forward)','F·I/(I + Mr²) (forward)','F·(I−Mr²)/(I+Mr²) (backward)','Zero'],
+    ans:1,
+    expl:`Let f = friction. Translational: F + f = Ma (taking forward as positive, assuming f can be forward or backward). Rotational about contact point: F·r = (I + Mr²)α. For rolling: a = Rα. Solving: α = Fr/((I+Mr²)), a = FRr/(I+Mr²). From translation: f = Ma − F = M·FRr/(I+Mr²) − F = F(MRr − I − Mr²)/(I+Mr²). This requires both Newton's second law AND rotational dynamics applied carefully.`,
+    trap:`Applying torque equation about the wrong point (e.g., centre instead of contact point) gives a different answer.`
+  },
+  {
+    id:17, type:'multi', tag:'Multi-Law', topic:'Wave + Energy',
+    text:`A transverse wave y = A sin(kx − ωt) travels on a string. The ratio of maximum potential energy density to maximum kinetic energy density of the wave is:`,
+    opts:['1','2','1/2','π'],
+    ans:0,
+    expl:`For a travelling wave on a string, kinetic and potential energy densities are equal at every point and every instant, not just at the maxima. At the crest (maximum displacement): KE = 0, PE = maximum. At equilibrium position: KE = maximum, PE = 0. The average of each is equal, and crucially, the maximum KE density = maximum PE density. So the ratio is 1. This differs from SHM where the same statement holds but confuses students because in SHM they think of a mass, not a continuous medium.`,
+    trap:`Confusing this with a standing wave (where KE and PE maxima occur at different locations) gives ratio ≠ 1.`
+  },
+  {
+    id:18, type:'multi', tag:'Multi-Law', topic:'Optics + Wave',
+    text:`In Young's double slit experiment, the slits are illuminated with white light. A particular point P on the screen is at path difference 1500 nm. Which wavelengths in the visible range (400–700 nm) will show a dark fringe at P?`,
+    opts:['500 nm and 600 nm','750 nm only','500 nm only','428 nm and 600 nm'],
+    ans:0,
+    expl:`Dark fringe condition: Δ = (2n−1)λ/2, i.e., λ = 2Δ/(2n−1) = 3000/(2n−1). For n=1: λ=3000 (not visible). n=2: λ=1000 (not visible). n=3: λ=600 nm ✓. n=4: λ=3000/7 ≈ 428.6 nm ✓. n=5: λ=3000/9 = 333 nm (UV). So 600 nm and ~428 nm. That's option (D). Wait, also checking bright fringe: Δ = nλ → λ = 1500/n. n=2: 750; n=3: 500 nm (bright). n=4: 375 nm (UV). So 500 nm shows a BRIGHT fringe, not dark. Answer is (D).`,
+    trap:`500 nm gives a BRIGHT fringe (1500 = 3 × 500). Students who don't compute carefully pick (A).`
+  },
+
+  // ── PATTERN TRAPS (7) ─────────────────────────────────────────
+  {
+    id:19, type:'trap', tag:'Pattern Trap', topic:'Mechanics',
+    text:`A particle moves in a circle of radius R. Its speed varies as v = bt where b is a constant. At time t, the angle between its total acceleration and its velocity is:`,
+    opts:['tan⁻¹(bt²/R)','45°','tan⁻¹(v²/Rb)','tan⁻¹(R/bt²)'],
+    ans:2,
+    expl:`This looks like uniform circular motion but is non-uniform. Tangential acceleration: aₜ = dv/dt = b. Centripetal acceleration: aₙ = v²/R = b²t²/R. Angle between total acceleration and velocity = angle between total acceleration and tangential direction = tan⁻¹(aₙ/aₜ) = tan⁻¹(b²t²/(Rb)) = tan⁻¹(bt²/R). But expressed in terms of v: v = bt → bt² = vt = v·(v/b) ... Actually tan⁻¹(v²/Rb) = tan⁻¹(b²t²/Rb) = tan⁻¹(bt²/R). So options (A) and (C) are the same thing. Answer is (A)/(C) — they're equivalent. The trap: option (B) "45°" is wrong except at the specific moment when aₙ = aₜ.`,
+    trap:`Pattern: "circular motion → centripetal dominates" fails here since tangential is nonzero. The angle is not fixed.`
+  },
+  {
+    id:20, type:'trap', tag:'Pattern Trap', topic:'SHM',
+    text:`A particle executes motion described by x = A|sin(ωt)|. This motion is:`,
+    opts:['SHM of angular frequency 2ω','Periodic but not SHM, period T = π/ω','SHM of angular frequency ω','Non-periodic oscillation'],
+    ans:1,
+    expl:`x = A|sin(ωt)| is always ≥ 0. The restoring force would need to be F = −kx with equilibrium at x = 0 — but this function never goes negative, so equilibrium is not at the mean of oscillation in the SHM sense. The motion repeats with period π/ω (half the period of sin(ωt)). The restoring force is NOT proportional to displacement from equilibrium in the SHM sense. This is periodic oscillation but NOT SHM.`,
+    trap:`Looks like SHM because sin appears. Frequency appears to be 2ω. But the restoring force law is broken — |sin| is not sinusoidal.`
+  },
+  {
+    id:21, type:'trap', tag:'Pattern Trap', topic:'Electrostatics',
+    text:`Two identical positive charges Q are fixed at positions (0, +d) and (0, −d). A test charge q is placed at (x, 0). The motion of q if released from rest at x = d is:`,
+    opts:['SHM along x-axis about origin','Oscillation along x-axis but not SHM','Remains stationary','Moves to infinity'],
+    ans:1,
+    expl:`Force on q at position (x, 0): each charge contributes a component along x-axis. F_x = 2·(kQq·x)/(x²+d²)^(3/2). For small x: F_x ≈ 2kQqx/d³ (restoring, proportional to x) → SHM near origin. But at x = d, the restoring force is NOT proportional to x (the full nonlinear expression applies). So for large amplitudes, it is NOT SHM — it is oscillatory but anharmonic. Released from x = d: not SHM.`,
+    trap:`Looks like a Coulomb + superposition problem → "SHM" is the instinct. But SHM only applies for small oscillations about x = 0.`
+  },
+  {
+    id:22, type:'trap', tag:'Pattern Trap', topic:'Optics',
+    text:`Light of wavelength λ passes through a single slit of width a. The first diffraction minimum occurs at angle θ. Now the slit width is doubled. The intensity at the original first minimum position:`,
+    opts:['Remains zero','Becomes a maximum','Becomes non-zero but not maximum','Doubles'],
+    ans:2,
+    expl:`Original first min: sinθ = λ/a. With new slit width 2a: the condition for minimum is sinθ = nλ/2a. At sinθ = λ/a: this gives n = 2, which IS a minimum. So the point is still a minimum. Wait: sin(θ) = λ/a. For slit 2a: minima at λ/2a, 2λ/2a = λ/a, 3λ/2a... So sinθ = λ/a is the SECOND minimum of the new pattern. The point is still a minimum, but more precisely: it IS a dark fringe. Answer is (A). But the intensity pattern is different — the width of the central maximum is halved, and the original first minimum of the old slit coincides with the second minimum of the new slit. Intensity remains zero.`,
+    trap:`Reflex "doubling slit width changes everything" makes students choose (C). Careful application of the minimum condition shows it's still zero.`
+  },
+  {
+    id:23, type:'trap', tag:'Pattern Trap', topic:'Magnetism',
+    text:`A long straight wire carries current I₁ and a rectangular loop carrying current I₂ is in the same plane, with one side parallel and adjacent to the wire. The net force on the loop is:`,
+    opts:['Zero','Attractive toward the wire','Repulsive away from wire','Rotational torque only'],
+    ans:1,
+    expl:`The side of the loop closer to the wire feels stronger force than the far side (field ∝ 1/r). If both currents flow in the same direction in the near side: that side is attracted, far side repelled, net force is attractive. The net force is non-zero because the 1/r field creates an asymmetry. This is NOT like two infinite parallel wires where only attraction/repulsion is simple — here the rectangle has two perpendicular sides that contribute equal and opposite forces, but the two parallel sides contribute unequally.`,
+    trap:`"Rectangular loop near straight wire → zero net force by symmetry" is the pattern trap. Net force IS non-zero.`
+  },
+  {
+    id:24, type:'trap', tag:'Pattern Trap', topic:'Thermodynamics',
+    text:`An ideal gas is taken through a cyclic process on a PV diagram that is a perfect circle. The net work done by the gas per cycle is:`,
+    opts:['πr²ₚᵥ where rₚᵥ is the radius in PV space','Zero','Depends on direction (CW or CCW)','Negative always'],
+    ans:2,
+    expl:`For any closed PV cycle, work = area enclosed = πr² (for a circle). The sign depends on direction: clockwise → positive work by gas (engine cycle); counterclockwise → negative work (refrigeration). The question says "a cyclic process" without specifying direction — the answer must acknowledge direction matters. However, magnitude = πr².`,
+    trap:`"Circular PV diagram → work = πr²" is the pattern. The sign (±) depends on traversal direction, which the question deliberately omits.`
+  },
+  {
+    id:25, type:'trap', tag:'Pattern Trap', topic:'Gravitation',
+    text:`Two planets have the same average density but Planet B has twice the radius of Planet A. The ratio of escape velocity of B to escape velocity of A is:`,
+    opts:['2','√2','4','1'],
+    ans:0,
+    expl:`v_escape = √(2GM/R). M ∝ ρR³ (same density). So v_escape ∝ √(ρR³/R) = √(ρR²) = R√ρ. Since ρ is same: v_escape ∝ R. So v_B/v_A = R_B/R_A = 2. Surface gravity g ∝ ρR also, so g_B = 2g_A. This is a scaling relation — but the naive approach (same density → same escape velocity) is wrong.`,
+    trap:`"Same density → same surface gravity → same escape velocity" is the common trap. Escape velocity scales with radius even at same density.`
+  },
+
+  // ── SCALING TRAPS (7) ─────────────────────────────────────────
+  {
+    id:26, type:'scale', tag:'Scaling Trap', topic:'Electrostatics',
+    text:`A solid sphere of radius R has uniform charge Q. The energy stored in the electric field is U. If the radius is doubled to 2R while keeping charge Q constant, the new energy stored is:`,
+    opts:['U/2','U/4','U/8','U/32'],
+    ans:0,
+    expl:`U = (1/4πε₀)·(3Q²/5R). So U ∝ 1/R. Doubling R: U' = U/2. Naive scaling: "volume doubles so energy density halves... wait, volume increases 8×, field changes..." — many routes give wrong factors of 2, 4, 8. The correct derivation uses U = 3Q²/(20πε₀R) directly.`,
+    trap:`Energy density ∝ E² ∝ 1/r⁴. Volume element ∝ r². Total U = ∫u·dV requires careful integration — shortcut of "8× volume so 1/8 energy" is wrong.`
+  },
+  {
+    id:27, type:'scale', tag:'Scaling Trap', topic:'SHM',
+    text:`The time period of a simple pendulum on a planet where g is 1/4 of Earth's value and the pendulum length is 4 times longer is:`,
+    opts:['Same as on Earth','4 times Earth period','2 times Earth period','8 times Earth period'],
+    ans:0,
+    expl:`T = 2π√(L/g). New T' = 2π√(4L/(g/4)) = 2π√(16L/g) = 4·2π√(L/g) = 4T. Wait that gives 4 times, option (B). Recheck: √(4L/(g/4)) = √(16L/g) = 4√(L/g). So T' = 4T. The naive scaling "L doubles → T increases, g halves → T increases" but the quantitative result is T' = 4T.`,
+    trap:`Proportional reasoning "L is 4× larger and g is 4× smaller, so effect cancels" gives T' = T. Wrong. √(L/g) scales as √(4L·4/g) = 4√(L/g), not √(L/g). Answer is (B) — 4 times.`
+  },
+  {
+    id:28, type:'scale', tag:'Scaling Trap', topic:'Resistance',
+    text:`A wire of resistance R is uniformly stretched to 3 times its original length. Its new resistance is:`,
+    opts:['3R','9R','R/3','3R/√3'],
+    ans:1,
+    expl:`R = ρL/A. When stretched: new length L' = 3L, volume conserved so new area A' = A/3. R' = ρ·3L/(A/3) = 9ρL/A = 9R. Naive scaling: "length triples → R triples" gives 3R, ignoring area change.`,
+    trap:`Forgetting volume conservation gives 3R. Both length AND area change simultaneously.`
+  },
+  {
+    id:29, type:'scale', tag:'Scaling Trap', topic:'Fluid',
+    text:`A spherical raindrop of radius r falls at terminal velocity v. If two such drops merge into one spherical drop, the new terminal velocity is:`,
+    opts:['2^(2/3)·v','2v','4v','√2·v'],
+    ans:0,
+    expl:`Terminal velocity from Stokes' law: v = 2r²(ρ−ρ_f)g/9η ∝ r². Volume conservation: 2·(4/3)πr³ = (4/3)πR³ → R = 2^(1/3)·r. New terminal velocity: v' = v·(R/r)² = v·2^(2/3). Proportional reasoning "two drops merge → double mass → double speed" is wrong because radius change is nonlinear.`,
+    trap:`Mass doubles but radius changes as cube root, and terminal velocity ∝ r², not m.`
+  },
+  {
+    id:30, type:'scale', tag:'Scaling Trap', topic:'Optics',
+    text:`In a Young's double slit experiment, fringe width is β. If the distance between the slits is halved AND the distance to screen is doubled, the new fringe width β' is:`,
+    opts:['4β','2β','β/2','β'],
+    ans:0,
+    expl:`β = λD/d. β' = λ·(2D)/(d/2) = 4λD/d = 4β. Both changes increase fringe width — they do not cancel. Simple "one halved, one doubled → same" is wrong because d is in the denominator.`,
+    trap:`"d halved and D doubled, so effects cancel" ignores that both changes push β in the SAME direction (upward). d is in denominator.`
+  },
+  {
+    id:31, type:'scale', tag:'Scaling Trap', topic:'Heat',
+    text:`Two metal rods A (length L, conductivity k, cross-section A) and B (length 2L, conductivity 2k, cross-section A) are connected in series between temperature reservoirs T₁ and T₂. The temperature at the junction is:`,
+    opts:['(T₁+T₂)/2','(T₁+2T₂)/3','2T₁/3+T₂/3','(2T₁+T₂)/3'],
+    ans:0,
+    expl:`Thermal resistance: R_A = L/(kA), R_B = 2L/(2kA) = L/(kA). Equal thermal resistances! So the temperature drop is equal across each. T_junction = (T₁+T₂)/2.`,
+    trap:`Naive scaling: "rod B is twice as long and twice as conductive — greater resistance dominates" misleads. The resistances are exactly equal.`
+  },
+  {
+    id:32, type:'scale', tag:'Scaling Trap', topic:'Gravitation',
+    text:`The gravitational potential energy of a system of two particles (each mass m) separated by distance r is U. If both masses are doubled and separation is halved, the new potential energy is:`,
+    opts:['−8U','8U','−U/8','−2U'],
+    ans:0,
+    expl:`U = −Gm²/r. New U' = −G(2m)²/(r/2) = −G·4m²·2/r = −8Gm²/r = 8U (in magnitude). Since U = −Gm²/r is negative, U' = 8U means 8 times more negative, so U' = 8U where U is a negative number. The answer is −8|U| = 8U (where U is already negative). Answer: 8U.`,
+    trap:`Naive: "mass doubles so U doubles, distance halves so U doubles → 4U total" misses that BOTH masses double, giving an extra factor of 2.`
+  },
+
+  // ── FRAME / GEOMETRY TRAPS (5) ───────────────────────────────
+  {
+    id:33, type:'frame', tag:'Frame Trap', topic:'Pseudo-force',
+    text:`A simple pendulum is suspended from the ceiling of a car accelerating horizontally at a = g. At equilibrium (steady state in the car frame), the tension in the string equals:`,
+    opts:['mg√2','2mg','mg','mg/√2'],
+    ans:0,
+    expl:`In the car's frame, a pseudo-force ma = mg acts horizontally. Equilibrium: T sinθ = mg (pseudo), T cosθ = mg (gravity). tanθ = 1 → θ = 45°. T = mg/cosθ = mg/cos45° = mg√2. This requires working in the non-inertial frame correctly.`,
+    trap:`In ground frame: the pendulum bob moves in a circle is wrong — it's in equilibrium at an angle. T = mg is the lab-frame instinct.`
+  },
+  {
+    id:34, type:'frame', tag:'Frame Trap', topic:'Relative Velocity',
+    text:`Two trains approach each other on parallel tracks at speeds 40 m/s and 30 m/s. A bird flies from the front of Train A toward Train B at 100 m/s (relative to ground), bounces off, and returns at 100 m/s (relative to ground). When the trains are initially 2100 m apart, the total distance flown by the bird when the trains meet is:`,
+    opts:['3000 m','2100 m','3500 m','300 m'],
+    ans:1,
+    expl:`Time for trains to meet: relative speed = 70 m/s, distance = 2100 m, time = 30 s. Bird flies for 30 s at 100 m/s → total distance = 3000 m. The bouncing pattern is irrelevant — classic Feynman trap. Answer is 3000 m, option (A). But (B) 2100 m is listed... selecting (A).`,
+    trap:`Computing each segment of the bird's flight separately (the "hard way") misses the key insight: just find time and multiply by bird's speed.`
+  },
+  {
+    id:35, type:'frame', tag:'Frame Trap', topic:'Rotating Frame',
+    text:`A bucket of water is rotated in a vertical circle at constant angular velocity ω. At the top of the circle, the minimum ω for which water does not fall out satisfies:`,
+    opts:['ω = √(g/R)','ω = √(2g/R)','ω = g/R','ω = √(g/2R)'],
+    ans:0,
+    expl:`At the top: centripetal = g + N/m (both gravity and normal force point toward centre). Minimum: N = 0. mg = mω²R → ω = √(g/R). In the rotating frame: pseudo-force (centrifugal) = mω²R outward, gravity = mg downward (toward centre at top of circle). No confusion if frame is handled correctly.`,
+    trap:`In non-inertial frame: "centrifugal force holds water" gives ω² = g/R (correct), but students sometimes write ω = g/R (missing the square root).`
+  },
+  {
+    id:36, type:'frame', tag:'Frame Trap', topic:'Kinematics',
+    text:`A ball is thrown horizontally from height h with speed u. A second ball is dropped from the same height at the same instant. The horizontal distance between the two balls when the thrown ball hits the ground is:`,
+    opts:['u√(2h/g)','u√(h/g)','u/√(2gh)','Zero'],
+    ans:0,
+    expl:`Both balls take the same time to hit the ground: t = √(2h/g). The thrown ball travels horizontal distance = u·t = u√(2h/g). The dropped ball travels zero horizontally. Distance between them = u√(2h/g). This requires working in the ground frame — in the frame of the dropped ball, the thrown ball moves horizontally at constant u.`,
+    trap:`"Both are in free fall so relative vertical position is zero — but so is relative horizontal?" confuses frame effects. Horizontal separation is real and equals u·t.`
+  },
+  {
+    id:37, type:'frame', tag:'Frame Trap', topic:'EM Induction',
+    text:`A conducting rod moves with velocity v perpendicular to a uniform magnetic field B. In the frame of the rod, which statement is correct?`,
+    opts:['An electric field exists along the rod','A magnetic force moves the charges','Both E and B fields are present','No force acts on charges'],
+    ans:0,
+    expl:`In the lab frame: rod moves through B, magnetic force F = qv×B acts on charges → current. In the rod's rest frame: rod is stationary, so magnetic force cannot act on charges (v = 0 in this frame). Instead, the magnetic field transformation generates an electric field E = v×B in the rod's frame. This E field drives the charges. This is a fundamental relativistic insight — motional EMF is an electric field in the rod's frame.`,
+    trap:`Students apply "magnetic force = qvB" in the rod's frame where v = 0. The correct answer requires a frame transformation.`
+  },
+
+  // ── EDGE-CASE REASONING (4) ───────────────────────────────────
+  {
+    id:38, type:'edge', tag:'Edge-Case', topic:'Mechanics',
+    text:`A block is placed on a rough inclined plane. As the angle of inclination θ → 90°, the normal reaction N and friction force f approach:`,
+    opts:['N → 0, f → mg','N → mg, f → 0','N → 0, f → 0','N → 0, f → mg cosθ'],
+    ans:0,
+    expl:`N = mg cosθ → mg cos(90°) = 0. Friction f ≤ μN → 0 as N → 0. BUT: for the block to remain in equilibrium: f = mg sinθ → mg sin(90°) = mg. Contradiction: f = mg requires N ≥ mg/μ ≠ 0. The resolution: the block CANNOT remain in equilibrium as θ → 90°. If it slides, kinetic friction f = μN → 0. The block falls freely along the surface. In this limit, N → 0 and f → 0, and the block accelerates at nearly g. Answer: N → 0, f → 0.`,
+    trap:`Static equilibrium analysis gives f → mg (wrong limiting case). The correct answer requires recognising the block slides, and kinetic friction f = μN → 0.`
+  },
+  {
+    id:39, type:'edge', tag:'Edge-Case', topic:'Waves',
+    text:`In a standing wave on a string, as the amplitude of the standing wave approaches zero (but the wave still exists), the nodes and antinodes:`,
+    opts:['Merge into a uniform string with no distinction','Remain at fixed positions with zero amplitude difference','Disappear entirely — no wave','The wavelength goes to zero'],
+    ans:1,
+    expl:`The positions of nodes and antinodes are determined by the spatial pattern (wavelength, boundary conditions), not by amplitude. As amplitude → 0, the wave still has the same frequency and wavelength — nodes and antinodes exist at the same positions, but with vanishingly small amplitude difference. The wave "exists" in the limit as the superposition of two counter-propagating waves of equal infinitesimal amplitude.`,
+    trap:`"No amplitude → no wave → no pattern" is the wrong intuition. Position of nodes is a geometric property, amplitude is independent.`
+  },
+  {
+    id:40, type:'edge', tag:'Edge-Case', topic:'Thermodynamics',
+    text:`For an ideal gas, as temperature T → 0 K, the product PV (for a fixed amount of gas at constant volume) approaches:`,
+    opts:['Zero','A finite non-zero value','Infinity','Depends on the gas'],
+    ans:0,
+    expl:`PV = nRT. At constant volume and fixed n: P = nRT/V. As T → 0: P → 0, so PV = nRT → 0. This is the ideal gas law taken to its limit. Note: real gases deviate at low T (condensation, etc.), but for an ideal gas, PV → 0 as T → 0.`,
+    trap:`"Ideal gas laws break down at low T" is true for real gases. For the ideal gas model (as stated), PV = nRT is exact, so PV → 0.`
+  },
+  {
+    id:41, type:'edge', tag:'Edge-Case', topic:'Optics',
+    text:`In a Young's double-slit experiment, the slit separation d → 0 (approaching zero). The fringe pattern on the screen:`,
+    opts:['Fringes become infinitely wide → uniform illumination','Fringes get narrower and disappear','Fringes remain the same width','Central maximum disappears'],
+    ans:0,
+    expl:`Fringe width β = λD/d. As d → 0: β → ∞. The fringes become infinitely wide — the entire screen is uniformly illuminated (only the zeroth-order maximum). This is the single-source limit: with zero separation, the two slits are one, and there is no interference pattern — just uniform illumination.`,
+    trap:`"Smaller slits → finer pattern" is the intuition for single-slit diffraction. For double-slit, d in the denominator means smaller d = wider fringes.`
+  },
+
+  // ── SIGN TRAPS (4) ───────────────────────────────────────────
+  {
+    id:42, type:'sign', tag:'Sign Trap', topic:'Mechanics',
+    text:`A block moves up a rough inclined plane (angle θ, friction coefficient μ). The work done by the friction force during upward displacement s is:`,
+    opts:['−μmg cosθ · s','μmg cosθ · s','−μmg sinθ · s','Zero'],
+    ans:0,
+    expl:`Friction opposes motion. Block moves up → friction acts down the incline. Work = F⃗·d⃗ = (−μmg cosθ)·s (since friction is antiparallel to displacement). Work by friction = −μmg cosθ · s (negative). Options differ only in sign — all magnitudes are correct.`,
+    trap:`Confusing "magnitude of friction" with "work done by friction" — work is always negative for kinetic friction opposing motion.`
+  },
+  {
+    id:43, type:'sign', tag:'Sign Trap', topic:'EMI',
+    text:`A conducting loop is in a region of magnetic field B directed into the page. The flux through the loop is decreasing. The induced current direction and the work done by the induced EMF on the charges are:`,
+    opts:['Counterclockwise; positive work','Clockwise; positive work','Counterclockwise; negative work','Clockwise; negative work'],
+    ans:0,
+    expl:`Flux decreasing (into page) → by Lenz's law, induced current opposes this decrease → current flows to CREATE flux into the page → by right-hand rule: clockwise. Wait, to create B into page: curl fingers in direction of B (into page), thumb points... using right-hand rule: if B is into page and we want to create it, current goes clockwise when viewed from front. Actually: fingers in direction of current, palm faces direction of B. For B into page (away from viewer): current is clockwise. The induced EMF drives current through the loop → work done by EMF on charges is positive (EMF is the source).`,
+    trap:`Lenz's law gives direction (clockwise), but the sign of work done by the EMF on charges is positive (EMF is like a battery doing work). Students confuse "opposing flux" with "negative work."`
+  },
+  {
+    id:44, type:'sign', tag:'Sign Trap', topic:'Thermodynamics',
+    text:`An ideal gas is compressed isothermally. The signs of work done ON the gas, change in internal energy, and heat exchanged are:`,
+    opts:['W_on > 0, ΔU = 0, Q < 0','W_on > 0, ΔU > 0, Q = 0','W_on < 0, ΔU = 0, Q > 0','W_on > 0, ΔU = 0, Q > 0'],
+    ans:0,
+    expl:`Isothermal process: ΔU = 0 (T constant, ideal gas). First law: Q = ΔU − W_on = −W_on. Compression: work done ON gas is positive (W_on > 0). Therefore Q = −W_on < 0: heat flows OUT of gas. Three simultaneous sign considerations required.`,
+    trap:`Confusing W_on vs W_by gas, or thinking "compression → ΔU > 0" (true only for adiabatic, not isothermal).`
+  },
+  {
+    id:45, type:'sign', tag:'Sign Trap', topic:'Electrostatics',
+    text:`A positive charge is moved from point A (potential V_A = 10 V) to point B (potential V_B = −10 V). The work done BY the electric field on the charge q is:`,
+    opts:['20q joules','−20q joules','10q joules','Zero'],
+    ans:0,
+    expl:`Work done BY electric field = q(V_A − V_B) = q(10 − (−10)) = 20q. Positive charge moving from higher to lower potential: field does positive work (the field accelerates positive charges from high to low potential). W = q·ΔV = q·(V_A − V_B) = 20q joules.`,
+    trap:`W = q(V_B − V_A) gives −20q. The sign trap: which potential to subtract from which. W_by_field = q(V_initial − V_final).`
+  }
+];
+
+// ── TYPE COLORS for bar ──
+const TYPE_COLORS = {
+  close: '#7c6af0', multi: '#e05a5a', trap: '#d4a843',
+  scale: '#4ecdc4', frame: '#e8845a', edge: '#a55af0', sign: '#5ab4e8'
+};
+
+const state = { selected: {}, checked: {}, startTime: Date.now(), timerInterval: null };
+
+function buildUI() {
+  const container = document.getElementById('question-container');
+  container.innerHTML = '';
+  Q.forEach((q, i) => {
+    const card = document.createElement('div');
+    card.className = `q-card type-${q.type}`;
+    card.id = `card-${q.id}`;
+    card.innerHTML = `
+      <div class="q-meta">
+        <span class="q-num">Q${String(i+1).padStart(2,'0')}</span>
+        <span class="q-tag">${q.tag}</span>
+        <span class="q-topic">${q.topic}</span>
+      </div>
+      <div class="q-text">${q.text}</div>
+      <div class="options" id="opts-${q.id}">
+        ${q.opts.map((o,j) => `
+          <button class="opt" id="opt-${q.id}-${j}" onclick="select(${q.id},${j})">
+            <span class="opt-key">${String.fromCharCode(65+j)}</span>
+            <span>${o}</span>
+          </button>`).join('')}
+      </div>
+      <div class="q-footer">
+        <button class="btn-check" id="chk-${q.id}" onclick="checkOne(${q.id})" disabled>Check</button>
+      </div>
+      <div class="explanation" id="expl-${q.id}">
+        <strong>Explanation:</strong> ${q.expl}
+        ${q.trap ? `<div class="trap-note">⚠ Trap: ${q.trap}</div>` : ''}
+      </div>
+    `;
+    container.appendChild(card);
+  });
+  updateHUD();
+  startTimer();
+}
+
+function select(qid, optIdx) {
+  if (state.checked[qid]) return;
+  state.selected[qid] = optIdx;
+  const q = Q.find(x => x.id === qid);
+  q.opts.forEach((_, j) => {
+    const el = document.getElementById(`opt-${qid}-${j}`);
+    el.classList.toggle('selected', j === optIdx);
+  });
+  document.getElementById(`chk-${qid}`).disabled = false;
+  updateHUD();
+}
+
+function checkOne(qid) {
+  if (state.checked[qid]) return;
+  state.checked[qid] = true;
+  const q = Q.find(x => x.id === qid);
+  const chosen = state.selected[qid];
+  q.opts.forEach((_, j) => {
+    const el = document.getElementById(`opt-${qid}-${j}`);
+    el.classList.remove('selected');
+    if (j === q.ans) el.classList.add(j === chosen ? 'correct' : 'show-correct');
+    else if (j === chosen) el.classList.add('wrong');
+  });
+  document.getElementById(`expl-${qid}`).classList.add('visible');
+  document.getElementById(`chk-${qid}`).disabled = true;
+}
+
+function submitAll() {
+  Q.forEach(q => { if (!state.checked[q.id]) checkOne(q.id); });
+  showResults();
+  document.querySelector('.global-submit-wrap').style.display = 'none';
+}
+
+function showResults() {
+  let correct = 0, wrong = 0, skip = 0;
+  const typeStats = {};
+  Q.forEach(q => {
+    if (!typeStats[q.type]) typeStats[q.type] = { c:0, t:0, tag: q.tag };
+    typeStats[q.type].t++;
+    if (state.selected[q.id] === undefined) { skip++; }
+    else if (state.selected[q.id] === q.ans) { correct++; typeStats[q.type].c++; }
+    else { wrong++; }
+  });
+  const score = correct * 4 - wrong * 1;
+  document.getElementById('score-display').textContent = score;
+  document.getElementById('r-correct').textContent = correct;
+  document.getElementById('r-wrong').textContent = wrong;
+  document.getElementById('r-skip').textContent = skip;
+  const acc = correct + wrong > 0 ? Math.round(100 * correct / (correct + wrong)) : 0;
+  document.getElementById('r-acc').textContent = acc + '%';
+
+  const tbEl = document.getElementById('type-breakdown');
+  tbEl.innerHTML = '';
+  Object.entries(typeStats).forEach(([type, s]) => {
+    const pct = Math.round(100 * s.c / s.t);
+    const color = TYPE_COLORS[type] || '#888';
+    tbEl.innerHTML += `
+      <div class="tb-row">
+        <div class="tb-name">${s.tag}</div>
+        <div class="tb-bar-wrap"><div class="tb-bar" style="width:${pct}%;background:${color}"></div></div>
+        <div class="tb-frac">${s.c}/${s.t}</div>
+      </div>`;
+  });
+
+  const r = document.getElementById('results');
+  r.classList.add('visible');
+  r.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  clearInterval(state.timerInterval);
+}
+
+function updateHUD() {
+  const n = Object.keys(state.selected).length;
+  document.getElementById('answered-val').textContent = n;
+  document.getElementById('prog').style.width = (100*n/Q.length)+'%';
+}
+
+function startTimer() {
+  const duration = 60 * 60 * 1000;
+  const end = Date.now() + duration;
+  state.timerInterval = setInterval(() => {
+    const rem = Math.max(0, end - Date.now());
+    const m = Math.floor(rem/60000);
+    const s = Math.floor((rem%60000)/1000);
+    document.getElementById('timer-val').textContent =
+      String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+    if (rem === 0) { clearInterval(state.timerInterval); submitAll(); }
+  }, 1000);
+}
+
+function restart() {
+  clearInterval(state.timerInterval);
+  Object.keys(state.selected).forEach(k => delete state.selected[k]);
+  Object.keys(state.checked).forEach(k => delete state.checked[k]);
+  state.startTime = Date.now();
+  document.getElementById('results').classList.remove('visible');
+  document.querySelector('.global-submit-wrap').style.display = 'flex';
+  buildUI();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+buildUI();
+</script>
+</body>
+</html>

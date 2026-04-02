@@ -1,0 +1,21 @@
+
+[
+  { "id": "set_01", "label": "Set 01", "file": "data/set_01.txt" },
+  { "id": "set_02", "label": "Set 02", "file": "data/set_02.txt" },
+  { "id": "set_03", "label": "Set 03", "file": "data/set_03.txt" },
+  { "id": "set_04", "label": "Set 04", "file": "data/set_04.txt" },
+  { "id": "set_05", "label": "Set 05", "file": "data/set_05.txt" },
+  { "id": "set_06", "label": "Set 06", "file": "data/set_06.txt" },
+  { "id": "set_07", "label": "Set 07", "file": "data/set_07.txt" },
+  { "id": "set_08", "label": "Set 08", "file": "data/set_08.txt" },
+  { "id": "set_09", "label": "Set 09", "file": "data/set_09.txt" },
+  { "id": "set_10", "label": "Set 10", "file": "data/set_10.txt" },
+  { "id": "set_11", "label": "Set 11", "file": "data/set_11.txt" },
+  { "id": "set_12", "label": "Set 12", "file": "data/set_12.txt" },
+  { "id": "set_13", "label": "Set 13", "file": "data/set_13.txt" },
+  { "id": "set_14", "label": "Set 14", "file": "data/set_14.txt" },
+  { "id": "set_15", "label": "Set 15", "file": "data/set_15.txt" },
+  { "id": "set_16", "label": "Set 16", "file": "data/set_16.txt" },
+  { "id": "set_17", "label": "Set 17", "file": "data/set_17.txt" },
+  { "id": "set_18", "label": "Set 18", "file": "data/set_18.txt" }
+]

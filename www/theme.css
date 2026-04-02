@@ -1,0 +1,113 @@
+/* ═══════════════════════════════════════════════════
+   theme.css  —  StudyApp shared design tokens
+   Consumed by: index.html, phiross_factory_n.html
+   NOT applied to: pbl_full_pasha.html (different palette)
+   ═══════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* ── COLOUR TOKENS ── */
+:root {
+  /* Backgrounds */
+  --bg:        #0a0a0f;
+  --surface:   #111118;
+  --surface2:  #16161f;
+
+  /* Borders */
+  --border:    #1e1e2e;
+  --border-hi: #2e2e4e;
+
+  /* Text */
+  --text:      #e8e8f0;
+  --muted:     #6b6b8a;
+
+  /* Subject accents */
+  --accent:    #7c6af0;   /* Physics / MCQ primary  (purple) */
+  --chem:      #4ecdc4;   /* Chemistry               (teal)  */
+  --phys:      #7c6af0;   /* Physics                 (purple)*/
+  --mcq:       #e05a5a;   /* MCQ / wrong / red       (red)   */
+
+  /* Semantic colours */
+  --green:     #4caf7d;
+  --gold:      #d4a843;
+  --red:       #e05a5a;
+
+  /* Aliases used in phiross_factory_n */
+  --accent2:   #e05a5a;
+  --accent3:   #4ecdc4;
+}
+
+/* ── RESET ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── BASE ── */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.65;
+  min-height: 100vh;
+}
+
+/* ── SHARED HEADER ── */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 10, 15, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 28px;
+}
+
+/* Logo / app name */
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  cursor: pointer;
+}
+.logo span { color: var(--muted); }
+
+/* Back-link (phiross_factory_n header) */
+.back-link {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  transition: color 0.15s, border-color 0.15s;
+}
+.back-link:hover {
+  color: var(--text);
+  border-color: var(--border-hi);
+}
+
+/* ── UTILITY CLASSES ── */
+.text-accent  { color: var(--accent); }
+.text-muted   { color: var(--muted);  }
+.text-green   { color: var(--green);  }
+.text-gold    { color: var(--gold);   }
+.text-red     { color: var(--red);    }
+
+/* ── RESPONSIVE HEADER ── */
+@media (max-width: 600px) {
+  header { padding: 10px 14px; }
+}

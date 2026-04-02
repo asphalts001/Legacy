@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="theme.css">
+<title>Tilla Bhaalo formation</title>
+<script src="tracker.js"></script>
+<style>
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.65;
+    min-height: 100vh;
+  }
+
+  /* ── SCREENS ── */
+  .screen { display: none; }
+  .screen.active { display: block; }
+
+  /* ── HEADER ── */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,10,15,0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 28px;
+  }
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 14px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent);
+    cursor: pointer;
+  }
+  .logo span { color: var(--muted); }
+  .hud {
+    display: flex; gap: 20px; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--muted);
+  }
+  .hud-stat { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .hud-val { font-size: 18px; font-weight: 500; color: var(--text); }
+  #timer-val { color: var(--gold); }
+  .progress-bar { width: 160px; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--accent); transition: width 0.3s ease; border-radius: 2px; }
+
+  /* ── SELECT ZONE (replaces upload zone) ── */
+  .select-zone {
+    background: var(--surface);
+    border: 1px solid var(--border-hi);
+    border-radius: 14px;
+    padding: 32px;
+    margin-bottom: 32px;
+  }
+  .select-zone label {
+    display: block;
+    font-family: 'Syne', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 12px;
+  }
+  .select-zone select {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--border-hi);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    padding: 12px 16px;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b8a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    transition: border-color 0.15s;
+  }
+  .select-zone select:focus { outline: none; border-color: var(--accent); }
+  .select-zone select option { background: var(--surface); }
+  .select-loading {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; color: var(--muted);
+    text-align: center; padding: 16px;
+  }
+
+  .format-hint {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+  }
+  .format-hint h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 12px;
+  }
+  .format-hint pre {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: #8888bb;
+    line-height: 1.8;
+    white-space: pre-wrap;
+  }
+  .format-hint pre em { color: var(--accent); font-style: normal; }
+
+  .btn-load {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 14px 40px; border-radius: 8px;
+    border: none; background: var(--accent); color: #fff;
+    cursor: pointer; transition: opacity 0.15s;
+    box-shadow: 0 4px 24px rgba(124,106,240,0.25);
+    width: 100%;
+    display: block;
+  }
+  .btn-load:hover { opacity: 0.88; }
+  .btn-load:disabled { opacity: 0.35; cursor: default; }
+
+  /* ── HISTORY PANEL ── */
+  .history-section { margin-top: 48px; }
+  .history-section h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .history-section h2::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+  }
+  #history-list { display: flex; flex-direction: column; gap: 10px; }
+  .hist-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex; align-items: center; gap: 16px;
+    transition: border-color 0.15s;
+    position: relative;
+    overflow: hidden;
+  }
+  .hist-card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px;
+  }
+  .hist-card.grade-A::before { background: var(--green); }
+  .hist-card.grade-B::before { background: var(--gold); }
+  .hist-card.grade-C::before { background: var(--red); }
+  .hist-card:hover { border-color: var(--border-hi); }
+  .hist-set {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px; font-weight: 500;
+    color: var(--accent); min-width: 56px;
+  }
+  .hist-info { flex: 1; }
+  .hist-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.05em; margin-bottom: 3px;
+  }
+  .hist-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--muted);
+  }
+  .hist-score {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px; font-weight: 800;
+    text-align: right; min-width: 60px;
+  }
+  .hist-score.green { color: var(--green); }
+  .hist-score.gold  { color: var(--gold); }
+  .hist-score.red   { color: var(--red); }
+  .hist-empty {
+    text-align: center; padding: 32px;
+    color: var(--muted); font-size: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    border: 1px dashed var(--border); border-radius: 10px;
+  }
+  .btn-clear-hist {
+    font-family: 'Syne', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 4px;
+    border: 1px solid var(--border);
+    background: transparent; color: var(--muted);
+    cursor: pointer; transition: all 0.15s;
+    margin-top: 16px;
+  }
+  .btn-clear-hist:hover { border-color: var(--red); color: var(--red); }
+
+  /* ── QUIZ SCREEN ── */
+  #quiz-screen main {
+    max-width: 860px; margin: 0 auto;
+    padding: 32px 24px 80px;
+  }
+
+  .intro {
+    text-align: center;
+    padding: 40px 24px 36px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+  }
+  .intro-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px; font-weight: 800;
+    letter-spacing: -0.02em; margin-bottom: 8px;
+  }
+  .intro-title span { color: var(--accent); }
+  .intro-sub { font-size: 14px; color: var(--muted); }
+  .intro-meta {
+    display: flex; justify-content: center; gap: 24px;
+    margin-top: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--muted);
+  }
+  .intro-meta strong { color: var(--text); }
+
+  /* ── QUESTION CARD ── */
+  .q-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 28px 22px;
+    margin-bottom: 20px;
+    transition: border-color 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .q-card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; border-radius: 3px 0 0 3px;
+    background: var(--accent);
+  }
+  .q-meta {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 14px;
+  }
+  .q-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--muted); min-width: 28px;
+  }
+  .q-tag {
+    font-family: 'Syne', sans-serif;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 3px;
+    background: rgba(124,106,240,0.12); color: var(--accent);
+  }
+  .q-text {
+    font-size: 16.5px; line-height: 1.75;
+    color: #d8d8ec; margin-bottom: 20px;
+  }
+
+  .options { display: flex; flex-direction: column; gap: 8px; }
+  .opt {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 11px 16px;
+    border: 1px solid var(--border); border-radius: 8px;
+    cursor: pointer; transition: all 0.15s ease;
+    background: transparent; text-align: left;
+    font-family: 'Crimson Pro', serif; font-size: 16px;
+    color: var(--text); line-height: 1.5; width: 100%;
+  }
+  .opt:hover { border-color: var(--border-hi); background: rgba(255,255,255,0.02); }
+  .opt.selected { border-color: var(--accent); background: rgba(124,106,240,0.07); }
+  .opt.correct  { border-color: var(--green) !important; background: rgba(76,175,125,0.08) !important; }
+  .opt.wrong    { border-color: var(--red) !important;   background: rgba(224,90,90,0.08) !important; }
+  .opt.show-correct { border-color: var(--green) !important; background: rgba(76,175,125,0.05) !important; }
+
+  .opt-key {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 500; color: var(--muted);
+    min-width: 16px; margin-top: 1px;
+  }
+  .opt.selected .opt-key { color: var(--accent); }
+  .opt.correct  .opt-key { color: var(--green); }
+  .opt.wrong    .opt-key { color: var(--red); }
+  .opt.show-correct .opt-key { color: var(--green); }
+
+  .explanation {
+    display: none; margin-top: 16px; padding: 14px 16px;
+    background: rgba(124,106,240,0.05);
+    border: 1px solid rgba(124,106,240,0.2);
+    border-radius: 8px; font-size: 15px;
+    color: #a8a8c8; line-height: 1.7;
+  }
+  .explanation.visible { display: block; }
+  .explanation strong { color: var(--accent); }
+
+  .q-footer { display: flex; justify-content: flex-end; margin-top: 14px; }
+  .btn-check {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 7px 18px; border-radius: 5px;
+    border: 1px solid var(--accent);
+    background: transparent; color: var(--accent);
+    cursor: pointer; transition: all 0.15s;
+  }
+  .btn-check:hover { background: var(--accent); color: #fff; }
+  .btn-check:disabled { opacity: 0.3; cursor: default; }
+
+  /* ── RESULTS ── */
+  #results {
+    display: none;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 36px;
+    margin-top: 32px; text-align: center;
+  }
+  #results.visible { display: block; }
+  .score-big {
+    font-family: 'Syne', sans-serif;
+    font-size: 56px; font-weight: 800; color: var(--accent); line-height: 1;
+  }
+  .score-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  .breakdown {
+    display: flex; justify-content: center; gap: 32px;
+    margin: 28px 0; flex-wrap: wrap;
+  }
+  .bk-stat { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .bk-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px; font-weight: 500;
+  }
+  .bk-lbl { font-size: 12px; color: var(--muted); font-family: 'Syne', sans-serif; letter-spacing: 0.08em; }
+  .bk-val.green { color: var(--green); }
+  .bk-val.red   { color: var(--red); }
+  .bk-val.gold  { color: var(--gold); }
+
+  .result-actions { display: flex; gap: 12px; justify-content: center; margin-top: 28px; flex-wrap: wrap; }
+
+  .btn-restart, .btn-new {
+    font-family: 'Syne', sans-serif;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 10px 28px; border-radius: 6px;
+    cursor: pointer; transition: opacity 0.15s;
+  }
+  .btn-restart { border: none; background: var(--accent); color: #fff; }
+  .btn-restart:hover { opacity: 0.85; }
+  .btn-new { border: 1px solid var(--border); background: transparent; color: var(--muted); }
+  .btn-new:hover { border-color: var(--border-hi); color: var(--text); }
+
+  /* ── GLOBAL SUBMIT ── */
+  .global-submit-wrap { display: flex; justify-content: center; margin-top: 40px; }
+  .btn-submit-all {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 14px 40px; border-radius: 8px;
+    border: none; background: var(--accent); color: #fff;
+    cursor: pointer; transition: opacity 0.15s;
+    box-shadow: 0 4px 24px rgba(124,106,240,0.25);
+  }
+  .btn-submit-all:hover { opacity: 0.88; }
+
+  /* ── PARSE ERROR ── */
+  .parse-error {
+    background: rgba(224,90,90,0.08);
+    border: 1px solid rgba(224,90,90,0.3);
+    border-radius: 8px; padding: 16px 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; color: var(--red);
+    margin-top: 16px; display: none;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    header { padding: 10px 14px; }
+    .hud { gap: 12px; }
+    .q-card { padding: 20px 16px 16px; }
+    .score-big { font-size: 40px; }
+    .breakdown { gap: 18px; }
+    #upload-screen { padding: 32px 16px; }
+    .upload-hero h1 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back-link" href="index.html">← Dashboard</a>
+  <div class="logo" onclick="goHome()">NEET <span>·</span> MCQ Tool</div>
+  <div class="hud" id="quiz-hud" style="display:none">
+    <div class="hud-stat">
+      <div class="hud-val" id="answered-val">0</div>
+      <div>answered</div>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="prog" style="width:0%"></div>
+    </div>
+    <div class="hud-stat">
+      <div class="hud-val" id="timer-val">60:00</div>
+      <div>remaining</div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════ UPLOAD SCREEN ═══ -->
+<div id="upload-screen" class="screen active">
+  <div class="upload-hero">
+    <h1>MCQ <span>Practice</span> Tool</h1>
+    <p>Load any question set text file and get a fully interactive quiz with scoring, explanations, and session history.</p>
+  </div>
+
+  <div class="select-zone">
+    <label for="set-select">Select Question Set</label>
+    <div id="select-loading" class="select-loading">⏳ Loading sets…</div>
+    <select id="set-select" style="display:none" onchange="onSetSelected()">
+      <option value="">— Choose a set —</option>
+    </select>
+  </div>
+
+  <div class="format-hint">
+    <h4>Expected Format</h4>
+    <pre><em>QUESTION SET 04   —   Generated …</em>
+
+Q1.  Question text here …
+     A) Option one
+     B) Option two
+     C) Option three
+     D) Option four
+
+Q2.  Next question …</pre>
+  </div>
+
+  <div class="parse-error" id="parse-error"></div>
+
+  <button class="btn-load" id="btn-load" disabled onclick="loadQuiz()">
+    Load Quiz →
+  </button>
+
+  <div class="history-section">
+    <h2>Session History</h2>
+    <div id="history-list"></div>
+    <button class="btn-clear-hist" onclick="clearHistory()">Clear History</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ QUIZ SCREEN ═════ -->
+<div id="quiz-screen" class="screen">
+  <main>
+    <div class="intro" id="quiz-intro">
+      <div class="intro-title" id="quiz-title">Set —</div>
+      <div class="intro-sub" id="quiz-sub"></div>
+      <div class="intro-meta">
+        <span><strong id="q-count">—</strong> questions</span>
+        <span>60 min timer</span>
+        <span>NEET scoring (+4 / −1)</span>
+      </div>
+    </div>
+
+    <div id="question-container"></div>
+
+    <div class="global-submit-wrap" id="submit-wrap">
+      <button class="btn-submit-all" onclick="submitAll()">Submit All &amp; See Results</button>
+    </div>
+
+    <div id="results">
+      <div class="score-big" id="score-display">—</div>
+      <div class="score-label">NEET score (correct ×4 − wrong ×1)</div>
+      <div class="breakdown">
+        <div class="bk-stat"><div class="bk-val green" id="r-correct">0</div><div class="bk-lbl">Correct</div></div>
+        <div class="bk-stat"><div class="bk-val red"   id="r-wrong">0</div><div class="bk-lbl">Wrong</div></div>
+        <div class="bk-stat"><div class="bk-val gold"  id="r-skip">0</div><div class="bk-lbl">Skipped</div></div>
+        <div class="bk-stat"><div class="bk-val"       id="r-acc">—</div><div class="bk-lbl">Accuracy</div></div>
+      </div>
+      <div class="result-actions">
+        <button class="btn-restart" onclick="restartQuiz()">↺ Restart Set</button>
+        <button class="btn-new" onclick="goHome()">← Load New Set</button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════════════
+let Q = [];
+let currentSetName = '';
+let currentSetId   = '';
+let state = { selected: {}, checked: {}, startTime: null, timerInterval: null };
+let parsedFileContent = null;
+
+// ═══════════════════════════════════════════════════
+//  MANIFEST — load data/manifest.json and fill <select>
+// ═══════════════════════════════════════════════════
+async function loadManifest() {
+  const loadingEl = document.getElementById('select-loading');
+  const selectEl  = document.getElementById('set-select');
+  try {
+    const res = await fetch('data/manifest.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const sets = await res.json();
+    sets.forEach(s => {
+      const opt = document.createElement('option');
+      opt.value = s.file;
+      opt.textContent = s.label;
+      opt.dataset.id  = s.id;
+      selectEl.appendChild(opt);
+    });
+    loadingEl.style.display = 'none';
+    selectEl.style.display  = 'block';
+  } catch (err) {
+    loadingEl.textContent = '⚠ Could not load manifest: ' + err.message;
+  }
+}
+
+async function onSetSelected() {
+  const selectEl = document.getElementById('set-select');
+  const errEl    = document.getElementById('parse-error');
+  const btnLoad  = document.getElementById('btn-load');
+  const chosen   = selectEl.options[selectEl.selectedIndex];
+
+  parsedFileContent = null;
+  btnLoad.disabled  = true;
+  errEl.style.display = 'none';
+
+  if (!selectEl.value) return;
+
+  currentSetId   = chosen.dataset.id || selectEl.value;
+  currentSetName = chosen.textContent;
+
+  try {
+    const res = await fetch(selectEl.value);
+    if (!res.ok) throw new Error('Could not load file (HTTP ' + res.status + ')');
+    const text = await res.text();
+    const test  = parseTxt(text);
+    if (!test.length) throw new Error('No questions found in this set.');
+    parsedFileContent = text;
+    errEl.style.display = 'none';
+    btnLoad.disabled    = false;
+  } catch (ex) {
+    errEl.textContent   = '⚠ ' + ex.message;
+    errEl.style.display = 'block';
+    btnLoad.disabled    = true;
+  }
+}
+
+// ═══════════════════════════════════════════════════
+//  HISTORY (localStorage — internal to this page)
+// ═══════════════════════════════════════════════════
+function getHistory() {
+  try { return JSON.parse(localStorage.getItem('mcq_history') || '[]'); }
+  catch { return []; }
+}
+function saveHistory(h) {
+  try { localStorage.setItem('mcq_history', JSON.stringify(h)); } catch {}
+}
+function addToHistory(entry) {
+  const h = getHistory();
+  h.unshift(entry);
+  saveHistory(h.slice(0, 50));
+}
+function clearHistory() {
+  if (!confirm('Clear all history?')) return;
+  localStorage.removeItem('mcq_history');
+  renderHistory();
+}
+
+function renderHistory() {
+  const list = document.getElementById('history-list');
+  const h = getHistory();
+  if (!h.length) {
+    list.innerHTML = '<div class="hist-empty">No sets attempted yet</div>';
+    return;
+  }
+  list.innerHTML = h.map(e => {
+    const acc = e.correct + e.wrong > 0 ? Math.round(100 * e.correct / (e.correct + e.wrong)) : 0;
+    const grade = acc >= 75 ? 'A' : acc >= 50 ? 'B' : 'C';
+    const scoreColor = acc >= 75 ? 'green' : acc >= 50 ? 'gold' : 'red';
+    const date = new Date(e.ts).toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' });
+    const time = new Date(e.ts).toLocaleTimeString('en-IN', { hour:'2-digit', minute:'2-digit' });
+    return `
+      <div class="hist-card grade-${grade}">
+        <div class="hist-set">${e.setNum || '—'}</div>
+        <div class="hist-info">
+          <div class="hist-name">${escHtml(e.name)}</div>
+          <div class="hist-meta">${e.total} Qs · ${e.correct}✓ ${e.wrong}✗ ${e.skip} skip · ${date} ${time}</div>
+        </div>
+        <div class="hist-score ${scoreColor}">${e.score}</div>
+      </div>`;
+  }).join('');
+}
+
+// ═══════════════════════════════════════════════════
+//  PARSER
+// ═══════════════════════════════════════════════════
+function parseTxt(text) {
+  const questions = [];
+
+  const setMatch = text.match(/QUESTION SET\s+(\d+)/i);
+  if (setMatch) currentSetName = 'Set ' + setMatch[1];
+
+  // ── Parse answer key from bottom (format: "1. b" or "1. B") ──
+  const answerMap = {};
+  const ansKeyRegex = /^\s*(\d+)\.\s+([a-dA-D])\s*$/gm;
+  let aMatch;
+  while ((aMatch = ansKeyRegex.exec(text)) !== null) {
+    const qNum = parseInt(aMatch[1]);
+    const letter = aMatch[2].toUpperCase();
+    answerMap[qNum] = letter.charCodeAt(0) - 65; // A=0, B=1, C=2, D=3
+  }
+
+  // ── Parse questions ──
+  const blocks = text.split(/\n(?=Q\d+\.\s)/);
+
+  for (const block of blocks) {
+    const trimmed = block.trim();
+    if (!trimmed.match(/^Q\d+\./)) continue;
+
+    const qNumMatch = trimmed.match(/^Q(\d+)\./);
+    if (!qNumMatch) continue;
+    const qNum = parseInt(qNumMatch[1]);
+
+    const body = trimmed.replace(/^Q\d+\.\s+/, '').trim();
+
+    const optRegex = /([A-D])\)\s+(.+?)(?=\n\s*[A-D]\)|\n\s*-{5,}|$)/gs;
+    const opts = [];
+    let optMatch;
+    while ((optMatch = optRegex.exec(body)) !== null) {
+      opts.push(optMatch[2].replace(/\s+/g, ' ').trim());
+    }
+
+    if (opts.length < 2) continue;
+
+    const firstOptPos = body.search(/\n?\s*A\)/);
+    let qText = firstOptPos >= 0 ? body.slice(0, firstOptPos) : body;
+    qText = qText.replace(/\s+/g, ' ').trim();
+
+    if (!qText && body.match(/^.*A\)/)) {
+      const inlineMatch = body.match(/^(.*?)\s+A\)/s);
+      if (inlineMatch) qText = inlineMatch[1].trim();
+    }
+
+    if (!qText || opts.length < 2) continue;
+
+    // Assign answer from key, default -1 if not found
+    const ans = answerMap[qNum] !== undefined ? answerMap[qNum] : -1;
+
+    questions.push({ id: qNum, text: qText, opts, ans });
+  }
+
+  return questions;
+}
+
+// ═══════════════════════════════════════════════════
+//  LOAD QUIZ
+// ═══════════════════════════════════════════════════
+function loadQuiz() {
+  if (!parsedFileContent) return;
+  Q = parseTxt(parsedFileContent);
+  if (!Q.length) return;
+
+  state = { selected: {}, checked: {}, startTime: Date.now(), timerInterval: null };
+
+  const setMatch = parsedFileContent.match(/QUESTION SET\s+(\d+)/i);
+  const setNum   = setMatch ? 'SET ' + setMatch[1] : currentSetName.toUpperCase();
+  const genMatch = parsedFileContent.match(/Generated\s+([\d\-]+)/i);
+
+  document.getElementById('quiz-title').innerHTML = `<span>${escHtml(setNum)}</span>`;
+  document.getElementById('quiz-sub').textContent =
+    genMatch ? `Generated ${genMatch[1]}` : 'Biology MCQ Practice';
+  document.getElementById('q-count').textContent = Q.length;
+
+  showScreen('quiz-screen');
+  document.getElementById('quiz-hud').style.display = 'flex';
+  buildUI();
+}
+
+// ═══════════════════════════════════════════════════
+//  QUIZ UI
+// ═══════════════════════════════════════════════════
+function buildUI() {
+  const container = document.getElementById('question-container');
+  container.innerHTML = '';
+  Q.forEach((q, i) => {
+    const card = document.createElement('div');
+    card.className = 'q-card';
+    card.id = `card-${q.id}`;
+    card.innerHTML = `
+      <div class="q-meta">
+        <span class="q-num">Q${String(i+1).padStart(2,'0')}</span>
+        <span class="q-tag">MCQ</span>
+      </div>
+      <div class="q-text">${escHtml(q.text)}</div>
+      <div class="options" id="opts-${q.id}">
+        ${q.opts.map((o,j) => `
+          <button class="opt" id="opt-${q.id}-${j}" onclick="selectOpt(${q.id},${j})">
+            <span class="opt-key">${String.fromCharCode(65+j)}</span>
+            <span>${escHtml(o)}</span>
+          </button>`).join('')}
+      </div>
+      <div class="q-footer">
+        <button class="btn-check" id="chk-${q.id}" onclick="checkOne(${q.id})" disabled>Check</button>
+      </div>
+      <div class="explanation" id="expl-${q.id}">
+        <strong>Answer:</strong> ${String.fromCharCode(65 + (q.ans >= 0 ? q.ans : 0))}
+        ${q.ans >= 0 ? '' : ' <em style="color:var(--muted);font-size:13px">(answer not provided in file)</em>'}
+      </div>
+    `;
+    container.appendChild(card);
+  });
+  document.getElementById('results').classList.remove('visible');
+  document.getElementById('submit-wrap').style.display = 'flex';
+  updateHUD();
+  startTimer();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function selectOpt(qid, optIdx) {
+  if (state.checked[qid]) return;
+  state.selected[qid] = optIdx;
+  const q = Q.find(x => x.id === qid);
+  q.opts.forEach((_, j) => {
+    document.getElementById(`opt-${qid}-${j}`)
+      .classList.toggle('selected', j === optIdx);
+  });
+  document.getElementById(`chk-${qid}`).disabled = false;
+  updateHUD();
+}
+
+function checkOne(qid) {
+  if (state.checked[qid]) return;
+  state.checked[qid] = true;
+  const q = Q.find(x => x.id === qid);
+  const chosen = state.selected[qid];
+  q.opts.forEach((_, j) => {
+    const el = document.getElementById(`opt-${qid}-${j}`);
+    el.classList.remove('selected');
+    if (q.ans >= 0) {
+      if (j === q.ans) el.classList.add(j === chosen ? 'correct' : 'show-correct');
+      else if (j === chosen) el.classList.add('wrong');
+    } else {
+      if (j === chosen) el.classList.add('selected');
+    }
+  });
+  document.getElementById(`expl-${qid}`).classList.add('visible');
+  document.getElementById(`chk-${qid}`).disabled = true;
+}
+
+function submitAll() {
+  Q.forEach(q => { if (!state.checked[q.id]) checkOne(q.id); });
+  showResults();
+  document.getElementById('submit-wrap').style.display = 'none';
+}
+
+function showResults() {
+  let correct = 0, wrong = 0, skip = 0;
+  Q.forEach(q => {
+    if (state.selected[q.id] === undefined)            { skip++; }
+    else if (q.ans >= 0 && state.selected[q.id] === q.ans) { correct++; }
+    else if (q.ans >= 0)                               { wrong++; }
+    else                                               { skip++; }
+  });
+  const score = correct * 4 - wrong * 1;
+  document.getElementById('score-display').textContent = score;
+  document.getElementById('r-correct').textContent = correct;
+  document.getElementById('r-wrong').textContent   = wrong;
+  document.getElementById('r-skip').textContent    = skip;
+  const acc = correct + wrong > 0 ? Math.round(100 * correct / (correct + wrong)) : 0;
+  document.getElementById('r-acc').textContent = acc + '%';
+
+  const r = document.getElementById('results');
+  r.classList.add('visible');
+  r.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  clearInterval(state.timerInterval);
+
+  // ── Save to page-local history ──
+  const setMatch = (parsedFileContent || '').match(/QUESTION SET\s+(\d+)/i);
+  const histEntry = {
+    ts: Date.now(),
+    name: currentSetName,
+    setNum: setMatch ? ('S' + setMatch[1].padStart(2,'0')) : currentSetName,
+    total: Q.length,
+    correct, wrong, skip, score, acc
+  };
+  addToHistory(histEntry);
+
+  // ── Also log to tracker.js if available ──
+  if (typeof Tracker !== 'undefined' && Tracker.logScore) {
+    Tracker.logScore({
+      set:     currentSetId || currentSetName,
+      label:   currentSetName,
+      score,
+      correct,
+      wrong,
+      skip,
+      total:   Q.length,
+      acc
+    });
+  }
+}
+
+function updateHUD() {
+  const n = Object.keys(state.selected).length;
+  document.getElementById('answered-val').textContent = n;
+  if (Q.length) document.getElementById('prog').style.width = (100*n/Q.length)+'%';
+}
+
+function startTimer() {
+  clearInterval(state.timerInterval);
+  const end = Date.now() + 60 * 60 * 1000;
+  state.timerInterval = setInterval(() => {
+    const rem = Math.max(0, end - Date.now());
+    const m = Math.floor(rem/60000);
+    const s = Math.floor((rem%60000)/1000);
+    document.getElementById('timer-val').textContent =
+      String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+    if (rem === 0) { clearInterval(state.timerInterval); submitAll(); }
+  }, 1000);
+}
+
+function restartQuiz() {
+  state = { selected: {}, checked: {}, startTime: Date.now(), timerInterval: null };
+  buildUI();
+}
+
+function goHome() {
+  clearInterval(state.timerInterval);
+  document.getElementById('quiz-hud').style.display = 'none';
+  showScreen('upload-screen');
+  renderHistory();
+}
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function escHtml(str) {
+  return (str || '')
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;');
+}
+
+// ── INIT ──
+renderHistory();
+loadManifest();
+</script>
+</body>
+</html>

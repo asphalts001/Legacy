@@ -1,0 +1,329 @@
+========================================================================
+  QUESTION SET 06   —   Generated 2026-03-26 07:43
+========================================================================
+
+Q1.  Group O individuals are called "universal donors" because:
+     A) Their blood has no antigens and no antibodies
+     B) Their blood has no antigens (A or B) on RBCs, so no
+        agglutination occurs when transfused into A, B, AB, or O
+        recipients
+     C) Their blood has both anti-A and anti-B antibodies that protect
+        the recipient
+     D) Their blood type is the most common globally
+
+Q2.  Triple fusion produces the primary endosperm nucleus (PEN) which
+     is triploid (3n). The PEN develops into the endosperm. What is the
+     CORRECT ploidy of the primary endosperm nucleus? A) Haploid (n) B)
+     Diploid (2n) C) Triploid (3n) D) Tetraploid (4n)
+
+Q3.  Cyclic photophosphorylation is said to occur in the STROMA
+     LAMELLAE. Which of the following correctly explains why?
+     A) Stroma lamellae have PS II but lack PS I
+     B) Stroma lamellae lack PS II and NADP reductase
+     C) Stroma lamellae have higher concentrations of RuBisCO
+     D) Stroma lamellae are the only site where water splitting can
+        occur
+
+Q4.  Which shape of chloroplast is found in Chlamydomonas
+     (Chlorophyceae)? A) Ribbon-shaped (spiral) chloroplast B)
+     Cup-shaped chloroplast C) Plate-like chloroplast D) Discoid
+     chloroplast
+
+Q5.  Morgan coined the term "LINKAGE." Linkage is defined as:
+     A) The physical association of genes on the same chromosome,
+        causing them to be inherited together more than expected
+     B) The independent assortment of genes on different chromosomes
+     C) The tendency of alleles to segregate during meiosis
+     D) The attachment of chromosomes to spindle fibres during cell
+        division
+
+Q6.  The intrinsic rate of natural increase (r) is calculated as r = b
+     − d (per capita birth rate minus per capita death rate). Among the
+     following organisms, which has the HIGHEST r value as given in the
+     NCERT text? A) Norway rat — r = 0.015 B) India human population
+     (1981) — r = 0.0205 C) Flour beetle — r = 0.12 D) Paramecium — r =
+     0.5
+
+Q7.  Bacterial cells are made competent (able to take up DNA) by
+     treating them with divalent cations to increase DNA entry through
+     pores. They are then incubated with recombinant DNA on ice,
+     followed by a brief heat shock at a specific temperature, then
+     placed back on ice. What is the temperature of the heat shock
+     step? A) 0°C B) 37°C C) 42°C D) 70°C
+
+Q8.  After fertilisation, the zygote undergoes repeated mitotic
+     divisions (cleavage) as it moves through the oviduct. At the 8–16
+     blastomere stage, the embryo is called a morula. As the morula
+     continues dividing and moves to the uterus, it becomes a
+     blastocyst. The blastocyst consists of an outer layer of cells
+     (trophoblast) and an inner cluster of cells. What is this inner
+     cluster called, and what does it differentiate into? A)
+     Trophoblast — forms the placenta B) Inner cell mass —
+     differentiates into the embryo C) Zona pellucida — forms the
+     amniotic sac D) Chorionic villi — form the umbilical cord
+
+Q9.  The gastrointestinal tract secretes four major peptide hormones.
+     Among these, which hormone acts on the exocrine pancreas to
+     stimulate water and bicarbonate ion secretion? A) Gastrin B)
+     Secretin C) Cholecystokinin (CCK) D) Gastric inhibitory peptide
+     (GIP)
+
+Q10.  In canna, the flower cannot be divided into two similar halves by
+      any vertical plane. This type of symmetry is called:
+     A) Actinomorphic
+     B) Zygomorphic
+     C) Asymmetric
+     D) Radial
+
+Q11.  Anabolic steroids are misused by some sportspersons. In MALES,
+      the side effects include:
+     A) Breast enlargement (gynaecomastia), acne, testicular size
+        reduction, decreased sperm production, prostate enlargement,
+        premature baldness
+     B) Voice deepening, clitoris enlargement, abnormal menstrual
+        cycles
+     C) Increased height and longer limbs
+     D) Improved liver and kidney function CHAPTER 27 — MICROBES IN
+        HUMAN WELFARE
+
+Q12.  The estimated number of genes in the human genome (HGP result)
+      was approximately 30,000. This was LOWER than previous estimates
+      of:
+     A) 50,000-60,000 genes
+     B) 80,000-140,000 genes
+     C) 200,000-300,000 genes
+     D) 10,000-15,000 genes
+
+Q13.  Which of the following is correctly matched — mollusc with its
+      common name?
+     A) Pinctada — Apple snail
+     B) Aplysia — Cuttlefish
+     C) Loligo — Squid
+     D) Sepia — Devil fish
+
+Q14.  Pteridophytes are considered evolutionarily significant among
+      land plants because they were the first group to develop which of
+      the following features?
+     A) Seeds enclosed in fruits
+     B) Vascular tissues — xylem and phloem
+     C) Alternation of generations
+     D) Multicellular sex organs
+
+Q15.  At the end of meiosis II, how many cells are produced, and what
+      is their ploidy level? A) 2 cells, diploid (2n) B) 2 cells,
+      haploid (n) C) 4 cells, haploid (n) D) 4 cells, diploid (2n)
+
+Q16.  Mendel's work published in 1865 was unrecognised until 1900. The
+      THREE scientists who INDEPENDENTLY rediscovered his work in 1900
+      were:
+     A) Sutton, Boveri, and Morgan
+     B) de Vries, Correns, and von Tschermak
+     C) Watson, Crick, and Franklin
+     D) Avery, MacLeod, and McCarty
+
+Q17.  An ecological pyramid that is ALWAYS upright (never inverted)
+      regardless of the ecosystem type is the pyramid of: A) Numbers B)
+      Biomass C) Energy D) Both numbers and biomass CHAPTER 32 —
+      BIODIVERSITY AND CONSERVATION
+
+Q18.  In the Southern blot DNA fingerprinting procedure, the CORRECT
+      order of steps is:
+     A) PCR → gel electrophoresis → restriction digestion → hybridise
+        probe
+     B) Isolate DNA → restrict with endonucleases → gel electrophoresis
+        → blot to membrane → hybridise VNTR probe → detect by
+        autoradiography
+     C) Hybridise probe → restrict DNA → gel electrophoresis → blot
+     D) Isolate DNA → blot → restrict → hybridise → PCR CHAPTER 25 —
+        EVOLUTION
+
+Q19.  At a chemical synapse, the action potential at the axon terminal
+      causes synaptic vesicles to fuse with the plasma membrane and
+      release neurotransmitters into the synaptic cleft. The
+      neurotransmitter binds to receptors on the post-synaptic
+      membrane, opening ion channels that generate a new potential.
+      This new potential can be: A) Only excitatory B) Only inhibitory
+      C) Either excitatory or inhibitory D) Always inhibitory in the
+      brain
+
+Q20.  In 1997, a transgenic cow named Rosie was produced that secreted
+      human protein-enriched milk. The specific human protein present
+      in Rosie's milk was alpha-lactalbumin, at a concentration of 2.4
+      g/L. This protein-enriched milk was considered nutritionally
+      superior for: A) Adults with lactose intolerance B) Human babies
+      — more balanced nutritional composition C) Patients with diabetes
+      D) Athletes requiring high protein supplementation
+
+Q21.  The concept of biodiversity hotspots was developed to identify
+      areas of maximum conservation priority. A biodiversity hotspot is
+      characterised by very high species richness AND high endemism.
+      Originally 25 hotspots were identified; now how many are
+      recognised? A) 25 B) 34 C) 50 D) 100
+
+Q22.  Alfred Wallace arrived at conclusions similar to Darwin about
+      natural selection. He was a naturalist working in:
+     A) Galapagos Islands
+     B) Malay Archipelago
+     C) Amazon rainforest
+     D) Australian outback
+
+Q23.  In sewage treatment, BOD (Biochemical Oxygen Demand) is used as a
+      measure of pollution. A HIGHER BOD indicates:
+     A) Cleaner water with more dissolved oxygen
+     B) More organic pollution — more oxygen consumed by bacteria to
+        oxidise organic matter in that water sample
+     C) Lower bacterial activity
+     D) Higher inorganic mineral content
+
+Q24.  DNA-dependent DNA polymerase synthesises DNA only in the 5'→3'
+      direction. On the 5'→3' template strand, synthesis is:
+     A) Continuous (leading strand)
+     B) Discontinuous in fragments (Okazaki fragments, lagging strand)
+     C) Impossible — no synthesis occurs on 5'→3' template
+     D) Bidirectional
+
+Q25.  The pelvic girdle consists of two coxal bones, each formed by the
+      fusion of three bones. The socket where the head of the femur
+      articulates (hip joint) is found at the point of fusion of these
+      three bones. This socket is called the: A) Glenoid cavity B)
+      Acetabulum C) Iliac crest D) Pubic symphysis
+
+Q26.  Total Lung Capacity (TLC) is the total volume of air in the lungs
+      after a forced inspiration. TLC equals:
+     A) VC only
+     B) VC + RV (or RV + ERV + TV + IRV)
+     C) FRC + TV
+     D) IC + ERV
+
+Q27.  The frog's eye is protected underwater by a transparent membrane.
+      This protective membrane covering the eye is called the: A)
+      Cornea B) Iris C) Nictitating membrane D) Tympanum
+
+Q28.  Abscisic Acid (ABA) is known as the "stress hormone." Its primary
+      role in stress response involves:
+     A) Promoting stomatal opening to increase CO₂ uptake
+     B) Stimulating stomatal closure, thereby increasing water stress
+        tolerance
+     C) Activating cytokinin synthesis in root tips
+     D) Promoting lateral bud growth
+
+Q29.  The title of Linnaeus's publication from which the term
+      "Systematics" is derived was "Systema Naturae." The word
+      "Systematics" is derived from the Latin word "Systema," meaning:
+      A) Natural order B) Systematic arrangement C) Living beings D)
+      Classification method
+
+Q30.  The enzyme that catalyses the oxidative decarboxylation of
+      pyruvate to Acetyl CoA in the mitochondrial matrix requires which
+      coenzyme?
+     A) FAD⁺ only
+     B) NAD⁺ and Coenzyme A (CoA)
+     C) NADP⁺ and CoA
+     D) CoA only
+
+Q31.  In the frog's nervous system, the brain is divided into
+      forebrain, midbrain, and hindbrain. The midbrain is characterised
+      by a pair of structures related to vision. These are the: A)
+      Olfactory lobes B) Cerebral hemispheres C) Optic lobes D)
+      Cerebellum
+
+Q32.  The cell envelope of bacteria consists of three layers in a
+      specific order from outside to inside. What is the correct
+      sequence? A) Cell wall → Glycocalyx → Plasma membrane B) Plasma
+      membrane → Cell wall → Glycocalyx C) Glycocalyx → Cell wall →
+      Plasma membrane D) Plasma membrane → Glycocalyx → Cell wall
+
+Q33.  The enzyme carbonic anhydrase catalyses the reaction: CO₂ + H₂O ⇌
+      H₂CO₃. Without this enzyme, approximately 200 molecules of H₂CO₃
+      form per hour. With carbonic anhydrase, the rate accelerates to
+      600,000 per second — an acceleration of approximately: A) 1
+      million times B) 10 million times C) 100 thousand times D) 1
+      billion times
+
+Q34.  The statutory marriageable age in India is 18 years for females
+      and 21 years for males. The condom brand 'Nirodh' is a popular
+      male condom. Vasectomy involves removal or tying of a small part
+      of the vas deferens. The female equivalent surgical sterilisation
+      where a small part of the fallopian tube is removed or tied is
+      called: A) Hysterectomy B) Oophorectomy C) Tubectomy D)
+      Colposcopy
+
+Q35.  In coelenterates, the phenomenon where polyps produce medusae
+      asexually and medusae produce polyps sexually is called:
+     A) Parthenogenesis
+     B) Metagenesis
+     C) Metamorphosis
+     D) Paedogenesis
+
+Q36.  Stanley Cohen and Herbert Boyer made a landmark discovery in 1972
+      by combining restriction enzymes and plasmids to create
+      recombinant DNA. The first recombinant DNA molecule was created
+      by linking which gene to a Salmonella typhimurium plasmid? A)
+      Insulin gene B) Antibiotic resistance gene C) ADA gene D)
+      β-galactosidase gene
+
+Q37.  Monocotyledonous stems differ from dicot stems in several ways.
+      Which of the following is a feature SPECIFIC to monocot stems and
+      NOT found in dicot stems? A) Conjoint vascular bundles B)
+      Collenchymatous hypodermis C) Sclerenchymatous hypodermis with
+      scattered vascular bundles D) Ring arrangement of vascular
+      bundles
+
+Q38.  Hemichordates were earlier classified under Chordata but are now
+      placed under non-chordates. Their excretory organ is:
+     A) Nephridia
+     B) Proboscis gland
+     C) Malpighian tubules
+     D) Flame cells
+
+Q39.  In the counter current mechanism of the kidney, the osmolarity of
+      the medullary interstitium increases progressively from the
+      cortex to the inner medulla. The approximate osmolarity range
+      from cortex to inner medulla is: A) 100 to 600 mOsmol/L B) 300 to
+      1200 mOsmol/L C) 200 to 800 mOsmol/L D) 500 to 2000 mOsmol/L
+
+------------------------------------------------------------------------
+  Total questions in this set: 39
+=====================================
+
+
+
+1. B
+2. C
+3. B
+4. B
+5. A
+6. D
+7. C
+8. B
+9. B
+10. C
+11. A
+12. B
+13. C
+14. B
+15. C
+16. B
+17. C
+18. B
+19. C
+20. B
+21. B
+22. B
+23. B
+24. A
+25. B
+26. B
+27. C
+28. B
+29. B
+30. B
+31. C
+32. C
+33. B
+34. C
+35. B
+36. B
+37. C
+38. B
+39. B

@@ -1,0 +1,333 @@
+========================================================================
+  QUESTION SET 08   —   Generated 2026-03-26 07:43
+========================================================================
+
+Q1.  In frogs, during aestivation and hibernation, gaseous exchange for
+     respiration takes place exclusively through: A) Lungs (pulmonary
+     respiration) B) Buccal cavity C) Skin (cutaneous respiration) D)
+     Gills
+
+Q2.  In Arthropoda, excretion is carried out through which specialised
+     structures?
+     A) Nephridia
+     B) Flame cells
+     C) Malpighian tubules
+     D) Proboscis gland
+
+Q3.  Ethephon is the commercial source of ethylene used in agriculture.
+     It works because:
+     A) It directly inhibits ABA synthesis
+     B) It is absorbed by the plant and slowly releases ethylene
+     C) It activates auxin receptors
+     D) It directly stimulates cell division in the meristem
+
+Q4.  The total Net Primary Productivity of the biosphere is
+     approximately 170 billion tonnes of dry weight per year. Despite
+     covering about 70% of the Earth's surface, oceans contribute only
+     approximately what amount to global NPP? A) 100 billion tonnes B)
+     115 billion tonnes C) 55 billion tonnes D) 20 billion tonnes
+
+Q5.  Tidal Volume (TV) is approximately 500 mL. A healthy adult male
+     breathes 12–16 times per minute. The approximate volume of air
+     inspired/expired per minute is:
+     A) 500–1000 mL
+     B) 2000–4000 mL
+     C) 6000–8000 mL
+     D) 12000–16000 mL
+
+Q6.  For a male to be considered normally fertile, what minimum
+     percentage of sperms should have normal shape/size, and what
+     minimum percentage should show vigorous motility? A) ≥40% normal
+     shape; ≥20% vigorous motility B) ≥60% normal shape/size; ≥40%
+     vigorous motility C) ≥80% normal shape; ≥60% vigorous motility D)
+     ≥50% normal shape; ≥50% vigorous motility
+
+Q7.  Biopiracy refers to the use of bio-resources by multinational
+     companies and other organisations from other nations without
+     proper authorisation from, or adequate compensation/benefit
+     sharing with, the countries from where resources originate. Which
+     of the following is a correct characterisation of the biopiracy
+     situation? A) Industrialised nations are rich in biodiversity;
+     developing nations exploit this B) Developing/underdeveloped
+     nations have rich biodiversity and traditional knowledge;
+     industrialised nations exploit this without compensation C)
+     Biopiracy only applies to animal resources, not plant resources D)
+     International laws already fully prevent all biopiracy CHAPTER 30
+     — ORGANISMS AND POPULATIONS
+
+Q8.  DNA was first discovered (as "Nuclein") by which scientist, and in
+     which year?
+     A) Watson and Crick, 1953
+     B) Friedrich Meischer, 1869
+     C) Avery, MacLeod, McCarty, 1944
+     D) Chargaff, 1950
+
+Q9.  Substrate-level phosphorylation occurs in the Krebs cycle at which
+     step, and what high-energy molecule is directly produced?
+     A) Isocitrate → α-ketoglutarate; produces ATP directly
+     B) Succinyl CoA → Succinic acid; produces GTP (which converts to
+        ATP)
+     C) Succinic acid → Fumarate; produces FADH₂
+     D) OAA → Citrate; produces NADH
+
+Q10.  In photorespiration (C3 plants), RuBisCO acts as an oxygenase
+      instead of a carboxylase. The products of this oxygenase reaction
+      are:
+     A) Two molecules of 3-PGA
+     B) One phosphoglycerate and one phosphoglycolate (2-carbon
+        compound)
+     C) OAA and CO₂
+     D) Pyruvate and CO₂
+
+Q11.  In gymnosperms, the unbranched stem is a characteristic of which
+      plant, while branched stem is seen in Pinus and Cedrus?
+     A) Sequoia
+     B) Equisetum
+     C) Cycas
+     D) Gnetum
+
+Q12.  Stamens that are united into two bundles, as seen in pea, are
+      described as:
+     A) Monoadelphous
+     B) Polyadelphous
+     C) Diadelphous
+     D) Syngenesious
+
+Q13.  In a dorsiventral (dicot) leaf, the mesophyll is differentiated
+      into two distinct regions. The palisade parenchyma cells are
+      elongated, arranged vertically and parallel, and are located: A)
+      Below spongy parenchyma, towards abaxial surface B) On the
+      abaxial side, loosely arranged C) Adaxially (upper side), tightly
+      packed D) In the midrib region only
+
+Q14.  Which of the following birds is correctly matched with its
+      scientific name?
+     A) Peacock — Columba
+     B) Ostrich — Aptenodytes
+     C) Penguin — Aptenodytes
+     D) Vulture — Psittacula
+
+Q15.  Haemophilia is an X-linked recessive disorder. A heterozygous
+      carrier female (X^H X^h) × normal male (X^H Y). What percentage
+      of SONS will be haemophilic?
+     A) 0%
+     B) 25%
+     C) 50%
+     D) 100%
+
+Q16.  Axons terminate in swollen bulb-like structures called synaptic
+      knobs, which contain synaptic vesicles loaded with
+      neurotransmitters. Based on the number of processes, neurons in
+      the cerebral cortex are classified as: A) Unipolar (one axon, no
+      dendrites) B) Bipolar (one axon, one dendrite) C) Multipolar (one
+      axon, two or more dendrites) D) Pseudounipolar
+
+Q17.  What ecological role do puffballs and bracket fungi
+      (wood-decomposing basidiomycetes) play? A) They fix nitrogen from
+      the atmosphere B) They decompose dead wood and recycle nutrients
+      C) They protect living trees from pathogenic bacteria D) They
+      synthesise hormones that stimulate plant root growth
+
+Q18.  Swiss cheese develops its characteristic LARGE HOLES due to CO₂
+      produced by which microorganism?
+     A) Lactobacillus acidophilus
+     B) Propionibacterium sharmanii
+     C) Saccharomyces cerevisiae
+     D) Penicillium roqueforti
+
+Q19.  G.N. Ramachandran made outstanding contributions to structural
+      biology. He discovered the triple helical structure of collagen
+      and published it in Nature. He also developed a fundamental tool
+      for analysing allowed conformations of proteins. This tool is
+      called the: A) Pauling plot B) Ramachandran plot C) Watson-Crick
+      diagram D) Linus diagram CHAPTER 10 — CELL CYCLE AND CELL
+      DIVISION
+
+Q20.  Avery, MacLeod, and McCarty (1944) identified the "transforming
+      principle" from Griffith's experiment. Their KEY experimental
+      evidence that DNA was the genetic material was:
+     A) Protease treatment abolished transformation
+     B) RNase treatment abolished transformation
+     C) Only DNase treatment ABOLISHED transformation; proteases and
+        RNases had no effect
+     D) Protein extracts alone could transform R to S
+
+Q21.  Among the following Sexually Transmitted Infections (STIs), which
+      is correctly identified as NOT completely curable once
+      contracted? A) Gonorrhoea B) Syphilis C) Trichomoniasis D)
+      HIV/AIDS
+
+Q22.  Anti-Diuretic Hormone (ADH/vasopressin) is released from the
+      neurohypophysis. It facilitates water reabsorption from the
+      latter parts of the tubule to prevent diuresis. If ADH secretion
+      is impaired, the condition that results from excessive water loss
+      through dilute urine is called: A) Diabetes mellitus B) Nephrotic
+      syndrome C) Diabetes Insipidus D) Uremia
+
+Q23.  Agrobacterium tumefaciens is a pathogen that delivers T-DNA into
+      plant cells, transforming them into tumour cells that produce
+      specific chemicals. In genetic engineering, this bacterium's Ti
+      plasmid is modified to make it: A) More pathogenic to increase
+      gene delivery efficiency B) Non-pathogenic — used as a cloning
+      vector to deliver desired genes into plant cells C) Capable of
+      infecting animal cells as well D) Resistant to restriction enzyme
+      digestion
+
+Q24.  Hardy-Weinberg principle states that allele frequencies in a
+      population remain constant across generations (genetic
+      equilibrium). For a gene with two alleles A (frequency p) and a
+      (frequency q), the genotype frequencies at equilibrium are:
+     A) AA = p, Aa = q, aa = pq
+     B) AA = p², Aa = 2pq, aa = q²; where p + q = 1 and p² + 2pq + q² =
+        1
+     C) AA = p², Aa = p²q², aa = q²
+     D) All genotypes have equal frequency = 1/3
+
+Q25.  Onion root tip cells are commonly used to study mitosis. Onion
+      (Allium cepa) has 16 chromosomes. If you observe an onion cell in
+      anaphase of mitosis, how many chromosomes (chromatids moving to
+      poles) would you count? A) 8 B) 16 C) 32 D) 64
+
+Q26.  "Typhoid Mary" refers to Mary Mallon, who was significant
+      because:
+     A) She was the first person cured of typhoid by antibiotics
+     B) She was a cook who was a TYPHOID CARRIER and spread typhoid
+        through contaminated food for years without being ill herself
+     C) She discovered the Widal test
+     D) She was the first patient to die of typhoid in the USA
+
+Q27.  In a dihybrid cross (RRYY × rryy), the F1 is RrYy. When F1 is
+      self-pollinated, the F2 phenotypic ratio is:
+     A) 3:1
+     B) 1:2:1:2:4:2:1:2:1
+     C) 9:3:3:1 (round-yellow : wrinkled-yellow : round-green :
+        wrinkled-green)
+     D) 1:1:1:1
+
+Q28.  The skull consists of cranial and facial bones. The cranium is
+      formed by 8 cranial bones and protects the brain. Facial bones
+      total 14, forming the front part of the skull. The total number
+      of skull bones is: A) 14 B) 8 C) 22 D) 30
+
+Q29.  PCR (Polymerase Chain Reaction) amplifies DNA using a
+      thermostable DNA polymerase isolated from a thermophilic
+      bacterium that can withstand the high temperatures required for
+      DNA denaturation. This bacterium is: A) Escherichia coli B)
+      Thermus aquaticus C) Bacillus thuringiensis D) Agrobacterium
+      tumefaciens
+
+Q30.  RBCs are destroyed in the spleen, which is therefore called the
+      "graveyard of RBCs." The average lifespan of a human RBC is:
+     A) 30 days
+     B) 60 days
+     C) 120 days
+     D) 180 days
+
+Q31.  In class Aves (birds), the long bones are hollow and contain air
+      cavities. These bones are described as:
+     A) Cancellous bones
+     B) Pneumatic bones
+     C) Compact bones
+     D) Cartilaginous bones
+
+Q32.  The Golgi apparatus was first observed by Camillo Golgi in 1898.
+      It consists of flat disc-shaped sacs called cisternae. The Golgi
+      has two faces — the convex face facing the ER (receiving face)
+      and the concave face from which secretory vesicles bud off. These
+      faces are correctly called: A) Proximal face and distal face B)
+      Cis (forming) face and Trans (maturing) face C) Outer face and
+      inner face D) Luminal face and cytoplasmic face
+
+Q33.  The thyroid gland also secretes thyrocalcitonin (TCT), a protein
+      hormone. TCT and PTH together regulate calcium balance. What is
+      the action of TCT on blood calcium levels? A) Increases blood
+      calcium (hypercalcemic) B) Decreases blood calcium by inhibiting
+      bone resorption C) Has no effect on blood calcium D) Stimulates
+      intestinal calcium absorption
+
+Q34.  India has THREE biodiversity hotspots. Which of the following
+      correctly lists all three biodiversity hotspots found in India?
+      A) Eastern Ghats and Sri Lanka, Himalaya, Deccan Plateau B)
+      Western Ghats and Sri Lanka, Indo-Burma, Himalaya C) Western
+      Ghats, Eastern Ghats, Himalaya D) Indo-Burma, Sundaland, Himalaya
+
+Q35.  How many pairs of cranial nerves arise from the brain of a frog?
+      A) 8 pairs B) 10 pairs C) 12 pairs D) 6 pairs
+
+Q36.  Hershey and Chase (1952) used bacteriophages to confirm DNA as
+      genetic material. They labeled DNA with radioactive ³²P and
+      protein with ³⁵S. After infection and blending to remove phage
+      coats, what was found?
+     A) ³²P (DNA) remained outside bacteria in the supernatant; ³⁵S
+        (protein) entered bacteria
+     B) ³²P (DNA) was found INSIDE bacteria; ³⁵S (protein) was NOT
+        found inside — proving DNA enters and directs viral production
+     C) Both ³²P and ³⁵S were found inside bacteria equally
+     D) Neither isotope was found inside bacteria
+
+Q37.  Gause's competitive exclusion principle states that two species
+      competing for the same limited resources CANNOT coexist
+      indefinitely — the competitively inferior species will be
+      eliminated. However, in nature, many closely related species
+      coexist. The mechanism that allows this is: A) Predation by a
+      common enemy reducing both populations equally B) Resource
+      partitioning — use of different portions of resources at
+      different times or by different patterns C) Mutualism between the
+      competing species D) Complete genetic isolation preventing
+      competition
+
+Q38.  In binomial nomenclature, when a scientific name is HANDWRITTEN,
+      how should the generic name and specific epithet be represented?
+      A) Both written in italics B) Both underlined together as one
+      unit C) Each word separately underlined D) Only the genus name is
+      underlined
+
+Q39.  The mature embryo sac of a typical angiosperm is 7-celled and
+      8-nucleate. The structure at the micropylar end consisting of two
+      synergids and one egg cell is called the: A) Antipodal apparatus
+      B) Egg apparatus C) Central cell D) Filiform apparatus
+
+------------------------------------------------------------------------
+  Total questions in this set: 39
+========================================================================
+Here is the answer key in the requested format:
+
+1.c
+2.c
+3.b
+4.c
+5.c
+6.b
+7.b
+8.b
+9.b
+10.b
+11.c
+12.c
+13.c
+14.c
+15.c
+16.c
+17.b
+18.b
+19.b
+20.c
+21.d
+22.c
+23.b
+24.b
+25.c
+26.b
+27.c
+28.c
+29.b
+30.c
+31.b
+32.b
+33.b
+34.b
+35.b
+36.b
+37.b
+38.c
+39.b

@@ -1,0 +1,309 @@
+========================================================================
+  QUESTION SET 05   —   Generated 2026-03-26 07:43
+========================================================================
+
+Q1.  A nucleosome consists of DNA wrapped around a histone octamer. How
+     many base pairs of DNA are associated with each nucleosome?
+     A) ~50 bp
+     B) ~100 bp
+     C) ~200 bp
+     D) ~500 bp
+
+Q2.  Spongilla is the example of a freshwater sponge, while Euspongia
+     is commonly known as:
+     A) Glass sponge
+     B) Bath sponge
+     C) Boring sponge
+     D) Finger sponge
+
+Q3.  The exoskeleton of arthropods is made of chitin — a complex
+     polysaccharide. The building blocks of chitin are: A) Glucose
+     units only (homopolymer of glucose) B) Fructose and galactose C)
+     Amino-sugars and modified sugars (mostly homopolymer) D) Cellulose
+     and hemicellulose
+
+Q4.  A mature female frog lays a large number of eggs at one time. The
+     approximate number of ova laid by a mature female frog at one time
+     is: A) 500–700 B) 1000–1500 C) 2500–3000 D) 5000–6000
+
+Q5.  Underproduction of adrenal cortex hormones
+     (glucocorticoids/mineralocorticoids) alters carbohydrate
+     metabolism and causes acute weakness and fatigue. This condition
+     is called: A) Cushing's syndrome B) Conn's syndrome C) Addison's
+     disease D) Waterhouse-Friderichsen syndrome
+
+Q6.  Pollen grains of cereals like rice and wheat lose viability very
+     rapidly after release. What is the approximate viability period of
+     pollen grains of rice and wheat after release? A) Within 30
+     minutes B) 24–48 hours C) Several weeks D) Several months
+
+Q7.  The Lac operon was elucidated by:
+     A) Watson and Crick
+     B) Hershey and Chase
+     C) Jacob and Monod
+     D) Avery, MacLeod, and McCarty
+
+Q8.  To visualise DNA bands in agarose gel electrophoresis, the gel is
+     stained with a specific chemical and exposed to UV light, showing
+     orange-coloured bands. This staining chemical is: A) Crystal
+     violet B) Methylene blue C) Ethidium bromide D) Safranin
+
+Q9.  The pneumotaxic centre, which can reduce the duration of
+     inspiration and alter respiratory rate, is located in:
+     A) Medulla oblongata
+     B) Pons
+     C) Hypothalamus
+     D) Carotid body
+
+Q10.  In hemodialysis, blood from an artery is pumped to an artificial
+      kidney (dialysing unit) after adding heparin. The dialysing unit
+      contains a coiled cellophane tube bathed in dialysing fluid. The
+      dialysing fluid has the composition of: A) Distilled water only
+      B) Plasma minus all solutes C) Plasma-like composition except
+      nitrogenous wastes D) High concentration of urea to draw wastes
+      out
+
+Q11.  The SECONDARY (anamnestic) immune response differs from the
+      PRIMARY response in that it is:
+     A) Slower and of lower intensity
+     B) Faster and of much higher intensity due to immunological memory
+        (memory B and T cells from first exposure)
+     C) Mediated only by innate immunity
+     D) Identical to the primary response in intensity and speed
+
+Q12.  Among the muscle disorders listed, which disease is an AUTOIMMUNE
+      disorder that specifically affects the neuromuscular junction,
+      leading to fatigue, weakening, and paralysis of skeletal muscles?
+      A) Muscular dystrophy B) Tetany C) Myasthenia gravis D) Gout
+
+Q13.  Restriction endonucleases are named using a specific convention.
+      EcoRI is derived from Escherichia coli strain RY13. In this
+      naming, what does the Roman numeral "I" in EcoRI represent? A)
+      The size of the recognition sequence (1 base pair) B) The order
+      of isolation (first enzyme isolated from that strain) C) The type
+      of cut made (blunt end) D) The number of palindromes recognised
+
+Q14.  The "Z-scheme" of electron transport in photosynthesis describes:
+     A) Cyclic flow of electrons only through PS I
+     B) Non-cyclic electron flow from PS II → ETS → PS I → NADP⁺
+     C) Movement of protons across the thylakoid membrane
+     D) The shape of the Calvin cycle intermediates
+
+Q15.  Ex situ conservation refers to conservation of species outside
+      their natural habitat. Modern ex situ techniques include
+      cryopreservation of gametes, in vitro fertilisation, and tissue
+      culture propagation. Seed banks preserve which type of material?
+      A) Seeds of endangered animal food sources only B) Genetic
+      strains of plants, particularly crop varieties, for long-term
+      preservation C) Only extinct plant species D) Seeds of invasive
+      species for study
+
+Q16.  The uterine wall has three layers. The inner glandular lining
+      that undergoes cyclical changes during the menstrual cycle is
+      called the endometrium. The thick smooth muscle layer responsible
+      for strong contractions during delivery is called: A) Perimetrium
+      B) Myometrium C) Endometrium D) Mesometrium
+
+Q17.  The secondary structure of tRNA is a:
+     A) Double helix (like DNA)
+     B) Clover-leaf structure (secondary); actual 3D shape: inverted L
+     C) Straight linear chain
+     D) Triple helix
+
+Q18.  Population density of tigers in a reserve is estimated indirectly
+      because direct counting of such large, rare animals is
+      impractical. Which of the following indirect methods is used to
+      estimate tiger population density? A) Mark-recapture method using
+      radio collars B) Pug marks and fecal pellets C) Aerial
+      photography and biomass estimation D) Relative density using trap
+      counts
+
+Q19.  The failure of chromatid separation during cell division
+      resulting in an abnormal number of chromosomes (gain or loss) is
+      called:
+     A) Polyploidy
+     B) Frameshift mutation
+     C) Aneuploidy (non-disjunction)
+     D) Translocation CHAPTER 24 — MOLECULAR BASIS OF INHERITANCE
+
+Q20.  The respiratory pathway is described as AMPHIBOLIC because:
+     A) It only occurs in the presence of oxygen
+     B) It serves both catabolic (breakdown) and anabolic
+        (biosynthetic) functions, with intermediates being withdrawn
+        for or added into the pathway
+     C) It produces both ATP and NADPH equally
+     D) It takes place in both the cytoplasm and the nucleus
+
+Q21.  In prokaryotic bacteria, many possess small circular DNA
+      molecules outside the main genomic DNA. These confer unique
+      phenotypic characters such as antibiotic resistance and are also
+      used to monitor bacterial transformation with foreign DNA. These
+      are called: A) Nucleoids B) Mesosomes C) Plasmids D) Inclusion
+      bodies
+
+Q22.  In the coagulation cascade, THROMBIN converts fibrinogen to
+      fibrin. Thrombin itself is formed from PROTHROMBIN by:
+     A) Platelet factor alone
+     B) Thrombokinase (thromboplastin) complex — activated by platelets
+        and tissue damage, requiring calcium ions
+     C) Anti-Rh antibodies
+     D) Histamine released by basophils
+
+Q23.  What structural differences allow archaebacteria to survive in
+      extreme conditions? A) Archaebacteria have a nuclear membrane
+      protecting their DNA B) Archaebacteria have a DIFFERENT CELL WALL
+      STRUCTURE from eubacteria C) Archaebacteria have heat-resistant
+      ribosomes absent in eubacteria D) Archaebacteria store energy as
+      special heat-stable lipids
+
+Q24.  Selaginella belongs to which class of Pteridophyta?
+     A) Psilopsida
+     B) Sphenopsida
+     C) Pteropsida
+     D) Lycopsida
+
+Q25.  Which microorganism produces CITRIC ACID commercially?
+     A) Acetobacter aceti
+     B) Clostridium butylicum
+     C) Aspergillus niger
+     D) Lactobacillus
+
+Q26.  Ethylene promotes which of the following in deep-water rice, and
+      what is the adaptive significance?
+     A) Inhibits internode elongation to conserve energy under flooding
+     B) Promotes rapid internode and petiole elongation so that leaves
+        and the upper shoot remain above water
+     C) Promotes root hair formation only
+     D) Induces dormancy to survive flooding
+
+Q27.  Lobefins (fish with stout, strong fins) evolved into which group
+      that first colonised land, and approximately when?
+     A) Reptiles; 200 mya
+     B) First amphibians; 350 mya
+     C) First mammals; 65 mya
+     D) Birds; 150 mya
+
+Q28.  During pachytene of meiosis I, crossing over (exchange of genetic
+      material between non-sister chromatids of homologous chromosomes)
+      is an enzyme-mediated process. The enzyme responsible for this
+      recombination is called: A) DNA polymerase B) Topoisomerase C)
+      Recombinase D) Ligase
+
+Q29.  Frogs are carnivores and capture food using their bilobed tongue.
+      The partially digested food (chyme) passes from the stomach to
+      the first part of the small intestine. This first part is called
+      the: A) Ileum B) Jejunum C) Colon D) Duodenum
+
+Q30.  India initiated family planning programmes in 1951 and current
+      programmes are called Reproductive and Child Health Care (RCH)
+      programmes. India also has a statutory ban on amniocentesis for
+      sex determination to check female foeticides. However,
+      amniocentesis is legitimately used to analyse amniotic fluid for
+      detection of genetic disorders. Which of the following conditions
+      can be detected by amniocentesis? A) Diabetes mellitus and
+      hypertension B) Down syndrome, haemophilia, sickle-cell anaemia
+      C) Colour blindness and night blindness only D) PKU and rickets
+      only
+
+Q31.  Transgenic mice are used to test the safety of polio vaccines
+      before use in humans. Previously, which animals were used for
+      this safety testing (replaced by transgenic mice)? A) Rabbits B)
+      Guinea pigs C) Monkeys D) Dogs
+
+Q32.  In plant taxonomy, what is the equivalent of "Phylum" used in
+      animal classification? A) Class B) Division C) Order D) Section
+
+Q33.  A flower that can be divided into two equal halves by any plane
+      passing through the centre is described as actinomorphic. Which
+      of the following is an example of a zygomorphic flower?
+     A) Mustard
+     B) Datura
+     C) Chilli
+     D) Pea
+
+Q34.  Which of the following is correctly matched — coelenterate
+      organism with its common name?
+     A) Physalia — Brain coral
+     B) Meandrina — Portuguese man-of-war
+     C) Pennatula — Sea pen
+     D) Gorgonia — Sea anemone
+
+Q35.  Epidermal hairs on the shoot system of plants are called
+      trichomes. Unlike root hairs which are unicellular, trichomes in
+      the shoot system are usually: A) Unicellular and non-secretory B)
+      Multicellular and may be secretory C) Unicellular and always
+      secretory D) Always unbranched and non-living
+
+Q36.  Echinoderms are unique among invertebrates in having a water
+      vascular system. This system is used for which of the following
+      functions?
+     A) Only for respiration
+     B) Locomotion, food capture, transport, and respiration
+     C) Excretion and osmoregulation only
+     D) Reproduction and gas exchange
+
+Q37.  There are two types of synapses — electrical and chemical. In an
+      electrical synapse, the pre- and post-synaptic membranes are very
+      close and electrical current flows directly. Regarding electrical
+      vs. chemical synapses, which statement is CORRECT? A) Electrical
+      synapses are more common than chemical synapses B) Chemical
+      synapses are faster than electrical synapses C) Electrical
+      synapses transmit impulses faster and are rare in the system D)
+      Both types use neurotransmitters for impulse transmission
+
+Q38.  In most terrestrial ecosystems, the Detritus Food Chain (DFC) is
+      the dominant pathway for energy flow. In most AQUATIC ecosystems,
+      which food chain is dominant? A) Detritus Food Chain (DFC) B)
+      Grazing Food Chain (GFC) C) Both are equally dominant D) Neither
+      — energy is transferred only through chemical pathways
+
+Q39.  Sickle-cell anaemia is autosome-linked and recessive. An
+      individual with genotype HbA HbS (heterozygous) is:
+     A) Severely diseased (sickle-cell disease)
+     B) Normal carrier (sickle-cell trait) — unaffected but carries the
+        mutant allele
+     C) Completely immune to malaria
+     D) Unable to reproduce
+
+------------------------------------------------------------------------
+  Total questions in this set: 39
+========================================================================
+1.c
+2.b
+3.c
+4.c
+5.c
+6.a
+7.c
+8.c
+9.b
+10.c
+11.b
+12.c
+13.b
+14.b
+15.b
+16.b
+17.b
+18.b
+19.c
+20.b
+21.c
+22.b
+23.b
+24.d
+25.c
+26.b
+27.b
+28.c
+29.d
+30.b
+31.c
+32.b
+33.d
+34.c
+35.b
+36.b
+37.c
+38.b
+39.b

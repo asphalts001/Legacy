@@ -1,0 +1,327 @@
+========================================================================
+  QUESTION SET 01   —   Generated 2026-03-26 07:43
+========================================================================
+
+Q1.  Frogs are beneficial to agriculture and ecology. Their muscular
+     hind legs are used as food by humans in some countries. In the
+     frog's ecosystem role, they maintain ecological balance by: A)
+     Producing large amounts of oxygen through skin respiration B)
+     Eating insects and protecting crops, being an important link in
+     food chains C) Fixing nitrogen through mutualistic bacteria in
+     their gut D) Controlling aquatic plant growth 
+
+Q2.  The I-band is bisected by a thin elastic fibre called the Z line
+     (to which thin filaments attach), and the A-band is bisected by
+     the M line. The sarcomere is defined as the functional unit of
+     contraction. It extends between: A) M line to M line B) Z line to
+     Z line C) H zone to H zone D) A-band to A-band
+
+Q3.  In competitive inhibition of enzymes, the inhibitor resembles the
+     substrate and competes for the active site. A classic example of
+     competitive inhibition is the inhibition of succinic dehydrogenase
+     by which compound that resembles succinate? A) Malate B) Fumarate
+     C) Malonate D) Oxaloacetate
+
+Q4.  Active transport across the plasma membrane differs from passive
+     transport in that it moves molecules against the concentration
+     gradient and requires energy (ATP). A classic example of active
+     transport in cells is: A) Osmosis of water molecules B) Diffusion
+     of neutral solutes C) Na⁺/K⁺ Pump D) Facilitated diffusion via
+     carrier proteins
+
+Q5.  In a DNA double helix, the number of hydrogen bonds between A-T
+     and G-C base pairs respectively are:
+     A) A-T: 3 bonds; G-C: 2 bonds
+     B) A-T: 2 bonds; G-C: 3 bonds
+     C) A-T: 1 bond; G-C: 2 bonds
+     D) A-T: 2 bonds; G-C: 2 bonds
+
+Q6.  In the cephalochordate Amphioxus (Branchiostoma), which type of
+     excretory structure is present that is also found in Planaria and
+     some annelids? A) Nephridia B) Malpighian tubules C)
+     Protonephridia (flame cells) D) Green glands
+
+Q7.  In secondary sewage treatment, the primary effluent is passed into
+     AERATION TANKS. What forms in these tanks that consumes organic
+     matter?
+     A) Inorganic precipitates
+     B) Flocs — masses of bacteria enmeshed in fungal filaments that
+        consume organic matter and reduce BOD
+     C) Biofilm of algae that photosynthesise organic matter
+     D) Crystals of calcium carbonate
+
+Q8.  The first restriction enzyme ever discovered was Hind II, which
+     cuts DNA at a specific 6 base pair recognition sequence. The
+     science of restriction enzymes began in 1963 when two enzymes were
+     isolated from E. coli — one that adds methyl groups and another
+     that cuts DNA. The first fully characterised restriction
+     endonuclease, Hind II, was isolated in which year? A) 1963 B) 1972
+     C) 1968 D) 1983
+
+Q9.  In the pancreatic Islets of Langerhans, α-cells secrete glucagon
+     and β-cells secrete insulin. Glucagon acts on hepatocytes to
+     stimulate glycogenolysis and gluconeogenesis, increasing blood
+     sugar. Insulin acts on hepatocytes and adipocytes to enhance
+     glucose uptake and promote glycogenesis, decreasing blood sugar.
+     Prolonged hyperglycemia leads to which condition? A) Diabetes
+     Insipidus B) Addison's disease C) Diabetes mellitus D)
+     Hypoglycemia
+
+Q10.  The Amazonian rain forest (lungs of the planet) harbours the
+      greatest biodiversity on Earth. Among the following species
+      counts for the Amazon, which is CORRECTLY matched? A) Fish
+      species — 1,300; Bird species — 3,000 B) Fish species — 3,000;
+      Bird species — 1,300 C) Mammal species — 3,000; Invertebrates —
+      427 D) Plant species — 1,300; Amphibians — 40,000
+
+Q11.  Hippocampus (Sea horse) and Exocoetus (Flying fish) are examples
+      from which class and habitat?
+     A) Chondrichthyes — freshwater
+     B) Osteichthyes — marine
+     C) Osteichthyes — freshwater
+     D) Chondrichthyes — marine
+
+Q12.  In Mollusca, the file-like rasping organ present in the mouth
+      that is used for feeding is called:
+     A) Radula
+     B) Mantle
+     C) Operculum
+     D) Siphon
+
+Q13.  In the taxonomic hierarchy, which category lies immediately
+      between Order and Kingdom? What is the CORRECT sequence from
+      lowest to highest? A) Family; Species → Genus → Family → Order →
+      Class → Phylum → Kingdom B) Class; Species → Genus → Order →
+      Family → Class → Phylum → Kingdom C) Phylum; Species → Genus →
+      Family → Class → Order → Phylum → Kingdom D) Division; Species →
+      Genus → Family → Order → Phylum → Class → Kingdom
+
+Q14.  After biosynthesis of a recombinant protein in the bioreactor,
+      the steps of separation, purification, formulation with
+      preservatives, clinical trials (for drugs), and quality control
+      testing together constitute: A) Upstream processing B)
+      Transformation C) Downstream processing D) Transduction CHAPTER
+      29 — BIOTECHNOLOGY AND ITS APPLICATIONS
+
+Q15.  Parturition is induced by a complex neuroendocrine mechanism. The
+      signals from the fully developed foetus/placenta initiate mild
+      uterine contractions (foetal ejection reflex). This triggers
+      maternal pituitary to release oxytocin. Oxytocin then causes
+      stronger contractions and stimulates more oxytocin release. This
+      self-amplifying mechanism is an example of: A) Negative feedback
+      B) Positive feedback C) Neural inhibition D) Hormonal antagonism
+
+Q16.  Ophrys (an orchid) achieves pollination through a remarkable
+      strategy where one of its petals closely resembles a female bee
+      in size, colour, and texture. When a male bee is attracted and
+      attempts to mate with the flower (pseudocopulation), it picks up
+      pollen. This type of pollination strategy is called: A) Nectar
+      reward pollination B) Sexual deceit C) Commensalism D) Brood site
+      mimicry
+
+Q17.  In transcription, the template strand runs 3'→5' while the RNA
+      produced runs 5'→3'. The DNA strand that has the SAME sequence as
+      the mRNA (with T replaced by U) is called:
+     A) Template strand (antisense strand)
+     B) Coding strand (sense strand / non-template strand)
+     C) Leading strand
+     D) Lagging strand
+
+Q18.  Lactose acts as an INDUCER in the Lac operon by:
+     A) Binding the operator directly to allow transcription
+     B) Binding and INACTIVATING the repressor, so RNA polymerase can
+        access the promoter and transcribe
+     C) Activating beta-galactosidase directly without transcription
+     D) Increasing the copy number of the operon
+
+Q19.  Cycas has a unique type of roots that contain nitrogen-fixing
+      cyanobacteria. These specialised roots are called:
+     A) Mycorrhizal roots
+     B) Prop roots
+     C) Coralloid roots
+     D) Pneumatophores
+
+Q20.  In 1983, Eli Lilly prepared two separate DNA sequences coding for
+      the A and B chains of human insulin and introduced them into E.
+      coli plasmids. The A and B chains were produced separately,
+      extracted, and then combined using which chemical bonds to form
+      functional human insulin? A) Peptide bonds B) Hydrogen bonds C)
+      Disulphide bonds D) Ionic bonds
+
+Q21.  Blackman's Law of Limiting Factors (1905) states that the rate of
+      a physiological process is determined by the factor:
+     A) Present in excess
+     B) Nearest to its optimal value
+     C) Nearest to its minimal value (most limiting factor)
+     D) Which is temperature-dependent
+
+Q22.  2,4-D (a synthetic auxin) is used as a herbicide. It selectively
+      kills:
+     A) Mature monocot weeds, sparing dicot crops
+     B) Dicot weeds, while mature monocots (e.g., grasses in lawns) are
+        unaffected
+     C) All plants equally
+     D) Only grasses and monocots
+
+Q23.  Glycolysis occurs in the cytoplasm and results in the partial
+      oxidation of one glucose molecule to:
+     A) Two acetyl CoA molecules
+     B) Two pyruvic acid molecules
+     C) One lactic acid molecule
+     D) Two citric acid molecules
+
+Q24.  The stage of meiosis I in which the chiasmata undergo
+      terminalisation, chromosomes are fully condensed, meiotic spindle
+      is assembled, nucleolus disappears, and nuclear envelope breaks
+      down is: A) Diplotene B) Diakinesis C) Zygotene D) Leptotene
+
+Q25.  Birds are homoiothermous and have a four-chambered heart. They
+      also have air sacs that supplement respiration. The only
+      oil-secreting gland present in birds is located at:
+     A) Base of wings
+     B) Base of tail (uropygial gland)
+     C) Behind the ear
+     D) On the beak
+
+Q26.  Queen Victoria of England was a carrier for haemophilia. This
+      means her genotype was X^H X^h. Which of the following is TRUE
+      about her daughters?
+     A) All daughters will be haemophilic
+     B) 50% of daughters will be carriers (X^H X^h), 50% will be normal
+        (X^H X^H)
+     C) All daughters will be carriers
+     D) No daughters can carry haemophilia
+
+Q27.  In frogs, the medulla oblongata passes through the foramen magnum
+      and continues as the spinal cord. The hind brain of frogs
+      consists of which two structures? A) Olfactory lobes and cerebral
+      hemispheres B) Optic lobes and diencephalon C) Cerebellum and
+      medulla oblongata D) Cerebral hemispheres and medulla oblongata
+
+Q28.  The brain is protected by the skull and is covered by three
+      meninges. From outside to inside, the three cranial meninges are
+      in which correct order? A) Pia mater → Arachnoid → Dura mater B)
+      Dura mater → Arachnoid → Pia mater C) Arachnoid → Dura mater →
+      Pia mater D) Pia mater → Dura mater → Arachnoid
+
+Q29.  In the pericycle region of a dicot stem, mechanical strength is
+      provided by semi-lunar patches of a specific tissue located above
+      the phloem. This tissue is: A) Collenchyma B) Parenchyma C)
+      Sclerenchyma D) Chlorenchyma
+
+Q30.  Decomposition involves a sequence of processes. During
+      decomposition, earthworms and other detritivores break dead
+      organic matter (detritus) into smaller particles. This mechanical
+      breakdown is called: A) Leaching B) Catabolism C) Mineralisation
+      D) Fragmentation
+
+Q31.  The enzyme carbonic anhydrase (present in high concentration in
+      RBCs) catalyses which reversible reaction?
+     A) CO₂ + H₂O ⇌ H₂CO₃ ⇌ HCO₃⁻ + H⁺
+     B) O₂ + Hb ⇌ HbO₂
+     C) Pyruvate + CoA ⇌ Acetyl CoA + CO₂
+     D) CO₂ + RuBP ⇌ 2 PGA
+
+Q32.  Which of the following types of information is specifically
+      mentioned as being used in classification? A) Behavioral ecology
+      and population dynamics only B) External/internal structure, cell
+      structure, development, and ecological information C) Geographic
+      range and fossil record exclusively D) Only molecular genetic
+      sequences
+
+Q33.  During double fertilisation, one male gamete fuses with the egg
+      cell (syngamy) forming the diploid zygote. The other male gamete
+      fuses with the two polar nuclei in the central cell. This fusion
+      of one male gamete with TWO polar nuclei is called: A) Syngamy B)
+      Parthenogenesis C) Triple fusion D) Apomixis
+
+Q34.  In Assisted Reproductive Technology (ART), ZIFT stands for Zygote
+      Intra Fallopian Transfer, where the zygote or early embryo (up to
+      8 blastomeres) is transferred to the fallopian tube. For embryos
+      with MORE than 8 blastomeres, the transfer site is: A) Fallopian
+      tube (ZIFT) B) Ovary C) Uterus (IUT — Intra Uterine Transfer) D)
+      Cervix
+
+Q35.  The Big Bang theory explains the origin of the universe
+      approximately:
+     A) 4.5 billion years ago
+     B) 13.8 billion years ago
+     C) 3.8 billion years ago
+     D) 2 billion years ago
+
+Q36.  Which of the following is TRUE about male honey bees (drones)?
+     A) They have a father, sons, and grandsons
+     B) They have NO father (from unfertilised egg), CANNOT have sons
+        (produce sperm by mitosis), but CAN have grandsons
+     C) They produce sperm by meiosis like other diploid organisms
+     D) They have 32 chromosomes like females
+
+Q37.  Plasmodium falciparum causes which type of malaria, and why is it
+      considered the most dangerous?
+     A) Benign tertian malaria; it is the mildest form
+     B) Malignant malaria — the most serious and potentially fatal form
+     C) Quartan malaria; causes fever every 4 days
+     D) Vivax malaria; recurs most frequently
+
+Q38.  The Sino-Atrial Node (SAN) is called the pacemaker of the heart
+      because:
+     A) It is the largest node and controls the atrio-ventricular
+        septum
+     B) It generates the maximum number of action potentials (~70–75
+        per minute) and initiates cardiac excitation
+     C) It converts electrical signals to mechanical contraction in
+        ventricles
+     D) It is the only site where the heart can sense blood pressure
+        changes
+
+Q39.  The root cap is a thimble-like structure that protects the tender
+      root apex. Just above the root cap is the region responsible for
+      repeated cell division, known as the:
+     A) Region of maturation
+     B) Region of elongation
+     C) Region of meristematic activity
+     D) Root hair zone
+
+------------------------------------------------------------------------
+  Total questions in this set: 39
+========================================================================
+1. b
+2. b
+3. c
+4. c
+5. b
+6. c
+7. b
+8. b
+9. c
+10. b
+11. b
+12. a
+13. a
+14. c
+15. b
+16. b
+17. b
+18. b
+19. c
+20. c
+21. c
+22. b
+23. b
+24. b
+25. b
+26. b
+27. c
+28. b
+29. c
+30. d
+31. a
+32. b
+33. c
+34. c
+35. b
+36. b
+37. b
+38. b
+39. c
+

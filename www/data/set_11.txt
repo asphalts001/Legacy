@@ -1,0 +1,253 @@
+========================================================================
+  QUESTION SET 11   —   Generated 2026-03-26 07:43
+========================================================================
+
+Q1.  A tRNA molecule reads the codon via its ANTICODON loop and carries
+     the amino acid at its:
+     A) 5'-end (free phosphate end)
+     B) Anticodon loop
+     C) 3'-end (CCA-OH, amino acid ACCEPTOR end)
+     D) D-loop
+
+Q2.  Among cartilaginous fishes, Torpedo is known for producing
+     electric organs, while Trygon is known for having:
+     A) Luminescent organs
+     B) A poison sting
+     C) Electric organs as well
+     D) Suction cups on fins
+
+Q3.  Cnidoblasts (cnidocytes) containing nematocysts in Coelenterata
+     are used for all of the following EXCEPT:
+     A) Anchorage
+     B) Defense
+     C) Prey capture
+     D) Digestion of food internally
+
+Q4.  Erythroblastosis foetalis is a serious condition in newborns
+     caused by Rh incompatibility. It occurs when:
+     A) An Rh-positive mother carries an Rh-negative foetus in any
+        pregnancy
+     B) An Rh-negative mother, sensitised in a FIRST Rh-positive
+        pregnancy, produces anti-Rh antibodies that attack the RBCs of
+        a SUBSEQUENT Rh-positive foetus
+     C) The foetus has blood group O while the mother has group AB
+     D) The ABO antigens of the foetus differ from the mother in both A
+        and B
+
+Q5.  Turner's syndrome has the karyotype 45 XO. Which of the following
+     correctly describes the condition?
+     A) Males with XXY karyotype, gynecomastia, sterile
+     B) Females, sterile with rudimentary ovaries, lacking secondary
+        sexual characters
+     C) Males with only one X chromosome, fertile
+     D) Females with an extra chromosome 21
+
+Q6.  In eukaryotes, THREE different RNA polymerases transcribe
+     different RNA types. Which RNA polymerase transcribes mRNA
+     precursor (hnRNA)?
+     A) RNA Polymerase I (transcribes 28S, 18S, 5.8S rRNAs)
+     B) RNA Polymerase II (transcribes hnRNA → mRNA)
+     C) RNA Polymerase III (transcribes tRNA, 5S rRNA, snRNAs)
+     D) A single RNA polymerase for all RNA types (prokaryotic pattern)
+
+Q7.  After TWO generations of replication in ¹⁴N medium
+     (Meselson-Stahl), the DNA density distribution was:
+     A) All hybrid density
+     B) All light density
+     C) 50% hybrid (¹⁵N/¹⁴N) + 50% light (¹⁴N/¹⁴N) — proving
+        semiconservative replication
+     D) 75% heavy + 25% light
+
+Q8.  In a dicotyledonous stem, the innermost layer of the cortex is
+     called endodermis. The cells of this endodermis are
+     characteristically rich in starch grains, and therefore the
+     endodermis in dicot stems is also referred to as: A) Casparian
+     strip layer B) Pericycle C) Starch sheath D) Bundle sheath
+
+Q9.  Different Bt toxin genes are specific to different insect groups.
+     The genes cryIAc and cryIIAb control which pest in cotton, while
+     cryIAb controls which pest in corn? A) cryIAc/cryIIAb = corn
+     borer; cryIAb = cotton bollworms B) cryIAc/cryIIAb = cotton
+     bollworms; cryIAb = corn borer C) Both control the same pest —
+     tobacco budworm D) cryIAc/cryIIAb = rice stem borer; cryIAb =
+     cotton bollworm
+
+Q10.  The conducting part of the human respiratory system extends from
+      the external nostrils to the terminal bronchioles. The EXCHANGE
+      (respiratory) part consists of:
+     A) Trachea and primary bronchi
+     B) Larynx and pharynx
+     C) Alveolar ducts and alveoli
+     D) Secondary and tertiary bronchi
+
+Q11.  Solanum tuberosum (potato) and Solanum melongena (brinjal) are
+      placed in the same genus Solanum. This grouping indicates that
+      these two organisms: A) Are the same species B) Belong to
+      different families C) Share more common characters than species
+      from different genera D) Have identical morphological features in
+      all respects
+
+Q12.  The lungs, liver, and skin assist in excretion in addition to the
+      kidneys. Sweat secreted by sweat glands contains NaCl, small
+      amounts of urea, and lactic acid. The primary function of
+      sweating is body cooling, but it also removes wastes. Sebaceous
+      glands eliminate which substances through sebum? A) Urea and
+      ammonia B) Sterols, hydrocarbons, and waxes C) Bile pigments and
+      cholesterol D) CO2 and water vapour CHAPTER 17 — LOCOMOTION AND
+      MOVEMENT
+
+Q13.  In gymnosperms, needle-like leaves of conifers are an adaptation
+      to reduce water loss. Which structural features of these leaves
+      serve this purpose?
+     A) Large surface area and open stomata
+     B) Thick cuticle and sunken stomata
+     C) Thin cuticle and raised stomata
+     D) Waxy coating and large lenticels
+
+Q14.  In the sarcomere, the dark band contains myosin and is called the
+      A-band (anisotropic). The light band contains actin and is called
+      the I-band (isotropic). The central region of the A-band that is
+      NOT overlapped by thin filaments in a resting muscle is called
+      the: A) Z line B) M line C) H zone D) Sarcomere
+
+Q15.  Decomposition rates are influenced by the chemical composition of
+      detritus and environmental conditions. Which of the following
+      detritus types would decompose FASTEST? A) Detritus rich in
+      lignin and chitin B) Detritus rich in nitrogen and soluble
+      sugars, warm and moist conditions C) Detritus in cold and
+      anaerobic conditions D) Detritus from conifer needles with thick
+      wax coatings
+
+Q16.  The interaction between Balanus and Chthamalus in intertidal
+      zones, studied by Connell, demonstrated competitive exclusion.
+      Balanus (barnacle) dominates and excludes Chthamalus from its
+      zone when both are present. This is evidence for: A) Predation
+      controlling Chthamalus populations B) Competitive exclusion —
+      Balanus is the competitively superior species in that zone C)
+      Mutualism between the two barnacle species D) Commensalism where
+      Balanus benefits without affecting Chthamalus
+
+Q17.  For the oxidation of tripalmitin (a fat), the RQ is approximately
+      0.7. This is LOWER than 1 because:
+     A) Fats contain more oxygen relative to carbon, requiring less O₂
+     B) Fats are more reduced (less oxygen per carbon) than
+        carbohydrates, requiring more O₂ to oxidise, so CO₂/O₂ ratio <
+        1
+     C) Fats are completely oxidised in glycolysis, bypassing the Krebs
+        cycle
+     D) Fats produce less CO₂ because they have fewer carbon atoms
+
+Q18.  The nucleoside formed when adenine is attached to a sugar is
+      called adenosine. When a phosphate group is esterified to the
+      sugar of a nucleoside, it becomes a nucleotide. The nucleotide
+      formed from guanosine with a phosphate group is called: A)
+      Guanylic acid B) Guanosine C) Cytidylic acid D) Thymidylic acid
+
+Q19.  Transfer of pollen grains from the anther to the stigma of a
+      flower on a DIFFERENT plant of the same species is called: A)
+      Autogamy B) Geitonogamy C) Xenogamy D) Cleistogamy
+
+Q20.  The cell body of a neuron contains organelles, cytoplasm, and
+      characteristic granules called Nissl's granules. The short fibres
+      that branch repeatedly from the cell body and transmit impulses
+      TOWARDS the cell body are called: A) Axons B) Dendrites C)
+      Synaptic knobs D) Schwann cells
+
+Q21.  Estrogen is synthesised and secreted by growing ovarian
+      follicles. After ovulation, the ruptured Graafian follicle
+      transforms into a structure that secretes mainly progesterone.
+      This structure is the: A) Primary follicle B) Corpus luteum C)
+      Zona pellucida D) Secondary follicle
+
+Q22.  Cancer cells differ from normal cells in that they have LOST:
+     A) The ability to perform mitosis
+     B) Contact inhibition — the property that normally stops cells
+        from proliferating when they contact other cells
+     C) Their nucleus and organelles
+     D) The ability to metabolise glucose
+
+Q23.  The arrangement of sepals or petals in a bud in relation to other
+      members of the same whorl is called aestivation. In which type of
+      aestivation does one margin of each member overlap the next one
+      in one direction only?
+     A) Valvate
+     B) Imbricate
+     C) Twisted
+     D) Vexillary
+
+Q24.  The slime mould plasmodium spreads over which type of substrate?
+      A) Living plant leaf surfaces only B) Decaying twigs and leaves,
+      engulfing organic material C) Water surfaces in stagnant ponds D)
+      Mineral-rich soil and rock surfaces
+
+Q25.  In terms of CO₂ concentration and photosynthesis, which of the
+      following is CORRECT?
+     A) C4 plants saturate at CO₂ levels above 450 µL/L, while C3
+        saturate at ~360 µL/L
+     B) C4 plants saturate at ~360 µL/L, while C3 plants can respond to
+        CO₂ concentrations above 450 µL/L
+     C) Both C3 and C4 saturate at the same CO₂ concentration
+     D) Neither C3 nor C4 responds to increased CO₂ at high light
+        intensity
+
+Q26.  For very large areas like continents, the Z value (slope of
+      species-area relationship) is steeper. For frugivorous birds and
+      mammals in tropical forests, the Z value is approximately: A) 0.1
+      to 0.2 B) 0.5 C) 1.15 D) 2.5
+
+Q27.  Cyclosporin A is an immunosuppressive agent used in organ
+      transplant patients. It is produced by:
+     A) Monascus purpureus
+     B) Trichoderma polysporum
+     C) Streptococcus
+     D) Aspergillus niger
+
+Q28.  The "Bakanae" (foolish seedling) disease of rice is caused by the
+      fungus Gibberella fujikuroi. The scientist who demonstrated that
+      symptoms could be produced by sterile fungal filtrates was:
+     A) F.W. Went
+     B) E. Kurosawa (1926)
+     C) F. Skoog
+     D) H.H. Cousins
+
+Q29.  Lamarck's theory of evolution proposed use/disuse of organs as
+      the mechanism. His classic example was:
+     A) Dark moths surviving after industrialisation
+     B) Giraffes elongating their necks by stretching to reach tall
+        trees, and passing this acquired trait to offspring
+     C) Darwin's finches changing beak shapes across generations
+     D) Antibiotic resistance in bacteria
+
+Q30.  Mitochondria contain their own genetic material and ribosomes.
+      The ribosomes present in the mitochondrial matrix are of which
+      type? A) 80S (cytoplasmic type) B) 70S (prokaryotic type) C) 60S
+      (unique to mitochondria) D) 40S (small subunit only)
+
+Q31.  The organ system responsible for excretion and osmoregulation in
+      Annelida is:
+     A) Flame cells
+     B) Malpighian tubules
+     C) Nephridia
+     D) Green glands
+
+Q32.  After telophase I and cytokinesis, the two cells formed are
+      called a dyad. The brief stage between meiosis I and meiosis II,
+      during which NO DNA replication occurs, is called: A) G1 phase B)
+      G2 phase C) Interkinesis D) S phase
+
+Q33.  In co-dominance (IA IB genotype), which phenotype is expressed?
+     A) Only blood group A (IA dominant)
+     B) Only blood group B (IB dominant)
+     C) Blood group AB — both IA and IB express their own sugar
+        antigens simultaneously on RBC surfaces
+     D) Blood group O — both cancel each other out
+
+Q34.  A tertiary follicle develops into a mature Graafian follicle. The
+      primary oocyte within the tertiary follicle completes the first
+      meiotic division producing a large haploid secondary oocyte and a
+      small structure. What is this small structure called? A) Second
+      polar body B) First polar body C) Ootid D) Zona pellucida
+
+------------------------------------------------------------------------
+  Total questions in this set: 34
+========================================================================
