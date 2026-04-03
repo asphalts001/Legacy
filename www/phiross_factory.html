@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="theme.css">
-<title>Tilla Bhaalo formation</title>
+<title>MCQ Tool · NEET Bio</title>
 <script src="tracker.js"></script>
 <style>
 
@@ -598,20 +598,20 @@ function renderHistory() {
 function parseTxt(text) {
   const questions = [];
 
+  // ── Set name ──
   const setMatch = text.match(/QUESTION SET\s+(\d+)/i);
   if (setMatch) currentSetName = 'Set ' + setMatch[1];
 
-  // ── Parse answer key from bottom (format: "1. b" or "1. B") ──
+  // ── Answer key (format: "1. b" at bottom of file) ──
   const answerMap = {};
-  const ansKeyRegex = /^\s*(\d+)\.\s+([a-dA-D])\s*$/gm;
+  const ansKeyRegex = /^\s*(\d+)\.\s*([a-dA-D])\s*$/gm;
   let aMatch;
   while ((aMatch = ansKeyRegex.exec(text)) !== null) {
-    const qNum = parseInt(aMatch[1]);
-    const letter = aMatch[2].toUpperCase();
-    answerMap[qNum] = letter.charCodeAt(0) - 65; // A=0, B=1, C=2, D=3
+    answerMap[parseInt(aMatch[1])] = aMatch[2].toUpperCase().charCodeAt(0) - 65;
   }
 
-  // ── Parse questions ──
+  // ── Split into blocks ──
+  // Fix: \s+ instead of \s to handle Q10. Q11. etc (two spaces after dot)
   const blocks = text.split(/\n(?=Q\d+\.\s)/);
 
   for (const block of blocks) {
@@ -622,32 +622,39 @@ function parseTxt(text) {
     if (!qNumMatch) continue;
     const qNum = parseInt(qNumMatch[1]);
 
+    // Strip leading "Q10.  " — allow multiple spaces after dot
     const body = trimmed.replace(/^Q\d+\.\s+/, '').trim();
 
-    const optRegex = /([A-D])\)\s+(.+?)(?=\n\s*[A-D]\)|\n\s*-{5,}|$)/gs;
+    // ── Normalise inline options to one-per-line ──
+    // Handles: "...question text A) opt one B) opt two C) opt three D) opt four"
+    // Inserts a newline before each A) B) C) D) that isn't already on its own line
+    const normalised = body.replace(/([^\n])\s+([A-D]\))/g, '$1\n$2');
+
+    // ── Extract options ──
+    const optRegex = /^([A-D])\)\s+(.+?)(?=\n[A-D]\)|\n-{5,}|$)/gms;
     const opts = [];
     let optMatch;
-    while ((optMatch = optRegex.exec(body)) !== null) {
+    while ((optMatch = optRegex.exec(normalised)) !== null) {
       opts.push(optMatch[2].replace(/\s+/g, ' ').trim());
     }
 
     if (opts.length < 2) continue;
 
-    const firstOptPos = body.search(/\n?\s*A\)/);
-    let qText = firstOptPos >= 0 ? body.slice(0, firstOptPos) : body;
+    // ── Extract question text (everything before first option) ──
+    const firstOptPos = normalised.search(/^A\)/m);
+    let qText = firstOptPos >= 0
+      ? normalised.slice(0, firstOptPos)
+      : normalised;
     qText = qText.replace(/\s+/g, ' ').trim();
-
-    if (!qText && body.match(/^.*A\)/)) {
-      const inlineMatch = body.match(/^(.*?)\s+A\)/s);
-      if (inlineMatch) qText = inlineMatch[1].trim();
-    }
 
     if (!qText || opts.length < 2) continue;
 
-    // Assign answer from key, default -1 if not found
-    const ans = answerMap[qNum] !== undefined ? answerMap[qNum] : -1;
-
-    questions.push({ id: qNum, text: qText, opts, ans });
+    questions.push({
+      id:   qNum,
+      text: qText,
+      opts,
+      ans:  answerMap[qNum] !== undefined ? answerMap[qNum] : -1
+    });
   }
 
   return questions;
