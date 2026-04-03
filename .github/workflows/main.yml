@@ -53,6 +53,13 @@ jobs:
             echo "Patched: $f"
           done
 
+      - name: Bump version code
+        run: |
+          VERSION_CODE=${{ github.run_number }}
+          echo "Setting android-versionCode to $VERSION_CODE"
+          sed -i "s/version=\"[^\"]*\"/version=\"1.0.$VERSION_CODE\"/" config.xml
+          sed -i "/<platform name=\"android\">/a\\    <preference name=\"android-versionCode\" value=\"$VERSION_CODE\" />" config.xml
+
       - name: Build APK
         run: cordova build android --debug
 
