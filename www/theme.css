@@ -4,7 +4,7 @@
    NOT applied to: pbl_full_pasha.html (different palette)
    ═══════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
 
 /* ── COLOUR TOKENS ── */
 :root {
@@ -17,14 +17,14 @@
   --border:    #1e1e2e;
   --border-hi: #2e2e4e;
 
-  /* Text */
-  --text:      #e8e8f0;
-  --muted:     #6b6b8a;
+  /* Text — brightened for crispness */
+  --text:      #f0f0f8;
+  --muted:     #8888aa;
 
-  /* Subject accents */
-  --accent:    #7c6af0;   /* Physics / MCQ primary  (purple) */
+  /* Subject accents — purple → blue */
+  --accent:    #4d8ef0;   /* Physics / MCQ primary  (blue)   */
   --chem:      #4ecdc4;   /* Chemistry               (teal)  */
-  --phys:      #7c6af0;   /* Physics                 (purple)*/
+  --phys:      #4d8ef0;   /* Physics                 (blue)  */
   --mcq:       #e05a5a;   /* MCQ / wrong / red       (red)   */
 
   /* Semantic colours */
@@ -50,9 +50,26 @@ body {
   color: var(--text);
   font-family: 'Crimson Pro', Georgia, serif;
   font-size: 17px;
+  font-weight: 300;           /* lighter body weight */
   line-height: 1.65;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* ── HEADINGS — light weight, sharp, blue titles ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--accent);       /* blue titles */
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 { font-size: 2.2rem;  letter-spacing: -0.02em; }
+h2 { font-size: 1.6rem;  letter-spacing: -0.01em; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.05rem; }
 
 /* ── SHARED HEADER ── */
 header {
@@ -72,12 +89,13 @@ header {
 /* Logo / app name */
 .logo {
   font-family: 'Syne', sans-serif;
-  font-weight: 800;
+  font-weight: 300;           /* lighter than before (was 800) */
   font-size: 14px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.18em;     /* wider tracking for sharpness */
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent);       /* now blue */
   cursor: pointer;
+  -webkit-font-smoothing: antialiased;
 }
 .logo span { color: var(--muted); }
 
@@ -85,8 +103,8 @@ header {
 .back-link {
   font-family: 'Syne', sans-serif;
   font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-weight: 400;           /* lighter (was 700) */
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
   text-decoration: none;
