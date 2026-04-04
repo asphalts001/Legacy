@@ -17,5 +17,11 @@
   { "id": "set_15", "label": "Set 15", "file": "data/set_15.txt" },
   { "id": "set_16", "label": "Set 16", "file": "data/set_16.txt" },
   { "id": "set_17", "label": "Set 17", "file": "data/set_17.txt" },
-  { "id": "set_18", "label": "Set 18", "file": "data/set_18.txt" }
+  { "id": "set_18", "label": "Set 18", "file": "data/set_18.txt" },
+  { "id": "set_s1", "label": "Set s1", "file": "data/set_s1.txt" },
+  { "id": "set_s2", "label": "Set s2", "file": "data/set_s2.txt" },
+  { "id": "set_s3", "label": "Set s3", "file": "data/set_s3.txt" },
+  { "id": "set_s4", "label": "Set s4", "file": "data/set_s4.txt" },
+  { "id": "set_s5", "label": "Set s5", "file": "data/set_s5.txt" },
+  { "id": "set_s6", "label": "Set s6", "file": "data/set_s6.txt" }
 ]

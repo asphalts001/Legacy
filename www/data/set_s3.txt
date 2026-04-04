@@ -1,0 +1,295 @@
+
+
+========================================================================
+  NKD-MCL  SECTION 3   —   Morphology (contd.), Animal Kingdom
+                             & Phyla Porifera through Annelida
+========================================================================
+
+Q1.  A staminode is:
+     A) A fertile stamen
+     B) A sterile/non-functional stamen
+     C) A type of carpel
+     D) A modified petal
+
+Q2.  In Salvia, stamens are:
+     A) Polyandrous
+     B) Epipetalous and reduced to two
+     C) Free and numerous
+     D) Fused into a bundle
+
+Q3.  Apocarpous gynoecium means:
+     A) Carpels are fused
+     B) Carpels are free
+     C) Only one carpel present
+     D) Ovary is inferior
+
+Q4.  Lotus has which type of gynoecium?
+     A) Syncarpous
+     B) Apocarpous
+     C) Monocarpellary
+     D) Inferior ovary
+
+Q5.  A drupe fruit is:
+     A) Dry and dehiscent
+     B) Fleshy with a stony endocarp (monocarpellary, one-seeded)
+     C) Formed from multiple carpels
+     D) A dry indehiscent fruit
+
+Q6.  Non-endospermous seeds include:
+     A) Castor and maize
+     B) Gram and orchids
+     C) Wheat and rice
+     D) Maize only
+
+Q7.  The shield-shaped cotyledon in monocot seeds is called:
+     A) Plumule
+     B) Scutellum
+     C) Radicle
+     D) Testa
+
+Q8.  In the floral formula, the symbol ⊕ represents:
+     A) Zygomorphic symmetry
+     B) Actinomorphic (radial) symmetry
+     C) Bisexual flower
+     D) Inferior ovary
+
+Q9.  Brassicaceae is characterized by:
+     A) K4 C4 A2+4 G(2)
+     B) K5 C5 A∞ G(2)
+     C) K(5) C(5) A5 G(2)
+     D) K3 C3 A6 G(3)
+
+Q10.  Ashwagandha belongs to which family?
+      A) Brassicaceae
+      B) Solanaceae
+      C) Fabaceae
+      D) Liliaceae
+
+Q11.  Which placentation type is found in Argemone?
+      A) Axile
+      B) Parietal
+      C) Basal
+      D) Free central
+
+Q12.  Axile placentation is found in:
+      A) Argemone
+      B) Dianthus
+      C) China rose (multilocular ovary)
+      D) Sunflower
+
+Q13.  Animals with no true symmetry are called:
+      A) Radially symmetrical
+      B) Asymmetrical
+      C) Bilaterally symmetrical
+      D) Dorsoventrally flattened
+
+Q14.  Diploblastic animals have how many embryonic layers?
+      A) One
+      B) Two (ectoderm and endoderm)
+      C) Three
+      D) Four
+
+Q15.  Triploblastic animals have:
+      A) Two germ layers
+      B) Three germ layers (ectoderm, mesoderm, endoderm)
+      C) One germ layer
+      D) No germ layers
+
+Q16.  Mesoglea is found in:
+      A) Platyhelminthes
+      B) Cnidaria (between ectoderm and endoderm)
+      C) Annelida
+      D) Echinodermata
+
+Q17.  Acoelomates are animals that:
+      A) Have a true coelom
+      B) Have no body cavity
+      C) Have a pseudocoelom
+      D) Have segmented body
+
+Q18.  Pseudocoelomates have a body cavity that is:
+      A) Lined by mesoderm on both sides
+      B) Not lined by mesoderm (between mesoderm and endoderm)
+      C) Absent
+      D) Same as true coelom
+
+Q19.  Metamerism refers to:
+      A) Presence of a coelom
+      B) Serial repetition of body segments (metameres)
+      C) Radial symmetry
+      D) Presence of spicules
+
+Q20.  The notochord is described as a:
+      A) Hollow dorsal nerve cord
+      B) Mesodermally derived rod-like structure
+      C) Pharyngeal gill slit
+      D) Post-anal tail
+
+Q21.  Water enters a sponge through:
+      A) Osculum
+      B) Ostia (pores)
+      C) Spicules
+      D) Spongin fibres
+
+Q22.  Water exits a sponge through the:
+      A) Ostia
+      B) Osculum
+      C) Spicules
+      D) Choanocytes
+
+Q23.  The skeleton of sponges is made of:
+      A) Chitin
+      B) Spicules and/or spongin
+      C) Calcium carbonate shells only
+      D) Cellulose
+
+Q24.  Sponges are:
+      A) Dioecious
+      B) Hermaphrodite
+      C) Parthenogenetic
+      D) Always asexual
+
+Q25.  Sycon is also known as:
+      A) Spongilla
+      B) Scypha
+      C) Euplectella
+      D) Hyalonema
+
+Q26.  Cnidarians are characterised by the presence of:
+      A) Spicules
+      B) Stinging cells (nematocysts/cnidoblasts)
+      C) Setae
+      D) Radula
+
+Q27.  The hypostome in Hydra is:
+      A) The base of attachment
+      B) The mouth region surrounded by tentacles
+      C) A reproductive structure
+      D) A type of nematocyst
+
+Q28.  Digestion in Cnidaria is:
+      A) Only intracellular
+      B) Extracellular (in gastrovascular cavity)
+      C) Absent
+      D) Only intracellular in polyp stage
+
+Q29.  Aurelia is an example of:
+      A) Polyp form of Cnidaria
+      B) Medusa form (jellyfish)
+      C) Colonial coral
+      D) Sea fan
+
+Q30.  Obelia shows:
+      A) Only polyp stage
+      B) Only medusa stage
+      C) Alternation of polyp and medusa stages
+      D) No medusa stage
+
+Q31.  Adamsia is a:
+      A) Coral
+      B) Sea anemone
+      C) Jellyfish
+      D) Sea fan
+
+Q32.  Platyhelminthes are:
+      A) Radially symmetrical
+      B) Dorsoventrally flattened, bilaterally symmetrical flatworms
+      C) Triploblastic coelomates
+      D) Free-living only
+
+Q33.  Taenia is a:
+      A) Free-living flatworm
+      B) Tapeworm (endoparasite)
+      C) Fluke
+      D) Roundworm
+
+Q34.  Fasciola is a:
+      A) Tapeworm
+      B) Liver fluke
+      C) Roundworm
+      D) Hookworm
+
+Q35.  Platyhelminthes are:
+      A) Coelomate
+      B) Acoelomate
+      C) Pseudocoelomate
+      D) Eucoelomate
+
+Q36.  Ascaris is a:
+      A) Tapeworm
+      B) Roundworm (pseudocoelomate)
+      C) Fluke
+      D) Hookworm
+
+Q37.  Ancylostoma is commonly known as:
+      A) Roundworm
+      B) Hookworm
+      C) Pinworm
+      D) Filaria worm
+
+Q38.  Aschelminthes are:
+      A) Acoelomate
+      B) Pseudocoelomate
+      C) True coelomate
+      D) Diploblastic
+
+Q39.  Pheretima is the scientific name for:
+      A) Leech
+      B) Earthworm
+      C) Nereis
+      D) Tubeworm
+
+Q40.  Hirudinaria is:
+      A) Earthworm
+      B) Leech
+      C) Polychaete
+      D) Marine worm
+
+------------------------------------------------------------------------
+  Total questions in this set: 40
+========================================================================
+
+
+Answer Key — Section 3:
+
+1. B
+2. B
+3. B
+4. B
+5. B
+6. B
+7. B
+8. B
+9. A
+10. B
+11. B
+12. C
+13. B
+14. B
+15. B
+16. B
+17. B
+18. B
+19. B
+20. B
+21. B
+22. B
+23. B
+24. B
+25. B
+26. B
+27. B
+28. B
+29. B
+30. C
+31. B
+32. B
+33. B
+34. B
+35. B
+36. B
+37. B
+38. B
+39. B
+40. B
+

@@ -1,0 +1,294 @@
+========================================================================
+  NKD-MCL  SECTION 4   —   Arthropoda, Mollusca, Echinodermata,
+                             Hemichordata, Pisces & Amphibia–Aves
+========================================================================
+
+Q1.  Annelids are:
+     A) Acoelomate
+     B) Metamerically segmented, true coelomates
+     C) Pseudocoelomate
+     D) Diploblastic
+
+Q2.  The exoskeleton of arthropods is made of:
+     A) Calcium carbonate
+     B) Chitin
+     C) Spongin
+     D) Silica
+
+Q3.  Bombyx is the scientific name for:
+     A) Mosquito
+     B) Silkworm
+     C) Honeybee
+     D) Locust
+
+Q4.  Statocysts in arthropods function as:
+     A) Respiratory organs
+     B) Balancing organs
+     C) Excretory organs
+     D) Reproductive organs
+
+Q5.  Book lungs are found in:
+     A) Insects
+     B) Arachnids (scorpions/spiders)
+     C) Crustaceans
+     D) Myriapods
+
+Q6.  Arthropods breathe through:
+     A) Gills only
+     B) Trachea (in insects), book lungs (in arachnids), or gills
+     C) Lungs only
+     D) Skin only
+
+Q7.  The visceral hump in molluscs is covered by the:
+     A) Shell
+     B) Mantle
+     C) Foot
+     D) Radula
+
+Q8.  Pila is the scientific name for:
+     A) Pearl oyster
+     B) Apple snail
+     C) Octopus
+     D) Chiton
+
+Q9.  Dentalium is also called:
+     A) Chiton
+     B) Tusk shell
+     C) Sea hare
+     D) Nautilus
+
+Q10.  Chaetopleura/Chiton is characterised by:
+      A) A single coiled shell
+      B) Eight dorsal shell plates
+      C) No shell
+      D) Two shells
+
+Q11.  Molluscs are:
+      A) Segmented
+      B) Unsegmented with a calcareous shell (mostly)
+      C) Pseudocoelomate
+      D) Acoelomate
+
+Q12.  Echinoderms have an:
+      A) Exoskeleton of chitin
+      B) Endoskeleton of calcareous ossicles (spiny-bodied)
+      C) No skeleton
+      D) Exoskeleton of calcium carbonate only on the outside
+
+Q13.  Asterias is an example of:
+      A) Sea urchin
+      B) Starfish
+      C) Sea cucumber
+      D) Brittle star
+
+Q14.  Echinus is a:
+      A) Starfish
+      B) Sea urchin
+      C) Sea cucumber
+      D) Feather star
+
+Q15.  Cucumaria is a:
+      A) Starfish
+      B) Sea urchin
+      C) Sea cucumber
+      D) Sea lily
+
+Q16.  Echinoderms have a free-swimming:
+      A) Nauplius larva
+      B) Bipinnaria/distinctive larva
+      C) Trochophore larva
+      D) Veliger larva
+
+Q17.  Balanoglossus belongs to phylum:
+      A) Chordata
+      B) Hemichordata
+      C) Echinodermata
+      D) Annelida
+
+Q18.  The stomochord in Hemichordata is a:
+      A) True notochord
+      B) Worm-like, short buccal diverticulum (not a true notochord)
+      C) Pharyngeal slit
+      D) Post-anal tail
+
+Q19.  Ascidia and Salpa belong to subphylum:
+      A) Vertebrata
+      B) Tunicata (Urochordata)
+      C) Cephalochordata
+      D) Hemichordata
+
+Q20.  Protochordates have a notochord that is:
+      A) Permanent and extends the full length
+      B) Present only in larva or restricted region (not fully
+         persistent)
+      C) Absent
+      D) Replaced by vertebral column from birth
+
+Q21.  Petromyzon is commonly called:
+      A) Hagfish
+      B) Lamprey
+      C) Shark
+      D) Ray
+
+Q22.  Myxine is commonly called:
+      A) Lamprey
+      B) Hagfish
+      C) Catfish
+      D) Eel
+
+Q23.  Cyclostomes are:
+      A) Jawed vertebrates
+      B) Jawless vertebrates (Agnatha)
+      C) Cartilaginous fish
+      D) Bony fish
+
+Q24.  Scoliodon is a:
+      A) Ray
+      B) Shark
+      C) Bony fish
+      D) Lamprey
+
+Q25.  Pristis is commonly known as:
+      A) Shark
+      B) Sawfish
+      C) Ray
+      D) Torpedo
+
+Q26.  Carcharodon is:
+      A) A ray
+      B) Great white shark
+      C) Lamprey
+      D) Catfish
+
+Q27.  The scales found in bony fishes are:
+      A) Placoid only
+      B) Cycloid or ctenoid
+      C) Ganoid only
+      D) No scales
+
+Q28.  Labeo rohita is commonly called:
+      A) Catla
+      B) Rohu
+      C) Magur
+      D) Fighting fish
+
+Q29.  Betta is the scientific name of:
+      A) Angel fish
+      B) Fighting fish
+      C) Rohu
+      D) Catfish
+
+Q30.  Pterophyllum is commonly called:
+      A) Fighting fish
+      B) Angel fish
+      C) Goldfish
+      D) Guppy
+
+Q31.  Ichthyophis is a:
+      A) Fish
+      B) Limbless amphibian (caecilian)
+      C) Reptile
+      D) Salamander
+
+Q32.  Salamandra is a:
+      A) Frog
+      B) Salamander (amphibian)
+      C) Lizard
+      D) Caecilian
+
+Q33.  The skin of reptiles is covered by:
+      A) Moist smooth skin
+      B) Cornified (dry, scaly) skin with scutes
+      C) Feathers
+      D) Fur
+
+Q34.  Chelone is a:
+      A) Tortoise
+      B) Marine turtle
+      C) Crocodile
+      D) Lizard
+
+Q35.  Testudo is a:
+      A) Turtle
+      B) Tortoise
+      C) Crocodile
+      D) Snake
+
+Q36.  Naja is the scientific name of:
+      A) Krait
+      B) Cobra
+      C) Viper
+      D) Python
+
+Q37.  Bangarus is the scientific name of:
+      A) Cobra
+      B) Krait
+      C) Viper
+      D) Rat snake
+
+Q38.  Vipera is the scientific name of:
+      A) Cobra
+      B) Krait
+      C) Viper
+      D) Boa
+
+Q39.  Struthio is the scientific name of:
+      A) Peacock
+      B) Ostrich
+      C) Pigeon
+      D) Parrot
+
+Q40.  Pavo is the scientific name of:
+      A) Ostrich
+      B) Peacock
+      C) Crow
+      D) Vulture
+
+------------------------------------------------------------------------
+  Total questions in this set: 40
+========================================================================
+
+
+Answer Key — Section 4:
+
+1. B
+2. B
+3. B
+4. B
+5. B
+6. B
+7. B
+8. B
+9. B
+10. B
+11. B
+12. B
+13. B
+14. B
+15. C
+16. B
+17. B
+18. B
+19. B
+20. B
+21. B
+22. B
+23. B
+24. B
+25. B
+26. B
+27. B
+28. B
+29. B
+30. B
+31. B
+32. B
+33. B
+34. B
+35. B
+36. B
+37. B
+38. C
+39. B
+40. B
+
