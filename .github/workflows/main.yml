@@ -68,3 +68,4 @@ jobs:
         with:
           name: legacy-app-debug
           path: platforms/android/app/build/outputs/apk/debug/*.apk
+          
