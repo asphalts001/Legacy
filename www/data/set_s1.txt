@@ -1,0 +1,297 @@
+==============================================================
+  NKD-MCL  SECTION 1   —   Taxonomy, Fungi & Viruses
+========================================================================
+
+Q1.  Which of the following was NOT a criterion used in early
+     classification systems?
+     A) Observable characters
+     B) Phylum/Division
+     C) DNA sequencing
+     D) Aggregates of characters
+
+Q2.  Early classifications failed to distinguish between:
+     A) Autotrophs and heterotrophs
+     B) Eukaryotes and prokaryotes
+     C) Unicellular and multicellular
+     D) Both B and C
+
+Q3.  Which classification system does NOT consider eukaryotes vs
+     prokaryotes?
+     A) Three-domain system
+     B) Historical/early systems
+     C) Five-kingdom system
+     D) Phylogenetic system
+
+Q4.  The three-domain system recognizes domains that are found:
+     A) Only in oceans
+     B) Everywhere
+     C) Only in harsh environments
+     D) Only in marshy areas
+
+Q5.  Which of the following is a characteristic of Monera (bacteria)?
+     A) Multicellular with organ system
+     B) Rod-shaped, rigid, autotrophs or heterotrophs
+     C) Eukaryotic, filamentous
+     D) Holozoic nutrition only
+
+Q6.  Bacteria reproduce by:
+     A) Budding
+     B) Binary fission
+     C) Zoospores
+     D) Conidia
+
+Q7.  Which of the following is a correct pairing of nutrition type with
+     organism group?
+     A) Monera — holozoic only
+     B) Fungi — photosynthetic
+     C) Monera — chemosynthetic or photosynthetic
+     D) Algae — saprophytic
+
+Q8.  Sleeping sickness is caused by:
+     A) Paramoecium
+     B) Trypanosoma
+     C) Sporozoans
+     D) Puccinia
+
+Q9.  Paramoecium moves food into its body via a structure called the:
+     A) Hypostome
+     B) Gullet
+     C) Osculum
+     D) Stipe
+
+Q10.  Sporozoans are named because they produce:
+      A) Spores for reproduction
+      B) Spore-like infective stages
+      C) Sporangiospores
+      D) Zoospores
+
+Q11.  Which organism is associated with sleeping sickness?
+      A) Puccinia
+      B) Paramoecium
+      C) Trypanosoma
+      D) Desmids
+
+Q12.  Desmids are found in:
+      A) Marine environments
+      B) Fresh water
+      C) Harsh/snow environments
+      D) Soil only
+
+Q13.  The term "phycobiont" refers to the algal partner in:
+      A) Mycorrhiza
+      B) Lichens
+      C) Coral reefs
+      D) Bryophytes
+
+Q14.  The fungal partner in a lichen is called:
+      A) Phycobiont
+      B) Mycobiont
+      C) Symbiont
+      D) Saprophyte
+
+Q15.  Which taxonomic approach uses chemical characters of plants?
+      A) Cytotaxonomy
+      B) Chemotaxonomy / Phytochemistry
+      C) Numerical taxonomy
+      D) Classical taxonomy
+
+Q16.  Cytotaxonomy involves the study of:
+      A) Chemical constituents
+      B) Cytological/chromosomal characters
+      C) Computer-based data
+      D) Ultrastructure only
+
+Q17.  Bentham and Hooker's classification system:
+      A) Uses computer-based data
+      B) Considers ultrastructure
+      C) Gave weightage to observable morphological affinities
+      D) Is based entirely on chemotaxonomy
+
+Q18.  Fungi obtain nutrition as:
+      A) Autotrophs
+      B) Saprophytes or symbionts
+      C) Holozoic feeders
+      D) Chemoautotrophs
+
+Q19.  Fungal hyphae that lack cross-walls (septa) are called:
+      A) Septate hyphae
+      B) Aseptate / coenocytic hyphae (multinucleated)
+      C) Rhizoids
+      D) Stolons
+
+Q20.  Which of the following spore types is produced by Zygomycetes?
+      A) Ascospores
+      B) Basidiospores
+      C) Zygospores
+      D) Conidia
+
+Q21.  Isogamous sexual reproduction in fungi refers to:
+      A) Fusion of morphologically dissimilar gametes
+      B) Fusion of morphologically similar gametes
+      C) Fusion without gametes
+      D) Vegetative reproduction
+
+Q22.  Anisogamous reproduction involves:
+      A) Similar gametes
+      B) Dissimilar gametes
+      C) Spore formation only
+      D) Binary fission
+
+Q23.  Ascomycetes are also called:
+      A) Club fungi
+      B) Sac fungi
+      C) Imperfect fungi
+      D) Bread moulds
+
+Q24.  Coprophilous fungi grow on:
+      A) Wood/logs
+      B) Dung
+      C) Living plants
+      D) Aquatic substrates
+
+Q25.  The fruiting bodies of Ascomycetes are called:
+      A) Basidiocarps
+      B) Ascocarps
+      C) Sporangia
+      D) Zygosporangia
+
+Q26.  Basidia are characteristic structures of:
+      A) Ascomycetes
+      B) Zygomycetes
+      C) Basidiomycetes
+      D) Deuteromycetes
+
+Q27.  Agaricus is an example of:
+      A) Ascomycetes
+      B) Zygomycetes
+      C) Basidiomycetes
+      D) Deuteromycetes
+
+Q28.  Rusts and smuts belong to:
+      A) Ascomycetes
+      B) Basidiomycetes
+      C) Zygomycetes
+      D) Imperfect fungi
+
+Q29.  Deuteromycetes (imperfect fungi) reproduce only by:
+      A) Sexual spores
+      B) Asexual/vegetative means
+      C) Zygospores
+      D) Basidiospores
+
+Q30.  Colletotrichum belongs to:
+      A) Basidiomycetes
+      B) Ascomycetes
+      C) Deuteromycetes
+      D) Zygomycetes
+
+Q31.  Puccinia is a:
+      A) Deuteromycete causing leaf spots
+      B) Basidiomycete (rust fungus) cosmopolitan in distribution
+      C) Zygomycete found on bread
+      D) Ascomycete found in soil
+
+Q32.  Yeasts are economically important because they are used in:
+      A) Nitrogen fixation
+      B) Beer and bread making
+      C) Antibiotic production
+      D) Biogas production
+
+Q33.  Viruses were first recognized as infectious agents passing through
+      bacteria-proof filters in:
+      A) 1875
+      B) 1892
+      C) 1931
+      D) 1960
+
+Q34.  Viruses are described as truly non-cellular because they:
+      A) Have no DNA
+      B) Are inert outside a host and only replicate inside living cells
+      C) Cannot cause disease
+      D) Are made only of lipids
+
+Q35.  The genetic material of viruses can be:
+      A) Only double-stranded DNA
+      B) Only RNA
+      C) Single or double stranded DNA or RNA
+      D) Only single-stranded RNA
+
+Q36.  Which of the following diseases is caused by a virus?
+      A) Sleeping sickness
+      B) Mumps, pox, influenza
+      C) Leprosy
+      D) Tapeworm infection
+
+Q37.  Plant viral infections cause symptoms such as:
+      A) Root nodule formation
+      B) Rolling/curling of leaves, yellowing, dwarfing, mosaic
+      C) Excessive branching
+      D) Gall formation only
+
+Q38.  Creutzfeldt-Jakob disease is associated with:
+      A) Bacteria
+      B) Viruses
+      C) Prions (neurological agents)
+      D) Fungi
+
+Q39.  Which of the following is an economically important red alga
+      used for making ice creams and jellies?
+      A) Laminaria
+      B) Porphyra
+      C) Gelidium and Gracilaria
+      D) Chara
+
+Q40.  Porphyra and Laminaria are described as:
+      A) Green algae used as food
+      B) Brown-red algae of economic importance
+      C) Freshwater algae
+      D) Terrestrial algae
+
+------------------------------------------------------------------------
+  Total questions in this set: 40
+========================================================================
+
+
+Answer Key — Section 1:
+
+1. C
+2. D
+3. B
+4. B
+5. B
+6. B
+7. C
+8. B
+9. B
+10. B
+11. C
+12. B
+13. B
+14. B
+15. B
+16. B
+17. C
+18. B
+19. B
+20. C
+21. B
+22. B
+23. B
+24. B
+25. B
+26. C
+27. C
+28. B
+29. B
+30. C
+31. B
+32. B
+33. B
+34. B
+35. C
+36. B
+37. B
+38. C
+39. C
+40. B
+
