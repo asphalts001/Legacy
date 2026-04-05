@@ -2,7 +2,8 @@
 <widget id="com.yourname.appname"
         version="1.0.9"
         xmlns="http://www.w3.org/ns/widgets"
-        xmlns:cdv="http://cordova.apache.org/ns/1.0">
+        xmlns:cdv="http://cordova.apache.org/ns/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
   <name>ufc</name>
   <description>Short thjngs in small manner</description>
@@ -32,7 +33,9 @@
     <icon src="www/icon.png" density="xxxhdpi" />
 
     <!-- Permissions -->
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    </config-file>
 
     <!-- Full screen, no browser chrome -->
     <preference name="Fullscreen" value="false" />
