@@ -941,7 +941,9 @@ function restart() {
 
 buildUI();
 
-AudioManager.init('physics.m4a');
+document.addEventListener('deviceready', () => {
+  AudioManager.init('physics.m4a');
+}, false);
 </script>
 <script src="audio.js"></script>
 </body>

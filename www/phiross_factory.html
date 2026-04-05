@@ -485,7 +485,9 @@ Q2.  Next question …</pre>
 
 <script>
 
-AudioManager.init('mcq.m4a');
+document.addEventListener('deviceready', () => {
+  AudioManager.init('dashboard.m4a');
+}, false);
 // ═══════════════════════════════════════════════════
 //  STATE
 // ═══════════════════════════════════════════════════
