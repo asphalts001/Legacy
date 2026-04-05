@@ -5,8 +5,12 @@
         xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
   <name>ufc</name>
-  <description>Short thjngs in small manner </description>
+  <description>Short thjngs in small manner</description>
   <author>bakka</author>
+
+  <!-- Plugins -->
+  <plugin name="cordova-plugin-media" spec="^6.1.0" />
+  <plugin name="cordova-plugin-file" spec="^7.0.0" />
 
   <!-- Entry point -->
   <content src="index.html" />
@@ -27,6 +31,9 @@
     <icon src="www/icon.png" density="xxhdpi" />
     <icon src="www/icon.png" density="xxxhdpi" />
 
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
     <!-- Full screen, no browser chrome -->
     <preference name="Fullscreen" value="false" />
     <preference name="android-minSdkVersion" value="29" />
@@ -39,5 +46,5 @@
   <preference name="LoadingDialog" value="Loading,Please wait..." />
   <preference name="ShowSplashScreenSpinner" value="false" />
 
-<engine name="android" spec="^12.0.0" />
+  <engine name="android" spec="^12.0.0" />
 </widget>

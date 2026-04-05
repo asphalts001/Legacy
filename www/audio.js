@@ -1,36 +1,73 @@
-// audio.js — Global background music
-// Each page calls AudioManager.init('filename.m4a')
-// Toggle lives only on index.html, preference saved to localStorage
-
+// audio.js — Cordova Media plugin version for Android
 const AudioManager = (() => {
   const KEY = 'musicOn';
-  const FOLDER = 'audio/';
 
-  let player = null;
-  let enabled = localStorage.getItem(KEY) !== 'false'; // default ON
+  let mediaObj = null;
+  let enabled = localStorage.getItem(KEY) !== 'false';
+  let pendingTrack = null;
+  let ready = false;
 
-  function init(trackFile) {
-    player = document.createElement('audio');
-    player.src = FOLDER + trackFile;
-    player.loop = true;
-    player.volume = 0.3;
+  // Cordova fires deviceready when native APIs are available
+  document.addEventListener('deviceready', () => {
+    ready = true;
+    if (pendingTrack) _createMedia(pendingTrack);
+  }, false);
 
-    // Autoplay is blocked until first user interaction — this handles that
-    document.addEventListener('click', _startOnce, { once: true });
-    document.addEventListener('touchend', _startOnce, { once: true });
+  function _getPath(filename) {
+    // Android requires this exact prefix to reach www/ assets
+    return '/android_asset/www/audio/' + filename;
+  }
 
-    // If toggle button exists on this page, render it
+  function _createMedia(filename) {
+    // Release previous
+    if (mediaObj) {
+      try { mediaObj.stop(); mediaObj.release(); } catch(e) {}
+      mediaObj = null;
+    }
+
+    mediaObj = new Media(
+      _getPath(filename),
+      () => {},          // success
+      (err) => { console.warn('Media error:', JSON.stringify(err)); },
+      (status) => {
+        // Status 4 = MEDIA_STOPPED — loop manually
+        if (status === Media.MEDIA_STOPPED && enabled) {
+          mediaObj.seekTo(0);
+          mediaObj.play();
+        }
+      }
+    );
+
+    if (enabled) {
+      mediaObj.setVolume(0.3);
+      mediaObj.play();
+    }
+
     _renderToggle();
   }
 
-  function _startOnce() {
-    if (enabled) player.play().catch(() => {});
+  function init(trackFile) {
+    if (ready) {
+      _createMedia(trackFile);
+    } else {
+      // deviceready not fired yet — queue it
+      pendingTrack = trackFile;
+    }
+    // Also re-render toggle in case button already exists
+    _renderToggle();
   }
 
   function toggle() {
     enabled = !enabled;
     localStorage.setItem(KEY, String(enabled));
-    enabled ? player.play().catch(() => {}) : player.pause();
+    if (mediaObj) {
+      if (enabled) {
+        mediaObj.seekTo(0);
+        mediaObj.play();
+      } else {
+        mediaObj.pause();
+      }
+    }
     _renderToggle();
   }
 
@@ -40,6 +77,7 @@ const AudioManager = (() => {
     btn.textContent = enabled ? '♪' : '♪̶';
     btn.style.color = enabled ? 'var(--accent, #7c6af0)' : 'var(--muted, #6b6b8a)';
     btn.style.borderColor = enabled ? 'var(--accent, #7c6af0)' : '#2e2e4e';
+    btn.classList.toggle('on', enabled);
   }
 
   return { init, toggle };
