@@ -1,16 +1,16 @@
 // audio.js — Global background music
-// Each page calls Audio.init('filename.m4a')
+// Each page calls AudioManager.init('filename.m4a')
 // Toggle lives only on index.html, preference saved to localStorage
 
 const AudioManager = (() => {
   const KEY = 'musicOn';
-  const FOLDER = 'audiomanager/';
+  const FOLDER = 'audio/';
 
   let player = null;
   let enabled = localStorage.getItem(KEY) !== 'false'; // default ON
 
   function init(trackFile) {
-    player = document.createElement('audiomanager');
+    player = document.createElement('audio');
     player.src = FOLDER + trackFile;
     player.loop = true;
     player.volume = 0.3;
