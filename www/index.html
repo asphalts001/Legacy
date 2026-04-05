@@ -4,56 +4,105 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <link rel="stylesheet" href="theme.css">
-  <title>Bhalo hai</title>
-
+  <title>Bhalo hai🐻🐻🤙🤙</title>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background: var(--bg);
-      color: var(--text);
+      background: var(--bg, #0a0a0f);
+      color: var(--text, #e8e8f0);
       font-family: 'Crimson Pro', Georgia, serif;
       font-size: 16px;
       min-height: 100vh;
-      padding: 24px 18px 60px;
+      padding: 0 0 80px;
       max-width: 480px;
       margin: 0 auto;
       -webkit-text-size-adjust: 100%;
-      text-size-adjust: 100%;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
     }
 
-    /* ── Header ── */
-    .hub-header { margin-bottom: 32px; padding-top: 8px; }
+    /* ── Ambient background glow ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 55% 35% at 15% 5%,  rgba(124,106,240,0.08) 0%, transparent 65%),
+        radial-gradient(ellipse 45% 30% at 85% 90%, rgba(78,205,196,0.05)  0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    /* ── Page content sits above glow ── */
+    .page { position: relative; z-index: 1; padding: 0 18px; }
+
+    /* ══════════════════════════════════════
+       HEADER
+    ══════════════════════════════════════ */
+    .hub-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 28px 18px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-left { flex: 1; }
 
     .hub-title {
       font-family: 'Syne', sans-serif;
-      font-size: 26px;
+      font-size: 22px;
       font-weight: 800;
       letter-spacing: -0.02em;
       line-height: 1.2;
+      color: var(--text, #e8e8f0);
     }
-    .hub-title span { color: var(--phys); }
+    .hub-title .accent { color: var(--phys, #7c6af0); }
 
     .hub-date {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 4px;
+      font-size: 10px;
+      color: var(--muted, #6b6b8a);
+      margin-top: 5px;
       line-height: 1.4;
     }
 
-    /* ── Section labels ── */
+    /* ── Music toggle ── */
+    #music-toggle {
+      background: transparent;
+      border: 1px solid #2e2e4e;
+      border-radius: 8px;
+      padding: 7px 13px;
+      font-size: 15px;
+      cursor: pointer;
+      flex-shrink: 0;
+      margin-top: 2px;
+      margin-left: 12px;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+      color: var(--muted, #6b6b8a);
+      line-height: 1;
+    }
+    #music-toggle.on {
+      color: var(--accent, #7c6af0);
+      border-color: var(--accent, #7c6af0);
+      background: rgba(124,106,240,0.08);
+    }
+
+    /* ══════════════════════════════════════
+       SECTION LABEL
+    ══════════════════════════════════════ */
     .section-label {
       font-family: 'Syne', sans-serif;
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 700;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: var(--muted, #6b6b8a);
       margin-bottom: 12px;
       display: flex;
       align-items: center;
@@ -64,234 +113,361 @@
       content: '';
       flex: 1;
       height: 1px;
-      background: var(--border);
+      background: var(--border, #1e1e2e);
     }
 
-    /* ── Subject buttons ── */
-    .subject-grid { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+    /* ══════════════════════════════════════
+       SUBJECT BUTTONS
+    ══════════════════════════════════════ */
+    .section { margin-bottom: 32px; }
+
+    .subject-grid { display: flex; flex-direction: column; gap: 10px; }
 
     .btn-subject {
       display: flex;
       align-items: center;
       gap: 14px;
-      padding: 16px 18px;
-      background: var(--surface);
-      border: 1px solid var(--border);
+      padding: 15px 16px;
+      background: var(--surface, #111118);
+      border: 1px solid var(--border, #1e1e2e);
       border-radius: 12px;
-      color: var(--text);
+      color: var(--text, #e8e8f0);
       font-family: 'Syne', sans-serif;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.04em;
       text-decoration: none;
       cursor: pointer;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
       line-height: 1;
+      position: relative;
+      overflow: hidden;
     }
+
+    /* animated shimmer on press */
+    .btn-subject::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.04) 50%, transparent 70%);
+      transform: translateX(-100%);
+      transition: transform 0.4s;
+    }
+    .btn-subject:active::after { transform: translateX(100%); }
     .btn-subject:active { transform: scale(0.98); }
 
-    .btn-subject.chem { --c: var(--chem); }
-    .btn-subject.phys { --c: var(--phys); }
-    .btn-subject.mcq  { --c: var(--mcq);  }
+    .btn-subject.chem { --c: var(--chem, #4ecdc4); }
+    .btn-subject.phys { --c: var(--phys, #7c6af0); }
+    .btn-subject.mcq  { --c: var(--mcq,  #e05a5a); }
 
     .btn-subject:hover {
       border-color: var(--c);
-      box-shadow: 0 0 0 1px var(--c);
+      box-shadow: 0 0 0 1px var(--c), 0 4px 20px rgba(0,0,0,0.3);
+      background: color-mix(in srgb, var(--c) 5%, var(--surface, #111118));
     }
 
     .subj-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 19px;
+      line-height: 1;
+      background: color-mix(in srgb, var(--c) 12%, transparent);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .btn-subject:hover .subj-icon { transform: scale(1.08); }
+
+    .subj-label { flex: 1; }
+
+    .subj-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: var(--muted, #6b6b8a);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      margin-top: 2px;
+    }
+
+    .subj-arrow {
+      color: var(--muted, #6b6b8a);
       font-size: 20px;
       line-height: 1;
-      overflow: hidden;
-      background: color-mix(in srgb, var(--c) 12%, transparent);
-      color: var(--c);
-      flex-shrink: 0;
+      transition: transform 0.2s, color 0.2s;
     }
-    .subj-label { flex: 1; }
-    .subj-arrow { color: var(--muted); font-size: 18px; line-height: 1; }
+    .btn-subject:hover .subj-arrow {
+      transform: translateX(3px);
+      color: var(--c);
+    }
 
-    /* ── Stats row ── */
-    .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 32px; }
+    /* ══════════════════════════════════════
+       STATS ROW
+    ══════════════════════════════════════ */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
 
     .stat-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
+      background: var(--surface, #111118);
+      border: 1px solid var(--border, #1e1e2e);
       border-radius: 10px;
-      padding: 14px 12px;
+      padding: 14px 10px;
       text-align: center;
+      transition: border-color 0.2s;
     }
+    .stat-box:hover { border-color: var(--border-hi, #2e2e4e); }
+
     .stat-val {
       font-family: 'Syne', sans-serif;
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 800;
-      color: var(--gold);
+      color: var(--gold, #d4a843);
       line-height: 1;
     }
     .stat-lbl {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      color: var(--muted);
+      font-size: 9px;
+      color: var(--muted, #6b6b8a);
       margin-top: 5px;
       line-height: 1.3;
+      letter-spacing: 0.06em;
     }
 
-    /* ── Activity feed ── */
-    .activity-list { display: flex; flex-direction: column; gap: 0; margin-bottom: 28px; }
+    /* ══════════════════════════════════════
+       ACTIVITY FEED
+    ══════════════════════════════════════ */
+    .activity-list {
+      display: flex;
+      flex-direction: column;
+    }
 
     .activity-item {
       display: flex;
       align-items: flex-start;
-      gap: 12px;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
+      gap: 11px;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--border, #1e1e2e);
     }
     .activity-item:last-child { border-bottom: none; }
 
     .act-dot {
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       margin-top: 5px;
       flex-shrink: 0;
     }
-    .act-dot.MCQ      { background: var(--mcq);  box-shadow: 0 0 5px var(--mcq);  }
-    .act-dot.Physics  { background: var(--phys); box-shadow: 0 0 5px var(--phys); }
-    .act-dot.Chemistry{ background: var(--chem); box-shadow: 0 0 5px var(--chem); }
+    .act-dot.MCQ       { background: var(--mcq,  #e05a5a); box-shadow: 0 0 5px var(--mcq,  #e05a5a); }
+    .act-dot.Physics   { background: var(--phys, #7c6af0); box-shadow: 0 0 5px var(--phys, #7c6af0); }
+    .act-dot.Chemistry { background: var(--chem, #4ecdc4); box-shadow: 0 0 5px var(--chem, #4ecdc4); }
 
-    .act-body { flex: 1; font-size: 14px; line-height: 1.4; }
+    .act-body { flex: 1; line-height: 1.4; }
     .act-subject {
       font-family: 'Syne', sans-serif;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       line-height: 1.3;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted, #6b6b8a);
     }
     .act-detail {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.4;
+      font-family: 'Crimson Pro', Georgia, serif;
+      color: var(--text, #e8e8f0);
+      font-size: 14px;
+      line-height: 1.3;
+      margin-top: 1px;
+    }
+
+    .act-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+      flex-shrink: 0;
     }
 
     .act-score {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      padding: 2px 8px;
+      font-size: 11px;
+      padding: 2px 7px;
       border-radius: 4px;
       white-space: nowrap;
       line-height: 1.4;
     }
-    .act-score.high { background: rgba(76,175,125,0.12); color: var(--green); }
-    .act-score.mid  { background: rgba(212,168,67,0.12);  color: var(--gold);  }
-    .act-score.low  { background: rgba(224,90,90,0.12);   color: var(--mcq);   }
+    .act-score.high { background: rgba(76,175,125,0.12); color: var(--green, #4caf7d); }
+    .act-score.mid  { background: rgba(212,168,67,0.12);  color: var(--gold,  #d4a843); }
+    .act-score.low  { background: rgba(224,90,90,0.12);   color: var(--mcq,   #e05a5a); }
 
     .act-time {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      color: var(--muted);
+      font-size: 9px;
+      color: var(--muted, #6b6b8a);
       white-space: nowrap;
-      margin-top: 3px;
       line-height: 1.3;
     }
 
     .empty-feed {
       text-align: center;
-      padding: 28px;
-      color: var(--muted);
+      padding: 28px 20px;
+      color: var(--muted, #6b6b8a);
       font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      line-height: 1.6;
-      border: 1px dashed var(--border);
+      font-size: 11px;
+      line-height: 1.7;
+      border: 1px dashed var(--border, #1e1e2e);
       border-radius: 10px;
     }
 
-    /* ── Export button ── */
+    /* ══════════════════════════════════════
+       EXPORT BUTTON
+    ══════════════════════════════════════ */
     .btn-export {
       width: 100%;
       padding: 12px;
       background: transparent;
-      border: 1px solid var(--border);
+      border: 1px solid var(--border, #1e1e2e);
       border-radius: 8px;
-      color: var(--muted);
+      color: var(--muted, #6b6b8a);
       font-family: 'Syne', sans-serif;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       cursor: pointer;
       line-height: 1;
       transition: border-color 0.2s, color 0.2s;
     }
-    .btn-export:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-export:hover { border-color: var(--gold, #d4a843); color: var(--gold, #d4a843); }
+
+    /* ══════════════════════════════════════
+       STAGGERED ENTRANCE ANIMATION
+    ══════════════════════════════════════ */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 0.4s ease forwards;
+    }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in:nth-child(1) { animation-delay: 0.05s; }
+    .fade-in:nth-child(2) { animation-delay: 0.12s; }
+    .fade-in:nth-child(3) { animation-delay: 0.19s; }
+    .fade-in:nth-child(4) { animation-delay: 0.26s; }
+    .fade-in:nth-child(5) { animation-delay: 0.33s; }
   </style>
 </head>
 <body>
 
+  <!-- ── Header ── -->
   <header class="hub-header">
-    <div class="hub-title">look we tricked this idot <span> by labeling this as ufc</span></span></div>
-    <div class="hub-date" id="today-date"></div>
+    <div class="header-left">
+      <div class="hub-title">
+        <span class="accent">🫵</span> this idiot got<br>tricked again🤣
+      </div>
+      <div class="hub-date" id="today-date"></div>
+    </div>
+    <button id="music-toggle" onclick="AudioManager.toggle()" title="Toggle music">♪</button>
   </header>
 
-  <div class="section-label">here we go again</div>
-  <div class="subject-grid">
-    <a class="btn-subject chem" href="pbl_full_pasha.html">
-      <div class="subj-icon">🧪</div>
-      <div class="subj-label">kemal pasha</div>
-      <div class="subj-arrow">›</div>
-    </a>
-    <a class="btn-subject phys" href="phiross.html">
-      <div class="subj-icon">⚛️</div>
-      <div class="subj-label">pharaoh</div>
-      <div class="subj-arrow">›</div>
-    </a>
-    <a class="btn-subject mcq" href="phiross_factory.html">
-      <div class="subj-icon">📝</div>
-      <div class="subj-label">phiross factory</div>
-      <div class="subj-arrow">›</div>
-    </a>
-  </div>
+  <div class="page">
 
-  <div class="section-label">Your Stopidity</div>
-  <div class="stats-row">
-    <div class="stat-box">
-      <div class="stat-val" id="stat-total">—</div>
-      <div class="stat-lbl">Questions</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-val" id="stat-sessions">—</div>
-      <div class="stat-lbl">Sessions</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-val" id="stat-avg">—</div>
-      <div class="stat-lbl">Avg Score</div>
-    </div>
-  </div>
+    <!-- ── Quick Start ── -->
+    <div class="section fade-in">
+      <div class="section-label">Here we go again</div>
+      <div class="subject-grid">
 
-  <div class="section-label">Recent stupidities</div>
-  <div class="activity-list" id="activity-list">
-    <div class="empty-feed">DO SOMETHING LAZY no history yet</div>
-  </div>
+        <a class="btn-subject chem" href="pbl_full_pasha.html">
+          <div class="subj-icon">🇹🇷🇹🇷</div>
+          <div class="subj-label">
+            <div>kemal pasha</div>
+            <div class="subj-meta">Chemistry</div>
+          </div>
+          <div class="subj-arrow">›</div>
+        </a>
 
-  <div class="section-label">Data ( come on we both know how lazy are you)</div>
-  <button class="btn-export" onclick="exportData()">⬇ Export Activity</button>
+        <a class="btn-subject phys" href="phiross.html">
+          <div class="subj-icon">👑</div>
+          <div class="subj-label">
+            <div>pharaoh</div>
+            <div class="subj-meta">Physics</div>
+          </div>
+          <div class="subj-arrow">›</div>
+        </a>
+
+        <a class="btn-subject mcq" href="phiross_factory.html">
+          <div class="subj-icon">🍨</div>
+          <div class="subj-label">
+            <div>water dispenser</div>
+            <div class="subj-meta">MCQ Sets</div>
+          </div>
+          <div class="subj-arrow">›</div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ── Stats ── -->
+    <div class="section fade-in">
+      <div class="section-label">Your Stupid Activities</div>
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="stat-val" id="stat-total">—</div>
+          <div class="stat-lbl">Questions</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" id="stat-sessions">—</div>
+          <div class="stat-lbl">Sessions</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" id="stat-avg">—</div>
+          <div class="stat-lbl">Avg Score</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Activity Feed ── -->
+    <div class="section fade-in">
+      <div class="section-label">Recent Stupidities</div>
+      <div class="activity-list" id="activity-list">
+        <div class="empty-feed">DO SOMETHING LAZY<br>no history yet</div>
+      </div>
+    </div>
+
+    <!-- ── Export ── -->
+    <div class="section fade-in">
+      <div class="section-label">Data (we both know how lazy you are)</div>
+      <button class="btn-export" onclick="exportData()">
+        ⬇ too dumb to track 18 sets? export json
+      </button>
+    </div>
+
+  </div><!-- /page -->
 
   <script src="tracker.js"></script>
+  <script src="audio.js"></script>
   <script>
 
+    // ── Date ──────────────────────────────────────────────
     document.getElementById('today-date').textContent =
-      new Date().toLocaleDateString('en-IN', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+      new Date().toLocaleDateString('en-IN', {
+        weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+      });
 
+    // ── Stats ─────────────────────────────────────────────
     function renderStats() {
       const s = Tracker.getStats();
       document.getElementById('stat-total').textContent    = s.totalQuestions || '0';
       document.getElementById('stat-sessions').textContent = s.totalSessions  || '0';
-      document.getElementById('stat-avg').textContent      = s.totalSessions ? s.avgScore + '%' : '—';
+      document.getElementById('stat-avg').textContent      = s.totalSessions  ? s.avgScore + '%' : '—';
     }
 
+    // ── Activity feed ─────────────────────────────────────
     function renderActivity() {
       const list   = document.getElementById('activity-list');
       const recent = Tracker.getRecent(8);
@@ -304,7 +480,7 @@
           scoreBadge = `<span class="act-score ${cls}">${e.score}%</span>`;
         }
         const detail = e.type === 'score'
-          ? `${e.topic} · ${e.correct}/${e.total} correct`
+          ? `${e.topic} &middot; ${e.correct}/${e.total} correct`
           : `Read: ${e.chapter}`;
 
         return `
@@ -314,14 +490,15 @@
               <div class="act-subject">${e.subject}</div>
               <div class="act-detail">${detail}</div>
             </div>
-            ${scoreBadge}
-            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px">
+            <div class="act-right">
+              ${scoreBadge}
               <div class="act-time">${Tracker.timeAgo(e.ts)}</div>
             </div>
           </div>`;
       }).join('');
     }
 
+    // ── Export ────────────────────────────────────────────
     function exportData() {
       const blob = new Blob([Tracker.exportJSON()], { type: 'application/json' });
       const url  = URL.createObjectURL(blob);
@@ -332,15 +509,18 @@
       URL.revokeObjectURL(url);
     }
 
+    // ── Tracker event listener ────────────────────────────
     window.addEventListener('tracker:update', () => {
       renderStats();
       renderActivity();
     });
 
+    // ── Init ──────────────────────────────────────────────
     renderStats();
     renderActivity();
+    AudioManager.init('dashboard.m4a');
 
   </script>
-<script src="cordova.js"></script>
+  <script src="cordova.js"></script>
 </body>
 </html>
