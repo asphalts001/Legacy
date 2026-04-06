@@ -54,12 +54,18 @@ const AudioManager = (() => {
     const path = _getPath(filename);
     _log('creating Media object...');
 
+    let volumeSet = false;
     mediaObj = new Media(
       path,
       () => { _log('Media success cb'); },
       (err) => { _log('Media ERROR: ' + JSON.stringify(err)); },
       (status) => {
         _log('Media status: ' + status);
+        if (status === Media.MEDIA_RUNNING && !volumeSet) {
+          volumeSet = true;
+          mediaObj.setVolume(0.3);
+          _log('volume set');
+        }
         if (status === Media.MEDIA_STOPPED && enabled) {
           _log('looping...');
           mediaObj.seekTo(0);
@@ -70,7 +76,6 @@ const AudioManager = (() => {
 
     _log('Media object created, enabled=' + enabled);
     if (enabled) {
-      mediaObj.setVolume(0.3);
       _log('calling play()...');
       mediaObj.play();
     }

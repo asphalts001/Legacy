@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="cordova.js"></script>
 <script src="audio.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -485,9 +486,6 @@ Q2.  Next question …</pre>
 
 <script>
 
-document.addEventListener('deviceready', () => {
-  AudioManager.init('dashboard.m4a');
-}, false);
 // ═══════════════════════════════════════════════════
 //  STATE
 // ═══════════════════════════════════════════════════
@@ -865,6 +863,5 @@ loadManifest();
 // audio.js handles deviceready internally — call init() directly
 AudioManager.init('mcq.m4a');
 </script>
-<script src="cordova.js"></script>
 </body>
 </html>
