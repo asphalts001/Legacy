@@ -520,9 +520,11 @@
     renderStats();
     renderActivity();
 
-    // audio.js handles deviceready internally — call init() directly
-    AudioManager.init('dashboard.m4a');
+  </script>
 
+  <!-- Audio init in its own block so any tracker errors above can't block it -->
+  <script>
+    AudioManager.init('dashboard.m4a');
   </script>
 </body>
 </html>
