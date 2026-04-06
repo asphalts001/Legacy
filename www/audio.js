@@ -101,6 +101,8 @@ const AudioManager = (() => {
   }
 
   function _renderToggle() {
+    // button may not exist yet if script runs in <head> or on pages without the toggle
+    if (!document.body) { document.addEventListener('DOMContentLoaded', _renderToggle); return; }
     const btn = document.getElementById('music-toggle');
     if (!btn) return;
     btn.textContent = enabled ? '♪' : '♪̶';

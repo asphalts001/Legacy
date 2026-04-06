@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bhalo - dawoo leliya</title>
+<script src="audio.js"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
 
@@ -941,10 +942,9 @@ function restart() {
 
 buildUI();
 
-document.addEventListener('deviceready', () => {
-  AudioManager.init('physics.m4a');
-}, false);
+// audio.js handles deviceready internally — call init() directly
+AudioManager.init('physics.m4a');
 </script>
-<script src="audio.js"></script>
+<script src="cordova.js"></script>
 </body>
 </html>

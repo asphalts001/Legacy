@@ -518,9 +518,9 @@
     // ── Init ──────────────────────────────────────────────
     renderStats();
     renderActivity();
-  document.addEventListener('deviceready', () => {
-  AudioManager.init('dashboard.m4a');
-}, false);
+
+    // audio.js handles deviceready internally — call init() directly
+    AudioManager.init('dashboard.m4a');
 
   </script>
   <script src="cordova.js"></script>

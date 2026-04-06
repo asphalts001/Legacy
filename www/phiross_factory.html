@@ -861,6 +861,10 @@ function escHtml(str) {
 // ── INIT ──
 renderHistory();
 loadManifest();
+
+// audio.js handles deviceready internally — call init() directly
+AudioManager.init('mcq.m4a');
 </script>
+<script src="cordova.js"></script>
 </body>
 </html>
