@@ -386,7 +386,7 @@
           <div class="subj-icon">🇹🇷🇹🇷</div>
           <div class="subj-label">
             <div>kemal pasha</div>
-            <div class="subj-meta">Chemistry</div>
+            <div class="subj-meta">commander of Armenia</div>
           </div>
           <div class="subj-arrow">›</div>
         </a>
@@ -395,7 +395,7 @@
           <div class="subj-icon">👑</div>
           <div class="subj-label">
             <div>pharaoh</div>
-            <div class="subj-meta">Physics</div>
+            <div class="subj-meta">gypsy</div>
           </div>
           <div class="subj-arrow">›</div>
         </a>
@@ -404,7 +404,7 @@
           <div class="subj-icon">🍨</div>
           <div class="subj-label">
             <div>water dispenser</div>
-            <div class="subj-meta">MCQ Sets</div>
+            <div class="subj-meta">icecream</div>
           </div>
           <div class="subj-arrow">›</div>
         </a>
@@ -441,9 +441,9 @@
 
     <!-- ── Export ── -->
     <div class="section fade-in">
-      <div class="section-label">Data (we both know how lazy you are)</div>
+      <div class="section-label">Data</div>
       <button class="btn-export" onclick="exportData()">
-        ⬇ too dumb to track 18 sets? export json
+        we know you are too dumb to track 18 sets, save history here 
       </button>
     </div>
 
@@ -462,6 +462,7 @@
 
     // ── Stats ─────────────────────────────────────────────
     function renderStats() {
+      if (typeof Tracker === 'undefined') return;
       const s = Tracker.getStats();
       document.getElementById('stat-total').textContent    = s.totalQuestions || '0';
       document.getElementById('stat-sessions').textContent = s.totalSessions  || '0';
@@ -470,6 +471,7 @@
 
     // ── Activity feed ─────────────────────────────────────
     function renderActivity() {
+      if (typeof Tracker === 'undefined') return;
       const list   = document.getElementById('activity-list');
       const recent = Tracker.getRecent(8);
       if (!recent.length) return;
