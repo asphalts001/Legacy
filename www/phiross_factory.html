@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="theme.css">
-<title>Bhalo tilla hai🤙🤙</title>
+<title>JSON Quiz · φ factory</title>
 <script src="tracker.js"></script>
 <style>
 
@@ -42,6 +42,14 @@
     cursor: pointer;
   }
   .logo span { color: var(--muted); }
+  .back-link {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    transition: color 0.15s;
+  }
+  .back-link:hover { color: var(--accent); }
   .hud {
     display: flex; gap: 20px; align-items: center;
     font-family: 'JetBrains Mono', monospace;
@@ -53,7 +61,23 @@
   .progress-bar { width: 160px; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
   .progress-fill { height: 100%; background: var(--accent); transition: width 0.3s ease; border-radius: 2px; }
 
-  /* ── SELECT ZONE (replaces upload zone) ── */
+  /* ── UPLOAD SCREEN (now JSON selector) ── */
+  .upload-hero {
+    text-align: center;
+    padding: 48px 24px 32px;
+  }
+  .upload-hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 36px; font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .upload-hero h1 span { color: var(--accent); }
+  .upload-hero p {
+    color: var(--muted);
+    margin-top: 12px;
+    font-size: 15px;
+  }
+
   .select-zone {
     background: var(--surface);
     border: 1px solid var(--border-hi);
@@ -110,6 +134,9 @@
     font-size: 12px; color: #8888bb;
     line-height: 1.8;
     white-space: pre-wrap;
+    background: rgba(0,0,0,0.2);
+    padding: 12px;
+    border-radius: 6px;
   }
   .format-hint pre em { color: var(--accent); font-style: normal; }
 
@@ -256,6 +283,14 @@
     padding: 3px 8px; border-radius: 3px;
     background: rgba(124,106,240,0.12); color: var(--accent);
   }
+  .q-diff {
+    font-family: 'Syne', sans-serif;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 3px;
+    background: rgba(200,180,100,0.12); color: var(--gold);
+    margin-left: auto;
+  }
   .q-text {
     font-size: 16.5px; line-height: 1.75;
     color: #d8d8ec; margin-bottom: 20px;
@@ -390,7 +425,7 @@
 
 <header>
   <a class="back-link" href="index.html">← Dashboard</a>
-  <div class="logo" onclick="goHome()">water  <span>·</span> cooling machine real😮‍💨</div>
+  <div class="logo" onclick="goHome()">JSON <span>·</span> QUIZ</div>
   <div class="hud" id="quiz-hud" style="display:none">
     <div class="hud-stat">
       <div class="hud-val" id="answered-val">0</div>
@@ -406,42 +441,44 @@
   </div>
 </header>
 
-<!-- ══════════════════════════════════════ UPLOAD SCREEN ═══ -->
+<!-- ══════════════════════════════════════ UPLOAD SCREEN (JSON SELECTOR) ═══ -->
 <div id="upload-screen" class="screen active">
   <div class="upload-hero">
-    <h1>🥹water <span>dispenser</span> with ice-cream🍨</h1>
-    <p>Load any water and flavour and get a fully interactive cone with scoring, explanations, and session history.</p>
+    <h1>📋 JSON <span>Question Sets</span></h1>
+    <p>Select a JSON file – it must contain an array of questions with <code>id, question, options, correctIndex</code>.</p>
   </div>
 
   <div class="select-zone">
-    <label for="set-select">ok, so which flavour today 🍨?</label>
+    <label for="set-select">Choose a set</label>
     <div id="select-loading" class="select-loading">⏳ Loading sets…</div>
     <select id="set-select" style="display:none" onchange="onSetSelected()">
-      <option value="">— so you decided the flavour 🤩 —</option>
+      <option value="">— Select a JSON set —</option>
     </select>
   </div>
 
   <div class="format-hint">
-    <h4>hey you idiot look here🫵 </h4>
-    <pre><em>this is format👇</em>
-
-Q1.  Question text here …
-     A) Option one
-     B) Option two
-     C) Option three
-     D) Option four
-
-Q2.  Next question …</pre>
+    <h4>Expected JSON structure</h4>
+    <pre>[
+  {
+    "<em>id</em>": "q1",
+    "<em>question</em>": "What is ...?",
+    "<em>options</em>": ["Opt A", "Opt B", "Opt C", "Opt D"],
+    "<em>correctIndex</em>": 2,
+    "<em>explanation</em>": "Optional explanation",
+    "<em>tags</em>": ["topic"],
+    "<em>difficulty</em>": "medium"
+  }
+]</pre>
   </div>
 
   <div class="parse-error" id="parse-error"></div>
 
   <button class="btn-load" id="btn-load" disabled onclick="loadQuiz()">
-    dont touch me thats harrasment 😩
+    ▶ Start Quiz
   </button>
 
   <div class="history-section">
-    <h2>Stupidity History</h2>
+    <h2>Recent Attempts</h2>
     <div id="history-list"></div>
     <button class="btn-clear-hist" onclick="clearHistory()">Clear History</button>
   </div>
@@ -463,7 +500,7 @@ Q2.  Next question …</pre>
     <div id="question-container"></div>
 
     <div class="global-submit-wrap" id="submit-wrap">
-      <button class="btn-submit-all" onclick="submitAll()">Dont touch me  &amp; go away you jerk😫 i will call cops</button>
+      <button class="btn-submit-all" onclick="submitAll()">Submit All &amp; See Results</button>
     </div>
 
     <div id="results">
@@ -485,383 +522,401 @@ Q2.  Next question …</pre>
 
 
 <script>
+(function() {
+  "use strict";
 
-// ═══════════════════════════════════════════════════
-//  STATE
-// ═══════════════════════════════════════════════════
-let Q = [];
-let currentSetName = '';
-let currentSetId   = '';
-let state = { selected: {}, checked: {}, startTime: null, timerInterval: null };
-let parsedFileContent = null;
+  // ═══════════════════════════════════════════════════════════════════════════
+  //  GLOBAL STATE
+  // ═══════════════════════════════════════════════════════════════════════════
+  let Q = [];
+  let currentSetName = '';
+  let currentSetId   = '';
+  let state = { selected: {}, checked: {}, startTime: null, timerInterval: null };
+  let loadedQuestionSet = null;
 
-// ═══════════════════════════════════════════════════
-//  MANIFEST — load data/manifest.json and fill <select>
-// ═══════════════════════════════════════════════════
-async function loadManifest() {
-  const loadingEl = document.getElementById('select-loading');
-  const selectEl  = document.getElementById('set-select');
-  try {
-    const res = await fetch('data/manifest.json');
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    const sets = await res.json();
-    sets.forEach(s => {
-      const opt = document.createElement('option');
-      opt.value = s.file;
-      opt.textContent = s.label;
-      opt.dataset.id  = s.id;
-      selectEl.appendChild(opt);
-    });
-    loadingEl.style.display = 'none';
-    selectEl.style.display  = 'block';
-  } catch (err) {
-    loadingEl.textContent = '⚠ Could not load manifest: ' + err.message;
-  }
-}
-
-async function onSetSelected() {
-  const selectEl = document.getElementById('set-select');
-  const errEl    = document.getElementById('parse-error');
-  const btnLoad  = document.getElementById('btn-load');
-  const chosen   = selectEl.options[selectEl.selectedIndex];
-
-  parsedFileContent = null;
-  btnLoad.disabled  = true;
-  errEl.style.display = 'none';
-
-  if (!selectEl.value) return;
-
-  currentSetId   = chosen.dataset.id || selectEl.value;
-  currentSetName = chosen.textContent;
-
-  try {
-    const res = await fetch(selectEl.value);
-    if (!res.ok) throw new Error('Could not load file (HTTP ' + res.status + ')');
-    const text = await res.text();
-    const test  = parseTxt(text);
-    if (!test.length) throw new Error('No questions found in this set.');
-    parsedFileContent = text;
-    errEl.style.display = 'none';
-    btnLoad.disabled    = false;
-  } catch (ex) {
-    errEl.textContent   = '⚠ ' + ex.message;
-    errEl.style.display = 'block';
-    btnLoad.disabled    = true;
-  }
-}
-
-// ═══════════════════════════════════════════════════
-//  HISTORY (localStorage — internal to this page)
-// ═══════════════════════════════════════════════════
-function getHistory() {
-  try { return JSON.parse(localStorage.getItem('mcq_history') || '[]'); }
-  catch { return []; }
-}
-function saveHistory(h) {
-  try { localStorage.setItem('mcq_history', JSON.stringify(h)); } catch {}
-}
-function addToHistory(entry) {
-  const h = getHistory();
-  h.unshift(entry);
-  saveHistory(h.slice(0, 50));
-}
-function clearHistory() {
-  if (!confirm('Clear all history?')) return;
-  localStorage.removeItem('mcq_history');
-  renderHistory();
-}
-
-function renderHistory() {
-  const list = document.getElementById('history-list');
-  const h = getHistory();
-  if (!h.length) {
-    list.innerHTML = '<div class="hist-empty">No sets attempted yet</div>';
-    return;
-  }
-  list.innerHTML = h.map(e => {
-    const acc = e.correct + e.wrong > 0 ? Math.round(100 * e.correct / (e.correct + e.wrong)) : 0;
-    const grade = acc >= 75 ? 'A' : acc >= 50 ? 'B' : 'C';
-    const scoreColor = acc >= 75 ? 'green' : acc >= 50 ? 'gold' : 'red';
-    const date = new Date(e.ts).toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' });
-    const time = new Date(e.ts).toLocaleTimeString('en-IN', { hour:'2-digit', minute:'2-digit' });
-    return `
-      <div class="hist-card grade-${grade}">
-        <div class="hist-set">${e.setNum || '—'}</div>
-        <div class="hist-info">
-          <div class="hist-name">${escHtml(e.name)}</div>
-          <div class="hist-meta">${e.total} Qs · ${e.correct}✓ ${e.wrong}✗ ${e.skip} skip · ${date} ${time}</div>
-        </div>
-        <div class="hist-score ${scoreColor}">${e.score}</div>
-      </div>`;
-  }).join('');
-}
-
-// ═══════════════════════════════════════════════════
-//  PARSER
-// ═══════════════════════════════════════════════════
-function parseTxt(text) {
-  const questions = [];
-
-  // ── Set name ──
-  const setMatch = text.match(/QUESTION SET\s+(\d+)/i);
-  if (setMatch) currentSetName = 'Set ' + setMatch[1];
-
-  // ── Answer key (format: "1. b" at bottom of file) ──
-  const answerMap = {};
-  const ansKeyRegex = /^\s*(\d+)\.\s*([a-dA-D])\s*$/gm;
-  let aMatch;
-  while ((aMatch = ansKeyRegex.exec(text)) !== null) {
-    answerMap[parseInt(aMatch[1])] = aMatch[2].toUpperCase().charCodeAt(0) - 65;
+  // ═══════════════════════════════════════════════════════════════════════════
+  //  HELPER: Escape HTML
+  // ═══════════════════════════════════════════════════════════════════════════
+  function escHtml(str) {
+    if (str == null) return '';
+    return String(str)
+      .replace(/&/g,'&amp;')
+      .replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;');
   }
 
-  // ── Split into blocks ──
-  // Fix: \s+ instead of \s to handle Q10. Q11. etc (two spaces after dot)
-  const blocks = text.split(/\n(?=Q\d+\.\s)/);
+  // ═══════════════════════════════════════════════════════════════════════════
+  //  SCREEN SWITCHING
+  // ═══════════════════════════════════════════════════════════════════════════
+  function showScreen(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
 
-  for (const block of blocks) {
-    const trimmed = block.trim();
-    if (!trimmed.match(/^Q\d+\./)) continue;
+  // ═══════════════════════════════════════════════════════════════════════════
+  //  LOAD MANIFEST (with better error handling)
+  // ═══════════════════════════════════════════════════════════════════════════
+  async function loadManifest() {
+    const loadingEl = document.getElementById('select-loading');
+    const selectEl  = document.getElementById('set-select');
+    const errEl     = document.getElementById('parse-error');
 
-    const qNumMatch = trimmed.match(/^Q(\d+)\./);
-    if (!qNumMatch) continue;
-    const qNum = parseInt(qNumMatch[1]);
+    try {
+      const res = await fetch('data/manifest.json');
+      if (!res.ok) throw new Error(`HTTP ${res.status} — ${res.statusText}`);
+      const sets = await res.json();
+      if (!Array.isArray(sets)) throw new Error('Manifest is not an array');
 
-    // Strip leading "Q10.  " — allow multiple spaces after dot
-    const body = trimmed.replace(/^Q\d+\.\s+/, '').trim();
+      // Clear any existing options (except the placeholder)
+      selectEl.innerHTML = '<option value="">— Select a JSON set —</option>';
 
-    // ── Normalise inline options to one-per-line ──
-    // Handles: "...question text A) opt one B) opt two C) opt three D) opt four"
-    // Inserts a newline before each A) B) C) D) that isn't already on its own line
-    const normalised = body.replace(/([^\n])\s+([A-D]\))/g, '$1\n$2');
+      sets.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s.file;
+        opt.textContent = s.label;
+        if (s.id) opt.dataset.id = s.id;
+        selectEl.appendChild(opt);
+      });
 
-    // ── Extract options ──
-    const optRegex = /^([A-D])\)\s+(.+?)(?=\n[A-D]\)|\n-{5,}|$)/gms;
-    const opts = [];
-    let optMatch;
-    while ((optMatch = optRegex.exec(normalised)) !== null) {
-      opts.push(optMatch[2].replace(/\s+/g, ' ').trim());
+      loadingEl.style.display = 'none';
+      selectEl.style.display  = 'block';
+    } catch (err) {
+      console.error('Manifest load error:', err);
+      loadingEl.textContent = '⚠ Could not load manifest: ' + err.message;
+      errEl.textContent = 'Manifest error: ' + err.message;
+      errEl.style.display = 'block';
     }
-
-    if (opts.length < 2) continue;
-
-    // ── Extract question text (everything before first option) ──
-    const firstOptPos = normalised.search(/^A\)/m);
-    let qText = firstOptPos >= 0
-      ? normalised.slice(0, firstOptPos)
-      : normalised;
-    qText = qText.replace(/\s+/g, ' ').trim();
-
-    if (!qText || opts.length < 2) continue;
-
-    questions.push({
-      id:   qNum,
-      text: qText,
-      opts,
-      ans:  answerMap[qNum] !== undefined ? answerMap[qNum] : -1
-    });
   }
 
-  return questions;
-}
+  // ═══════════════════════════════════════════════════════════════════════════
+  //  VALIDATION (JSON structure)
+  // ═══════════════════════════════════════════════════════════════════════════
+  function validateQuestion(q) {
+    if (typeof q !== "object" || q === null) throw new Error("Question must be an object");
+    if (typeof q.id !== "string" || !q.id.trim()) throw new Error(`Invalid id: ${q.id}`);
+    if (typeof q.question !== "string" || !q.question.trim()) throw new Error(`Invalid question text for ${q.id}`);
+    if (!Array.isArray(q.options) || q.options.length < 2) throw new Error(`Options must be an array (min 2) for ${q.id}`);
+    q.options.forEach((opt, i) => {
+      if (typeof opt !== "string" || !opt.trim()) throw new Error(`Invalid option at index ${i} in ${q.id}`);
+    });
+    if (typeof q.correctIndex !== "number" || q.correctIndex < 0 || q.correctIndex >= q.options.length) {
+      throw new Error(`Invalid correctIndex in ${q.id}`);
+    }
+    if (q.explanation && typeof q.explanation !== "string") throw new Error(`Explanation must be string in ${q.id}`);
+    if (q.tags) {
+      if (!Array.isArray(q.tags)) throw new Error(`Tags must be array in ${q.id}`);
+      q.tags.forEach(tag => { if (typeof tag !== "string") throw new Error(`Invalid tag in ${q.id}`); });
+    }
+    if (q.difficulty && !["easy","medium","hard"].includes(q.difficulty)) {
+      throw new Error(`Invalid difficulty in ${q.id}`);
+    }
+    return true;
+  }
 
-// ═══════════════════════════════════════════════════
-//  LOAD QUIZ
-// ═══════════════════════════════════════════════════
-function loadQuiz() {
-  if (!parsedFileContent) return;
-  Q = parseTxt(parsedFileContent);
-  if (!Q.length) return;
-
-  state = { selected: {}, checked: {}, startTime: Date.now(), timerInterval: null };
-
-  const setMatch = parsedFileContent.match(/QUESTION SET\s+(\d+)/i);
-  const setNum   = setMatch ? 'SET ' + setMatch[1] : currentSetName.toUpperCase();
-  const genMatch = parsedFileContent.match(/Generated\s+([\d\-]+)/i);
-
-  document.getElementById('quiz-title').innerHTML = `<span>${escHtml(setNum)}</span>`;
-  document.getElementById('quiz-sub').textContent =
-    genMatch ? `Generated ${genMatch[1]}` : 'Biology MCQ Practice';
-  document.getElementById('q-count').textContent = Q.length;
-
-  showScreen('quiz-screen');
-  document.getElementById('quiz-hud').style.display = 'flex';
-  buildUI();
-}
-
-// ═══════════════════════════════════════════════════
-//  QUIZ UI
-// ═══════════════════════════════════════════════════
-function buildUI() {
-  const container = document.getElementById('question-container');
-  container.innerHTML = '';
-  Q.forEach((q, i) => {
-    const card = document.createElement('div');
-    card.className = 'q-card';
-    card.id = `card-${q.id}`;
-    card.innerHTML = `
-      <div class="q-meta">
-        <span class="q-num">Q${String(i+1).padStart(2,'0')}</span>
-        <span class="q-tag">MCQ</span>
-      </div>
-      <div class="q-text">${escHtml(q.text)}</div>
-      <div class="options" id="opts-${q.id}">
-        ${q.opts.map((o,j) => `
-          <button class="opt" id="opt-${q.id}-${j}" onclick="selectOpt(${q.id},${j})">
-            <span class="opt-key">${String.fromCharCode(65+j)}</span>
-            <span>${escHtml(o)}</span>
-          </button>`).join('')}
-      </div>
-      <div class="q-footer">
-        <button class="btn-check" id="chk-${q.id}" onclick="checkOne(${q.id})" disabled>Check</button>
-      </div>
-      <div class="explanation" id="expl-${q.id}">
-        <strong>Answer:</strong> ${String.fromCharCode(65 + (q.ans >= 0 ? q.ans : 0))}
-        ${q.ans >= 0 ? '' : ' <em style="color:var(--muted);font-size:13px">(answer not provided in file)</em>'}
-      </div>
-    `;
-    container.appendChild(card);
-  });
-  document.getElementById('results').classList.remove('visible');
-  document.getElementById('submit-wrap').style.display = 'flex';
-  updateHUD();
-  startTimer();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function selectOpt(qid, optIdx) {
-  if (state.checked[qid]) return;
-  state.selected[qid] = optIdx;
-  const q = Q.find(x => x.id === qid);
-  q.opts.forEach((_, j) => {
-    document.getElementById(`opt-${qid}-${j}`)
-      .classList.toggle('selected', j === optIdx);
-  });
-  document.getElementById(`chk-${qid}`).disabled = false;
-  updateHUD();
-}
-
-function checkOne(qid) {
-  if (state.checked[qid]) return;
-  state.checked[qid] = true;
-  const q = Q.find(x => x.id === qid);
-  const chosen = state.selected[qid];
-  q.opts.forEach((_, j) => {
-    const el = document.getElementById(`opt-${qid}-${j}`);
-    el.classList.remove('selected');
-    if (q.ans >= 0) {
-      if (j === q.ans) el.classList.add(j === chosen ? 'correct' : 'show-correct');
-      else if (j === chosen) el.classList.add('wrong');
+  function parseAndValidateQuestions(input) {
+    let data;
+    if (typeof input === "string") {
+      try { data = JSON.parse(input); } catch (e) { throw new Error("Invalid JSON input"); }
     } else {
-      if (j === chosen) el.classList.add('selected');
+      data = input;
     }
-  });
-  document.getElementById(`expl-${qid}`).classList.add('visible');
-  document.getElementById(`chk-${qid}`).disabled = true;
-}
-
-function submitAll() {
-  Q.forEach(q => { if (!state.checked[q.id]) checkOne(q.id); });
-  showResults();
-  document.getElementById('submit-wrap').style.display = 'none';
-}
-
-function showResults() {
-  let correct = 0, wrong = 0, skip = 0;
-  Q.forEach(q => {
-    if (state.selected[q.id] === undefined)            { skip++; }
-    else if (q.ans >= 0 && state.selected[q.id] === q.ans) { correct++; }
-    else if (q.ans >= 0)                               { wrong++; }
-    else                                               { skip++; }
-  });
-  const score = correct * 4 - wrong * 1;
-  document.getElementById('score-display').textContent = score;
-  document.getElementById('r-correct').textContent = correct;
-  document.getElementById('r-wrong').textContent   = wrong;
-  document.getElementById('r-skip').textContent    = skip;
-  const acc = correct + wrong > 0 ? Math.round(100 * correct / (correct + wrong)) : 0;
-  document.getElementById('r-acc').textContent = acc + '%';
-
-  const r = document.getElementById('results');
-  r.classList.add('visible');
-  r.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  clearInterval(state.timerInterval);
-
-  // ── Save to page-local history ──
-  const setMatch = (parsedFileContent || '').match(/QUESTION SET\s+(\d+)/i);
-  const histEntry = {
-    ts: Date.now(),
-    name: currentSetName,
-    setNum: setMatch ? ('S' + setMatch[1].padStart(2,'0')) : currentSetName,
-    total: Q.length,
-    correct, wrong, skip, score, acc
-  };
-  addToHistory(histEntry);
-
-  // ── Also log to tracker.js if available ──
-  if (typeof Tracker !== 'undefined' && Tracker.logScore) {
-    Tracker.logScore({
-      set:     currentSetId || currentSetName,
-      label:   currentSetName,
-      score,
-      correct,
-      wrong,
-      skip,
-      total:   Q.length,
-      acc
-    });
+    if (!Array.isArray(data)) throw new Error("Expected an array of questions");
+    const validated = [];
+    for (const q of data) {
+      validateQuestion(q);
+      validated.push(q);
+    }
+    return validated;
   }
-}
 
-function updateHUD() {
-  const n = Object.keys(state.selected).length;
-  document.getElementById('answered-val').textContent = n;
-  if (Q.length) document.getElementById('prog').style.width = (100*n/Q.length)+'%';
-}
+  // ═══════════════════════════════════════════════════════════════════════════
+  //  SET SELECTION & JSON LOADING
+  // ═══════════════════════════════════════════════════════════════════════════
+  async function onSetSelected() {
+    const selectEl = document.getElementById('set-select');
+    const errEl    = document.getElementById('parse-error');
+    const btnLoad  = document.getElementById('btn-load');
+    const chosen   = selectEl.options[selectEl.selectedIndex];
 
-function startTimer() {
-  clearInterval(state.timerInterval);
-  const end = Date.now() + 60 * 60 * 1000;
-  state.timerInterval = setInterval(() => {
-    const rem = Math.max(0, end - Date.now());
-    const m = Math.floor(rem/60000);
-    const s = Math.floor((rem%60000)/1000);
-    document.getElementById('timer-val').textContent =
-      String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
-    if (rem === 0) { clearInterval(state.timerInterval); submitAll(); }
-  }, 1000);
-}
+    loadedQuestionSet = null;
+    btnLoad.disabled  = true;
+    errEl.style.display = 'none';
 
-function restartQuiz() {
-  state = { selected: {}, checked: {}, startTime: Date.now(), timerInterval: null };
-  buildUI();
-}
+    if (!selectEl.value) return;
 
-function goHome() {
-  clearInterval(state.timerInterval);
-  document.getElementById('quiz-hud').style.display = 'none';
-  showScreen('upload-screen');
-  renderHistory();
-}
+    currentSetId   = chosen.dataset.id || selectEl.value;
+    currentSetName = chosen.textContent;
 
-function showScreen(id) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
+    try {
+      const res = await fetch(selectEl.value);
+      if (!res.ok) throw new Error(`HTTP ${res.status} — ${res.statusText}`);
+      const text = await res.text();
+      const parsed = parseAndValidateQuestions(text);
+      if (!parsed.length) throw new Error('No valid questions found.');
+      loadedQuestionSet = parsed;
+      btnLoad.disabled = false;
+    } catch (ex) {
+      console.error('Set load error:', ex);
+      errEl.textContent = '⚠ ' + ex.message;
+      errEl.style.display = 'block';
+    }
+  }
 
-function escHtml(str) {
-  return (str || '')
-    .replace(/&/g,'&amp;')
-    .replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;')
-    .replace(/"/g,'&quot;');
-}
+  // ═══════════════════════════════════════════════════════════════════════════
+  //  HISTORY (localStorage)
+  // ═══════════════════════════════════════════════════════════════════════════
+  function getHistory() {
+    try { return JSON.parse(localStorage.getItem('mcq_history_json') || '[]'); }
+    catch { return []; }
+  }
+  function saveHistory(h) {
+    try { localStorage.setItem('mcq_history_json', JSON.stringify(h)); } catch {}
+  }
+  function addToHistory(entry) {
+    const h = getHistory();
+    h.unshift(entry);
+    saveHistory(h.slice(0, 50));
+  }
+  function clearHistory() {
+    if (!confirm('Clear all history?')) return;
+    localStorage.removeItem('mcq_history_json');
+    renderHistory();
+  }
 
-// ── INIT ──
-renderHistory();
-loadManifest();
+  function renderHistory() {
+    const list = document.getElementById('history-list');
+    const h = getHistory();
+    if (!h.length) {
+      list.innerHTML = '<div class="hist-empty">No sets attempted yet</div>';
+      return;
+    }
+    list.innerHTML = h.map(e => {
+      const acc = e.correct + e.wrong > 0 ? Math.round(100 * e.correct / (e.correct + e.wrong)) : 0;
+      const grade = acc >= 75 ? 'A' : acc >= 50 ? 'B' : 'C';
+      const scoreColor = acc >= 75 ? 'green' : acc >= 50 ? 'gold' : 'red';
+      const date = new Date(e.ts).toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' });
+      const time = new Date(e.ts).toLocaleTimeString('en-IN', { hour:'2-digit', minute:'2-digit' });
+      return `
+        <div class="hist-card grade-${grade}">
+          <div class="hist-set">${escHtml(e.setNum || '—')}</div>
+          <div class="hist-info">
+            <div class="hist-name">${escHtml(e.name)}</div>
+            <div class="hist-meta">${e.total} Qs · ${e.correct}✓ ${e.wrong}✗ ${e.skip} skip · ${date} ${time}</div>
+          </div>
+          <div class="hist-score ${scoreColor}">${e.score}</div>
+        </div>`;
+    }).join('');
+  }
 
-// audio.js handles deviceready internally — call init() directly
-AudioManager.init('mcq.m4a');
+  // ═══════════════════════════════════════════════════════════════════════════
+  //  LOAD QUIZ (start session)
+  // ═══════════════════════════════════════════════════════════════════════════
+  function loadQuiz() {
+    if (!loadedQuestionSet) return;
+    Q = loadedQuestionSet;
+    state = { selected: {}, checked: {}, startTime: Date.now(), timerInterval: null };
+
+    document.getElementById('quiz-title').innerHTML = `<span>${escHtml(currentSetName)}</span>`;
+    document.getElementById('quiz-sub').textContent = `JSON · ${Q.length} questions`;
+    document.getElementById('q-count').textContent = Q.length;
+
+    showScreen('quiz-screen');
+    document.getElementById('quiz-hud').style.display = 'flex';
+    buildUI();
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  //  BUILD QUESTION CARDS
+  // ═══════════════════════════════════════════════════════════════════════════
+  function buildUI() {
+    const container = document.getElementById('question-container');
+    container.innerHTML = '';
+    Q.forEach((q, i) => {
+      const card = document.createElement('div');
+      card.className = 'q-card';
+      card.id = `card-${q.id}`;
+
+      const diffBadge = q.difficulty ? `<span class="q-diff">${escHtml(q.difficulty)}</span>` : '';
+      const tagBadges = (q.tags && q.tags.length)
+        ? q.tags.map(t => `<span class="q-tag">${escHtml(t)}</span>`).join('')
+        : '<span class="q-tag">MCQ</span>';
+
+      card.innerHTML = `
+        <div class="q-meta">
+          <span class="q-num">Q${String(i+1).padStart(2,'0')}</span>
+          ${tagBadges}
+          ${diffBadge}
+        </div>
+        <div class="q-text">${escHtml(q.question)}</div>
+        <div class="options" id="opts-${q.id}">
+          ${q.options.map((optText, j) => `
+            <button class="opt" id="opt-${q.id}-${j}" onclick="window.selectOpt('${q.id}',${j})">
+              <span class="opt-key">${String.fromCharCode(65+j)}</span>
+              <span>${escHtml(optText)}</span>
+            </button>`).join('')}
+        </div>
+        <div class="q-footer">
+          <button class="btn-check" id="chk-${q.id}" onclick="window.checkOne('${q.id}')" disabled>Check</button>
+        </div>
+        <div class="explanation" id="expl-${q.id}">
+          <strong>Answer:</strong> ${String.fromCharCode(65 + q.correctIndex)}<br>
+          ${q.explanation ? `<span style="color:#b0b0d0;font-size:0.95em">${escHtml(q.explanation)}</span>` : ''}
+        </div>
+      `;
+      container.appendChild(card);
+    });
+    document.getElementById('results').classList.remove('visible');
+    document.getElementById('submit-wrap').style.display = 'flex';
+    updateHUD();
+    startTimer();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  //  INTERACTION (exposed globally for onclick)
+  // ═══════════════════════════════════════════════════════════════════════════
+  window.selectOpt = function(qid, optIdx) {
+    if (state.checked[qid]) return;
+    state.selected[qid] = optIdx;
+    const q = Q.find(x => x.id === qid);
+    if (!q) return;
+    q.options.forEach((_, j) => {
+      const el = document.getElementById(`opt-${qid}-${j}`);
+      if (el) el.classList.toggle('selected', j === optIdx);
+    });
+    const chkBtn = document.getElementById(`chk-${qid}`);
+    if (chkBtn) chkBtn.disabled = false;
+    updateHUD();
+  };
+
+  window.checkOne = function(qid) {
+    if (state.checked[qid]) return;
+    state.checked[qid] = true;
+    const q = Q.find(x => x.id === qid);
+    if (!q) return;
+    const chosen = state.selected[qid];
+    q.options.forEach((_, j) => {
+      const el = document.getElementById(`opt-${qid}-${j}`);
+      if (!el) return;
+      el.classList.remove('selected');
+      if (j === q.correctIndex) {
+        el.classList.add(j === chosen ? 'correct' : 'show-correct');
+      } else if (j === chosen) {
+        el.classList.add('wrong');
+      }
+    });
+    const expl = document.getElementById(`expl-${qid}`);
+    if (expl) expl.classList.add('visible');
+    const chkBtn = document.getElementById(`chk-${qid}`);
+    if (chkBtn) chkBtn.disabled = true;
+  };
+
+  window.submitAll = function() {
+    Q.forEach(q => { if (!state.checked[q.id]) window.checkOne(q.id); });
+    showResults();
+    document.getElementById('submit-wrap').style.display = 'none';
+  };
+
+  function showResults() {
+    let correct = 0, wrong = 0, skip = 0;
+    Q.forEach(q => {
+      const chosen = state.selected[q.id];
+      if (chosen === undefined) {
+        skip++;
+      } else if (chosen === q.correctIndex) {
+        correct++;
+      } else {
+        wrong++;
+      }
+    });
+    const score = correct * 4 - wrong * 1;
+    document.getElementById('score-display').textContent = score;
+    document.getElementById('r-correct').textContent = correct;
+    document.getElementById('r-wrong').textContent   = wrong;
+    document.getElementById('r-skip').textContent    = skip;
+    const acc = correct + wrong > 0 ? Math.round(100 * correct / (correct + wrong)) : 0;
+    document.getElementById('r-acc').textContent = acc + '%';
+
+    const r = document.getElementById('results');
+    r.classList.add('visible');
+    r.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    clearInterval(state.timerInterval);
+
+    const histEntry = {
+      ts: Date.now(),
+      name: currentSetName,
+      setNum: currentSetId.replace(/\.json$/i,'').toUpperCase(),
+      total: Q.length,
+      correct, wrong, skip, score, acc
+    };
+    addToHistory(histEntry);
+
+    if (typeof window.Tracker !== 'undefined' && window.Tracker.logScore) {
+      window.Tracker.logScore({
+        set:     currentSetId,
+        label:   currentSetName,
+        score,
+        correct,
+        wrong,
+        skip,
+        total:   Q.length,
+        acc
+      });
+    }
+  }
+
+  function updateHUD() {
+    const n = Object.keys(state.selected).length;
+    document.getElementById('answered-val').textContent = n;
+    if (Q.length) document.getElementById('prog').style.width = (100*n/Q.length)+'%';
+  }
+
+  function startTimer() {
+    clearInterval(state.timerInterval);
+    const end = Date.now() + 60 * 60 * 1000;
+    state.timerInterval = setInterval(() => {
+      const rem = Math.max(0, end - Date.now());
+      const m = Math.floor(rem/60000);
+      const s = Math.floor((rem%60000)/1000);
+      document.getElementById('timer-val').textContent =
+        String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+      if (rem === 0) { clearInterval(state.timerInterval); window.submitAll(); }
+    }, 1000);
+  }
+
+  window.restartQuiz = function() {
+    state = { selected: {}, checked: {}, startTime: Date.now(), timerInterval: null };
+    buildUI();
+  };
+
+  window.goHome = function() {
+    clearInterval(state.timerInterval);
+    document.getElementById('quiz-hud').style.display = 'none';
+    showScreen('upload-screen');
+    renderHistory();
+  };
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  //  INITIALIZATION
+  // ═══════════════════════════════════════════════════════════════════════════
+  document.addEventListener('DOMContentLoaded', function() {
+    renderHistory();
+    loadManifest();
+
+    // Audio manager (safe)
+    if (typeof window.AudioManager !== 'undefined' && window.AudioManager.init) {
+      window.AudioManager.init('mcq.m4a');
+    }
+
+    // Expose functions needed by inline onclick
+    window.onSetSelected = onSetSelected;
+    window.loadQuiz = loadQuiz;
+    window.clearHistory = clearHistory;
+  });
+
+})();
+
 </script>
 </body>
 </html>

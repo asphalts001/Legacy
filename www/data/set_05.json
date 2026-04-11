@@ -1,0 +1,548 @@
+[
+  {
+    "id": "set_05_q1",
+    "question": "A nucleosome consists of DNA wrapped around a histone octamer. How many base pairs of DNA are associated with each nucleosome?",
+    "options": [
+      "~50 bp",
+      "~100 bp",
+      "~200 bp",
+      "~500 bp"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q2",
+    "question": "Spongilla is the example of a freshwater sponge, while Euspongia is commonly known as:",
+    "options": [
+      "Glass sponge",
+      "Bath sponge",
+      "Boring sponge",
+      "Finger sponge"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q3",
+    "question": "The exoskeleton of arthropods is made of chitin — a complex polysaccharide. The building blocks of chitin are:",
+    "options": [
+      "Glucose units only (homopolymer of glucose)",
+      "Fructose and galactose",
+      "Amino-sugars and modified sugars (mostly homopolymer)",
+      "Cellulose and hemicellulose"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q4",
+    "question": "A mature female frog lays a large number of eggs at one time. The approximate number of ova laid by a mature female frog at one time is:",
+    "options": [
+      "500–700",
+      "1000–1500",
+      "2500–3000",
+      "5000–6000"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q5",
+    "question": "Underproduction of adrenal cortex hormones (glucocorticoids/mineralocorticoids) alters carbohydrate metabolism and causes acute weakness and fatigue. This condition is called:",
+    "options": [
+      "Cushing's syndrome",
+      "Conn's syndrome",
+      "Addison's disease",
+      "Waterhouse-Friderichsen syndrome"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q6",
+    "question": "Pollen grains of cereals like rice and wheat lose viability very rapidly after release. What is the approximate viability period of pollen grains of rice and wheat after release?",
+    "options": [
+      "Within 30 minutes",
+      "24–48 hours",
+      "Several weeks",
+      "Several months"
+    ],
+    "correctIndex": 0,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q7",
+    "question": "The Lac operon was elucidated by:",
+    "options": [
+      "Watson and Crick",
+      "Hershey and Chase",
+      "Jacob and Monod",
+      "Avery, MacLeod, and McCarty"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q8",
+    "question": "To visualise DNA bands in agarose gel electrophoresis, the gel is stained with a specific chemical and exposed to UV light, showing orange-coloured bands. This staining chemical is:",
+    "options": [
+      "Crystal violet",
+      "Methylene blue",
+      "Ethidium bromide",
+      "Safranin"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q9",
+    "question": "The pneumotaxic centre, which can reduce the duration of inspiration and alter respiratory rate, is located in:",
+    "options": [
+      "Medulla oblongata",
+      "Pons",
+      "Hypothalamus",
+      "Carotid body"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q10",
+    "question": "In hemodialysis, blood from an artery is pumped to an artificial kidney (dialysing unit) after adding heparin. The dialysing unit contains a coiled cellophane tube bathed in dialysing fluid. The dialysing fluid has the composition of:",
+    "options": [
+      "Distilled water only",
+      "Plasma minus all solutes",
+      "Plasma-like composition except nitrogenous wastes",
+      "High concentration of urea to draw wastes out"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q11",
+    "question": "The SECONDARY (anamnestic) immune response differs from the PRIMARY response in that it is:",
+    "options": [
+      "Slower and of lower intensity",
+      "Faster and of much higher intensity due to immunological memory (memory B and T cells from first exposure)",
+      "Mediated only by innate immunity",
+      "Identical to the primary response in intensity and speed"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q12",
+    "question": "Among the muscle disorders listed, which disease is an AUTOIMMUNE disorder that specifically affects the neuromuscular junction, leading to fatigue, weakening, and paralysis of skeletal muscles?",
+    "options": [
+      "Muscular dystrophy",
+      "Tetany",
+      "Myasthenia gravis",
+      "Gout"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q13",
+    "question": "Restriction endonucleases are named using a specific convention. EcoRI is derived from Escherichia coli strain RY13. In this naming, what does the Roman numeral \"I\" in EcoRI represent?",
+    "options": [
+      "The size of the recognition sequence (1 base pair)",
+      "The order of isolation (first enzyme isolated from that strain)",
+      "The type of cut made (blunt end)",
+      "The number of palindromes recognised"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q14",
+    "question": "The \"Z-scheme\" of electron transport in photosynthesis describes:",
+    "options": [
+      "Cyclic flow of electrons only through PS I",
+      "Non-cyclic electron flow from PS II → ETS → PS I → NADP⁺",
+      "Movement of protons across the thylakoid membrane",
+      "The shape of the Calvin cycle intermediates"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q15",
+    "question": "Ex situ conservation refers to conservation of species outside their natural habitat. Modern ex situ techniques include cryopreservation of gametes, in vitro fertilisation, and tissue culture propagation. Seed banks preserve which type of material?",
+    "options": [
+      "Seeds of endangered animal food sources only",
+      "Genetic strains of plants, particularly crop varieties, for long-term preservation",
+      "Only extinct plant species",
+      "Seeds of invasive species for study"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q16",
+    "question": "The uterine wall has three layers. The inner glandular lining that undergoes cyclical changes during the menstrual cycle is called the endometrium. The thick smooth muscle layer responsible for strong contractions during delivery is called:",
+    "options": [
+      "Perimetrium",
+      "Myometrium",
+      "Endometrium",
+      "Mesometrium"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q17",
+    "question": "The secondary structure of tRNA is a:",
+    "options": [
+      "Double helix (like DNA)",
+      "Clover-leaf structure (secondary); actual 3D shape: inverted L",
+      "Straight linear chain",
+      "Triple helix"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q18",
+    "question": "Population density of tigers in a reserve is estimated indirectly because direct counting of such large, rare animals is impractical. Which of the following indirect methods is used to estimate tiger population density?",
+    "options": [
+      "Mark-recapture method using radio collars",
+      "Pug marks and fecal pellets",
+      "Aerial photography and biomass estimation",
+      "Relative density using trap counts"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q19",
+    "question": "The failure of chromatid separation during cell division resulting in an abnormal number of chromosomes (gain or loss) is called:",
+    "options": [
+      "Polyploidy",
+      "Frameshift mutation",
+      "Aneuploidy (non-disjunction)",
+      "Translocation"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q20",
+    "question": "The respiratory pathway is described as AMPHIBOLIC because:",
+    "options": [
+      "It only occurs in the presence of oxygen",
+      "It serves both catabolic (breakdown) and anabolic (biosynthetic) functions, with intermediates being withdrawn for or added into the pathway",
+      "It produces both ATP and NADPH equally",
+      "It takes place in both the cytoplasm and the nucleus"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q21",
+    "question": "In prokaryotic bacteria, many possess small circular DNA molecules outside the main genomic DNA. These confer unique phenotypic characters such as antibiotic resistance and are also used to monitor bacterial transformation with foreign DNA. These are called:",
+    "options": [
+      "Nucleoids",
+      "Mesosomes",
+      "Plasmids",
+      "Inclusion bodies"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q22",
+    "question": "In the coagulation cascade, THROMBIN converts fibrinogen to fibrin. Thrombin itself is formed from PROTHROMBIN by:",
+    "options": [
+      "Platelet factor alone",
+      "Thrombokinase (thromboplastin) complex — activated by platelets and tissue damage, requiring calcium ions",
+      "Anti-Rh antibodies",
+      "Histamine released by basophils"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q23",
+    "question": "What structural differences allow archaebacteria to survive in extreme conditions?",
+    "options": [
+      "Archaebacteria have a nuclear membrane protecting their DNA",
+      "Archaebacteria have a DIFFERENT CELL WALL STRUCTURE from eubacteria",
+      "Archaebacteria have heat-resistant ribosomes absent in eubacteria",
+      "Archaebacteria store energy as special heat-stable lipids"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q24",
+    "question": "Selaginella belongs to which class of Pteridophyta?",
+    "options": [
+      "Psilopsida",
+      "Sphenopsida",
+      "Pteropsida",
+      "Lycopsida"
+    ],
+    "correctIndex": 3,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q25",
+    "question": "Which microorganism produces CITRIC ACID commercially?",
+    "options": [
+      "Acetobacter aceti",
+      "Clostridium butylicum",
+      "Aspergillus niger",
+      "Lactobacillus"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q26",
+    "question": "Ethylene promotes which of the following in deep-water rice, and what is the adaptive significance?",
+    "options": [
+      "Inhibits internode elongation to conserve energy under flooding",
+      "Promotes rapid internode and petiole elongation so that leaves and the upper shoot remain above water",
+      "Promotes root hair formation only",
+      "Induces dormancy to survive flooding"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q27",
+    "question": "Lobefins (fish with stout, strong fins) evolved into which group that first colonised land, and approximately when?",
+    "options": [
+      "Reptiles; 200 mya",
+      "First amphibians; 350 mya",
+      "First mammals; 65 mya",
+      "Birds; 150 mya"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q28",
+    "question": "During pachytene of meiosis I, crossing over (exchange of genetic material between non-sister chromatids of homologous chromosomes) is an enzyme-mediated process. The enzyme responsible for this recombination is called:",
+    "options": [
+      "DNA polymerase",
+      "Topoisomerase",
+      "Recombinase",
+      "Ligase"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q29",
+    "question": "Frogs are carnivores and capture food using their bilobed tongue. The partially digested food (chyme) passes from the stomach to the first part of the small intestine. This first part is called the:",
+    "options": [
+      "Ileum",
+      "Jejunum",
+      "Colon",
+      "Duodenum"
+    ],
+    "correctIndex": 3,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q30",
+    "question": "India initiated family planning programmes in 1951 and current programmes are called Reproductive and Child Health Care (RCH) programmes. India also has a statutory ban on amniocentesis for sex determination to check female foeticides. However, amniocentesis is legitimately used to analyse amniotic fluid for detection of genetic disorders. Which of the following conditions can be detected by amniocentesis?",
+    "options": [
+      "Diabetes mellitus and hypertension",
+      "Down syndrome, haemophilia, sickle-cell anaemia",
+      "Colour blindness and night blindness only",
+      "PKU and rickets only"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q31",
+    "question": "Transgenic mice are used to test the safety of polio vaccines before use in humans. Previously, which animals were used for this safety testing (replaced by transgenic mice)?",
+    "options": [
+      "Rabbits",
+      "Guinea pigs",
+      "Monkeys",
+      "Dogs"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q32",
+    "question": "In plant taxonomy, what is the equivalent of \"Phylum\" used in animal classification?",
+    "options": [
+      "Class",
+      "Division",
+      "Order",
+      "Section"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q33",
+    "question": "A flower that can be divided into two equal halves by any plane passing through the centre is described as actinomorphic. Which of the following is an example of a zygomorphic flower?",
+    "options": [
+      "Mustard",
+      "Datura",
+      "Chilli",
+      "Pea"
+    ],
+    "correctIndex": 3,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q34",
+    "question": "Which of the following is correctly matched — coelenterate organism with its common name?",
+    "options": [
+      "Physalia — Brain coral",
+      "Meandrina — Portuguese man-of-war",
+      "Pennatula — Sea pen",
+      "Gorgonia — Sea anemone"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q35",
+    "question": "Epidermal hairs on the shoot system of plants are called trichomes. Unlike root hairs which are unicellular, trichomes in the shoot system are usually:",
+    "options": [
+      "Unicellular and non-secretory",
+      "Multicellular and may be secretory",
+      "Unicellular and always secretory",
+      "Always unbranched and non-living"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q36",
+    "question": "Echinoderms are unique among invertebrates in having a water vascular system. This system is used for which of the following functions?",
+    "options": [
+      "Only for respiration",
+      "Locomotion, food capture, transport, and respiration",
+      "Excretion and osmoregulation only",
+      "Reproduction and gas exchange"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q37",
+    "question": "There are two types of synapses — electrical and chemical. In an electrical synapse, the pre- and post-synaptic membranes are very close and electrical current flows directly. Regarding electrical vs. chemical synapses, which statement is CORRECT?",
+    "options": [
+      "Electrical synapses are more common than chemical synapses",
+      "Chemical synapses are faster than electrical synapses",
+      "Electrical synapses transmit impulses faster and are rare in the system",
+      "Both types use neurotransmitters for impulse transmission"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q38",
+    "question": "In most terrestrial ecosystems, the Detritus Food Chain (DFC) is the dominant pathway for energy flow. In most AQUATIC ecosystems, which food chain is dominant?",
+    "options": [
+      "Detritus Food Chain (DFC)",
+      "Grazing Food Chain (GFC)",
+      "Both are equally dominant",
+      "Neither — energy is transferred only through chemical pathways"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_05_q39",
+    "question": "Sickle-cell anaemia is autosome-linked and recessive. An individual with genotype HbA HbS (heterozygous) is:",
+    "options": [
+      "Severely diseased (sickle-cell disease)",
+      "Normal carrier (sickle-cell trait) — unaffected but carries the mutant allele",
+      "Completely immune to malaria",
+      "Unable to reproduce"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  }
+]

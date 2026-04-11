@@ -1,0 +1,562 @@
+[
+  {
+    "id": "set_s5_q1",
+    "question": "Neophron is a:",
+    "options": [
+      "Crow",
+      "Vulture",
+      "Eagle",
+      "Parrot"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q2",
+    "question": "Birds have ossified (bony) structures that help in:",
+    "options": [
+      "Flying only",
+      "Grinding food (gizzard) among other functions",
+      "Hearing",
+      "Reproduction"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q3",
+    "question": "Pteropus is the scientific name of:",
+    "options": [
+      "Rat",
+      "Flying fox/fruit bat",
+      "Camel",
+      "Monkey"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q4",
+    "question": "Camelus is the scientific name of:",
+    "options": [
+      "Elephant",
+      "Camel",
+      "Horse",
+      "Whale"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q5",
+    "question": "Delphinus is a:",
+    "options": [
+      "Whale",
+      "Dolphin",
+      "Seal",
+      "Sea cow"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q6",
+    "question": "Balaenoptera is a:",
+    "options": [
+      "Dolphin",
+      "Blue whale",
+      "Shark",
+      "Sea turtle"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q7",
+    "question": "Equus is the scientific name of:",
+    "options": [
+      "Elephant",
+      "Horse",
+      "Camel",
+      "Rhino"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q8",
+    "question": "Macaca is the scientific name of:",
+    "options": [
+      "Rat",
+      "Monkey/macaque",
+      "Dog",
+      "Cat"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q9",
+    "question": "The outermost layer of the root is called:",
+    "options": [
+      "Cortex",
+      "Epiblema (root epidermis)",
+      "Endodermis",
+      "Pericycle"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q10",
+    "question": "In root anatomy, protoxylem is:",
+    "options": [
+      "Located toward the periphery (exarch)",
+      "Located toward the centre (endarch)",
+      "Absent in roots",
+      "Scattered throughout"
+    ],
+    "correctIndex": 0,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q11",
+    "question": "In stem anatomy, protoxylem is:",
+    "options": [
+      "Exarch",
+      "Endarch (towards centre of vascular bundle)",
+      "Absent",
+      "Mesarch"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q12",
+    "question": "The barrel-shaped cells in the root epidermis are characteristic of:",
+    "options": [
+      "Cortex parenchyma",
+      "Epiblema cells",
+      "Endodermal cells",
+      "Pericycle cells"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q13",
+    "question": "Curd formation involves bacteria that improve:",
+    "options": [
+      "Only taste",
+      "Nutritive value (including Vitamin B12) and taste",
+      "Only texture",
+      "Only shelf life"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q14",
+    "question": "Idli and dosa are prepared by:",
+    "options": [
+      "Baking with yeast",
+      "Fermentation of rice and bengal gram batter",
+      "Direct cooking without fermentation",
+      "Chemical leavening"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q15",
+    "question": "Toddy is a fermented drink made from:",
+    "options": [
+      "Malted barley",
+      "Sap of certain palms",
+      "Fruit juice only",
+      "Sugarcane juice only"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q16",
+    "question": "Wine and beer are produced using:",
+    "options": [
+      "Bacteria",
+      "Yeast (ferments malted cereals/fruit)",
+      "Moulds",
+      "Algae"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q17",
+    "question": "Whisky, brandy and rum are produced by:",
+    "options": [
+      "Simple fermentation with no distillation",
+      "Fermentation followed by distillation",
+      "Yeast alone without fermentation",
+      "Bacterial fermentation"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q18",
+    "question": "The first antibiotic discovered was:",
+    "options": [
+      "Streptomycin",
+      "Penicillin",
+      "Tetracycline",
+      "Erythromycin"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q19",
+    "question": "Antibiotics are described as substances that:",
+    "options": [
+      "Only kill bacteria",
+      "Kill or retard the growth of microbes (bio against life)",
+      "Only inhibit fungi",
+      "Stimulate immune response"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q20",
+    "question": "Whooping cough (Kali Khansi) is caused by:",
+    "options": [
+      "Virus",
+      "Bacterium (treated with antibiotics)",
+      "Fungus",
+      "Protozoan"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q21",
+    "question": "Leprosy (Kusht Rog) is caused by:",
+    "options": [
+      "Virus",
+      "Bacterium",
+      "Fungus",
+      "Protozoan"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q22",
+    "question": "Biogas (gobar gas) is produced from:",
+    "options": [
+      "Coal",
+      "Bio-wastes/slurry in biogas plants",
+      "Petroleum",
+      "Algae only"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q23",
+    "question": "In Sewage Treatment Plants (STPs), the settling tank receives:",
+    "options": [
+      "Only chemical treatment",
+      "Wastewater where grit, pebbles and solids settle",
+      "Only biological treatment",
+      "Filtered clean water"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q24",
+    "question": "The BOD (Biochemical Oxygen Demand) of municipal wastewater is approximately:",
+    "options": [
+      "8 mg/L",
+      "200–400 mg/L",
+      "20 mg/L",
+      "1000 mg/L"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q25",
+    "question": "Pectinases are used commercially to:",
+    "options": [
+      "Make bread",
+      "Clarify bottled fruit juices",
+      "Produce antibiotics",
+      "Fix nitrogen"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q26",
+    "question": "Azospirillum and Azotobacter are used as:",
+    "options": [
+      "Biopesticides",
+      "Biofertilizers (nitrogen-fixing bacteria)",
+      "Antibiotics",
+      "Food additives"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q27",
+    "question": "Ladybird beetles are used as:",
+    "options": [
+      "Biopesticide against brassica pests",
+      "Biocontrol agent against aphids",
+      "Biofertilizer",
+      "Pollinator"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q28",
+    "question": "Dragonflies are used as biocontrol agents against:",
+    "options": [
+      "Aphids",
+      "Mosquitoes",
+      "Stem borers",
+      "Locusts"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q29",
+    "question": "Bt cotton involves a gene from:",
+    "options": [
+      "A virus",
+      "Bacillus thuringiensis",
+      "Rhizobium",
+      "Agrobacterium"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q30",
+    "question": "The \"cry\" genes in Bt crops produce:",
+    "options": [
+      "Insecticidal crystal proteins toxic to specific insect groups",
+      "Herbicide-resistant proteins",
+      "Drought-tolerance proteins",
+      "Nitrogen-fixing enzymes"
+    ],
+    "correctIndex": 0,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q31",
+    "question": "Restriction enzymes are also called:",
+    "options": [
+      "Ligases",
+      "Molecular scissors",
+      "Polymerases",
+      "Helicases"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q32",
+    "question": "Restriction enzymes cut DNA at specific sequences called:",
+    "options": [
+      "Promoters",
+      "Palindromic sequences",
+      "Codons",
+      "Introns"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q33",
+    "question": "A palindromic sequence reads the same:",
+    "options": [
+      "Only in 5' to 3' direction",
+      "In both forward and backward (on complementary strands in 5'→3')",
+      "Only on one strand",
+      "On non-complementary strands"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q34",
+    "question": "Gel electrophoresis separates DNA fragments based on:",
+    "options": [
+      "Colour",
+      "Size; fragments move from cathode to anode",
+      "Chemical composition",
+      "Temperature"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q35",
+    "question": "Plasmids are used as cloning vectors because they are:",
+    "options": [
+      "Linear chromosomes",
+      "Autonomously replicating circular DNA in bacteria",
+      "Viral genomes",
+      "Eukaryotic chromosomes"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q36",
+    "question": "Bacteriophages are also used as:",
+    "options": [
+      "Restriction enzymes",
+      "Cloning vectors",
+      "Biofertilizers",
+      "Selectable markers"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q37",
+    "question": "Agrobacterium tumifaciens is used to deliver genes into:",
+    "options": [
+      "Animal cells",
+      "Plant cells",
+      "Bacterial cells",
+      "Fungal cells"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q38",
+    "question": "The biolistics/gene gun method uses:",
+    "options": [
+      "Bacterial injection",
+      "Gold or tungsten particles to bombard DNA into cells",
+      "Chemical transformation",
+      "Viral vectors"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q39",
+    "question": "PCR (Polymerase Chain Reaction) is used to:",
+    "options": [
+      "Cut DNA at specific sites",
+      "Amplify specific DNA sequences using primers",
+      "Sequence DNA",
+      "Join DNA fragments"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s5_q40",
+    "question": "In PCR, short nucleotide sequences used to initiate amplification are called:",
+    "options": [
+      "Restriction enzymes",
+      "Primers (oligonucleotides)",
+      "Ligases",
+      "Probes"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  }
+]
