@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physics — Royal Cheatsheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0e0b07;
+    --parchment: #f5edd8;
+    --parchment-dark: #ede0c4;
+    --parchment-mid: #f0e6ce;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --gold-deep: #8a6420;
+    --crimson: #8b1a1a;
+    --crimson-light: #b32020;
+    --navy: #1a2540;
+    --navy-light: #243259;
+    --border-ornate: #b8962e;
+    --text-body: #1e1408;
+    --text-muted: #5c4a2a;
+    --text-accent: #8b1a1a;
+    --surface: #f9f2e3;
+    --surface-alt: #f2e8d0;
+    --shadow: rgba(10,7,2,0.18);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--navy);
+    background-image:
+      radial-gradient(ellipse at 20% 20%, #1e2d52 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 80%, #0d1a30 0%, transparent 60%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    min-height: 100vh;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--text-body);
+  }
+
+  /* ─── PAGE FRAME ─── */
+  .page-frame {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* ─── HEADER ─── */
+  header {
+    background: var(--parchment);
+    background-image:
+      linear-gradient(180deg, #f9f2e3 0%, #ede0c4 100%);
+    border: 3px solid var(--gold);
+    box-shadow: 0 0 0 1px var(--gold-deep), 0 4px 32px var(--shadow), inset 0 1px 0 rgba(255,255,255,0.6);
+    padding: 0;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute; inset: 6px;
+    border: 1px solid var(--gold-deep);
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  .header-crest {
+    text-align: center;
+    padding: 10px 24px 6px;
+    border-bottom: 1px solid var(--border-ornate);
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 5px;
+    color: var(--gold-deep);
+    text-transform: uppercase;
+  }
+
+  .header-main {
+    padding: 20px 32px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .header-title-block { flex: 1; min-width: 260px; }
+
+  .header-label {
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 6px;
+    color: var(--gold-deep);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header-label::before,
+  .header-label::after {
+    content: '';
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(to right, transparent, var(--gold-deep));
+  }
+  .header-label::after {
+    background: linear-gradient(to left, transparent, var(--gold-deep));
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 900;
+    color: var(--navy);
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  h1 em {
+    color: var(--crimson);
+    font-style: italic;
+  }
+
+  .header-sub {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+
+  /* ─── SEARCH ─── */
+  .search-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .search-wrap {
+    position: relative;
+  }
+
+  .search-wrap input {
+    background: var(--surface-alt);
+    border: 1.5px solid var(--border-ornate);
+    color: var(--text-body);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    padding: 8px 14px 8px 36px;
+    width: 260px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .search-wrap input:focus {
+    border-color: var(--crimson);
+    box-shadow: 0 0 0 3px rgba(139,26,26,0.1);
+  }
+
+  .search-wrap input::placeholder { color: var(--text-muted); font-style: italic; }
+
+  .search-icon {
+    position: absolute; left: 11px; top: 50%; transform: translateY(-50%);
+    color: var(--gold-deep); font-size: 14px; pointer-events: none;
+  }
+
+  /* ─── TABS ─── */
+  .tab-bar {
+    padding: 0 32px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    border-top: 1px solid var(--border-ornate);
+    margin-top: 16px;
+  }
+
+  .tab-bar::-webkit-scrollbar { display: none; }
+
+  .tab {
+    font-family: 'Cinzel', serif;
+    font-size: 9.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 12px 18px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s;
+    background: none;
+    border-left: none; border-right: none; border-top: none;
+    user-select: none;
+    position: relative;
+  }
+
+  .tab:hover { color: var(--navy); }
+
+  .tab.active {
+    color: var(--crimson);
+    border-bottom: 2px solid var(--crimson);
+  }
+
+  .tab-count {
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    width: 16px; height: 16px;
+    background: var(--crimson);
+    color: #fff;
+    font-size: 8px;
+    border-radius: 50%;
+    margin-left: 5px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+  }
+
+  /* ─── STATS BAR ─── */
+  .stats-bar {
+    background: var(--navy);
+    padding: 8px 32px;
+    display: flex; gap: 24px; align-items: center; flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+
+  .stat-item {
+    display: flex; align-items: center; gap: 7px;
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .stat-dot {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  /* ─── MAIN GRID ─── */
+  .main-content {
+    display: none;
+  }
+  .main-content.active { display: block; }
+
+  .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(201,168,76,0.25);
+    display: flex; align-items: center; gap: 12px;
+  }
+
+  .section-heading::before {
+    content: '✦';
+    color: var(--gold);
+    font-size: 10px;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+
+  /* ─── CARD ─── */
+  .card {
+    background: var(--parchment);
+    background-image: linear-gradient(160deg, #f9f2e3 0%, #f0e6ce 100%);
+    border: 1.5px solid var(--border-ornate);
+    box-shadow: 0 2px 12px var(--shadow), inset 0 1px 0 rgba(255,255,255,0.5);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(10,7,2,0.25);
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold-deep), var(--gold-light), var(--gold-deep));
+  }
+
+  .card-corner {
+    position: absolute;
+    top: 6px; right: 6px;
+    width: 18px; height: 18px;
+    opacity: 0.3;
+  }
+  .card-corner::before, .card-corner::after {
+    content: '';
+    position: absolute;
+    background: var(--gold-deep);
+  }
+  .card-corner::before { top: 0; right: 0; width: 1px; height: 18px; }
+  .card-corner::after  { top: 0; right: 0; width: 18px; height: 1px; }
+
+  .card-header {
+    padding: 16px 20px 12px;
+    border-bottom: 1px solid rgba(184,150,46,0.25);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .card-icon {
+    width: 32px; height: 32px;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+    border: 1px solid var(--gold-deep);
+  }
+
+  .card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 10.5px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--navy);
+    line-height: 1.3;
+  }
+
+  .card-subtitle {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .card-body { padding: 16px 20px 18px; }
+
+  /* ─── ITEMS ─── */
+  .item {
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(184,150,46,0.12);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-body);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .item:last-child { border-bottom: none; }
+
+  .item-bullet {
+    color: var(--gold-deep);
+    font-size: 10px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  .item-text { flex: 1; font-family: 'Cormorant Garamond', serif; }
+
+  .item-key {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: var(--crimson);
+  }
+
+  /* ─── FORMULA CARD ─── */
+  .formula-card {
+    background: var(--navy);
+    background-image: linear-gradient(160deg, #1a2540 0%, #0d1a30 100%);
+    border: 1.5px solid var(--gold-deep);
+    color: var(--parchment);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4), inset 0 1px 0 rgba(201,168,76,0.15);
+  }
+
+  .formula-card::before {
+    background: linear-gradient(90deg, var(--gold-deep), var(--gold), var(--gold-deep));
+  }
+
+  .formula-card .card-title { color: var(--gold-light); }
+  .formula-card .card-subtitle { color: rgba(240,230,200,0.5); }
+  .formula-card .card-header { border-bottom-color: rgba(201,168,76,0.2); }
+  .formula-card .item { border-bottom-color: rgba(201,168,76,0.1); color: var(--parchment); }
+  .formula-card .item-bullet { color: var(--gold); }
+  .formula-card .item-key { color: var(--gold-light); }
+  .formula-card .item-text { font-family: 'Cormorant Garamond', serif; }
+
+  .formula-eq {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--gold-light);
+    background: rgba(201,168,76,0.08);
+    border-left: 2px solid var(--gold);
+    padding: 3px 8px;
+    margin-left: 4px;
+  }
+
+  /* ─── TRAP CARD ─── */
+  .trap-card {
+    background: linear-gradient(160deg, #f9f0e8 0%, #f0e0d0 100%);
+    border-color: var(--crimson-light);
+  }
+  .trap-card::before {
+    background: linear-gradient(90deg, var(--crimson), #cc4444, var(--crimson));
+  }
+  .trap-card .card-title { color: var(--crimson); }
+  .trap-card .item-bullet { color: var(--crimson); }
+  .trap-card .item-key { color: var(--crimson); }
+
+  /* ─── WIDE CARD ─── */
+  .card-wide { grid-column: 1 / -1; }
+
+  /* ─── TWO COLUMN BODY ─── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+  }
+
+  @media (max-width: 600px) {
+    .two-col { grid-template-columns: 1fr; }
+  }
+
+  /* ─── TAG CHIPS ─── */
+  .tag {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border: 1px solid var(--border-ornate);
+    color: var(--text-muted);
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .tag-crimson { border-color: var(--crimson); color: var(--crimson); }
+  .tag-navy { border-color: var(--navy); color: var(--navy); background: var(--parchment-dark); }
+
+  /* ─── DIVIDER ─── */
+  .ornate-divider {
+    text-align: center;
+    color: var(--gold);
+    font-size: 16px;
+    letter-spacing: 12px;
+    margin: 28px 0 20px;
+    opacity: 0.6;
+  }
+
+  /* ─── HIGHLIGHT BOX ─── */
+  .highlight-box {
+    background: rgba(138,100,32,0.06);
+    border: 1px solid rgba(184,150,46,0.3);
+    padding: 10px 14px;
+    margin: 10px 0 4px;
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    border-left: 3px solid var(--gold);
+  }
+
+  .formula-card .highlight-box {
+    background: rgba(201,168,76,0.06);
+    border-color: rgba(201,168,76,0.2);
+    color: rgba(240,230,200,0.6);
+    border-left-color: var(--gold);
+  }
+
+  /* ─── SEARCH HIGHLIGHT ─── */
+  .search-match { background: rgba(139,26,26,0.18); border-radius: 2px; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    text-align: center;
+    padding: 24px;
+    margin-top: 32px;
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: rgba(201,168,76,0.4);
+    text-transform: uppercase;
+    border-top: 1px solid rgba(201,168,76,0.15);
+  }
+
+  /* ─── SCROLL ─── */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--navy); }
+  ::-webkit-scrollbar-thumb { background: var(--gold-deep); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .card { animation: fadeUp 0.4s ease both; }
+  .card:nth-child(2) { animation-delay: 0.05s; }
+  .card:nth-child(3) { animation-delay: 0.10s; }
+  .card:nth-child(4) { animation-delay: 0.15s; }
+  .card:nth-child(5) { animation-delay: 0.20s; }
+  .card:nth-child(6) { animation-delay: 0.25s; }
+
+  /* ─── HIDDEN ─── */
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<div class="page-frame">
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-crest">Codex Physicae — Compendium of Natural Philosophy & Mathematical Laws</div>
+    <div class="header-main">
+      <div class="header-title-block">
+        <div class="header-label">Examination Reference</div>
+        <h1>Physics <em>Cheatsheet</em></h1>
+        <div class="header-sub">A Complete Compendium of Formulæ, Principles & Conceptual Reasoning</div>
+      </div>
+      <div class="search-area">
+        <div class="search-wrap">
+          <span class="search-icon">⚜</span>
+          <input type="text" id="searchInput" placeholder="Search formulæ, concepts…" autocomplete="off">
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-bar">
+      <button class="tab active" data-tab="concepts">Concepts <span class="tab-count">4</span></button>
+      <button class="tab" data-tab="mechanics">Mechanics <span class="tab-count">3</span></button>
+      <button class="tab" data-tab="thermo">Thermo & Waves <span class="tab-count">3</span></button>
+      <button class="tab" data-tab="electro">Electromagnetism <span class="tab-count">4</span></button>
+      <button class="tab" data-tab="optics">Optics & Modern <span class="tab-count">4</span></button>
+      <button class="tab" data-tab="graphs">Graphs & Logic <span class="tab-count">3</span></button>
+      <button class="tab" data-tab="traps">Traps 🚨 <span class="tab-count">3</span></button>
+    </div>
+  </header>
+
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-dot"></div>7 Domains</div>
+    <div class="stat-item"><div class="stat-dot"></div>All JEE / NEET Topics</div>
+    <div class="stat-item"><div class="stat-dot"></div>Formulæ · Concepts · Traps</div>
+    <div class="stat-item"><div class="stat-dot"></div>Graph Intuition · Shortcuts</div>
+  </div>
+
+  <!-- ═══════════════════ TAB: CONCEPTS ═══════════════════ -->
+  <div class="main-content active" id="tab-concepts">
+    <div class="ornate-divider">✦ ✦ ✦</div>
+    <div class="section-heading">Fundamental Thinking Models</div>
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">⚡</div>
+          <div>
+            <div class="card-title">Core Concept Triggers</div>
+            <div class="card-subtitle">Mental anchors for rapid reasoning</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Force →</span> changes motion, not required for motion.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Energy →</span> bookkeeping tool, always conserved or converted.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Field →</span> action without contact.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Potential →</span> "stored effect", drives flow.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Symmetry →</span> simplifies problems, implies equilibrium or extremum.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Limiting cases →</span> check correctness, understand extreme behaviour.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Dimensions →</span> verify equations, eliminate options.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Graph slope/area →</span> rate of change / accumulation.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Equilibrium →</span> net force and net torque are both zero.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Conservation Laws →</span> apply when external forces/torques are absent.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Wave →</span> energy transfer, no matter transfer.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Superposition →</span> net effect = sum of individual effects.</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🔭</div>
+          <div>
+            <div class="card-title">Motion & Field Triggers</div>
+            <div class="card-subtitle">Projectile, SHM, EM fields at a glance</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Projectile →</span> horizontal velocity constant; vertical under gravity.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Circular motion →</span> acceleration towards center; velocity tangent.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">SHM →</span> restoring force ∝ displacement; energy oscillates KE ↔ PE.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Capacitor →</span> stores energy (electric field), blocks DC, passes AC.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Inductor →</span> stores energy (magnetic field), opposes current change.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Magnetic force →</span> perpendicular to velocity and field, does no work.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Electric field lines →</span> originate +ve, terminate −ve, never cross.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Magnetic field lines →</span> form closed loops, never cross.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">p-n forward bias →</span> potential barrier ↓, current flows.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">p-n reverse bias →</span> potential barrier ↑, no current.</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">❓</div>
+          <div>
+            <div class="card-title">Question Pattern Recognition</div>
+            <div class="card-subtitle">Strategic entry points for exam questions</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">"What happens if…" →</span> use proportionality, identify direct/inverse relations.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Graph change →</span> slope/area logic, identify turning points.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Comparison →</span> use ratios, not absolute values (e.g. F₁/F₂ = (r₂/r₁)²).</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Extremum →</span> occurs at symmetry, 45°, center, or by differentiation.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Elimination →</span> check units, dimensions, limiting cases, options.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">"Which is correct?" →</span> test each option with a conceptual check.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">"Statement 1 & 2" →</span> check independence and logical connection.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Multiple forces →</span> resolve into components, apply Newton's laws.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Energy conservation →</span> apply when non-conservative forces do no work.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Momentum conservation →</span> apply when external impulse is zero.</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">⚖</div>
+          <div>
+            <div class="card-title">Relations & Proportionality</div>
+            <div class="card-subtitle">Key direct and inverse dependencies</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Frequency ↑ →</span> wavelength ↓ (constant speed)</span></div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Radius ↑ →</span> gravitational force ↓ (inverse square)</span></div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Temperature ↑ →</span> R ↑ metals; R ↓ semiconductors</span></div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Current ↑ →</span> magnetic field strength ↑</span></div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Charge ↑ →</span> electric field strength ↑</span></div>
+            </div>
+            <div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Distance ↑ →</span> intensity ↓ (inverse square, point source)</span></div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Mass ↑ →</span> inertia ↑</span></div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Moment of inertia ↑ →</span> angular acceleration ↓</span></div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Pendulum length ↑ →</span> time period ↑</span></div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Spring const ↑ →</span> oscillation frequency ↑</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════ TAB: MECHANICS ═══════════════════ -->
+  <div class="main-content" id="tab-mechanics">
+    <div class="ornate-divider">✦ ✦ ✦</div>
+    <div class="section-heading">Mechanics — Laws of Motion, Energy & Gravitation</div>
+    <div class="cards-grid">
+
+      <div class="card formula-card">
+        <div class="card-header">
+          <div class="card-icon" style="background:#c9a84c;color:#0d1a30;">∑</div>
+          <div>
+            <div class="card-title">Kinematics & Newton's Laws</div>
+            <div class="card-subtitle">Equations of motion and force</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Displacement:</span> <span class="formula-eq">s = ut + ½at²</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Velocity:</span> <span class="formula-eq">v = u + at</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Third equation:</span> <span class="formula-eq">v² = u² + 2as</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Newton's 2nd Law:</span> <span class="formula-eq">F = ma</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Momentum:</span> <span class="formula-eq">p = mv</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Kinetic Energy:</span> <span class="formula-eq">K = ½mv² = p²/2m</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">PE (Gravity):</span> <span class="formula-eq">U = mgh</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">PE (Spring):</span> <span class="formula-eq">U = ½kx²</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Work Done:</span> <span class="formula-eq">W = F · s · cosθ</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Power:</span> <span class="formula-eq">P = F · v = dW/dt</span></span></div>
+        </div>
+      </div>
+
+      <div class="card formula-card">
+        <div class="card-header">
+          <div class="card-icon" style="background:#c9a84c;color:#0d1a30;">τ</div>
+          <div>
+            <div class="card-title">Rotation & Gravitation</div>
+            <div class="card-subtitle">Torque, orbital mechanics, Kepler</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Torque:</span> <span class="formula-eq">τ = r × F = Iα</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Angular Momentum:</span> <span class="formula-eq">L = r × p = Iω</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Moment of Inertia:</span> <span class="formula-eq">I = Σmr²</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Centripetal Force:</span> <span class="formula-eq">Fc = mv²/r = mω²r</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Angular Frequency:</span> <span class="formula-eq">ω = 2πf = 2π/T</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Gravitational Force:</span> <span class="formula-eq">F = GMm/r²</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Grav. PE:</span> <span class="formula-eq">U = −GMm/r</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Escape Velocity:</span> <span class="formula-eq">vₑ = √(2GM/R)</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Orbital Velocity:</span> <span class="formula-eq">vₒ = √(GM/R)</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Kepler's 3rd:</span> <span class="formula-eq">T² ∝ R³</span></span></div>
+        </div>
+      </div>
+
+      <div class="card formula-card">
+        <div class="card-header">
+          <div class="card-icon" style="background:#c9a84c;color:#0d1a30;">η</div>
+          <div>
+            <div class="card-title">Fluid Mechanics & Elasticity</div>
+            <div class="card-subtitle">Pressure, Bernoulli, Stokes, Young's</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Fluid Pressure:</span> <span class="formula-eq">P = ρgh</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Bernoulli:</span> <span class="formula-eq">P + ½ρv² + ρgh = const</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Stokes' Law:</span> <span class="formula-eq">Fᵥ = 6πηrv</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Terminal Velocity:</span> <span class="formula-eq">vₜ = 2r²(ρₚ−ρf)g / 9η</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Young's Modulus:</span> <span class="formula-eq">Y = FL / AΔL</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Surface Tension:</span> <span class="formula-eq">T = F/L</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Capillary Rise:</span> <span class="formula-eq">h = 2T cosθ / ρrg</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">SHM (Spring):</span> <span class="formula-eq">T = 2π√(m/k)</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">SHM (Pendulum):</span> <span class="formula-eq">T = 2π√(L/g)</span></span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════ TAB: THERMO & WAVES ═══════════════════ -->
+  <div class="main-content" id="tab-thermo">
+    <div class="ornate-divider">✦ ✦ ✦</div>
+    <div class="section-heading">Thermodynamics, Gases & Wave Physics</div>
+    <div class="cards-grid">
+
+      <div class="card formula-card">
+        <div class="card-header">
+          <div class="card-icon" style="background:#c9a84c;color:#0d1a30;">ΔU</div>
+          <div>
+            <div class="card-title">Thermodynamics</div>
+            <div class="card-subtitle">Gas laws, heat engines, entropy</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Ideal Gas Law:</span> <span class="formula-eq">PV = nRT = NkT</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">First Law:</span> <span class="formula-eq">ΔU = Q − W</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Work (isobaric):</span> <span class="formula-eq">W = PΔV</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Work (isothermal):</span> <span class="formula-eq">W = nRT ln(V₂/V₁)</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Isothermal process:</span> PV = constant</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Adiabatic process:</span> PVᵞ = constant</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Carnot Efficiency:</span> <span class="formula-eq">η = 1 − T_cold/T_hot</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Specific Heat:</span> <span class="formula-eq">Q = mcΔT</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Latent Heat:</span> <span class="formula-eq">Q = mL</span></span></div>
+          <div class="highlight-box">Entropy: ΔS ≥ 0 for any isolated system (Second Law).</div>
+        </div>
+      </div>
+
+      <div class="card formula-card">
+        <div class="card-header">
+          <div class="card-icon" style="background:#c9a84c;color:#0d1a30;">λ</div>
+          <div>
+            <div class="card-title">Wave Physics & Sound</div>
+            <div class="card-subtitle">Speed, Doppler, standing waves, beats</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Wave Speed:</span> <span class="formula-eq">v = fλ</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Speed of Sound (gas):</span> <span class="formula-eq">v = √(γP/ρ)</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Speed of Sound (solid):</span> <span class="formula-eq">v = √(Y/ρ)</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Intensity:</span> <span class="formula-eq">I ∝ A²f²</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Beat Frequency:</span> <span class="formula-eq">fᵦ = |f₁ − f₂|</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Doppler Effect:</span> <span class="formula-eq">f' = f(v ± vₒ)/(v ∓ vₛ)</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">String / Open Pipe:</span> <span class="formula-eq">fₙ = nv/2L</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Closed Pipe:</span> <span class="formula-eq">fₙ = (2n−1)v/4L</span></span></div>
+          <div class="highlight-box">v ∝ √T for sound in gas. Source towards observer → f ↑; source away → f ↓.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🔔</div>
+          <div>
+            <div class="card-title">Quick Conceptual Anchors</div>
+            <div class="card-subtitle">Thermo & wave reasoning triggers</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text">Heat engine efficiency &lt; 100% (Carnot limit is a law).</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text">Pressure ↑ → boiling point ↑.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text">Speed of sound depends on medium, not source frequency.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text">Interference requires coherent sources.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text">Diffraction requires aperture ≈ wavelength.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text">P–V isothermal: rectangular hyperbola.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text">P–V adiabatic: steeper than isothermal.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text">Power lost in transmission: Joule heating (I²R).</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════ TAB: ELECTROMAGNETISM ═══════════════════ -->
+  <div class="main-content" id="tab-electro">
+    <div class="ornate-divider">✦ ✦ ✦</div>
+    <div class="section-heading">Electrostatics, Current Electricity, Magnetism & EMI</div>
+    <div class="cards-grid">
+
+      <div class="card formula-card">
+        <div class="card-header">
+          <div class="card-icon" style="background:#c9a84c;color:#0d1a30;">E</div>
+          <div>
+            <div class="card-title">Electrostatics & Capacitance</div>
+            <div class="card-subtitle">Coulomb, fields, potential, capacitors</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Coulomb's Law:</span> <span class="formula-eq">F = kq₁q₂/r²</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Electric Field:</span> <span class="formula-eq">E = F/q = kq/r²</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Electric Potential:</span> <span class="formula-eq">V = kq/r</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">PE:</span> <span class="formula-eq">U = qV</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Capacitance:</span> <span class="formula-eq">C = Q/V</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Parallel plate C:</span> <span class="formula-eq">C = ε₀A/d</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Energy in C:</span> <span class="formula-eq">U = ½CV² = Q²/2C</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Series:</span> 1/Cₑq = Σ1/Cᵢ → ↓C</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Parallel:</span> Cₑq = ΣCᵢ → ↑C</span></div>
+        </div>
+      </div>
+
+      <div class="card formula-card">
+        <div class="card-header">
+          <div class="card-icon" style="background:#c9a84c;color:#0d1a30;">I</div>
+          <div>
+            <div class="card-title">Current Electricity</div>
+            <div class="card-subtitle">Ohm's law, Kirchhoff, power</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Ohm's Law:</span> <span class="formula-eq">V = IR</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Resistance:</span> <span class="formula-eq">R = ρL/A</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Electrical Power:</span> <span class="formula-eq">P = VI = I²R = V²/R</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">KVL:</span> ΣV = 0 around loop</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">KCL:</span> ΣI = 0 at junction</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Series R:</span> Rₑq = ΣRᵢ → ↑R, same I</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Parallel R:</span> 1/Rₑq = Σ1/Rᵢ → ↓R, same V</span></div>
+          <div class="highlight-box">In series: current is same. In parallel: voltage is same.</div>
+        </div>
+      </div>
+
+      <div class="card formula-card">
+        <div class="card-header">
+          <div class="card-icon" style="background:#c9a84c;color:#0d1a30;">B</div>
+          <div>
+            <div class="card-title">Magnetism & EMI</div>
+            <div class="card-subtitle">Biot-Savart, Faraday, inductance, AC</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Magnetic force:</span> <span class="formula-eq">F = q(v × B)</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Force on wire:</span> <span class="formula-eq">F = I(L × B)</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Ampere's Law:</span> <span class="formula-eq">∮B·dL = μ₀Iₑₙc</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Solenoid field:</span> <span class="formula-eq">B = μ₀nI</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Faraday's Law:</span> <span class="formula-eq">ε = −dΦ_B/dt</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Motional EMF:</span> <span class="formula-eq">ε = Blv</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Energy in L:</span> <span class="formula-eq">U = ½LI²</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Inductors series:</span> Lₑq = ΣLᵢ</span></div>
+        </div>
+      </div>
+
+      <div class="card formula-card">
+        <div class="card-header">
+          <div class="card-icon" style="background:#c9a84c;color:#0d1a30;">AC</div>
+          <div>
+            <div class="card-title">AC Circuits & Transformers</div>
+            <div class="card-subtitle">RMS, reactance, impedance, resonance</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">AC RMS:</span> <span class="formula-eq">Iᵣₘₛ = I₀/√2, Vᵣₘₛ = V₀/√2</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Capacitive reactance:</span> <span class="formula-eq">Xc = 1/ωC</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Inductive reactance:</span> <span class="formula-eq">X_L = ωL</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">RLC Impedance:</span> <span class="formula-eq">Z = √[R² + (X_L−Xc)²]</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Resonance:</span> <span class="formula-eq">f₀ = 1/(2π√LC)</span>, Z = R</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Transformer:</span> <span class="formula-eq">Vₛ/Vₚ = Nₛ/Nₚ = Iₚ/Iₛ</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Q-factor:</span> <span class="formula-eq">Q = (1/R)√(L/C)</span></span></div>
+          <div class="highlight-box">At resonance: X_L = Xc, Z = R, power factor = 1.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════ TAB: OPTICS & MODERN ═══════════════════ -->
+  <div class="main-content" id="tab-optics">
+    <div class="ornate-divider">✦ ✦ ✦</div>
+    <div class="section-heading">Optics & Modern Physics</div>
+    <div class="cards-grid">
+
+      <div class="card formula-card">
+        <div class="card-header">
+          <div class="card-icon" style="background:#c9a84c;color:#0d1a30;">n</div>
+          <div>
+            <div class="card-title">Ray Optics</div>
+            <div class="card-subtitle">Mirrors, lenses, refraction, TIR</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Mirror formula:</span> <span class="formula-eq">1/f = 1/v + 1/u</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Lens formula:</span> <span class="formula-eq">1/f = 1/v − 1/u</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Lens maker's:</span> <span class="formula-eq">1/f = (n−1)(1/R₁ − 1/R₂)</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Magnification:</span> <span class="formula-eq">m = −v/u = hᵢ/h₀</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Snell's Law:</span> <span class="formula-eq">n₁sinθ₁ = n₂sinθ₂</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Critical angle:</span> <span class="formula-eq">sin C = nᵣ/nᵈ</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Lens power:</span> <span class="formula-eq">P = 1/f (dioptres)</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Two lenses in contact:</span> <span class="formula-eq">1/F = 1/f₁ + 1/f₂</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Thin prism deviation:</span> <span class="formula-eq">δ = (n−1)A</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Brewster's angle:</span> <span class="formula-eq">tan θₚ = n</span></span></div>
+        </div>
+      </div>
+
+      <div class="card formula-card">
+        <div class="card-header">
+          <div class="card-icon" style="background:#c9a84c;color:#0d1a30;">∿</div>
+          <div>
+            <div class="card-title">Wave Optics</div>
+            <div class="card-subtitle">YDSE, diffraction, interference, Malus</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">YDSE fringe width:</span> <span class="formula-eq">β = λD/d</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Constructive (path diff):</span> <span class="formula-eq">nλ</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Destructive (path diff):</span> <span class="formula-eq">(n + ½)λ</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Single slit minima:</span> <span class="formula-eq">d sinθ = nλ</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Malus' Law:</span> <span class="formula-eq">I = I₀cos²θ</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Telescope resolution:</span> <span class="formula-eq">1.22λ/D</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Microscope resolution:</span> <span class="formula-eq">1.22λ/(2n sinθ)</span></span></div>
+          <div class="highlight-box">Interference needs coherent sources. Diffraction needs aperture ≈ λ.</div>
+        </div>
+      </div>
+
+      <div class="card formula-card">
+        <div class="card-header">
+          <div class="card-icon" style="background:#c9a84c;color:#0d1a30;">hν</div>
+          <div>
+            <div class="card-title">Modern Physics I — Photons & Bohr</div>
+            <div class="card-subtitle">Photoelectric effect, de Broglie, atomic model</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Photon energy:</span> <span class="formula-eq">E = hf = hc/λ</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Photon momentum:</span> <span class="formula-eq">p = h/λ</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Photoelectric eqn:</span> <span class="formula-eq">Kₘₐₓ = hf − φ₀</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">de Broglie:</span> <span class="formula-eq">λ = h/p = h/√(2mK)</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Bohr angular momentum:</span> <span class="formula-eq">L = nℏ = nh/2π</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">H-atom energy:</span> <span class="formula-eq">Eₙ = −13.6/n² eV</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Bohr radius:</span> <span class="formula-eq">rₙ = n²a₀, a₀ = 0.529 Å</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Spectral lines:</span> <span class="formula-eq">1/λ = Rₕ(1/n₁² − 1/n₂²)</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Heisenberg:</span> <span class="formula-eq">ΔxΔp ≥ ħ/2</span></span></div>
+        </div>
+      </div>
+
+      <div class="card formula-card">
+        <div class="card-header">
+          <div class="card-icon" style="background:#c9a84c;color:#0d1a30;">☢</div>
+          <div>
+            <div class="card-title">Nuclear & Semiconductor Physics</div>
+            <div class="card-subtitle">Radioactivity, fission/fusion, diodes</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Mass-energy:</span> <span class="formula-eq">E = mc²</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Decay law:</span> <span class="formula-eq">N = N₀e^(−λt)</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Half-life:</span> <span class="formula-eq">T½ = 0.693/λ</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Activity:</span> <span class="formula-eq">A = λN</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Mean life:</span> <span class="formula-eq">τ = 1/λ</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Q-value:</span> <span class="formula-eq">(Mᵣₑₐc − Mₚᵣₒd)c²</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Nuclear radius:</span> <span class="formula-eq">R = R₀A^(1/3)</span></span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">1 amu =</span> 931.5 MeV</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Max BE/nucleon →</span> Iron (A ≈ 56)</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════ TAB: GRAPHS & LOGIC ═══════════════════ -->
+  <div class="main-content" id="tab-graphs">
+    <div class="ornate-divider">✦ ✦ ✦</div>
+    <div class="section-heading">Graph Intuition, Devices & Mental Shortcuts</div>
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">📈</div>
+          <div>
+            <div class="card-title">Graph Interpretation</div>
+            <div class="card-subtitle">Slope, area, shape recognition</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Slope →</span> rate of change (v-t slope = acceleration; P-V slope = dP/dV)</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Area under curve →</span> accumulation (F-x = work; v-t = displacement)</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Horizontal line →</span> constant quantity (constant velocity, constant force)</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Curve flattening →</span> saturation, decreasing rate of change</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Parabolic graph →</span> quadratic relation</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Asymptote →</span> quantity approaches a limit</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">V–I (ohmic) →</span> straight line through origin</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">KE vs v →</span> parabola (K ∝ v²)</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Radioactive decay →</span> exponential decrease</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">SHM (θ vs t) →</span> sinusoidal</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">RC charging current →</span> exponential rise</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">YDSE intensity →</span> cos² pattern</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Stopping potential vs f →</span> straight line, slope = h/e</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🔬</div>
+          <div>
+            <div class="card-title">Experiments & Devices</div>
+            <div class="card-subtitle">Working principles, null methods, applications</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Meter bridge →</span> Wheatstone principle; unknown R by balancing ratio.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Potentiometer →</span> compares EMFs; no current drawn at null point.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Galvanometer →</span> to Ammeter: parallel shunt; to Voltmeter: series high R.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Cyclotron →</span> magnetic field for circular path; electric field for acceleration.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Transformer →</span> mutual induction, AC only, step-up V↑I↓, step-down V↓I↑.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Optical fiber →</span> Total Internal Reflection (TIR).</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Photodiode →</span> reverse biased; converts light to electrical energy.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Zener diode →</span> reverse breakdown for voltage regulation.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Solar cell →</span> photoelectric effect; converts light to electricity.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">LED →</span> forward biased; electrical energy → light.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Transistor (CE) →</span> Ic = βIB; amplifier or switch.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Logic gates →</span> AND (all 1→1), OR (any 1→1), NOT (invert), NAND, NOR.</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">⚡</div>
+          <div>
+            <div class="card-title">Quick Mental Shortcuts</div>
+            <div class="card-subtitle">Exam-speed reasoning techniques</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text">Use ratios instead of full calculation (F ∝ 1/r²).</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text">Use symmetry to eliminate options or simplify geometry.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text">Use extreme cases to test answers (r → ∞, m → 0).</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text">Check units/dimensions for quick option elimination.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text">Order of magnitude estimation for numerical problems.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text">Common values: g = 10 m/s², c = 3 × 10⁸ m/s.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text">Identify conserved quantities (energy, momentum, angular momentum).</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text">For graphs: instantly interpret slope and area.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text">If stuck: think about what changes and what remains constant.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text">Projectile range max at 45°; max height at 90°.</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════ TAB: TRAPS ═══════════════════ -->
+  <div class="main-content" id="tab-traps">
+    <div class="ornate-divider">✦ ✦ ✦</div>
+    <div class="section-heading">Common Traps, Exceptions & Units</div>
+    <div class="cards-grid">
+
+      <div class="card trap-card">
+        <div class="card-header">
+          <div class="card-icon" style="background:#8b1a1a;color:#f9f2e3;">🚨</div>
+          <div>
+            <div class="card-title">Classic Conceptual Traps</div>
+            <div class="card-subtitle">Errors that cost marks</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Velocity = 0 ≠ Acceleration = 0</span> (e.g. peak of projectile).</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Work done can be zero even if force exists</span> (centripetal force, magnetic force).</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Current flows due to potential difference,</span> not absolute charge amount.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Heavier object does NOT fall faster</span> (in vacuum, all fall same rate).</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Electric field inside conductor = 0</span> (electrostatic equilibrium).</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Magnetic force never changes speed or KE</span> of a charged particle.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Real image is inverted; virtual image is erect</span> (usually).</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Radioactivity is unaffected</span> by pressure, temperature, or chemical state.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Half-life is independent</span> of initial amount.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Work done by friction is always negative</span> (non-conservative).</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">TIR only</span> when light goes denser → rarer AND angle &gt; critical angle.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Photoelectric Kₘₐₓ →</span> depends on frequency; current on intensity.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Heisenberg →</span> fundamental limit, NOT due to measurement error.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Nuclear density →</span> constant for all nuclei (not proportional to mass number).</span></div>
+        </div>
+      </div>
+
+      <div class="card trap-card">
+        <div class="card-header">
+          <div class="card-icon" style="background:#8b1a1a;color:#f9f2e3;">⚡</div>
+          <div>
+            <div class="card-title">Circuit & Optics Traps</div>
+            <div class="card-subtitle">Frequently confused results</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Capacitors parallel →</span> C increases; series → C decreases.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Resistors parallel →</span> R decreases; series → R increases.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Real depth &gt; apparent depth</span> (denser to rarer refraction).</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Virtual image →</span> cannot be formed on screen.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Displacement current →</span> Maxwell's correction to Ampere's law (inside capacitor).</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Magnetic field inside ideal solenoid →</span> uniform.</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">E inside conductor →</span> zero; V inside conductor → constant (both static).</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Diode forward →</span> ON; reverse bias → OFF (very small leakage).</span></div>
+          <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Transistor depends on</span> light doping of emitter, heavy doping of base.</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">📐</div>
+          <div>
+            <div class="card-title">Units & Dimensions</div>
+            <div class="card-subtitle">Conversions and equivalent forms</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Impulse:</span> N·s = kg·m/s</span></div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Electric Field:</span> N/C = V/m</span></div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Magnetic Field:</span> T = N/(A·m)</span></div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Flux:</span> Wb = T·m²</span></div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Inductance:</span> H = Wb/A</span></div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Capacitance:</span> F = C/V</span></div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Resistance:</span> Ω = V/A</span></div>
+            </div>
+            <div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Power:</span> W = J/s</span></div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Torque:</span> N·m ≠ energy (though same unit)</span></div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Pressure:</span> Pa = N/m²</span></div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Surface tension:</span> N/m = J/m²</span></div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Planck's h:</span> J·s</span></div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">Ang. momentum:</span> J·s</span></div>
+              <div class="item"><span class="item-bullet">◆</span><span class="item-text"><span class="item-key">ε₀:</span> C²/(N·m²); μ₀: T·m/A</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    Codex Physicae · Compendium of Natural Philosophy · All Rights Reserved · MMXXVI
+  </footer>
+
+</div><!-- end page-frame -->
+
+<script>
+  // ── TAB SWITCHING ──
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.main-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      const target = document.getElementById('tab-' + tab.dataset.tab);
+      if (target) target.classList.add('active');
+    });
+  });
+
+  // ── SEARCH ──
+  const searchInput = document.getElementById('searchInput');
+
+  searchInput.addEventListener('input', () => {
+    const q = searchInput.value.trim().toLowerCase();
+
+    if (!q) {
+      // Restore normal view
+      document.querySelectorAll('.card').forEach(c => c.classList.remove('hidden'));
+      panels.forEach(p => p.classList.remove('active'));
+      // Reactivate the currently selected tab's panel
+      const activeTab = document.querySelector('.tab.active');
+      if (activeTab) {
+        const target = document.getElementById('tab-' + activeTab.dataset.tab);
+        if (target) target.classList.add('active');
+      }
+      // Remove highlights
+      document.querySelectorAll('.item-text').forEach(el => {
+        el.innerHTML = el.innerHTML.replace(/<mark class="search-match">(.*?)<\/mark>/gi, '$1');
+      });
+      return;
+    }
+
+    // Show all panels, hide cards that don't match
+    panels.forEach(p => p.classList.add('active'));
+
+    document.querySelectorAll('.card').forEach(card => {
+      const text = card.textContent.toLowerCase();
+      if (text.includes(q)) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+</script>
+</body>
+</html>
