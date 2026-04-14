@@ -235,7 +235,7 @@ main {
 }
 
 .card-title {
-  font-family: var(--mono);
+  font-family: var(--text);
   font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
