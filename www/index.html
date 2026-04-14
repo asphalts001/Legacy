@@ -4,16 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <link rel="stylesheet" href="theme.css">
-  <title>Bhalo hai🐻🐻🤙🤙</title>
+  <title>Royalty</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
-
+  
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       background: var(--bg, #0a0a0f);
-      color: var(--text, #e8e8f0);
+      color: var(--text, #fff);
       font-family: 'Crimson Pro', Georgia, serif;
       font-size: 16px;
       min-height: 100vh;
@@ -32,8 +31,8 @@
       inset: 0;
       z-index: 0;
       background:
-        radial-gradient(ellipse 55% 35% at 15% 5%,  rgba(124,106,240,0.08) 0%, transparent 65%),
-        radial-gradient(ellipse 45% 30% at 85% 90%, rgba(78,205,196,0.05)  0%, transparent 65%);
+        radial-gradient(ellipse 55% 35% at 15% 5%,  rgba(201,168,76,0.07) 0%, transparent 65%),
+        radial-gradient(ellipse 45% 30% at 85% 90%, rgba(139,26,26,0.05)  0%, transparent 65%);
       pointer-events: none;
     }
 
@@ -62,12 +61,13 @@
       line-height: 1.2;
       color: var(--text, #e8e8f0);
     }
-    .hub-title .accent { color: var(--phys, #7c6af0); }
+    .hub-title .accent { color: var(--gold-light, #e8c97a); }
 
     .hub-date {
       font-family: 'JetBrains Mono', monospace;
       font-size: 10px;
-      color: var(--muted, #6b6b8a);
+      color: var(--gold-light, #e8c97a);
+      opacity: 0.65;
       margin-top: 5px;
       line-height: 1.4;
     }
@@ -75,7 +75,7 @@
     /* ── Music toggle ── */
     #music-toggle {
       background: transparent;
-      border: 1px solid #2e2e4e;
+      border: 1px solid rgba(184,150,46,0.3);
       border-radius: 8px;
       padding: 7px 13px;
       font-size: 15px;
@@ -84,13 +84,15 @@
       margin-top: 2px;
       margin-left: 12px;
       transition: color 0.2s, border-color 0.2s, background 0.2s;
-      color: var(--muted, #6b6b8a);
+      color: var(--gold-light, #e8c97a);
+      opacity: 0.55;
       line-height: 1;
     }
     #music-toggle.on {
-      color: var(--accent, #7c6af0);
-      border-color: var(--accent, #7c6af0);
-      background: rgba(124,106,240,0.08);
+      color: var(--gold-light, #e8c97a);
+      border-color: var(--gold-light, #e8c97a);
+      background: rgba(184,150,46,0.1);
+      opacity: 1;
     }
 
     /* ══════════════════════════════════════
@@ -102,7 +104,8 @@
       font-weight: 700;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--muted, #6b6b8a);
+      color: var(--gold-light, #e8c97a);
+      opacity: 0.7;
       margin-bottom: 12px;
       display: flex;
       align-items: center;
@@ -113,7 +116,7 @@
       content: '';
       flex: 1;
       height: 1px;
-      background: var(--border, #1e1e2e);
+      background: rgba(184,150,46,0.25);
     }
 
     /* ══════════════════════════════════════
@@ -128,10 +131,10 @@
       align-items: center;
       gap: 14px;
       padding: 15px 16px;
-      background: var(--surface, #111118);
-      border: 1px solid var(--border, #1e1e2e);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(184,150,46,0.22);
       border-radius: 12px;
-      color: var(--text, #e8e8f0);
+      color: #f0e8d0;
       font-family: 'Syne', sans-serif;
       font-size: 13px;
       font-weight: 700;
@@ -156,10 +159,10 @@
     .btn-subject:active::after { transform: translateX(100%); }
     .btn-subject:active { transform: scale(0.98); }
 
-    .btn-subject.chem  { --c: var(--chem, #4ecdc4); }
-    .btn-subject.phys  { --c: var(--phys, #7c6af0); }
-    .btn-subject.mcq   { --c: var(--mcq,  #e05a5a); }
-    .btn-subject.egypt { --c: var(--egypt, #d4a843); }
+    .btn-subject.chem  { --c: #4ecdc4; }
+    .btn-subject.phys  { --c: var(--gold-light, #e8c97a); }
+    .btn-subject.mcq   { --c: #e05a5a; }
+    .btn-subject.egypt { --c: #d4a843; }
 
     .btn-subject:hover {
       border-color: var(--c);
@@ -187,21 +190,24 @@
     .subj-meta {
       font-family: 'JetBrains Mono', monospace;
       font-size: 9px;
-      color: var(--muted, #6b6b8a);
+      color: var(--gold-light, #e8c97a);
+      opacity: 0.6;
       font-weight: 400;
       letter-spacing: 0.05em;
       margin-top: 2px;
     }
 
     .subj-arrow {
-      color: var(--muted, #6b6b8a);
+      color: var(--gold-light, #e8c97a);
+      opacity: 0.5;
       font-size: 20px;
       line-height: 1;
-      transition: transform 0.2s, color 0.2s;
+      transition: transform 0.2s, color 0.2s, opacity 0.2s;
     }
     .btn-subject:hover .subj-arrow {
       transform: translateX(3px);
       color: var(--c);
+      opacity: 1;
     }
 
     /* ══════════════════════════════════════
@@ -214,26 +220,27 @@
     }
 
     .stat-box {
-      background: var(--surface, #111118);
-      border: 1px solid var(--border, #1e1e2e);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(184,150,46,0.22);
       border-radius: 10px;
       padding: 14px 10px;
       text-align: center;
       transition: border-color 0.2s;
     }
-    .stat-box:hover { border-color: var(--border-hi, #2e2e4e); }
+    .stat-box:hover { border-color: rgba(232,201,122,0.5); }
 
     .stat-val {
       font-family: 'Syne', sans-serif;
       font-size: 24px;
       font-weight: 800;
-      color: var(--gold, #d4a843);
+      color: var(--gold-light, #e8c97a);
       line-height: 1;
     }
     .stat-lbl {
       font-family: 'JetBrains Mono', monospace;
       font-size: 9px;
-      color: var(--muted, #6b6b8a);
+      color: var(--gold-light, #e8c97a);
+      opacity: 0.6;
       margin-top: 5px;
       line-height: 1.3;
       letter-spacing: 0.06em;
@@ -252,7 +259,7 @@
       align-items: flex-start;
       gap: 11px;
       padding: 11px 0;
-      border-bottom: 1px solid var(--border, #1e1e2e);
+      border-bottom: 1px solid rgba(184,150,46,0.18);
     }
     .activity-item:last-child { border-bottom: none; }
 
@@ -263,9 +270,9 @@
       margin-top: 5px;
       flex-shrink: 0;
     }
-    .act-dot.MCQ       { background: var(--mcq,  #e05a5a); box-shadow: 0 0 5px var(--mcq,  #e05a5a); }
-    .act-dot.Physics   { background: var(--phys, #7c6af0); box-shadow: 0 0 5px var(--phys, #7c6af0); }
-    .act-dot.Chemistry { background: var(--chem, #4ecdc4); box-shadow: 0 0 5px var(--chem, #4ecdc4); }
+    .act-dot.MCQ       { background: #e05a5a; box-shadow: 0 0 5px #e05a5a; }
+    .act-dot.Physics   { background: #e8c97a; box-shadow: 0 0 5px #e8c97a; }
+    .act-dot.Chemistry { background: #4ecdc4; box-shadow: 0 0 5px #4ecdc4; }
 
     .act-body { flex: 1; line-height: 1.4; }
     .act-subject {
@@ -275,11 +282,12 @@
       line-height: 1.3;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--muted, #6b6b8a);
+      color: var(--gold-light, #e8c97a);
+      opacity: 0.65;
     }
     .act-detail {
       font-family: 'Crimson Pro', Georgia, serif;
-      color: var(--text, #e8e8f0);
+      color: #f0e8d0;
       font-size: 14px;
       line-height: 1.3;
       margin-top: 1px;
@@ -301,14 +309,15 @@
       white-space: nowrap;
       line-height: 1.4;
     }
-    .act-score.high { background: rgba(76,175,125,0.12); color: var(--green, #4caf7d); }
-    .act-score.mid  { background: rgba(212,168,67,0.12);  color: var(--gold,  #d4a843); }
-    .act-score.low  { background: rgba(224,90,90,0.12);   color: var(--mcq,   #e05a5a); }
+    .act-score.high { background: rgba(76,175,125,0.15);  color: #5fd49a; }
+    .act-score.mid  { background: rgba(232,201,122,0.15); color: #e8c97a; }
+    .act-score.low  { background: rgba(224,90,90,0.15);   color: #e05a5a; }
 
     .act-time {
       font-family: 'JetBrains Mono', monospace;
       font-size: 9px;
-      color: var(--muted, #6b6b8a);
+      color: var(--gold-light, #e8c97a);
+      opacity: 0.5;
       white-space: nowrap;
       line-height: 1.3;
     }
@@ -316,11 +325,12 @@
     .empty-feed {
       text-align: center;
       padding: 28px 20px;
-      color: var(--muted, #6b6b8a);
+      color: var(--gold-light, #e8c97a);
+      opacity: 0.55;
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
       line-height: 1.7;
-      border: 1px dashed var(--border, #1e1e2e);
+      border: 1px dashed rgba(184,150,46,0.3);
       border-radius: 10px;
     }
 
@@ -331,9 +341,10 @@
       width: 100%;
       padding: 12px;
       background: transparent;
-      border: 1px solid var(--border, #1e1e2e);
+      border: 1px solid rgba(184,150,46,0.3);
       border-radius: 8px;
-      color: var(--muted, #6b6b8a);
+      color: var(--gold-light, #e8c97a);
+      opacity: 0.65;
       font-family: 'Syne', sans-serif;
       font-size: 10px;
       font-weight: 700;
@@ -341,9 +352,9 @@
       text-transform: uppercase;
       cursor: pointer;
       line-height: 1;
-      transition: border-color 0.2s, color 0.2s;
+      transition: border-color 0.2s, color 0.2s, opacity 0.2s;
     }
-    .btn-export:hover { border-color: var(--gold, #d4a843); color: var(--gold, #d4a843); }
+    .btn-export:hover { border-color: var(--gold-light, #e8c97a); color: var(--gold-light, #e8c97a); opacity: 1; }
 
     /* ══════════════════════════════════════
        STAGGERED ENTRANCE ANIMATION
@@ -369,7 +380,7 @@
   <header class="hub-header">
     <div class="header-left">
       <div class="hub-title">
-        <span class="accent">🫵</span> this idiot got<br>tricked again🤣
+        <span class="accent"></span>lets start now <br>
       </div>
       <div class="hub-date" id="today-date"></div>
     </div>
@@ -384,7 +395,7 @@
       <div class="subject-grid">
 
         <a class="btn-subject chem" href="pbl_full_pasha.html">
-          <div class="subj-icon">🇹🇷🇹🇷</div>
+          <div class="subj-icon">🇹🇷</div>
           <div class="subj-label">
             <div>kemal pasha</div>
             <div class="subj-meta">commander of Armenia</div>
@@ -404,8 +415,8 @@
         <a class="btn-subject mcq" href="phiross_factory.html">
           <div class="subj-icon">🍨</div>
           <div class="subj-label">
-            <div>water dispenser</div>
-            <div class="subj-meta">icecream</div>
+            <div>generator</div>
+            <div class="subj-meta">finish it quickly</div>
           </div>
           <div class="subj-arrow">›</div>
         </a>
