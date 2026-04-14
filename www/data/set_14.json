@@ -1,0 +1,339 @@
+[
+  {
+    "id": "set_14_q1",
+    "question": "Based on the position of the centromere, chromosomes are classified into four types. A chromosome where the centromere is located close to the terminal end, producing one extremely short and one very long arm, is called:",
+    "options": [
+      "Metacentric",
+      "Sub-metacentric",
+      "Acrocentric",
+      "Telocentric"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q2",
+    "question": "Mycorrhiza is a symbiotic association between fungi (e.g., Glomus) and plant roots. The FUNGAL partner primarily benefits the plant by:",
+    "options": [
+      "Fixing atmospheric nitrogen",
+      "Absorbing phosphorus from soil and passing it to the plant",
+      "Producing antibiotics that protect roots from pathogens",
+      "Synthesising cytokinins for plant growth"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q3",
+    "question": "Sickle-cell anaemia results from a POINT MUTATION. The specific change at the DNA level in the beta-globin gene is:",
+    "options": [
+      "GAG → GCG (6th codon), Glutamic acid → Alanine",
+      "GAG → GUG (6th codon), Glutamic acid → Valine",
+      "GUG → GAG (6th codon), Valine → Glutamic acid (reversal mutation)",
+      "Deletion of the entire 6th codon"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q4",
+    "question": "In polygenic inheritance of human skin colour (assuming 3 gene pairs A, B,",
+    "options": [
+      ", an individual with genotype AaBbCc would have:",
+      "Darkest possible skin (6 dominant alleles)",
+      "Lightest possible skin (0 dominant alleles)",
+      "Intermediate skin colour (3 dominant, 3 recessive alleles — additive contribution of each dominant allele)",
+      "Same skin colour as AABBCC due to dominance"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q5",
+    "question": "A typical human cell in culture divides approximately every 24 hours. Of this 24-hour cycle, the actual cell division (M phase) lasts approximately how long, and what percentage of the cycle does interphase occupy?",
+    "options": [
+      "M phase = 6 hours; Interphase = 75%",
+      "M phase = 1 hour; Interphase = more than 95%",
+      "M phase = 8 hours; Interphase = 66%",
+      "M phase = 12 hours; Interphase = 50%"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q6",
+    "question": "In racemose inflorescence, the main axis continues to grow and flowers are borne in a lateral, acropetal succession. In cymose inflorescence, the flowers are borne in which order?",
+    "options": [
+      "Acropetal",
+      "Basipetal",
+      "Centripetal",
+      "Centrifugal"
+    ],
+    "correctIndex": 3,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q7",
+    "question": "In most plants, the epidermis is covered with a waxy thick layer that prevents water loss. This layer is called the cuticle. In which part of the plant body is the cuticle characteristically ABSENT?",
+    "options": [
+      "Stem",
+      "Leaves",
+      "Roots",
+      "Floral parts"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q8",
+    "question": "The theoretical NET ATP yield from complete aerobic respiration of one glucose molecule is:",
+    "options": [
+      "2 ATP",
+      "8 ATP",
+      "36–38 ATP",
+      "24 ATP"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q9",
+    "question": "The family Solanaceae includes genera such as Solanum, Petunia, and Datura. This family belongs to which ORDER?",
+    "options": [
+      "Rosales",
+      "Polymoniales",
+      "Malvales",
+      "Caryophyllales"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q10",
+    "question": "NAD and NADP are co-enzymes essential for many enzymatic reactions. They are derivatives of which vitamin?",
+    "options": [
+      "Thiamine (Vitamin B1)",
+      "Niacin (Vitamin B3)",
+      "Riboflavin (Vitamin B2)",
+      "Pyridoxine (Vitamin B6)"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q11",
+    "question": "The juxtaglomerular cells of the kidney produce erythropoietin, a peptide hormone. What is the function of erythropoietin?",
+    "options": [
+      "Regulates blood pressure via vasodilation",
+      "Stimulates erythropoiesis (RBC formation)",
+      "Stimulates water reabsorption from distal tubules",
+      "Inhibits glucose uptake in muscle cells"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q12",
+    "question": "In India, sacred groves are patches of forest that are traditionally protected by local communities for religious and cultural reasons, and no plants can be removed from them. Sacred groves are found in which of the following locations in India?",
+    "options": [
+      "Only in Kerala and Tamil Nadu",
+      "Khasi and Jaintia Hills (Meghalaya), Aravalli Hills (Rajasthan), Western Ghats (Karnataka and Maharashtra), Sarguja, Chanda and Bastar areas (Madhya Pradesh)",
+      "Only in the Himalayan foothills",
+      "Only in Rajasthan and Gujarat deserts"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q13",
+    "question": "For every ONE molecule of CO₂ fixed in the Calvin cycle, the energy requirement is:",
+    "options": [
+      "2 ATP and 3 NADPH",
+      "3 ATP and 2 NADPH",
+      "2 ATP and 2 NADPH",
+      "3 ATP and 3 NADPH"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q14",
+    "question": "Homologous structures (like the forelimbs of whale, bat, cheetah, and human) indicate:",
+    "options": [
+      "Convergent evolution — different ancestors developing same structure",
+      "Divergent evolution from a COMMON ANCESTOR — same basic structure (humerus, radius, ulna, carpals, metacarpals, phalanges) adapted for different functions",
+      "Analogous structures with same function",
+      "Saltation causing rapid structural change"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q15",
+    "question": "Small leaves found in Selaginella that have a single unbranched vein are correctly called:",
+    "options": [
+      "Macrophylls",
+      "Sporophylls",
+      "Microphylls",
+      "Fronds"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q16",
+    "question": "Apical dominance is the phenomenon where the growing apical bud suppresses the growth of lateral buds. This is primarily mediated by:",
+    "options": [
+      "Gibberellins",
+      "Cytokinins",
+      "Auxins produced at the apex",
+      "Abscisic acid"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q17",
+    "question": "In Whittaker's Five Kingdom Classification, which kingdom has organisms with ALL FOUR of these features: eukaryotic, chitin cell wall, nuclear membrane present, heterotrophic (saprophytic/parasitic)?",
+    "options": [
+      "Protista",
+      "Animalia",
+      "Fungi",
+      "Plantae"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q18",
+    "question": "Cardiac muscles are unique in that they are striated in appearance but involuntary in control. Cardiac muscle cells also assemble in a distinctive pattern. This pattern is:",
+    "options": [
+      "Parallel unbranched pattern",
+      "Branching pattern",
+      "Circular pattern",
+      "Spiral winding pattern"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q19",
+    "question": "In coconut, the liquid coconut water is a free-nuclear endosperm containing thousands of free nuclei. The surrounding white kernel is the cellular endosperm. In the free-nuclear stage of endosperm development, which event has occurred?",
+    "options": [
+      "Cell wall formation has completed",
+      "Only nuclear divisions have occurred without cell wall formation (free-nuclear endosperm)",
+      "The zygote has developed into a globular embryo",
+      "The polar nuclei have fused to form the secondary nucleus only"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q20",
+    "question": "The symptoms of allergy (sneezing, watery eyes, running nose) are caused by release of which substances from MAST CELLS?",
+    "options": [
+      "Interferons and interleukins",
+      "Histamine and serotonin",
+      "Antibodies and complement",
+      "Perforins and granzymes"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q21",
+    "question": "In the logistic growth model, the population grows in a sigmoid (S-shaped) curve. The maximum number of individuals that a given environment can support is called the carrying capacity (K). The logistic growth equation is:",
+    "options": [
+      "dN/dt = rN",
+      "dN/dt = rN (K − N)/K",
+      "N_t = N_0 e^(rt)",
+      "dN/dt = bN − dN + I − E"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q22",
+    "question": "The fallopian tube (oviduct) is 10–12 cm long. The part near the ovary is funnel-shaped with finger-like projections that help collect the ovum after ovulation. This funnel-shaped part with its projections is called:",
+    "options": [
+      "Ampulla and fimbriae",
+      "Isthmus and infundibulum",
+      "Infundibulum and fimbriae",
+      "Cervix and fimbriae"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q23",
+    "question": "Renal calculi are stones formed in the kidney from insoluble crystallised salts. The most common salt forming these stones is:",
+    "options": [
+      "Phosphates",
+      "Uric acid crystals",
+      "Oxalates",
+      "Calcium carbonate"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_14_q24",
+    "question": "The first clinical application of gene therapy was performed in 1990 on a 4-year-old girl with ADA (Adenosine Deaminase) deficiency. ADA is crucial for the immune system. In this gene therapy, functional ADA cDNA was introduced into the patient's lymphocytes via a retroviral vector. Why does this treatment require periodic infusion of the gene-corrected lymphocytes?",
+    "options": [
+      "The retrovirus destroys the lymphocytes after gene delivery",
+      "The lymphocytes are not immortal and do not last permanently, so periodic reintroduction is needed",
+      "The ADA cDNA becomes inactive after one month",
+      "The patient's immune system rejects the genetically modified lymphocytes"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  }
+]

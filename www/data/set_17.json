@@ -1,0 +1,282 @@
+[
+  {
+    "id": "set_17_q1",
+    "question": "A test cross is used to determine the genotype of an organism showing the dominant phenotype. In a test cross, the organism with the dominant phenotype is crossed with:",
+    "options": [
+      "Another organism with the same dominant phenotype",
+      "An F1 hybrid",
+      "A homozygous recessive parent",
+      "Any random organism from the same species"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_17_q2",
+    "question": "In an isobilateral (monocot) leaf, certain large, empty, colourless adaxial epidermal cells along veins are called bulliform cells. When these cells are flaccid due to water stress, what happens to the leaf?",
+    "options": [
+      "Leaf expands and exposes more surface to sun",
+      "Leaf curls inward to minimise water loss",
+      "Stomata open wider to allow more gas exchange",
+      "Leaf drops off the plant"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_17_q3",
+    "question": "When living tissue is ground in trichloroacetic acid and strained through cheesecloth, two fractions are obtained. The organic compounds in the filtrate (acid-soluble pool) have molecular weights typically in the range of:",
+    "options": [
+      "10,000 Da and above",
+      "18 to 800 Da",
+      "1,000 to 5,000 Da",
+      "5,000 to 10,000 Da"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_17_q4",
+    "question": "When karyokinesis (nuclear division) occurs without cytokinesis (cytoplasm division), a multinucleate condition results. This multinucleate condition is called a syncytium. A common example of syncytium in plants is:",
+    "options": [
+      "Guard cells of stomata",
+      "Liquid endosperm in coconut",
+      "Pollen grains",
+      "Root cap cells"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_17_q5",
+    "question": "Muscles contribute approximately what percentage of human adult body weight, and which of the four properties listed below is NOT a property of muscles?",
+    "options": [
+      "20–30%; Properties: excitability, contractility, extensibility, elasticity",
+      "40–50%; Properties: excitability, contractility, extensibility, elasticity",
+      "40–50%; Properties: excitability, contractility, conductivity, elasticity",
+      "60–70%; Properties: excitability, contractility, extensibility, elasticity"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_17_q6",
+    "question": "In plant cell walls, the layer that lies between adjacent cells and is composed of calcium pectate, acting as a cementing substance, is called the:",
+    "options": [
+      "Primary wall",
+      "Secondary wall",
+      "Tertiary wall",
+      "Middle lamella"
+    ],
+    "correctIndex": 3,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_17_q7",
+    "question": "In sickle-cell anaemia, the mutant haemoglobin (HbS) under LOW oxygen tension undergoes:",
+    "options": [
+      "Breakdown into individual globin chains",
+      "Polymerisation, changing RBC shape from biconcave disc to elongated SICKLE shape",
+      "Increased oxygen-carrying capacity",
+      "Rapid degradation by proteases"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_17_q8",
+    "question": "Equisetum, the horsetail, belongs to which class of pteridophytes?",
+    "options": [
+      "Psilopsida",
+      "Lycopsida",
+      "Sphenopsida",
+      "Pteropsida"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_17_q9",
+    "question": "Pre-historic cave art (cave paintings) dates to approximately how many years ago? The famous Bhimbetka cave paintings are in which Indian state?",
+    "options": [
+      "50,000 years ago; Rajasthan",
+      "18,000 years ago; Madhya Pradesh (Raisen district)",
+      "10,000 years ago; Maharashtra",
+      "5,000 years ago; Tamil Nadu"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_17_q10",
+    "question": "BACULOVIRUSES used as biocontrol agents are DESIRABLE in Integrated Pest Management (IPM) primarily because:",
+    "options": [
+      "They kill all insects indiscriminately, ensuring complete pest control",
+      "They are species-specific (narrow spectrum), have no negative impacts on plants, mammals, birds, fish, or non-target insects",
+      "They produce toxins that persist in soil for years",
+      "They can be chemically synthesised cheaply"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_17_q11",
+    "question": "Sporogenous tissue at the centre of each microsporangium undergoes meiosis to form microspore tetrads. This process is called microsporogenesis. Each cell of the sporogenous tissue that is capable of giving rise to a microspore tetrad is called a:",
+    "options": [
+      "Pollen grain",
+      "Pollen mother cell (PMC)",
+      "Generative cell",
+      "Vegetative cell"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_17_q12",
+    "question": "A fall in GFR activates the juxtaglomerular (JG) cells to release renin. Renin converts angiotensinogen to angiotensin I, which is then converted to angiotensin II. Angiotensin II then stimulates the adrenal cortex to release which hormone that causes reabsorption of Na+ and water from the distal tubule?",
+    "options": [
+      "ADH (vasopressin)",
+      "Aldosterone",
+      "Cortisol",
+      "Atrial Natriuretic Factor (ANF)"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_17_q13",
+    "question": "In the Plasmodium life cycle, sporozoites enter the human body via a bite, then multiply in LIVER CELLS first. The substance released when RBCs rupture, causing chills and recurring fever every 3-4 days, is:",
+    "options": [
+      "Merozoites only",
+      "Haemozoin (malarial pigment)",
+      "Sporozoites",
+      "Gametocytes"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_17_q14",
+    "question": "Oxytocin and vasopressin (ADH) are synthesised in the hypothalamus but released from the neurohypophysis (pars nervosa/posterior pituitary). They are transported to the neurohypophysis via:",
+    "options": [
+      "Portal blood vessels",
+      "Axonal transport",
+      "Lymphatic circulation",
+      "Cerebrospinal fluid"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_17_q15",
+    "question": "The arrangement of veins and veinlets in the lamina of a leaf is called venation. Which type of venation is generally characteristic of dicotyledonous plants?",
+    "options": [
+      "Parallel venation",
+      "Reticulate venation",
+      "Pinnate venation",
+      "Palmate venation"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_17_q16",
+    "question": "The Respiratory Quotient (RQ) for carbohydrates is exactly 1.0. For fats, the RQ is:",
+    "options": [
+      "Greater than 1 (e.g., 1.4)",
+      "Equal to 1",
+      "Less than 1 (approximately 0.7)",
+      "Zero"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_17_q17",
+    "question": "Jan Ingenhousz extended Priestley's work. His KEY additional finding was:",
+    "options": [
+      "Oxygen is produced from CO₂ during photosynthesis",
+      "Sunlight is essential for air purification by plants",
+      "Green parts of a plant release CO₂ in darkness",
+      "Water is split during the light reactions"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_17_q18",
+    "question": "Growth is defined as an irreversible permanent increase in size. Which of the following is NOT an example of growth?",
+    "options": [
+      "Expansion of a leaf",
+      "Elongation of a root",
+      "Swelling of a dry wooden block when placed in water",
+      "Increase in cell number in a meristem"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_17_q19",
+    "question": "What is the structural arrangement of cellulose plates on the dinoflagellate cell?",
+    "options": [
+      "Flexible overlapping plates that allow for amoeboid movement",
+      "Stiff cellulose plates on the OUTER surface of the cell",
+      "Inner cellulose plates with an outer silica layer",
+      "Cellulose plates found only in the flagellar groove"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_17_q20",
+    "question": "Among all vertebrate classes, which group is reported to have the highest percentage of threatened species (32% of species threatened)?",
+    "options": [
+      "Mammals (23%)",
+      "Birds (12%)",
+      "Amphibians (32%)",
+      "Reptiles (31%)"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  }
+]

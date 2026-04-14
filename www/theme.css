@@ -1,40 +1,62 @@
 /* ═══════════════════════════════════════════════════
    theme.css  —  StudyApp shared design tokens
+   Palette: Egyptian Royal — parchment, gold, crimson, navy
    Consumed by: index.html, phiross_factory_n.html
    NOT applied to: pbl_full_pasha.html (different palette)
    ═══════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&display=swap');
 
 /* ── COLOUR TOKENS ── */
 :root {
   /* Backgrounds */
-  --bg:        #0a0a0f;
-  --surface:   #111118;
-  --surface2:  #16161f;
+  --bg:        #1a2540;           /* deep navy — page background */
+  --surface:   #f9f2e3;           /* warm parchment — card/panel surface */
+  --surface2:  #f0e6ce;           /* darker parchment — alt surface */
 
   /* Borders */
-  --border:    #1e1e2e;
-  --border-hi: #2e2e4e;
+  --border:    #b8962e;           /* ornate gold border */
+  --border-hi: #e8c97a;           /* light gold highlight border */
 
-  /* Text — brightened for crispness */
-  --text:      #f0f0f8;
-  --muted:     #8888aa;
+  /* Text */
+  --text:      #1e1408;           /* deep ink — primary body text (on parchment surfaces) */
+  --text-on-dark: #e8c97a;        /* gold — primary text on navy/dark backgrounds */
+  --muted:     #6b5a3a;           /* warm brown — secondary/muted text on parchment */
+  --muted-on-dark: #a08c60;       /* muted gold — secondary text on dark backgrounds */
 
-  /* Subject accents — purple → blue */
-  --accent:    #4d8ef0;   /* Physics / MCQ primary  (blue)   */
-  --chem:      #4ecdc4;   /* Chemistry               (teal)  */
-  --phys:      #4d8ef0;   /* Physics                 (blue)  */
-  --mcq:       #e05a5a;   /* MCQ / wrong / red       (red)   */
+  /* Subject accents */
+  --accent:    #7c5c10;           /* warm dark gold — readable on parchment surfaces */
+  --accent-on-dark: #e8c97a;      /* bright gold — readable on dark backgrounds */
+  --chem:      #1a6b66;           /* Chemistry — dark teal, readable on parchment */
+  --phys:      #1a2540;           /* Physics — navy */
+  --mcq:       #8b1a1a;           /* MCQ / wrong / red — crimson */
 
   /* Semantic colours */
-  --green:     #4caf7d;
-  --gold:      #d4a843;
-  --red:       #e05a5a;
+  --green:     #4caf7d;           /* kept for compatibility */
+  --gold:      #c9a84c;           /* Egyptian gold */
+  --red:       #8b1a1a;           /* crimson red */
 
   /* Aliases used in phiross_factory_n */
-  --accent2:   #e05a5a;
-  --accent3:   #4ecdc4;
+  --accent2:   #8b1a1a;           /* crimson */
+  --accent3:   #c9a84c;           /* gold */
+
+  /* ── Egyptian-specific tokens ── */
+  --ink:           #0e0b07;
+  --parchment:     #f5edd8;
+  --parchment-dark:#ede0c4;
+  --parchment-mid: #f0e6ce;
+  --gold-light:    #e8c97a;
+  --gold-deep:     #8a6420;
+  --crimson:       #8b1a1a;
+  --crimson-light: #b32020;
+  --navy:          #1a2540;
+  --navy-light:    #243259;
+  --border-ornate: #b8962e;
+  --text-body:     #1e1408;
+  --text-muted:    #5c4a2a;
+  --text-accent:   #8b1a1a;
+  --surface-alt:   #f2e8d0;
+  --shadow:        rgba(10,7,2,0.18);
 }
 
 /* ── RESET ── */
@@ -46,84 +68,103 @@
 
 /* ── BASE ── */
 body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 17px;
-  font-weight: 300;           /* lighter body weight */
+  background: var(--navy);
+  background-image:
+    radial-gradient(ellipse at 20% 20%, #1e2d52 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, #0d1a30 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  color: var(--text-body);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 15px;
+  font-weight: 400;
   line-height: 1.65;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ── HEADINGS — light weight, sharp, blue titles ── */
+/* ── HEADINGS ── */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Syne', sans-serif;
-  font-weight: 300;
-  letter-spacing: -0.01em;
-  color: var(--accent);       /* blue titles */
+  font-family: 'Playfair Display', 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--navy);
   -webkit-font-smoothing: antialiased;
 }
 
-h1 { font-size: 2.2rem;  letter-spacing: -0.02em; }
-h2 { font-size: 1.6rem;  letter-spacing: -0.01em; }
-h3 { font-size: 1.25rem; }
-h4 { font-size: 1.05rem; }
+h1 { font-size: clamp(28px, 4vw, 52px); font-weight: 900; letter-spacing: -0.02em; line-height: 1; }
+h2 { font-size: 1.6rem;  letter-spacing: 0.01em; }
+h3 { font-size: 1.25rem; font-family: 'Cinzel', serif; letter-spacing: 2px; text-transform: uppercase; }
+h4 { font-size: 1.05rem; font-family: 'Cinzel', serif; letter-spacing: 1.5px; }
 
 /* ── SHARED HEADER ── */
 header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(10, 10, 15, 0.94);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
+  background: var(--parchment);
+  background-image: linear-gradient(180deg, #f9f2e3 0%, #ede0c4 100%);
+  border: 3px solid var(--gold);
+  border-top: none;
+  box-shadow:
+    0 0 0 1px var(--gold-deep),
+    0 4px 32px var(--shadow),
+    inset 0 1px 0 rgba(255,255,255,0.6);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 12px 28px;
+  overflow: hidden;
+}
+
+/* Inner ornate inset line */
+header::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid var(--gold-deep);
+  pointer-events: none;
+  opacity: 0.35;
 }
 
 /* Logo / app name */
 .logo {
-  font-family: 'Syne', sans-serif;
-  font-weight: 300;           /* lighter than before (was 800) */
-  font-size: 14px;
-  letter-spacing: 0.18em;     /* wider tracking for sharpness */
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--accent);       /* now blue */
+  color: var(--navy);
   cursor: pointer;
   -webkit-font-smoothing: antialiased;
 }
-.logo span { color: var(--muted); }
+.logo span { color: var(--gold-deep); }
 
 /* Back-link (phiross_factory_n header) */
 .back-link {
-  font-family: 'Syne', sans-serif;
-  font-size: 12px;
-  font-weight: 400;           /* lighter (was 700) */
-  letter-spacing: 0.12em;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--text-muted);
   text-decoration: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: 1px solid var(--border);
-  transition: color 0.15s, border-color 0.15s;
+  padding: 5px 12px;
+  border: 1px solid var(--border-ornate);
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
 }
 .back-link:hover {
-  color: var(--text);
-  border-color: var(--border-hi);
+  color: var(--navy);
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.08);
 }
 
 /* ── UTILITY CLASSES ── */
-.text-accent  { color: var(--accent); }
-.text-muted   { color: var(--muted);  }
-.text-green   { color: var(--green);  }
-.text-gold    { color: var(--gold);   }
-.text-red     { color: var(--red);    }
+.text-accent  { color: var(--navy);        }
+.text-muted   { color: var(--text-muted);  }
+.text-green   { color: var(--green);       }
+.text-gold    { color: var(--gold);        }
+.text-red     { color: var(--crimson);     }
 
 /* ── RESPONSIVE HEADER ── */
 @media (max-width: 600px) {

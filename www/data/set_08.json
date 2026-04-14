@@ -1,0 +1,548 @@
+[
+  {
+    "id": "set_08_q1",
+    "question": "In frogs, during aestivation and hibernation, gaseous exchange for respiration takes place exclusively through:",
+    "options": [
+      "Lungs (pulmonary respiration)",
+      "Buccal cavity",
+      "Skin (cutaneous respiration)",
+      "Gills"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q2",
+    "question": "In Arthropoda, excretion is carried out through which specialised structures?",
+    "options": [
+      "Nephridia",
+      "Flame cells",
+      "Malpighian tubules",
+      "Proboscis gland"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q3",
+    "question": "Ethephon is the commercial source of ethylene used in agriculture. It works because:",
+    "options": [
+      "It directly inhibits ABA synthesis",
+      "It is absorbed by the plant and slowly releases ethylene",
+      "It activates auxin receptors",
+      "It directly stimulates cell division in the meristem"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q4",
+    "question": "The total Net Primary Productivity of the biosphere is approximately 170 billion tonnes of dry weight per year. Despite covering about 70% of the Earth's surface, oceans contribute only approximately what amount to global NPP?",
+    "options": [
+      "100 billion tonnes",
+      "115 billion tonnes",
+      "55 billion tonnes",
+      "20 billion tonnes"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q5",
+    "question": "Tidal Volume (TV) is approximately 500 mL. A healthy adult male breathes 12–16 times per minute. The approximate volume of air inspired/expired per minute is:",
+    "options": [
+      "500–1000 mL",
+      "2000–4000 mL",
+      "6000–8000 mL",
+      "12000–16000 mL"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q6",
+    "question": "For a male to be considered normally fertile, what minimum percentage of sperms should have normal shape/size, and what minimum percentage should show vigorous motility?",
+    "options": [
+      "≥40% normal shape; ≥20% vigorous motility",
+      "≥60% normal shape/size; ≥40% vigorous motility",
+      "≥80% normal shape; ≥60% vigorous motility",
+      "≥50% normal shape; ≥50% vigorous motility"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q7",
+    "question": "Biopiracy refers to the use of bio-resources by multinational companies and other organisations from other nations without proper authorisation from, or adequate compensation/benefit sharing with, the countries from where resources originate. Which of the following is a correct characterisation of the biopiracy situation?",
+    "options": [
+      "Industrialised nations are rich in biodiversity; developing nations exploit this",
+      "Developing/underdeveloped nations have rich biodiversity and traditional knowledge; industrialised nations exploit this without compensation",
+      "Biopiracy only applies to animal resources, not plant resources",
+      "International laws already fully prevent all biopiracy"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q8",
+    "question": "DNA was first discovered (as \"Nuclein\") by which scientist, and in which year?",
+    "options": [
+      "Watson and Crick, 1953",
+      "Friedrich Meischer, 1869",
+      "Avery, MacLeod, McCarty, 1944",
+      "Chargaff, 1950"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q9",
+    "question": "Substrate-level phosphorylation occurs in the Krebs cycle at which step, and what high-energy molecule is directly produced?",
+    "options": [
+      "Isocitrate → α-ketoglutarate; produces ATP directly",
+      "Succinyl CoA → Succinic acid; produces GTP (which converts to ATP)",
+      "Succinic acid → Fumarate; produces FADH₂",
+      "OAA → Citrate; produces NADH"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q10",
+    "question": "In photorespiration (C3 plants), RuBisCO acts as an oxygenase instead of a carboxylase. The products of this oxygenase reaction are:",
+    "options": [
+      "Two molecules of 3-PGA",
+      "One phosphoglycerate and one phosphoglycolate (2-carbon compound)",
+      "OAA and CO₂",
+      "Pyruvate and CO₂"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q11",
+    "question": "In gymnosperms, the unbranched stem is a characteristic of which plant, while branched stem is seen in Pinus and Cedrus?",
+    "options": [
+      "Sequoia",
+      "Equisetum",
+      "Cycas",
+      "Gnetum"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q12",
+    "question": "Stamens that are united into two bundles, as seen in pea, are described as:",
+    "options": [
+      "Monoadelphous",
+      "Polyadelphous",
+      "Diadelphous",
+      "Syngenesious"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q13",
+    "question": "In a dorsiventral (dicot) leaf, the mesophyll is differentiated into two distinct regions. The palisade parenchyma cells are elongated, arranged vertically and parallel, and are located:",
+    "options": [
+      "Below spongy parenchyma, towards abaxial surface",
+      "On the abaxial side, loosely arranged",
+      "Adaxially (upper side), tightly packed",
+      "In the midrib region only"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q14",
+    "question": "Which of the following birds is correctly matched with its scientific name?",
+    "options": [
+      "Peacock — Columba",
+      "Ostrich — Aptenodytes",
+      "Penguin — Aptenodytes",
+      "Vulture — Psittacula"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q15",
+    "question": "Haemophilia is an X-linked recessive disorder. A heterozygous carrier female (X^H X^h) × normal male (X^H Y). What percentage of SONS will be haemophilic?",
+    "options": [
+      "0%",
+      "25%",
+      "50%",
+      "100%"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q16",
+    "question": "Axons terminate in swollen bulb-like structures called synaptic knobs, which contain synaptic vesicles loaded with neurotransmitters. Based on the number of processes, neurons in the cerebral cortex are classified as:",
+    "options": [
+      "Unipolar (one axon, no dendrites)",
+      "Bipolar (one axon, one dendrite)",
+      "Multipolar (one axon, two or more dendrites)",
+      "Pseudounipolar"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q17",
+    "question": "What ecological role do puffballs and bracket fungi (wood-decomposing basidiomycetes) play?",
+    "options": [
+      "They fix nitrogen from the atmosphere",
+      "They decompose dead wood and recycle nutrients",
+      "They protect living trees from pathogenic bacteria",
+      "They synthesise hormones that stimulate plant root growth"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q18",
+    "question": "Swiss cheese develops its characteristic LARGE HOLES due to CO₂ produced by which microorganism?",
+    "options": [
+      "Lactobacillus acidophilus",
+      "Propionibacterium sharmanii",
+      "Saccharomyces cerevisiae",
+      "Penicillium roqueforti"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q19",
+    "question": "G.N. Ramachandran made outstanding contributions to structural biology. He discovered the triple helical structure of collagen and published it in Nature. He also developed a fundamental tool for analysing allowed conformations of proteins. This tool is called the:",
+    "options": [
+      "Pauling plot",
+      "Ramachandran plot",
+      "Watson-Crick diagram",
+      "Linus diagram"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q20",
+    "question": "Avery, MacLeod, and McCarty (1944) identified the \"transforming principle\" from Griffith's experiment. Their KEY experimental evidence that DNA was the genetic material was:",
+    "options": [
+      "Protease treatment abolished transformation",
+      "RNase treatment abolished transformation",
+      "Only DNase treatment ABOLISHED transformation; proteases and RNases had no effect",
+      "Protein extracts alone could transform R to S"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q21",
+    "question": "Among the following Sexually Transmitted Infections (STIs), which is correctly identified as NOT completely curable once contracted?",
+    "options": [
+      "Gonorrhoea",
+      "Syphilis",
+      "Trichomoniasis",
+      "HIV/AIDS"
+    ],
+    "correctIndex": 3,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q22",
+    "question": "Anti-Diuretic Hormone (ADH/vasopressin) is released from the neurohypophysis. It facilitates water reabsorption from the latter parts of the tubule to prevent diuresis. If ADH secretion is impaired, the condition that results from excessive water loss through dilute urine is called:",
+    "options": [
+      "Diabetes mellitus",
+      "Nephrotic syndrome",
+      "Diabetes Insipidus",
+      "Uremia"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q23",
+    "question": "Agrobacterium tumefaciens is a pathogen that delivers T-DNA into plant cells, transforming them into tumour cells that produce specific chemicals. In genetic engineering, this bacterium's Ti plasmid is modified to make it:",
+    "options": [
+      "More pathogenic to increase gene delivery efficiency",
+      "Non-pathogenic — used as a cloning vector to deliver desired genes into plant cells",
+      "Capable of infecting animal cells as well",
+      "Resistant to restriction enzyme digestion"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q24",
+    "question": "Hardy-Weinberg principle states that allele frequencies in a population remain constant across generations (genetic equilibrium). For a gene with two alleles A (frequency p) and a (frequency q), the genotype frequencies at equilibrium are:",
+    "options": [
+      "AA = p, Aa = q, aa = pq",
+      "AA = p², Aa = 2pq, aa = q²; where p + q = 1 and p² + 2pq + q² = 1",
+      "AA = p², Aa = p²q², aa = q²",
+      "All genotypes have equal frequency = 1/3"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q25",
+    "question": "Onion root tip cells are commonly used to study mitosis. Onion (Allium cepa) has 16 chromosomes. If you observe an onion cell in anaphase of mitosis, how many chromosomes (chromatids moving to poles) would you count?",
+    "options": [
+      "8",
+      "16",
+      "32",
+      "64"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q26",
+    "question": "\"Typhoid Mary\" refers to Mary Mallon, who was significant because:",
+    "options": [
+      "She was the first person cured of typhoid by antibiotics",
+      "She was a cook who was a TYPHOID CARRIER and spread typhoid through contaminated food for years without being ill herself",
+      "She discovered the Widal test",
+      "She was the first patient to die of typhoid in the USA"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q27",
+    "question": "In a dihybrid cross (RRYY × rryy), the F1 is RrYy. When F1 is self-pollinated, the F2 phenotypic ratio is:",
+    "options": [
+      "3:1",
+      "1:2:1:2:4:2:1:2:1",
+      "9:3:3:1 (round-yellow : wrinkled-yellow : round-green : wrinkled-green)",
+      "1:1:1:1"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q28",
+    "question": "The skull consists of cranial and facial bones. The cranium is formed by 8 cranial bones and protects the brain. Facial bones total 14, forming the front part of the skull. The total number of skull bones is:",
+    "options": [
+      "14",
+      "8",
+      "22",
+      "30"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q29",
+    "question": "PCR (Polymerase Chain Reaction) amplifies DNA using a thermostable DNA polymerase isolated from a thermophilic bacterium that can withstand the high temperatures required for DNA denaturation. This bacterium is:",
+    "options": [
+      "Escherichia coli",
+      "Thermus aquaticus",
+      "Bacillus thuringiensis",
+      "Agrobacterium tumefaciens"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q30",
+    "question": "RBCs are destroyed in the spleen, which is therefore called the \"graveyard of RBCs.\" The average lifespan of a human RBC is:",
+    "options": [
+      "30 days",
+      "60 days",
+      "120 days",
+      "180 days"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q31",
+    "question": "In class Aves (birds), the long bones are hollow and contain air cavities. These bones are described as:",
+    "options": [
+      "Cancellous bones",
+      "Pneumatic bones",
+      "Compact bones",
+      "Cartilaginous bones"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q32",
+    "question": "The Golgi apparatus was first observed by Camillo Golgi in 1898. It consists of flat disc-shaped sacs called cisternae. The Golgi has two faces — the convex face facing the ER (receiving face) and the concave face from which secretory vesicles bud off. These faces are correctly called:",
+    "options": [
+      "Proximal face and distal face",
+      "Cis (forming) face and Trans (maturing) face",
+      "Outer face and inner face",
+      "Luminal face and cytoplasmic face"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q33",
+    "question": "The thyroid gland also secretes thyrocalcitonin (TCT), a protein hormone. TCT and PTH together regulate calcium balance. What is the action of TCT on blood calcium levels?",
+    "options": [
+      "Increases blood calcium (hypercalcemic)",
+      "Decreases blood calcium by inhibiting bone resorption",
+      "Has no effect on blood calcium",
+      "Stimulates intestinal calcium absorption"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q34",
+    "question": "India has THREE biodiversity hotspots. Which of the following correctly lists all three biodiversity hotspots found in India?",
+    "options": [
+      "Eastern Ghats and Sri Lanka, Himalaya, Deccan Plateau",
+      "Western Ghats and Sri Lanka, Indo-Burma, Himalaya",
+      "Western Ghats, Eastern Ghats, Himalaya",
+      "Indo-Burma, Sundaland, Himalaya"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q35",
+    "question": "How many pairs of cranial nerves arise from the brain of a frog?",
+    "options": [
+      "8 pairs",
+      "10 pairs",
+      "12 pairs",
+      "6 pairs"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q36",
+    "question": "Hershey and Chase (1952) used bacteriophages to confirm DNA as genetic material. They labeled DNA with radioactive ³²P and protein with ³⁵S. After infection and blending to remove phage coats, what was found?",
+    "options": [
+      "³²P (DNA) remained outside bacteria in the supernatant; ³⁵S (protein) entered bacteria",
+      "³²P (DNA) was found INSIDE bacteria; ³⁵S (protein) was NOT found inside — proving DNA enters and directs viral production",
+      "Both ³²P and ³⁵S were found inside bacteria equally",
+      "Neither isotope was found inside bacteria"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q37",
+    "question": "Gause's competitive exclusion principle states that two species competing for the same limited resources CANNOT coexist indefinitely — the competitively inferior species will be eliminated. However, in nature, many closely related species coexist. The mechanism that allows this is:",
+    "options": [
+      "Predation by a common enemy reducing both populations equally",
+      "Resource partitioning — use of different portions of resources at different times or by different patterns",
+      "Mutualism between the competing species",
+      "Complete genetic isolation preventing competition"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q38",
+    "question": "In binomial nomenclature, when a scientific name is HANDWRITTEN, how should the generic name and specific epithet be represented?",
+    "options": [
+      "Both written in italics",
+      "Both underlined together as one unit",
+      "Each word separately underlined",
+      "Only the genus name is underlined"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_08_q39",
+    "question": "The mature embryo sac of a typical angiosperm is 7-celled and 8-nucleate. The structure at the micropylar end consisting of two synergids and one egg cell is called the:",
+    "options": [
+      "Antipodal apparatus",
+      "Egg apparatus",
+      "Central cell",
+      "Filiform apparatus"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  }
+]

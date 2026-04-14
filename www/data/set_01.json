@@ -1,0 +1,548 @@
+[
+  {
+    "id": "set_01_q1",
+    "question": "Frogs are beneficial to agriculture and ecology. Their muscular hind legs are used as food by humans in some countries. In the frog's ecosystem role, they maintain ecological balance by:",
+    "options": [
+      "Producing large amounts of oxygen through skin respiration",
+      "Eating insects and protecting crops, being an important link in food chains",
+      "Fixing nitrogen through mutualistic bacteria in their gut",
+      "Controlling aquatic plant growth"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q2",
+    "question": "The I-band is bisected by a thin elastic fibre called the Z line (to which thin filaments attach), and the A-band is bisected by the M line. The sarcomere is defined as the functional unit of contraction. It extends between:",
+    "options": [
+      "M line to M line",
+      "Z line to Z line",
+      "H zone to H zone",
+      "A-band to A-band"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q3",
+    "question": "In competitive inhibition of enzymes, the inhibitor resembles the substrate and competes for the active site. A classic example of competitive inhibition is the inhibition of succinic dehydrogenase by which compound that resembles succinate?",
+    "options": [
+      "Malate",
+      "Fumarate",
+      "Malonate",
+      "Oxaloacetate"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q4",
+    "question": "Active transport across the plasma membrane differs from passive transport in that it moves molecules against the concentration gradient and requires energy (ATP). A classic example of active transport in cells is:",
+    "options": [
+      "Osmosis of water molecules",
+      "Diffusion of neutral solutes",
+      "Na⁺/K⁺ Pump",
+      "Facilitated diffusion via carrier proteins"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q5",
+    "question": "In a DNA double helix, the number of hydrogen bonds between A-T and G-C base pairs respectively are:",
+    "options": [
+      "A-T: 3 bonds; G-C: 2 bonds",
+      "A-T: 2 bonds; G-C: 3 bonds",
+      "A-T: 1 bond; G-C: 2 bonds",
+      "A-T: 2 bonds; G-C: 2 bonds"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q6",
+    "question": "In the cephalochordate Amphioxus (Branchiostoma), which type of excretory structure is present that is also found in Planaria and some annelids?",
+    "options": [
+      "Nephridia",
+      "Malpighian tubules",
+      "Protonephridia (flame cells)",
+      "Green glands"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q7",
+    "question": "In secondary sewage treatment, the primary effluent is passed into AERATION TANKS. What forms in these tanks that consumes organic matter?",
+    "options": [
+      "Inorganic precipitates",
+      "Flocs — masses of bacteria enmeshed in fungal filaments that consume organic matter and reduce BOD",
+      "Biofilm of algae that photosynthesise organic matter",
+      "Crystals of calcium carbonate"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q8",
+    "question": "The first restriction enzyme ever discovered was Hind II, which cuts DNA at a specific 6 base pair recognition sequence. The science of restriction enzymes began in 1963 when two enzymes were isolated from E. coli — one that adds methyl groups and another that cuts DNA. The first fully characterised restriction endonuclease, Hind II, was isolated in which year?",
+    "options": [
+      "1963",
+      "1972",
+      "1968",
+      "1983"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q9",
+    "question": "In the pancreatic Islets of Langerhans, α-cells secrete glucagon and β-cells secrete insulin. Glucagon acts on hepatocytes to stimulate glycogenolysis and gluconeogenesis, increasing blood sugar. Insulin acts on hepatocytes and adipocytes to enhance glucose uptake and promote glycogenesis, decreasing blood sugar. Prolonged hyperglycemia leads to which condition?",
+    "options": [
+      "Diabetes Insipidus",
+      "Addison's disease",
+      "Diabetes mellitus",
+      "Hypoglycemia"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q10",
+    "question": "The Amazonian rain forest (lungs of the planet) harbours the greatest biodiversity on Earth. Among the following species counts for the Amazon, which is CORRECTLY matched?",
+    "options": [
+      "Fish species — 1,300; Bird species — 3,000",
+      "Fish species — 3,000; Bird species — 1,300",
+      "Mammal species — 3,000; Invertebrates — 427",
+      "Plant species — 1,300; Amphibians — 40,000"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q11",
+    "question": "Hippocampus (Sea horse) and Exocoetus (Flying fish) are examples from which class and habitat?",
+    "options": [
+      "Chondrichthyes — freshwater",
+      "Osteichthyes — marine",
+      "Osteichthyes — freshwater",
+      "Chondrichthyes — marine"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q12",
+    "question": "In Mollusca, the file-like rasping organ present in the mouth that is used for feeding is called:",
+    "options": [
+      "Radula",
+      "Mantle",
+      "Operculum",
+      "Siphon"
+    ],
+    "correctIndex": 0,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q13",
+    "question": "In the taxonomic hierarchy, which category lies immediately between Order and Kingdom? What is the CORRECT sequence from lowest to highest?",
+    "options": [
+      "Family; Species → Genus → Family → Order → Class → Phylum → Kingdom",
+      "Class; Species → Genus → Order → Family → Class → Phylum → Kingdom",
+      "Phylum; Species → Genus → Family → Class → Order → Phylum → Kingdom",
+      "Division; Species → Genus → Family → Order → Phylum → Class → Kingdom"
+    ],
+    "correctIndex": 0,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q14",
+    "question": "After biosynthesis of a recombinant protein in the bioreactor, the steps of separation, purification, formulation with preservatives, clinical trials (for drugs), and quality control testing together constitute:",
+    "options": [
+      "Upstream processing",
+      "Transformation",
+      "Downstream processing",
+      "Transduction"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q15",
+    "question": "Parturition is induced by a complex neuroendocrine mechanism. The signals from the fully developed foetus/placenta initiate mild uterine contractions (foetal ejection reflex). This triggers maternal pituitary to release oxytocin. Oxytocin then causes stronger contractions and stimulates more oxytocin release. This self-amplifying mechanism is an example of:",
+    "options": [
+      "Negative feedback",
+      "Positive feedback",
+      "Neural inhibition",
+      "Hormonal antagonism"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q16",
+    "question": "Ophrys (an orchid) achieves pollination through a remarkable strategy where one of its petals closely resembles a female bee in size, colour, and texture. When a male bee is attracted and attempts to mate with the flower (pseudocopulation), it picks up pollen. This type of pollination strategy is called:",
+    "options": [
+      "Nectar reward pollination",
+      "Sexual deceit",
+      "Commensalism",
+      "Brood site mimicry"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q17",
+    "question": "In transcription, the template strand runs 3'→5' while the RNA produced runs 5'→3'. The DNA strand that has the SAME sequence as the mRNA (with T replaced by U) is called:",
+    "options": [
+      "Template strand (antisense strand)",
+      "Coding strand (sense strand / non-template strand)",
+      "Leading strand",
+      "Lagging strand"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q18",
+    "question": "Lactose acts as an INDUCER in the Lac operon by:",
+    "options": [
+      "Binding the operator directly to allow transcription",
+      "Binding and INACTIVATING the repressor, so RNA polymerase can access the promoter and transcribe",
+      "Activating beta-galactosidase directly without transcription",
+      "Increasing the copy number of the operon"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q19",
+    "question": "Cycas has a unique type of roots that contain nitrogen-fixing cyanobacteria. These specialised roots are called:",
+    "options": [
+      "Mycorrhizal roots",
+      "Prop roots",
+      "Coralloid roots",
+      "Pneumatophores"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q20",
+    "question": "In 1983, Eli Lilly prepared two separate DNA sequences coding for the A and B chains of human insulin and introduced them into E. coli plasmids. The A and B chains were produced separately, extracted, and then combined using which chemical bonds to form functional human insulin?",
+    "options": [
+      "Peptide bonds",
+      "Hydrogen bonds",
+      "Disulphide bonds",
+      "Ionic bonds"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q21",
+    "question": "Blackman's Law of Limiting Factors (1905) states that the rate of a physiological process is determined by the factor:",
+    "options": [
+      "Present in excess",
+      "Nearest to its optimal value",
+      "Nearest to its minimal value (most limiting factor)",
+      "Which is temperature-dependent"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q22",
+    "question": "2,4-D (a synthetic auxin) is used as a herbicide. It selectively kills:",
+    "options": [
+      "Mature monocot weeds, sparing dicot crops",
+      "Dicot weeds, while mature monocots (e.g., grasses in lawns) are unaffected",
+      "All plants equally",
+      "Only grasses and monocots"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q23",
+    "question": "Glycolysis occurs in the cytoplasm and results in the partial oxidation of one glucose molecule to:",
+    "options": [
+      "Two acetyl CoA molecules",
+      "Two pyruvic acid molecules",
+      "One lactic acid molecule",
+      "Two citric acid molecules"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q24",
+    "question": "The stage of meiosis I in which the chiasmata undergo terminalisation, chromosomes are fully condensed, meiotic spindle is assembled, nucleolus disappears, and nuclear envelope breaks down is:",
+    "options": [
+      "Diplotene",
+      "Diakinesis",
+      "Zygotene",
+      "Leptotene"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q25",
+    "question": "Birds are homoiothermous and have a four-chambered heart. They also have air sacs that supplement respiration. The only oil-secreting gland present in birds is located at:",
+    "options": [
+      "Base of wings",
+      "Base of tail (uropygial gland)",
+      "Behind the ear",
+      "On the beak"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q26",
+    "question": "Queen Victoria of England was a carrier for haemophilia. This means her genotype was X^H X^h. Which of the following is TRUE about her daughters?",
+    "options": [
+      "All daughters will be haemophilic",
+      "50% of daughters will be carriers (X^H X^h), 50% will be normal (X^H X^H)",
+      "All daughters will be carriers",
+      "No daughters can carry haemophilia"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q27",
+    "question": "In frogs, the medulla oblongata passes through the foramen magnum and continues as the spinal cord. The hind brain of frogs consists of which two structures?",
+    "options": [
+      "Olfactory lobes and cerebral hemispheres",
+      "Optic lobes and diencephalon",
+      "Cerebellum and medulla oblongata",
+      "Cerebral hemispheres and medulla oblongata"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q28",
+    "question": "The brain is protected by the skull and is covered by three meninges. From outside to inside, the three cranial meninges are in which correct order?",
+    "options": [
+      "Pia mater → Arachnoid → Dura mater",
+      "Dura mater → Arachnoid → Pia mater",
+      "Arachnoid → Dura mater → Pia mater",
+      "Pia mater → Dura mater → Arachnoid"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q29",
+    "question": "In the pericycle region of a dicot stem, mechanical strength is provided by semi-lunar patches of a specific tissue located above the phloem. This tissue is:",
+    "options": [
+      "Collenchyma",
+      "Parenchyma",
+      "Sclerenchyma",
+      "Chlorenchyma"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q30",
+    "question": "Decomposition involves a sequence of processes. During decomposition, earthworms and other detritivores break dead organic matter (detritus) into smaller particles. This mechanical breakdown is called:",
+    "options": [
+      "Leaching",
+      "Catabolism",
+      "Mineralisation",
+      "Fragmentation"
+    ],
+    "correctIndex": 3,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q31",
+    "question": "The enzyme carbonic anhydrase (present in high concentration in RBCs) catalyses which reversible reaction?",
+    "options": [
+      "CO₂ + H₂O ⇌ H₂CO₃ ⇌ HCO₃⁻ + H⁺",
+      "O₂ + Hb ⇌ HbO₂",
+      "Pyruvate + CoA ⇌ Acetyl CoA + CO₂",
+      "CO₂ + RuBP ⇌ 2 PGA"
+    ],
+    "correctIndex": 0,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q32",
+    "question": "Which of the following types of information is specifically mentioned as being used in classification?",
+    "options": [
+      "Behavioral ecology and population dynamics only",
+      "External/internal structure, cell structure, development, and ecological information",
+      "Geographic range and fossil record exclusively",
+      "Only molecular genetic sequences"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q33",
+    "question": "During double fertilisation, one male gamete fuses with the egg cell (syngamy) forming the diploid zygote. The other male gamete fuses with the two polar nuclei in the central cell. This fusion of one male gamete with TWO polar nuclei is called:",
+    "options": [
+      "Syngamy",
+      "Parthenogenesis",
+      "Triple fusion",
+      "Apomixis"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q34",
+    "question": "In Assisted Reproductive Technology (ART), ZIFT stands for Zygote Intra Fallopian Transfer, where the zygote or early embryo (up to 8 blastomeres) is transferred to the fallopian tube. For embryos with MORE than 8 blastomeres, the transfer site is:",
+    "options": [
+      "Fallopian tube (ZIFT)",
+      "Ovary",
+      "Uterus (IUT — Intra Uterine Transfer)",
+      "Cervix"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q35",
+    "question": "The Big Bang theory explains the origin of the universe approximately:",
+    "options": [
+      "4.5 billion years ago",
+      "13.8 billion years ago",
+      "3.8 billion years ago",
+      "2 billion years ago"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q36",
+    "question": "Which of the following is TRUE about male honey bees (drones)?",
+    "options": [
+      "They have a father, sons, and grandsons",
+      "They have NO father (from unfertilised egg), CANNOT have sons (produce sperm by mitosis), but CAN have grandsons",
+      "They produce sperm by meiosis like other diploid organisms",
+      "They have 32 chromosomes like females"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q37",
+    "question": "Plasmodium falciparum causes which type of malaria, and why is it considered the most dangerous?",
+    "options": [
+      "Benign tertian malaria; it is the mildest form",
+      "Malignant malaria — the most serious and potentially fatal form",
+      "Quartan malaria; causes fever every 4 days",
+      "Vivax malaria; recurs most frequently"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q38",
+    "question": "The Sino-Atrial Node (SAN) is called the pacemaker of the heart because:",
+    "options": [
+      "It is the largest node and controls the atrio-ventricular septum",
+      "It generates the maximum number of action potentials (~70–75 per minute) and initiates cardiac excitation",
+      "It converts electrical signals to mechanical contraction in ventricles",
+      "It is the only site where the heart can sense blood pressure changes"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_01_q39",
+    "question": "The root cap is a thimble-like structure that protects the tender root apex. Just above the root cap is the region responsible for repeated cell division, known as the:",
+    "options": [
+      "Region of maturation",
+      "Region of elongation",
+      "Region of meristematic activity",
+      "Root hair zone"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  }
+]

@@ -1,0 +1,548 @@
+[
+  {
+    "id": "set_04_q1",
+    "question": "Homo habilis, found in East African grasslands about 2 mya, had a brain capacity of approximately:",
+    "options": [
+      "400-500 cc",
+      "650-800 cc",
+      "900 cc",
+      "1400 cc"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q2",
+    "question": "Copper-releasing IUDs suppress sperm motility and fertilising capacity through Cu ions. Hormone-releasing IUDs make the uterus unsuitable for implantation and the cervix hostile to sperms. Non-medicated IUDs work primarily by increasing sperm phagocytosis in the uterus. The natural method of Lactational Amenorrhea is effective as a contraceptive up to what period post-parturition?",
+    "options": [
+      "2 months",
+      "6 months",
+      "12 months",
+      "3 months"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q3",
+    "question": "In gymnosperms, the male gametophyte is highly reduced and consists of very few cells. This reduced male gametophyte is also referred to as:",
+    "options": [
+      "Prothallus",
+      "Microsporophyll",
+      "Pollen grain",
+      "Microspore mother cell"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q4",
+    "question": "Restriction enzymes recognise specific palindromic nucleotide sequences. A palindromic sequence reads the same in both directions on the two strands. For EcoRI, the recognition sequence is 5'-GAATTC-3' on one strand and 3'-CTTAAG-5' on the complementary strand. After cutting, the resulting overhanging single-stranded stretches that can hydrogen-bond with complementary sequences are called:",
+    "options": [
+      "Blunt ends",
+      "Sticky ends (cohesive ends)",
+      "Recognition ends",
+      "Ligase ends"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q5",
+    "question": "Sertoli cells line the seminiferous tubules and provide nutrition to developing germ cells. Spermatogonia (male germ cells) lining the tubules undergo meiosis to form sperms. The seminiferous tubules open into vasa efferentia via which structure?",
+    "options": [
+      "Epididymis",
+      "Rete testis",
+      "Ejaculatory duct",
+      "Vas deferens"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q6",
+    "question": "The common frog found in India, belonging to class Amphibia and phylum Chordata, has the scientific name:",
+    "options": [
+      "Rana hexadactyla",
+      "Rana tigrina",
+      "Bufo marinus",
+      "Hyla arborea"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q7",
+    "question": "Molecular diagnosis of diseases can be achieved using PCR (to detect low levels of pathogen DNA) and ELISA. In ELISA (Enzyme-Linked Immunosorbent Assay), detection is based on which principle?",
+    "options": [
+      "DNA-DNA hybridisation using radioactive probes",
+      "Antigen-antibody interaction to detect antigens (proteins, glycoproteins) or antibodies",
+      "PCR amplification of viral RNA",
+      "Gel electrophoresis of protein samples"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q8",
+    "question": "The sarcoplasmic reticulum in muscle fibres stores a crucial ion that is released during muscle contraction. This ion is:",
+    "options": [
+      "Na+",
+      "K+",
+      "Ca++",
+      "Mg++"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q9",
+    "question": "In Platyhelminthes, the excretory structures responsible for osmoregulation are called:",
+    "options": [
+      "Nephridia",
+      "Malpighian tubules",
+      "Flame cells",
+      "Excretory pores"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q10",
+    "question": "The NORMAL RBC count in a healthy adult male is approximately:",
+    "options": [
+      "1–2 million mm⁻³",
+      "5–5.5 million mm⁻³",
+      "6000–8000 mm⁻³",
+      "1,50,000–3,50,000 mm⁻³"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q11",
+    "question": "To introduce recombinant DNA into plant cells, a physical method called biolistics (gene gun) is used. In this technique, the recombinant DNA is coated onto micro-particles of which metals before being bombarded into plant cells?",
+    "options": [
+      "Silver and copper",
+      "Iron and zinc",
+      "Gold or tungsten",
+      "Platinum and aluminium"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q12",
+    "question": "According to the chemiosmotic hypothesis, ATP synthesis in chloroplasts is driven by a proton gradient. Which of the following does NOT contribute to the buildup of protons in the thylakoid lumen?",
+    "options": [
+      "Splitting of water on the inner (lumen) side",
+      "Transport of electrons through the photosystems pumping protons across the membrane",
+      "NADP reductase on the stroma side consuming protons from the stroma",
+      "Protons diffusing from the lumen back through CF₀"
+    ],
+    "correctIndex": 3,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q13",
+    "question": "During glycolysis, PGAL (3-phosphoglyceraldehyde) is oxidised to BPGA (1,3-bisphosphoglycerate). The coenzyme reduced in this step is:",
+    "options": [
+      "FAD⁺ → FADH₂",
+      "NAD⁺ → NADH + H⁺",
+      "NADP⁺ → NADPH + H⁺",
+      "CoA → Acetyl CoA"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q14",
+    "question": "In the Lac operon, when LACTOSE IS ABSENT:",
+    "options": [
+      "The repressor is inactive; RNA polymerase transcribes z, y, a",
+      "The repressor binds the operator, BLOCKING RNA polymerase from transcribing structural genes",
+      "The promoter is methylated, preventing repressor binding",
+      "Beta-galactosidase is constitutively expressed"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q15",
+    "question": "The vertical distribution of different species occupying different levels in an ecosystem is called stratification. In a forest ecosystem, which of the following represents the correct vertical layering from top to bottom?",
+    "options": [
+      "Herbs/grasses → Shrubs → Trees",
+      "Trees → Shrubs → Herbs/grasses",
+      "Shrubs → Trees → Herbs/grasses",
+      "Trees → Herbs/grasses → Shrubs"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q16",
+    "question": "Regarding the wall thickness of guard cells, which of the following statements is CORRECT?",
+    "options": [
+      "Inner walls (towards stomatal pore) thin; outer walls thick",
+      "Both inner and outer walls equally thick",
+      "Outer walls (away from stomatal pore) thin; inner walls highly thickened",
+      "Only the outer wall has chloroplasts"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q17",
+    "question": "The cell wall of Monera is described as noncellulosic. What is the ACTUAL composition of the Moneran cell wall?",
+    "options": [
+      "Chitin and glucan",
+      "Polysaccharide and amino acid",
+      "Cellulose and pectin",
+      "Peptidoglycan only, with no polysaccharides"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q18",
+    "question": "The two cerebral hemispheres are connected by a thick band of nerve fibres. This connecting structure is called the:",
+    "options": [
+      "Corpus callosum",
+      "Corpus striatum",
+      "Limbic system",
+      "Cerebral aqueduct"
+    ],
+    "correctIndex": 0,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q19",
+    "question": "The genera Panthera (lion, tiger, leopard) and Felis (cats) are both placed in family Felidae. The ORDER containing family Felidae along with family Canidae is:",
+    "options": [
+      "Primates",
+      "Carnivora",
+      "Artiodactyla",
+      "Perissodactyla"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q20",
+    "question": "Penicillin was discovered by Alexander Fleming as a CHANCE observation. What specifically did he observe?",
+    "options": [
+      "A virus lysing bacterial colonies on an agar plate",
+      "A MOULD growing on a Staphylococci culture plate; Staphylococci did NOT GROW around the mould — the mould was Penicillium notatum",
+      "A chemical in human urine killing bacterial cultures",
+      "Bacteria becoming resistant to a chemical over time"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q21",
+    "question": "Wuchereria is the causative organism of which disease, and to which phylum does it belong?",
+    "options": [
+      "Malaria — Arthropoda",
+      "Filariasis — Aschelminthes",
+      "Elephantiasis — Platyhelminthes",
+      "Ascariasis — Annelida"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q22",
+    "question": "DNA Fingerprinting was developed by:",
+    "options": [
+      "Kary Mullis (PCR inventor)",
+      "Alec Jeffreys",
+      "Frederick Sanger",
+      "James Watson"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q23",
+    "question": "The interaction in which one species is benefited while the other is neither harmed nor benefited is called commensalism. Among the following examples, which CORRECTLY represents commensalism?",
+    "options": [
+      "Lichens — fungus and algae (both benefit)",
+      "Barnacles on whale (barnacle benefits, whale is unaffected)",
+      "Mycorrhizae — fungi and plant roots (both benefit)",
+      "Clarias catfish in Indian rivers (harms indigenous catfishes)"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q24",
+    "question": "Leydig cells (interstitial cells) in the testis produce androgens, mainly testosterone. In which anatomical location within the testis are these Leydig cells found?",
+    "options": [
+      "Inside the seminiferous tubules",
+      "Lining the seminiferous tubules as Sertoli cells",
+      "In the intertubular/interstitial spaces between seminiferous tubules",
+      "In the epididymis"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q25",
+    "question": "In Morgan's cross (yellow-bodied, white-eyed female × brown-bodied, red-eyed male), F2 deviated from 9:3:3:1. The reason was:",
+    "options": [
+      "The two genes were on different autosomes",
+      "The genes were on the X chromosome and physically linked, so parental combinations appeared more frequently than non-parental ones",
+      "Incomplete dominance was operating",
+      "The genes showed co-dominance"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q26",
+    "question": "Cytokinins are synthesised primarily in regions of rapid cell division. Which of the following is a NATURAL cytokinin found in corn kernels?",
+    "options": [
+      "Kinetin",
+      "Zeatin",
+      "IAA",
+      "GA₃"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q27",
+    "question": "The cell theory was formulated by Schleiden and Schwann. The important modification that \"all cells arise from pre-existing cells\" was added later by which scientist, and in which year?",
+    "options": [
+      "Robert Brown, 1831",
+      "Rudolf Virchow, 1855",
+      "Antonie Von Leeuwenhoek, 1674",
+      "Matthias Schleiden, 1838"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q28",
+    "question": "Heroin (smack) is chemically diacetylmorphine. It is obtained by acetylation of morphine, which is extracted from:",
+    "options": [
+      "Cannabis sativa (inflorescences)",
+      "Erythroxylum coca (coca plant, South America)",
+      "Latex of the poppy plant Papaver somniferum",
+      "Atropa belladona"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q29",
+    "question": "The red blood cells (erythrocytes) of frogs differ from those of mammals in one key structural feature. Frog RBCs are:",
+    "options": [
+      "Biconcave and non-nucleated",
+      "Nucleated and contain haemoglobin",
+      "Non-nucleated and lack haemoglobin",
+      "Biconvex and enucleated"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q30",
+    "question": "The original DNA fingerprinting method used Southern blot hybridisation with a radiolabelled VNTR probe, detected by:",
+    "options": [
+      "PCR amplification",
+      "Autoradiography",
+      "Gel electrophoresis alone",
+      "ELISA"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q31",
+    "question": "According to the IUCN (2004), over 1.5 million plant and animal species have been described. Robert May's conservative estimate of total global species is approximately:",
+    "options": [
+      "1.5 million",
+      "7 million",
+      "20–50 million",
+      "100 million"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q32",
+    "question": "Klinefelter's syndrome has the karyotype 47 XXY. The characteristic feminising feature in males with this syndrome is:",
+    "options": [
+      "Rudimentary ovaries",
+      "Gynecomastia (breast development)",
+      "Lack of secondary sexual characters",
+      "Tall stature with long limbs"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q33",
+    "question": "Roots that arise from parts of the plant other than the radicle are called adventitious roots. Which of the following is a correct example of adventitious roots?",
+    "options": [
+      "Mustard tap root",
+      "Wheat fibrous roots",
+      "Banyan tree prop roots",
+      "Carrot storage root"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q34",
+    "question": "The larynx is described as a \"cartilaginous box\" and is also called the sound box. During swallowing, food entry into the larynx is prevented by:",
+    "options": [
+      "The epiglottis (thin elastic cartilaginous flap covering the glottis)",
+      "The hard palate",
+      "The uvula",
+      "Semilunar valves"
+    ],
+    "correctIndex": 0,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q35",
+    "question": "Self-incompatibility is a genetic mechanism that prevents self-pollen (from the same flower or other flowers of the same plant) from fertilising ovules by inhibiting pollen germination or pollen tube growth in the pistil. In castor and maize, both male and female flowers are present on the SAME plant. This condition is called:",
+    "options": [
+      "Dioecy — prevents autogamy and geitonogamy",
+      "Monoecy — prevents autogamy but NOT geitonogamy",
+      "Heterostyly — prevents self-pollination geometrically",
+      "Dioecy — prevents only autogamy"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q36",
+    "question": "Amino acids are described as substituted methanes with four substituents on the α-carbon. The R group determines the identity of the amino acid. Which of the following correctly matches an amino acid with its R group?",
+    "options": [
+      "Glycine — methyl group; Alanine — hydrogen",
+      "Glycine — hydrogen; Alanine — methyl group; Serine — hydroxymethyl",
+      "Serine — methyl group; Glycine — hydroxymethyl",
+      "Alanine — hydroxymethyl; Serine — hydrogen"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q37",
+    "question": "The kidneys in humans are located between the last thoracic and third lumbar vertebra on the dorsal inner abdominal wall. The notch on the inner concave surface of the kidney through which the ureter, blood vessels, and nerves enter/exit is called the:",
+    "options": [
+      "Renal pelvis",
+      "Calyx",
+      "Hilum",
+      "Columns of Bertini"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q38",
+    "question": "Ornithorhynchus (Platypus) is a mammal that is oviparous (egg-laying). Macropus, which belongs to the same class, is commonly known as:",
+    "options": [
+      "Flying fox",
+      "Kangaroo",
+      "Platypus",
+      "Dolphin"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_04_q39",
+    "question": "Cells that are not actively dividing exit the G1 phase and enter a non-dividing but metabolically active state. This resting state where cells can remain until a division signal is received is called:",
+    "options": [
+      "G2 phase",
+      "S phase",
+      "G0 (quiescent stage)",
+      "Prophase"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  }
+]
