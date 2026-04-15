@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="theme.css">
 <title>Icecream 🍨 factory</title>
+<script src="StateManager.js"></script>
 <script src="tracker.js"></script>
 <style>
 
@@ -823,52 +824,71 @@
   };
 
   function showResults() {
-    let correct = 0, wrong = 0, skip = 0;
-    Q.forEach(q => {
-      const chosen = state.selected[q.id];
-      if (chosen === undefined) {
-        skip++;
-      } else if (chosen === q.correctIndex) {
-        correct++;
-      } else {
-        wrong++;
-      }
-    });
-    const score = correct * 4 - wrong * 1;
-    document.getElementById('score-display').textContent = score;
-    document.getElementById('r-correct').textContent = correct;
-    document.getElementById('r-wrong').textContent   = wrong;
-    document.getElementById('r-skip').textContent    = skip;
-    const acc = correct + wrong > 0 ? Math.round(100 * correct / (correct + wrong)) : 0;
-    document.getElementById('r-acc').textContent = acc + '%';
+  let correct = 0, wrong = 0, skip = 0;
+  Q.forEach(q => {
+    const chosen = state.selected[q.id];
+    if (chosen === undefined) {
+      skip++;
+    } else if (chosen === q.correctIndex) {
+      correct++;
+    } else {
+      wrong++;
+    }
+  });
+  const score = correct * 4 - wrong * 1;
+  const acc = correct + wrong > 0 ? Math.round(100 * correct / (correct + wrong)) : 0;
 
-    const r = document.getElementById('results');
-    r.classList.add('visible');
-    r.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    clearInterval(state.timerInterval);
+  console.log('📤 PHIROSS FACTORY sending to Tracker:', {
+    subject: 'MCQ',
+    topic: currentSetName,
+    score: score,
+    correct: correct,
+    wrong: wrong,
+    skipped: skip,
+    total: Q.length,
+    accuracy: acc
+  });
 
-    const histEntry = {
-      ts: Date.now(),
-      name: currentSetName,
-      setNum: currentSetId.replace(/\.json$/i,'').toUpperCase(),
-      total: Q.length,
-      correct, wrong, skip, score, acc
-    };
-    addToHistory(histEntry);
-
-    if (typeof window.Tracker !== 'undefined' && window.Tracker.logScore) {
+  if (typeof window.Tracker !== 'undefined' && window.Tracker.logScore) {
+    try {
       window.Tracker.logScore({
-        set:     currentSetId,
-        label:   currentSetName,
-        score,
-        correct,
-        wrong,
-        skip,
-        total:   Q.length,
-        acc
+        subject: 'MCQ',
+        topic: currentSetName,
+        score: score,
+        correct: correct,
+        wrong: wrong,
+        skipped: skip,
+        total: Q.length,
+        accuracy: acc
       });
+    } catch (e) {
+      console.warn('Tracker error:', e);
     }
   }
+
+  // Update UI
+  document.getElementById('score-display').textContent = score;
+  document.getElementById('r-correct').textContent = correct;
+  document.getElementById('r-wrong').textContent   = wrong;
+  document.getElementById('r-skip').textContent    = skip;
+  document.getElementById('r-acc').textContent = acc + '%';
+
+  // Show results panel
+  const r = document.getElementById('results');
+  r.classList.add('visible');
+  r.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  clearInterval(state.timerInterval);
+
+  // Save to local history (used for display in upload screen)
+  const histEntry = {
+    ts: Date.now(),
+    name: currentSetName,
+    setNum: currentSetId.replace(/\.json$/i,'').toUpperCase(),
+    total: Q.length,
+    correct, wrong, skip, score, acc
+  };
+  addToHistory(histEntry);
+}
 
   function updateHUD() {
     const n = Object.keys(state.selected).length;
