@@ -71,13 +71,18 @@
   </style>
 </head>
 <body>
+  <!-- Overlay (fixed, outside header, covers whole screen when active) -->
+  <div id="menu-overlay" class="menu-overlay hidden"></div>
 
+  <!-- Header -->
   <header class="hub-header">
     <div class="header-left">
       <div class="hub-title"><span class="accent"></span>let's start now !<br></div>
       <div class="hub-date" id="today-date"></div>
     </div>
     <button id="music-toggle" onclick="AudioManager.toggle()" title="Toggle music">♪</button>
+    <!-- Three-dots button stays in header -->
+    <button id="btn-more-menu" class="icon-btn" aria-label="More options">&#8942;</button>
   </header>
 
   <div class="page">
@@ -85,8 +90,8 @@
       <div class="section-label">Here we go again</div>
       <div class="subject-grid">
         <a class="btn-subject chem" href="pbl_full_pasha.html">
-          <div class="subj-icon">🇹🇷</div>
-          <div class="subj-label"><div>kemal pasha</div><div class="subj-meta">commander of Armenia</div></div>
+          <div class="subj-icon">🎖️</div>
+          <div class="subj-label"><div>Damascus</div><div class="subj-meta">from where fires begins</div></div>
           <div class="subj-arrow">›</div>
         </a>
         <a class="btn-subject phys" href="phiross.html">
@@ -95,8 +100,8 @@
           <div class="subj-arrow">›</div>
         </a>
         <a class="btn-subject mcq" href="phiross_factory.html">
-          <div class="subj-icon">🍨</div>
-          <div class="subj-label"><div>generator</div><div class="subj-meta">finish it quickly</div></div>
+          <div class="subj-icon">🪾</div>
+          <div class="subj-label"><div>producer</div><div class="subj-meta">The land of beginning</div></div>
           <div class="subj-arrow">›</div>
         </a>
         <a class="btn-subject egypt" href="egyptian.html">
@@ -129,83 +134,98 @@
     </div>
   </div>
 
-  <!-- ═════ CORRECT ORDER ═════ -->
-  <!-- 1. StateManager (defines window.StateManager) -->
+  <!-- ═════ MENU PANEL MOVED TO BODY ROOT ═════ -->
+  <div id="more-menu-panel" class="menu-panel hidden">
+    <div class="panel-header">Settings & Sync</div>
+    
+    <div class="panel-section">
+      <label for="input-uid">User ID (UID):</label>
+      <div class="uid-group">
+        <input type="text" id="input-uid" placeholder="Auto-generated UID" />
+        <button id="btn-generate-uid" class="btn-secondary">New</button>
+      </div>
+      <small>Use this ID to sync across devices.</small>
+    </div>
+
+    <div class="panel-section sync-actions">
+      <button id="btn-sync-push" class="btn-primary">Sync to Cloud (Overwrite)</button>
+      <button id="btn-sync-pull" class="btn-secondary">Restore from Cloud</button>
+      <span id="sync-status-msg"></span>
+    </div>
+  </div>
+
+  <!-- Scripts (load order matters) -->
   <script src="StateManager.js"></script>
-  <!-- 2. Tracker (depends on StateManager) -->
   <script src="tracker.js"></script>
-  <!-- 3. Audio -->
+  <script src="sync.js"></script>  <!-- Ensure sync.js has only ONE listener for #btn-more-menu -->
   <script src="audio.js"></script>
 
-  <!-- 4. Dashboard logic (no migration, no duplicates) -->
   <script>
-    // Date
+    // Date display
     document.getElementById('today-date').textContent =
       new Date().toLocaleDateString('en-IN', {
         weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
       });
 
-   function renderStats() {
-  if (typeof Tracker === 'undefined') return;
-  const s = Tracker.getStats();
-  document.getElementById('stat-total').textContent = s.totalQuestions || '0';
-  document.getElementById('stat-sessions').textContent = s.totalSessions || '0';
-  document.getElementById('stat-avg').textContent = s.totalSessions ? s.avgAccuracy + '%' : '—';
-}
+    function renderStats() {
+      if (typeof Tracker === 'undefined') return;
+      const s = Tracker.getStats();
+      document.getElementById('stat-total').textContent = s.totalQuestions || '0';
+      document.getElementById('stat-sessions').textContent = s.totalSessions || '0';
+      document.getElementById('stat-avg').textContent = s.totalSessions ? s.avgAccuracy + '%' : '—';
+    }
 
     function renderActivity() {
-  if (typeof Tracker === 'undefined') return;
-  const list = document.getElementById('activity-list');
-  let recent = Tracker.getRecent(8);
-  
-  console.log('📋 DASHBOARD received recent entries:', recent);
-  
-  if (!recent.length) {
-    list.innerHTML = '<div class="empty-feed">DO SOMETHING LAZY<br>no history yet</div>';
-    return;
-  }
-  
-
-  
-  list.innerHTML = recent.map(e => {
-    let scoreBadge = '';
-    let detail = '';
-    
-    if (e.type === 'score') {
-      const accuracy = e.score || 0;
-      const cls = accuracy >= 75 ? 'high' : accuracy >= 50 ? 'mid' : 'low';
-      scoreBadge = `<span class="act-score ${cls}">${accuracy}%</span>`;
+      if (typeof Tracker === 'undefined') return;
+      const list = document.getElementById('activity-list');
+      let recent = Tracker.getRecent(8);
       
-      const totalQ = e.total || '?';
-      const correct = e.correct || 0;
-      const wrong = e.wrong || 0;
-      const skipped = e.skipped || 0;
-      const attempted = correct + wrong;
+      console.log('📋 DASHBOARD received recent entries:', recent);
       
-      detail = `${e.topic} · ${totalQ}q · ${correct}/${attempted} correct`;
-      if (skipped > 0) detail += ` · ${skipped} skipped`;
-    } else {
-      detail = `Read: ${e.chapter}`;
+      if (!recent.length) {
+        list.innerHTML = '<div class="empty-feed">DO SOMETHING LAZY<br>no history yet</div>';
+        return;
+      }
+      
+      list.innerHTML = recent.map(e => {
+        let scoreBadge = '';
+        let detail = '';
+        
+        if (e.type === 'score') {
+          const accuracy = e.score || 0;
+          const cls = accuracy >= 75 ? 'high' : accuracy >= 50 ? 'mid' : 'low';
+          scoreBadge = `<span class="act-score ${cls}">${accuracy}%</span>`;
+          
+          const totalQ = e.total || '?';
+          const correct = e.correct || 0;
+          const wrong = e.wrong || 0;
+          const skipped = e.skipped || 0;
+          const attempted = correct + wrong;
+          
+          detail = `${e.topic} · ${totalQ}q · ${correct}/${attempted} correct`;
+          if (skipped > 0) detail += ` · ${skipped} skipped`;
+        } else {
+          detail = `Read: ${e.chapter}`;
+        }
+        
+        let subjectClass = 'MCQ';
+        if (e.subject === 'Physics') subjectClass = 'Physics';
+        else if (e.subject === 'Chemistry') subjectClass = 'Chemistry';
+        
+        return `
+          <div class="activity-item">
+            <div class="act-dot ${subjectClass}"></div>
+            <div class="act-body">
+              <div class="act-subject">${e.subject}</div>
+              <div class="act-detail">${detail}</div>
+            </div>
+            <div class="act-right">
+              ${scoreBadge}
+              <div class="act-time">${Tracker.timeAgo(e.ts)}</div>
+            </div>
+          </div>`;
+      }).join('');
     }
-    
-    let subjectClass = 'MCQ';
-    if (e.subject === 'Physics') subjectClass = 'Physics';
-    else if (e.subject === 'Chemistry') subjectClass = 'Chemistry';
-    
-    return `
-      <div class="activity-item">
-        <div class="act-dot ${subjectClass}"></div>
-        <div class="act-body">
-          <div class="act-subject">${e.subject}</div>
-          <div class="act-detail">${detail}</div>
-        </div>
-        <div class="act-right">
-          ${scoreBadge}
-          <div class="act-time">${Tracker.timeAgo(e.ts)}</div>
-        </div>
-      </div>`;
-  }).join('');
-}
 
     function exportData() {
       const blob = new Blob([Tracker.exportJSON()], { type: 'application/json' });

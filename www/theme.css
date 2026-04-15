@@ -92,6 +92,179 @@ sub, sup {
 sub { vertical-align: sub; }
 sup { vertical-align: super; }
 
+/* Overlay – background blocker */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 998;          /* Below panel */
+  transition: opacity 0.2s;
+}
+
+.menu-overlay.hidden {
+  display: none;
+}
+
+/* Menu Panel – ensure it's above overlay */
+.menu-panel {
+  position: fixed;
+  top: 80px;
+  right: 18px;
+  width: 300px;
+  max-width: calc(100vw - 36px);
+  background: rgba(20, 20, 30, 0.95);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(184, 150, 46, 0.35);
+  border-radius: 18px;
+  padding: 20px 18px;
+  z-index: 1000;         /* Above overlay */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  color: #f0e8d0;
+  pointer-events: auto;
+}
+
+.menu-panel.hidden {
+  display: none !important;
+}
+
+/* Panel inner elements */
+.panel-header {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #e8c97a;
+  margin-bottom: 18px;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid rgba(184, 150, 46, 0.3);
+  padding-bottom: 10px;
+}
+
+.panel-section {
+  margin-bottom: 22px;
+}
+
+.panel-section label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #e8c97a;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+
+.uid-group {
+  display: flex;
+  gap: 8px;
+}
+
+.uid-group input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(184, 150, 46, 0.3);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  outline: none;
+}
+
+.uid-group input:focus {
+  border-color: #e8c97a;
+}
+
+.uid-group button {
+  padding: 10px 14px;
+  background: rgba(184, 150, 46, 0.12);
+  border: 1px solid rgba(184, 150, 46, 0.4);
+  border-radius: 8px;
+  color: #e8c97a;
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.uid-group button:hover {
+  background: rgba(184, 150, 46, 0.25);
+}
+
+.panel-section small {
+  display: block;
+  font-size: 10px;
+  color: #aaaac0;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.sync-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 12px 10px;
+  border-radius: 10px;
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: #e8c97a;
+  color: #0a0a0f;
+}
+
+.btn-primary:hover {
+  background: #f5d98a;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid rgba(184, 150, 46, 0.5);
+  color: #e8c97a;
+}
+
+.btn-secondary:hover {
+  border-color: #e8c97a;
+  background: rgba(184, 150, 46, 0.1);
+}
+
+#sync-status-msg {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  margin-top: 8px;
+  min-height: 18px;
+  color: #4caf50;
+}
+
+/* 3-dots button - TRUE match to music toggle ON */
+.icon-btn {
+  background: rgba(184,150,46,0.12); /* slightly stronger so it shows on cream */
+  border: 1.5px solid #e8c97a;       /* thicker like toggle */
+  border-radius: 10px;               /* toggle looks a bit rounder */
+  padding: 8px 12px;
+  font-size: 22px;
+  line-height: 1;
+  color: #e8c97a;
+  opacity: 1;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px rgba(184,150,46,0.15); /* subtle glow like toggle feel */
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: rgba(184,150,46,0.2);
+  border-color: #e8c97a;
+}
+
 /* Chemical formulas, math, special symbols keep full integrity */
 .chem, .formula, .equation, [class*="chem"], [class*="formula"] {
   font-family: 'Cormorant Garamond', 'IM Fell English', monospace;
