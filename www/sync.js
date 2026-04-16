@@ -75,6 +75,15 @@ async function pushSync() {
     console.error("Sync Error:", error);
     showStatus("Sync failed. Check connection.", true);
   }
+async function pushSync() {
+  const uid = getOrGenerateUID();
+  const localData = localStorage.getItem('studyapp_log');
+  console.log('📤 Pushing UID:', uid);
+  console.log('📤 Data:', localData);
+  // ... rest
+}
+  
+  
 }
 
 async function pullSync() {
@@ -103,18 +112,8 @@ async function pullSync() {
     console.error("Restore Error:", error);
     showStatus("Restore failed.", true);
   }
-}
-//error log 
 
-async function pushSync() {
-  const uid = getOrGenerateUID();
-  const localData = localStorage.getItem('studyapp_log');
-  console.log('📤 Pushing UID:', uid);
-  console.log('📤 Data:', localData);
-  // ... rest
-}
-
-async function pullSync() {
+  async function pullSync() {
   const uid = getOrGenerateUID();
   console.log('📥 Pulling UID:', uid);
   // ... after fetch
@@ -123,6 +122,14 @@ async function pullSync() {
   console.log('📥 Remote data:', remoteData);
   // ...
 }
+
+  
+}
+//error log 
+
+
+
+
 
 // Menu toggle
 
