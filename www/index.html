@@ -68,6 +68,44 @@
     .fade-in:nth-child(3) { animation-delay: 0.19s; }
     .fade-in:nth-child(4) { animation-delay: 0.26s; }
     .fade-in:nth-child(5) { animation-delay: 0.33s; }
+    .menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 998;
+}
+.menu-overlay.hidden { display: none; }
+
+.menu-panel {
+  position: fixed;
+  top: 80px;
+  right: 18px;
+  width: 300px;
+  max-width: calc(100vw - 36px);
+  background: rgba(20, 20, 30, 0.95);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(184, 150, 46, 0.35);
+  border-radius: 18px;
+  padding: 20px 18px;
+  z-index: 1000;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  color: #f0e8d0;
+}
+.menu-panel.hidden { display: none; }
+
+.icon-btn {
+  background: transparent;
+  border: 1px solid rgba(184, 150, 46, 0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 22px;
+  line-height: 1;
+  color: #e8c97a;
+  opacity: 0.7;
+  cursor: pointer;
+}
+.icon-btn:hover { opacity: 1; border-color: #e8c97a; } 
   </style>
 </head>
 <body>
@@ -135,29 +173,62 @@
   </div>
 
   <!-- ═════ MENU PANEL MOVED TO BODY ROOT ═════ -->
-  <div id="more-menu-panel" class="menu-panel hidden">
-    <div class="panel-header">Settings & Sync</div>
-    
-    <div class="panel-section">
-      <label for="input-uid">User ID (UID):</label>
-      <div class="uid-group">
-        <input type="text" id="input-uid" placeholder="Auto-generated UID" />
-        <button id="btn-generate-uid" class="btn-secondary">New</button>
-      </div>
-      <small>Use this ID to sync across devices.</small>
+<div id="more-menu-panel" class="menu-panel hidden">
+  <div class="panel-header" style="display: flex; justify-content: space-between; align-items: center;">
+  <span>Royal Account</span>
+  <button id="btn-close-menu" style="background: none; border: none; color: #e8c97a; font-size: 24px; line-height: 1; cursor: pointer; padding: 0 4px;" aria-label="Close menu">&times;</button>
+</div>
+
+  <!-- Auth Section (shown when logged out) -->
+  <div id="auth-section" class="panel-section">
+    <label>Email</label>
+    <input type="email" id="auth-email" placeholder="your@email.com" />
+    <label style="margin-top: 12px;">Password</label>
+    <div style="position: relative; display: flex; align-items: center;">
+  <input type="password" id="auth-password" placeholder="••••••••" style="padding-right: 40px; width: 100%;" />
+  <button type="button" id="toggle-password-visibility" style="position: absolute; right: 8px; background: none; border: none; color: #e8c97a; cursor: pointer; font-size: 18px; line-height: 1; padding: 4px;" aria-label="Show password">👁️</button>
+</div>
+    <div style="display: flex; gap: 8px; margin-top: 16px;">
+      <button id="btn-signin" class="btn-primary" style="flex:1;">Sign In</button>
+      <button id="btn-signup" class="btn-secondary" style="flex:1;">Sign Up</button>
     </div>
 
-    <div class="panel-section sync-actions">
-      <button id="btn-sync-push" class="btn-primary">Sync to Cloud (Overwrite)</button>
-      <button id="btn-sync-pull" class="btn-secondary">Restore from Cloud</button>
-      <span id="sync-status-msg"></span>
+    <!-- Google Sign-In Button -->
+    <div style="margin-top: 12px;">
+      <button id="btn-google-signin" class="btn-google">
+        <span style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+          </svg>
+          Continue with Google
+        </span>
+      </button>
     </div>
+    <small>Sign in to sync across devices.</small>
   </div>
 
+  <!-- Sync Controls (shown when logged in) -->
+  <div id="sync-controls" class="panel-section hidden">
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+      <span style="color: #e8c97a; font-size: 12px;" id="user-email-display"></span>
+      <button id="btn-signout" class="btn-secondary" style="padding: 4px 8px; font-size: 10px;">Sign Out</button>
+    </div>
+    
+    <div class="sync-actions">
+      <button id="btn-sync-push" class="btn-primary">Sync to Cloud</button>
+      <button id="btn-sync-pull" class="btn-secondary">Restore from Cloud</button>
+    </div>
+    <small style="margin-top: 8px;">Auto-sync runs every hour while signed in.</small>
+    <span id="sync-status-msg"></span>
+  </div>
+</div>
   <!-- Scripts (load order matters) -->
   <script src="StateManager.js"></script>
   <script src="tracker.js"></script>
-  <script src="sync.js"></script>  <!-- Ensure sync.js has only ONE listener for #btn-more-menu -->
+  <script type="module" src="sync.js"></script> <!-- Ensure sync.js has only ONE listener for #btn-more-menu -->
   <script src="audio.js"></script>
 
   <script>

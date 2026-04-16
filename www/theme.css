@@ -265,6 +265,24 @@ sup { vertical-align: super; }
   border-color: #e8c97a;
 }
 
+ .btn-google {
+  width: 100%;
+  padding: 12px 10px;
+  background: #ffffff;
+  border: 1px solid rgba(184, 150, 46, 0.3);
+  border-radius: 10px;
+  color: #1a1a1a;
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btn-google:hover {
+  background: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 /* Chemical formulas, math, special symbols keep full integrity */
 .chem, .formula, .equation, [class*="chem"], [class*="formula"] {
   font-family: 'Cormorant Garamond', 'IM Fell English', monospace;

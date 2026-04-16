@@ -1,136 +1,272 @@
-// sync.js – Supabase Edge Function integration
-const SUPABASE_URL = 'https://oscpkrgxjpsyoylxdpxg.supabase.co/functions/v1/sync-api';
-const SUPABASE_ANON_KEY = 'sb_publishable_1770jeSve3Ex_J6rKFSXhw_oNIKzYMt';
+// sync.js – Supabase Email/Password Auth + Background Auto-Sync
+console.log('✅ sync.js loaded');
 
-// --- UID Management ---
-function getOrGenerateUID() {
-  let uid = localStorage.getItem('studyapp_uid');
-  if (!uid) {
-    uid = 'user_' + Math.random().toString(36).substr(2, 9);
-    localStorage.setItem('studyapp_uid', uid);
-  }
-  return uid;
-}
-
-function updateUIDDisplay() {
-  const uidInput = document.getElementById('input-uid');
-  if (uidInput) uidInput.value = getOrGenerateUID();
-}
-
-// --- Menu Toggle Logic ---
-document.getElementById('btn-more-menu').addEventListener('click', () => {
-  const panel = document.getElementById('more-menu-panel');
-  panel.classList.toggle('hidden');
-  updateUIDDisplay();
-});
-
-document.getElementById('btn-generate-uid').addEventListener('click', () => {
-  const newUid = 'user_' + Math.random().toString(36).substr(2, 9);
-  localStorage.setItem('studyapp_uid', newUid);
-  updateUIDDisplay();
-});
-
-document.getElementById('input-uid').addEventListener('change', (e) => {
-  if (e.target.value.trim() !== '') {
-    localStorage.setItem('studyapp_uid', e.target.value.trim());
-  }
-});
-
-// --- Sync Engine (using Supabase Edge Function) ---
+const SUPABASE_URL = 'https://oscpkrgxjpsyoylxdpxg.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_CNDbJZzUgXZAxLvp6_oBHg_FSsIWGWp';
 const SYNC_API_URL = `${SUPABASE_URL}/functions/v1/sync-api`;
 
+// Import Supabase client
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// --- Global State ---
+let currentUser = null;
+let syncInterval = null;
+
+// --- UI Helper ---
 function showStatus(message, isError = false) {
+  console.log(`📢 Status: ${message} ${isError ? '(ERROR)' : ''}`);
   const statusEl = document.getElementById('sync-status-msg');
   if (statusEl) {
     statusEl.textContent = message;
     statusEl.style.color = isError ? '#ff4d4d' : '#4caf50';
-    setTimeout(() => statusEl.textContent = '', 3000);
+    setTimeout(() => { statusEl.textContent = ''; }, 4000);
   }
 }
 
-async function pushSync() {
-  const uid = getOrGenerateUID();
-  const localData = localStorage.getItem('studyapp_log');
-  
-  showStatus("Syncing...");
-  
+// --- Theme Management ---
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('app_theme', theme);
+}
+
+function toggleTheme() {
+  const current = localStorage.getItem('app_theme') || 'light';
+  const next = current === 'light' ? 'dark' : 'light';
+  applyTheme(next);
+}
+
+function initTheme() {
+  const saved = localStorage.getItem('app_theme') || 'light';
+  applyTheme(saved);
+}
+
+// --- Check Auth State on Load ---
+async function initAuth() {
+  const { data: { session } } = await supabase.auth.getSession();
+
+  if (session) {
+    currentUser = session.user;
+    console.log('🔐 User already logged in:', currentUser.email);
+    updateUIForLoggedInUser();
+    startAutoSync();
+    await pullSync();
+  } else {
+    console.log('👤 No active session');
+    updateUIForLoggedOutUser();
+  }
+
+  // Listen for auth changes
+  supabase.auth.onAuthStateChange((event, session) => {
+    if (event === 'SIGNED_IN' && session) {
+      currentUser = session.user;
+      updateUIForLoggedInUser();
+      startAutoSync();
+      pullSync();
+    } else if (event === 'SIGNED_OUT') {
+      currentUser = null;
+      updateUIForLoggedOutUser();
+      stopAutoSync();
+    }
+  });
+}
+
+// --- UI Updates ---
+function updateUIForLoggedInUser() {
+  document.getElementById('auth-section')?.classList.add('hidden');
+  document.getElementById('sync-controls')?.classList.remove('hidden');
+  const emailEl = document.getElementById('user-email-display');
+  if (emailEl) emailEl.textContent = currentUser?.email || '';
+}
+
+function updateUIForLoggedOutUser() {
+  document.getElementById('auth-section')?.classList.remove('hidden');
+  document.getElementById('sync-controls')?.classList.add('hidden');
+}
+
+// --- Auth Actions ---
+async function signUp(email, password) {
+  showStatus("Signing up...");
+  const { error } = await supabase.auth.signUp({ email, password });
+  if (error) return showStatus(`Sign-up failed: ${error.message}`, true);
+  showStatus("Sign-up successful! You can now sign in.");
+}
+
+async function signIn(email, password) {
+  showStatus("Signing in...");
+  const { error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error) return showStatus(`Sign-in failed: ${error.message}`, true);
+  showStatus("Signed in successfully!");
+}
+
+async function signOut() {
+  await supabase.auth.signOut();
+  showStatus("Signed out");
+}
+
+// --- Google Sign-In ---
+async function signInWithGoogle() {
+  showStatus("Redirecting to Google...");
+  const { error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: {
+      redirectTo: window.location.origin + window.location.pathname
+    }
+  });
+
+  if (error) {
+    showStatus(`Google sign-in failed: ${error.message}`, true);
+  }
+}
+
+// --- Sync Functions ---
+async function pushSync(showToast = true) {
+  if (!currentUser) {
+    if (showToast) showStatus("You must be logged in to sync", true);
+    return;
+  }
+
+  let localData;
   try {
-    const response = await fetch(`${SYNC_API_URL}/${uid}`, {
+    localData = JSON.parse(localStorage.getItem('studyapp_log') || '[]');
+  } catch {
+    if (showToast) showStatus('Local data corrupted', true);
+    return;
+  }
+
+  if (showToast) showStatus("Syncing to cloud...");
+
+  try {
+    const { data: { session } } = await supabase.auth.getSession();
+
+    const res = await fetch(SYNC_API_URL, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${uid}`,
+        'Authorization': `Bearer ${session.access_token}`,
         'apikey': SUPABASE_ANON_KEY
       },
       body: JSON.stringify({
         last_sync: new Date().toISOString(),
-        data: localData ? JSON.parse(localData) : []
+        data: localData
       })
     });
 
-    if (!response.ok) throw new Error("Server rejected sync");
-    showStatus("Cloud updated successfully!");
+    if (!res.ok) throw new Error(await res.text());
 
-  } catch (error) {
-    console.error("Sync Error:", error);
-    showStatus("Sync failed. Check connection.", true);
+    if (showToast) showStatus("Cloud updated successfully!");
+  } catch (err) {
+    console.error(err);
+    if (showToast) showStatus(`Sync failed: ${err.message}`, true);
   }
-async function pushSync() {
-  const uid = getOrGenerateUID();
-  const localData = localStorage.getItem('studyapp_log');
-  console.log('📤 Pushing UID:', uid);
-  console.log('📤 Data:', localData);
-  // ... rest
-}
-  
-  
 }
 
-async function pullSync() {
-  const uid = getOrGenerateUID();
-  showStatus("Restoring...");
+async function pullSync(showToast = true) {
+  if (!currentUser) {
+    if (showToast) showStatus("You must be logged in to restore", true);
+    return;
+  }
+
+  if (showToast) showStatus("Restoring from cloud...");
 
   try {
-    const response = await fetch(`${SYNC_API_URL}/${uid}`, {
+    const { data: { session } } = await supabase.auth.getSession();
+
+    const res = await fetch(SYNC_API_URL, {
       method: 'GET',
       headers: {
-        'Authorization': `Bearer ${uid}`,
+        'Authorization': `Bearer ${session.access_token}`,
         'apikey': SUPABASE_ANON_KEY
       }
     });
 
-    if (!response.ok) throw new Error("No data found");
-    
-    const remoteData = await response.json();
-    
-    if (remoteData) {
-      localStorage.setItem('studyapp_log', JSON.stringify(remoteData));
+    if (!res.ok) throw new Error(await res.text());
+
+    const data = await res.json();
+
+    if (data) {
+      localStorage.setItem('studyapp_log', JSON.stringify(data));
       window.dispatchEvent(new Event('tracker:update'));
-      showStatus("Restored successfully!");
+      if (showToast) showStatus("Restored successfully!");
     }
-  } catch (error) {
-    console.error("Restore Error:", error);
-    showStatus("Restore failed.", true);
+  } catch (err) {
+    console.error(err);
+    if (showToast) showStatus(`Restore failed: ${err.message}`, true);
+  }
+}
+
+// --- Auto Sync ---
+function startAutoSync() {
+  if (syncInterval) clearInterval(syncInterval);
+
+  syncInterval = setInterval(() => {
+    console.log('⏰ Auto-sync triggered');
+    pushSync(false);
+  }, 3600000);
+
+  console.log('⏰ Auto-sync started');
+}
+
+function stopAutoSync() {
+  if (syncInterval) {
+    clearInterval(syncInterval);
+    syncInterval = null;
+  }
+}
+
+// --- Init ---
+document.addEventListener('DOMContentLoaded', () => {
+  initAuth();
+  initTheme();
+
+  const email = document.getElementById('auth-email');
+  const password = document.getElementById('auth-password');
+  const toggleBtn = document.getElementById('toggle-password-visibility');
+
+  // Auth
+  document.getElementById('btn-signup')?.addEventListener('click', () => {
+    signUp(email.value, password.value);
+  });
+
+  document.getElementById('btn-signin')?.addEventListener('click', () => {
+    signIn(email.value, password.value);
+  });
+
+  document.getElementById('btn-signout')?.addEventListener('click', signOut);
+
+  // Password visibility toggle
+  if (toggleBtn && password) {
+    toggleBtn.addEventListener('click', () => {
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      toggleBtn.textContent = type === 'password' ? '◾' : '👁️‍🗨️';
+    });
   }
 
-  async function pullSync() {
-  const uid = getOrGenerateUID();
-  console.log('📥 Pulling UID:', uid);
-  // ... after fetch
-  console.log('📥 Response:', response);
-  const remoteData = await response.json();
-  console.log('📥 Remote data:', remoteData);
-  // ...
-}
+  // Google
+  document.getElementById('btn-google-signin')?.addEventListener('click', signInWithGoogle);
 
+  // Sync
+  document.getElementById('btn-sync-push')?.addEventListener('click', () => pushSync(true));
+  document.getElementById('btn-sync-pull')?.addEventListener('click', () => pullSync(true));
+
+  // Theme toggle (make sure button exists)
+  document.getElementById('btn-theme-toggle')?.addEventListener('click', toggleTheme);
+
+  // Menu
+  document.getElementById('btn-more-menu')?.addEventListener('click', () => {
+    document.getElementById('more-menu-panel')?.classList.toggle('hidden');
+    document.getElementById('menu-overlay')?.classList.toggle('hidden');
+  });
   
-}
-//error log 
+  document.getElementById('btn-close-menu')?.addEventListener('click', () => {
+  document.getElementById('more-menu-panel').classList.add('hidden');
+  document.getElementById('menu-overlay').classList.add('hidden');
+});
 
+});
 
-
-
-
-// Menu toggle
-
-
+// Extra safety sync on exit
+window.addEventListener('beforeunload', () => {
+  pushSync(false);
+});
