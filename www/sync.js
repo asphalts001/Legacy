@@ -1,6 +1,6 @@
 // sync.js – Supabase Edge Function integration
-const SUPABASE_URL = 'https://oscpkrgxjpsyoylxdpxg.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_CNDbJZzUgXZAxLvp6_oBHg_FSsIWGWp';
+const SUPABASE_URL = 'https://oscpkrgxjpsyoylxdpxg.supabase.co/functions/v1/sync-api';
+const SUPABASE_ANON_KEY = 'sb_publishable_1770jeSve3Ex_J6rKFSXhw_oNIKzYMt';
 
 // --- UID Management ---
 function getOrGenerateUID() {
@@ -104,7 +104,25 @@ async function pullSync() {
     showStatus("Restore failed.", true);
   }
 }
+//error log 
 
+async function pushSync() {
+  const uid = getOrGenerateUID();
+  const localData = localStorage.getItem('studyapp_log');
+  console.log('📤 Pushing UID:', uid);
+  console.log('📤 Data:', localData);
+  // ... rest
+}
+
+async function pullSync() {
+  const uid = getOrGenerateUID();
+  console.log('📥 Pulling UID:', uid);
+  // ... after fetch
+  console.log('📥 Response:', response);
+  const remoteData = await response.json();
+  console.log('📥 Remote data:', remoteData);
+  // ...
+}
 
 // Menu toggle
 
