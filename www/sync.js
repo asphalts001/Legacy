@@ -1,3 +1,47 @@
+// Detect if running in Cordova (native app)
+const isCordova = () => !!window.cordova;
+
+// Handle deep link when app is opened via URL scheme
+if (isCordova()) {
+  document.addEventListener('deviceready', () => {
+    // Handle the URL that launched the app (if any)
+    const handleOpenURL = (url) => {
+      console.log('🔗 App opened with URL:', url);
+      if (url && url.startsWith('legacy://')) {
+        // Complete OAuth flow with Supabase
+        supabase.auth.getSessionFromUrl({ url }).then(({ data, error }) => {
+          if (error) console.error('Deep link auth error:', error);
+          else console.log('✅ Google sign-in completed via deep link');
+        });
+      }
+    };
+
+    // Cordova's standard method for URL handling
+    window.handleOpenURL = handleOpenURL;
+
+    // Also check if the app was launched with a URL initially
+    if (window.cordova.plugins && window.cordova.plugins.launch) {
+      window.cordova.plugins.launch.getLaunchURL(handleOpenURL);
+    }
+  }, false);
+}
+
+// Modified Google sign-in: use custom scheme in Cordova, http://localhost in browser
+async function signInWithGoogle() {
+  const redirectTo = isCordova() 
+    ? 'legacy://callback' 
+    : window.location.origin + window.location.pathname;
+
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo }
+  });
+  if (error) {
+    showStatus(`Google sign-in failed: ${error.message}`, true);
+  }
+}
+
+
 // sync.js – Supabase Email/Password Auth + Background Auto-Sync
 console.log('✅ sync.js loaded');
 
