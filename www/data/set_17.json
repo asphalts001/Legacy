@@ -267,12 +267,12 @@
   },
   {
     "id": "set_17_q20",
-    "question": "Among all vertebrate classes, which group is reported to have the highest percentage of threatened species (32% of species threatened)?",
+    "question": "Among all vertebrate classes, which group is reported to have the highest percentage of threatened species ?",
     "options": [
-      "Mammals (23%)",
-      "Birds (12%)",
-      "Amphibians (32%)",
-      "Reptiles (31%)"
+      "Mammals",
+      "Birds",
+      "Amphibians",
+      "Reptiles"
     ],
     "correctIndex": 2,
     "explanation": "",

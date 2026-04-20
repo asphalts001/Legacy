@@ -43,15 +43,14 @@
   },
   {
     "id": "set_14_q4",
-    "question": "In polygenic inheritance of human skin colour (assuming 3 gene pairs A, B,",
+    "question": "In polygenic inheritance of human skin colour (assuming 3 gene pairs A, B,C) an individual with genotype AaBbCc would have:",
     "options": [
-      ", an individual with genotype AaBbCc would have:",
       "Darkest possible skin (6 dominant alleles)",
       "Lightest possible skin (0 dominant alleles)",
       "Intermediate skin colour (3 dominant, 3 recessive alleles — additive contribution of each dominant allele)",
       "Same skin colour as AABBCC due to dominance"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -79,7 +78,7 @@
       "Centripetal",
       "Centrifugal"
     ],
-    "correctIndex": 3,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
