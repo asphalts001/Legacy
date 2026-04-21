@@ -1,82 +1,61 @@
-name: Build Cordova APK
+name: Build and Sign Android APK
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
-  android-build:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
+          node-version: 20
 
       - name: Install Cordova
-        run: npm install -g cordova@12
+        run: npm install -g cordova
 
-      - name: Install Gradle 8.7
+      - name: Install Android dependencies
         run: |
-          wget -q https://services.gradle.org/distributions/gradle-8.7-bin.zip -O /tmp/gradle-8.7.zip
-          unzip -q /tmp/gradle-8.7.zip -d /opt/gradle
-          sudo ln -sf /opt/gradle/gradle-8.7/bin/gradle /usr/local/bin/gradle
-          sudo ln -sf /opt/gradle/gradle-8.7/bin/gradle /usr/bin/gradle
-          gradle --version
+          sudo apt-get update
+          sudo apt-get install -y openjdk-17-jdk
+          echo "JAVA_HOME=$JAVA_HOME_17_X64" >> $GITHUB_ENV
 
-      - name: Install Android Build Tools
-        run: |
-          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager \
-            "build-tools;33.0.2" \
-            "platforms;android-34"
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          cmdline-tools-version: 11076708
 
-      - name: Add Android Platform
-        run: cordova platform add android@12.0.1
+      - name: Add Android platform
+        run: cordova platform add android --no-fetch
 
-      - name: Install Cordova Plugins
-        run: |
-          cordova plugin add cordova-plugin-media
-          cordova plugin add cordova-plugin-file
+      - name: Build release APK (unsigned)
+        run: cordova build android --release -- --packageType=apk
 
-      # FIXED: Removed the destructive mogrify step that corrupted PNGs
-      # Original step that caused "AAPT: error: file failed to compile" is deleted.
-
-      - name: Pin ALL Gradle wrappers to 8.7
-        run: |
-          find platforms/android -name "gradle-wrapper.properties" | while read f; do
-            sed -i 's|distributionUrl=.*|distributionUrl=https://services.gradle.org/distributions/gradle-8.7-all.zip|' "$f"
-          done
-
-      - name: Bump version code
-        run: |
-          VERSION_CODE=${{ github.run_number }}
-          sed -i "s/version=\"[^\"]*\"/version=\"1.0.$VERSION_CODE\"/" config.xml
-          sed -i "/<platform name=\"android\">/a\    <preference name=\"android-versionCode\" value=\"$VERSION_CODE\" />" config.xml
-
-      - name: Decode Keystore from Secrets
+      - name: Decode keystore from base64
         run: echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > release.keystore
 
-      - name: Build and Sign Release APK
-        run: |
-          cordova build android --release -- \
-            --keystore=release.keystore \
-            --storePassword="${{ secrets.ANDROID_KEYSTORE_PASSWORD }}" \
-            --alias="${{ secrets.ANDROID_KEY_ALIAS }}" \
-            --password="${{ secrets.ANDROID_KEY_PASSWORD }}" \
-            --packageType=apk
+      - name: Sign APK
+        uses: r0adkll/sign-android-release@v1
+        with:
+          releaseDirectory: platforms/android/app/build/outputs/apk/release
+          signingKeyBase64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          alias: ${{ secrets.ANDROID_KEY_ALIAS }}
+          keyStorePassword: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          keyPassword: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        env:
+          BUILD_TOOLS_VERSION: "34.0.0"
 
-      - name: Upload Signed APK
+      - name: Upload signed APK
         uses: actions/upload-artifact@v4
         with:
-          name: legacy-app-signed
-          path: platforms/android/app/build/outputs/apk/release/*.apk
+          name: signed-app-release
+          path: platforms/android/app/build/outputs/apk/release/*-release-unsigned-signed.apk
