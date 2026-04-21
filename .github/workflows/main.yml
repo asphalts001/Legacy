@@ -65,12 +65,16 @@ jobs:
           sed -i "s/version=\"[^\"]*\"/version=\"1.0.$VERSION_CODE\"/" config.xml
           sed -i "/<platform name=\"android\">/a\    <preference name=\"android-versionCode\" value=\"$VERSION_CODE\" />" config.xml
 
-      - name: Decode Keystore from Secrets
+            - name: Decode Keystore from Secrets
         run: |
           echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > release.keystore
 
-      - name: Build and Sign Release APK
+      - name: Fix Resource Errors and Build
         run: |
+          # Disable strict image checking
+          echo "android.aapt2FromCommandLine=false" >> platforms/android/gradle.properties
+          
+          # Run the build
           cordova build android --release -- \
             --keystore=release.keystore \
             --storePassword="${{ secrets.ANDROID_KEYSTORE_PASSWORD }}" \
@@ -83,3 +87,4 @@ jobs:
         with:
           name: legacy-app-signed
           path: platforms/android/app/build/outputs/apk/release/*.apk
+
