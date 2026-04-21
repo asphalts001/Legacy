@@ -68,14 +68,20 @@ jobs:
       - name: Decode keystore
         run: |
           echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > ${{ github.workspace }}/release.keystore
+          # Verify keystore is readable with the provided password
+          keytool -list \
+            -keystore ${{ github.workspace }}/release.keystore \
+            -storepass "${{ secrets.ANDROID_KEYSTORE_PASSWORD }}" \
+            -alias "${{ secrets.ANDROID_KEY_ALIAS }}"
 
       - name: Build and Sign Release APK
         run: |
           cordova build android --release -- \
+            --packageType=apk \
             --keystore=${{ github.workspace }}/release.keystore \
-            --storePassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }} \
-            --alias=${{ secrets.ANDROID_KEY_ALIAS }} \
-            --password=${{ secrets.ANDROID_KEY_PASSWORD }}
+            --storePassword="${{ secrets.ANDROID_KEYSTORE_PASSWORD }}" \
+            --alias="${{ secrets.ANDROID_KEY_ALIAS }}" \
+            --password="${{ secrets.ANDROID_KEY_PASSWORD }}"
 
       - name: Upload Signed APK
         uses: actions/upload-artifact@v4
