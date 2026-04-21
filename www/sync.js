@@ -1,47 +1,6 @@
 // Detect if running in Cordova (native app)
 const isCordova = () => !!window.cordova;
 
-// Handle deep link when app is opened via URL scheme
-if (isCordova()) {
-  document.addEventListener('deviceready', () => {
-    // Handle the URL that launched the app (if any)
-    const handleOpenURL = (url) => {
-      console.log('🔗 App opened with URL:', url);
-      if (url && url.startsWith('legacy://')) {
-        // Complete OAuth flow with Supabase
-        supabase.auth.getSessionFromUrl({ url }).then(({ data, error }) => {
-          if (error) console.error('Deep link auth error:', error);
-          else console.log('✅ Google sign-in completed via deep link');
-        });
-      }
-    };
-
-    // Cordova's standard method for URL handling
-    window.handleOpenURL = handleOpenURL;
-
-    // Also check if the app was launched with a URL initially
-    if (window.cordova.plugins && window.cordova.plugins.launch) {
-      window.cordova.plugins.launch.getLaunchURL(handleOpenURL);
-    }
-  }, false);
-}
-
-// Modified Google sign-in: use custom scheme in Cordova, http://localhost in browser
-async function signInWithGoogle() {
-  const redirectTo = isCordova() 
-    ? 'legacy://callback' 
-    : window.location.origin + window.location.pathname;
-
-  const { data, error } = await supabase.auth.signInWithOAuth({
-    provider: 'google',
-    options: { redirectTo }
-  });
-  if (error) {
-    showStatus(`Google sign-in failed: ${error.message}`, true);
-  }
-}
-
-
 // sync.js – Supabase Email/Password Auth + Background Auto-Sync
 console.log('✅ sync.js loaded');
 
@@ -56,6 +15,27 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 // --- Global State ---
 let currentUser = null;
 let syncInterval = null;
+
+// --- Cordova Deep Link Handler ---
+if (isCordova()) {
+  document.addEventListener('deviceready', () => {
+    const handleOpenURL = (url) => {
+      console.log('🔗 App opened with URL:', url);
+      if (url && url.startsWith('legacy://')) {
+        supabase.auth.getSessionFromUrl({ url }).then(({ data, error }) => {
+          if (error) console.error('Deep link auth error:', error);
+          else console.log('✅ Google sign-in completed via deep link');
+        });
+      }
+    };
+
+    window.handleOpenURL = handleOpenURL;
+
+    if (window.cordova.plugins && window.cordova.plugins.launch) {
+      window.cordova.plugins.launch.getLaunchURL(handleOpenURL);
+    }
+  }, false);
+}
 
 // --- UI Helper ---
 function showStatus(message, isError = false) {
@@ -100,7 +80,6 @@ async function initAuth() {
     updateUIForLoggedOutUser();
   }
 
-  // Listen for auth changes
   supabase.auth.onAuthStateChange((event, session) => {
     if (event === 'SIGNED_IN' && session) {
       currentUser = session.user;
@@ -148,14 +127,17 @@ async function signOut() {
   showStatus("Signed out");
 }
 
-// --- Google Sign-In ---
+// --- Google Sign-In (single, Cordova-aware) ---
 async function signInWithGoogle() {
   showStatus("Redirecting to Google...");
-  const { error } = await supabase.auth.signInWithOAuth({
+
+  const redirectTo = isCordova()
+    ? 'legacy://callback'
+    : window.location.origin + window.location.pathname;
+
+  const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
-    options: {
-      redirectTo: window.location.origin + window.location.pathname
-    }
+    options: { redirectTo }
   });
 
   if (error) {
@@ -197,7 +179,6 @@ async function pushSync(showToast = true) {
     });
 
     if (!res.ok) throw new Error(await res.text());
-
     if (showToast) showStatus("Cloud updated successfully!");
   } catch (err) {
     console.error(err);
@@ -242,12 +223,10 @@ async function pullSync(showToast = true) {
 // --- Auto Sync ---
 function startAutoSync() {
   if (syncInterval) clearInterval(syncInterval);
-
   syncInterval = setInterval(() => {
     console.log('⏰ Auto-sync triggered');
     pushSync(false);
   }, 3600000);
-
   console.log('⏰ Auto-sync started');
 }
 
@@ -267,7 +246,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const password = document.getElementById('auth-password');
   const toggleBtn = document.getElementById('toggle-password-visibility');
 
-  // Auth
   document.getElementById('btn-signup')?.addEventListener('click', () => {
     signUp(email.value, password.value);
   });
@@ -278,7 +256,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('btn-signout')?.addEventListener('click', signOut);
 
-  // Password visibility toggle
   if (toggleBtn && password) {
     toggleBtn.addEventListener('click', () => {
       const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -287,27 +264,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Google
   document.getElementById('btn-google-signin')?.addEventListener('click', signInWithGoogle);
 
-  // Sync
   document.getElementById('btn-sync-push')?.addEventListener('click', () => pushSync(true));
   document.getElementById('btn-sync-pull')?.addEventListener('click', () => pullSync(true));
 
-  // Theme toggle (make sure button exists)
   document.getElementById('btn-theme-toggle')?.addEventListener('click', toggleTheme);
 
-  // Menu
   document.getElementById('btn-more-menu')?.addEventListener('click', () => {
     document.getElementById('more-menu-panel')?.classList.toggle('hidden');
     document.getElementById('menu-overlay')?.classList.toggle('hidden');
   });
-  
-  document.getElementById('btn-close-menu')?.addEventListener('click', () => {
-  document.getElementById('more-menu-panel').classList.add('hidden');
-  document.getElementById('menu-overlay').classList.add('hidden');
-});
 
+  document.getElementById('btn-close-menu')?.addEventListener('click', () => {
+    document.getElementById('more-menu-panel')?.classList.add('hidden');
+    document.getElementById('menu-overlay')?.classList.add('hidden');
+  });
 });
 
 // Extra safety sync on exit

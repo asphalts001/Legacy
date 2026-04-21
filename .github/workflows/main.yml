@@ -54,7 +54,7 @@ jobs:
       - name: Pin ALL Gradle wrappers to 8.7
         run: |
           find platforms/android -name "gradle-wrapper.properties" | while read f; do
-            sed -i 's|distributionUrl=.*|distributionUrl=https\\://services.gradle.org/distributions/gradle-8.7-all.zip|' "$f"
+            sed -i 's|distributionUrl=.*|distributionUrl=https\://services.gradle.org/distributions/gradle-8.7-all.zip|' "$f"
             echo "Patched: $f"
           done
 
@@ -63,10 +63,19 @@ jobs:
           VERSION_CODE=${{ github.run_number }}
           echo "Setting android-versionCode to $VERSION_CODE"
           sed -i "s/version=\"[^\"]*\"/version=\"1.0.$VERSION_CODE\"/" config.xml
-          sed -i "/<platform name=\"android\">/a\\    <preference name=\"android-versionCode\" value=\"$VERSION_CODE\" />" config.xml
+          sed -i "/<platform name=\"android\">/a\    <preference name=\"android-versionCode\" value=\"$VERSION_CODE\" />" config.xml
 
       - name: Build APK
         run: cordova build android --debug
+
+      - name: Print SHA-1 Key
+        run: |
+          echo "=== SHA-1 from Debug Keystore ==="
+          keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android | grep "SHA1:"
+          
+          echo "=== SHA-1 from Compiled APK ==="
+          APK_PATH=$(find platforms/android/app/build/outputs/apk/debug -name "*.apk" | head -n 1)
+          keytool -printcert -jarfile "$APK_PATH" | grep "SHA1:"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
