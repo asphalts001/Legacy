@@ -35,13 +35,14 @@ jobs:
           cmdline-tools-version: 11076708
 
       - name: Add Android platform
-        run: cordova platform add android --no-fetch
+  run: cordova platform add android --no-fetch
 
-      - name: Build release APK (unsigned)
-        run: cordova build android --release -- --packageType=apk
+- name: Patch cordova.gradle to qualify XmlParser
+  run: |
+    sed -i 's/new XmlParser(/new groovy.util.XmlParser(/' platforms/android/CordovaLib/cordova.gradle
 
-      - name: Decode keystore from base64
-        run: echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > release.keystore
+- name: Build release APK (unsigned)
+  run: cordova build android --release -- --packageType=apk
 
       - name: Sign APK
         uses: r0adkll/sign-android-release@v1
