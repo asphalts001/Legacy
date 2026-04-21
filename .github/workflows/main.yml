@@ -34,12 +34,8 @@ jobs:
         with:
           cmdline-tools-version: 11076708
 
-      - name: Add Android platform
-        run: cordova platform add android --no-fetch
-
-      - name: Patch cordova.gradle to qualify XmlParser
-        run: |
-          sed -i 's/new XmlParser(/new groovy.util.XmlParser(/' platforms/android/CordovaLib/cordova.gradle
+      - name: Add Android platform (version 11.0.0)
+        run: cordova platform add android@11.0.0 --no-fetch
 
       - name: Build release APK (unsigned)
         run: cordova build android --release -- --packageType=apk
