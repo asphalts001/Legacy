@@ -669,49 +669,52 @@
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  //  HISTORY (localStorage)
+  //  HISTORY (StateManager)
   // ═══════════════════════════════════════════════════════════════════════════
-  function getHistory() {
-    try { return JSON.parse(localStorage.getItem('mcq_history_json') || '[]'); }
-    catch { return []; }
-  }
-  function saveHistory(h) {
-    try { localStorage.setItem('mcq_history_json', JSON.stringify(h)); } catch {}
-  }
-  function addToHistory(entry) {
-    const h = getHistory();
-    h.unshift(entry);
-    saveHistory(h.slice(0, 50));
-  }
-  function clearHistory() {
-    if (!confirm('Clear all history?')) return;
-    localStorage.removeItem('mcq_history_json');
-    renderHistory();
-  }
+
+  // Alias so the new renderHistory can use escapeHtml (same as escHtml above)
+  function escapeHtml(str) { return escHtml(str); }
 
   function renderHistory() {
     const list = document.getElementById('history-list');
-    const h = getHistory();
-    if (!h.length) {
+    const state = window.StateManager.loadState();
+    const sessions = state.sessions.filter(s => s.type === 'score').reverse(); // latest first
+
+    if (!sessions.length) {
       list.innerHTML = '<div class="hist-empty">No sets attempted yet</div>';
       return;
     }
-    list.innerHTML = h.map(e => {
-      const acc = e.correct + e.wrong > 0 ? Math.round(100 * e.correct / (e.correct + e.wrong)) : 0;
+
+    list.innerHTML = sessions.map(session => {
+      const d = session.details;
+      const acc = d.accuracy || (d.correct + d.wrong > 0 ? Math.round(100 * d.correct / (d.correct + d.wrong)) : 0);
       const grade = acc >= 75 ? 'A' : acc >= 50 ? 'B' : 'C';
       const scoreColor = acc >= 75 ? 'green' : acc >= 50 ? 'gold' : 'red';
-      const date = new Date(e.ts).toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' });
-      const time = new Date(e.ts).toLocaleTimeString('en-IN', { hour:'2-digit', minute:'2-digit' });
+      const date = new Date(session.timestamp).toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' });
+      const time = new Date(session.timestamp).toLocaleTimeString('en-IN', { hour:'2-digit', minute:'2-digit' });
+      const setNum = (d.topic || 'Set').replace(/[^A-Z0-9]/gi, '').slice(0, 8);
+
       return `
         <div class="hist-card grade-${grade}">
-          <div class="hist-set">${escHtml(e.setNum || '—')}</div>
+          <div class="hist-set">${escapeHtml(setNum)}</div>
           <div class="hist-info">
-            <div class="hist-name">${escHtml(e.name)}</div>
-            <div class="hist-meta">${e.total} Qs · ${e.correct}✓ ${e.wrong}✗ ${e.skip} skip · ${date} ${time}</div>
+            <div class="hist-name">${escapeHtml(d.topic || d.subject)}</div>
+            <div class="hist-meta">${d.total || '?'} Qs · ${d.correct || 0}✓ ${d.wrong || 0}✗ ${d.skipped || 0} skip · ${date} ${time}</div>
           </div>
-          <div class="hist-score ${scoreColor}">${e.score}</div>
+          <div class="hist-score ${scoreColor}">${d.score || 0}</div>
         </div>`;
     }).join('');
+  }
+
+  // Wipes all tracker data via StateManager
+  function clearHistory() {
+    if (confirm('Clear ALL study history? This cannot be undone.')) {
+      if (window.Tracker && window.Tracker.resetToDefault) {
+        window.Tracker.resetToDefault();
+        renderHistory();
+        // Also update dashboard iframe or parent – but here just refresh UI
+      }
+    }
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -880,15 +883,6 @@
   r.scrollIntoView({ behavior: 'smooth', block: 'start' });
   clearInterval(state.timerInterval);
 
-  // Save to local history (used for display in upload screen)
-  const histEntry = {
-    ts: Date.now(),
-    name: currentSetName,
-    setNum: currentSetId.replace(/\.json$/i,'').toUpperCase(),
-    total: Q.length,
-    correct, wrong, skip, score, acc
-  };
-  addToHistory(histEntry);
 }
 
   function updateHUD() {

@@ -146,25 +146,22 @@ async function signInWithGoogle() {
 }
 
 // --- Sync Functions ---
+// sync.js – updated sections (replace pushSync and pullSync)
+
 async function pushSync(showToast = true) {
   if (!currentUser) {
     if (showToast) showStatus("You must be logged in to sync", true);
     return;
   }
 
-  let localData;
-  try {
-    localData = JSON.parse(localStorage.getItem('studyapp_log') || '[]');
-  } catch {
-    if (showToast) showStatus('Local data corrupted', true);
-    return;
-  }
+  // Get real data from StateManager
+  const state = window.StateManager.loadState();
+  const sessions = state.sessions;
 
   if (showToast) showStatus("Syncing to cloud...");
 
   try {
     const { data: { session } } = await supabase.auth.getSession();
-
     const res = await fetch(SYNC_API_URL, {
       method: 'PUT',
       headers: {
@@ -172,10 +169,7 @@ async function pushSync(showToast = true) {
         'Authorization': `Bearer ${session.access_token}`,
         'apikey': SUPABASE_ANON_KEY
       },
-      body: JSON.stringify({
-        last_sync: new Date().toISOString(),
-        data: localData
-      })
+      body: JSON.stringify({ data: sessions })  // send only sessions array
     });
 
     if (!res.ok) throw new Error(await res.text());
@@ -196,7 +190,6 @@ async function pullSync(showToast = true) {
 
   try {
     const { data: { session } } = await supabase.auth.getSession();
-
     const res = await fetch(SYNC_API_URL, {
       method: 'GET',
       headers: {
@@ -207,10 +200,15 @@ async function pullSync(showToast = true) {
 
     if (!res.ok) throw new Error(await res.text());
 
-    const data = await res.json();
-
-    if (data) {
-      localStorage.setItem('studyapp_log', JSON.stringify(data));
+    const cloudData = await res.json();
+    if (cloudData && Array.isArray(cloudData)) {
+      // Load current state, replace sessions, recalc stats
+      const currentState = window.StateManager.loadState();
+      currentState.sessions = cloudData;
+      currentState.stats = window.StateManager.computeStats(cloudData);
+      window.StateManager.saveState(currentState);
+      
+      // Notify dashboard
       window.dispatchEvent(new Event('tracker:update'));
       if (showToast) showStatus("Restored successfully!");
     }
@@ -282,7 +280,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Extra safety sync on exit
-window.addEventListener('beforeunload', () => {
-  pushSync(false);
-});
+
