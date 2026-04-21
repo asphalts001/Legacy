@@ -497,7 +497,7 @@
       <div class="intro-sub" id="quiz-sub"></div>
       <div class="intro-meta">
         <span><strong id="q-count">—</strong> questions</span>
-        <span>60 min timer</span>
+        <span id="timer-label">— min timer</span>
         <span>NEET scoring (+4 / −1)</span>
       </div>
     </div>
@@ -721,7 +721,8 @@
     if (!loadedQuestionSet) return;
     Q = loadedQuestionSet;
     state = { selected: {}, checked: {}, startTime: Date.now(), timerInterval: null };
-
+  
+    document.getElementById('timer-label').textContent = Q.length + ' min timer';
     document.getElementById('quiz-title').innerHTML = `<span>${escHtml(currentSetName)}</span>`;
     document.getElementById('quiz-sub').textContent = `JSON · ${Q.length} questions`;
     document.getElementById('q-count').textContent = Q.length;
@@ -897,17 +898,27 @@
   }
 
   function startTimer() {
-    clearInterval(state.timerInterval);
-    const end = Date.now() + 60 * 60 * 1000;
-    state.timerInterval = setInterval(() => {
-      const rem = Math.max(0, end - Date.now());
-      const m = Math.floor(rem/60000);
-      const s = Math.floor((rem%60000)/1000);
-      document.getElementById('timer-val').textContent =
-        String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
-      if (rem === 0) { clearInterval(state.timerInterval); window.submitAll(); }
-    }, 1000);
-  }
+  clearInterval(state.timerInterval);
+
+  // 👉 1 minute per question (change if needed)
+  const totalMinutes = Q.length; 
+
+  const end = Date.now() + totalMinutes * 60 * 1000;
+
+  state.timerInterval = setInterval(() => {
+    const rem = Math.max(0, end - Date.now());
+    const m = Math.floor(rem / 60000);
+    const s = Math.floor((rem % 60000) / 1000);
+
+    document.getElementById('timer-val').textContent =
+      String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+
+    if (rem === 0) {
+      clearInterval(state.timerInterval);
+      window.submitAll();
+    }
+  }, 1000);
+}
 
   window.restartQuiz = function() {
     state = { selected: {}, checked: {}, startTime: Date.now(), timerInterval: null };
