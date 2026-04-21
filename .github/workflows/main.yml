@@ -66,7 +66,7 @@ jobs:
           sed -i "/<platform name=\"android\">/a\    <preference name=\"android-versionCode\" value=\"$VERSION_CODE\" />" config.xml
 
             - name: Decode Keystore from Secrets
-        run: |
+        
           echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > release.keystore
 
       - name: Fix Resource Errors and Build
