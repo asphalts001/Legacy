@@ -65,17 +65,20 @@ jobs:
           sed -i "s/version=\"[^\"]*\"/version=\"1.0.$VERSION_CODE\"/" config.xml
           sed -i "/<platform name=\"android\">/a\    <preference name=\"android-versionCode\" value=\"$VERSION_CODE\" />" config.xml
 
-      - name: Build APK
-        run: cordova build android --debug
+      - name: Decode Keystore
+        run: echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > release.keystore
 
-            - name: Print SHA-1 Key
+      - name: Build and Sign APK
         run: |
-          echo "=== SHA-1 from Debug Keystore ==="
-          keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android | grep "SHA1:"
+          cordova build android --release -- \
+            --keystore=release.keystore \
+            --storePassword="${{ secrets.ANDROID_KEYSTORE_PASSWORD }}" \
+            --alias="${{ secrets.ANDROID_KEY_ALIAS }}" \
+            --password="${{ secrets.ANDROID_KEY_PASSWORD }}" \
+            --packageType=apk
 
-
-      - name: Upload APK
+      - name: Upload Signed APK
         uses: actions/upload-artifact@v4
         with:
-          name: legacy-app-debug
-          path: platforms/android/app/build/outputs/apk/debug/*.apk
+          name: legacy-app-signed
+          path: platforms/android/app/build/outputs/apk/release/*.apk
