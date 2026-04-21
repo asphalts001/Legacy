@@ -8,74 +8,56 @@ on:
 jobs:
   android-build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-
       - name: Set up JDK 17
-        [span_0](start_span)uses: actions/setup-java@v4[span_0](end_span)
+        uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
-
       - name: Install Cordova
         run: npm install -g cordova@12
-
       - name: Install Gradle 8.7 and shadow system Gradle
         run: |
-          [span_1](start_span)wget -q https://services.gradle.org/distributions/gradle-8.7-bin.zip -O /tmp/gradle-8.7.zip[span_1](end_span)
+          wget -q https://services.gradle.org/distributions/gradle-8.7-bin.zip -O /tmp/gradle-8.7.zip
           unzip -q /tmp/gradle-8.7.zip -d /opt/gradle
           sudo ln -sf /opt/gradle/gradle-8.7/bin/gradle /usr/local/bin/gradle
           sudo ln -sf /opt/gradle/gradle-8.7/bin/gradle /usr/bin/gradle
           sudo mkdir -p /usr/share/gradle-9.4.1/bin
           sudo ln -sf /opt/gradle/gradle-8.7/bin/gradle /usr/share/gradle-9.4.1/bin/gradle
           gradle --version
-
       - name: Install Android Build Tools
-        [span_2](start_span)run: |[span_2](end_span)
+        run: |
           echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager \
             "build-tools;33.0.2" \
             "platforms;android-34"
-
       - name: Add Android Platform
         run: cordova platform add android@12.0.1
-
       - name: Install Cordova Plugins
-        [span_3](start_span)run: |[span_3](end_span)
+        run: |
           cordova plugin add cordova-plugin-media
           cordova plugin add cordova-plugin-file
-
       - name: Sanitize and Fix Icon Headers
         run: |
-          # This forces your source icon and all generated icons to have perfect PNG headers
-          echo "Fixing image headers..."
           find . -name "icon.png" -exec mogrify -format png {} \;
           find platforms/android -name "*.png" -exec mogrify -format png {} \;
-
       - name: Pin ALL Gradle wrappers to 8.7
-        [span_4](start_span)run: |[span_4](end_span)
-          find platforms/android -name "gradle-wrapper.properties" | while read f; do
-            sed -i 's|distributionUrl=.*|distributionUrl=https\\://services.gradle.org/distributions/gradle-8.7-all.zip|' [span_5](start_span)"$f"[span_5](end_span)
-            echo "Patched: $f"
-          done
-
-      - name: Bump version code
-        [span_6](start_span)run: |[span_6](end_span)
-          VERSION_CODE=${{ github.run_number }}
-          echo "Setting android-versionCode to $VERSION_CODE"
-          sed -i "s/version=\"[^\"]*\"/version=\"1.0.$VERSION_CODE\"/" config.xml
-          sed -i "/<platform name=\"android\">/a\\    <preference name=\"android-versionCode\" value=\"$VERSION_CODE\" />" config.xml
-
-      - name: Decode Keystore from Secrets
         run: |
-          echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > release.keystore
-
+          find platforms/android -name "gradle-wrapper.properties" | while read f; do
+            sed -i 's|distributionUrl=.*|distributionUrl=https://services.gradle.org/distributions/gradle-8.7-all.zip|' "$f"
+          done
+      - name: Bump version code
+        run: |
+          VERSION_CODE=${{ github.run_number }}
+          sed -i "s/version=\"[^\"]*\"/version=\"1.0.$VERSION_CODE\"/" config.xml
+          sed -i "/<platform name=\"android\">/a\    <preference name=\"android-versionCode\" value=\"$VERSION_CODE\" />" config.xml
+      - name: Decode Keystore from Secrets
+        run: echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > release.keystore
       - name: Build and Sign Release APK
         run: |
           cordova build android --release -- \
@@ -84,9 +66,8 @@ jobs:
             --alias="${{ secrets.ANDROID_KEY_ALIAS }}" \
             --password="${{ secrets.ANDROID_KEY_PASSWORD }}" \
             --packageType=apk
-
       - name: Upload Signed APK
         uses: actions/upload-artifact@v4
-        [span_7](start_span)with:[span_7](end_span)
+        with:
           name: legacy-app-signed
           path: platforms/android/app/build/outputs/apk/release/*.apk
