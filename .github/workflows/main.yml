@@ -65,25 +65,20 @@ jobs:
           sed -i "s/version=\"[^\"]*\"/version=\"1.0.$VERSION_CODE\"/" config.xml
           sed -i "/<platform name=\"android\">/a\\    <preference name=\"android-versionCode\" value=\"$VERSION_CODE\" />" config.xml
 
-      - name: Build release APK (unsigned)
-        run: cordova build android --release -- --packageType=apk
+      - name: Decode keystore
+        run: |
+          echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > ${{ github.workspace }}/release.keystore
 
-      - name: Decode keystore from base64
-        run: echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > release.keystore
+      - name: Build and Sign Release APK
+        run: |
+          cordova build android --release -- \
+            --keystore=${{ github.workspace }}/release.keystore \
+            --storePassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }} \
+            --alias=${{ secrets.ANDROID_KEY_ALIAS }} \
+            --password=${{ secrets.ANDROID_KEY_PASSWORD }}
 
-      - name: Sign APK
-        uses: r0adkll/sign-android-release@v1
-        with:
-          releaseDirectory: platforms/android/app/build/outputs/apk/release
-          signingKeyBase64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
-          alias: ${{ secrets.ANDROID_KEY_ALIAS }}
-          keyStorePassword: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
-          keyPassword: ${{ secrets.ANDROID_KEY_PASSWORD }}
-        env:
-          BUILD_TOOLS_VERSION: "33.0.2"
-
-      - name: Upload signed APK
+      - name: Upload Signed APK
         uses: actions/upload-artifact@v4
         with:
           name: legacy-app-release-signed
-          path: platforms/android/app/build/outputs/apk/release/*-release-unsigned-signed.apk
+          path: platforms/android/app/build/outputs/apk/release/*.apk
