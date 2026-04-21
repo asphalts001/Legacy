@@ -61,7 +61,7 @@
     "options": [
       "Chara",
       "Ectocarpus",
-      "Laminaria (kelp)",
+      "kelp",
       "Polysiphonia"
     ],
     "correctIndex": 2,
@@ -225,7 +225,7 @@
   },
   {
     "id": "set_s2_q17",
-    "question": "Funaria and Polytrichum are examples of:",
+    "question": "Funaria is examples of:",
     "options": [
       "Liverworts",
       "Mosses",

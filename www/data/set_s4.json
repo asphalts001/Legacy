@@ -326,12 +326,12 @@
     "question": "Scoliodon is a:",
     "options": [
       "Ray",
-      "Shark",
+      "dogfish Shark",
       "Bony fish",
       "Lamprey"
     ],
     "correctIndex": 1,
-    "explanation": "",
+    "explanation": "dog fish shark is a shark spcs named scoliodon",
     "tags": [],
     "difficulty": "medium"
   },
