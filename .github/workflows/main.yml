@@ -44,14 +44,6 @@ jobs:
             "platforms;android-34"
 
       - name: Add Android Platform
-        uses: actions/cache@v4
-        id: platform-cache
-        with:
-          path: platforms/android
-          key: cordova-android-12.0.1
-
-      - name: Add Android Platform (if not cached)
-        if: steps.platform-cache.outputs.cache-hit != 'true'
         run: cordova platform add android@12.0.1
 
       - name: Install Cordova Plugins
@@ -88,7 +80,7 @@ jobs:
 
       - name: Find output files
         run: find platforms/android/app/build/outputs -type f
-        
+
       - name: Upload Signed APK
         uses: actions/upload-artifact@v4
         with:
