@@ -92,19 +92,18 @@ jobs:
         run: |
           $ANDROID_HOME/build-tools/33.0.2/apksigner sign \
             --ks ${{ github.workspace }}/release.keystore \
-            --ks-pass pass:${{ secrets.KEYSTORE_PASSWORD }} \
-            --key-pass pass:${{ secrets.KEY_PASSWORD }} \
-            --ks-key-alias ${{ secrets.KEY_ALIAS }} \
-            --out platforms/android/app/build/outputs/apk/release/app-release-signed.apk \
+            --ks-pass pass:${{ secrets.ANDROID_KEYSTORE_PASSWORD }} \
+            --key-pass pass:${{ secrets.ANDROID_KEY_PASSWORD }} \
+            --ks-key-alias ${{ secrets.ANDROID_KEY_ALIAS }} \
             platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
 
       - name: Verify signing
         run: |
           $ANDROID_HOME/build-tools/33.0.2/apksigner verify --verbose \
-            platforms/android/app/build/outputs/apk/release/app-release-signed.apk
+            platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
 
       - name: Upload Signed APK
         uses: actions/upload-artifact@v4
         with:
           name: legacy-app-release
-          path: platforms/android/app/build/outputs/apk/release/app-release-signed.apk
+          path: platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
