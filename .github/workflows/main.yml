@@ -81,6 +81,9 @@ jobs:
             -srcalias ${{ secrets.ANDROID_KEY_ALIAS }} \
             -destalias ${{ secrets.ANDROID_KEY_ALIAS }} \
             -noprompt
+      
+      - name: Build Release APK
+        run: cordova build android --release -- --packageType=apk
 
       - name: Sign APK manually
         run: |
