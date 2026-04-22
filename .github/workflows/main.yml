@@ -106,4 +106,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: legacy-app-release
-          path: platforms/android/app/build/outputs/apk/release/app-release-signed.apk
+          path: platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
