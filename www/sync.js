@@ -80,38 +80,14 @@ export async function signInWithGoogle() {
     return;
   }
 
+  // _system opens in device's default browser (Chrome)
+  // Required — Google blocks OAuth in embedded WebViews
   if (window.cordova) {
-    const browser = cordova.InAppBrowser.open(data.url, '_blank', '');
-
-    browser.addEventListener('loadstart', (event) => {
-      if (event.url.startsWith('com.asphalts.legacy://login')) {
-        browser.close();
-
-        const hash = event.url.split('#')[1] || event.url.split('?')[1];
-        if (hash) {
-          const params = new URLSearchParams(hash);
-          const accessToken = params.get('access_token');
-          const refreshToken = params.get('refresh_token');
-
-          if (accessToken) {
-            supabase.auth.setSession({
-              access_token: accessToken,
-              refresh_token: refreshToken
-            }).then(({ error }) => {
-              if (error) showStatus('Login failed: ' + error.message, true);
-              else showStatus('✅ Signed in successfully');
-            });
-          }
-        }
-      }
-    });
-
+    cordova.InAppBrowser.open(data.url, '_system', '');
   } else {
-    // Fallback — opens in system browser
-    window.open(data.url, '_system');
+    window.open(data.url, '_blank');
   }
 }
-
 
 // ── Email Sign-In ───────────────────────────────────────────
 export async function signInWithEmail(email, password) {
