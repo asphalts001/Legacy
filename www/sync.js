@@ -63,6 +63,7 @@ function setSessions(sessions) {
 }
 
 // ── Google Sign-In ──────────────────────────────────────────
+
 export async function signInWithGoogle() {
   showStatus('Opening Google sign-in...');
 
@@ -79,22 +80,19 @@ export async function signInWithGoogle() {
     return;
   }
 
-  // Use InAppBrowser if available, otherwise fall back to window.open
-  if (window.cordova && cordova.InAppBrowser) {
-    const browser = cordova.InAppBrowser.open(
-      data.url,
-      '_blank',
-      'location=yes,clearcache=yes,clearsessioncache=yes'
-    );
+  if (window.cordova) {
+    const browser = cordova.InAppBrowser.open(data.url, '_blank', '');
 
     browser.addEventListener('loadstart', (event) => {
       if (event.url.startsWith('com.asphalts.legacy://login')) {
         browser.close();
+
         const hash = event.url.split('#')[1] || event.url.split('?')[1];
         if (hash) {
           const params = new URLSearchParams(hash);
           const accessToken = params.get('access_token');
           const refreshToken = params.get('refresh_token');
+
           if (accessToken) {
             supabase.auth.setSession({
               access_token: accessToken,
