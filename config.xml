@@ -49,8 +49,11 @@
   <allow-intent href="https://*/*" />
 
   <!-- Icons (place your icon.png in www/) -->
-  <icon src="www/icon.png" />
-
+<platform name="android">
+    <icon src="www/img/icon.png" />
+    <resource-file src="www/img/icon.png" target="app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" />
+    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="www/icon.png" />
+</platform>
   <!-- Android specific -->
   <platform name="android">
     <icon src="www/icon.png" density="mdpi" />
