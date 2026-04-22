@@ -707,11 +707,12 @@
   }
 
   // Wipes all tracker data via StateManager
-  function clearHistory() {
-    if (confirm('Clear ALL study history? This cannot be undone.')) {
+ function clearHistory() {
+   if (confirm('Clear ALL study history? This cannot be undone.')) {
       if (window.Tracker && window.Tracker.resetToDefault) {
         window.Tracker.resetToDefault();
         renderHistory();
+     
         // Also update dashboard iframe or parent – but here just refresh UI
       }
     }
@@ -932,7 +933,10 @@
   document.addEventListener('DOMContentLoaded', function() {
     renderHistory();
     loadManifest();
-
+ 
+    //
+    window.addEventListener('tracker:update', renderHistory);
+    
     // Audio manager (safe)
     if (typeof window.AudioManager !== 'undefined' && window.AudioManager.init) {
       window.AudioManager.init('mcq.m4a');

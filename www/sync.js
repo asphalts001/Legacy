@@ -258,18 +258,18 @@ async function initAuth() {
     currentUser = session.user;
     updateUIForLoggedInUser();
     startAutoSync();
-    await pullSync(false);  // Silent pull on startup
+    // Don't pull on startup — user must explicitly restore,
+    // or push first to seed the cloud with local data.
   } else {
     updateUIForLoggedOutUser();
   }
 
-  // Listen for future auth changes (sign in / sign out)
   supabase.auth.onAuthStateChange((event, session) => {
     if (event === 'SIGNED_IN') {
       currentUser = session.user;
       updateUIForLoggedInUser();
       startAutoSync();
-      pullSync(false);
+      // Same — no auto pull on sign in
     } else if (event === 'SIGNED_OUT') {
       currentUser = null;
       updateUIForLoggedOutUser();

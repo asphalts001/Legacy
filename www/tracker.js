@@ -197,11 +197,10 @@
     },
 
     // ✅ FIX: comma added
-    reload: function () {
-      state = loadState();
-      window.dispatchEvent(new CustomEvent('tracker:update'));
-    },
-
+    reload: function() {
+  state = loadState();
+  window.dispatchEvent(new CustomEvent('tracker:update'));
+},
     getStats: function () {
       const freshStats = computeStats(state.sessions);
 
