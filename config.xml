@@ -50,7 +50,7 @@
 
   <!-- Icons (place your icon.png in www/) -->
 <platform name="android">
-    <icon src="www/icon.png" />
+    <icon src="www/image/icon.png" />
     <resource-file src="www/img/icon.png" target="app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" />
     <preference name="AndroidWindowSplashScreenAnimatedIcon" value="www/icon.png" />
 </platform>
