@@ -226,6 +226,7 @@
   </div>
 </div>
   <!-- Scripts (load order matters) -->
+  <script src="cordova.js"></script> 
   <script src="StateManager.js"></script>
   <script src="tracker.js"></script>
   <script type="module" src="sync.js"></script> <!-- Ensure sync.js has only ONE listener for #btn-more-menu -->
@@ -347,5 +348,37 @@
     log('Menu button found: ' + (menuBtn ? menuBtn.id || menuBtn.className : 'NOT FOUND'));
   }, false);
 </script>
+<script>
+  // Runs immediately, no waiting
+  function initMenu() {
+    const menuBtn = document.getElementById('btn-more-menu');
+    const menuPanel = document.getElementById('more-menu-panel');
+    const menuOverlay = document.getElementById('menu-overlay');
+
+    menuBtn?.addEventListener('click', () => {
+      menuPanel?.classList.remove('hidden');
+      menuOverlay?.classList.remove('hidden');
+    });
+
+    document.getElementById('btn-close-menu')?.addEventListener('click', () => {
+      menuPanel?.classList.add('hidden');
+      menuOverlay?.classList.add('hidden');
+    });
+
+    menuOverlay?.addEventListener('click', () => {
+      menuPanel?.classList.add('hidden');
+      menuOverlay?.classList.add('hidden');
+    });
+
+    document.getElementById('toggle-password-visibility')?.addEventListener('click', () => {
+      const input = document.getElementById('auth-password');
+      input.type = input.type === 'password' ? 'text' : 'password';
+    });
+  }
+
+  // Script is at bottom of body so DOM is already parsed — run immediately
+  initMenu();
+</script>
+
 </body>
 </html>

@@ -1,3 +1,5 @@
+
+
 // sync.js – robust version
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
@@ -62,18 +64,13 @@ function setSessions(sessions) {
 
 // ── Google Sign-In ──────────────────────────────────────────
 export async function signInWithGoogle() {
-  if (!window.cordova || !cordova.InAppBrowser) {
-    showStatus('Browser plugin not ready', true);
-    return;
-  }
   showStatus('Opening Google sign-in...');
-  // ... rest of function
 
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
       redirectTo: 'com.asphalts.legacy://login',
-      skipBrowserRedirect: true  // prevent Supabase from redirecting itself
+      skipBrowserRedirect: true
     }
   });
 
@@ -82,36 +79,41 @@ export async function signInWithGoogle() {
     return;
   }
 
-  // Open in system browser via InAppBrowser
-  const browser = cordova.InAppBrowser.open(
-    data.url,
-    '_blank',
-    'location=yes,clearcache=yes,clearsessioncache=yes'
-  );
+  // Use InAppBrowser if available, otherwise fall back to window.open
+  if (window.cordova && cordova.InAppBrowser) {
+    const browser = cordova.InAppBrowser.open(
+      data.url,
+      '_blank',
+      'location=yes,clearcache=yes,clearsessioncache=yes'
+    );
 
-  // Listen for the deep link redirect
-  browser.addEventListener('loadstart', (event) => {
-    if (event.url.startsWith('com.asphalts.legacy://login')) {
-      browser.close();
-      
-      const hash = event.url.split('#')[1] || event.url.split('?')[1];
-      if (hash) {
-        const params = new URLSearchParams(hash);
-        const accessToken = params.get('access_token');
-        const refreshToken = params.get('refresh_token');
-        if (accessToken) {
-          supabase.auth.setSession({
-            access_token: accessToken,
-            refresh_token: refreshToken
-          }).then(({ error }) => {
-            if (error) showStatus('Login failed: ' + error.message, true);
-            else showStatus('✅ Signed in successfully');
-          });
+    browser.addEventListener('loadstart', (event) => {
+      if (event.url.startsWith('com.asphalts.legacy://login')) {
+        browser.close();
+        const hash = event.url.split('#')[1] || event.url.split('?')[1];
+        if (hash) {
+          const params = new URLSearchParams(hash);
+          const accessToken = params.get('access_token');
+          const refreshToken = params.get('refresh_token');
+          if (accessToken) {
+            supabase.auth.setSession({
+              access_token: accessToken,
+              refresh_token: refreshToken
+            }).then(({ error }) => {
+              if (error) showStatus('Login failed: ' + error.message, true);
+              else showStatus('✅ Signed in successfully');
+            });
+          }
         }
       }
-    }
-  });
+    });
+
+  } else {
+    // Fallback — opens in system browser
+    window.open(data.url, '_system');
+  }
 }
+
 
 // ── Email Sign-In ───────────────────────────────────────────
 export async function signInWithEmail(email, password) {
@@ -247,13 +249,32 @@ function stopAutoSync() {
 }
 
 // ── DOM Listeners ───────────────────────────────────────────
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Wait for Cordova to be fully ready before attaching anything
-  document.addEventListener('deviceready', () => {
-    initAuth();
-    document.getElementById('btn-google-signin')?.addEventListener('click', () => signInWithGoogle());
-    document.getElementById('btn-sync-push')?.addEventListener('click', () => pushSync(true));
-    document.getElementById('btn-sync-pull')?.addEventListener('click', () => pullSync(true));
-    document.getElementById('btn-signout')?.addEventListener('click', () => signOut());
-  }, false);
+  initAuth();
+
+  document.getElementById('btn-signin')?.addEventListener('click', () => {
+    const email = document.getElementById('auth-email').value.trim();
+    const password = document.getElementById('auth-password').value;
+    signInWithEmail(email, password);
+  });
+
+  document.getElementById('btn-signup')?.addEventListener('click', () => {
+    const email = document.getElementById('auth-email').value.trim();
+    const password = document.getElementById('auth-password').value;
+    signUpWithEmail(email, password);
+  });
+
+  document.getElementById('btn-google-signin')?.addEventListener('click', () => {
+    console.log('Google signin clicked');
+    signInWithGoogle();
+  });
+
+  document.getElementById('btn-sync-push')?.addEventListener('click', () => pushSync(true));
+  document.getElementById('btn-sync-pull')?.addEventListener('click', () => pullSync(true));
+  document.getElementById('btn-signout')?.addEventListener('click', () => signOut());
 });
+// Google sign-in waits for deviceready separately
+document.addEventListener('deviceready', () => {
+  console.log('Cordova ready');
+}, false);
