@@ -80,11 +80,15 @@ jobs:
       - name: Build Release APK
         run: |
           cordova build android --release -- \
+            --packageType=apk \
             --keystore=release.keystore \
             --storePassword=${{ secrets.KEYSTORE_PASSWORD }} \
             --alias=${{ secrets.KEY_ALIAS }} \
             --password=${{ secrets.KEY_PASSWORD }}
 
+      - name: Find output files
+        run: find platforms/android/app/build/outputs -type f
+        
       - name: Upload Signed APK
         uses: actions/upload-artifact@v4
         with:
