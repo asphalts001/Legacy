@@ -63,14 +63,49 @@ function setSessions(sessions) {
 // ── Google Sign-In ──────────────────────────────────────────
 export async function signInWithGoogle() {
   showStatus('Opening Google sign-in...');
-  const { error } = await supabase.auth.signInWithOAuth({
+  
+  const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
       redirectTo: 'com.asphalts.legacy://login',
-      skipBrowserRedirect: false
+      skipBrowserRedirect: true  // prevent Supabase from redirecting itself
     }
   });
-  if (error) showStatus('Google sign-in failed: ' + error.message, true);
+
+  if (error) {
+    showStatus('Google sign-in failed: ' + error.message, true);
+    return;
+  }
+
+  // Open in system browser via InAppBrowser
+  const browser = cordova.InAppBrowser.open(
+    data.url,
+    '_blank',
+    'location=yes,clearcache=yes,clearsessioncache=yes'
+  );
+
+  // Listen for the deep link redirect
+  browser.addEventListener('loadstart', (event) => {
+    if (event.url.startsWith('com.asphalts.legacy://login')) {
+      browser.close();
+      
+      const hash = event.url.split('#')[1] || event.url.split('?')[1];
+      if (hash) {
+        const params = new URLSearchParams(hash);
+        const accessToken = params.get('access_token');
+        const refreshToken = params.get('refresh_token');
+        if (accessToken) {
+          supabase.auth.setSession({
+            access_token: accessToken,
+            refresh_token: refreshToken
+          }).then(({ error }) => {
+            if (error) showStatus('Login failed: ' + error.message, true);
+            else showStatus('✅ Signed in successfully');
+          });
+        }
+      }
+    }
+  });
 }
 
 // ── Email Sign-In ───────────────────────────────────────────

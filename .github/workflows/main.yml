@@ -52,6 +52,7 @@ jobs:
           cordova plugin add cordova-plugin-file
           cordova plugin add cordova-plugin-customurlscheme \
             --variable URL_SCHEME=com.asphalts.legacy
+          cordova plugin add cordova-plugin-inappbrowser
 
       - name: Pin ALL Gradle wrappers to 8.7
         run: |
