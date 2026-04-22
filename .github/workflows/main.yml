@@ -68,7 +68,25 @@ jobs:
       - name: Decode keystore
         run: |
           echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > release.keystore
+     
+      - name: Create build.json for signing
+        run: |
+          cat > build.json << EOF
+          {
+            "android": {
+              "release": {
+                "keystore": "${{ github.workspace }}/release.keystore",
+                "storePassword": "${{ secrets.KEYSTORE_PASSWORD }}",
+                "alias": "${{ secrets.KEY_ALIAS }}",
+                "password": "${{ secrets.KEY_PASSWORD }}",
+                "keystoreType": "jks"
+              }
+            }
+          }
+          EOF
 
+      - name: Build Release APK
+        run: cordova build android --release -- --packageType=apk
       - name: Build Release APK
         run: |
           cordova build android --release -- \
