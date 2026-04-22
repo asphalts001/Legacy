@@ -68,8 +68,7 @@ export async function signInWithGoogle() {
   }
   showStatus('Opening Google sign-in...');
   // ... rest of function
-}
-  
+
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
@@ -112,7 +111,7 @@ export async function signInWithGoogle() {
       }
     }
   });
-
+}
 
 // ── Email Sign-In ───────────────────────────────────────────
 export async function signInWithEmail(email, password) {
