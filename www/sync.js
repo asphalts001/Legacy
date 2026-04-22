@@ -62,7 +62,13 @@ function setSessions(sessions) {
 
 // ── Google Sign-In ──────────────────────────────────────────
 export async function signInWithGoogle() {
+  if (!window.cordova || !cordova.InAppBrowser) {
+    showStatus('Browser plugin not ready', true);
+    return;
+  }
   showStatus('Opening Google sign-in...');
+  // ... rest of function
+}
   
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
@@ -106,7 +112,7 @@ export async function signInWithGoogle() {
       }
     }
   });
-}
+
 
 // ── Email Sign-In ───────────────────────────────────────────
 export async function signInWithEmail(email, password) {
@@ -243,10 +249,12 @@ function stopAutoSync() {
 
 // ── DOM Listeners ───────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  initAuth();
-
-  document.getElementById('btn-google-signin')?.addEventListener('click', () => signInWithGoogle());
-  document.getElementById('btn-sync-push')?.addEventListener('click', () => pushSync(true));
-  document.getElementById('btn-sync-pull')?.addEventListener('click', () => pullSync(true));
-  document.getElementById('btn-signout')?.addEventListener('click', () => signOut());
+  // Wait for Cordova to be fully ready before attaching anything
+  document.addEventListener('deviceready', () => {
+    initAuth();
+    document.getElementById('btn-google-signin')?.addEventListener('click', () => signInWithGoogle());
+    document.getElementById('btn-sync-push')?.addEventListener('click', () => pushSync(true));
+    document.getElementById('btn-sync-pull')?.addEventListener('click', () => pullSync(true));
+    document.getElementById('btn-signout')?.addEventListener('click', () => signOut());
+  }, false);
 });
