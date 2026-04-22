@@ -21,48 +21,71 @@
   }
 
   function sessionToOldFormat(session) {
-  if (session.type === 'score') {
-    const d = session.details;
-    
-    console.log('🔄 TRACKER sessionToOldFormat processing:', d);
-    
-    const hasFullData = (d.correct !== undefined && d.wrong !== undefined && d.skipped !== undefined);
-    
-    let correct, wrong, skipped, total, accuracy;
-    let topic = d.topic || 'Session';
-    let subject = d.subject || 'MCQ';
-    
-    if (hasFullData) {
-      correct = d.correct;
-      wrong = d.wrong;
-      skipped = d.skipped;
-      total = d.total;
-      accuracy = d.accuracy !== undefined ? d.accuracy :
-        (correct + wrong > 0 ? Math.round((correct / (correct + wrong)) * 100) : 0);
-      
-      console.log('✅ TRACKER using full data ->', { correct, wrong, skipped, total, accuracy });
-    } else {
-      const neetScore = d.score || 0;
-      total = d.total || 0;
-      correct = Math.min(total, Math.ceil(neetScore / 4));
-      wrong = Math.min(total - correct, Math.max(0, (4 * correct - neetScore)));
-      skipped = total - correct - wrong;
-      accuracy = (correct + wrong > 0) ? Math.round((correct / (correct + wrong)) * 100) : 0;
-      
-      console.log('⚠️ TRACKER using estimated data (old format) ->', { correct, wrong, skipped, total, accuracy });
+    if (session.type === 'score') {
+      const d = session.details;
+
+      const hasFullData =
+        d.correct !== undefined &&
+        d.wrong !== undefined &&
+        d.skipped !== undefined;
+
+      let correct, wrong, skipped, total, accuracy;
+      let topic = d.topic || 'Session';
+      let subject = d.subject || 'MCQ';
+
+      if (hasFullData) {
+        correct = d.correct;
+        wrong = d.wrong;
+        skipped = d.skipped;
+        total = d.total;
+        accuracy =
+          d.accuracy !== undefined
+            ? d.accuracy
+            : correct + wrong > 0
+            ? Math.round((correct / (correct + wrong)) * 100)
+            : 0;
+      } else {
+        const neetScore = d.score || 0;
+        total = d.total || 0;
+        correct = Math.min(total, Math.ceil(neetScore / 4));
+        wrong = Math.min(
+          total - correct,
+          Math.max(0, 4 * correct - neetScore)
+        );
+        skipped = total - correct - wrong;
+        accuracy =
+          correct + wrong > 0
+            ? Math.round((correct / (correct + wrong)) * 100)
+            : 0;
+      }
+
+      return {
+        type: 'score',
+        ts: session.timestamp,
+        subject,
+        topic,
+        score: accuracy,
+        correct,
+        wrong,
+        skipped,
+        total,
+        attempted: correct + wrong
+      };
     }
-    
-    return {
-      type: 'score',
-      ts: session.timestamp,
-      subject, topic,
-      score: accuracy,
-      correct, wrong, skipped, total,
-      attempted: correct + wrong
-    };
+
+    // ✅ FIX: added proper read handling + return
+    if (session.type === 'read') {
+      return {
+        type: 'read',
+        ts: session.timestamp,
+        subject: session.details.subject || 'Reading',
+        setId: session.details.setId
+      };
+    }
+
+    return null;
   }
-  // ... read handling ...
-}
+
   // custom computeStats override
   function computeStats(sessions) {
     const scoreSessions = sessions.filter((s) => s.type === 'score');
@@ -96,8 +119,8 @@
         acc =
           attemptedEstimate > 0
             ? Math.round(
-                ((d.score + attemptedEstimate) /
-                  (4 * attemptedEstimate)) *
+                (d.score + attemptedEstimate) /
+                  (4 * attemptedEstimate) *
                   100
               )
             : 0;
@@ -124,44 +147,45 @@
   }
 
   window.Tracker = {
+    logScore: function (details) {
+      let sessionDetails;
 
-  
-  //debug 
-  
-  logScore: function(details) {
-  console.log('📥 TRACKER received logScore:', details);
-  
-  let sessionDetails;
-  if (typeof details === 'object' && details !== null) {
-    sessionDetails = {
-      subject: details.subject || 'MCQ',
-      topic: details.topic || 'Session',
-      score: details.score ?? 0,
-      correct: details.correct ?? 0,
-      wrong: details.wrong ?? 0,
-      skipped: details.skipped ?? 0,
-      total: details.total ?? 0,
-      accuracy: details.accuracy ?? (details.correct + details.wrong > 0 
-        ? Math.round((details.correct / (details.correct + details.wrong)) * 100) 
-        : 0)
-    };
-  } else {
-    const [score, total, subject = 'MCQ', topic = 'Session'] = arguments;
-    sessionDetails = { subject, topic, score, total };
-  }
-  
-  console.log('💾 TRACKER storing sessionDetails:', sessionDetails);
-  
-  state.sessions.push({
-    type: 'score',
-    timestamp: Date.now(),
-    details: sessionDetails
-  });
-  state.stats = computeStats(state.sessions);
-  persist();
-},
+      if (typeof details === 'object' && details !== null) {
+        sessionDetails = {
+          subject: details.subject || 'MCQ',
+          topic: details.topic || 'Session',
+          score: details.score ?? 0,
+          correct: details.correct ?? 0,
+          wrong: details.wrong ?? 0,
+          skipped: details.skipped ?? 0,
+          total: details.total ?? 0,
+          accuracy:
+            details.accuracy ??
+            (details.correct + details.wrong > 0
+              ? Math.round(
+                  (details.correct /
+                    (details.correct + details.wrong)) *
+                    100
+                )
+              : 0)
+        };
+      } else {
+        const [score, total, subject = 'MCQ', topic = 'Session'] =
+          arguments;
+        sessionDetails = { subject, topic, score, total };
+      }
 
-   logRead: function (setId, subject = 'Reading') {
+      state.sessions.push({
+        type: 'score',
+        timestamp: Date.now(),
+        details: sessionDetails
+      });
+
+      state.stats = computeStats(state.sessions);
+      persist();
+    },
+
+    logRead: function (setId, subject = 'Reading') {
       state.sessions.push({
         type: 'read',
         timestamp: Date.now(),
@@ -170,6 +194,12 @@
 
       state.stats = computeStats(state.sessions);
       persist();
+    },
+
+    // ✅ FIX: comma added
+    reload: function () {
+      state = loadState();
+      window.dispatchEvent(new CustomEvent('tracker:update'));
     },
 
     getStats: function () {
@@ -182,11 +212,13 @@
       };
     },
 
-    getRecent: function(limit = 10) {
-  return state.sessions.slice(-limit).reverse()
-    .map(sessionToOldFormat)
-    .filter(s => s !== null);
-},
+    getRecent: function (limit = 10) {
+      return state.sessions
+        .slice(-limit)
+        .reverse()
+        .map(sessionToOldFormat)
+        .filter((s) => s !== null);
+    },
 
     exportJSON: function () {
       return JSON.stringify(

@@ -1,6 +1,7 @@
-
-
 // sync.js – robust version
+// Handles authentication (Google, email) and cloud sync for session data.
+// Uses Supabase as backend and Cordova InAppBrowser for OAuth redirects.
+
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
 const SUPABASE_URL = 'https://oscpkrgxjpsyoylxdpxg.supabase.co';
@@ -9,10 +10,14 @@ const SYNC_API_URL = `${SUPABASE_URL}/functions/v1/sync-api`;
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-let currentUser = null;
-let syncInterval = null;
+let currentUser = null;     // Currently authenticated Supabase user
+let syncInterval = null;    // Handle for hourly auto-sync
 
-// Handle deep link redirect from Google auth
+// ----------------------------------------------------------------------
+// Deep link handler for Google OAuth redirect (Cordova specific)
+// Google redirects to com.asphalts.legacy://login?access_token=...
+// This function extracts the tokens and sets the Supabase session.
+// ----------------------------------------------------------------------
 window.handleOpenURL = function(url) {
   if (url.includes('com.asphalts.legacy://login')) {
     const hash = url.split('#')[1] || url.split('?')[1];
@@ -33,6 +38,9 @@ window.handleOpenURL = function(url) {
   }
 };
 
+// ----------------------------------------------------------------------
+// Display a temporary status message in the UI and console.
+// ----------------------------------------------------------------------
 function showStatus(msg, isError = false) {
   const el = document.getElementById('sync-status-msg');
   if (el) {
@@ -43,6 +51,9 @@ function showStatus(msg, isError = false) {
   console.log(msg);
 }
 
+// ----------------------------------------------------------------------
+// Retrieve the current list of sessions from the global StateManager.
+// ----------------------------------------------------------------------
 function getCurrentSessions() {
   if (!window.StateManager) {
     console.error('StateManager not loaded!');
@@ -52,18 +63,32 @@ function getCurrentSessions() {
   return state.sessions || [];
 }
 
+// ----------------------------------------------------------------------
+// Save a new session list, recalc stats, persist, and notify the UI.
+// If Tracker is present, call its reload() method to refresh in-memory state.
+// ----------------------------------------------------------------------
 function setSessions(sessions) {
   if (!window.StateManager) return false;
+
   const state = window.StateManager.loadState();
   state.sessions = sessions;
   state.stats = window.StateManager.computeStats(sessions);
   window.StateManager.saveState(state);
-  window.dispatchEvent(new Event('tracker:update'));
+
+  // Notify Tracker to reload its internal state from localStorage.
+  // Tracker.reload() will itself dispatch a 'tracker:update' event.
+  if (window.Tracker && window.Tracker.reload) {
+    window.Tracker.reload();
+  } else {
+    // Fallback for older or missing Tracker implementation.
+    window.dispatchEvent(new Event('tracker:update'));
+  }
   return true;
 }
 
-// ── Google Sign-In ──────────────────────────────────────────
-
+// ----------------------------------------------------------------------
+// Google Sign-In (opens system browser because Google blocks embedded WebViews)
+// ----------------------------------------------------------------------
 export async function signInWithGoogle() {
   showStatus('Opening Google sign-in...');
 
@@ -80,8 +105,7 @@ export async function signInWithGoogle() {
     return;
   }
 
-  // _system opens in device's default browser (Chrome)
-  // Required — Google blocks OAuth in embedded WebViews
+  // _system opens in the device's default browser (required for Google OAuth)
   if (window.cordova) {
     cordova.InAppBrowser.open(data.url, '_system', '');
   } else {
@@ -89,26 +113,34 @@ export async function signInWithGoogle() {
   }
 }
 
-// ── Email Sign-In ───────────────────────────────────────────
+// ----------------------------------------------------------------------
+// Email / Password Sign-In
+// ----------------------------------------------------------------------
 export async function signInWithEmail(email, password) {
   const { error } = await supabase.auth.signInWithPassword({ email, password });
   if (error) showStatus('Sign-in failed: ' + error.message, true);
 }
 
-// ── Email Sign-Up ───────────────────────────────────────────
+// ----------------------------------------------------------------------
+// Email / Password Sign-Up (sends confirmation email)
+// ----------------------------------------------------------------------
 export async function signUpWithEmail(email, password) {
   const { error } = await supabase.auth.signUp({ email, password });
   if (error) showStatus('Sign-up failed: ' + error.message, true);
   else showStatus('✅ Check your email to confirm');
 }
 
-// ── Sign Out ────────────────────────────────────────────────
+// ----------------------------------------------------------------------
+// Sign Out
+// ----------------------------------------------------------------------
 export async function signOut() {
   await supabase.auth.signOut();
   showStatus('Signed out');
 }
 
-// ── Sync ────────────────────────────────────────────────────
+// ----------------------------------------------------------------------
+// Push local sessions to the cloud (PUT /sync-api)
+// ----------------------------------------------------------------------
 async function pushSync(showToast = true) {
   if (!currentUser) {
     if (showToast) showStatus('Not logged in', true);
@@ -133,6 +165,7 @@ async function pushSync(showToast = true) {
     if (!res.ok) throw new Error(await res.text());
     if (showToast) showStatus('✅ Cloud updated');
     return true;
+
   } catch (err) {
     console.error(err);
     if (showToast) showStatus(`Push failed: ${err.message}`, true);
@@ -140,6 +173,9 @@ async function pushSync(showToast = true) {
   }
 }
 
+// ----------------------------------------------------------------------
+// Pull sessions from the cloud and overwrite local state (GET /sync-api)
+// ----------------------------------------------------------------------
 async function pullSync(showToast = true) {
   if (!currentUser) {
     if (showToast) showStatus('Not logged in', true);
@@ -161,6 +197,7 @@ async function pullSync(showToast = true) {
     if (!res.ok) throw new Error(await res.text());
 
     let cloudData = await res.json();
+    // The Edge Function may wrap the array in an object with a 'data' property.
     if (cloudData && typeof cloudData === 'object' && !Array.isArray(cloudData)) {
       cloudData = cloudData.data || [];
     }
@@ -170,6 +207,7 @@ async function pullSync(showToast = true) {
     const success = setSessions(cloudData);
     if (success && showToast) showStatus(`✅ Restored ${cloudData.length} sessions`);
     return success;
+
   } catch (err) {
     console.error(err);
     if (showToast) showStatus(`Restore failed: ${err.message}`, true);
@@ -177,10 +215,18 @@ async function pullSync(showToast = true) {
   }
 }
 
-// ── Auth Init ───────────────────────────────────────────────
+// ----------------------------------------------------------------------
+// UI helpers: toggle visibility of auth section vs. sync controls.
+// Also populates the logged-in user's email display.
+// ----------------------------------------------------------------------
 function updateUIForLoggedInUser() {
   document.getElementById('auth-section')?.classList.add('hidden');
   document.getElementById('sync-controls')?.classList.remove('hidden');
+
+  const emailEl = document.getElementById('user-email-display');
+  if (emailEl && currentUser) {
+    emailEl.textContent = currentUser.email;
+  }
 }
 
 function updateUIForLoggedOutUser() {
@@ -188,17 +234,36 @@ function updateUIForLoggedOutUser() {
   document.getElementById('sync-controls')?.classList.add('hidden');
 }
 
+// ----------------------------------------------------------------------
+// Auto-sync every hour (silent push, no toast)
+// ----------------------------------------------------------------------
+function startAutoSync() {
+  if (syncInterval) clearInterval(syncInterval);
+  syncInterval = setInterval(() => pushSync(false), 3600000);
+}
+
+function stopAutoSync() {
+  if (syncInterval) {
+    clearInterval(syncInterval);
+    syncInterval = null;
+  }
+}
+
+// ----------------------------------------------------------------------
+// Initialise authentication state, set up listeners, and start auto-sync.
+// ----------------------------------------------------------------------
 async function initAuth() {
   const { data: { session } } = await supabase.auth.getSession();
   if (session) {
     currentUser = session.user;
     updateUIForLoggedInUser();
     startAutoSync();
-    await pullSync(false);
+    await pullSync(false);  // Silent pull on startup
   } else {
     updateUIForLoggedOutUser();
   }
 
+  // Listen for future auth changes (sign in / sign out)
   supabase.auth.onAuthStateChange((event, session) => {
     if (event === 'SIGNED_IN') {
       currentUser = session.user;
@@ -213,17 +278,9 @@ async function initAuth() {
   });
 }
 
-function startAutoSync() {
-  if (syncInterval) clearInterval(syncInterval);
-  syncInterval = setInterval(() => pushSync(false), 3600000);
-}
-
-function stopAutoSync() {
-  if (syncInterval) clearInterval(syncInterval);
-}
-
-// ── DOM Listeners ───────────────────────────────────────────
-
+// ----------------------------------------------------------------------
+// Wire up DOM event listeners once the page is loaded.
+// ----------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
   initAuth();
 
@@ -248,7 +305,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-sync-pull')?.addEventListener('click', () => pullSync(true));
   document.getElementById('btn-signout')?.addEventListener('click', () => signOut());
 });
-// Google sign-in waits for deviceready separately
+
+// Cordova deviceready event – Google sign-in handler is already registered above.
 document.addEventListener('deviceready', () => {
   console.log('Cordova ready');
 }, false);
