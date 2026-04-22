@@ -10,6 +10,27 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 let currentUser = null;
 let syncInterval = null;
 
+// Handle deep link redirect from Google auth
+window.handleOpenURL = function(url) {
+  if (url.includes('com.asphalts.legacy://login')) {
+    const hash = url.split('#')[1] || url.split('?')[1];
+    if (hash) {
+      const params = new URLSearchParams(hash);
+      const accessToken = params.get('access_token');
+      const refreshToken = params.get('refresh_token');
+      if (accessToken) {
+        supabase.auth.setSession({
+          access_token: accessToken,
+          refresh_token: refreshToken
+        }).then(({ data, error }) => {
+          if (error) showStatus('Login failed: ' + error.message, true);
+          else showStatus('✅ Signed in successfully');
+        });
+      }
+    }
+  }
+};
+
 function showStatus(msg, isError = false) {
   const el = document.getElementById('sync-status-msg');
   if (el) {
@@ -20,7 +41,6 @@ function showStatus(msg, isError = false) {
   console.log(msg);
 }
 
-// Helper to get current sessions from StateManager
 function getCurrentSessions() {
   if (!window.StateManager) {
     console.error('StateManager not loaded!');
@@ -30,7 +50,6 @@ function getCurrentSessions() {
   return state.sessions || [];
 }
 
-// Helper to replace sessions and recalc stats
 function setSessions(sessions) {
   if (!window.StateManager) return false;
   const state = window.StateManager.loadState();
@@ -41,6 +60,39 @@ function setSessions(sessions) {
   return true;
 }
 
+// ── Google Sign-In ──────────────────────────────────────────
+export async function signInWithGoogle() {
+  showStatus('Opening Google sign-in...');
+  const { error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: {
+      redirectTo: 'com.asphalts.legacy://login',
+      skipBrowserRedirect: false
+    }
+  });
+  if (error) showStatus('Google sign-in failed: ' + error.message, true);
+}
+
+// ── Email Sign-In ───────────────────────────────────────────
+export async function signInWithEmail(email, password) {
+  const { error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error) showStatus('Sign-in failed: ' + error.message, true);
+}
+
+// ── Email Sign-Up ───────────────────────────────────────────
+export async function signUpWithEmail(email, password) {
+  const { error } = await supabase.auth.signUp({ email, password });
+  if (error) showStatus('Sign-up failed: ' + error.message, true);
+  else showStatus('✅ Check your email to confirm');
+}
+
+// ── Sign Out ────────────────────────────────────────────────
+export async function signOut() {
+  await supabase.auth.signOut();
+  showStatus('Signed out');
+}
+
+// ── Sync ────────────────────────────────────────────────────
 async function pushSync(showToast = true) {
   if (!currentUser) {
     if (showToast) showStatus('Not logged in', true);
@@ -93,7 +145,6 @@ async function pullSync(showToast = true) {
     if (!res.ok) throw new Error(await res.text());
 
     let cloudData = await res.json();
-    // Support both { data: [...] } and direct array
     if (cloudData && typeof cloudData === 'object' && !Array.isArray(cloudData)) {
       cloudData = cloudData.data || [];
     }
@@ -110,21 +161,26 @@ async function pullSync(showToast = true) {
   }
 }
 
-// Auth & UI updates (keep your existing code for signIn, signUp, etc.)
-// ... (I'll assume you keep your original auth handlers, just replace push/pull)
+// ── Auth Init ───────────────────────────────────────────────
+function updateUIForLoggedInUser() {
+  document.getElementById('auth-section')?.classList.add('hidden');
+  document.getElementById('sync-controls')?.classList.remove('hidden');
+}
 
-// Initialize
+function updateUIForLoggedOutUser() {
+  document.getElementById('auth-section')?.classList.remove('hidden');
+  document.getElementById('sync-controls')?.classList.add('hidden');
+}
+
 async function initAuth() {
   const { data: { session } } = await supabase.auth.getSession();
   if (session) {
     currentUser = session.user;
-    document.getElementById('auth-section')?.classList.add('hidden');
-    document.getElementById('sync-controls')?.classList.remove('hidden');
+    updateUIForLoggedInUser();
     startAutoSync();
-    await pullSync(false); // silent pull on login
+    await pullSync(false);
   } else {
-    document.getElementById('auth-section')?.classList.remove('hidden');
-    document.getElementById('sync-controls')?.classList.add('hidden');
+    updateUIForLoggedOutUser();
   }
 
   supabase.auth.onAuthStateChange((event, session) => {
@@ -145,12 +201,17 @@ function startAutoSync() {
   if (syncInterval) clearInterval(syncInterval);
   syncInterval = setInterval(() => pushSync(false), 3600000);
 }
-function stopAutoSync() { if (syncInterval) clearInterval(syncInterval); }
 
-// DOM listeners (attach after loading)
+function stopAutoSync() {
+  if (syncInterval) clearInterval(syncInterval);
+}
+
+// ── DOM Listeners ───────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initAuth();
-  // ... attach your button listeners (signin, signup, sync-push, sync-pull)
+
+  document.getElementById('btn-google-signin')?.addEventListener('click', () => signInWithGoogle());
   document.getElementById('btn-sync-push')?.addEventListener('click', () => pushSync(true));
   document.getElementById('btn-sync-pull')?.addEventListener('click', () => pullSync(true));
+  document.getElementById('btn-signout')?.addEventListener('click', () => signOut());
 });
