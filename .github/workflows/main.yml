@@ -84,7 +84,7 @@ jobs:
             -srcalias ${{ secrets.ANDROID_KEY_ALIAS }} \
             -destalias ${{ secrets.ANDROID_KEY_ALIAS }} \
             -noprompt
-      
+
       - name: Build Release APK
         run: cordova build android --release -- --packageType=apk
 
@@ -102,8 +102,26 @@ jobs:
           $ANDROID_HOME/build-tools/33.0.2/apksigner verify --verbose \
             platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
 
-      - name: Upload Signed APK
+      - name: Rename APK
+        run: |
+          mv platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk \
+             platforms/android/app/build/outputs/apk/release/legacy-v1.0.${{ github.run_number }}.apk
+
+      - name: Upload Signed APK (artifact)
         uses: actions/upload-artifact@v4
         with:
           name: legacy-app-release
-          path: platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
+          path: platforms/android/app/build/outputs/apk/release/legacy-v1.0.${{ github.run_number }}.apk
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.${{ github.run_number }}
+          name: "Legacy v1.0.${{ github.run_number }}"
+          body: |
+            Built from commit ${{ github.sha }}
+            Branch: ${{ github.ref_name }}
+          files: platforms/android/app/build/outputs/apk/release/legacy-v1.0.${{ github.run_number }}.apk
+          make_latest: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
