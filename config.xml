@@ -30,7 +30,7 @@
 
     <preference name="AndroidLaunchMode" value="singleTask" />
     <preference name="android-minSdkVersion" value="29" />
-    <preference name="android-targetSdkVersion" value="35" />
+    <preference name="android-targetSdkVersion" value="34" />
     <preference name="Fullscreen" value="false" />
     <preference name="AndroidWindowSplashScreenAnimatedIcon" value="www/icon.png" />
 
