@@ -7,7 +7,7 @@ on:
 
 permissions:
   contents: write
-  
+
 jobs:
   android-build:
     runs-on: ubuntu-latest
@@ -30,7 +30,7 @@ jobs:
       - name: Install Cordova
         run: npm install -g cordova@12
 
-      - name: Install Gradle 8.7 and shadow system Gradle
+      - name: Install Gradle 8.7
         run: |
           wget -q https://services.gradle.org/distributions/gradle-8.7-bin.zip -O /tmp/gradle-8.7.zip
           unzip -q /tmp/gradle-8.7.zip -d /opt/gradle
@@ -40,11 +40,11 @@ jobs:
           sudo ln -sf /opt/gradle/gradle-8.7/bin/gradle /usr/share/gradle-9.4.1/bin/gradle
           gradle --version
 
-      - name: Install Android Build Tools
+      - name: Install Android SDK (API 35)
         run: |
           echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager \
-            "build-tools;33.0.2" \
-            "platforms;android-34"
+            "build-tools;34.0.0" \
+            "platforms;android-35"
 
       - name: Add Android Platform
         run: cordova platform add android@12.0.1
@@ -54,10 +54,13 @@ jobs:
           cordova plugin add cordova-plugin-media
           cordova plugin add cordova-plugin-file
           cordova plugin add cordova-plugin-customurlscheme \
-            --variable URL_SCHEME=com.asphalts.legacy
+            --variable URL_SCHEME=legacy
           cordova plugin add cordova-plugin-inappbrowser
 
-      - name: Pin ALL Gradle wrappers to 8.7
+      - name: Prepare Cordova
+        run: cordova prepare android
+
+      - name: Pin Gradle wrappers to 8.7
         run: |
           find platforms/android -name "gradle-wrapper.properties" | while read f; do
             sed -i 's|distributionUrl=.*|distributionUrl=https\\://services.gradle.org/distributions/gradle-8.7-all.zip|' "$f"
@@ -91,9 +94,9 @@ jobs:
       - name: Build Release APK
         run: cordova build android --release -- --packageType=apk
 
-      - name: Sign APK manually
+      - name: Sign APK
         run: |
-          $ANDROID_HOME/build-tools/33.0.2/apksigner sign \
+          $ANDROID_HOME/build-tools/34.0.0/apksigner sign \
             --ks ${{ github.workspace }}/release.jks \
             --ks-pass pass:${{ secrets.ANDROID_KEYSTORE_PASSWORD }} \
             --key-pass pass:${{ secrets.ANDROID_KEY_PASSWORD }} \
@@ -102,7 +105,7 @@ jobs:
 
       - name: Verify signing
         run: |
-          $ANDROID_HOME/build-tools/33.0.2/apksigner verify --verbose \
+          $ANDROID_HOME/build-tools/34.0.0/apksigner verify --verbose \
             platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
 
       - name: Rename APK
@@ -110,7 +113,7 @@ jobs:
           mv platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk \
              platforms/android/app/build/outputs/apk/release/legacy-v1.0.${{ github.run_number }}.apk
 
-      - name: Upload Signed APK (artifact)
+      - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: legacy-app-release
