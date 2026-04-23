@@ -1537,14 +1537,23 @@ function handleSearch(q) {
         new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi'),
         '<mark class="search-hl">$1</mark>'
       );
-      results.push(clone);
+      // Wrap named-rxn, trap-card, and flow in a card-like container so they sit properly in the grid
+      if (el.classList.contains('named-rxn') || el.classList.contains('trap-card') || el.classList.contains('flow')) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'card';
+        wrapper.style.cssText = 'padding:16px 18px;';
+        wrapper.appendChild(clone);
+        results.push(wrapper);
+      } else {
+        results.push(clone);
+      }
     }
   });
 
   if (results.length === 0) {
     output.innerHTML = '<p style="color:var(--muted);font-size:14px;padding:20px 0">No results found for "<b style=\'color:var(--text)\'>' + q + '</b>"</p>';
   } else {
-    output.innerHTML = `<p style="color:var(--muted);font-size:12px;margin-bottom:16px;font-family:var(--mono)">${results.length} result${results.length>1?'s':''} for "${q}"</p>`;
+    output.innerHTML = `<p style="color:var(--text-muted);font-size:12px;margin-bottom:16px;font-family:var(--mono)">${results.length} result${results.length>1?'s':''} for "${q}"</p>`;
     const grid = document.createElement('div');
     grid.className = 'grid';
     results.forEach(r => grid.appendChild(r));

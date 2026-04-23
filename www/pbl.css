@@ -165,7 +165,7 @@ nav.tabs::-webkit-scrollbar { display: none; }
 
 .tab-btn {
   font-family: 'Cinzel', serif;
-  font-size: 9.5px;
+  font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -290,8 +290,8 @@ main {
 /* List items */
 .card ul { list-style: none; }
 .card ul li {
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.75;
   color: var(--text-body);
   padding: 6px 0;
   border-bottom: 1px solid rgba(184,150,46,0.12);
@@ -347,7 +347,7 @@ main {
 }
 .order-item {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 13px;
+  font-size: 14px;
   background: rgba(201,168,76,0.1);
   padding: 4px 12px;
   border: 1px solid var(--border-ornate);
@@ -365,7 +365,7 @@ main {
 .rxn-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13.5px;
+  font-size: 14.5px;
   color: var(--text-body);
 }
 .rxn-table th {
@@ -420,7 +420,7 @@ main {
 .flow:last-child { border-bottom: none; }
 .flow-node {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 13px;
+  font-size: 14px;
   background: rgba(201,168,76,0.08);
   padding: 4px 12px;
   border: 1px solid var(--border-ornate);
@@ -454,18 +454,21 @@ main {
   font-weight: 700;
 }
 .trap-card p {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-body);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* Named Reaction */
 .named-rxn {
   padding: 14px 16px;
   border-left: 4px solid var(--navy);
-  background: rgba(26,37,64,0.03);
+  background: linear-gradient(160deg, #f9f2e3 0%, #f0e6ce 100%);
+  border: 1.5px solid var(--border-ornate);
+  border-left: 4px solid var(--navy);
   border-radius: 0;
   margin-bottom: 16px;
+  box-shadow: 0 2px 8px var(--shadow), inset 0 1px 0 rgba(255,255,255,0.5);
 }
 .named-rxn .rxn-name {
   font-family: 'Cinzel', serif;
@@ -477,9 +480,9 @@ main {
   letter-spacing: 1.5px;
 }
 .named-rxn p {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-body);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 .named-rxn .arrow { color: var(--gold-deep); }
 
@@ -521,4 +524,38 @@ main {
   main { padding: 0 10px 30px; }
   .grid { grid-template-columns: 1fr; }
   .search-wrap { width: 100%; }
+}
+
+/* ── Tablet readability (768px – 1200px) ── */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .tab-btn {
+    font-size: clamp(11.5px, 1.3vw, 13.5px);
+    letter-spacing: 1.5px;
+    padding: 13px 18px;
+  }
+  .sec-heading {
+    font-size: clamp(12px, 1.3vw, 14px);
+    letter-spacing: 4px;
+  }
+  .card-title {
+    font-size: clamp(11.5px, 1.2vw, 13px);
+    letter-spacing: 2px;
+  }
+  .card ul li {
+    font-size: clamp(15.5px, 1.6vw, 17px);
+    line-height: 1.8;
+  }
+  .card { padding: 22px 24px; }
+  .named-rxn .rxn-name {
+    font-size: clamp(12px, 1.2vw, 13.5px);
+  }
+  .named-rxn p,
+  .trap-card p {
+    font-size: clamp(15.5px, 1.6vw, 17px);
+    line-height: 1.75;
+  }
+  .rxn-table { font-size: clamp(14.5px, 1.5vw, 16px); }
+  .rxn-table th { font-size: clamp(10px, 1vw, 11.5px); }
+  .flow-node { font-size: clamp(14px, 1.4vw, 15.5px); }
+  .trap-card .trap-title { font-size: clamp(11px, 1.1vw, 12.5px); }
 }
