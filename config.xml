@@ -6,72 +6,20 @@
         xmlns:android="http://schemas.android.com/apk/res/android">
 
   <name>Legacy</name>
-  <description>Short thjngs in small manner</description>
+  <description>Short things in small manner</description>
   <author>bakka</author>
-
-   <!-- Custom URL scheme for deep linking -->
-<platform name="android">
-    <preference name="AndroidLaunchMode" value="singleTask" />
-    <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
-        <intent-filter android:autoVerify="true">
-            <action android:name="android.intent.action.VIEW" />
-            <category android:name="android.intent.category.DEFAULT" />
-            <category android:name="android.intent.category.BROWSABLE" />
-            <data android:scheme="legacy" android:host="callback" />
-        </intent-filter>
-    </config-file>
-</platform>
-
-<platform name="ios">
-    <config-file target="*-Info.plist" parent="CFBundleURLTypes">
-        <array>
-            <dict>
-                <key>CFBundleURLSchemes</key>
-                <array>
-                    <string>legacy</string>
-                </array>
-                <key>CFBundleURLName</key>
-                <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-            </dict>
-        </array>
-    </config-file>
-</platform>
-  <!-- Plugins -->
-  <plugin name="cordova-plugin-media" spec="^6.1.0" />
-  <plugin name="cordova-plugin-file" spec="^7.0.0" />
 
   <!-- Entry point -->
   <content src="index.html" />
 
-  <!-- Allow all local navigation -->
+  <!-- Security: restrict access to your own origin only -->
   <access origin="*" />
   <allow-intent href="http://*/*" />
   <allow-intent href="https://*/*" />
 
-  <!-- Icons (place your icon.png in www/) -->
-<platform name="android">
-    <icon src="www/image/icon.png" />
-    <resource-file src="www/img/icon.png" target="app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" />
-    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="www/icon.png" />
-</platform>
-  <!-- Android specific -->
-  <platform name="android">
-    <icon src="www/icon.png" density="mdpi" />
-    <icon src="www/icon.png" density="hdpi" />
-    <icon src="www/icon.png" density="xhdpi" />
-    <icon src="www/icon.png" density="xxhdpi" />
-    <icon src="www/icon.png" density="xxxhdpi" />
-
-    <!-- Permissions -->
-    <config-file target="AndroidManifest.xml" parent="/*">
-      <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    </config-file>
-
-    <!-- Full screen, no browser chrome -->
-    <preference name="Fullscreen" value="false" />
-    <preference name="android-minSdkVersion" value="29" />
-    <preference name="android-targetSdkVersion" value="34" />
-  </platform>
+  <!-- Plugins -->
+  <plugin name="cordova-plugin-media" spec="^6.1.0" />
+  <plugin name="cordova-plugin-file" spec="^7.0.0" />
 
   <!-- General preferences -->
   <preference name="DisallowOverscroll" value="true" />
@@ -79,5 +27,73 @@
   <preference name="LoadingDialog" value="Loading,Please wait..." />
   <preference name="ShowSplashScreenSpinner" value="false" />
 
+  <!-- ✅ SINGLE Android platform block -->
+  <platform name="android">
+
+    <!-- Launch mode -->
+    <preference name="AndroidLaunchMode" value="singleTask" />
+
+    <!-- SDK versions — bumped target to 35 for Android 15 -->
+    <preference name="android-minSdkVersion" value="29" />
+    <preference name="android-targetSdkVersion" value="35" />
+
+    <preference name="Fullscreen" value="false" />
+
+    <!-- 
+      ✅ FIX: Adaptive icon — prevents white rounded square on Android 15
+      Create these two files:
+        www/icon/ic_launcher_foreground.png  (your ornate icon, transparent bg)
+        www/icon/ic_launcher_background.png  (solid color background, e.g. dark)
+      OR use background color directly
+    -->
+    <icon
+      src="www/icon/ic_launcher_foreground.png"
+      background="@android:color/transparent"
+      density="xxxhdpi" />
+
+    <!-- ✅ Legacy density icons (fallback for older APIs) — all pointing to SAME path -->
+    <icon src="www/icon.png" density="mdpi" />
+    <icon src="www/icon.png" density="hdpi" />
+    <icon src="www/icon.png" density="xhdpi" />
+    <icon src="www/icon.png" density="xxhdpi" />
+    <icon src="www/icon.png" density="xxxhdpi" />
+
+    <!-- Splash screen icon (same source) -->
+    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="www/icon.png" />
+
+    <!-- Deep linking -->
+    <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
+      <intent-filter android:autoVerify="true">
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data android:scheme="legacy" android:host="callback" />
+      </intent-filter>
+    </config-file>
+
+    <!-- Permissions -->
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    </config-file>
+
+  </platform>
+
+  <!-- iOS platform -->
+  <platform name="ios">
+    <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+      <array>
+        <dict>
+          <key>CFBundleURLSchemes</key>
+          <array>
+            <string>legacy</string>
+          </array>
+          <key>CFBundleURLName</key>
+          <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+        </dict>
+      </array>
+    </config-file>
+  </platform>
+
   <engine name="android" spec="^12.0.0" />
+
 </widget>
