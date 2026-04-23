@@ -4,434 +4,161 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <link rel="stylesheet" href="theme.css">
-  <title>Bhalo hai🐻🐻🤙🤙</title>
-
+  <title>Royalty</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
-
+    /* ── Your existing CSS (keep as is) ── */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: var(--bg, #0a0a0f);
-      color: var(--text, #e8e8f0);
-      font-family: 'Crimson Pro', Georgia, serif;
-      font-size: 16px;
-      min-height: 100vh;
-      padding: 0 0 80px;
-      max-width: 480px;
-      margin: 0 auto;
-      -webkit-text-size-adjust: 100%;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    /* ── Ambient background glow ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      background:
-        radial-gradient(ellipse 55% 35% at 15% 5%,  rgba(124,106,240,0.08) 0%, transparent 65%),
-        radial-gradient(ellipse 45% 30% at 85% 90%, rgba(78,205,196,0.05)  0%, transparent 65%);
-      pointer-events: none;
-    }
-
-    /* ── Page content sits above glow ── */
+    body { background: var(--bg, #0a0a0f); color: var(--text, #fff); font-family: 'Crimson Pro', Georgia, serif; font-size: 16px; min-height: 100vh; padding: 0 0 80px; max-width: 480px; margin: 0 auto; -webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    body::before { content: ''; position: fixed; inset: 0; z-index: 0; background: radial-gradient(ellipse 55% 35% at 15% 5%, rgba(201,168,76,0.07) 0%, transparent 65%), radial-gradient(ellipse 45% 30% at 85% 90%, rgba(139,26,26,0.05) 0%, transparent 65%); pointer-events: none; }
     .page { position: relative; z-index: 1; padding: 0 18px; }
-
-    /* ══════════════════════════════════════
-       HEADER
-    ══════════════════════════════════════ */
-    .hub-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      padding: 28px 18px 20px;
-      position: relative;
-      z-index: 1;
-    }
-
+    .hub-header { display: flex; align-items: flex-start; justify-content: space-between; padding: 28px 18px 20px; position: relative; z-index: 1; }
     .header-left { flex: 1; }
-
-    .hub-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      color: var(--text, #e8e8f0);
-    }
-    .hub-title .accent { color: var(--phys, #7c6af0); }
-
-    .hub-date {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      color: var(--muted, #6b6b8a);
-      margin-top: 5px;
-      line-height: 1.4;
-    }
-
-    /* ── Music toggle ── */
-    #music-toggle {
-      background: transparent;
-      border: 1px solid #2e2e4e;
-      border-radius: 8px;
-      padding: 7px 13px;
-      font-size: 15px;
-      cursor: pointer;
-      flex-shrink: 0;
-      margin-top: 2px;
-      margin-left: 12px;
-      transition: color 0.2s, border-color 0.2s, background 0.2s;
-      color: var(--muted, #6b6b8a);
-      line-height: 1;
-    }
-    #music-toggle.on {
-      color: var(--accent, #7c6af0);
-      border-color: var(--accent, #7c6af0);
-      background: rgba(124,106,240,0.08);
-    }
-
-    /* ══════════════════════════════════════
-       SECTION LABEL
-    ══════════════════════════════════════ */
-    .section-label {
-      font-family: 'Syne', sans-serif;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted, #6b6b8a);
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      line-height: 1;
-    }
-    .section-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border, #1e1e2e);
-    }
-
-    /* ══════════════════════════════════════
-       SUBJECT BUTTONS
-    ══════════════════════════════════════ */
+    .hub-title { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 550; letter-spacing: -0.02em; line-height: 1.2; color: var(--text, #e8e8f0); }
+    .hub-title .accent { color: var(--gold-light, #e8c97a); }
+    .hub-date { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--navy-light: #243259;); opacity: 0.65; margin-top: 5px; line-height: 1.4; }
+    #music-toggle { background: transparent; border: 1px solid rgba(184,150,46,0.3); border-radius: 8px; padding: 7px 13px; font-size: 15px; cursor: pointer; flex-shrink: 0; margin-top: 2px; margin-left: 12px; transition: color 0.2s, border-color 0.2s, background 0.2s; color: var(--gold-light, #e8c97a); opacity: 0.55; line-height: 1; }
+    #music-toggle.on { color: var(--gold-light, #e8c97a); border-color: var(--gold-light, #e8c97a); background: rgba(184,150,46,0.1); opacity: 1; }
+    .section-label { font-family: 'Syne', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-light, #e8c97a); opacity: 0.7; margin-bottom: 12px; margin-top: 10px; display: flex; align-items: center; gap: 10px; line-height: 1; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(184,150,46,0.25); }
     .section { margin-bottom: 32px; }
-
     .subject-grid { display: flex; flex-direction: column; gap: 10px; }
-
-    .btn-subject {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 15px 16px;
-      background: var(--surface, #111118);
-      border: 1px solid var(--border, #1e1e2e);
-      border-radius: 12px;
-      color: var(--text, #e8e8f0);
-      font-family: 'Syne', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-decoration: none;
-      cursor: pointer;
-      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
-      line-height: 1;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* animated shimmer on press */
-    .btn-subject::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.04) 50%, transparent 70%);
-      transform: translateX(-100%);
-      transition: transform 0.4s;
-    }
+    .btn-subject { display: flex; align-items: center; gap: 14px; padding: 15px 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(184,150,46,0.22); border-radius: 12px; color: #f0e8d0; font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-decoration: none; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s, background 0.2s; line-height: 1; position: relative; overflow: hidden; }
+    .btn-subject::after { content: ''; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.04) 50%, transparent 70%); transform: translateX(-100%); transition: transform 0.4s; }
     .btn-subject:active::after { transform: translateX(100%); }
     .btn-subject:active { transform: scale(0.98); }
-
-    .btn-subject.chem { --c: var(--chem, #4ecdc4); }
-    .btn-subject.phys { --c: var(--phys, #7c6af0); }
-    .btn-subject.mcq  { --c: var(--mcq,  #e05a5a); }
-
-    .btn-subject:hover {
-      border-color: var(--c);
-      box-shadow: 0 0 0 1px var(--c), 0 4px 20px rgba(0,0,0,0.3);
-      background: color-mix(in srgb, var(--c) 5%, var(--surface, #111118));
-    }
-
-    .subj-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 9px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 19px;
-      line-height: 1;
-      background: color-mix(in srgb, var(--c) 12%, transparent);
-      flex-shrink: 0;
-      transition: transform 0.2s;
-    }
+    .btn-subject.chem { --c: #4ecdc4; }
+    .btn-subject.phys { --c: var(--gold-light, #e8c97a); }
+    .btn-subject.mcq { --c: #e05a5a; }
+    .btn-subject.egypt { --c: #d4a843; }
+    .btn-subject:hover { border-color: var(--c); box-shadow: 0 0 0 1px var(--c), 0 4px 20px rgba(0,0,0,0.3); background: color-mix(in srgb, var(--c) 5%, var(--surface, #111118)); }
+    .subj-icon { width: 38px; height: 38px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 19px; line-height: 1; background: color-mix(in srgb, var(--c) 12%, transparent); flex-shrink: 0; transition: transform 0.2s; }
     .btn-subject:hover .subj-icon { transform: scale(1.08); }
-
     .subj-label { flex: 1; }
-
-    .subj-meta {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 9px;
-      color: var(--muted, #6b6b8a);
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      margin-top: 2px;
-    }
-
-    .subj-arrow {
-      color: var(--muted, #6b6b8a);
-      font-size: 20px;
-      line-height: 1;
-      transition: transform 0.2s, color 0.2s;
-    }
-    .btn-subject:hover .subj-arrow {
-      transform: translateX(3px);
-      color: var(--c);
-    }
-
-    /* ══════════════════════════════════════
-       STATS ROW
-    ══════════════════════════════════════ */
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-    }
-
-    .stat-box {
-      background: var(--surface, #111118);
-      border: 1px solid var(--border, #1e1e2e);
-      border-radius: 10px;
-      padding: 14px 10px;
-      text-align: center;
-      transition: border-color 0.2s;
-    }
-    .stat-box:hover { border-color: var(--border-hi, #2e2e4e); }
-
-    .stat-val {
-      font-family: 'Syne', sans-serif;
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--gold, #d4a843);
-      line-height: 1;
-    }
-    .stat-lbl {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 9px;
-      color: var(--muted, #6b6b8a);
-      margin-top: 5px;
-      line-height: 1.3;
-      letter-spacing: 0.06em;
-    }
-
-    /* ══════════════════════════════════════
-       ACTIVITY FEED
-    ══════════════════════════════════════ */
-    .activity-list {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .activity-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 11px;
-      padding: 11px 0;
-      border-bottom: 1px solid var(--border, #1e1e2e);
-    }
+    .subj-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--gold-light, #e8c97a); opacity: 0.6; font-weight: 400; letter-spacing: 0.05em; margin-top: 2px; }
+    .subj-arrow { color: var(--gold-light, #e8c97a); opacity: 0.5; font-size: 20px; line-height: 1; transition: transform 0.2s, color 0.2s, opacity 0.2s; }
+    .btn-subject:hover .subj-arrow { transform: translateX(3px); color: var(--c); opacity: 1; }
+    .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .stat-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(184,150,46,0.22); border-radius: 10px; padding: 14px 10px; text-align: center; transition: border-color 0.2s; }
+    .stat-box:hover { border-color: rgba(232,201,122,0.5); }
+    .stat-val { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; color: var(--gold-light, #e8c97a); line-height: 1; }
+    .stat-lbl { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--gold-light, #e8c97a); opacity: 0.6; margin-top: 5px; line-height: 1.3; letter-spacing: 0.06em; }
+    .activity-list { display: flex; flex-direction: column; }
+    .activity-item { display: flex; align-items: flex-start; gap: 11px; padding: 11px 0; border-bottom: 1px solid rgba(184,150,46,0.18); }
     .activity-item:last-child { border-bottom: none; }
-
-    .act-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      margin-top: 5px;
-      flex-shrink: 0;
-    }
-    .act-dot.MCQ       { background: var(--mcq,  #e05a5a); box-shadow: 0 0 5px var(--mcq,  #e05a5a); }
-    .act-dot.Physics   { background: var(--phys, #7c6af0); box-shadow: 0 0 5px var(--phys, #7c6af0); }
-    .act-dot.Chemistry { background: var(--chem, #4ecdc4); box-shadow: 0 0 5px var(--chem, #4ecdc4); }
-
+    .act-dot { width: 7px; height: 7px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+    .act-dot.MCQ { background: #e05a5a; box-shadow: 0 0 5px #e05a5a; }
+    .act-dot.Physics { background: #e8c97a; box-shadow: 0 0 5px #e8c97a; }
+    .act-dot.Chemistry { background: #4ecdc4; box-shadow: 0 0 5px #4ecdc4; }
     .act-body { flex: 1; line-height: 1.4; }
-    .act-subject {
-      font-family: 'Syne', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      line-height: 1.3;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--muted, #6b6b8a);
-    }
-    .act-detail {
-      font-family: 'Crimson Pro', Georgia, serif;
-      color: var(--text, #e8e8f0);
-      font-size: 14px;
-      line-height: 1.3;
-      margin-top: 1px;
-    }
-
-    .act-right {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 4px;
-      flex-shrink: 0;
-    }
-
-    .act-score {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      padding: 2px 7px;
-      border-radius: 4px;
-      white-space: nowrap;
-      line-height: 1.4;
-    }
-    .act-score.high { background: rgba(76,175,125,0.12); color: var(--green, #4caf7d); }
-    .act-score.mid  { background: rgba(212,168,67,0.12);  color: var(--gold,  #d4a843); }
-    .act-score.low  { background: rgba(224,90,90,0.12);   color: var(--mcq,   #e05a5a); }
-
-    .act-time {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 9px;
-      color: var(--muted, #6b6b8a);
-      white-space: nowrap;
-      line-height: 1.3;
-    }
-
-    .empty-feed {
-      text-align: center;
-      padding: 28px 20px;
-      color: var(--muted, #6b6b8a);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      line-height: 1.7;
-      border: 1px dashed var(--border, #1e1e2e);
-      border-radius: 10px;
-    }
-
-    /* ══════════════════════════════════════
-       EXPORT BUTTON
-    ══════════════════════════════════════ */
-    .btn-export {
-      width: 100%;
-      padding: 12px;
-      background: transparent;
-      border: 1px solid var(--border, #1e1e2e);
-      border-radius: 8px;
-      color: var(--muted, #6b6b8a);
-      font-family: 'Syne', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      cursor: pointer;
-      line-height: 1;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .btn-export:hover { border-color: var(--gold, #d4a843); color: var(--gold, #d4a843); }
-
-    /* ══════════════════════════════════════
-       STAGGERED ENTRANCE ANIMATION
-    ══════════════════════════════════════ */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(12px);
-      animation: fadeUp 0.4s ease forwards;
-    }
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
+    .act-subject { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 700; line-height: 1.3; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold-light, #e8c97a); opacity: 0.65; }
+    .act-detail { font-family: 'Crimson Pro', Georgia, serif; color: #f0e8d0; font-size: 14px; line-height: 1.3; margin-top: 1px; }
+    .act-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
+    .act-score { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 2px 7px; border-radius: 4px; white-space: nowrap; line-height: 1.4; }
+    .act-score.high { background: rgba(76,175,125,0.15); color: #5fd49a; }
+    .act-score.mid { background: rgba(232,201,122,0.15); color: #e8c97a; }
+    .act-score.low { background: rgba(224,90,90,0.15); color: #e05a5a; }
+    .act-time { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--gold-light, #e8c97a); opacity: 0.5; white-space: nowrap; line-height: 1.3; }
+    .empty-feed { text-align: center; padding: 28px 20px; color: var(--gold-light, #e8c97a); opacity: 0.55; font-family: 'JetBrains Mono', monospace; font-size: 11px; line-height: 1.7; border: 1px dashed rgba(184,150,46,0.3); border-radius: 10px; }
+    .btn-export { width: 100%; padding: 12px; background: transparent; border: 1px solid rgba(184,150,46,0.3); border-radius: 8px; color: var(--gold-light, #e8c97a); opacity: 0.65; font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; line-height: 1; transition: border-color 0.2s, color 0.2s, opacity 0.2s; }
+    .btn-export:hover { border-color: var(--gold-light, #e8c97a); color: var(--gold-light, #e8c97a); opacity: 1; }
+    .fade-in { opacity: 0; transform: translateY(12px); animation: fadeUp 0.4s ease forwards; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
     .fade-in:nth-child(1) { animation-delay: 0.05s; }
     .fade-in:nth-child(2) { animation-delay: 0.12s; }
     .fade-in:nth-child(3) { animation-delay: 0.19s; }
     .fade-in:nth-child(4) { animation-delay: 0.26s; }
     .fade-in:nth-child(5) { animation-delay: 0.33s; }
+    .menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 998;
+}
+.menu-overlay.hidden { display: none; }
+
+.menu-panel {
+  position: fixed;
+  top: 80px;
+  right: 18px;
+  width: 300px;
+  max-width: calc(100vw - 36px);
+  background: rgba(20, 20, 30, 0.95);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(184, 150, 46, 0.35);
+  border-radius: 18px;
+  padding: 20px 18px;
+  z-index: 1000;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  color: #f0e8d0;
+}
+.menu-panel.hidden { display: none; }
+
+.icon-btn {
+  background: transparent;
+  border: 1px solid rgba(184, 150, 46, 0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 22px;
+  line-height: 1;
+  color: #e8c97a;
+  opacity: 0.7;
+  cursor: pointer;
+}
+.icon-btn:hover { opacity: 1; border-color: #e8c97a; } 
   </style>
 </head>
 <body>
+  <!-- Overlay (fixed, outside header, covers whole screen when active) -->
+  <div id="menu-overlay" class="menu-overlay hidden"></div>
 
-  <!-- ── Header ── -->
+  <!-- Header -->
   <header class="hub-header">
     <div class="header-left">
-      <div class="hub-title">
-        <span class="accent">🫵</span> this idiot got<br>tricked again🤣
-      </div>
+      <div class="hub-title"><span class="accent"></span>let's start now !<br></div>
       <div class="hub-date" id="today-date"></div>
     </div>
     <button id="music-toggle" onclick="AudioManager.toggle()" title="Toggle music">♪</button>
+    <!-- Three-dots button stays in header -->
+    <button id="btn-more-menu" class="icon-btn" aria-label="More options">&#8942;</button>
   </header>
 
   <div class="page">
-
-    <!-- ── Quick Start ── -->
     <div class="section fade-in">
       <div class="section-label">Here we go again</div>
       <div class="subject-grid">
-
         <a class="btn-subject chem" href="pbl_full_pasha.html">
-          <div class="subj-icon">🇹🇷🇹🇷</div>
-          <div class="subj-label">
-            <div>kemal pasha</div>
-            <div class="subj-meta">commander of Armenia</div>
-          </div>
+          <div class="subj-icon">🎖️</div>
+          <div class="subj-label"><div>Damascus</div><div class="subj-meta">from where fires begins</div></div>
           <div class="subj-arrow">›</div>
         </a>
-
         <a class="btn-subject phys" href="phiross.html">
           <div class="subj-icon">👑</div>
-          <div class="subj-label">
-            <div>pharaoh</div>
-            <div class="subj-meta">gypsy</div>
-          </div>
+          <div class="subj-label"><div>pharaoh</div><div class="subj-meta">gypsy</div></div>
           <div class="subj-arrow">›</div>
         </a>
-
         <a class="btn-subject mcq" href="phiross_factory.html">
-          <div class="subj-icon">🍨</div>
-          <div class="subj-label">
-            <div>water dispenser</div>
-            <div class="subj-meta">icecream</div>
-          </div>
+          <div class="subj-icon">🎗️</div>
+          <div class="subj-label"><div>producer</div><div class="subj-meta">The land of beginning</div></div>
           <div class="subj-arrow">›</div>
         </a>
-
+        <a class="btn-subject egypt" href="egyptian.html">
+          <div class="subj-icon">👑</div>
+          <div class="subj-label"><div>courtesy</div><div class="subj-meta">read this peasent</div></div>
+          <div class="subj-arrow">›</div>
+        </a>
       </div>
     </div>
 
-    <!-- ── Stats ── -->
     <div class="section fade-in">
       <div class="section-label">Your Stupid Activities</div>
       <div class="stats-row">
-        <div class="stat-box">
-          <div class="stat-val" id="stat-total">—</div>
-          <div class="stat-lbl">Questions</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-val" id="stat-sessions">—</div>
-          <div class="stat-lbl">Sessions</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-val" id="stat-avg">—</div>
-          <div class="stat-lbl">Avg Score</div>
-        </div>
+        <div class="stat-box"><div class="stat-val" id="stat-total">—</div><div class="stat-lbl">Questions</div></div>
+        <div class="stat-box"><div class="stat-val" id="stat-sessions">—</div><div class="stat-lbl">Sessions</div></div>
+        <div class="stat-box"><div class="stat-val" id="stat-avg">—</div><div class="stat-lbl">Avg acc</div></div>
       </div>
     </div>
 
-    <!-- ── Activity Feed ── -->
     <div class="section fade-in">
       <div class="section-label">Recent Stupidities</div>
       <div class="activity-list" id="activity-list">
@@ -439,56 +166,127 @@
       </div>
     </div>
 
-    <!-- ── Export ── -->
     <div class="section fade-in">
       <div class="section-label">Data</div>
-      <button class="btn-export" onclick="exportData()">
-        we know you are too dumb to track 18 sets, save history here 
-      </button>
+      <button class="btn-export" onclick="exportData()">we know you are too dumb to track 18 sets, save history here</button>
+    </div>
+  </div>
+
+  <!-- ═════ MENU PANEL MOVED TO BODY ROOT ═════ -->
+<div id="more-menu-panel" class="menu-panel hidden">
+  <div class="panel-header" style="display: flex; justify-content: space-between; align-items: center;">
+  <span>Royal Account</span>
+  <button id="btn-close-menu" style="background: none; border: none; color: #e8c97a; font-size: 24px; line-height: 1; cursor: pointer; padding: 0 4px;" aria-label="Close menu">&times;</button>
+</div>
+
+  <!-- Auth Section (shown when logged out) -->
+  <div id="auth-section" class="panel-section">
+    <label>Email</label>
+    <input type="email" id="auth-email" placeholder="your@email.com" />
+    <label style="margin-top: 12px;">Password</label>
+    <div style="position: relative; display: flex; align-items: center;">
+  <input type="password" id="auth-password" placeholder="••••••••" style="padding-right: 40px; width: 100%;" />
+  <button type="button" id="toggle-password-visibility" style="position: absolute; right: 8px; background: none; border: none; color: #e8c97a; cursor: pointer; font-size: 18px; line-height: 1; padding: 4px;" aria-label="Show password">👁️</button>
+</div>
+    <div style="display: flex; gap: 8px; margin-top: 16px;">
+      <button id="btn-signin" class="btn-primary" style="flex:1;">Sign In</button>
+      <button id="btn-signup" class="btn-secondary" style="flex:1;">Sign Up</button>
     </div>
 
-  </div><!-- /page -->
+    <!-- Google Sign-In Button -->
+    <div style="margin-top: 12px;">
+      <button id="btn-google-signin" class="btn-google">
+        <span style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+          </svg>
+          Continue with Google
+        </span>
+      </button>
+    </div>
+    <small>Sign in to sync across devices.</small>
+  </div>
 
-  <script src="cordova.js"></script>
+  <!-- Sync Controls (shown when logged in) -->
+  <div id="sync-controls" class="panel-section hidden">
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+      <span style="color: #e8c97a; font-size: 12px;" id="user-email-display"></span>
+      <button id="btn-signout" class="btn-secondary" style="padding: 4px 8px; font-size: 10px;">Sign Out</button>
+    </div>
+    
+    <div class="sync-actions">
+      <button id="btn-sync-push" class="btn-primary">Sync to Cloud</button>
+      <button id="btn-sync-pull" class="btn-secondary">Restore from Cloud</button>
+    </div>
+    <small style="margin-top: 8px;">Auto-sync runs every hour while signed in.</small>
+    <span id="sync-status-msg"></span>
+  </div>
+</div>
+  <!-- Scripts (load order matters) -->
+  <script src="cordova.js"></script> 
+  <script src="StateManager.js"></script>
   <script src="tracker.js"></script>
+  <script type="module" src="sync.js"></script> <!-- Ensure sync.js has only ONE listener for #btn-more-menu -->
   <script src="audio.js"></script>
-  <script>
 
-    // ── Date ──────────────────────────────────────────────
+  <script>
+    // Date display
     document.getElementById('today-date').textContent =
       new Date().toLocaleDateString('en-IN', {
         weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
       });
 
-    // ── Stats ─────────────────────────────────────────────
     function renderStats() {
       if (typeof Tracker === 'undefined') return;
       const s = Tracker.getStats();
-      document.getElementById('stat-total').textContent    = s.totalQuestions || '0';
-      document.getElementById('stat-sessions').textContent = s.totalSessions  || '0';
-      document.getElementById('stat-avg').textContent      = s.totalSessions  ? s.avgScore + '%' : '—';
+      document.getElementById('stat-total').textContent = s.totalQuestions || '0';
+      document.getElementById('stat-sessions').textContent = s.totalSessions || '0';
+      document.getElementById('stat-avg').textContent = s.totalSessions ? s.avgAccuracy + '%' : '—';
     }
 
-    // ── Activity feed ─────────────────────────────────────
     function renderActivity() {
       if (typeof Tracker === 'undefined') return;
-      const list   = document.getElementById('activity-list');
-      const recent = Tracker.getRecent(8);
-      if (!recent.length) return;
-
+      const list = document.getElementById('activity-list');
+      let recent = Tracker.getRecent(8);
+      
+      console.log('📋 DASHBOARD received recent entries:', recent);
+      
+      if (!recent.length) {
+        list.innerHTML = '<div class="empty-feed">DO SOMETHING LAZY<br>no history yet</div>';
+        return;
+      }
+      
       list.innerHTML = recent.map(e => {
         let scoreBadge = '';
+        let detail = '';
+        
         if (e.type === 'score') {
-          const cls = e.score >= 75 ? 'high' : e.score >= 50 ? 'mid' : 'low';
-          scoreBadge = `<span class="act-score ${cls}">${e.score}%</span>`;
+          const accuracy = e.score || 0;
+          const cls = accuracy >= 75 ? 'high' : accuracy >= 50 ? 'mid' : 'low';
+          scoreBadge = `<span class="act-score ${cls}">${accuracy}%</span>`;
+          
+          const totalQ = e.total || '?';
+          const correct = e.correct || 0;
+          const wrong = e.wrong || 0;
+          const skipped = e.skipped || 0;
+          const attempted = correct + wrong;
+          
+          detail = `${e.topic} · ${totalQ}q · ${correct}/${attempted} correct`;
+          if (skipped > 0) detail += ` · ${skipped} skipped`;
+        } else {
+          detail = `Read: ${e.chapter}`;
         }
-        const detail = e.type === 'score'
-          ? `${e.topic} &middot; ${e.correct}/${e.total} correct`
-          : `Read: ${e.chapter}`;
-
+        
+        let subjectClass = 'MCQ';
+        if (e.subject === 'Physics') subjectClass = 'Physics';
+        else if (e.subject === 'Chemistry') subjectClass = 'Chemistry';
+        
         return `
           <div class="activity-item">
-            <div class="act-dot ${e.subject}"></div>
+            <div class="act-dot ${subjectClass}"></div>
             <div class="act-body">
               <div class="act-subject">${e.subject}</div>
               <div class="act-detail">${detail}</div>
@@ -501,32 +299,92 @@
       }).join('');
     }
 
-    // ── Export ────────────────────────────────────────────
     function exportData() {
       const blob = new Blob([Tracker.exportJSON()], { type: 'application/json' });
-      const url  = URL.createObjectURL(blob);
-      const a    = document.createElement('a');
-      a.href     = url;
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
       a.download = `study-log-${new Date().toISOString().slice(0,10)}.json`;
       a.click();
       URL.revokeObjectURL(url);
     }
 
-    // ── Tracker event listener ────────────────────────────
     window.addEventListener('tracker:update', () => {
       renderStats();
       renderActivity();
     });
 
-    // ── Init ──────────────────────────────────────────────
     renderStats();
     renderActivity();
-
   </script>
 
-  <!-- Audio init in its own block so any tracker errors above can't block it -->
   <script>
     AudioManager.init('dashboard.m4a');
   </script>
+
+
+<script>
+/*
+  // Debug overlay
+  const dbg = document.createElement('div');
+  dbg.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:rgba(0,0,0,0.8);color:#0f0;font-size:10px;padding:4px;z-index:99999;max-height:150px;overflow-y:auto;';
+  document.body.appendChild(dbg);
+
+  function log(msg) {
+    const line = document.createElement('div');
+    line.textContent = new Date().toISOString().slice(11,19) + ' ' + msg;
+    dbg.appendChild(line);
+    dbg.scrollTop = dbg.scrollHeight;
+    console.log(msg);
+  }
+
+  window.addEventListener('error', e => log('❌ ERROR: ' + e.message + ' @ ' + e.filename + ':' + e.lineno));
+  window.addEventListener('unhandledrejection', e => log('❌ PROMISE: ' + e.reason));
+
+  document.addEventListener('DOMContentLoaded', () => log('✅ DOMContentLoaded'));
+  document.addEventListener('deviceready', () => log('✅ deviceready'), false);
+
+  // Check menu button
+  document.addEventListener('deviceready', () => {
+    const menuBtn = document.querySelector('.three-dot-btn, #menu-btn, [class*="menu"], [id*="menu"]');
+    log('Menu button found: ' + (menuBtn ? menuBtn.id || menuBtn.className : 'NOT FOUND'));
+  }, false);
+  
+  */
+  
+</script>
+
+<script>
+  // Runs immediately, no waiting
+  function initMenu() {
+    const menuBtn = document.getElementById('btn-more-menu');
+    const menuPanel = document.getElementById('more-menu-panel');
+    const menuOverlay = document.getElementById('menu-overlay');
+
+    menuBtn?.addEventListener('click', () => {
+      menuPanel?.classList.remove('hidden');
+      menuOverlay?.classList.remove('hidden');
+    });
+
+    document.getElementById('btn-close-menu')?.addEventListener('click', () => {
+      menuPanel?.classList.add('hidden');
+      menuOverlay?.classList.add('hidden');
+    });
+
+    menuOverlay?.addEventListener('click', () => {
+      menuPanel?.classList.add('hidden');
+      menuOverlay?.classList.add('hidden');
+    });
+
+    document.getElementById('toggle-password-visibility')?.addEventListener('click', () => {
+      const input = document.getElementById('auth-password');
+      input.type = input.type === 'password' ? 'text' : 'password';
+    });
+  }
+
+  // Script is at bottom of body so DOM is already parsed — run immediately
+  initMenu();
+</script>
+
 </body>
 </html>
