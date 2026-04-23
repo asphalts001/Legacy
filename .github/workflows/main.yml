@@ -40,11 +40,13 @@ jobs:
           sudo ln -sf /opt/gradle/gradle-8.7/bin/gradle /usr/share/gradle-9.4.1/bin/gradle
           gradle --version
 
-      - name: Install Android SDK (API 35)
-        run: |
-          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager \
-            "build-tools;34.0.0" \
-            "platforms;android-35"
+      - name: Install Android SDK
+  run: |
+    echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager \
+      "build-tools;33.0.2" \
+      "build-tools;34.0.0" \
+      "platforms;android-34" \
+      "platforms;android-35"
 
       - name: Add Android Platform
         run: cordova platform add android@12.0.1
