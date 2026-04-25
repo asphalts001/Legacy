@@ -1,146 +1,257 @@
-/* ═══════════════════════════════════════════════════
-   tracker.js  —  StudyApp activity logger
-   Exposed as: window.Tracker (IIFE module)
-
-   Methods:
-     Tracker.logScore(opts)   — save a quiz result
-     Tracker.logRead(opts)    — save a chapter read
-     Tracker.getStats()       — totals for dashboard stats row
-     Tracker.getRecent(n)     — last n events for activity feed
-     Tracker.exportJSON()     — full log as JSON string
-     Tracker.timeAgo(ts)      — human-readable "X min ago"
-   ═══════════════════════════════════════════════════ */
-
-window.Tracker = (function () {
-
-  const KEY = 'studyapp_log';
-
-  /* ── private helpers ── */
-
-  function load() {
-    try { return JSON.parse(localStorage.getItem(KEY) || '[]'); }
-    catch { return []; }
+// www/tracker.js
+(function () {
+  if (!window.StateManager) {
+    console.error('StateManager not loaded');
+    return;
   }
 
-  function save(log) {
-    try { localStorage.setItem(KEY, JSON.stringify(log)); }
-    catch (e) { console.warn('Tracker: could not save', e); }
+  const {
+    loadState,
+    saveState,
+    computeStats: baseComputeStats,
+    defaultState,
+    STATE_VERSION
+  } = window.StateManager;
+
+  let state = loadState();
+
+  function persist() {
+    saveState(state);
+    window.dispatchEvent(new CustomEvent('tracker:update'));
   }
 
-  function push(entry) {
-    const log = load();
-    log.unshift(entry);          // newest first
-    save(log.slice(0, 200));     // keep last 200 events max
+  function sessionToOldFormat(session) {
+    if (session.type === 'score') {
+      const d = session.details;
+
+      const hasFullData =
+        d.correct !== undefined &&
+        d.wrong !== undefined &&
+        d.skipped !== undefined;
+
+      let correct, wrong, skipped, total, accuracy;
+      let topic = d.topic || 'Session';
+      let subject = d.subject || 'MCQ';
+
+      if (hasFullData) {
+        correct = d.correct;
+        wrong = d.wrong;
+        skipped = d.skipped;
+        total = d.total;
+        accuracy =
+          d.accuracy !== undefined
+            ? d.accuracy
+            : correct + wrong > 0
+            ? Math.round((correct / (correct + wrong)) * 100)
+            : 0;
+      } else {
+        const neetScore = d.score || 0;
+        total = d.total || 0;
+        correct = Math.min(total, Math.ceil(neetScore / 4));
+        wrong = Math.min(
+          total - correct,
+          Math.max(0, 4 * correct - neetScore)
+        );
+        skipped = total - correct - wrong;
+        accuracy =
+          correct + wrong > 0
+            ? Math.round((correct / (correct + wrong)) * 100)
+            : 0;
+      }
+
+      return {
+        type: 'score',
+        ts: session.timestamp,
+        subject,
+        topic,
+        score: accuracy,
+        correct,
+        wrong,
+        skipped,
+        total,
+        attempted: correct + wrong
+      };
+    }
+
+    // ✅ FIX: added proper read handling + return
+    if (session.type === 'read') {
+      return {
+        type: 'read',
+        ts: session.timestamp,
+        subject: session.details.subject || 'Reading',
+        setId: session.details.setId
+      };
+    }
+
+    return null;
   }
 
-  /* ── public API ── */
+  // custom computeStats override
+  function computeStats(sessions) {
+    const scoreSessions = sessions.filter((s) => s.type === 'score');
 
-  /**
-   * Log a quiz result.
-   * opts = {
-   *   subject : 'MCQ' | 'Physics' | 'Chemistry'   (default: 'MCQ')
-   *   topic   : string   label shown in activity feed
-   *   set     : string   internal set id  (e.g. 'set_07')
-   *   score   : number   percentage 0–100
-   *   correct : number
-   *   wrong   : number
-   *   skip    : number
-   *   total   : number
-   * }
-   */
-  function logScore(opts) {
-    const correct = opts.correct || 0;
-    const total   = opts.total   || 1;
-    const score   = opts.score !== undefined
-      ? Math.round(opts.score)
-      : Math.round((correct / total) * 100);
+    const totalSessions = scoreSessions.length;
+    let totalQuestions = 0;
+    let totalAccuracySum = 0;
+    let accuracyCount = 0;
 
-    push({
-      type    : 'score',
-      ts      : Date.now(),
-      subject : opts.subject || 'MCQ',
-      topic   : opts.topic   || opts.label || opts.set || 'Unknown set',
-      set     : opts.set     || '',
-      score,
-      correct,
-      wrong   : opts.wrong || 0,
-      skip    : opts.skip  || 0,
-      total
+    scoreSessions.forEach((s) => {
+      const d = s.details;
+
+      if (d.total) totalQuestions += d.total;
+
+      let acc;
+
+      if (d.accuracy !== undefined) {
+        acc = d.accuracy;
+      } else if (d.correct !== undefined && d.wrong !== undefined) {
+        const attempted = d.correct + d.wrong;
+        acc =
+          attempted > 0
+            ? Math.round((d.correct / attempted) * 100)
+            : 0;
+      } else if (d.score !== undefined && d.total) {
+        const attemptedEstimate = Math.min(
+          d.total,
+          Math.round((d.score + d.total) / 5)
+        );
+
+        acc =
+          attemptedEstimate > 0
+            ? Math.round(
+                (d.score + attemptedEstimate) /
+                  (4 * attemptedEstimate) *
+                  100
+              )
+            : 0;
+      } else {
+        acc = 0;
+      }
+
+      if (!isNaN(acc)) {
+        totalAccuracySum += acc;
+        accuracyCount++;
+      }
     });
-  }
 
-  /**
-   * Log a chapter read.
-   * opts = {
-   *   subject : 'Physics' | 'Chemistry'
-   *   chapter : string   chapter / section name
-   * }
-   */
-  function logRead(opts) {
-    push({
-      type    : 'read',
-      ts      : Date.now(),
-      subject : opts.subject || 'Physics',
-      chapter : opts.chapter || 'Unknown chapter'
-    });
-  }
+    const avgAccuracy =
+      accuracyCount > 0
+        ? Math.round(totalAccuracySum / accuracyCount)
+        : 0;
 
-  /**
-   * Returns aggregate stats for the dashboard stats row.
-   * { totalQuestions, totalSessions, avgScore }
-   */
-  function getStats() {
-    const log      = load();
-    const scores   = log.filter(e => e.type === 'score');
-    const total    = scores.reduce((s, e) => s + (e.total || 0), 0);
-    const avgScore = scores.length
-      ? Math.round(scores.reduce((s, e) => s + (e.score || 0), 0) / scores.length)
-      : 0;
     return {
-      totalQuestions : total,
-      totalSessions  : scores.length,
-      avgScore
+      totalSessions,
+      totalQuestions,
+      avgAccuracy
     };
   }
 
-  /**
-   * Returns the last n events (both score and read) for the activity feed.
-   */
-  function getRecent(n) {
-    return load().slice(0, n || 8);
-  }
+  window.Tracker = {
+    logScore: function (details) {
+      let sessionDetails;
 
-  /**
-   * Returns the full log as a formatted JSON string for export.
-   */
-  function exportJSON() {
-    return JSON.stringify({
-      exported : new Date().toISOString(),
-      version  : '1.0',
-      log      : load()
-    }, null, 2);
-  }
+      if (typeof details === 'object' && details !== null) {
+        sessionDetails = {
+          subject: details.subject || 'MCQ',
+          topic: details.topic || 'Session',
+          score: details.score ?? 0,
+          correct: details.correct ?? 0,
+          wrong: details.wrong ?? 0,
+          skipped: details.skipped ?? 0,
+          total: details.total ?? 0,
+          accuracy:
+            details.accuracy ??
+            (details.correct + details.wrong > 0
+              ? Math.round(
+                  (details.correct /
+                    (details.correct + details.wrong)) *
+                    100
+                )
+              : 0)
+        };
+      } else {
+        const [score, total, subject = 'MCQ', topic = 'Session'] =
+          arguments;
+        sessionDetails = { subject, topic, score, total };
+      }
 
-  /**
-   * Converts a timestamp to a human-readable relative string.
-   * e.g. "2 min ago", "3 hrs ago", "Yesterday", "12 Jan"
-   */
-  function timeAgo(ts) {
-    const diff = Date.now() - ts;
-    const min  = Math.floor(diff / 60000);
-    const hr   = Math.floor(diff / 3600000);
-    const day  = Math.floor(diff / 86400000);
+      state.sessions.push({
+        type: 'score',
+        timestamp: Date.now(),
+        details: sessionDetails
+      });
 
-    if (min < 1)   return 'Just now';
-    if (min < 60)  return min  + ' min ago';
-    if (hr  < 24)  return hr   + ' hr'  + (hr  > 1 ? 's' : '') + ' ago';
-    if (day === 1) return 'Yesterday';
-    if (day < 7)   return day  + ' day' + (day > 1 ? 's' : '') + ' ago';
+      state.stats = computeStats(state.sessions);
+      persist();
+    },
 
-    return new Date(ts).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
-  }
+    logRead: function (setId, subject = 'Reading') {
+      state.sessions.push({
+        type: 'read',
+        timestamp: Date.now(),
+        details: { setId, subject }
+      });
 
-  /* ── expose ── */
-  return { logScore, logRead, getStats, getRecent, exportJSON, timeAgo };
+      state.stats = computeStats(state.sessions);
+      persist();
+    },
 
+    // ✅ FIX: comma added
+    reload: function() {
+  state = loadState();
+  window.dispatchEvent(new CustomEvent('tracker:update'));
+},
+    getStats: function () {
+      const freshStats = computeStats(state.sessions);
+
+      return {
+        totalSessions: freshStats.totalSessions || 0,
+        totalQuestions: freshStats.totalQuestions || 0,
+        avgAccuracy: freshStats.avgAccuracy || 0
+      };
+    },
+
+    getRecent: function (limit = 10) {
+      return state.sessions
+        .slice(-limit)
+        .reverse()
+        .map(sessionToOldFormat)
+        .filter((s) => s !== null);
+    },
+
+    exportJSON: function () {
+      return JSON.stringify(
+        {
+          version: STATE_VERSION,
+          exportedAt: Date.now(),
+          sessions: state.sessions,
+          stats: state.stats
+        },
+        null,
+        2
+      );
+    },
+
+    timeAgo: function (timestamp) {
+      const seconds = Math.floor(
+        (Date.now() - timestamp) / 1000
+      );
+
+      if (seconds < 60) return 'just now';
+
+      const minutes = Math.floor(seconds / 60);
+      if (minutes < 60) return `${minutes}m ago`;
+
+      const hours = Math.floor(minutes / 60);
+      if (hours < 24) return `${hours}h ago`;
+
+      return `${Math.floor(hours / 24)}d ago`;
+    },
+
+    resetToDefault: function () {
+      state = JSON.parse(JSON.stringify(defaultState));
+      state.version = STATE_VERSION;
+      persist();
+    }
+  };
 })();

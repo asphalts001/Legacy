@@ -5,6 +5,9 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   android-build:
     runs-on: ubuntu-latest
@@ -27,7 +30,7 @@ jobs:
       - name: Install Cordova
         run: npm install -g cordova@12
 
-      - name: Install Gradle 8.7 and shadow system Gradle
+      - name: Install Gradle 8.7
         run: |
           wget -q https://services.gradle.org/distributions/gradle-8.7-bin.zip -O /tmp/gradle-8.7.zip
           unzip -q /tmp/gradle-8.7.zip -d /opt/gradle
@@ -37,10 +40,11 @@ jobs:
           sudo ln -sf /opt/gradle/gradle-8.7/bin/gradle /usr/share/gradle-9.4.1/bin/gradle
           gradle --version
 
-      - name: Install Android Build Tools
+      - name: Install Android SDK
         run: |
           echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager \
             "build-tools;33.0.2" \
+            "build-tools;34.0.0" \
             "platforms;android-34"
 
       - name: Add Android Platform
@@ -50,8 +54,14 @@ jobs:
         run: |
           cordova plugin add cordova-plugin-media
           cordova plugin add cordova-plugin-file
+          cordova plugin add cordova-plugin-customurlscheme \
+            --variable URL_SCHEME=legacy
+          cordova plugin add cordova-plugin-inappbrowser
 
-      - name: Pin ALL Gradle wrappers to 8.7
+      - name: Prepare Cordova
+        run: cordova prepare android
+
+      - name: Pin Gradle wrappers to 8.7
         run: |
           find platforms/android -name "gradle-wrapper.properties" | while read f; do
             sed -i 's|distributionUrl=.*|distributionUrl=https\\://services.gradle.org/distributions/gradle-8.7-all.zip|' "$f"
@@ -65,11 +75,60 @@ jobs:
           sed -i "s/version=\"[^\"]*\"/version=\"1.0.$VERSION_CODE\"/" config.xml
           sed -i "/<platform name=\"android\">/a\\    <preference name=\"android-versionCode\" value=\"$VERSION_CODE\" />" config.xml
 
-      - name: Build APK
-        run: cordova build android --debug
+      - name: Decode keystore
+        run: |
+          echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > ${{ github.workspace }}/release.keystore
 
-      - name: Upload APK
+      - name: Convert keystore to JKS
+        run: |
+          keytool -importkeystore \
+            -srckeystore ${{ github.workspace }}/release.keystore \
+            -srcstoretype PKCS12 \
+            -srcstorepass ${{ secrets.ANDROID_KEYSTORE_PASSWORD }} \
+            -destkeystore ${{ github.workspace }}/release.jks \
+            -deststoretype JKS \
+            -deststorepass ${{ secrets.ANDROID_KEYSTORE_PASSWORD }} \
+            -srcalias ${{ secrets.ANDROID_KEY_ALIAS }} \
+            -destalias ${{ secrets.ANDROID_KEY_ALIAS }} \
+            -noprompt
+
+      - name: Build Release APK
+        run: cordova build android --release -- --packageType=apk
+
+      - name: Sign APK
+        run: |
+          $ANDROID_HOME/build-tools/34.0.0/apksigner sign \
+            --ks ${{ github.workspace }}/release.jks \
+            --ks-pass pass:${{ secrets.ANDROID_KEYSTORE_PASSWORD }} \
+            --key-pass pass:${{ secrets.ANDROID_KEY_PASSWORD }} \
+            --ks-key-alias ${{ secrets.ANDROID_KEY_ALIAS }} \
+            platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
+
+      - name: Verify signing
+        run: |
+          $ANDROID_HOME/build-tools/34.0.0/apksigner verify --verbose \
+            platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
+
+      - name: Rename APK
+        run: |
+          mv platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk \
+             platforms/android/app/build/outputs/apk/release/legacy-v1.0.${{ github.run_number }}.apk
+
+      - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: legacy-app-debug
-          path: platforms/android/app/build/outputs/apk/debug/*.apk
+          name: legacy-app-release
+          path: platforms/android/app/build/outputs/apk/release/legacy-v1.0.${{ github.run_number }}.apk
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.${{ github.run_number }}
+          name: "Legacy v1.0.${{ github.run_number }}"
+          body: |
+            Built from commit ${{ github.sha }}
+            Branch: ${{ github.ref_name }}
+          files: platforms/android/app/build/outputs/apk/release/legacy-v1.0.${{ github.run_number }}.apk
+          make_latest: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

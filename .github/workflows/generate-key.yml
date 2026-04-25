@@ -1,0 +1,18 @@
+name: Generate Permanent Keystore
+on: workflow_dispatch # This lets you run it manually from your phone
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Keystore
+        run: |
+          keytool -genkey -v -keystore my-release-key.jks -alias my-alias -keyalg RSA -keysize 2048 -validity 10000 \
+            -storepass "MySecretPassword123" -keypass "MySecretPassword123" \
+            -dname "CN=MyName, OU=Dev, O=MyCompany, L=MyCity, S=MyState, C=US"
+          
+          echo "=== SHA-1 FINGERPRINT (SAVE THIS TO GOOGLE CONSOLE) ==="
+          keytool -list -v -keystore my-release-key.jks -alias my-alias -storepass "MySecretPassword123" | grep "SHA1:"
+          
+          echo "=== BASE64 STRING (COPY EVERYTHING BELOW THIS LINE) ==="
+          base64 -w 0 my-release-key.jks

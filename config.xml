@@ -1,47 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget id="com.yourname.appname"
-        version="1.0.9"
+<widget id="com.asphalts.legacy"
+        version="2.0.0"
         xmlns="http://www.w3.org/ns/widgets"
         xmlns:cdv="http://cordova.apache.org/ns/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
-  <name>ufc</name>
-  <description>Short thjngs in small manner</description>
+  <name>Legacy</name>
+  <description>Short things in small manner</description>
   <author>bakka</author>
-
-  <!-- Plugins -->
-  <plugin name="cordova-plugin-media" spec="^6.1.0" />
-  <plugin name="cordova-plugin-file" spec="^7.0.0" />
 
   <!-- Entry point -->
   <content src="index.html" />
 
-  <!-- Allow all local navigation -->
   <access origin="*" />
   <allow-intent href="http://*/*" />
   <allow-intent href="https://*/*" />
 
-  <!-- Icons (place your icon.png in www/) -->
-  <icon src="www/icon.png" />
-
-  <!-- Android specific -->
-  <platform name="android">
-    <icon src="www/icon.png" density="mdpi" />
-    <icon src="www/icon.png" density="hdpi" />
-    <icon src="www/icon.png" density="xhdpi" />
-    <icon src="www/icon.png" density="xxhdpi" />
-    <icon src="www/icon.png" density="xxxhdpi" />
-
-    <!-- Permissions -->
-    <config-file target="AndroidManifest.xml" parent="/*">
-      <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    </config-file>
-
-    <!-- Full screen, no browser chrome -->
-    <preference name="Fullscreen" value="false" />
-    <preference name="android-minSdkVersion" value="29" />
-    <preference name="android-targetSdkVersion" value="34" />
-  </platform>
+  <!-- Plugins -->
+  <plugin name="cordova-plugin-media" spec="^6.1.0" />
+  <plugin name="cordova-plugin-file" spec="^7.0.0" />
 
   <!-- General preferences -->
   <preference name="DisallowOverscroll" value="true" />
@@ -49,5 +26,53 @@
   <preference name="LoadingDialog" value="Loading,Please wait..." />
   <preference name="ShowSplashScreenSpinner" value="false" />
 
+  <platform name="android">
+
+    <preference name="AndroidLaunchMode" value="singleTask" />
+    <preference name="android-minSdkVersion" value="29" />
+    <preference name="android-targetSdkVersion" value="34" />
+    <preference name="Fullscreen" value="false" />
+    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="www/icon.png" />
+
+    <!-- Density icons -->
+    <icon src="www/icon.png" density="mdpi" />
+    <icon src="www/icon.png" density="hdpi" />
+    <icon src="www/icon.png" density="xhdpi" />
+    <icon src="www/icon.png" density="xxhdpi" />
+    <icon src="www/icon.png" density="xxxhdpi" />
+
+    <!-- Deep linking -->
+    <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
+      <intent-filter android:autoVerify="true">
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data android:scheme="legacy" android:host="callback" />
+      </intent-filter>
+    </config-file>
+
+    <!-- Permissions -->
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    </config-file>
+
+  </platform>
+
+  <platform name="ios">
+    <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+      <array>
+        <dict>
+          <key>CFBundleURLSchemes</key>
+          <array>
+            <string>legacy</string>
+          </array>
+          <key>CFBundleURLName</key>
+          <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+        </dict>
+      </array>
+    </config-file>
+  </platform>
+
   <engine name="android" spec="^12.0.0" />
+
 </widget>

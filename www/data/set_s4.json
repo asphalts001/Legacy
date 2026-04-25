@@ -1,0 +1,562 @@
+[
+  {
+    "id": "set_s4_q1",
+    "question": "Annelids are:",
+    "options": [
+      "Acoelomate",
+      "Metamerically segmented, true coelomates",
+      "Pseudocoelomate",
+      "Diploblastic"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q2",
+    "question": "The exoskeleton of arthropods is made of:",
+    "options": [
+      "Calcium carbonate",
+      "Chitin",
+      "Spongin",
+      "Silica"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q3",
+    "question": "Bombyx is the scientific name for:",
+    "options": [
+      "Mosquito",
+      "Silkworm",
+      "Honeybee",
+      "Locust"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q4",
+    "question": "Statocysts in arthropods function as:",
+    "options": [
+      "Respiratory organs",
+      "Balancing organs",
+      "Excretory organs",
+      "Reproductive organs"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q5",
+    "question": "Book lungs are found in:",
+    "options": [
+      "Insects",
+      "Arachnids (scorpions/spiders)",
+      "Crustaceans",
+      "Myriapods"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q6",
+    "question": "Arthropods breathe through:",
+    "options": [
+      "Gills only",
+      "Trachea (in insects), book lungs (in arachnids), or gills",
+      "Lungs only",
+      "Skin only"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q7",
+    "question": "The visceral hump in molluscs is covered by the:",
+    "options": [
+      "Shell",
+      "Mantle",
+      "Foot",
+      "Radula"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q8",
+    "question": "Pila is the scientific name for:",
+    "options": [
+      "Pearl oyster",
+      "Apple snail",
+      "Octopus",
+      "Chiton"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q9",
+    "question": "Dentalium is also called:",
+    "options": [
+      "Chiton",
+      "Tusk shell",
+      "Sea hare",
+      "Nautilus"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q10",
+    "question": "Chaetopleura/Chiton is characterised by:",
+    "options": [
+      "A single coiled shell",
+      "Eight dorsal shell plates",
+      "No shell",
+      "Two shells"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q11",
+    "question": "Molluscs are:",
+    "options": [
+      "Segmented",
+      "Unsegmented with a calcareous shell (mostly)",
+      "Pseudocoelomate",
+      "Acoelomate"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q12",
+    "question": "Echinoderms have an:",
+    "options": [
+      "Exoskeleton of chitin",
+      "Endoskeleton of calcareous ossicles (spiny-bodied)",
+      "No skeleton",
+      "Exoskeleton of calcium carbonate only on the outside"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q13",
+    "question": "Asterias is an example of:",
+    "options": [
+      "Sea urchin",
+      "Starfish",
+      "Sea cucumber",
+      "Brittle star"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q14",
+    "question": "Echinus is a:",
+    "options": [
+      "Starfish",
+      "Sea urchin",
+      "Sea cucumber",
+      "Feather star"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q15",
+    "question": "Cucumaria is a:",
+    "options": [
+      "Starfish",
+      "Sea urchin",
+      "Sea cucumber",
+      "Sea lily"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q16",
+    "question": "Echinoderms have a free-swimming:",
+    "options": [
+      "Nauplius larva",
+      "Bipinnaria/distinctive larva",
+      "Trochophore larva",
+      "Veliger larva"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q17",
+    "question": "Balanoglossus belongs to phylum:",
+    "options": [
+      "Chordata",
+      "Hemichordata",
+      "Echinodermata",
+      "Annelida"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q18",
+    "question": "The stomochord in Hemichordata is a:",
+    "options": [
+      "True notochord",
+      "Worm-like, short buccal diverticulum (not a true notochord)",
+      "Pharyngeal slit",
+      "Post-anal tail"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q19",
+    "question": "Ascidia and Salpa belong to subphylum:",
+    "options": [
+      "Vertebrata",
+      "Tunicata (Urochordata)",
+      "Cephalochordata",
+      "Hemichordata"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q20",
+    "question": "Protochordates have a notochord that is:",
+    "options": [
+      "Permanent and extends the full length",
+      "Present only in larva or restricted region (not fully persistent)",
+      "Absent",
+      "Replaced by vertebral column from birth"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q21",
+    "question": "Petromyzon is commonly called:",
+    "options": [
+      "Hagfish",
+      "Lamprey",
+      "Shark",
+      "Ray"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q22",
+    "question": "Myxine is commonly called:",
+    "options": [
+      "Lamprey",
+      "Hagfish",
+      "Catfish",
+      "Eel"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q23",
+    "question": "Cyclostomes are:",
+    "options": [
+      "Jawed vertebrates",
+      "Jawless vertebrates (Agnatha)",
+      "Cartilaginous fish",
+      "Bony fish"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q24",
+    "question": "Scoliodon is a:",
+    "options": [
+      "Ray",
+      "dogfish Shark",
+      "Bony fish",
+      "Lamprey"
+    ],
+    "correctIndex": 1,
+    "explanation": "dog fish shark is a shark spcs named scoliodon",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q25",
+    "question": "Pristis is commonly known as:",
+    "options": [
+      "Shark",
+      "Sawfish",
+      "Ray",
+      "Torpedo"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q26",
+    "question": "Carcharodon is:",
+    "options": [
+      "A ray",
+      "Great white shark",
+      "Lamprey",
+      "Catfish"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q27",
+    "question": "The scales found in bony fishes are:",
+    "options": [
+      "Placoid only",
+      "Cycloid or ctenoid",
+      "Ganoid only",
+      "No scales"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q28",
+    "question": "Labeo rohita is commonly called:",
+    "options": [
+      "Catla",
+      "Rohu",
+      "Magur",
+      "Fighting fish"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q29",
+    "question": "Betta is the scientific name of:",
+    "options": [
+      "Angel fish",
+      "Fighting fish",
+      "Rohu",
+      "Catfish"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q30",
+    "question": "Pterophyllum is commonly called:",
+    "options": [
+      "Fighting fish",
+      "Angel fish",
+      "Goldfish",
+      "Guppy"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q31",
+    "question": "Ichthyophis is a:",
+    "options": [
+      "Fish",
+      "Limbless amphibian (caecilian)",
+      "Reptile",
+      "Salamander"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q32",
+    "question": "Salamandra is a:",
+    "options": [
+      "Frog",
+      "Salamander (amphibian)",
+      "Lizard",
+      "Caecilian"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q33",
+    "question": "The skin of reptiles is covered by:",
+    "options": [
+      "Moist smooth skin",
+      "Cornified (dry, scaly) skin with scutes",
+      "Feathers",
+      "Fur"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q34",
+    "question": "Chelone is a:",
+    "options": [
+      "Tortoise",
+      "Marine turtle",
+      "Crocodile",
+      "Lizard"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q35",
+    "question": "Testudo is a:",
+    "options": [
+      "Turtle",
+      "Tortoise",
+      "Crocodile",
+      "Snake"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q36",
+    "question": "Naja is the scientific name of:",
+    "options": [
+      "Krait",
+      "Cobra",
+      "Viper",
+      "Python"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q37",
+    "question": "Bangarus is the scientific name of:",
+    "options": [
+      "Cobra",
+      "Krait",
+      "Viper",
+      "Rat snake"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q38",
+    "question": "Vipera is the scientific name of:",
+    "options": [
+      "Cobra",
+      "Krait",
+      "Viper",
+      "Boa"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q39",
+    "question": "Struthio is the scientific name of:",
+    "options": [
+      "Peacock",
+      "Ostrich",
+      "Pigeon",
+      "Parrot"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_s4_q40",
+    "question": "Pavo is the scientific name of:",
+    "options": [
+      "Ostrich",
+      "Peacock",
+      "Crow",
+      "Vulture"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  }
+]

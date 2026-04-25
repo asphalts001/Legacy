@@ -1,0 +1,506 @@
+[
+  {
+    "id": "set_10_q1",
+    "question": "The fluid mosaic model of the plasma membrane was proposed by Singer and Nicolson in 1972. According to this model, the membrane has a quasi-fluid lipid bilayer. The erythrocyte membrane has been studied extensively. What is the approximate protein content of the erythrocyte membrane?",
+    "options": [
+      "20% protein, 70% lipids",
+      "52% protein, 40% lipids",
+      "40% protein, 52% lipids",
+      "70% protein, 20% lipids"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q2",
+    "question": "A child has blood group O (genotype ii). The father has blood group A. The mother has blood group B. What are the POSSIBLE genotypes of the parents?",
+    "options": [
+      "Father IAiA, Mother IBiB — impossible",
+      "Father IAIA or IAi, Mother IBIB or IBi — but to produce 'ii' child, both must carry 'i': Father IAi, Mother IBi",
+      "Father ii, Mother IBi",
+      "Father IAIA, Mother IBIB only"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q3",
+    "question": "The proximal convoluted tubule (PCT) is lined by a simple cuboidal brush border epithelium that increases the surface area for reabsorption. The PCT reabsorbs what percentage of electrolytes and water from the filtrate?",
+    "options": [
+      "40–50%",
+      "70–80%",
+      "90–95%",
+      "99%"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q4",
+    "question": "In gymnosperms, the megaspore mother cell is differentiated from which tissue of the ovule?",
+    "options": [
+      "Integument",
+      "Micropyle",
+      "Nucellus",
+      "Chalaza"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q5",
+    "question": "The ability of plants to grow throughout their life due to the presence of meristems is referred to as:",
+    "options": [
+      "Determinate growth",
+      "Indeterminate (open) growth",
+      "Secondary growth",
+      "Intercalary growth"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q6",
+    "question": "The forebrain of a frog includes olfactory lobes, paired cerebral hemispheres, and an unpaired structure. This unpaired forebrain component is:",
+    "options": [
+      "Medulla oblongata",
+      "Cerebellum",
+      "Diencephalon",
+      "Optic lobe"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q7",
+    "question": "A remarkable fact about fungal species diversity is that the number of fungal species exceeds the combined total of which group of organisms?",
+    "options": [
+      "All plants combined",
+      "All bacteria combined",
+      "Combined fishes, amphibians, reptiles, and mammals",
+      "All invertebrates combined"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q8",
+    "question": "Bacillus thuringiensis (Bt) is used as a BIOCONTROL agent. Its mechanism of action against insect larvae is:",
+    "options": [
+      "It produces a volatile toxin that repels insects",
+      "Dried Bt spores are sprayed on plants; when eaten by insect larvae, the toxin is released in the gut, KILLING the larvae — but is harmless to other insects",
+      "It parasitises adult insects and sterilises them",
+      "It produces ethylene that destroys insect eggs"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q9",
+    "question": "In translation, the enzyme that catalyses PEPTIDE BOND formation between amino acids is:",
+    "options": [
+      "Aminoacyl-tRNA synthetase",
+      "23S rRNA of the large ribosomal subunit (acting as a ribozyme)",
+      "Release factor",
+      "DNA polymerase"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q10",
+    "question": "The PRIMARY respiratory rhythm centre is located in:",
+    "options": [
+      "The pons (pneumotaxic centre)",
+      "The cerebral cortex",
+      "The medulla oblongata",
+      "The cerebellum"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q11",
+    "question": "The Photosynthetically Active Radiation (PAR) constitutes less than 50% of total solar radiation incident on Earth. Of this PAR, what fraction do producers typically capture for photosynthesis?",
+    "options": [
+      "50% of PAR",
+      "25% of PAR",
+      "2–10% of PAR",
+      "Less than 0.5% of PAR"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q12",
+    "question": "Griffith's transformation experiment (1928) used Streptococcus pneumoniae. Which combination resulted in MICE DYING?",
+    "options": [
+      "Live R strain alone",
+      "Heat-killed S strain alone",
+      "Heat-killed S strain + Live R strain (R bacteria transformed to virulent S by \"transforming principle\")",
+      "Live S strain heated to 100°C"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q13",
+    "question": "In Aschelminthes (roundworms), the sexes are separate (dioecious) and females are often longer than males. Wastes are removed from the body through a specialised structure called:",
+    "options": [
+      "Flame cells",
+      "Nephridia",
+      "Excretory tube opening through excretory pore",
+      "Malpighian tubules"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q14",
+    "question": "In the predator-prey interaction, prickly pear cactus (Opuntia) introduced in Australia in the 1920s spread over millions of hectares of land. This invasive species was eventually controlled by the introduction of a moth from the cactus's native habitat. This biological control is an example of:",
+    "options": [
+      "Commensalism",
+      "Mutualism",
+      "Predator controlling prey population — an ecological principle of biological control",
+      "Competition between two herbivores"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q15",
+    "question": "The correct balanced equation for photosynthesis using 12 water molecules (as proved by radioisotope studies) is:",
+    "options": [
+      "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂",
+      "6CO₂ + 12H₂O → C₆H₁₂O₆ + 6H₂O + 6O₂",
+      "6CO₂ + 12H₂O → C₆H₁₂O₆ + 12O₂",
+      "CO₂ + 2H₂O → (CH₂O) + O₂ + H₂O"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q16",
+    "question": "In a resting neuron, the axonal membrane maintains a specific ionic distribution through the Na-K pump. The resting axoplasm has HIGH concentration of K+ and negatively charged proteins, and LOW concentration of Na+. The Na-K pump actively transports:",
+    "options": [
+      "2 Na+ outward for 3 K+ inward",
+      "3 Na+ outward for 2 K+ inward",
+      "Equal Na+ and K+ in both directions",
+      "3 Na+ inward for 2 K+ outward"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q17",
+    "question": "Zinc is a metal ion co-factor required for the activity of which of the following enzymes?",
+    "options": [
+      "Carbonic anhydrase",
+      "Carboxypeptidase",
+      "Succinic dehydrogenase",
+      "Peroxidase"
+    ],
+    "correctIndex": 0,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q18",
+    "question": "The three small bones present in the middle ear that are involved in sound transmission are called ossicles. These three ossicles, from the eardrum inward, are:",
+    "options": [
+      "Malleus, incus, stapes",
+      "Stapes, incus, malleus",
+      "Incus, malleus, stapes",
+      "Stapes, malleus, incus"
+    ],
+    "correctIndex": 0,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q19",
+    "question": "For a permanent cure of ADA deficiency through gene therapy, the introduced gene should be present in all cells from the beginning. This would require the gene to be introduced at which stage of the patient's life?",
+    "options": [
+      "During adolescence when the immune system is fully developed",
+      "At early embryonic stages for a permanent cure",
+      "After birth when lymphocytes are fully formed",
+      "At adult stage using bone marrow transplantation"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q20",
+    "question": "Coelacanth, a lobefin fish thought to be extinct, was found living in:",
+    "options": [
+      "Amazon river, 1938",
+      "South Africa, 1938",
+      "Galapagos Islands, 1938",
+      "Indian Ocean, 1958"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q21",
+    "question": "In diplotene of meiosis I, the synaptonemal complex dissolves and the recombined homologous chromosomes begin to separate, but remain attached at certain points. These X-shaped attachment points where crossing over occurred are called:",
+    "options": [
+      "Bivalents",
+      "Tetrads",
+      "Chiasmata",
+      "Synaptonemal nodes"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q22",
+    "question": "A typical angiosperm anther is bilobed (dithecous) with four microsporangia — two per lobe — making it tetrasporangiate. Each microsporangium is surrounded by four wall layers from outside to inside. The innermost layer that nourishes the developing pollen grains, has cells with dense cytoplasm and generally more than one nucleus (bi-nucleate tapetal cells), is called the:",
+    "options": [
+      "Endothecium",
+      "Middle layer",
+      "Epidermis",
+      "Tapetum"
+    ],
+    "correctIndex": 3,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q23",
+    "question": "Mendel's Law of Independent Assortment states that:",
+    "options": [
+      "Two genes on the same chromosome always segregate together",
+      "When two pairs of traits are combined in a hybrid, the segregation of one pair of characters is INDEPENDENT of the other pair",
+      "Characters do not blend in heterozygotes",
+      "Each gamete receives only one allele per gene"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q24",
+    "question": "The vector for malaria, filariasis, and dengue respectively is:",
+    "options": [
+      "Malaria: Aedes mosquito; Filariasis: Anopheles; Dengue: Culex",
+      "Malaria: female Anopheles; Filariasis: female mosquito vectors; Dengue: Aedes mosquito",
+      "All three: Culex mosquito",
+      "Malaria: housefly; Filariasis: Aedes; Dengue: Anopheles"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q25",
+    "question": "The frog is described as a ureotelic animal. This means the primary nitrogenous excretory product of frogs is:",
+    "options": [
+      "Ammonia",
+      "Uric acid",
+      "Urea",
+      "Creatinine"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q26",
+    "question": "Histones are positively charged proteins that help package DNA in eukaryotic cells. Their positive charge is due to richness in which amino acids?",
+    "options": [
+      "Aspartate and glutamate (acidic)",
+      "Lysine and arginine (basic)",
+      "Cysteine and methionine (sulphur-containing)",
+      "Glycine and alanine (non-polar)"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q27",
+    "question": "The stomatal aperture, the guard cells, and the surrounding subsidiary cells together constitute a functional unit called the:",
+    "options": [
+      "Stomatal complex",
+      "Stomatal apparatus",
+      "Guard cell apparatus",
+      "Epidermal unit"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q28",
+    "question": "Which of the following correctly states the principle about taxonomic rank and shared characteristics?",
+    "options": [
+      "Higher the category, more common characteristics are shared",
+      "Lower taxa have fewer shared characteristics among members",
+      "Higher the category, FEWER common characteristics are shared among members",
+      "All taxa at any level share equal numbers of characteristics"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q29",
+    "question": "Ctenophores are exclusively marine animals that show bioluminescence. Their locomotion is achieved by:",
+    "options": [
+      "Nematocysts on tentacles",
+      "Eight external rows of ciliated comb plates",
+      "Parapodia on body surface",
+      "Tube feet of water vascular system"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q30",
+    "question": "Which of the four bacterial shapes is described as \"spiral\"?",
+    "options": [
+      "Coccus",
+      "Bacillus",
+      "Vibrium",
+      "Spirillum"
+    ],
+    "correctIndex": 3,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q31",
+    "question": "Nereis, an aquatic annelid, possesses lateral appendages for swimming. These structures are called:",
+    "options": [
+      "Setae",
+      "Suckers",
+      "Parapodia",
+      "Claspers"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q32",
+    "question": "In oogenesis, oogonia are formed during embryonic development — approximately 2 million oogonia are formed in each fetal ovary. After birth, no more oogonia are formed. At puberty, how many primary follicles per ovary are typically present?",
+    "options": [
+      "2 million per ovary",
+      "200,000 per ovary",
+      "60,000–80,000 per ovary",
+      "10,000 per ovary"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q33",
+    "question": "Steroid hormones and iodothyronines (thyroid hormones) use intracellular receptors mostly located in the nucleus. When the hormone-receptor complex forms, it regulates cellular metabolism by:",
+    "options": [
+      "Generating second messengers like cyclic AMP",
+      "Directly regulating gene expression or chromosome function",
+      "Opening ion channels in the plasma membrane",
+      "Activating adenylate cyclase at the cell surface"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q34",
+    "question": "Basophils (0.5–1% of WBCs) secrete which substances involved in inflammatory reactions?",
+    "options": [
+      "Histamine, serotonin, heparin",
+      "Antibodies (IgG and IgM)",
+      "Perforin and granzymes",
+      "Lysozyme and defensins"
+    ],
+    "correctIndex": 0,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q35",
+    "question": "The thread-like extensions of epidermal cells in the root maturation zone that are responsible for absorption of water and minerals from soil are called:",
+    "options": [
+      "Root hairs",
+      "Lenticels",
+      "Hydathodes",
+      "Stipules"
+    ],
+    "correctIndex": 0,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_10_q36",
+    "question": "In one complete turn of the Krebs cycle (starting from one acetyl CoA), how many molecules of CO₂ are released?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  }
+]

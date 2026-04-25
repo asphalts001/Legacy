@@ -1,0 +1,548 @@
+[
+  {
+    "id": "set_02_q1",
+    "question": "In vascular bundles of dicotyledonous stems, the cambium is present between xylem and phloem, giving the bundle the ability to form secondary tissues. Such vascular bundles are correctly termed:",
+    "options": [
+      "Closed vascular bundles",
+      "Radial vascular bundles",
+      "Open vascular bundles",
+      "Conjoint closed bundles"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q2",
+    "question": "The male sex organs present on the gametophyte (prothallus) of pteridophytes that produce flagellated male gametes are called:",
+    "options": [
+      "Archegonia",
+      "Antheridia",
+      "Antherozoids",
+      "Sporangia"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q3",
+    "question": "The midbrain lies between the thalamus/hypothalamus (forebrain) and the pons (hindbrain). A canal called the cerebral aqueduct passes through the midbrain. The dorsal midbrain has four round lobes collectively called:",
+    "options": [
+      "Corpora quadrigemina",
+      "Corpus callosum",
+      "Corpus striatum",
+      "Pyramids of medulla"
+    ],
+    "correctIndex": 0,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q4",
+    "question": "Fertilisation in humans normally occurs in the ampullary region of the fallopian tube. The sperm contacts the zona pellucida of the secondary oocyte, inducing changes that block additional sperms (to ensure monospermy). The acrosomal secretions help the sperm enter the ovum cytoplasm, inducing the secondary oocyte to complete the:",
+    "options": [
+      "First meiotic division → producing primary oocyte and first polar body",
+      "Second meiotic division (unequal) → producing haploid ovum (ootid) and second polar body",
+      "Mitotic division → producing two identical oocytes",
+      "First meiotic division → producing secondary oocyte and second polar body"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q5",
+    "question": "Frogs do not drink water through their mouth. Instead, they absorb water through which structure?",
+    "options": [
+      "Buccal cavity lining",
+      "Lungs",
+      "Skin",
+      "Urinary bladder"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q6",
+    "question": "The scientists primarily responsible for DECIPHERING the genetic code using cell-free protein synthesis and synthetic RNA homopolymers were:",
+    "options": [
+      "Watson and Crick",
+      "Meselson and Stahl",
+      "Nirenberg and Khorana",
+      "Jacob and Monod"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q7",
+    "question": "During agarose gel electrophoresis of DNA fragments, the DNA moves towards the anode (positive electrode) because DNA is negatively charged. The agarose matrix is derived from which source, and smaller fragments travel farther because of the sieving effect?",
+    "options": [
+      "Cotton fibres — smaller fragments travel less",
+      "Sea weeds — smaller fragments travel farther (sieving effect)",
+      "Agar-agar from red algae — fragments travel randomly",
+      "Cellulose from plants — larger fragments travel farther"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q8",
+    "question": "In plants, sucrose (end product of photosynthesis) is converted to glucose and fructose before entering glycolysis. The enzyme catalysing this conversion is:",
+    "options": [
+      "Amylase",
+      "Invertase",
+      "Hexokinase",
+      "Phosphofructokinase"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q9",
+    "question": "Prokaryotes have ONE origin of replication, while eukaryotes have MULTIPLE origins. DNA replication in eukaryotes occurs during which phase of the cell cycle?",
+    "options": [
+      "G1 phase",
+      "G2 phase",
+      "S phase (synthesis phase)",
+      "M phase (mitosis)"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q10",
+    "question": "In the XO sex determination system (e.g., grasshopper):",
+    "options": [
+      "Males have XX and females have XO",
+      "Males have XO (one X, no Y) and females have XX (pair of X)",
+      "Females have ZW and males have ZZ",
+      "Males and females have the same number of sex chromosomes"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q11",
+    "question": "Carolus Linnaeus introduced binomial nomenclature. In this system, the first word always represents the _______ and must be _______ in formatting.",
+    "options": [
+      "Species; lowercase",
+      "Genus; capitalized",
+      "Family; italicized only",
+      "Order; capitalized"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q12",
+    "question": "Among the three major nitrogenous wastes — ammonia, urea, and uric acid — which is the most toxic and requires the largest amount of water for elimination, and which is the least toxic requiring minimum water loss?",
+    "options": [
+      "Most toxic: urea; Least toxic: ammonia",
+      "Most toxic: uric acid; Least toxic: urea",
+      "Most toxic: ammonia; Least toxic: uric acid",
+      "Most toxic: urea; Least toxic: uric acid"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q13",
+    "question": "Key physical parameters of the Watson-Crick B-DNA double helix: pitch (length per complete turn), base pairs per turn, and distance between adjacent base pairs are respectively:",
+    "options": [
+      "3.4 nm pitch; 10 bp/turn; 0.34 nm distance",
+      "0.34 nm pitch; 3.4 bp/turn; 10 nm distance",
+      "34 nm pitch; 100 bp/turn; 0.034 nm distance",
+      "2 nm pitch; 8 bp/turn; 0.25 nm distance"
+    ],
+    "correctIndex": 0,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q14",
+    "question": "During cytokinesis in plant cells, the new cell wall begins forming in the centre and grows outward to reach the lateral walls. The precursor structure that forms the new cell wall and later becomes the middle lamella between adjacent cells is called:",
+    "options": [
+      "Cell plate",
+      "Phragmoplast",
+      "Plasmodesmata",
+      "Tonoplast"
+    ],
+    "correctIndex": 0,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q15",
+    "question": "Bt toxin is produced by Bacillus thuringiensis during its growth phase as protein crystals. In the bacterium, the toxin exists as an inactive protoxin. In the insect gut, the alkaline pH of the gut solubilises the crystals and activates the toxin. The activated Bt toxin then kills the insect by:",
+    "options": [
+      "Disrupting the nervous system of the insect",
+      "Binding to midgut epithelial cells, creating pores that cause swelling and cell lysis, leading to insect death",
+      "Preventing moulting by blocking ecdysone hormone",
+      "Inhibiting flight muscle contraction"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q16",
+    "question": "The 10% law of energy transfer in ecosystems means that only 10% of energy is transferred from one trophic level to the next. This law limits the number of trophic levels in a food chain. It was given by:",
+    "options": [
+      "Robert May",
+      "Charles Darwin",
+      "Lindemann",
+      "Eugene Odum"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q17",
+    "question": "Auxins were FIRST isolated from:",
+    "options": [
+      "Oat (Avena) coleoptile tips",
+      "Human urine",
+      "Corn kernels",
+      "Herring sperm DNA"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q18",
+    "question": "In mango, the pericarp is differentiated into three layers. Identify the correct sequence from outside to inside, and correctly name the hard stony innermost layer:",
+    "options": [
+      "Epicarp → Endocarp → Mesocarp; endocarp is fleshy",
+      "Mesocarp → Epicarp → Endocarp; endocarp is thin",
+      "Epicarp → Mesocarp → Endocarp; endocarp is stony hard",
+      "Endocarp → Mesocarp → Epicarp; endocarp is outermost"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q19",
+    "question": "Which class of vertebrates has a three-chambered heart, breathes through gills, lungs, and skin, and whose alimentary canal, urinary, and reproductive tracts all open into a common cloaca?",
+    "options": [
+      "Reptilia",
+      "Chondrichthyes",
+      "Amphibia",
+      "Cyclostomata"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q20",
+    "question": "Phospholipids are lipids that contain phosphorus and a phosphorylated organic compound in addition to glycerol and fatty acids. A classic example of a phospholipid found in cell membranes is:",
+    "options": [
+      "Glycogen",
+      "Cholesterol",
+      "Lecithin",
+      "Triglyceride"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q21",
+    "question": "The PRIMARY barrier of innate (non-specific) immunity against microbial entry is:",
+    "options": [
+      "Antibody production by B-lymphocytes",
+      "Natural killer cells in blood",
+      "Skin (physical barrier) and mucus coating of epithelium in respiratory/gastrointestinal/urogenital tracts",
+      "Interferons secreted by virus-infected cells"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q22",
+    "question": "Roquefort cheese develops its characteristic flavour due to:",
+    "options": [
+      "Propionibacterium sharmanii",
+      "Specific fungi used for ripening (Penicillium roqueforti)",
+      "Lactobacillus bulgaricus",
+      "Streptococcus thermophilus"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q23",
+    "question": "In monocot seeds (e.g., maize), the plumule is enclosed in a protective sheath called the coleoptile, and the radicle is enclosed in a sheath called the coleorhiza. Albuminous (endospermic) seeds retain part of the endosperm in the mature seed. Which of the following is correctly identified as an ALBUMINOUS seed?",
+    "options": [
+      "Pea",
+      "Groundnut",
+      "Bean",
+      "Wheat (maize, barley, castor)"
+    ],
+    "correctIndex": 3,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q24",
+    "question": "Ribosomes were first observed under electron microscopy by which scientist, and in which year?",
+    "options": [
+      "Camillo Golgi, 1898",
+      "Robert Brown, 1831",
+      "George Palade, 1953",
+      "Singer and Nicolson, 1972"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q25",
+    "question": "The introduction of Nile perch (an exotic predatory fish) into Lake Victoria in Africa caused the extinction of over 200 species of which endemic fish group in that lake?",
+    "options": [
+      "Salmon",
+      "Trout",
+      "Cichlid fish",
+      "Catfish"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q26",
+    "question": "Male frogs can be distinguished from female frogs by the presence of two specific features. Which of the following is EXCLUSIVE to male frogs?",
+    "options": [
+      "Five digits on hind limbs and webbed feet",
+      "Vocal sacs and copulatory pad on first digit of forelimbs",
+      "Tympanum on either side of eyes",
+      "Bulging eyes covered by nictitating membrane"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q27",
+    "question": "In an ECG, the QRS complex represents:",
+    "options": [
+      "Atrial depolarisation",
+      "Ventricular repolarisation",
+      "Ventricular depolarisation (beginning of ventricular contraction/systole)",
+      "The joint diastole phase"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q28",
+    "question": "ABO blood groups in humans involve THREE alleles: IA, IB, and i. Which statement is CORRECT about their dominance relationships?",
+    "options": [
+      "IA is dominant over IB; both are recessive to i",
+      "IA and IB are both dominant over i; but IA and IB are CO-DOMINANT to each other",
+      "All three alleles are co-dominant",
+      "i is dominant over both IA and IB"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q29",
+    "question": "Analogous structures result from CONVERGENT evolution. Which pair below are analogous (similar function, DIFFERENT anatomical origin)?",
+    "options": [
+      "Human arm and bat wing",
+      "Wings of butterfly and wings of birds",
+      "Thorn of Bougainvillea and tendril of Cucurbita",
+      "Vertebrate hearts in different species"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q30",
+    "question": "The partial pressure of O₂ in ATMOSPHERIC AIR is approximately 159 mm Hg. In ALVEOLAR AIR, pO₂ is approximately:",
+    "options": [
+      "159 mm Hg",
+      "104 mm Hg",
+      "40 mm Hg",
+      "95 mm Hg"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q31",
+    "question": "The genetic material of BACTERIOPHAGES is:",
+    "options": [
+      "Single-stranded RNA",
+      "Single-stranded DNA",
+      "Double-stranded DNA",
+      "Mixed RNA and DNA"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q32",
+    "question": "The central nervous system of chordates is described as dorsal, hollow, and single. In non-chordates, it is described as:",
+    "options": [
+      "Dorsal, solid, double",
+      "Ventral, hollow, single",
+      "Ventral, solid, double",
+      "Dorsal, hollow, double"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q33",
+    "question": "The pineal gland is located on the dorsal side of the forebrain. It secretes melatonin, which regulates the 24-hour (diurnal) body rhythm. Which of the following functions is influenced by melatonin?",
+    "options": [
+      "Blood glucose regulation",
+      "Sleep-wake cycle, body temperature, metabolism, pigmentation, menstrual cycle, defense capability",
+      "Water reabsorption in the kidney",
+      "Secondary sex character development"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q34",
+    "question": "The Hatch and Slack pathway (C4 pathway) begins in mesophyll cells. The PRIMARY CO₂ acceptor in mesophyll cells is:",
+    "options": [
+      "RuBP (Ribulose bisphosphate)",
+      "OAA (Oxaloacetic acid)",
+      "PEP (Phosphoenolpyruvate)",
+      "Malic acid"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q35",
+    "question": "To break open bacterial cells during DNA isolation, a specific enzyme that digests the bacterial cell wall is used. Similarly, plant cells require a different enzyme to break their cell walls, and fungal cells require yet another. The correct set of enzymes is:",
+    "options": [
+      "Bacteria: cellulase; Plants: lysozyme; Fungi: chitinase",
+      "Bacteria: lysozyme; Plants: cellulase; Fungi: chitinase",
+      "Bacteria: chitinase; Plants: lysozyme; Fungi: cellulase",
+      "Bacteria: protease; Plants: ribonuclease; Fungi: lysozyme"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q36",
+    "question": "Repeated activation of muscles leads to accumulation of lactic acid from anaerobic breakdown of glycogen, causing fatigue. Muscles high in myoglobin (red pigment storing oxygen) have many mitochondria and rely on aerobic energy. These are called red fibres. White fibres, in contrast, have:",
+    "options": [
+      "High myoglobin, many mitochondria, aerobic metabolism",
+      "Low myoglobin, few mitochondria, high sarcoplasmic reticulum, anaerobic energy",
+      "High myoglobin, few mitochondria, aerobic metabolism",
+      "No myoglobin, many mitochondria, aerobic and anaerobic metabolism both"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q37",
+    "question": "MacArthur's classic study showed that five species of warblers could coexist on the same tree. This was possible because:",
+    "options": [
+      "Each warbler species was immune to the others' presence",
+      "They showed resource partitioning by foraging in different parts of the tree at different times",
+      "They had no food overlap whatsoever",
+      "One warbler species was mutualistic with all others"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q38",
+    "question": "Among IUDs (Intra Uterine Devices), three types exist based on their composition. Which of the following correctly matches the IUD type with its example?",
+    "options": [
+      "Non-medicated — Progestasert; Copper-releasing — Lippes loop",
+      "Non-medicated — Lippes loop; Copper-releasing — CuT, Cu7, Multiload 375; Hormone-releasing — Progestasert, LNG-20",
+      "Hormone-releasing — CuT; Non-medicated — Progestasert",
+      "Copper-releasing — LNG-20; Non-medicated — CuT"
+    ],
+    "correctIndex": 1,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "set_02_q39",
+    "question": "Adults of Echinodermata show radial symmetry, while their larvae show:",
+    "options": [
+      "Radial symmetry",
+      "Asymmetry",
+      "Bilateral symmetry",
+      "Biradial symmetry"
+    ],
+    "correctIndex": 2,
+    "explanation": "",
+    "tags": [],
+    "difficulty": "medium"
+  }
+]
