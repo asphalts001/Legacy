@@ -5,1498 +5,1501 @@
 <script src="audio.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="pbl.css">
 <link rel="stylesheet" href="theme.css">
 <title>Manni 🐼 , pasha athta nai hai </title>
 </head>
 <body>
 
-<div class="progress-bar"></div>
+<!-- ✅ CORRECT WRAPPER — this activates all the pbl.css / Royal Compendium styles -->
+<div class="chem-compendium">
 
-<header>
-  <div class="header-top">
-    <div>
-      <div class="logo">move on !</div>
-      <h1>Damascus <span></span></h1>
-    </div>
-    <div class="search-wrap">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-      </svg>
-      <input type="text" id="searchInput" placeholder="Search reactions, reagents…" oninput="handleSearch(this.value)">
-    </div>
-  </div>
-  <nav class="tabs">
-    <button class="tab-btn" style="color:var(--accent4);font-weight:700;border-bottom:2px solid var(--accent4)">— INORGANIC —</button>
-    <button class="tab-btn" onclick="showTab('periodic',this)">Periodicity</button>
-    <button class="tab-btn" onclick="showTab('bonding',this)">Bonding</button>
-    <button class="tab-btn" onclick="showTab('sblock',this)">s-Block</button>
-    <button class="tab-btn" onclick="showTab('pblock',this)">p-Block</button>
-    <button class="tab-btn" onclick="showTab('dblock',this)">d &amp; f Block</button>
-    <button class="tab-btn" onclick="showTab('coordination',this)">Coordination</button>
-    <button style="background:none;border:none;color:var(--border);padding:10px 6px;cursor:default">|</button>
-    <button class="tab-btn" style="color:var(--accent2);font-weight:700;border-bottom:2px solid var(--accent2)">— PHYSICAL —</button>
-    <button class="tab-btn" onclick="showTab('basics',this)">Basics &amp; Mole</button>
-    <button class="tab-btn" onclick="showTab('atom',this)">Atomic Structure</button>
-    <button class="tab-btn" onclick="showTab('thermo',this)">Thermodynamics</button>
-    <button class="tab-btn" onclick="showTab('equil',this)">Equilibrium</button>
-    <button class="tab-btn" onclick="showTab('redox',this)">Redox</button>
-    <button class="tab-btn" onclick="showTab('solutions',this)">Solutions</button>
-    <button class="tab-btn" onclick="showTab('electrochem',this)">Electrochemistry</button>
-    <button class="tab-btn" onclick="showTab('kinetics',this)">Kinetics</button>
-    <button style="background:none;border:none;color:var(--border);padding:10px 6px;cursor:default">|</button>
-    <button class="tab-btn" style="color:var(--accent);font-weight:700;border-bottom:2px solid var(--accent)">— ORGANIC —</button>
-    <button class="tab-btn active" onclick="showTab('goc',this)">GOC</button>
-    <button class="tab-btn" onclick="showTab('hydrocarbons',this)">Hydrocarbons</button>
-    <button class="tab-btn" onclick="showTab('haloalkanes',this)">Haloalkanes</button>
-    <button class="tab-btn" onclick="showTab('alcohols',this)">vodka 🍾/ Phenols</button>
-    <button class="tab-btn" onclick="showTab('carbonyl',this)">Carbonyl Cpds</button>
-    <button class="tab-btn" onclick="showTab('nitrogen',this)">Nitrogen Cpds</button>
-    <button class="tab-btn" onclick="showTab('biomol',this)">Biomolecules</button>
-    <button class="tab-btn" onclick="showTab('reagents',this)">Reagents</button>
-    <button class="tab-btn" onclick="showTab('namedreactions',this)">Named Rxns</button>
-    <button class="tab-btn" onclick="showTab('conversions',this)">Conversions</button>
-    <button class="tab-btn" onclick="showTab('traps',this)">Traps ⚠️</button>
-  </nav>
-</header>
+  <div class="progress-bar"></div>
 
-<main id="searchResults" style="display:none">
-  <div class="sec-heading">Search Results</div>
-  <div id="searchOutput"></div>
-</main>
-
-<main id="tabContent">
-
-<!-- ══════════════════════════════════════════════
-     INORGANIC CHEMISTRY SECTIONS
-     ══════════════════════════════════════════════ -->
-
-<!-- PERIODICITY -->
-<div id="tab-periodic" class="section">
-  <div class="sec-heading">Classification of Elements &amp; Periodicity</div>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Periodic Table Structure</div>
-      <ul>
-        <li><b>Modern Periodic Law:</b> Properties are periodic functions of atomic number</li>
-        <li><b>Periods (1–7):</b> Horizontal rows → indicate number of shells</li>
-        <li><b>Groups (1–18):</b> Vertical columns → indicate valence electrons (main group)</li>
-        <li>118 elements currently known; 7 periods, 18 groups</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Periodic Trends — Atomic &amp; Ionic Size</div>
-      <ul>
-        <li><b>Atomic Radius:</b> Decreases across period (↑ nuclear charge), increases down group (↑ shells)</li>
-        <li><b>Cation:</b> Smaller than neutral atom (fewer electrons, same/more nuclear charge)</li>
-        <li><b>Anion:</b> Larger than neutral atom (more electrons, same nuclear charge)</li>
-        <li>Isoelectronic species: size decreases with increasing atomic number</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Ionization Enthalpy (IE)</div>
-      <ul>
-        <li>Energy required to remove an electron from gaseous atom</li>
-        <li>Increases across period, decreases down group</li>
-        <li><b>Exception:</b> Be &gt; B (2s fully filled vs 2p); N &gt; O (half-filled 2p stable)</li>
-        <li>IE₁ &lt; IE₂ &lt; IE₃ … (successive IEs increase sharply after noble gas config)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-p"></span>Electron Gain Enthalpy &amp; Electronegativity</div>
-      <ul>
-        <li><b>EGE:</b> Energy released when e⁻ added to neutral atom; more negative across period</li>
-        <li><b>Halogens:</b> Highest negative EGE (Cl has highest, not F due to small size repulsion)</li>
-        <li><b>Noble gases:</b> Positive EGE (stable config, electron not accepted easily)</li>
-        <li><b>Electronegativity:</b> Increases across period, decreases down group</li>
-        <li>Order: F &gt; O &gt; N ~ Cl &gt; Br &gt; I &gt; C</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Metallic &amp; Acid/Base Character of Oxides</div>
-      <ul>
-        <li><b>Metallic character:</b> Decreases across period, increases down group</li>
-        <li><b>Non-metallic character:</b> Increases across period, decreases down group</li>
-        <li><b>Basic oxides:</b> Group 1 &amp; 2 metals (Na₂O, MgO)</li>
-        <li><b>Acidic oxides:</b> Non-metals (SO₃, P₂O₅, Cl₂O₇)</li>
-        <li><b>Amphoteric oxides:</b> Al₂O₃, ZnO, SnO (react with both acid &amp; base)</li>
-        <li>Acidity of oxides increases across period (basic → neutral → acidic)</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- BONDING -->
-<div id="tab-bonding" class="section">
-  <div class="sec-heading">Chemical Bonding &amp; Molecular Structure</div>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Types of Bonds</div>
-      <ul>
-        <li><b>Ionic Bond:</b> Transfer of electrons; electrostatic attraction; favored by low IE, high EGE, high lattice enthalpy</li>
-        <li><b>Covalent Bond:</b> Sharing of electrons; sigma (σ) and pi (π) bonds</li>
-        <li><b>Coordinate/Dative:</b> Both electrons from one atom (e.g., BF₃ + NH₃)</li>
-        <li><b>Metallic Bond:</b> Sea of electrons; explains conductivity and malleability</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Hybridization &amp; VSEPR</div>
-      <ul>
-        <li><b>sp³:</b> CH₄ (tetrahedral 109.5°), NH₃ (pyramidal), H₂O (bent)</li>
-        <li><b>sp²:</b> BF₃ (trigonal planar 120°), C₂H₄</li>
-        <li><b>sp:</b> BeCl₂ (linear 180°), C₂H₂</li>
-        <li><b>VSEPR:</b> Lone pairs &gt; bond pairs in repulsion → compress bond angles</li>
-        <li>Bond angle: CH₄ (109.5°) &gt; NH₃ (107°) &gt; H₂O (104.5°)</li>
-        <li>dsp² (square planar), sp³d (trigonal bipyramidal), sp³d² (octahedral)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Molecular Orbital Theory (MOT)</div>
-      <ul>
-        <li>Atomic orbitals combine to form bonding (BMO) and antibonding (ABMO) MOs</li>
-        <li><b>Bond Order (BO) = ½(Nb − Na);</b> higher BO = stronger, shorter bond</li>
-        <li>BO = 0 → molecule doesn't exist (e.g., He₂)</li>
-        <li><b>O₂:</b> BO = 2, paramagnetic (2 unpaired e⁻ in π* orbitals)</li>
-        <li><b>N₂:</b> BO = 3, diamagnetic, very stable</li>
-        <li>Unpaired e⁻ → paramagnetic; all paired → diamagnetic</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-p"></span>Hydrogen Bonding &amp; Intermolecular Forces</div>
-      <ul>
-        <li><b>H-bond:</b> Dipole–dipole interaction between H and electronegative atom (F, O, N)</li>
-        <li><b>Intermolecular H-bond:</b> Between molecules (H₂O, HF, NH₃) → high BP</li>
-        <li><b>Intramolecular H-bond:</b> Within molecule (o-nitrophenol) → lower BP than para</li>
-        <li>Strength: F–H···F &gt; O–H···O &gt; N–H···N</li>
-        <li>Van der Waals (weakest) → Dipole–dipole → H-bond → Covalent (strongest)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Octet Rule &amp; Exceptions</div>
-      <ul>
-        <li>Octet: atoms gain/lose/share electrons to achieve 8 valence electrons</li>
-        <li><b>Incomplete octet:</b> BF₃ (6e⁻ around B), BeCl₂ (4e⁻ around Be)</li>
-        <li><b>Expanded octet:</b> PCl₅ (10e⁻), SF₆ (12e⁻) — 3rd period &amp; beyond (d-orbitals)</li>
-        <li><b>Odd-electron molecules:</b> NO, NO₂ (odd number of electrons)</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- s-BLOCK -->
-<div id="tab-sblock" class="section">
-  <div class="sec-heading">s-Block Elements</div>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Group 1 — Alkali Metals (Li, Na, K, Rb, Cs, Fr)</div>
-      <ul>
-        <li>Config: [Noble gas] ns¹; all have +1 oxidation state</li>
-        <li>Highly reactive; strong reducing agents; form ionic compounds</li>
-        <li>React with water: 2M + 2H₂O → 2MOH + H₂↑ (vigour: Li &lt; Na &lt; K &lt; Rb &lt; Cs)</li>
-        <li><b>Flame colours:</b> Li (crimson red), Na (golden yellow), K (lilac/violet), Rb (red-violet), Cs (blue)</li>
-        <li>Li shows anomalous behaviour — diagonal relationship with Mg</li>
-        <li>Li forms Li₃N (nitride) directly; Na forms Na₂O₂ (peroxide); K, Rb, Cs form superoxides (MO₂)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Group 2 — Alkaline Earth Metals (Be, Mg, Ca, Sr, Ba, Ra)</div>
-      <ul>
-        <li>Config: [Noble gas] ns²; +2 oxidation state</li>
-        <li>Less reactive than alkali metals; harder, higher melting points</li>
-        <li><b>Flame colours:</b> Ca (brick red), Sr (crimson red), Ba (apple green)</li>
-        <li><b>Be anomalous:</b> Forms covalent compounds; diagonal relationship with Al; BeO is amphoteric</li>
-        <li><b>Limestone:</b> CaCO₃; <b>Plaster of Paris:</b> CaSO₄·½H₂O</li>
-        <li><b>Gypsum:</b> CaSO₄·2H₂O (+ heat → POP)</li>
-        <li>Solubility of sulfates: BeSO₄ &gt; MgSO₄ &gt; CaSO₄ &gt; SrSO₄ &gt; BaSO₄ (↓)</li>
-        <li>Solubility of hydroxides: Be(OH)₂ &lt; Mg(OH)₂ &lt; Ca(OH)₂ &lt; Sr(OH)₂ &lt; Ba(OH)₂ (↑)</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- p-BLOCK -->
-<div id="tab-pblock" class="section">
-  <div class="sec-heading">p-Block Elements</div>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Group 13 — Boron Family</div>
-      <ul>
-        <li>Config: ns²np¹; Boron is non-metal, rest metals</li>
-        <li>BH₃ dimerizes → B₂H₆ (diborane) with 3-centre 2-electron (banana) bonds</li>
-        <li><b>Borax:</b> Na₂B₄O₇·10H₂O; <b>Boric acid:</b> H₃BO₃ (weak monobasic acid)</li>
-        <li>Aluminium is amphoteric (reacts with acid AND alkali)</li>
-        <li>Inert pair effect: Tl prefers +1 state</li>
-        <li>BF₃ is a Lewis acid (incomplete octet)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Group 14 — Carbon Family</div>
-      <ul>
-        <li>C allotropes: Diamond (sp³, hardest), Graphite (sp², lubricant, conductor), Fullerene (C₆₀)</li>
-        <li><b>Catenation:</b> Self-linking ability; strongest in C due to strong C–C bonds</li>
-        <li>Si, Ge: metalloids; Sn, Pb: metals</li>
-        <li><b>Silicones:</b> Polymers with −(R₂SiO)ₙ− repeating units; water-repellent</li>
-        <li>CO₂ (acidic, linear) vs SiO₂ (covalent network solid)</li>
-        <li>Inert pair effect: Pb prefers +2 state</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Group 15 — Nitrogen Family</div>
-      <ul>
-        <li>N is gaseous; P, As, Sb, Bi are solids</li>
-        <li>N has no d-orbitals → max covalency 4; P can expand to 5 (PCl₅)</li>
-        <li><b>Allotropes of P:</b> White (toxic, most reactive), Red, Black (least reactive)</li>
-        <li><b>NH₃:</b> Reducing agent, basic, pyramidal (sp³)</li>
-        <li><b>HNO₃:</b> Strong oxidizing acid; dilute → NO; conc. → NO₂</li>
-        <li>Nitrogen forms oxides: N₂O, NO, N₂O₃, NO₂, N₂O₅</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-p"></span>Group 16 — Chalcogens (Oxygen Family)</div>
-      <ul>
-        <li>O is gaseous; S, Se, Te, Po are solids</li>
-        <li><b>Allotropes of S:</b> Rhombic (stable &lt;96°C), Monoclinic (stable 96–119°C)</li>
-        <li><b>H₂SO₄:</b> Strong acid, dehydrating agent, oxidizing agent; fuming = oleum (H₂S₂O₇)</li>
-        <li>Ozone (O₃): Bent, diamagnetic, strong oxidizing agent; decomposes at 250°C</li>
-        <li>SO₂: Acidic, reducing agent (acts as bleach), V-shaped (sp³)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Group 17 — Halogens</div>
-      <ul>
-        <li>Highly reactive non-metals; strong oxidizing agents; −1 common OS</li>
-        <li>F is most electronegative (no d-orbitals → no expansion, no positive OS)</li>
-        <li><b>Acidity of HX:</b> HF &lt; HCl &lt; HBr &lt; HI (bond strength decreases)</li>
-        <li><b>Oxidizing power:</b> F₂ &gt; Cl₂ &gt; Br₂ &gt; I₂</li>
-        <li><b>Interhalogen compounds:</b> XYₙ type (ClF, ClF₃, ClF₅, BrF₃, IF₇)</li>
-        <li>Cl₂ with NaOH (cold dilute) → NaCl + NaOCl; (hot conc.) → NaCl + NaClO₃</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Group 18 — Noble Gases</div>
-      <ul>
-        <li>Config: ns²np⁶ (He: 1s²); inert, monoatomic, very low BP</li>
-        <li>He: lightest noble gas; used in balloons, diving (with O₂)</li>
-        <li>Ar: most abundant noble gas in atmosphere</li>
-        <li><b>Xe compounds:</b> XeF₂ (linear), XeF₄ (square planar), XeF₆ (distorted octahedral), XeO₃</li>
-        <li>Kr, Rn also form some fluorides</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- d & f BLOCK -->
-<div id="tab-dblock" class="section">
-  <div class="sec-heading">d- &amp; f-Block Elements</div>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Transition Elements (d-Block, Groups 3–12)</div>
-      <ul>
-        <li>Config: (n−1)d¹⁻¹⁰ ns¹⁻²</li>
-        <li>Variable oxidation states (due to d-electrons)</li>
-        <li>High melting/boiling points; hard; good conductors</li>
-        <li>Colored ions: d–d transitions absorb visible light</li>
-        <li>Paramagnetic due to unpaired d-electrons</li>
-        <li>Act as catalysts (e.g., Fe in Haber, V₂O₅ in contact process)</li>
-        <li>Form interstitial compounds (e.g., steel)</li>
-        <li><b>Zn, Cd, Hg:</b> NOT true transition elements (d¹⁰ in all common oxidation states)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Important d-Block Compounds</div>
-      <ul>
-        <li><b>KMnO₄:</b> Purple; strong oxidizing agent; acidic medium → Mn²⁺ (colourless); neutral → MnO₂; alkaline → MnO₄²⁻</li>
-        <li><b>K₂Cr₂O₇:</b> Orange; strong oxidizing agent; in acid: Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O</li>
-        <li>KMnO₄ can be used in acidic, neutral, or alkaline medium; K₂Cr₂O₇ only acidic</li>
-        <li>Cr is +6 in dichromate; Mn is +7 in permanganate</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Lanthanoids (4f, Ce–Lu)</div>
-      <ul>
-        <li>Config: (n−2)f¹⁻¹⁴ (n−1)d⁰⁻¹ ns²</li>
-        <li>Most common OS: +3</li>
-        <li><b>Lanthanoid Contraction:</b> Steady decrease in atomic/ionic radii across lanthanoids due to poor shielding by 4f electrons</li>
-        <li>Causes: radii of 2nd and 3rd row transition elements to be nearly equal</li>
-        <li>Misch metal (La, Ce alloy): used in cigarette lighters</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-p"></span>Actinoids (5f, Th–Lr)</div>
-      <ul>
-        <li>Config: (n−2)f¹⁻¹⁴ (n−1)d⁰⁻¹ ns²</li>
-        <li>Exhibit variable oxidation states more than lanthanoids</li>
-        <li>All radioactive; most are man-made (synthetic)</li>
-        <li><b>Actinoid contraction:</b> More pronounced than lanthanoid contraction (more effective shielding in 5f)</li>
-        <li>Only Th, Pa, U occur naturally in appreciable amounts</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- COORDINATION -->
-<div id="tab-coordination" class="section">
-  <div class="sec-heading">Coordination Compounds</div>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Key Definitions</div>
-      <ul>
-        <li><b>Coordination compound:</b> Central metal atom/ion bonded to ligands</li>
-        <li><b>Ligand:</b> Lewis base (electron pair donor) — monodentate, bidentate, polydentate</li>
-        <li><b>Coordination Number (CN):</b> Number of donor atoms directly bonded to metal</li>
-        <li><b>Werner's Theory:</b> Primary valency (ionizable = charge) &amp; Secondary valency (CN = non-ionizable)</li>
-        <li>Examples of ligands: NH₃, H₂O, Cl⁻, CN⁻, en (bidentate), EDTA (hexadentate)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>IUPAC Nomenclature</div>
-      <ul>
-        <li>Name ligands first (alphabetical), then metal with OS in Roman numerals</li>
-        <li>Anionic ligands: -o suffix (Cl⁻ → chlorido, CN⁻ → cyanido, OH⁻ → hydroxido)</li>
-        <li>Neutral ligands: as-is (NH₃ → ammine, H₂O → aqua, CO → carbonyl)</li>
-        <li>If complex is anionic, metal gets -ate suffix + Latin name (Fe → ferrate, Cu → cuprate)</li>
-        <li>Example: [Co(NH₃)₄Cl₂]Cl → Tetraamminedichloridocobalt(III) chloride</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Isomerism in Coordination Compounds</div>
-      <ul>
-        <li><b>Ionization:</b> [Co(NH₃)₅Cl]SO₄ vs [Co(NH₃)₅SO₄]Cl</li>
-        <li><b>Hydrate:</b> [Cr(H₂O)₆]Cl₃ vs [Cr(H₂O)₅Cl]Cl₂·H₂O</li>
-        <li><b>Linkage:</b> –NO₂ (N-bonded) vs –ONO (O-bonded); –SCN vs –NCS</li>
-        <li><b>Geometric (cis/trans):</b> MA₂B₂ square planar &amp; MA₄B₂ octahedral</li>
-        <li><b>Optical (enantiomers):</b> [Co(en)₃]³⁺ — common in octahedral with bidentate ligands</li>
-        <li><b>Coordination isomerism:</b> Exchange of ligands between cation and anion complexes</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-p"></span>Crystal Field Theory (CFT)</div>
-      <ul>
-        <li>Ligands as point charges split d-orbitals into two sets</li>
-        <li><b>Octahedral:</b> t₂g (lower, dxy, dyz, dxz) and eg (higher, dx²-y², dz²); splitting = Δo</li>
-        <li><b>Tetrahedral:</b> e (lower) and t₂ (higher); Δt ≈ 4/9 Δo (weaker)</li>
-        <li><b>Strong field ligands:</b> CO &gt; CN⁻ &gt; NO₂⁻ &gt; en &gt; NH₃ → low spin (pair first)</li>
-        <li><b>Weak field ligands:</b> I⁻ &lt; Br⁻ &lt; Cl⁻ &lt; F⁻ &lt; OH⁻ &lt; H₂O → high spin</li>
-        <li>Color: d–d transition absorbs one color, transmits complementary color</li>
-        <li>Spectrochemical series: CO &gt; CN⁻ &gt; NO₂⁻ &gt; en &gt; NH₃ &gt; H₂O &gt; ox²⁻ &gt; OH⁻ &gt; F⁻ &gt; Cl⁻ &gt; Br⁻ &gt; I⁻</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>VBT in Coordination Compounds</div>
-      <ul>
-        <li>Strong field ligands (CN⁻, CO, NH₃) → inner orbital complexes (d²sp³ for octahedral)</li>
-        <li>Weak field ligands (H₂O, Cl⁻) → outer orbital complexes (sp³d² for octahedral)</li>
-        <li>Inner orbital: lower spin (more paired), diamagnetic if all paired</li>
-        <li>[Fe(CN)₆]⁴⁻: d²sp³, diamagnetic (strong field); [Fe(H₂O)₆]²⁺: sp³d², paramagnetic (weak field)</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════
-     PHYSICAL CHEMISTRY SECTIONS
-     ══════════════════════════════════════════════ -->
-
-<!-- BASICS & MOLE -->
-<div id="tab-basics" class="section">
-  <div class="sec-heading">Some Basic Concepts of Chemistry</div>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Mole Concept</div>
-      <ul>
-        <li>1 mole = 6.022 × 10²³ particles (Avogadro's number)</li>
-        <li>1 mole of any gas at STP = 22.4 L</li>
-        <li>Molar mass (g) = mass of 1 mole of substance</li>
-        <li><b>Limiting reagent:</b> Reactant consumed first; determines max product</li>
-        <li><b>% yield</b> = (actual yield / theoretical yield) × 100</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Concentration Terms</div>
-      <ul>
-        <li><b>Molarity (M):</b> Moles solute / L solution; changes with temperature</li>
-        <li><b>Molality (m):</b> Moles solute / kg solvent; independent of temperature</li>
-        <li><b>Mole fraction (x):</b> Moles component / Total moles</li>
-        <li><b>Mass %:</b> (Mass component / Total mass) × 100</li>
-        <li><b>Normality (N):</b> Equivalents / L; N = M × n-factor</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Stoichiometry</div>
-      <ul>
-        <li>Balanced equation gives molar ratios of reactants &amp; products</li>
-        <li>Always identify limiting reagent before calculating product amount</li>
-        <li><b>Empirical formula:</b> Simplest whole-number ratio of atoms</li>
-        <li><b>Molecular formula:</b> Actual number of atoms; Mf = n × Ef</li>
-        <li>Law of conservation of mass: total mass reactants = total mass products</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- ATOMIC STRUCTURE -->
-<div id="tab-atom" class="section">
-  <div class="sec-heading">Structure of Atom</div>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Bohr's Model</div>
-      <ul>
-        <li>Electrons revolve in fixed circular orbits (shells) without radiating energy</li>
-        <li>Energy of nth orbit: Eₙ = −13.6/n² eV (for H-like atoms)</li>
-        <li>Radius: rₙ = 0.529n²/Z Å</li>
-        <li>Energy is emitted/absorbed when electron transitions between levels</li>
-        <li><b>Limitation:</b> Cannot explain multi-electron atoms, Zeeman/Stark effect</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Quantum Numbers</div>
-      <ul>
-        <li><b>Principal (n):</b> Shell, energy, size; n = 1, 2, 3…</li>
-        <li><b>Azimuthal (l):</b> Subshell shape; l = 0 (s), 1 (p), 2 (d), 3 (f); l = 0 to n−1</li>
-        <li><b>Magnetic (mₗ):</b> Orbital orientation; mₗ = −l to +l</li>
-        <li><b>Spin (mₛ):</b> Electron spin; +½ or −½</li>
-        <li>Max electrons in shell = 2n²; in subshell: s(2), p(6), d(10), f(14)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Electronic Configuration Rules</div>
-      <ul>
-        <li><b>Aufbau:</b> Fill lowest energy orbitals first (1s, 2s, 2p, 3s, 3p, 4s, 3d…)</li>
-        <li><b>Hund's Rule:</b> Maximize unpaired electrons in degenerate orbitals (same energy)</li>
-        <li><b>Pauli Exclusion:</b> No two electrons can have same 4 quantum numbers</li>
-        <li><b>Exceptions:</b> Cr = [Ar]3d⁵4s¹; Cu = [Ar]3d¹⁰4s¹ (extra stability of half-filled/fully-filled d)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-p"></span>Wave-Particle Duality &amp; Uncertainty</div>
-      <ul>
-        <li><b>de Broglie:</b> λ = h/mv; every moving particle has wave character</li>
-        <li><b>Heisenberg Uncertainty:</b> Δx · Δp ≥ h/4π; cannot know position &amp; momentum exactly simultaneously</li>
-        <li>Photoelectric effect: light as photons, E = hν</li>
-        <li>Threshold frequency (ν₀): minimum frequency to eject electron</li>
-        <li>KE of ejected electron = hν − hν₀ = hν − W (W = work function)</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- THERMODYNAMICS -->
-<div id="tab-thermo" class="section">
-  <div class="sec-heading">Thermodynamics</div>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Laws of Thermodynamics</div>
-      <ul>
-        <li><b>First Law:</b> ΔU = Q + W (energy conservation); ΔU = Q − PΔV (expansion)</li>
-        <li><b>Second Law:</b> ΔS_total &gt; 0 for spontaneous process; entropy of universe increases</li>
-        <li><b>Third Law:</b> S → 0 as T → 0 K (perfect crystal has zero entropy at absolute zero)</li>
-        <li>Enthalpy: H = U + PV; at constant P: ΔH = ΔU + PΔV = ΔU + ΔngRT</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Gibbs Free Energy &amp; Spontaneity</div>
-      <ul>
-        <li>G = H − TS</li>
-        <li><b>ΔG &lt; 0:</b> Spontaneous; <b>ΔG = 0:</b> Equilibrium; <b>ΔG &gt; 0:</b> Non-spontaneous</li>
-        <li>ΔG° = −RT ln K (standard free energy &amp; equilibrium constant)</li>
-        <li>ΔG = ΔG° + RT ln Q</li>
-        <li>At equilibrium: ΔG = 0 → ΔG° = −RT ln K</li>
-        <li>Exothermic + ΔS &gt; 0: always spontaneous; Endothermic + ΔS &lt; 0: never spontaneous</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Hess's Law &amp; Enthalpies</div>
-      <ul>
-        <li><b>Hess's Law:</b> ΔH is path-independent; total ΔH = sum of individual ΔH values</li>
-        <li><b>Lattice enthalpy:</b> Energy to separate 1 mole of ionic crystal into gaseous ions</li>
-        <li><b>Bond enthalpy:</b> Energy to break 1 mole of bonds; ΔH_rxn = ΣBE(broken) − ΣBE(formed)</li>
-        <li><b>Enthalpy of combustion:</b> ΔH for complete combustion of 1 mole of substance</li>
-        <li><b>Born-Haber cycle:</b> Calculates lattice enthalpy of ionic compounds</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-p"></span>Heat Capacity &amp; Work</div>
-      <ul>
-        <li>Cp = (∂H/∂T)P; Cv = (∂U/∂T)V; Cp − Cv = R (for ideal gas)</li>
-        <li>Work done in expansion: W = −Pext·ΔV (expansion work against constant P)</li>
-        <li><b>Isothermal reversible:</b> W = −nRT ln(V₂/V₁)</li>
-        <li><b>Adiabatic:</b> Q = 0; ΔU = W</li>
-        <li><b>Isochoric:</b> W = 0; ΔU = Qv</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- EQUILIBRIUM -->
-<div id="tab-equil" class="section">
-  <div class="sec-heading">Equilibrium</div>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Chemical Equilibrium</div>
-      <ul>
-        <li><b>Law of Mass Action:</b> Rate_forward = Rate_reverse at equilibrium</li>
-        <li><b>Kc</b> = [C]ᶜ[D]ᵈ / [A]ᵃ[B]ᵇ (at equilibrium)</li>
-        <li><b>Kp</b> = PCᶜ · PDᵈ / PAᵃ · PBᵇ</li>
-        <li><b>Relation:</b> Kp = Kc(RT)^Δng where Δng = moles gaseous products − moles gaseous reactants</li>
-        <li>Large K: products favoured; Small K: reactants favoured</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Le Chatelier's Principle</div>
-      <ul>
-        <li>System shifts to relieve stress imposed on it</li>
-        <li><b>↑ Concentration of reactant:</b> Shifts right (→ products)</li>
-        <li><b>↑ Pressure:</b> Shifts toward fewer moles of gas</li>
-        <li><b>↑ Temperature (exothermic rxn):</b> Shifts left (← reactants); K decreases</li>
-        <li><b>↑ Temperature (endothermic rxn):</b> Shifts right; K increases</li>
-        <li>Catalyst: No shift in equilibrium; only speeds up attainment of equilibrium</li>
-        <li>Inert gas at constant V: No effect; at constant P: shifts to more moles of gas</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Ionic Equilibrium</div>
-      <ul>
-        <li>pH = −log[H⁺]; pOH = −log[OH⁻]; pH + pOH = 14 at 25°C</li>
-        <li>Kw = [H⁺][OH⁻] = 10⁻¹⁴ at 25°C</li>
-        <li><b>Buffer:</b> Weak acid + its salt (or weak base + its salt); resists pH change</li>
-        <li><b>Henderson-Hasselbalch:</b> pH = pKa + log([Salt]/[Acid])</li>
-        <li><b>Ksp:</b> Product of ion concentrations at saturation; used to predict precipitation</li>
-        <li>Precipitation occurs when ion product &gt; Ksp</li>
-        <li><b>Common ion effect:</b> Ksp shifts equilibrium; reduces solubility</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- REDOX -->
-<div id="tab-redox" class="section">
-  <div class="sec-heading">Redox Reactions</div>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Oxidation &amp; Reduction</div>
-      <ul>
-        <li><b>Oxidation:</b> Loss of electrons; increase in oxidation number</li>
-        <li><b>Reduction:</b> Gain of electrons; decrease in oxidation number</li>
-        <li><b>Oxidizing agent:</b> Causes oxidation; gets reduced (gains e⁻)</li>
-        <li><b>Reducing agent:</b> Causes reduction; gets oxidized (loses e⁻)</li>
-        <li>OIL RIG: Oxidation Is Loss; Reduction Is Gain</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Oxidation Number Rules</div>
-      <ul>
-        <li>Pure element: OS = 0; Simple monoatomic ion: OS = charge</li>
-        <li>F always −1; O usually −2 (except OF₂: +2; peroxides: −1; superoxides: −½)</li>
-        <li>H: +1 with non-metals; −1 with metals (metal hydrides)</li>
-        <li>Sum of OS in neutral compound = 0; in ion = charge of ion</li>
-        <li>Mn in KMnO₄ = +7; Cr in K₂Cr₂O₇ = +6; S in H₂SO₄ = +6; N in HNO₃ = +5</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Balancing Redox Reactions</div>
-      <ul>
-        <li><b>Ion-electron method:</b> Write half-reactions (oxidation &amp; reduction); balance atoms, charge, then add</li>
-        <li><b>Oxidation number method:</b> Track change in oxidation numbers; equalize increase &amp; decrease</li>
-        <li>In acidic medium: add H₂O to balance O; add H⁺ to balance H</li>
-        <li>In basic medium: add OH⁻ to balance; then add H₂O for H</li>
-        <li>Disproportionation: single element simultaneously oxidized &amp; reduced (e.g., Cl₂ + NaOH)</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- SOLUTIONS -->
-<div id="tab-solutions" class="section">
-  <div class="sec-heading">Solutions</div>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Colligative Properties</div>
-      <ul>
-        <li>Depend on number of solute particles, not identity</li>
-        <li><b>RLVP:</b> (P° − Ps)/P° = xsolute (Raoult's Law)</li>
-        <li><b>Elevation in BP:</b> ΔTb = Kb · m · i</li>
-        <li><b>Depression in FP:</b> ΔTf = Kf · m · i</li>
-        <li><b>Osmotic Pressure:</b> π = i · C · R · T</li>
-        <li>Kf (water) = 1.86 K·kg/mol; Kb (water) = 0.512 K·kg/mol</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Van't Hoff Factor (i)</div>
-      <ul>
-        <li>i = actual moles particles / theoretical moles particles</li>
-        <li><b>i = 1:</b> Non-electrolytes (glucose, urea)</li>
-        <li><b>i &gt; 1:</b> Dissociation (NaCl → Na⁺ + Cl⁻, i = 2; K₂SO₄: i = 3)</li>
-        <li><b>i &lt; 1:</b> Association (acetic acid in benzene forms dimers)</li>
-        <li>α (degree of dissociation): i = 1 + (n−1)α where n = number of ions</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Raoult's Law &amp; Deviations</div>
-      <ul>
-        <li><b>Ideal solution:</b> Obeys Raoult's; ΔHmix = 0; ΔVmix = 0</li>
-        <li><b>+ve deviation:</b> Pobs &gt; Pideal; A–B forces weaker than A–A/B–B; ΔHmix &gt; 0 (e.g., ethanol + water)</li>
-        <li><b>−ve deviation:</b> Pobs &lt; Pideal; A–B forces stronger; ΔHmix &lt; 0 (e.g., HCl + water, H₂SO₄ + water)</li>
-        <li><b>Azeotropes:</b> Constant boiling mixtures; cannot be separated by simple distillation</li>
-        <li>+ve deviation → minimum BP azeotrope; −ve deviation → maximum BP azeotrope</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- ELECTROCHEMISTRY -->
-<div id="tab-electrochem" class="section">
-  <div class="sec-heading">Electrochemistry</div>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Galvanic vs Electrolytic Cells</div>
-      <ul>
-        <li><b>Galvanic/Voltaic:</b> Chemical energy → Electrical energy (spontaneous, ΔG &lt; 0)</li>
-        <li><b>Electrolytic:</b> Electrical energy → Chemical energy (non-spontaneous)</li>
-        <li><b>Anode:</b> Oxidation (−ve in galvanic, +ve in electrolytic)</li>
-        <li><b>Cathode:</b> Reduction (+ve in galvanic, −ve in electrolytic)</li>
-        <li><b>Salt bridge:</b> Completes circuit; maintains electrical neutrality; contains KCl or KNO₃</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Cell Potential &amp; Nernst Equation</div>
-      <ul>
-        <li>E°cell = E°cathode − E°anode (reduction potentials)</li>
-        <li>ΔG = −nFEcell; ΔG° = −nFE°cell</li>
-        <li>ΔG° = −RT ln K → E°cell = (RT/nF) ln K = (0.0592/n) log K at 298K</li>
-        <li><b>Nernst Equation:</b> Ecell = E°cell − (0.0592/n) log Q at 298K</li>
-        <li>More +ve E°: stronger oxidizing agent; More −ve E°: stronger reducing agent</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Faraday's Laws of Electrolysis</div>
-      <ul>
-        <li><b>First Law:</b> Mass deposited ∝ charge passed (W = ZQ = ZIt)</li>
-        <li><b>Second Law:</b> For same charge, W₁/W₂ = E₁/E₂ (equivalent weights)</li>
-        <li>1 Faraday = 96485 C ≈ 96500 C = charge of 1 mole of electrons</li>
-        <li>Quantity of charge: Q = I × t (coulombs)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-p"></span>Conductance</div>
-      <ul>
-        <li>Conductance (G) = 1/R; unit: Siemens (S)</li>
-        <li>Conductivity (κ) = G · (l/A); unit: S m⁻¹</li>
-        <li>Molar Conductivity (Λm) = κ × 1000/M</li>
-        <li><b>Kohlrausch's Law:</b> Λ°m = λ°₊ + λ°₋ (at infinite dilution)</li>
-        <li>Strong electrolytes: Λm increases linearly as concentration decreases</li>
-        <li>Weak electrolytes: Λm increases sharply at very low concentration</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- KINETICS -->
-<div id="tab-kinetics" class="section">
-  <div class="sec-heading">Chemical Kinetics</div>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Rate Laws &amp; Order</div>
-      <ul>
-        <li><b>Rate of reaction:</b> −d[A]/dt = k[A]ˣ[B]ʸ</li>
-        <li><b>Order:</b> x + y (determined experimentally; can be fraction or zero)</li>
-        <li><b>Molecularity:</b> Number of species in elementary step (always positive integer)</li>
-        <li>Rate constant k: units depend on order: (mol/L)^(1−n)/s</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Integrated Rate Laws</div>
-      <ul>
-        <li><b>Zero order:</b> [A]t = [A]₀ − kt; t½ = [A]₀/2k; unit of k: mol/L·s</li>
-        <li><b>First order:</b> ln[A]t = ln[A]₀ − kt; t½ = 0.693/k (independent of conc.); unit: s⁻¹</li>
-        <li><b>Second order:</b> 1/[A]t = 1/[A]₀ + kt; t½ = 1/k[A]₀; unit: L/mol·s</li>
-        <li>Radioactive decay: always first order</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Arrhenius Equation &amp; Activation Energy</div>
-      <ul>
-        <li><b>k = Ae^(−Ea/RT)</b> or ln k = ln A − Ea/RT</li>
-        <li><b>Activation Energy (Ea):</b> Minimum energy required for reaction to occur</li>
-        <li><b>Frequency Factor (A):</b> Pre-exponential factor (collision frequency × steric factor)</li>
-        <li>ln(k₂/k₁) = (Ea/R)(1/T₁ − 1/T₂)</li>
-        <li><b>Catalyst:</b> Provides alternate pathway with lower Ea; increases rate; does NOT change ΔG or K</li>
-        <li>Temperature: Every 10°C rise approximately doubles reaction rate</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-p"></span>Collision Theory &amp; Factors</div>
-      <ul>
-        <li>Rate ↑ with: temperature↑, concentration↑, surface area↑, catalyst present</li>
-        <li>Effective collision: must have sufficient energy (≥ Ea) AND proper orientation</li>
-        <li>Threshold energy = Activation energy + average kinetic energy</li>
-        <li>Order vs molecularity: Molecularity only for elementary steps; order is experimental (may differ)</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- GOC -->
-<div id="tab-goc" class="section active">
-  <div class="sec-heading">General Organic Chemistry</div>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Electronic Effects</div>
-      <ul>
-        <li><b>Inductive (+I)</b>: Electron-donating alkyl groups push σ-electrons</li>
-        <li><b>Inductive (−I)</b>: EWGs like −NO₂, −COOH pull σ-electrons</li>
-        <li><b>Resonance (+M)</b>: −OH, −NH₂ donate lone pair into ring/π</li>
-        <li><b>Resonance (−M)</b>: −NO₂, −CHO, −CN withdraw via π</li>
-        <li><b>Hyperconjugation</b>: σ C−H electrons delocalize with adjacent p/π; more α-H = more stable</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Acidity &amp; Basicity</div>
-      <ul>
-        <li>EWG increase acidity (stabilize conjugate base by −I/−M)</li>
-        <li>EDG decrease acidity; increase basicity</li>
-        <li>Resonance stabilization of conjugate base → stronger acid</li>
-        <li><b>Acidity order:</b> RCOOH &gt; PhOH &gt; ROH &gt; RC≡CH &gt; Alkane</li>
-        <li><b>Basicity (gas):</b> 3° &gt; 2° &gt; 1° &gt; NH₃</li>
-        <li><b>Basicity (aq):</b> 2° &gt; 1° &gt; 3° &gt; NH₃ (methylamines)</li>
-        <li><b>Aromatic:</b> Aliphatic amines &gt; NH₃ &gt; Aniline</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Stability Orders</div>
-      <div style="margin-bottom:12px">
-        <div style="font-size:11px;color:var(--muted);margin-bottom:6px">Carbocation (stabilized by +I, hyperconj, resonance)</div>
-        <div class="order-chain">
-          <span class="order-item top">3°</span><span class="gt">&gt;</span>
-          <span class="order-item">2°</span><span class="gt">&gt;</span>
-          <span class="order-item">1°</span><span class="gt">&gt;</span>
-          <span class="order-item">CH₃⁺</span>
-        </div>
-      </div>
-      <div style="margin-bottom:12px">
-        <div style="font-size:11px;color:var(--muted);margin-bottom:6px">Carbanion (stabilized by −I, resonance)</div>
-        <div class="order-chain">
-          <span class="order-item top">CH₃⁻</span><span class="gt">&gt;</span>
-          <span class="order-item">1°</span><span class="gt">&gt;</span>
-          <span class="order-item">2°</span><span class="gt">&gt;</span>
-          <span class="order-item">3°</span>
-        </div>
-      </div>
+  <header>
+    <div class="header-top">
       <div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:6px">Free Radical (hyperconj, resonance)</div>
-        <div class="order-chain">
-          <span class="order-item top">3°</span><span class="gt">&gt;</span>
-          <span class="order-item">2°</span><span class="gt">&gt;</span>
-          <span class="order-item">1°</span><span class="gt">&gt;</span>
-          <span class="order-item">CH₃•</span>
+        <div class="logo">move on !</div>
+        <h1>Damascus <span></span></h1>
+      </div>
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search reactions, reagents…" oninput="handleSearch(this.value)">
+      </div>
+    </div>
+    <nav class="tabs">
+      <button class="tab-btn" style="color:var(--accent4);font-weight:700;border-bottom:2px solid var(--accent4)">— INORGANIC —</button>
+      <button class="tab-btn" onclick="showTab('periodic',this)">Periodicity</button>
+      <button class="tab-btn" onclick="showTab('bonding',this)">Bonding</button>
+      <button class="tab-btn" onclick="showTab('sblock',this)">s-Block</button>
+      <button class="tab-btn" onclick="showTab('pblock',this)">p-Block</button>
+      <button class="tab-btn" onclick="showTab('dblock',this)">d &amp; f Block</button>
+      <button class="tab-btn" onclick="showTab('coordination',this)">Coordination</button>
+      <button style="background:none;border:none;color:var(--border);padding:10px 6px;cursor:default">|</button>
+      <button class="tab-btn" style="color:var(--accent2);font-weight:700;border-bottom:2px solid var(--accent2)">— PHYSICAL —</button>
+      <button class="tab-btn" onclick="showTab('basics',this)">Basics &amp; Mole</button>
+      <button class="tab-btn" onclick="showTab('atom',this)">Atomic Structure</button>
+      <button class="tab-btn" onclick="showTab('thermo',this)">Thermodynamics</button>
+      <button class="tab-btn" onclick="showTab('equil',this)">Equilibrium</button>
+      <button class="tab-btn" onclick="showTab('redox',this)">Redox</button>
+      <button class="tab-btn" onclick="showTab('solutions',this)">Solutions</button>
+      <button class="tab-btn" onclick="showTab('electrochem',this)">Electrochemistry</button>
+      <button class="tab-btn" onclick="showTab('kinetics',this)">Kinetics</button>
+      <button style="background:none;border:none;color:var(--border);padding:10px 6px;cursor:default">|</button>
+      <button class="tab-btn" style="color:var(--accent);font-weight:700;border-bottom:2px solid var(--accent)">— ORGANIC —</button>
+      <button class="tab-btn active" onclick="showTab('goc',this)">GOC</button>
+      <button class="tab-btn" onclick="showTab('hydrocarbons',this)">Hydrocarbons</button>
+      <button class="tab-btn" onclick="showTab('haloalkanes',this)">Haloalkanes</button>
+      <button class="tab-btn" onclick="showTab('alcohols',this)">vodka 🍾/ Phenols</button>
+      <button class="tab-btn" onclick="showTab('carbonyl',this)">Carbonyl Cpds</button>
+      <button class="tab-btn" onclick="showTab('nitrogen',this)">Nitrogen Cpds</button>
+      <button class="tab-btn" onclick="showTab('biomol',this)">Biomolecules</button>
+      <button class="tab-btn" onclick="showTab('reagents',this)">Reagents</button>
+      <button class="tab-btn" onclick="showTab('namedreactions',this)">Named Rxns</button>
+      <button class="tab-btn" onclick="showTab('conversions',this)">Conversions</button>
+      <button class="tab-btn" onclick="showTab('traps',this)">Traps ⚠️</button>
+    </nav>
+  </header>
+
+  <main id="searchResults" style="display:none">
+    <div class="sec-heading">Search Results</div>
+    <div id="searchOutput"></div>
+  </main>
+
+  <main id="tabContent">
+
+    <!-- ════════════════════════════════════════════
+         INORGANIC CHEMISTRY SECTIONS
+    ════════════════════════════════════════════ -->
+    <!-- PERIODICITY -->
+    <div id="tab-periodic" class="section">
+      <div class="sec-heading">Classification of Elements &amp; Periodicity</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Periodic Table Structure</div>
+          <ul>
+            <li><b>Modern Periodic Law:</b> Properties are periodic functions of atomic number</li>
+            <li><b>Periods (1–7):</b> Horizontal rows → indicate number of shells</li>
+            <li><b>Groups (1–18):</b> Vertical columns → indicate valence electrons (main group)</li>
+            <li>118 elements currently known; 7 periods, 18 groups</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Periodic Trends — Atomic &amp; Ionic Size</div>
+          <ul>
+            <li><b>Atomic Radius:</b> Decreases across period (↑ nuclear charge), increases down group (↑ shells)</li>
+            <li><b>Cation:</b> Smaller than neutral atom (fewer electrons, same/more nuclear charge)</li>
+            <li><b>Anion:</b> Larger than neutral atom (more electrons, same nuclear charge)</li>
+            <li>Isoelectronic species: size decreases with increasing atomic number</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Ionization Enthalpy (IE)</div>
+          <ul>
+            <li>Energy required to remove an electron from gaseous atom</li>
+            <li>Increases across period, decreases down group</li>
+            <li><b>Exception:</b> Be &gt; B (2s fully filled vs 2p); N &gt; O (half-filled 2p stable)</li>
+            <li>IE₁ &lt; IE₂ &lt; IE₃ … (successive IEs increase sharply after noble gas config)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-p"></span>Electron Gain Enthalpy &amp; Electronegativity</div>
+          <ul>
+            <li><b>EGE:</b> Energy released when e⁻ added to neutral atom; more negative across period</li>
+            <li><b>Halogens:</b> Highest negative EGE (Cl has highest, not F due to small size repulsion)</li>
+            <li><b>Noble gases:</b> Positive EGE (stable config, electron not accepted easily)</li>
+            <li><b>Electronegativity:</b> Increases across period, decreases down group</li>
+            <li>Order: F &gt; O &gt; N ~ Cl &gt; Br &gt; I &gt; C</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Metallic &amp; Acid/Base Character of Oxides</div>
+          <ul>
+            <li><b>Metallic character:</b> Decreases across period, increases down group</li>
+            <li><b>Non-metallic character:</b> Increases across period, decreases down group</li>
+            <li><b>Basic oxides:</b> Group 1 &amp; 2 metals (Na₂O, MgO)</li>
+            <li><b>Acidic oxides:</b> Non-metals (SO₃, P₂O₅, Cl₂O₇)</li>
+            <li><b>Amphoteric oxides:</b> Al₂O₃, ZnO, SnO (react with both acid &amp; base)</li>
+            <li>Acidity of oxides increases across period (basic → neutral → acidic)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BONDING -->
+    <div id="tab-bonding" class="section">
+      <div class="sec-heading">Chemical Bonding &amp; Molecular Structure</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Types of Bonds</div>
+          <ul>
+            <li><b>Ionic Bond:</b> Transfer of electrons; electrostatic attraction; favored by low IE, high EGE, high lattice enthalpy</li>
+            <li><b>Covalent Bond:</b> Sharing of electrons; sigma (σ) and pi (π) bonds</li>
+            <li><b>Coordinate/Dative:</b> Both electrons from one atom (e.g., BF₃ + NH₃)</li>
+            <li><b>Metallic Bond:</b> Sea of electrons; explains conductivity and malleability</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Hybridization &amp; VSEPR</div>
+          <ul>
+            <li><b>sp³:</b> CH₄ (tetrahedral 109.5°), NH₃ (pyramidal), H₂O (bent)</li>
+            <li><b>sp²:</b> BF₃ (trigonal planar 120°), C₂H₄</li>
+            <li><b>sp:</b> BeCl₂ (linear 180°), C₂H₂</li>
+            <li><b>VSEPR:</b> Lone pairs &gt; bond pairs in repulsion → compress bond angles</li>
+            <li>Bond angle: CH₄ (109.5°) &gt; NH₃ (107°) &gt; H₂O (104.5°)</li>
+            <li>dsp² (square planar), sp³d (trigonal bipyramidal), sp³d² (octahedral)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Molecular Orbital Theory (MOT)</div>
+          <ul>
+            <li>Atomic orbitals combine to form bonding (BMO) and antibonding (ABMO) MOs</li>
+            <li><b>Bond Order (BO) = ½(Nb − Na);</b> higher BO = stronger, shorter bond</li>
+            <li>BO = 0 → molecule doesn't exist (e.g., He₂)</li>
+            <li><b>O₂:</b> BO = 2, paramagnetic (2 unpaired e⁻ in π* orbitals)</li>
+            <li><b>N₂:</b> BO = 3, diamagnetic, very stable</li>
+            <li>Unpaired e⁻ → paramagnetic; all paired → diamagnetic</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-p"></span>Hydrogen Bonding &amp; Intermolecular Forces</div>
+          <ul>
+            <li><b>H-bond:</b> Dipole–dipole interaction between H and electronegative atom (F, O, N)</li>
+            <li><b>Intermolecular H-bond:</b> Between molecules (H₂O, HF, NH₃) → high BP</li>
+            <li><b>Intramolecular H-bond:</b> Within molecule (o-nitrophenol) → lower BP than para</li>
+            <li>Strength: F–H···F &gt; O–H···O &gt; N–H···N</li>
+            <li>Van der Waals (weakest) → Dipole–dipole → H-bond → Covalent (strongest)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Octet Rule &amp; Exceptions</div>
+          <ul>
+            <li>Octet: atoms gain/lose/share electrons to achieve 8 valence electrons</li>
+            <li><b>Incomplete octet:</b> BF₃ (6e⁻ around B), BeCl₂ (4e⁻ around Be)</li>
+            <li><b>Expanded octet:</b> PCl₅ (10e⁻), SF₆ (12e⁻) — 3rd period &amp; beyond (d-orbitals)</li>
+            <li><b>Odd-electron molecules:</b> NO, NO₂ (odd number of electrons)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- s-BLOCK -->
+    <div id="tab-sblock" class="section">
+      <div class="sec-heading">s-Block Elements</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Group 1 — Alkali Metals (Li, Na, K, Rb, Cs, Fr)</div>
+          <ul>
+            <li>Config: [Noble gas] ns¹; all have +1 oxidation state</li>
+            <li>Highly reactive; strong reducing agents; form ionic compounds</li>
+            <li>React with water: 2M + 2H₂O → 2MOH + H₂↑ (vigour: Li &lt; Na &lt; K &lt; Rb &lt; Cs)</li>
+            <li><b>Flame colours:</b> Li (crimson red), Na (golden yellow), K (lilac/violet), Rb (red-violet), Cs (blue)</li>
+            <li>Li shows anomalous behaviour — diagonal relationship with Mg</li>
+            <li>Li forms Li₃N (nitride) directly; Na forms Na₂O₂ (peroxide); K, Rb, Cs form superoxides (MO₂)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Group 2 — Alkaline Earth Metals (Be, Mg, Ca, Sr, Ba, Ra)</div>
+          <ul>
+            <li>Config: [Noble gas] ns²; +2 oxidation state</li>
+            <li>Less reactive than alkali metals; harder, higher melting points</li>
+            <li><b>Flame colours:</b> Ca (brick red), Sr (crimson red), Ba (apple green)</li>
+            <li><b>Be anomalous:</b> Forms covalent compounds; diagonal relationship with Al; BeO is amphoteric</li>
+            <li><b>Limestone:</b> CaCO₃; <b>Plaster of Paris:</b> CaSO₄·½H₂O</li>
+            <li><b>Gypsum:</b> CaSO₄·2H₂O (+ heat → POP)</li>
+            <li>Solubility of sulfates: BeSO₄ &gt; MgSO₄ &gt; CaSO₄ &gt; SrSO₄ &gt; BaSO₄ (↓)</li>
+            <li>Solubility of hydroxides: Be(OH)₂ &lt; Mg(OH)₂ &lt; Ca(OH)₂ &lt; Sr(OH)₂ &lt; Ba(OH)₂ (↑)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- p-BLOCK -->
+    <div id="tab-pblock" class="section">
+      <div class="sec-heading">p-Block Elements</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Group 13 — Boron Family</div>
+          <ul>
+            <li>Config: ns²np¹; Boron is non-metal, rest metals</li>
+            <li>BH₃ dimerizes → B₂H₆ (diborane) with 3-centre 2-electron (banana) bonds</li>
+            <li><b>Borax:</b> Na₂B₄O₇·10H₂O; <b>Boric acid:</b> H₃BO₃ (weak monobasic acid)</li>
+            <li>Aluminium is amphoteric (reacts with acid AND alkali)</li>
+            <li>Inert pair effect: Tl prefers +1 state</li>
+            <li>BF₃ is a Lewis acid (incomplete octet)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Group 14 — Carbon Family</div>
+          <ul>
+            <li>C allotropes: Diamond (sp³, hardest), Graphite (sp², lubricant, conductor), Fullerene (C₆₀)</li>
+            <li><b>Catenation:</b> Self-linking ability; strongest in C due to strong C–C bonds</li>
+            <li>Si, Ge: metalloids; Sn, Pb: metals</li>
+            <li><b>Silicones:</b> Polymers with −(R₂SiO)ₙ− repeating units; water-repellent</li>
+            <li>CO₂ (acidic, linear) vs SiO₂ (covalent network solid)</li>
+            <li>Inert pair effect: Pb prefers +2 state</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Group 15 — Nitrogen Family</div>
+          <ul>
+            <li>N is gaseous; P, As, Sb, Bi are solids</li>
+            <li>N has no d-orbitals → max covalency 4; P can expand to 5 (PCl₅)</li>
+            <li><b>Allotropes of P:</b> White (toxic, most reactive), Red, Black (least reactive)</li>
+            <li><b>NH₃:</b> Reducing agent, basic, pyramidal (sp³)</li>
+            <li><b>HNO₃:</b> Strong oxidizing acid; dilute → NO; conc. → NO₂</li>
+            <li>Nitrogen forms oxides: N₂O, NO, N₂O₃, NO₂, N₂O₅</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-p"></span>Group 16 — Chalcogens (Oxygen Family)</div>
+          <ul>
+            <li>O is gaseous; S, Se, Te, Po are solids</li>
+            <li><b>Allotropes of S:</b> Rhombic (stable &lt;96°C), Monoclinic (stable 96–119°C)</li>
+            <li><b>H₂SO₄:</b> Strong acid, dehydrating agent, oxidizing agent; fuming = oleum (H₂S₂O₇)</li>
+            <li>Ozone (O₃): Bent, diamagnetic, strong oxidizing agent; decomposes at 250°C</li>
+            <li>SO₂: Acidic, reducing agent (acts as bleach), V-shaped (sp³)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Group 17 — Halogens</div>
+          <ul>
+            <li>Highly reactive non-metals; strong oxidizing agents; −1 common OS</li>
+            <li>F is most electronegative (no d-orbitals → no expansion, no positive OS)</li>
+            <li><b>Acidity of HX:</b> HF &lt; HCl &lt; HBr &lt; HI (bond strength decreases)</li>
+            <li><b>Oxidizing power:</b> F₂ &gt; Cl₂ &gt; Br₂ &gt; I₂</li>
+            <li><b>Interhalogen compounds:</b> XYₙ type (ClF, ClF₃, ClF₅, BrF₃, IF₇)</li>
+            <li>Cl₂ with NaOH (cold dilute) → NaCl + NaOCl; (hot conc.) → NaCl + NaClO₃</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Group 18 — Noble Gases</div>
+          <ul>
+            <li>Config: ns²np⁶ (He: 1s²); inert, monoatomic, very low BP</li>
+            <li>He: lightest noble gas; used in balloons, diving (with O₂)</li>
+            <li>Ar: most abundant noble gas in atmosphere</li>
+            <li><b>Xe compounds:</b> XeF₂ (linear), XeF₄ (square planar), XeF₆ (distorted octahedral), XeO₃</li>
+            <li>Kr, Rn also form some fluorides</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- d & f BLOCK -->
+    <div id="tab-dblock" class="section">
+      <div class="sec-heading">d- &amp; f-Block Elements</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Transition Elements (d-Block, Groups 3–12)</div>
+          <ul>
+            <li>Config: (n−1)d¹⁻¹⁰ ns¹⁻²</li>
+            <li>Variable oxidation states (due to d-electrons)</li>
+            <li>High melting/boiling points; hard; good conductors</li>
+            <li>Colored ions: d–d transitions absorb visible light</li>
+            <li>Paramagnetic due to unpaired d-electrons</li>
+            <li>Act as catalysts (e.g., Fe in Haber, V₂O₅ in contact process)</li>
+            <li>Form interstitial compounds (e.g., steel)</li>
+            <li><b>Zn, Cd, Hg:</b> NOT true transition elements (d¹⁰ in all common oxidation states)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Important d-Block Compounds</div>
+          <ul>
+            <li><b>KMnO₄:</b> Purple; strong oxidizing agent; acidic medium → Mn²⁺ (colourless); neutral → MnO₂; alkaline → MnO₄²⁻</li>
+            <li><b>K₂Cr₂O₇:</b> Orange; strong oxidizing agent; in acid: Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O</li>
+            <li>KMnO₄ can be used in acidic, neutral, or alkaline medium; K₂Cr₂O₇ only acidic</li>
+            <li>Cr is +6 in dichromate; Mn is +7 in permanganate</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Lanthanoids (4f, Ce–Lu)</div>
+          <ul>
+            <li>Config: (n−2)f¹⁻¹⁴ (n−1)d⁰⁻¹ ns²</li>
+            <li>Most common OS: +3</li>
+            <li><b>Lanthanoid Contraction:</b> Steady decrease in atomic/ionic radii across lanthanoids due to poor shielding by 4f electrons</li>
+            <li>Causes: radii of 2nd and 3rd row transition elements to be nearly equal</li>
+            <li>Misch metal (La, Ce alloy): used in cigarette lighters</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-p"></span>Actinoids (5f, Th–Lr)</div>
+          <ul>
+            <li>Config: (n−2)f¹⁻¹⁴ (n−1)d⁰⁻¹ ns²</li>
+            <li>Exhibit variable oxidation states more than lanthanoids</li>
+            <li>All radioactive; most are man-made (synthetic)</li>
+            <li><b>Actinoid contraction:</b> More pronounced than lanthanoid contraction (more effective shielding in 5f)</li>
+            <li>Only Th, Pa, U occur naturally in appreciable amounts</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- COORDINATION -->
+    <div id="tab-coordination" class="section">
+      <div class="sec-heading">Coordination Compounds</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Key Definitions</div>
+          <ul>
+            <li><b>Coordination compound:</b> Central metal atom/ion bonded to ligands</li>
+            <li><b>Ligand:</b> Lewis base (electron pair donor) — monodentate, bidentate, polydentate</li>
+            <li><b>Coordination Number (CN):</b> Number of donor atoms directly bonded to metal</li>
+            <li><b>Werner's Theory:</b> Primary valency (ionizable = charge) &amp; Secondary valency (CN = non-ionizable)</li>
+            <li>Examples of ligands: NH₃, H₂O, Cl⁻, CN⁻, en (bidentate), EDTA (hexadentate)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>IUPAC Nomenclature</div>
+          <ul>
+            <li>Name ligands first (alphabetical), then metal with OS in Roman numerals</li>
+            <li>Anionic ligands: -o suffix (Cl⁻ → chlorido, CN⁻ → cyanido, OH⁻ → hydroxido)</li>
+            <li>Neutral ligands: as-is (NH₃ → ammine, H₂O → aqua, CO → carbonyl)</li>
+            <li>If complex is anionic, metal gets -ate suffix + Latin name (Fe → ferrate, Cu → cuprate)</li>
+            <li>Example: [Co(NH₃)₄Cl₂]Cl → Tetraamminedichloridocobalt(III) chloride</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Isomerism in Coordination Compounds</div>
+          <ul>
+            <li><b>Ionization:</b> [Co(NH₃)₅Cl]SO₄ vs [Co(NH₃)₅SO₄]Cl</li>
+            <li><b>Hydrate:</b> [Cr(H₂O)₆]Cl₃ vs [Cr(H₂O)₅Cl]Cl₂·H₂O</li>
+            <li><b>Linkage:</b> –NO₂ (N-bonded) vs –ONO (O-bonded); –SCN vs –NCS</li>
+            <li><b>Geometric (cis/trans):</b> MA₂B₂ square planar &amp; MA₄B₂ octahedral</li>
+            <li><b>Optical (enantiomers):</b> [Co(en)₃]³⁺ — common in octahedral with bidentate ligands</li>
+            <li><b>Coordination isomerism:</b> Exchange of ligands between cation and anion complexes</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-p"></span>Crystal Field Theory (CFT)</div>
+          <ul>
+            <li>Ligands as point charges split d-orbitals into two sets</li>
+            <li><b>Octahedral:</b> t₂g (lower, dxy, dyz, dxz) and eg (higher, dx²-y², dz²); splitting = Δo</li>
+            <li><b>Tetrahedral:</b> e (lower) and t₂ (higher); Δt ≈ 4/9 Δo (weaker)</li>
+            <li><b>Strong field ligands:</b> CO &gt; CN⁻ &gt; NO₂⁻ &gt; en &gt; NH₃ → low spin (pair first)</li>
+            <li><b>Weak field ligands:</b> I⁻ &lt; Br⁻ &lt; Cl⁻ &lt; F⁻ &lt; OH⁻ &lt; H₂O → high spin</li>
+            <li>Color: d–d transition absorbs one color, transmits complementary color</li>
+            <li>Spectrochemical series: CO &gt; CN⁻ &gt; NO₂⁻ &gt; en &gt; NH₃ &gt; H₂O &gt; ox²⁻ &gt; OH⁻ &gt; F⁻ &gt; Cl⁻ &gt; Br⁻ &gt; I⁻</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>VBT in Coordination Compounds</div>
+          <ul>
+            <li>Strong field ligands (CN⁻, CO, NH₃) → inner orbital complexes (d²sp³ for octahedral)</li>
+            <li>Weak field ligands (H₂O, Cl⁻) → outer orbital complexes (sp³d² for octahedral)</li>
+            <li>Inner orbital: lower spin (more paired), diamagnetic if all paired</li>
+            <li>[Fe(CN)₆]⁴⁻: d²sp³, diamagnetic (strong field); [Fe(H₂O)₆]²⁺: sp³d², paramagnetic (weak field)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════
+         PHYSICAL CHEMISTRY SECTIONS
+    ════════════════════════════════════════════ -->
+    <!-- BASICS & MOLE -->
+    <div id="tab-basics" class="section">
+      <div class="sec-heading">Some Basic Concepts of Chemistry</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Mole Concept</div>
+          <ul>
+            <li>1 mole = 6.022 × 10²³ particles (Avogadro's number)</li>
+            <li>1 mole of any gas at STP = 22.4 L</li>
+            <li>Molar mass (g) = mass of 1 mole of substance</li>
+            <li><b>Limiting reagent:</b> Reactant consumed first; determines max product</li>
+            <li><b>% yield</b> = (actual yield / theoretical yield) × 100</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Concentration Terms</div>
+          <ul>
+            <li><b>Molarity (M):</b> Moles solute / L solution; changes with temperature</li>
+            <li><b>Molality (m):</b> Moles solute / kg solvent; independent of temperature</li>
+            <li><b>Mole fraction (x):</b> Moles component / Total moles</li>
+            <li><b>Mass %:</b> (Mass component / Total mass) × 100</li>
+            <li><b>Normality (N):</b> Equivalents / L; N = M × n-factor</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Stoichiometry</div>
+          <ul>
+            <li>Balanced equation gives molar ratios of reactants &amp; products</li>
+            <li>Always identify limiting reagent before calculating product amount</li>
+            <li><b>Empirical formula:</b> Simplest whole-number ratio of atoms</li>
+            <li><b>Molecular formula:</b> Actual number of atoms; Mf = n × Ef</li>
+            <li>Law of conservation of mass: total mass reactants = total mass products</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ATOMIC STRUCTURE -->
+    <div id="tab-atom" class="section">
+      <div class="sec-heading">Structure of Atom</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Bohr's Model</div>
+          <ul>
+            <li>Electrons revolve in fixed circular orbits (shells) without radiating energy</li>
+            <li>Energy of nth orbit: Eₙ = −13.6/n² eV (for H-like atoms)</li>
+            <li>Radius: rₙ = 0.529n²/Z Å</li>
+            <li>Energy is emitted/absorbed when electron transitions between levels</li>
+            <li><b>Limitation:</b> Cannot explain multi-electron atoms, Zeeman/Stark effect</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Quantum Numbers</div>
+          <ul>
+            <li><b>Principal (n):</b> Shell, energy, size; n = 1, 2, 3…</li>
+            <li><b>Azimuthal (l):</b> Subshell shape; l = 0 (s), 1 (p), 2 (d), 3 (f); l = 0 to n−1</li>
+            <li><b>Magnetic (mₗ):</b> Orbital orientation; mₗ = −l to +l</li>
+            <li><b>Spin (mₛ):</b> Electron spin; +½ or −½</li>
+            <li>Max electrons in shell = 2n²; in subshell: s(2), p(6), d(10), f(14)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Electronic Configuration Rules</div>
+          <ul>
+            <li><b>Aufbau:</b> Fill lowest energy orbitals first (1s, 2s, 2p, 3s, 3p, 4s, 3d…)</li>
+            <li><b>Hund's Rule:</b> Maximize unpaired electrons in degenerate orbitals (same energy)</li>
+            <li><b>Pauli Exclusion:</b> No two electrons can have same 4 quantum numbers</li>
+            <li><b>Exceptions:</b> Cr = [Ar]3d⁵4s¹; Cu = [Ar]3d¹⁰4s¹ (extra stability of half-filled/fully-filled d)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-p"></span>Wave-Particle Duality &amp; Uncertainty</div>
+          <ul>
+            <li><b>de Broglie:</b> λ = h/mv; every moving particle has wave character</li>
+            <li><b>Heisenberg Uncertainty:</b> Δx · Δp ≥ h/4π; cannot know position &amp; momentum exactly simultaneously</li>
+            <li>Photoelectric effect: light as photons, E = hν</li>
+            <li>Threshold frequency (ν₀): minimum frequency to eject electron</li>
+            <li>KE of ejected electron = hν − hν₀ = hν − W (W = work function)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- THERMODYNAMICS -->
+    <div id="tab-thermo" class="section">
+      <div class="sec-heading">Thermodynamics</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Laws of Thermodynamics</div>
+          <ul>
+            <li><b>First Law:</b> ΔU = Q + W (energy conservation); ΔU = Q − PΔV (expansion)</li>
+            <li><b>Second Law:</b> ΔS_total &gt; 0 for spontaneous process; entropy of universe increases</li>
+            <li><b>Third Law:</b> S → 0 as T → 0 K (perfect crystal has zero entropy at absolute zero)</li>
+            <li>Enthalpy: H = U + PV; at constant P: ΔH = ΔU + PΔV = ΔU + ΔngRT</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Gibbs Free Energy &amp; Spontaneity</div>
+          <ul>
+            <li>G = H − TS</li>
+            <li><b>ΔG &lt; 0:</b> Spontaneous; <b>ΔG = 0:</b> Equilibrium; <b>ΔG &gt; 0:</b> Non-spontaneous</li>
+            <li>ΔG° = −RT ln K (standard free energy &amp; equilibrium constant)</li>
+            <li>ΔG = ΔG° + RT ln Q</li>
+            <li>At equilibrium: ΔG = 0 → ΔG° = −RT ln K</li>
+            <li>Exothermic + ΔS &gt; 0: always spontaneous; Endothermic + ΔS &lt; 0: never spontaneous</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Hess's Law &amp; Enthalpies</div>
+          <ul>
+            <li><b>Hess's Law:</b> ΔH is path-independent; total ΔH = sum of individual ΔH values</li>
+            <li><b>Lattice enthalpy:</b> Energy to separate 1 mole of ionic crystal into gaseous ions</li>
+            <li><b>Bond enthalpy:</b> Energy to break 1 mole of bonds; ΔH_rxn = ΣBE(broken) − ΣBE(formed)</li>
+            <li><b>Enthalpy of combustion:</b> ΔH for complete combustion of 1 mole of substance</li>
+            <li><b>Born-Haber cycle:</b> Calculates lattice enthalpy of ionic compounds</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-p"></span>Heat Capacity &amp; Work</div>
+          <ul>
+            <li>Cp = (∂H/∂T)P; Cv = (∂U/∂T)V; Cp − Cv = R (for ideal gas)</li>
+            <li>Work done in expansion: W = −Pext·ΔV (expansion work against constant P)</li>
+            <li><b>Isothermal reversible:</b> W = −nRT ln(V₂/V₁)</li>
+            <li><b>Adiabatic:</b> Q = 0; ΔU = W</li>
+            <li><b>Isochoric:</b> W = 0; ΔU = Qv</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    <!-- EQUILIBRIUM -->
+    <div id="tab-equil" class="section">
+      <div class="sec-heading">Equilibrium</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Chemical Equilibrium</div>
+          <ul>
+            <li><b>Law of Mass Action:</b> Rate_forward = Rate_reverse at equilibrium</li>
+            <li><b>Kc</b> = [C]ᶜ[D]ᵈ / [A]ᵃ[B]ᵇ (at equilibrium)</li>
+            <li><b>Kp</b> = PCᶜ · PDᵈ / PAᵃ · PBᵇ</li>
+            <li><b>Relation:</b> Kp = Kc(RT)^Δng where Δng = moles gaseous products − moles gaseous reactants</li>
+            <li>Large K: products favoured; Small K: reactants favoured</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Le Chatelier's Principle</div>
+          <ul>
+            <li>System shifts to relieve stress imposed on it</li>
+            <li><b>↑ Concentration of reactant:</b> Shifts right (→ products)</li>
+            <li><b>↑ Pressure:</b> Shifts toward fewer moles of gas</li>
+            <li><b>↑ Temperature (exothermic rxn):</b> Shifts left (← reactants); K decreases</li>
+            <li><b>↑ Temperature (endothermic rxn):</b> Shifts right; K increases</li>
+            <li>Catalyst: No shift in equilibrium; only speeds up attainment of equilibrium</li>
+            <li>Inert gas at constant V: No effect; at constant P: shifts to more moles of gas</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Ionic Equilibrium</div>
+          <ul>
+            <li>pH = −log[H⁺]; pOH = −log[OH⁻]; pH + pOH = 14 at 25°C</li>
+            <li>Kw = [H⁺][OH⁻] = 10⁻¹⁴ at 25°C</li>
+            <li><b>Buffer:</b> Weak acid + its salt (or weak base + its salt); resists pH change</li>
+            <li><b>Henderson-Hasselbalch:</b> pH = pKa + log([Salt]/[Acid])</li>
+            <li><b>Ksp:</b> Product of ion concentrations at saturation; used to predict precipitation</li>
+            <li>Precipitation occurs when ion product &gt; Ksp</li>
+            <li><b>Common ion effect:</b> Ksp shifts equilibrium; reduces solubility</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- REDOX -->
+    <div id="tab-redox" class="section">
+      <div class="sec-heading">Redox Reactions</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Oxidation &amp; Reduction</div>
+          <ul>
+            <li><b>Oxidation:</b> Loss of electrons; increase in oxidation number</li>
+            <li><b>Reduction:</b> Gain of electrons; decrease in oxidation number</li>
+            <li><b>Oxidizing agent:</b> Causes oxidation; gets reduced (gains e⁻)</li>
+            <li><b>Reducing agent:</b> Causes reduction; gets oxidized (loses e⁻)</li>
+            <li>OIL RIG: Oxidation Is Loss; Reduction Is Gain</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Oxidation Number Rules</div>
+          <ul>
+            <li>Pure element: OS = 0; Simple monoatomic ion: OS = charge</li>
+            <li>F always −1; O usually −2 (except OF₂: +2; peroxides: −1; superoxides: −½)</li>
+            <li>H: +1 with non-metals; −1 with metals (metal hydrides)</li>
+            <li>Sum of OS in neutral compound = 0; in ion = charge of ion</li>
+            <li>Mn in KMnO₄ = +7; Cr in K₂Cr₂O₇ = +6; S in H₂SO₄ = +6; N in HNO₃ = +5</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Balancing Redox Reactions</div>
+          <ul>
+            <li><b>Ion-electron method:</b> Write half-reactions (oxidation &amp; reduction); balance atoms, charge, then add</li>
+            <li><b>Oxidation number method:</b> Track change in oxidation numbers; equalize increase &amp; decrease</li>
+            <li>In acidic medium: add H₂O to balance O; add H⁺ to balance H</li>
+            <li>In basic medium: add OH⁻ to balance; then add H₂O for H</li>
+            <li>Disproportionation: single element simultaneously oxidized &amp; reduced (e.g., Cl₂ + NaOH)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SOLUTIONS -->
+    <div id="tab-solutions" class="section">
+      <div class="sec-heading">Solutions</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Colligative Properties</div>
+          <ul>
+            <li>Depend on number of solute particles, not identity</li>
+            <li><b>RLVP:</b> (P° − Ps)/P° = xsolute (Raoult's Law)</li>
+            <li><b>Elevation in BP:</b> ΔTb = Kb · m · i</li>
+            <li><b>Depression in FP:</b> ΔTf = Kf · m · i</li>
+            <li><b>Osmotic Pressure:</b> π = i · C · R · T</li>
+            <li>Kf (water) = 1.86 K·kg/mol; Kb (water) = 0.512 K·kg/mol</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Van't Hoff Factor (i)</div>
+          <ul>
+            <li>i = actual moles particles / theoretical moles particles</li>
+            <li><b>i = 1:</b> Non-electrolytes (glucose, urea)</li>
+            <li><b>i &gt; 1:</b> Dissociation (NaCl → Na⁺ + Cl⁻, i = 2; K₂SO₄: i = 3)</li>
+            <li><b>i &lt; 1:</b> Association (acetic acid in benzene forms dimers)</li>
+            <li>α (degree of dissociation): i = 1 + (n−1)α where n = number of ions</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Raoult's Law &amp; Deviations</div>
+          <ul>
+            <li><b>Ideal solution:</b> Obeys Raoult's; ΔHmix = 0; ΔVmix = 0</li>
+            <li><b>+ve deviation:</b> Pobs &gt; Pideal; A–B forces weaker than A–A/B–B; ΔHmix &gt; 0 (e.g., ethanol + water)</li>
+            <li><b>−ve deviation:</b> Pobs &lt; Pideal; A–B forces stronger; ΔHmix &lt; 0 (e.g., HCl + water, H₂SO₄ + water)</li>
+            <li><b>Azeotropes:</b> Constant boiling mixtures; cannot be separated by simple distillation</li>
+            <li>+ve deviation → minimum BP azeotrope; −ve deviation → maximum BP azeotrope</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ELECTROCHEMISTRY -->
+    <div id="tab-electrochem" class="section">
+      <div class="sec-heading">Electrochemistry</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Galvanic vs Electrolytic Cells</div>
+          <ul>
+            <li><b>Galvanic/Voltaic:</b> Chemical energy → Electrical energy (spontaneous, ΔG &lt; 0)</li>
+            <li><b>Electrolytic:</b> Electrical energy → Chemical energy (non-spontaneous)</li>
+            <li><b>Anode:</b> Oxidation (−ve in galvanic, +ve in electrolytic)</li>
+            <li><b>Cathode:</b> Reduction (+ve in galvanic, −ve in electrolytic)</li>
+            <li><b>Salt bridge:</b> Completes circuit; maintains electrical neutrality; contains KCl or KNO₃</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Cell Potential &amp; Nernst Equation</div>
+          <ul>
+            <li>E°cell = E°cathode − E°anode (reduction potentials)</li>
+            <li>ΔG = −nFEcell; ΔG° = −nFE°cell</li>
+            <li>ΔG° = −RT ln K → E°cell = (RT/nF) ln K = (0.0592/n) log K at 298K</li>
+            <li><b>Nernst Equation:</b> Ecell = E°cell − (0.0592/n) log Q at 298K</li>
+            <li>More +ve E°: stronger oxidizing agent; More −ve E°: stronger reducing agent</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Faraday's Laws of Electrolysis</div>
+          <ul>
+            <li><b>First Law:</b> Mass deposited ∝ charge passed (W = ZQ = ZIt)</li>
+            <li><b>Second Law:</b> For same charge, W₁/W₂ = E₁/E₂ (equivalent weights)</li>
+            <li>1 Faraday = 96485 C ≈ 96500 C = charge of 1 mole of electrons</li>
+            <li>Quantity of charge: Q = I × t (coulombs)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-p"></span>Conductance</div>
+          <ul>
+            <li>Conductance (G) = 1/R; unit: Siemens (S)</li>
+            <li>Conductivity (κ) = G · (l/A); unit: S m⁻¹</li>
+            <li>Molar Conductivity (Λm) = κ × 1000/M</li>
+            <li><b>Kohlrausch's Law:</b> Λ°m = λ°₊ + λ°₋ (at infinite dilution)</li>
+            <li>Strong electrolytes: Λm increases linearly as concentration decreases</li>
+            <li>Weak electrolytes: Λm increases sharply at very low concentration</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- KINETICS -->
+    <div id="tab-kinetics" class="section">
+      <div class="sec-heading">Chemical Kinetics</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Rate Laws &amp; Order</div>
+          <ul>
+            <li><b>Rate of reaction:</b> −d[A]/dt = k[A]ˣ[B]ʸ</li>
+            <li><b>Order:</b> x + y (determined experimentally; can be fraction or zero)</li>
+            <li><b>Molecularity:</b> Number of species in elementary step (always positive integer)</li>
+            <li>Rate constant k: units depend on order: (mol/L)^(1−n)/s</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Integrated Rate Laws</div>
+          <ul>
+            <li><b>Zero order:</b> [A]t = [A]₀ − kt; t½ = [A]₀/2k; unit of k: mol/L·s</li>
+            <li><b>First order:</b> ln[A]t = ln[A]₀ − kt; t½ = 0.693/k (independent of conc.); unit: s⁻¹</li>
+            <li><b>Second order:</b> 1/[A]t = 1/[A]₀ + kt; t½ = 1/k[A]₀; unit: L/mol·s</li>
+            <li>Radioactive decay: always first order</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Arrhenius Equation &amp; Activation Energy</div>
+          <ul>
+            <li><b>k = Ae^(−Ea/RT)</b> or ln k = ln A − Ea/RT</li>
+            <li><b>Activation Energy (Ea):</b> Minimum energy required for reaction to occur</li>
+            <li><b>Frequency Factor (A):</b> Pre-exponential factor (collision frequency × steric factor)</li>
+            <li>ln(k₂/k₁) = (Ea/R)(1/T₁ − 1/T₂)</li>
+            <li><b>Catalyst:</b> Provides alternate pathway with lower Ea; increases rate; does NOT change ΔG or K</li>
+            <li>Temperature: Every 10°C rise approximately doubles reaction rate</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-p"></span>Collision Theory &amp; Factors</div>
+          <ul>
+            <li>Rate ↑ with: temperature↑, concentration↑, surface area↑, catalyst present</li>
+            <li>Effective collision: must have sufficient energy (≥ Ea) AND proper orientation</li>
+            <li>Threshold energy = Activation energy + average kinetic energy</li>
+            <li>Order vs molecularity: Molecularity only for elementary steps; order is experimental (may differ)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- GOC -->
+    <div id="tab-goc" class="section active">
+      <div class="sec-heading">General Organic Chemistry</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Electronic Effects</div>
+          <ul>
+            <li><b>Inductive (+I)</b>: Electron-donating alkyl groups push σ-electrons</li>
+            <li><b>Inductive (−I)</b>: EWGs like −NO₂, −COOH pull σ-electrons</li>
+            <li><b>Resonance (+M)</b>: −OH, −NH₂ donate lone pair into ring/π</li>
+            <li><b>Resonance (−M)</b>: −NO₂, −CHO, −CN withdraw via π</li>
+            <li><b>Hyperconjugation</b>: σ C−H electrons delocalize with adjacent p/π; more α-H = more stable</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Acidity &amp; Basicity</div>
+          <ul>
+            <li>EWG increase acidity (stabilize conjugate base by −I/−M)</li>
+            <li>EDG decrease acidity; increase basicity</li>
+            <li>Resonance stabilization of conjugate base → stronger acid</li>
+            <li><b>Acidity order:</b> RCOOH &gt; PhOH &gt; ROH &gt; RC≡CH &gt; Alkane</li>
+            <li><b>Basicity (gas):</b> 3° &gt; 2° &gt; 1° &gt; NH₃</li>
+            <li><b>Basicity (aq):</b> 2° &gt; 1° &gt; 3° &gt; NH₃ (methylamines)</li>
+            <li><b>Aromatic:</b> Aliphatic amines &gt; NH₃ &gt; Aniline</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Stability Orders</div>
+          <div style="margin-bottom:12px">
+            <div style="font-size:11px;color:var(--muted);margin-bottom:6px">Carbocation (stabilized by +I, hyperconj, resonance)</div>
+            <div class="order-chain">
+              <span class="order-item top">3°</span><span class="gt">&gt;</span>
+              <span class="order-item">2°</span><span class="gt">&gt;</span>
+              <span class="order-item">1°</span><span class="gt">&gt;</span>
+              <span class="order-item">CH₃⁺</span>
+            </div>
+          </div>
+          <div style="margin-bottom:12px">
+            <div style="font-size:11px;color:var(--muted);margin-bottom:6px">Carbanion (stabilized by −I, resonance)</div>
+            <div class="order-chain">
+              <span class="order-item top">CH₃⁻</span><span class="gt">&gt;</span>
+              <span class="order-item">1°</span><span class="gt">&gt;</span>
+              <span class="order-item">2°</span><span class="gt">&gt;</span>
+              <span class="order-item">3°</span>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:11px;color:var(--muted);margin-bottom:6px">Free Radical (hyperconj, resonance)</div>
+            <div class="order-chain">
+              <span class="order-item top">3°</span><span class="gt">&gt;</span>
+              <span class="order-item">2°</span><span class="gt">&gt;</span>
+              <span class="order-item">1°</span><span class="gt">&gt;</span>
+              <span class="order-item">CH₃•</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-p"></span>Mechanisms — SN &amp; E</div>
+          <ul>
+            <li><span class="mech mech-sn1">SN1</span> 2 steps · carbocation (RDS) → Nu attack · Racemization · 3°, weak Nu, polar protic</li>
+            <li><span class="mech mech-sn2">SN2</span> 1 step · concerted · backside · Walden inversion · 1°, strong Nu, polar aprotic</li>
+            <li><span class="mech mech-e1">E1</span> 2 steps · carbocation → H⁺ loss · Zaitsev · 3°, weak base, polar protic</li>
+            <li><span class="mech mech-e2">E2</span> 1 step · anti-periplanar · Zaitsev · strong base</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Isomerism at a Glance</div>
+          <ul>
+            <li><b>Chain:</b> Different carbon skeleton</li>
+            <li><b>Position:</b> Different FG position</li>
+            <li><b>Functional:</b> Different FG altogether</li>
+            <li><b>Metamers:</b> Different alkyl groups on polyvalent atom</li>
+            <li><b>Tautomers:</b> Dynamic equilibrium, proton transfer (keto-enol)</li>
+            <li><b>Geometrical:</b> Restricted rotation at C=C or ring</li>
+            <li><b>Optical:</b> Non-superimposable mirror images; need 4 different groups on C</li>
+            <li><b>Meso:</b> Has stereocentres but achiral (internal plane of symmetry)</li>
+            <li><b>Racemic:</b> 50:50 enantiomers → optically inactive</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Electrophiles &amp; Nucleophiles</div>
+          <ul>
+            <li><b>Electrophiles (E⁺):</b> Electron-deficient (Lewis acids) — H⁺, NO₂⁺, BF₃</li>
+            <li><b>Nucleophiles (Nu⁻):</b> Electron-rich (Lewis bases) — OH⁻, CN⁻, NH₃, H₂O</li>
+            <li>Strength of Nu: charge &gt; electronegativity; polarizability matters in SN2</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- HYDROCARBONS -->
+    <div id="tab-hydrocarbons" class="section">
+      <div class="sec-heading">Hydrocarbons</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Alkanes — CₙH₂ₙ₊₂</div>
+          <ul>
+            <li>sp³ carbons; σ bonds only</li>
+            <li><b>Combustion:</b> CₙH₂ₙ₊₂ + O₂ → CO₂ + H₂O</li>
+            <li><b>Free Radical Halogenation:</b> X₂/hν → alkyl halide (Cl₂ &gt; Br₂ selectivity)</li>
+            <li>Reactivity: F₂ &gt; Cl₂ &gt; Br₂ &gt; I₂</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Alkenes — CₙH₂ₙ (Electrophilic Addition)</div>
+          <ul>
+            <li><b>Hydrogenation:</b> H₂/Ni,Pd,Pt → alkane</li>
+            <li><b>Halogenation:</b> Br₂ → vicinal dibromide (anti addition via bromonium)</li>
+            <li><b>Hydrohalogenation:</b> HX → Markovnikov product; HBr/peroxide → anti-Markovnikov</li>
+            <li><b>Hydration:</b> H₂O/H₂SO₄ → Markovnikov alcohol</li>
+            <li><b>Baeyer's (cold KMnO₄):</b> syn-dihydroxylation → vicinal diol (violet → colourless)</li>
+            <li><b>Ozonolysis:</b> O₃ then Zn/H₂O → aldehydes/ketones</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Alkynes — CₙH₂ₙ₋₂</div>
+          <ul>
+            <li>sp carbons; triple bond</li>
+            <li><b>Hydrogenation:</b> 2H₂/Ni → alkane; Lindlar's → cis-alkene; Na/liq.NH₃ → trans-alkene</li>
+            <li><b>Hydration:</b> HgSO₄/H₂SO₄/H₂O → ketone (enol → keto); CH≡CH → acetaldehyde</li>
+            <li><b>Acidity:</b> Terminal alkynes lose H⁺ (sp carbon, pKa ~25); react with NaNH₂</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-p"></span>Benzene — Aromatic (EAS)</div>
+          <ul>
+            <li><b>Hückel's rule:</b> Cyclic, planar, conjugated, (4n+2)π electrons</li>
+            <li><b>Nitration:</b> HNO₃/H₂SO₄ → nitrobenzene</li>
+            <li><b>Halogenation:</b> X₂/FeX₃ → halobenzene</li>
+            <li><b>Sulfonation:</b> Conc. H₂SO₄ → benzenesulfonic acid (reversible)</li>
+            <li><b>F-C Alkylation:</b> RX/AlCl₃ → alkylbenzene (rearrangement + polysubstitution possible)</li>
+            <li><b>F-C Acylation:</b> RCOCl/AlCl₃ → acylbenzene (no rearrangement, no poly)</li>
+            <li><b>o/p Directors:</b> Activators (+M,+I) — OH, NH₂, CH₃, halogens (deactivating but o/p)</li>
+            <li><b>m Directors:</b> Deactivators (−M,−I) — NO₂, COOH, CHO, CN</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- HALOALKANES -->
+        <div id="tab-haloalkanes" class="section">
+      <div class="sec-heading">Haloalkanes &amp; Haloarenes</div>
+      <div class="grid">
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Preparation of Haloalkanes</div>
+          <ul>
+            <li>ROH + HX/ZnCl₂ → RX (Lucas: 3°&gt;2°&gt;1°)</li>
+            <li>ROH + PCl₅ → RCl</li>
+            <li>C=C + HX → Markovnikov product</li>
+            <li>R−H + X₂/hν → free radical halogenation</li>
+            <li><b>Finkelstein:</b> R−Cl/Br + NaI/acetone → R−I</li>
+            <li><b>Swarts:</b> R−Br/Cl + AgF → R−F</li>
+            <li><b>Wurtz:</b> 2RX + 2Na/dry ether → R−R (symmetrical)</li>
+            <li><b>Wurtz-Fittig:</b> RX + ArX + 2Na → Ar−R</li>
+            <li><b>Fittig:</b> 2ArX + 2Na → Ar−Ar</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Reactions of Haloalkanes</div>
+          <ul>
+            <li>SN1 (3°) or SN2 (1°) with nucleophiles</li>
+            <li>Dehydrohalogenation: KOH(alc.) → alkene (Zaitsev, E2)</li>
+            <li>Grignard: RX + Mg/dry ether → RMgX</li>
+            <li>Reduction: RX + Zn/HCl or LiAlH₄ → RH</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Haloarenes</div>
+          <ul>
+            <li>Unreactive to SN (sp² C, resonance stabilizes C−X, phenyl carbocation unstable)</li>
+            <li>EWG at o/p positions activate ring for nucleophilic substitution</li>
+            <li>Directive effect: halogens are o/p directors (deactivating)</li>
+            <li>Nucleophilic Aromatic Substitution possible only with strong EWG (NO₂) at o/p</li>
+          </ul>
         </div>
       </div>
     </div>
 
-    <div class="card">
-      <div class="card-title"><span class="dot dot-p"></span>Mechanisms — SN &amp; E</div>
-      <ul>
-        <li><span class="mech mech-sn1">SN1</span> 2 steps · carbocation (RDS) → Nu attack · Racemization · 3°, weak Nu, polar protic</li>
-        <li><span class="mech mech-sn2">SN2</span> 1 step · concerted · backside · Walden inversion · 1°, strong Nu, polar aprotic</li>
-        <li><span class="mech mech-e1">E1</span> 2 steps · carbocation → H⁺ loss · Zaitsev · 3°, weak base, polar protic</li>
-        <li><span class="mech mech-e2">E2</span> 1 step · anti-periplanar · Zaitsev · strong base</li>
-      </ul>
-    </div>
+    <!-- ALCOHOLS / PHENOLS / ETHERS -->
+    <div id="tab-alcohols" class="section">
+      <div class="sec-heading">Alcohols, Phenols &amp; Ethers</div>
+      <div class="grid">
 
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Isomerism at a Glance</div>
-      <ul>
-        <li><b>Chain:</b> Different carbon skeleton</li>
-        <li><b>Position:</b> Different FG position</li>
-        <li><b>Functional:</b> Different FG altogether</li>
-        <li><b>Metamers:</b> Different alkyl groups on polyvalent atom</li>
-        <li><b>Tautomers:</b> Dynamic equilibrium, proton transfer (keto-enol)</li>
-        <li><b>Geometrical:</b> Restricted rotation at C=C or ring</li>
-        <li><b>Optical:</b> Non-superimposable mirror images; need 4 different groups on C</li>
-        <li><b>Meso:</b> Has stereocentres but achiral (internal plane of symmetry)</li>
-        <li><b>Racemic:</b> 50:50 enantiomers → optically inactive</li>
-      </ul>
-    </div>
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Alcohols (R−OH)</div>
+          <ul>
+            <li><b>Prep:</b> Alkene hydration, carbonyl reduction (NaBH₄, LiAlH₄), Grignard + RCHO</li>
+            <li>H-bonding → high BP; miscible with water (small chain)</li>
+            <li>React with Na → alkoxide + H₂ gas</li>
+            <li><b>Esterification:</b> RCOOH + R'OH ⇌ RCOOR' (H⁺ cat.)</li>
+            <li><b>Dehydration:</b> H₂SO₄/heat → alkene</li>
+            <li><b>Oxidation 1°:</b> PCC → aldehyde; K₂Cr₂O₇ → carboxylic acid</li>
+            <li><b>Oxidation 2°:</b> CrO₃ → ketone</li>
+            <li><b>Oxidation 3°:</b> No oxidation under mild conditions</li>
+            <li><b>Lucas test:</b> ZnCl₂/HCl — 3° turbid immediately, 2° in 5 min, 1° no turbidity</li>
+          </ul>
+        </div>
 
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Electrophiles &amp; Nucleophiles</div>
-      <ul>
-        <li><b>Electrophiles (E⁺):</b> Electron-deficient (Lewis acids) — H⁺, NO₂⁺, BF₃</li>
-        <li><b>Nucleophiles (Nu⁻):</b> Electron-rich (Lewis bases) — OH⁻, CN⁻, NH₃, H₂O</li>
-        <li>Strength of Nu: charge &gt; electronegativity; polarizability matters in SN2</li>
-      </ul>
-    </div>
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Phenols (Ar−OH)</div>
+          <ul>
+            <li><b>Prep:</b> Cumene process; diazonium salt hydrolysis</li>
+            <li>More acidic than alcohols (phenoxide stabilized by resonance)</li>
+            <li>−OH is o/p activating director (EAS)</li>
+            <li><b>Nitration:</b> Dilute HNO₃ → o/p nitrophenol</li>
+            <li><b>Bromination:</b> Br₂(aq) → 2,4,6-tribromophenol (no catalyst needed)</li>
+            <li><b>FeCl₃ test:</b> Violet/blue/green colour</li>
+            <li><b>Kolbe's:</b> NaOH + CO₂/140°C → salicylic acid</li>
+            <li><b>Reimer-Tiemann:</b> CHCl₃/NaOH → salicylaldehyde</li>
+          </ul>
+        </div>
 
-  </div>
-</div>
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Ethers (R−O−R')</div>
+          <ul>
+            <li><b>Williamson synthesis:</b> R'ONa + RX → R'OR (use 1° RX to avoid E2)</li>
+            <li><b>Dehydration:</b> 2ROH + H₂SO₄/140°C → ROR</li>
+            <li><b>Cleavage:</b> conc. HX → RX + ROH (or 2RX)</li>
+            <li>Lower BP than alcohols (no H-bonding with itself)</li>
+            <li>Peroxide formation on standing in air (hazard!)</li>
+          </ul>
+        </div>
 
-<!-- HYDROCARBONS -->
-<div id="tab-hydrocarbons" class="section">
-  <div class="sec-heading">Hydrocarbons</div>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Alkanes — CₙH₂ₙ₊₂</div>
-      <ul>
-        <li>sp³ carbons; σ bonds only</li>
-        <li><b>Combustion:</b> CₙH₂ₙ₊₂ + O₂ → CO₂ + H₂O</li>
-        <li><b>Free Radical Halogenation:</b> X₂/hν → alkyl halide (Cl₂ &gt; Br₂ selectivity)</li>
-        <li>Reactivity: F₂ &gt; Cl₂ &gt; Br₂ &gt; I₂</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Alkenes — CₙH₂ₙ (Electrophilic Addition)</div>
-      <ul>
-        <li><b>Hydrogenation:</b> H₂/Ni,Pd,Pt → alkane</li>
-        <li><b>Halogenation:</b> Br₂ → vicinal dibromide (anti addition via bromonium)</li>
-        <li><b>Hydrohalogenation:</b> HX → Markovnikov product; HBr/peroxide → anti-Markovnikov</li>
-        <li><b>Hydration:</b> H₂O/H₂SO₄ → Markovnikov alcohol</li>
-        <li><b>Baeyer's (cold KMnO₄):</b> syn-dihydroxylation → vicinal diol (violet → colourless)</li>
-        <li><b>Ozonolysis:</b> O₃ then Zn/H₂O → aldehydes/ketones</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Alkynes — CₙH₂ₙ₋₂</div>
-      <ul>
-        <li>sp carbons; triple bond</li>
-        <li><b>Hydrogenation:</b> 2H₂/Ni → alkane; Lindlar's → cis-alkene; Na/liq.NH₃ → trans-alkene</li>
-        <li><b>Hydration:</b> HgSO₄/H₂SO₄/H₂O → ketone (enol → keto); CH≡CH → acetaldehyde</li>
-        <li><b>Acidity:</b> Terminal alkynes lose H⁺ (sp carbon, pKa ~25); react with NaNH₂</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-p"></span>Benzene — Aromatic (EAS)</div>
-      <ul>
-        <li><b>Hückel's rule:</b> Cyclic, planar, conjugated, (4n+2)π electrons</li>
-        <li><b>Nitration:</b> HNO₃/H₂SO₄ → nitrobenzene</li>
-        <li><b>Halogenation:</b> X₂/FeX₃ → halobenzene</li>
-        <li><b>Sulfonation:</b> Conc. H₂SO₄ → benzenesulfonic acid (reversible)</li>
-        <li><b>F-C Alkylation:</b> RX/AlCl₃ → alkylbenzene (rearrangement + polysubstitution possible)</li>
-        <li><b>F-C Acylation:</b> RCOCl/AlCl₃ → acylbenzene (no rearrangement, no poly)</li>
-        <li><b>o/p Directors:</b> Activators (+M,+I) — OH, NH₂, CH₃, halogens (deactivating but o/p)</li>
-        <li><b>m Directors:</b> Deactivators (−M,−I) — NO₂, COOH, CHO, CN</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- HALOALKANES -->
-<div id="tab-haloalkanes" class="section">
-  <div class="sec-heading">Haloalkanes &amp; Haloarenes</div>
-  <div class="grid">
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Preparation of Haloalkanes</div>
-      <ul>
-        <li>ROH + HX/ZnCl₂ → RX (Lucas: 3°&gt;2°&gt;1°)</li>
-        <li>ROH + PCl₅ → RCl</li>
-        <li>C=C + HX → Markovnikov product</li>
-        <li>R−H + X₂/hν → free radical halogenation</li>
-        <li><b>Finkelstein:</b> R−Cl/Br + NaI/acetone → R−I</li>
-        <li><b>Swarts:</b> R−Br/Cl + AgF → R−F</li>
-        <li><b>Wurtz:</b> 2RX + 2Na/dry ether → R−R (symmetrical)</li>
-        <li><b>Wurtz-Fittig:</b> RX + ArX + 2Na → Ar−R</li>
-        <li><b>Fittig:</b> 2ArX + 2Na → Ar−Ar</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Reactions of Haloalkanes</div>
-      <ul>
-        <li>SN1 (3°) or SN2 (1°) with nucleophiles</li>
-        <li>Dehydrohalogenation: KOH(alc.) → alkene (Zaitsev, E2)</li>
-        <li>Grignard: RX + Mg/dry ether → RMgX</li>
-        <li>Reduction: RX + Zn/HCl or LiAlH₄ → RH</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Haloarenes</div>
-      <ul>
-        <li>Unreactive to SN (sp² C, resonance stabilizes C−X, phenyl carbocation unstable)</li>
-        <li>EWG at o/p positions activate ring for nucleophilic substitution</li>
-        <li>Directive effect: halogens are o/p directors (deactivating)</li>
-        <li>Nucleophilic Aromatic Substitution possible only with strong EWG (NO₂) at o/p</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- ALCOHOLS / PHENOLS / ETHERS -->
-<div id="tab-alcohols" class="section">
-  <div class="sec-heading">Alcohols, Phenols &amp; Ethers</div>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Alcohols (R−OH)</div>
-      <ul>
-        <li><b>Prep:</b> Alkene hydration, carbonyl reduction (NaBH₄, LiAlH₄), Grignard + RCHO</li>
-        <li>H-bonding → high BP; miscible with water (small chain)</li>
-        <li>React with Na → alkoxide + H₂ gas</li>
-        <li><b>Esterification:</b> RCOOH + R'OH ⇌ RCOOR' (H⁺ cat.)</li>
-        <li><b>Dehydration:</b> H₂SO₄/heat → alkene</li>
-        <li><b>Oxidation 1°:</b> PCC → aldehyde; K₂Cr₂O₇ → carboxylic acid</li>
-        <li><b>Oxidation 2°:</b> CrO₃ → ketone</li>
-        <li><b>Oxidation 3°:</b> No oxidation under mild conditions</li>
-        <li><b>Lucas test:</b> ZnCl₂/HCl — 3° turbid immediately, 2° in 5 min, 1° no turbidity</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Phenols (Ar−OH)</div>
-      <ul>
-        <li><b>Prep:</b> Cumene process; diazonium salt hydrolysis</li>
-        <li>More acidic than alcohols (phenoxide stabilized by resonance)</li>
-        <li>−OH is o/p activating director (EAS)</li>
-        <li><b>Nitration:</b> Dilute HNO₃ → o/p nitrophenol</li>
-        <li><b>Bromination:</b> Br₂(aq) → 2,4,6-tribromophenol (no catalyst needed)</li>
-        <li><b>FeCl₃ test:</b> Violet/blue/green colour</li>
-        <li><b>Kolbe's:</b> NaOH + CO₂/140°C → salicylic acid</li>
-        <li><b>Reimer-Tiemann:</b> CHCl₃/NaOH → salicylaldehyde</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Ethers (R−O−R')</div>
-      <ul>
-        <li><b>Williamson synthesis:</b> R'ONa + RX → R'OR (use 1° RX to avoid E2)</li>
-        <li><b>Dehydration:</b> 2ROH + H₂SO₄/140°C → ROR</li>
-        <li><b>Cleavage:</b> conc. HX → RX + ROH (or 2RX)</li>
-        <li>Lower BP than alcohols (no H-bonding with itself)</li>
-        <li>Peroxide formation on standing in air (hazard!)</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- CARBONYL -->
-<div id="tab-carbonyl" class="section">
-  <div class="sec-heading">Aldehydes, Ketones &amp; Carboxylic Acids</div>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Preparation</div>
-      <ul>
-        <li><b>Aldehydes:</b> 1° alcohol + PCC; ozonolysis; Rosenmund (RCOCl + H₂/Pd−BaSO₄); DIBAL-H on nitrile</li>
-        <li><b>Ketones:</b> 2° alcohol + CrO₃; Friedel-Crafts acylation</li>
-        <li><b>Carboxylic acids:</b> 1° alcohol/aldehyde oxidation; nitrile hydrolysis; Grignard + CO₂</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Nucleophilic Addition</div>
-      <ul>
-        <li><b>HCN:</b> → cyanohydrin (↑ C chain by 1)</li>
-        <li><b>Grignard:</b> HCHO → 1° alc.; RCHO → 2° alc.; ketone → 3° alc.</li>
-        <li><b>Alcohols:</b> → hemiacetal → acetal/ketal</li>
-        <li><b>2,4-DNP:</b> yellow/orange/red ppt (test for C=O)</li>
-        <li>Aldehydes are more reactive than ketones (steric + electronic)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Special Reactions</div>
-      <ul>
-        <li><b>Aldol condensation:</b> compound with α-H + dil. base/acid → β-hydroxy carbonyl</li>
-        <li><b>Cannizzaro:</b> No α-H + conc. NaOH → disproportionation (alcohol + acid)</li>
-        <li><b>Haloform:</b> CH₃COR or CH₃CH(OH)R + X₂/NaOH → CHX₃↓ (iodoform yellow)</li>
-        <li><b>Clemmensen:</b> C=O + Zn-Hg/HCl → CH₂ (alkane)</li>
-        <li><b>Wolf-Kishner:</b> C=O + NH₂NH₂/KOH/glycol → CH₂ (alkane)</li>
-        <li><b>Tollens':</b> Aldehydes only → silver mirror</li>
-        <li><b>Fehling's:</b> Aldehydes only → red Cu₂O ppt</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-p"></span>Carboxylic Acids</div>
-      <ul>
-        <li>Acidic (carboxylate resonance); blue litmus → red; NaHCO₃ → effervescence</li>
-        <li><b>Esterification:</b> RCOOH + R'OH ⇌ RCOOR' (Fischer, H⁺ cat.)</li>
-        <li><b>Reduction:</b> LiAlH₄ → 1° alcohol (not NaBH₄)</li>
-        <li><b>HVZ:</b> R−CH₂−COOH + X₂/Red P → α-halo acid</li>
-        <li><b>Reactivity of derivatives:</b> Acid halide &gt; Anhydride &gt; Ester &gt; Amide</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- NITROGEN -->
-<div id="tab-nitrogen" class="section">
-  <div class="sec-heading">Organic Nitrogen Compounds</div>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Amines — Preparation</div>
-      <ul>
-        <li><b>Nitro reduction:</b> ArNO₂ + Sn/HCl or Fe/HCl → ArNH₂</li>
-        <li><b>Hofmann ammonolysis:</b> RX + excess NH₃ → mixture of 1°, 2°, 3° amines + quat. salt</li>
-        <li><b>Gabriel phthalimide:</b> phthalimide + KOH + RX + H₂O/H⁺ → only 1° amine</li>
-        <li><b>Hofmann bromamide:</b> RCONH₂ + Br₂/KOH → RNH₂ (one less carbon)</li>
-        <li><b>Reduction of nitriles:</b> RCN + LiAlH₄ → RCH₂NH₂</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Amine Reactions</div>
-      <ul>
-        <li><b>Acylation:</b> R−NH₂ + R'COCl → R−NHCOR' (amide)</li>
-        <li><b>Carbylamine (1° only):</b> RNH₂ + CHCl₃/KOH → RNC (foul smell — test for 1°)</li>
-        <li><b>Diazotization:</b> ArNH₂ + NaNO₂/HCl, 0−5°C → ArN₂⁺Cl⁻</li>
-        <li><b>Sandmeyer:</b> ArN₂⁺Cl⁻ + CuX/HX → Ar−X; + CuCN → Ar−CN</li>
-        <li><b>Gattermann:</b> Same as Sandmeyer but Cu powder (less clean)</li>
-        <li><b>Coupling:</b> ArN₂⁺ + phenol/aniline → azo dye (orange/red)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Cyanides &amp; Isocyanides</div>
-      <ul>
-        <li><b>RCN prep:</b> RX + KCN (SN2)</li>
-        <li><b>RNC prep:</b> RX + AgCN → isocyanide</li>
-        <li><b>RCN hydrolysis:</b> → RCOOH (via amide)</li>
-        <li><b>RCN reduction:</b> LiAlH₄ → 1° amine (RCH₂NH₂)</li>
-        <li><b>DIBAL-H on RCN:</b> → aldehyde</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- BIOMOLECULES -->
-<div id="tab-biomol" class="section">
-  <div class="sec-heading">Biomolecules, Polymers &amp; Everyday Chemistry</div>
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Carbohydrates</div>
-      <ul>
-        <li><b>Mono:</b> Glucose (aldohexose), Fructose (ketohexose)</li>
-        <li><b>Di:</b> Sucrose (Glc+Fru, non-reducing), Lactose (Glc+Gal, reducing), Maltose (Glc+Glc, reducing)</li>
-        <li><b>Poly:</b> Starch, Cellulose (β-1,4), Glycogen (animal starch)</li>
-        <li>Reducing sugars: all monosaccharides, lactose, maltose (not sucrose)</li>
-        <li>Test: Tollens' (silver mirror), Fehling's (red ppt)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Proteins &amp; Nucleic Acids</div>
-      <ul>
-        <li>Polymers of α-amino acids linked by peptide bonds (−CO−NH−)</li>
-        <li>1° = sequence; 2° = α-helix/β-sheet; 3° = 3D; 4° = multi-chain</li>
-        <li>Denaturation: loss of 3D structure (heat, pH, heavy metals)</li>
-        <li><b>DNA:</b> deoxyribose, A-T (2H bonds), G-C (3H bonds), double helix</li>
-        <li><b>RNA:</b> ribose, U replaces T, single strand</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Polymers</div>
-      <ul>
-        <li><b>Addition:</b> No byproduct — PE, PVC, Teflon, Polypropylene, Polyacrylonitrile</li>
-        <li><b>Condensation:</b> Eliminate small molecule — Polyester, Nylon-6,6, Nylon-6, Bakelite</li>
-        <li>Nylon-6,6: hexamethylenediamine + adipic acid</li>
-        <li>Nylon-6: Caprolactam (ring-opening polymerisation)</li>
-        <li>Bakelite: phenol + formaldehyde (cross-linked, thermosetting)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-p"></span>Chemistry in Everyday Life</div>
-      <ul>
-        <li><b>Analgesics/Antipyretics:</b> Aspirin, Paracetamol</li>
-        <li><b>Antiseptics:</b> Dettol (living tissue)</li>
-        <li><b>Disinfectants:</b> Phenol (inanimate surfaces)</li>
-        <li><b>Antibiotics:</b> Penicillin (bactericidal)</li>
-        <li><b>Soaps:</b> Fatty acid salts; form scum with hard water</li>
-        <li><b>Detergents:</b> Synthetic; no scum with hard water</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- REAGENTS -->
-<div id="tab-reagents" class="section">
-  <div class="sec-heading">Reagent Quick Reference</div>
-  <div class="card" style="max-width:100%">
-    <table class="rxn-table">
-      <thead>
-        <tr><th>Reagent</th><th>Function / Use</th><th>Tag</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="reagent">H₂/Ni, Pd, Pt</td><td>Catalytic hydrogenation of alkenes/alkynes → alkane</td><td><span class="tag tag-y">addition</span></td></tr>
-        <tr><td class="reagent">Cold dil. KMnO₄</td><td>Baeyer's — test unsaturation; syn-dihydroxylation of alkenes</td><td><span class="tag tag-b">oxidation</span></td></tr>
-        <tr><td class="reagent">Hot KMnO₄ / O₃</td><td>Oxidative cleavage of alkenes/alkynes (ozonolysis)</td><td><span class="tag tag-b">oxidation</span></td></tr>
-        <tr><td class="reagent">HBr/peroxide</td><td>Anti-Markovnikov addition to alkenes</td><td><span class="tag tag-y">addition</span></td></tr>
-        <tr><td class="reagent">Lindlar's catalyst</td><td>Alkyne → cis-alkene (partial hydrogenation)</td><td><span class="tag tag-y">addition</span></td></tr>
-        <tr><td class="reagent">Na/liq.NH₃ (Birch)</td><td>Alkyne → trans-alkene; benzene partial reduction</td><td><span class="tag tag-y">reduction</span></td></tr>
-        <tr><td class="reagent">HgSO₄/H₂SO₄</td><td>Hydration of alkynes (Markovnikov → ketone)</td><td><span class="tag tag-b">addition</span></td></tr>
-        <tr><td class="reagent">HNO₃/H₂SO₄</td><td>Nitration (EAS)</td><td><span class="tag tag-r">EAS</span></td></tr>
-        <tr><td class="reagent">X₂/FeX₃</td><td>Halogenation (EAS)</td><td><span class="tag tag-r">EAS</span></td></tr>
-        <tr><td class="reagent">RCOCl/AlCl₃</td><td>Friedel-Crafts acylation (EAS)</td><td><span class="tag tag-r">EAS</span></td></tr>
-        <tr><td class="reagent">NaI/Acetone</td><td>Finkelstein — R−Cl/Br → R−I</td><td><span class="tag tag-p">exchange</span></td></tr>
-        <tr><td class="reagent">AgF</td><td>Swarts — R−Br/Cl → R−F</td><td><span class="tag tag-p">exchange</span></td></tr>
-        <tr><td class="reagent">Zn-Hg/HCl</td><td>Clemmensen reduction: C=O → CH₂</td><td><span class="tag tag-y">reduction</span></td></tr>
-        <tr><td class="reagent">NH₂NH₂/KOH, glycol</td><td>Wolf-Kishner reduction: C=O → CH₂</td><td><span class="tag tag-y">reduction</span></td></tr>
-        <tr><td class="reagent">PCC</td><td>1° alcohol → aldehyde (mild, no overoxidation)</td><td><span class="tag tag-b">oxidation</span></td></tr>
-        <tr><td class="reagent">K₂Cr₂O₇/H₂SO₄</td><td>1° alcohol → carboxylic acid; 2° → ketone</td><td><span class="tag tag-b">oxidation</span></td></tr>
-        <tr><td class="reagent">LiAlH₄</td><td>Strong reducer — carbonyls, acids, esters → alcohols</td><td><span class="tag tag-y">reduction</span></td></tr>
-        <tr><td class="reagent">NaBH₄</td><td>Mild reducer — aldehydes/ketones → alcohols (not RCOOH)</td><td><span class="tag tag-y">reduction</span></td></tr>
-        <tr><td class="reagent">DIBAL-H</td><td>Nitrile → aldehyde; ester → aldehyde</td><td><span class="tag tag-y">reduction</span></td></tr>
-        <tr><td class="reagent">RMgX (Grignard)</td><td>Forms C−C bonds; reacts with carbonyls → alcohols</td><td><span class="tag tag-p">C-C bond</span></td></tr>
-        <tr><td class="reagent">NaNO₂/HCl, 0−5°C</td><td>Diazotization of 1° aromatic amines</td><td><span class="tag tag-r">diazotization</span></td></tr>
-        <tr><td class="reagent">CuX/HX or CuCN</td><td>Sandmeyer — ArN₂⁺ → Ar−X or Ar−CN</td><td><span class="tag tag-r">substitution</span></td></tr>
-        <tr><td class="reagent">CHCl₃/KOH</td><td>Carbylamine reaction — test for 1° amines</td><td><span class="tag tag-p">test</span></td></tr>
-        <tr><td class="reagent">2,4-DNP</td><td>Yellow/orange/red ppt — test for C=O (aldehyde or ketone)</td><td><span class="tag tag-p">test</span></td></tr>
-        <tr><td class="reagent">Tollens' (Ag(NH₃)₂OH)</td><td>Silver mirror — test for aldehydes only</td><td><span class="tag tag-p">test</span></td></tr>
-        <tr><td class="reagent">Fehling's</td><td>Red Cu₂O ppt — test for aldehydes only</td><td><span class="tag tag-p">test</span></td></tr>
-        <tr><td class="reagent">I₂/NaOH</td><td>Iodoform test — yellow CHI₃ with methyl ketones/CH₃CH(OH)R</td><td><span class="tag tag-p">test</span></td></tr>
-        <tr><td class="reagent">HCl/ZnCl₂ (Lucas)</td><td>Test for 1°, 2°, 3° alcohols</td><td><span class="tag tag-p">test</span></td></tr>
-        <tr><td class="reagent">FeCl₃</td><td>Violet/blue/green — test for phenols</td><td><span class="tag tag-p">test</span></td></tr>
-        <tr><td class="reagent">Br₂/H₂O</td><td>Decolorisation = unsaturation; 2,4,6-tribromophenol with phenol</td><td><span class="tag tag-p">test</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<!-- NAMED REACTIONS -->
-<div id="tab-namedreactions" class="section">
-  <div class="sec-heading">Named Reactions</div>
-  <div class="grid grid-3">
-
-    <div>
-      <div class="named-rxn">
-        <div class="rxn-name">Wurtz Reaction</div>
-        <p>2RX + 2Na/dry ether <span class="arrow">→</span> R−R + 2NaX (symmetrical alkane only)</p>
       </div>
-      <div class="named-rxn">
-        <div class="rxn-name">Wurtz-Fittig</div>
-        <p>RX + ArX + 2Na/dry ether <span class="arrow">→</span> Ar−R (alkylarene)</p>
-      </div>
-      <div class="named-rxn">
-        <div class="rxn-name">Fittig Reaction</div>
-        <p>2ArX + 2Na/dry ether <span class="arrow">→</span> Ar−Ar (biaryl)</p>
-      </div>
-      <div class="named-rxn">
-        <div class="rxn-name">Finkelstein</div>
-        <p>R−Cl/Br + NaI/acetone <span class="arrow">→</span> R−I + NaCl/Br (Le Chatelier drives forward)</p>
-      </div>
-      <div class="named-rxn">
-        <div class="rxn-name">Swarts Reaction</div>
-        <p>R−Br/Cl + AgF <span class="arrow">→</span> R−F + AgBr/Cl</p>
+    </div>
+        
+        
+        <!-- CARBONYL -->
+    
+    <div id="tab-carbonyl" class="section">
+      <div class="sec-heading">Aldehydes, Ketones &amp; Carboxylic Acids</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Preparation</div>
+          <ul>
+            <li><b>Aldehydes:</b> 1° alcohol + PCC; ozonolysis; Rosenmund (RCOCl + H₂/Pd−BaSO₄); DIBAL-H on nitrile</li>
+            <li><b>Ketones:</b> 2° alcohol + CrO₃; Friedel-Crafts acylation</li>
+            <li><b>Carboxylic acids:</b> 1° alcohol/aldehyde oxidation; nitrile hydrolysis; Grignard + CO₂</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Nucleophilic Addition</div>
+          <ul>
+            <li><b>HCN:</b> → cyanohydrin (↑ C chain by 1)</li>
+            <li><b>Grignard:</b> HCHO → 1° alc.; RCHO → 2° alc.; ketone → 3° alc.</li>
+            <li><b>Alcohols:</b> → hemiacetal → acetal/ketal</li>
+            <li><b>2,4-DNP:</b> yellow/orange/red ppt (test for C=O)</li>
+            <li>Aldehydes are more reactive than ketones (steric + electronic)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Special Reactions</div>
+          <ul>
+            <li><b>Aldol condensation:</b> compound with α-H + dil. base/acid → β-hydroxy carbonyl</li>
+            <li><b>Cannizzaro:</b> No α-H + conc. NaOH → disproportionation (alcohol + acid)</li>
+            <li><b>Haloform:</b> CH₃COR or CH₃CH(OH)R + X₂/NaOH → CHX₃↓ (iodoform yellow)</li>
+            <li><b>Clemmensen:</b> C=O + Zn-Hg/HCl → CH₂ (alkane)</li>
+            <li><b>Wolf-Kishner:</b> C=O + NH₂NH₂/KOH/glycol → CH₂ (alkane)</li>
+            <li><b>Tollens':</b> Aldehydes only → silver mirror</li>
+            <li><b>Fehling's:</b> Aldehydes only → red Cu₂O ppt</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-p"></span>Carboxylic Acids</div>
+          <ul>
+            <li>Acidic (carboxylate resonance); blue litmus → red; NaHCO₃ → effervescence</li>
+            <li><b>Esterification:</b> RCOOH + R'OH ⇌ RCOOR' (Fischer, H⁺ cat.)</li>
+            <li><b>Reduction:</b> LiAlH₄ → 1° alcohol (not NaBH₄)</li>
+            <li><b>HVZ:</b> R−CH₂−COOH + X₂/Red P → α-halo acid</li>
+            <li><b>Reactivity of derivatives:</b> Acid halide &gt; Anhydride &gt; Ester &gt; Amide</li>
+          </ul>
+        </div>
+
       </div>
     </div>
 
-    <div>
-      <div class="named-rxn">
-        <div class="rxn-name">Rosenmund Reduction</div>
-        <p>RCOCl + H₂/Pd−BaSO₄ <span class="arrow">→</span> RCHO (controlled; BaSO₄ poisons catalyst)</p>
-      </div>
-      <div class="named-rxn">
-        <div class="rxn-name">Clemmensen Reduction</div>
-        <p>RCHO or R₂CO + Zn-Hg/HCl <span class="arrow">→</span> RCH₃ or R₂CH₂ (acidic medium)</p>
-      </div>
-      <div class="named-rxn">
-        <div class="rxn-name">Wolf-Kishner Reduction</div>
-        <p>RCHO or R₂CO + NH₂NH₂/KOH/glycol <span class="arrow">→</span> alkane (basic medium)</p>
-      </div>
-      <div class="named-rxn">
-        <div class="rxn-name">Aldol Condensation</div>
-        <p>Carbonyl with α-H + dil. base or acid <span class="arrow">→</span> β-hydroxy carbonyl (aldol product)</p>
-      </div>
-      <div class="named-rxn">
-        <div class="rxn-name">Cannizzaro Reaction</div>
-        <p>HCHO (no α-H) + conc. NaOH <span class="arrow">→</span> CH₃OH + HCOONa (disproportionation)</p>
+    <!-- NITROGEN -->
+    <div id="tab-nitrogen" class="section">
+      <div class="sec-heading">Organic Nitrogen Compounds</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Amines — Preparation</div>
+          <ul>
+            <li><b>Nitro reduction:</b> ArNO₂ + Sn/HCl or Fe/HCl → ArNH₂</li>
+            <li><b>Hofmann ammonolysis:</b> RX + excess NH₃ → mixture of 1°, 2°, 3° amines + quat. salt</li>
+            <li><b>Gabriel phthalimide:</b> phthalimide + KOH + RX + H₂O/H⁺ → only 1° amine</li>
+            <li><b>Hofmann bromamide:</b> RCONH₂ + Br₂/KOH → RNH₂ (one less carbon)</li>
+            <li><b>Reduction of nitriles:</b> RCN + LiAlH₄ → RCH₂NH₂</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Amine Reactions</div>
+          <ul>
+            <li><b>Acylation:</b> R−NH₂ + R'COCl → R−NHCOR' (amide)</li>
+            <li><b>Carbylamine (1° only):</b> RNH₂ + CHCl₃/KOH → RNC (foul smell — test for 1°)</li>
+            <li><b>Diazotization:</b> ArNH₂ + NaNO₂/HCl, 0−5°C → ArN₂⁺Cl⁻</li>
+            <li><b>Sandmeyer:</b> ArN₂⁺Cl⁻ + CuX/HX → Ar−X; + CuCN → Ar−CN</li>
+            <li><b>Gattermann:</b> Same as Sandmeyer but Cu powder (less clean)</li>
+            <li><b>Coupling:</b> ArN₂⁺ + phenol/aniline → azo dye (orange/red)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Cyanides &amp; Isocyanides</div>
+          <ul>
+            <li><b>RCN prep:</b> RX + KCN (SN2)</li>
+            <li><b>RNC prep:</b> RX + AgCN → isocyanide</li>
+            <li><b>RCN hydrolysis:</b> → RCOOH (via amide)</li>
+            <li><b>RCN reduction:</b> LiAlH₄ → 1° amine (RCH₂NH₂)</li>
+            <li><b>DIBAL-H on RCN:</b> → aldehyde</li>
+          </ul>
+        </div>
+
       </div>
     </div>
 
-    <div>
-      <div class="named-rxn">
-        <div class="rxn-name">Haloform Reaction</div>
-        <p>CH₃COR or CH₃CH(OH)R + X₂/NaOH <span class="arrow">→</span> CHX₃↓ (iodoform = yellow)</p>
-      </div>
-      <div class="named-rxn">
-        <div class="rxn-name">HVZ Reaction</div>
-        <p>R−CH₂−COOH + X₂/Red P <span class="arrow">→</span> α-halo acid</p>
-      </div>
-      <div class="named-rxn">
-        <div class="rxn-name">Gabriel Phthalimide</div>
-        <p>Phthalimide + KOH + RX (1°) + H₂O/H⁺ <span class="arrow">→</span> only 1° amine (no 2° or 3°)</p>
-      </div>
-      <div class="named-rxn">
-        <div class="rxn-name">Hofmann Bromamide</div>
-        <p>RCONH₂ + Br₂/KOH <span class="arrow">→</span> RNH₂ (1° amine, one less carbon)</p>
-      </div>
-      <div class="named-rxn">
-        <div class="rxn-name">Carbylamine Reaction</div>
-        <p>1° RNH₂ + CHCl₃/KOH <span class="arrow">→</span> RNC (isocyanide, foul smell — test for 1° amines)</p>
-      </div>
-      <div class="named-rxn">
-        <div class="rxn-name">Diazotization &amp; Sandmeyer</div>
-        <p>ArNH₂ + NaNO₂/HCl at 0−5°C <span class="arrow">→</span> ArN₂⁺Cl⁻; then CuX <span class="arrow">→</span> ArX</p>
-      </div>
-      <div class="named-rxn">
-        <div class="rxn-name">Kolbe's Reaction</div>
-        <p>Phenol + NaOH + CO₂/140°C <span class="arrow">→</span> salicylic acid</p>
-      </div>
-      <div class="named-rxn">
-        <div class="rxn-name">Reimer-Tiemann</div>
-        <p>Phenol + CHCl₃/NaOH <span class="arrow">→</span> salicylaldehyde (o-hydroxybenzaldehyde)</p>
+    <!-- BIOMOLECULES -->
+    <div id="tab-biomol" class="section">
+      <div class="sec-heading">Biomolecules, Polymers &amp; Everyday Chemistry</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Carbohydrates</div>
+          <ul>
+            <li><b>Mono:</b> Glucose (aldohexose), Fructose (ketohexose)</li>
+            <li><b>Di:</b> Sucrose (Glc+Fru, non-reducing), Lactose (Glc+Gal, reducing), Maltose (Glc+Glc, reducing)</li>
+            <li><b>Poly:</b> Starch, Cellulose (β-1,4), Glycogen (animal starch)</li>
+            <li>Reducing sugars: all monosaccharides, lactose, maltose (not sucrose)</li>
+            <li>Test: Tollens' (silver mirror), Fehling's (red ppt)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Proteins &amp; Nucleic Acids</div>
+          <ul>
+            <li>Polymers of α-amino acids linked by peptide bonds (−CO−NH−)</li>
+            <li>1° = sequence; 2° = α-helix/β-sheet; 3° = 3D; 4° = multi-chain</li>
+            <li>Denaturation: loss of 3D structure (heat, pH, heavy metals)</li>
+            <li><b>DNA:</b> deoxyribose, A-T (2H bonds), G-C (3H bonds), double helix</li>
+            <li><b>RNA:</b> ribose, U replaces T, single strand</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Polymers</div>
+          <ul>
+            <li><b>Addition:</b> No byproduct — PE, PVC, Teflon, Polypropylene, Polyacrylonitrile</li>
+            <li><b>Condensation:</b> Eliminate small molecule — Polyester, Nylon-6,6, Nylon-6, Bakelite</li>
+            <li>Nylon-6,6: hexamethylenediamine + adipic acid</li>
+            <li>Nylon-6: Caprolactam (ring-opening polymerisation)</li>
+            <li>Bakelite: phenol + formaldehyde (cross-linked, thermosetting)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-p"></span>Chemistry in Everyday Life</div>
+          <ul>
+            <li><b>Analgesics/Antipyretics:</b> Aspirin, Paracetamol</li>
+            <li><b>Antiseptics:</b> Dettol (living tissue)</li>
+            <li><b>Disinfectants:</b> Phenol (inanimate surfaces)</li>
+            <li><b>Antibiotics:</b> Penicillin (bactericidal)</li>
+            <li><b>Soaps:</b> Fatty acid salts; form scum with hard water</li>
+            <li><b>Detergents:</b> Synthetic; no scum with hard water</li>
+          </ul>
+        </div>
+
       </div>
     </div>
 
-  </div>
-</div>
-
-<!-- CONVERSIONS -->
-<div id="tab-conversions" class="section">
-  <div class="sec-heading">Conversion Maps</div>
-  <div class="grid">
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Alkane Series</div>
-      <div class="flow">
-        <span class="flow-node">Alkane</span><span class="flow-arrow">→</span>
-        <span class="flow-node">Alkyl Halide</span><span class="flow-arrow">→</span>
-        <span class="flow-node">Alcohol</span><span class="flow-arrow">→</span>
-        <span class="flow-node">Aldehyde</span><span class="flow-arrow">→</span>
-        <span class="flow-node">Carboxylic Acid</span>
+    <!-- REAGENTS -->
+    <div id="tab-reagents" class="section">
+      <div class="sec-heading">Reagent Quick Reference</div>
+      <div class="card" style="max-width:100%">
+        <table class="rxn-table">
+          <thead>
+            <tr><th>Reagent</th><th>Function / Use</th><th>Tag</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="reagent">H₂/Ni, Pd, Pt</td><td>Catalytic hydrogenation of alkenes/alkynes → alkane</td><td><span class="tag tag-y">addition</span></td></tr>
+            <tr><td class="reagent">Cold dil. KMnO₄</td><td>Baeyer's — test unsaturation; syn-dihydroxylation of alkenes</td><td><span class="tag tag-b">oxidation</span></td></tr>
+            <tr><td class="reagent">Hot KMnO₄ / O₃</td><td>Oxidative cleavage of alkenes/alkynes (ozonolysis)</td><td><span class="tag tag-b">oxidation</span></td></tr>
+            <tr><td class="reagent">HBr/peroxide</td><td>Anti-Markovnikov addition to alkenes</td><td><span class="tag tag-y">addition</span></td></tr>
+            <tr><td class="reagent">Lindlar's catalyst</td><td>Alkyne → cis-alkene (partial hydrogenation)</td><td><span class="tag tag-y">addition</span></td></tr>
+            <tr><td class="reagent">Na/liq.NH₃ (Birch)</td><td>Alkyne → trans-alkene; benzene partial reduction</td><td><span class="tag tag-y">reduction</span></td></tr>
+            <tr><td class="reagent">HgSO₄/H₂SO₄</td><td>Hydration of alkynes (Markovnikov → ketone)</td><td><span class="tag tag-b">addition</span></td></tr>
+            <tr><td class="reagent">HNO₃/H₂SO₄</td><td>Nitration (EAS)</td><td><span class="tag tag-r">EAS</span></td></tr>
+            <tr><td class="reagent">X₂/FeX₃</td><td>Halogenation (EAS)</td><td><span class="tag tag-r">EAS</span></td></tr>
+            <tr><td class="reagent">RCOCl/AlCl₃</td><td>Friedel-Crafts acylation (EAS)</td><td><span class="tag tag-r">EAS</span></td></tr>
+            <tr><td class="reagent">NaI/Acetone</td><td>Finkelstein — R−Cl/Br → R−I</td><td><span class="tag tag-p">exchange</span></td></tr>
+            <tr><td class="reagent">AgF</td><td>Swarts — R−Br/Cl → R−F</td><td><span class="tag tag-p">exchange</span></td></tr>
+            <tr><td class="reagent">Zn-Hg/HCl</td><td>Clemmensen reduction: C=O → CH₂</td><td><span class="tag tag-y">reduction</span></td></tr>
+            <tr><td class="reagent">NH₂NH₂/KOH, glycol</td><td>Wolf-Kishner reduction: C=O → CH₂</td><td><span class="tag tag-y">reduction</span></td></tr>
+            <tr><td class="reagent">PCC</td><td>1° alcohol → aldehyde (mild, no overoxidation)</td><td><span class="tag tag-b">oxidation</span></td></tr>
+            <tr><td class="reagent">K₂Cr₂O₇/H₂SO₄</td><td>1° alcohol → carboxylic acid; 2° → ketone</td><td><span class="tag tag-b">oxidation</span></td></tr>
+            <tr><td class="reagent">LiAlH₄</td><td>Strong reducer — carbonyls, acids, esters → alcohols</td><td><span class="tag tag-y">reduction</span></td></tr>
+            <tr><td class="reagent">NaBH₄</td><td>Mild reducer — aldehydes/ketones → alcohols (not RCOOH)</td><td><span class="tag tag-y">reduction</span></td></tr>
+            <tr><td class="reagent">DIBAL-H</td><td>Nitrile → aldehyde; ester → aldehyde</td><td><span class="tag tag-y">reduction</span></td></tr>
+            <tr><td class="reagent">RMgX (Grignard)</td><td>Forms C−C bonds; reacts with carbonyls → alcohols</td><td><span class="tag tag-p">C-C bond</span></td></tr>
+            <tr><td class="reagent">NaNO₂/HCl, 0−5°C</td><td>Diazotization of 1° aromatic amines</td><td><span class="tag tag-r">diazotization</span></td></tr>
+            <tr><td class="reagent">CuX/HX or CuCN</td><td>Sandmeyer — ArN₂⁺ → Ar−X or Ar−CN</td><td><span class="tag tag-r">substitution</span></td></tr>
+            <tr><td class="reagent">CHCl₃/KOH</td><td>Carbylamine reaction — test for 1° amines</td><td><span class="tag tag-p">test</span></td></tr>
+            <tr><td class="reagent">2,4-DNP</td><td>Yellow/orange/red ppt — test for C=O (aldehyde or ketone)</td><td><span class="tag tag-p">test</span></td></tr>
+            <tr><td class="reagent">Tollens' (Ag(NH₃)₂OH)</td><td>Silver mirror — test for aldehydes only</td><td><span class="tag tag-p">test</span></td></tr>
+            <tr><td class="reagent">Fehling's</td><td>Red Cu₂O ppt — test for aldehydes only</td><td><span class="tag tag-p">test</span></td></tr>
+            <tr><td class="reagent">I₂/NaOH</td><td>Iodoform test — yellow CHI₃ with methyl ketones/CH₃CH(OH)R</td><td><span class="tag tag-p">test</span></td></tr>
+            <tr><td class="reagent">HCl/ZnCl₂ (Lucas)</td><td>Test for 1°, 2°, 3° alcohols</td><td><span class="tag tag-p">test</span></td></tr>
+            <tr><td class="reagent">FeCl₃</td><td>Violet/blue/green — test for phenols</td><td><span class="tag tag-p">test</span></td></tr>
+            <tr><td class="reagent">Br₂/H₂O</td><td>Decolorisation = unsaturation; 2,4,6-tribromophenol with phenol</td><td><span class="tag tag-p">test</span></td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="flow">
-        <span class="flow-node">Alkane</span><span class="flow-arrow">→</span>
-        <span class="flow-node">Alkyl Halide</span>
-        <span class="flow-label">X₂/hν</span>
+    </div>
+    <!-- NAMED REACTIONS -->
+    <div id="tab-namedreactions" class="section">
+      <div class="sec-heading">Named Reactions</div>
+      <div class="grid grid-3">
+
+        <div>
+          <div class="named-rxn">
+            <div class="rxn-name">Wurtz Reaction</div>
+            <p>2RX + 2Na/dry ether <span class="arrow">→</span> R−R + 2NaX (symmetrical alkane only)</p>
+          </div>
+          <div class="named-rxn">
+            <div class="rxn-name">Wurtz-Fittig</div>
+            <p>RX + ArX + 2Na/dry ether <span class="arrow">→</span> Ar−R (alkylarene)</p>
+          </div>
+          <div class="named-rxn">
+            <div class="rxn-name">Fittig Reaction</div>
+            <p>2ArX + 2Na/dry ether <span class="arrow">→</span> Ar−Ar (biaryl)</p>
+          </div>
+          <div class="named-rxn">
+            <div class="rxn-name">Finkelstein</div>
+            <p>R−Cl/Br + NaI/acetone <span class="arrow">→</span> R−I + NaCl/Br (Le Chatelier drives forward)</p>
+          </div>
+          <div class="named-rxn">
+            <div class="rxn-name">Swarts Reaction</div>
+            <p>R−Br/Cl + AgF <span class="arrow">→</span> R−F + AgBr/Cl</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="named-rxn">
+            <div class="rxn-name">Rosenmund Reduction</div>
+            <p>RCOCl + H₂/Pd−BaSO₄ <span class="arrow">→</span> RCHO (controlled; BaSO₄ poisons catalyst)</p>
+          </div>
+          <div class="named-rxn">
+            <div class="rxn-name">Clemmensen Reduction</div>
+            <p>RCHO or R₂CO + Zn-Hg/HCl <span class="arrow">→</span> RCH₃ or R₂CH₂ (acidic medium)</p>
+          </div>
+          <div class="named-rxn">
+            <div class="rxn-name">Wolf-Kishner Reduction</div>
+            <p>RCHO or R₂CO + NH₂NH₂/KOH/glycol <span class="arrow">→</span> alkane (basic medium)</p>
+          </div>
+          <div class="named-rxn">
+            <div class="rxn-name">Aldol Condensation</div>
+            <p>Carbonyl with α-H + dil. base or acid <span class="arrow">→</span> β-hydroxy carbonyl (aldol product)</p>
+          </div>
+          <div class="named-rxn">
+            <div class="rxn-name">Cannizzaro Reaction</div>
+            <p>HCHO (no α-H) + conc. NaOH <span class="arrow">→</span> CH₃OH + HCOONa (disproportionation)</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="named-rxn">
+            <div class="rxn-name">Haloform Reaction</div>
+            <p>CH₃COR or CH₃CH(OH)R + X₂/NaOH <span class="arrow">→</span> CHX₃↓ (iodoform = yellow)</p>
+          </div>
+          <div class="named-rxn">
+            <div class="rxn-name">HVZ Reaction</div>
+            <p>R−CH₂−COOH + X₂/Red P <span class="arrow">→</span> α-halo acid</p>
+          </div>
+          <div class="named-rxn">
+            <div class="rxn-name">Gabriel Phthalimide</div>
+            <p>Phthalimide + KOH + RX (1°) + H₂O/H⁺ <span class="arrow">→</span> only 1° amine (no 2° or 3°)</p>
+          </div>
+          <div class="named-rxn">
+            <div class="rxn-name">Hofmann Bromamide</div>
+            <p>RCONH₂ + Br₂/KOH <span class="arrow">→</span> RNH₂ (1° amine, one less carbon)</p>
+          </div>
+          <div class="named-rxn">
+            <div class="rxn-name">Carbylamine Reaction</div>
+            <p>1° RNH₂ + CHCl₃/KOH <span class="arrow">→</span> RNC (isocyanide, foul smell — test for 1° amines)</p>
+          </div>
+          <div class="named-rxn">
+            <div class="rxn-name">Diazotization &amp; Sandmeyer</div>
+            <p>ArNH₂ + NaNO₂/HCl at 0−5°C <span class="arrow">→</span> ArN₂⁺Cl⁻; then CuX <span class="arrow">→</span> ArX</p>
+          </div>
+          <div class="named-rxn">
+            <div class="rxn-name">Kolbe's Reaction</div>
+            <p>Phenol + NaOH + CO₂/140°C <span class="arrow">→</span> salicylic acid</p>
+          </div>
+          <div class="named-rxn">
+            <div class="rxn-name">Reimer-Tiemann</div>
+            <p>Phenol + CHCl₃/NaOH <span class="arrow">→</span> salicylaldehyde (o-hydroxybenzaldehyde)</p>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="card">
-      <div class="card-title"><span class="dot dot-b"></span>Alkene Conversions</div>
-      <div class="flow">
-        <span class="flow-node">Alkene</span><span class="flow-arrow">→</span>
-        <span class="flow-node">Alcohol</span><span class="flow-arrow">→</span>
-        <span class="flow-node">Alkyl Halide</span><span class="flow-arrow">→</span>
-        <span class="flow-node">Amine</span>
-      </div>
-      <div class="flow">
-        <span class="flow-node">Alkene</span><span class="flow-arrow">→</span>
-        <span class="flow-node">Vicinal diol</span>
-        <span class="flow-label">cold KMnO₄ (syn)</span>
-      </div>
-      <div class="flow">
-        <span class="flow-node">Alkene</span><span class="flow-arrow">→</span>
-        <span class="flow-node">Ald/Ketone</span>
-        <span class="flow-label">O₃ then Zn/H₂O</span>
+    <!-- CONVERSIONS -->
+    <div id="tab-conversions" class="section">
+      <div class="sec-heading">Conversion Maps</div>
+      <div class="grid">
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Alkane Series</div>
+          <div class="flow">
+            <span class="flow-node">Alkane</span><span class="flow-arrow">→</span>
+            <span class="flow-node">Alkyl Halide</span><span class="flow-arrow">→</span>
+            <span class="flow-node">Alcohol</span><span class="flow-arrow">→</span>
+            <span class="flow-node">Aldehyde</span><span class="flow-arrow">→</span>
+            <span class="flow-node">Carboxylic Acid</span>
+          </div>
+          <div class="flow">
+            <span class="flow-node">Alkane</span><span class="flow-arrow">→</span>
+            <span class="flow-node">Alkyl Halide</span>
+            <span class="flow-label">X₂/hν</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-b"></span>Alkene Conversions</div>
+          <div class="flow">
+            <span class="flow-node">Alkene</span><span class="flow-arrow">→</span>
+            <span class="flow-node">Alcohol</span><span class="flow-arrow">→</span>
+            <span class="flow-node">Alkyl Halide</span><span class="flow-arrow">→</span>
+            <span class="flow-node">Amine</span>
+          </div>
+          <div class="flow">
+            <span class="flow-node">Alkene</span><span class="flow-arrow">→</span>
+            <span class="flow-node">Vicinal diol</span>
+            <span class="flow-label">cold KMnO₄ (syn)</span>
+          </div>
+          <div class="flow">
+            <span class="flow-node">Alkene</span><span class="flow-arrow">→</span>
+            <span class="flow-node">Ald/Ketone</span>
+            <span class="flow-label">O₃ then Zn/H₂O</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-r"></span>Alkyne Conversions</div>
+          <div class="flow">
+            <span class="flow-node">Alkyne</span><span class="flow-arrow">→</span>
+            <span class="flow-node">cis-alkene</span>
+            <span class="flow-label">Lindlar's</span>
+          </div>
+          <div class="flow">
+            <span class="flow-node">Alkyne</span><span class="flow-arrow">→</span>
+            <span class="flow-node">trans-alkene</span>
+            <span class="flow-label">Na/liq.NH₃</span>
+          </div>
+          <div class="flow">
+            <span class="flow-node">Alkyne</span><span class="flow-arrow">→</span>
+            <span class="flow-node">alkane</span>
+            <span class="flow-label">2H₂/Ni</span>
+          </div>
+          <div class="flow">
+            <span class="flow-node">CH≡CH</span><span class="flow-arrow">→</span>
+            <span class="flow-node">CH₃CHO</span>
+            <span class="flow-label">HgSO₄/H₂SO₄</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-p"></span>Benzene Series</div>
+          <div class="flow">
+            <span class="flow-node">Benzene</span><span class="flow-arrow">→</span>
+            <span class="flow-node">Nitrobenzene</span><span class="flow-arrow">→</span>
+            <span class="flow-node">Aniline</span><span class="flow-arrow">→</span>
+            <span class="flow-node">Diazonium</span><span class="flow-arrow">→</span>
+            <span class="flow-node">Phenol</span>
+          </div>
+          <div class="flow">
+            <span class="flow-node">Diazonium</span><span class="flow-arrow">→</span>
+            <span class="flow-node">ArX</span>
+            <span class="flow-label">Sandmeyer (CuX)</span>
+          </div>
+          <div class="flow">
+            <span class="flow-node">Diazonium</span><span class="flow-arrow">→</span>
+            <span class="flow-node">Azo dye</span>
+            <span class="flow-label">coupling with phenol/aniline</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot dot-y"></span>Carbonyl Conversions</div>
+          <div class="flow">
+            <span class="flow-node">Aldehyde</span><span class="flow-arrow">→</span>
+            <span class="flow-node">Alcohol</span>
+            <span class="flow-label">NaBH₄ or LiAlH₄</span>
+          </div>
+          <div class="flow">
+            <span class="flow-node">Alcohol</span><span class="flow-arrow">→</span>
+            <span class="flow-node">Alkene</span>
+            <span class="flow-label">dehydration H₂SO₄</span>
+          </div>
+          <div class="flow">
+            <span class="flow-node">RCOOH</span><span class="flow-arrow">→</span>
+            <span class="flow-node">RCOOR'</span>
+            <span class="flow-label">esterification</span>
+          </div>
+          <div class="flow">
+            <span class="flow-node">RCOOR'</span><span class="flow-arrow">→</span>
+            <span class="flow-node">RCH₂OH</span>
+            <span class="flow-label">LiAlH₄</span>
+          </div>
+          <div class="flow">
+            <span class="flow-node">RCONH₂</span><span class="flow-arrow">→</span>
+            <span class="flow-node">RNH₂</span>
+            <span class="flow-label">Hofmann bromamide (−1C)</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="card">
-      <div class="card-title"><span class="dot dot-r"></span>Alkyne Conversions</div>
-      <div class="flow">
-        <span class="flow-node">Alkyne</span><span class="flow-arrow">→</span>
-        <span class="flow-node">cis-alkene</span>
-        <span class="flow-label">Lindlar's</span>
-      </div>
-      <div class="flow">
-        <span class="flow-node">Alkyne</span><span class="flow-arrow">→</span>
-        <span class="flow-node">trans-alkene</span>
-        <span class="flow-label">Na/liq.NH₃</span>
-      </div>
-      <div class="flow">
-        <span class="flow-node">Alkyne</span><span class="flow-arrow">→</span>
-        <span class="flow-node">alkane</span>
-        <span class="flow-label">2H₂/Ni</span>
-      </div>
-      <div class="flow">
-        <span class="flow-node">CH≡CH</span><span class="flow-arrow">→</span>
-        <span class="flow-node">CH₃CHO</span>
-        <span class="flow-label">HgSO₄/H₂SO₄</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-p"></span>Benzene Series</div>
-      <div class="flow">
-        <span class="flow-node">Benzene</span><span class="flow-arrow">→</span>
-        <span class="flow-node">Nitrobenzene</span><span class="flow-arrow">→</span>
-        <span class="flow-node">Aniline</span><span class="flow-arrow">→</span>
-        <span class="flow-node">Diazonium</span><span class="flow-arrow">→</span>
-        <span class="flow-node">Phenol</span>
-      </div>
-      <div class="flow">
-        <span class="flow-node">Diazonium</span><span class="flow-arrow">→</span>
-        <span class="flow-node">ArX</span>
-        <span class="flow-label">Sandmeyer (CuX)</span>
-      </div>
-      <div class="flow">
-        <span class="flow-node">Diazonium</span><span class="flow-arrow">→</span>
-        <span class="flow-node">Azo dye</span>
-        <span class="flow-label">coupling with phenol/aniline</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title"><span class="dot dot-y"></span>Carbonyl Conversions</div>
-      <div class="flow">
-        <span class="flow-node">Aldehyde</span><span class="flow-arrow">→</span>
-        <span class="flow-node">Alcohol</span>
-        <span class="flow-label">NaBH₄ or LiAlH₄</span>
-      </div>
-      <div class="flow">
-        <span class="flow-node">Alcohol</span><span class="flow-arrow">→</span>
-        <span class="flow-node">Alkene</span>
-        <span class="flow-label">dehydration H₂SO₄</span>
-      </div>
-      <div class="flow">
-        <span class="flow-node">RCOOH</span><span class="flow-arrow">→</span>
-        <span class="flow-node">RCOOR'</span>
-        <span class="flow-label">esterification</span>
-      </div>
-      <div class="flow">
-        <span class="flow-node">RCOOR'</span><span class="flow-arrow">→</span>
-        <span class="flow-node">RCH₂OH</span>
-        <span class="flow-label">LiAlH₄</span>
-      </div>
-      <div class="flow">
-        <span class="flow-node">RCONH₂</span><span class="flow-arrow">→</span>
-        <span class="flow-node">RNH₂</span>
-        <span class="flow-label">Hofmann bromamide (−1C)</span>
+    <!-- TRAPS -->
+    <div id="tab-traps" class="section">
+      <div class="sec-heading">Common Traps &amp; Exceptions ⚠️</div>
+      <div class="grid">
+        <div>
+          <div class="trap-card">
+            <div class="trap-title">Anti-Markovnikov — HBr only</div>
+            <p>Anti-Markovnikov addition occurs <b>only with HBr</b> in the presence of peroxides (free radical mechanism). HCl and HI do <b>not</b> give anti-Markovnikov even with peroxides.</p>
+          </div>
+          <div class="trap-card">
+            <div class="trap-title">Friedel-Crafts Alkylation Traps</div>
+            <p>Carbocation rearrangement is possible (forms more stable carbocation). Polysubstitution is common. Does <b>not</b> work with deactivated rings (NO₂, COOH groups present).</p>
+          </div>
+          <div class="trap-card">
+            <div class="trap-title">Haloarenes — Unreactive to SN</div>
+            <p>ArX does not undergo SN reactions under normal conditions because the C−X bond has partial double bond character (resonance). Nucleophilic aromatic substitution (SNAr) requires strong EWG at o/p positions.</p>
+          </div>
+          <div class="trap-card">
+            <div class="trap-title">Williamson Synthesis — Use 1° Halide</div>
+            <p>Always use 1° alkyl halide to avoid competing E2 elimination. With 2° or 3° halides, elimination is favoured over substitution.</p>
+          </div>
+        </div>
+        <div>
+          <div class="trap-card">
+            <div class="trap-title">Gabriel Phthalimide — Only 1° Amines</div>
+            <p>Gabriel synthesis works only for 1° amines. 2° or 3° amines cannot be made by this method.</p>
+          </div>
+          <div class="trap-card">
+            <div class="trap-title">Hofmann Bromamide — Loss of Carbon</div>
+            <p>Product has <b>one less carbon</b> than starting amide. RCONH₂ → RNH₂ (e.g., propanamide → ethylamine).</p>
+          </div>
+          <div class="trap-card">
+            <div class="trap-title">Diazotization — Temperature Critical</div>
+            <p>Must be done at 0−5°C. Diazonium salt decomposes above this. Works only for <b>aromatic 1° amines</b>. Aliphatic amines give unstable diazonium salts.</p>
+          </div>
+          <div class="trap-card">
+            <div class="trap-title">Basicity of Amines — Gas vs Aqueous</div>
+            <p><b>Gas phase:</b> 3° &gt; 2° &gt; 1° &gt; NH₃ (inductive effect only). <b>Aqueous phase (methylamines):</b> 2° &gt; 1° &gt; 3° &gt; NH₃ (solvation reverses order for 3°).</p>
+          </div>
+          <div class="trap-card">
+            <div class="trap-title">Sucrose is Non-Reducing</div>
+            <p>Sucrose does NOT give Tollens' or Fehling's test positive because the anomeric C of both glucose and fructose are involved in the glycosidic bond. All other common disaccharides (maltose, lactose) are reducing.</p>
+          </div>
+          <div class="trap-card">
+            <div class="trap-title">NaBH₄ vs LiAlH₄</div>
+            <p>NaBH₄ reduces only aldehydes/ketones. LiAlH₄ reduces carboxylic acids, esters, amides too. LiAlH₄ <b>cannot</b> be used in protic solvents (reacts violently with water/alcohol).</p>
+          </div>
+          <div class="trap-card">
+            <div class="trap-title">Haloform Reaction Scope</div>
+            <p>Iodoform test positive for: CH₃COR, CH₃CHO (acetaldehyde), and secondary alcohols CH₃CH(OH)R. <b>Not</b> for other aldehydes or ketones.</p>
+          </div>
+        </div>
       </div>
     </div>
 
-  </div>
-</div>
+  </main>
 
-<!-- TRAPS -->
-<div id="tab-traps" class="section">
-  <div class="sec-heading">Common Traps &amp; Exceptions ⚠️</div>
-  <div class="grid">
-    <div>
-      <div class="trap-card">
-        <div class="trap-title">Anti-Markovnikov — HBr only</div>
-        <p>Anti-Markovnikov addition occurs <b>only with HBr</b> in the presence of peroxides (free radical mechanism). HCl and HI do <b>not</b> give anti-Markovnikov even with peroxides.</p>
-      </div>
-      <div class="trap-card">
-        <div class="trap-title">Friedel-Crafts Alkylation Traps</div>
-        <p>Carbocation rearrangement is possible (forms more stable carbocation). Polysubstitution is common. Does <b>not</b> work with deactivated rings (NO₂, COOH groups present).</p>
-      </div>
-      <div class="trap-card">
-        <div class="trap-title">Haloarenes — Unreactive to SN</div>
-        <p>ArX does not undergo SN reactions under normal conditions because the C−X bond has partial double bond character (resonance). Nucleophilic aromatic substitution (SNAr) requires strong EWG at o/p positions.</p>
-      </div>
-      <div class="trap-card">
-        <div class="trap-title">Williamson Synthesis — Use 1° Halide</div>
-        <p>Always use 1° alkyl halide to avoid competing E2 elimination. With 2° or 3° halides, elimination is favoured over substitution.</p>
-      </div>
-    </div>
-    <div>
-      <div class="trap-card">
-        <div class="trap-title">Gabriel Phthalimide — Only 1° Amines</div>
-        <p>Gabriel synthesis works only for 1° amines. 2° or 3° amines cannot be made by this method.</p>
-      </div>
-      <div class="trap-card">
-        <div class="trap-title">Hofmann Bromamide — Loss of Carbon</div>
-        <p>Product has <b>one less carbon</b> than starting amide. RCONH₂ → RNH₂ (e.g., propanamide → ethylamine).</p>
-      </div>
-      <div class="trap-card">
-        <div class="trap-title">Diazotization — Temperature Critical</div>
-        <p>Must be done at 0−5°C. Diazonium salt decomposes above this. Works only for <b>aromatic 1° amines</b>. Aliphatic amines give unstable diazonium salts.</p>
-      </div>
-      <div class="trap-card">
-        <div class="trap-title">Basicity of Amines — Gas vs Aqueous</div>
-        <p><b>Gas phase:</b> 3° &gt; 2° &gt; 1° &gt; NH₃ (inductive effect only). <b>Aqueous phase (methylamines):</b> 2° &gt; 1° &gt; 3° &gt; NH₃ (solvation reverses order for 3°).</p>
-      </div>
-      <div class="trap-card">
-        <div class="trap-title">Sucrose is Non-Reducing</div>
-        <p>Sucrose does NOT give Tollens' or Fehling's test positive because the anomeric C of both glucose and fructose are involved in the glycosidic bond. All other common disaccharides (maltose, lactose) are reducing.</p>
-      </div>
-      <div class="trap-card">
-        <div class="trap-title">NaBH₄ vs LiAlH₄</div>
-        <p>NaBH₄ reduces only aldehydes/ketones. LiAlH₄ reduces carboxylic acids, esters, amides too. LiAlH₄ <b>cannot</b> be used in protic solvents (reacts violently with water/alcohol).</p>
-      </div>
-      <div class="trap-card">
-        <div class="trap-title">Haloform Reaction Scope</div>
-        <p>Iodoform test positive for: CH₃COR, CH₃CHO (acetaldehyde), and secondary alcohols CH₃CH(OH)R. <b>Not</b> for other aldehydes or ketones.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-</main>
+</div> <!-- END chem-compendium wrapper -->
 
 <script>
 function showTab(id, btn) {
@@ -1524,7 +1527,6 @@ function handleSearch(q) {
   tabContent.style.display = 'none';
   searchResults.style.display = 'block';
 
-  // Gather all cards and named reactions
   const allCards = [...document.querySelectorAll('#tabContent .card, #tabContent .named-rxn, #tabContent .trap-card, #tabContent .flow')];
   const results = [];
 
@@ -1532,12 +1534,10 @@ function handleSearch(q) {
     const text = el.innerText.toLowerCase();
     if (text.includes(q)) {
       const clone = el.cloneNode(true);
-      // Highlight
       clone.innerHTML = clone.innerHTML.replace(
         new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi'),
         '<mark class="search-hl">$1</mark>'
       );
-      // Wrap named-rxn, trap-card, and flow in a card-like container so they sit properly in the grid
       if (el.classList.contains('named-rxn') || el.classList.contains('trap-card') || el.classList.contains('flow')) {
         const wrapper = document.createElement('div');
         wrapper.className = 'card';
@@ -1564,7 +1564,7 @@ function handleSearch(q) {
 
 <script>
   // audio.js handles deviceready internally — call init() directly
-  //AudioManager.init('chem.m4a');
+  //A bhudioManager.init('chem.m4a');
 </script>
 </body>
 </html>
