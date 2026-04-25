@@ -4,8 +4,7 @@
     "question": "Group O individuals are called \"universal donors\" because:",
     "options": [
       "Their blood has no antigens and no antibodies",
-      "Their blood has no antigens (A or",
-      "on RBCs, so no agglutination occurs when transfused into A, B, AB, or O recipients",
+      "Their blood has no antigenson RBCs, so no agglutination occurs when transfused into A, B, AB, or O recipients",
       "Their blood has both anti-A and anti-B antibodies that protect the recipient",
       "Their blood type is the most common globally"
     ],
@@ -80,7 +79,7 @@
       "Paramecium — r = 0.5"
     ],
     "correctIndex": 3,
-    "explanation": "",
+    "explanation": "this type of questions where answers are evident in options ,are intentional, just by reading the questions and options, you got info of multiple questions.",
     "tags": [],
     "difficulty": "medium"
   },
