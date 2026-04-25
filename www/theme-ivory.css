@@ -1,0 +1,40 @@
+:root {
+  /* ── Ivory Palette — warm cream, forest green, terracotta ── */
+  --ink: #1a1208;
+  --parchment: #fdf6e3;
+  --parchment-dark: #f5ecce;
+  --parchment-mid: #f9f2dc;
+  --gold: #2d7a4a;
+  --gold-light: #3d9e60;
+  --gold-deep: #1a5c34;
+  --crimson: #b85c38;
+  --crimson-light: #d4704a;
+  --navy: #fdf6e3;
+  --navy-light: #f5ecce;
+  --border-ornate: #c8a96a;
+  --text-body: #2a1f0e;
+  --text-muted: #6b5440;
+  --text-accent: #b85c38;
+  --surface: #fffdf5;
+  --surface-alt: #f7f0da;
+  --shadow: rgba(30,18,4,0.12);
+
+  /* ── Legacy tokens ── */
+  --bg: var(--navy);
+  --surface2: var(--parchment-dark);
+  --border: var(--border-ornate);
+  --border-hi: var(--gold-light);
+  --text: var(--text-body);
+  --text-on-dark: #2a1f0e;
+  --muted: var(--text-muted);
+  --muted-on-dark: #5a4430;
+  --accent: #1a5c34;
+  --accent-on-dark: var(--gold-light);
+  --chem: #1a6b66;
+  --phys: #2d5a8a;
+  --mcq: #b85c38;
+  --green: #2d7a4a;
+  --red: var(--crimson);
+  --accent2: var(--crimson);
+  --accent3: var(--gold);
+}

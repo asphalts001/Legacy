@@ -1,0 +1,40 @@
+:root {
+  /* ── Obsidian Palette — dark, blue-purple ── */
+  --ink: #0a0a0f;
+  --parchment: #1a1a2e;
+  --parchment-dark: #141422;
+  --parchment-mid: #1e1e32;
+  --gold: #7c6aff;
+  --gold-light: #a594ff;
+  --gold-deep: #4a38cc;
+  --crimson: #c084fc;
+  --crimson-light: #d8a6ff;
+  --navy: #07070f;
+  --navy-light: #10102a;
+  --border-ornate: #4a3f9e;
+  --text-body: #dcd8f0;
+  --text-muted: #8880aa;
+  --text-accent: #c084fc;
+  --surface: #12121f;
+  --surface-alt: #0f0f1c;
+  --shadow: rgba(0,0,0,0.45);
+
+  /* ── Legacy tokens ── */
+  --bg: var(--navy);
+  --surface2: var(--parchment-dark);
+  --border: var(--border-ornate);
+  --border-hi: var(--gold-light);
+  --text: var(--text-body);
+  --text-on-dark: var(--gold-light);
+  --muted: var(--text-muted);
+  --muted-on-dark: #6a6088;
+  --accent: #4a38cc;
+  --accent-on-dark: var(--gold-light);
+  --chem: #38bdf8;
+  --phys: #7c6aff;
+  --mcq: #c084fc;
+  --green: #4ade80;
+  --red: #f87171;
+  --accent2: var(--crimson);
+  --accent3: var(--gold);
+}

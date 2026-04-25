@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <link rel="stylesheet" href="theme.css">
+  <script src="theme-loader.js"></script>
   <title>Royalty</title>
 
 </head>
@@ -123,13 +124,31 @@
     <small style="margin-top: 8px;">Auto-sync runs every hour while signed in.</small>
     <span id="sync-status-msg"></span>
   </div>
+
+<div class="panel-section" id="theme-section">
+  <label>Theme</label>
+  <div class="theme-swatches">
+    <button class="theme-swatch active" data-theme="royal"   title="Royal">⚜️ Royal</button>
+    <button class="theme-swatch"        data-theme="obsidian" title="Obsidian">🖤 Obsidian</button>
+    <button class="theme-swatch"        data-theme="ivory"   title="Ivory">📜 Ivory</button>
+  </div>
+</div>
 </div>
   <!-- Scripts (load order matters) -->
   <script src="cordova.js"></script> 
+  <script src="theme-loader.js"></script>
   <script src="StateManager.js"></script>
   <script src="tracker.js"></script>
   <script type="module" src="sync.js"></script> <!-- Ensure sync.js has only ONE listener for #btn-more-menu -->
   <script src="audio.js"></script>
+
+  <script>
+  document.querySelectorAll('.theme-swatch').forEach(btn => {
+    btn.addEventListener('click', () => {
+      ThemeLoader.set(btn.dataset.theme);
+    });
+  });
+</script>
 
   <script>
     // Date display

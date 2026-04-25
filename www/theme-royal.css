@@ -1,0 +1,40 @@
+:root {
+  /* ── Primary Royal Palette ── */
+  --ink: #0e0b07;
+  --parchment: #f5edd8;
+  --parchment-dark: #ede0c4;
+  --parchment-mid: #f0e6ce;
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --gold-deep: #8a6420;
+  --crimson: #8b1a1a;
+  --crimson-light: #b32020;
+  --navy: #1a2540;
+  --navy-light: #243259;
+  --border-ornate: #b8962e;
+  --text-body: #1e1408;
+  --text-muted: #5c4a2a;
+  --text-accent: #8b1a1a;
+  --surface: #f9f2e3;
+  --surface-alt: #f2e8d0;
+  --shadow: rgba(10,7,2,0.18);
+
+  /* ── Legacy / Compatibility Tokens (preserved) ── */
+  --bg: var(--navy);
+  --surface2: var(--parchment-dark);
+  --border: var(--border-ornate);
+  --border-hi: var(--gold-light);
+  --text: var(--text-body);
+  --text-on-dark: var(--gold-light);
+  --muted: var(--text-muted);
+  --muted-on-dark: #a08c60;
+  --accent: #7c5c10;
+  --accent-on-dark: var(--gold-light);
+  --chem: #1a6b66;
+  --phys: var(--navy);
+  --mcq: var(--crimson);
+  --green: #4caf7d;
+  --red: var(--crimson);
+  --accent2: var(--crimson);
+  --accent3: var(--gold);
+}
