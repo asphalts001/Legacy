@@ -1,40 +1,81 @@
-:root {
-  /* ── Primary Royal Palette ── */
-  --ink: #0e0b07;
-  --parchment: #f5edd8;
-  --parchment-dark: #ede0c4;
-  --parchment-mid: #f0e6ce;
-  --gold: #c9a84c;
-  --gold-light: #e8c97a;
-  --gold-deep: #8a6420;
-  --crimson: #8b1a1a;
-  --crimson-light: #b32020;
-  --navy: #1a2540;
-  --navy-light: #243259;
-  --border-ornate: #b8962e;
-  --text-body: #1e1408;
-  --text-muted: #5c4a2a;
-  --text-accent: #8b1a1a;
-  --surface: #f9f2e3;
-  --surface-alt: #f2e8d0;
-  --shadow: rgba(10,7,2,0.18);
+/* ═══════════════════════════════════════════════════════════════════
+   theme-royal.css  —  Royal Egyptian Palette
+   Parchment · Gold · Crimson · Navy
+   Loaded by ThemeLoader when theme = 'royal' (default / base)
+   Note: ThemeLoader removes this override when royal is selected;
+   theme.css fallback tokens already match this palette.
+   This file exists so royal can also be explicitly re-applied.
+   ═══════════════════════════════════════════════════════════════════ */
 
-  /* ── Legacy / Compatibility Tokens (preserved) ── */
-  --bg: var(--navy);
-  --surface2: var(--parchment-dark);
-  --border: var(--border-ornate);
-  --border-hi: var(--gold-light);
-  --text: var(--text-body);
-  --text-on-dark: var(--gold-light);
-  --muted: var(--text-muted);
-  --muted-on-dark: #a08c60;
-  --accent: #7c5c10;
-  --accent-on-dark: var(--gold-light);
-  --chem: #1a6b66;
-  --phys: var(--navy);
-  --mcq: var(--crimson);
-  --green: #4caf7d;
-  --red: var(--crimson);
-  --accent2: var(--crimson);
-  --accent3: var(--gold);
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
+
+:root {
+  /* ── Core palette ── */
+  --ink:              #0e0b07;
+  --parchment:        #f5edd8;
+  --parchment-dark:   #ede0c4;
+  --parchment-mid:    #f0e6ce;
+  --gold:             #c9a84c;
+  --gold-light:       #e8c97a;
+  --gold-deep:        #8a6420;
+  --crimson:          #8b1a1a;
+  --crimson-light:    #b32020;
+  --navy:             #1a2540;
+  --navy-light:       #243259;
+  --border-ornate:    #b8962e;
+
+  /* ── Semantic roles ── */
+  --bg:               #1a2540;
+  --surface:          #f9f2e3;
+  --surface-alt:      #f2e8d0;
+  --parchment:        #f5edd8;
+  --parchment-dark:   #ede0c4;
+  --parchment-mid:    #f0e6ce;
+  --text-body:        #1e1408;
+  --text-muted:       #5c4a2a;
+  --text-accent:      #8b1a1a;
+  --text-on-dark:     #f0e8d0;
+  --border:           rgba(184,150,46,0.35);
+  --shadow:           rgba(10,7,2,0.18);
+  --green:            #4caf7d;
+  --red:              #8b1a1a;
+
+  /* ── Background surfaces ── */
+  --bg-page:          #1a2540;
+  --bg-header:        #f5edd8;
+  --bg-header-grad:   linear-gradient(180deg, #f9f2e3 0%, #ede0c4 100%);
+  --bg-card:          #f5edd8;
+  --bg-card-grad:     linear-gradient(160deg, #f9f2e3 0%, #f0e6ce 100%);
+  --bg-card-dark:     linear-gradient(160deg, #1a2540 0%, #0d1a30 100%);
+  --bg-trap:          linear-gradient(160deg, #f9f0e8 0%, #f0e0d0 100%);
+  --bg-dark-surface:  rgba(255,255,255,0.05);
+  --bg-overlay:       rgba(10,10,15,0.92);
+
+  /* ── Quiz type accents ── */
+  --close: #7c6af0; --multi: #e05a5a; --trap: #d4a843;
+  --scale: #4ecdc4; --frame: #e8845a; --edge: #a55af0; --sign: #5ab4e8;
+
+  /* ── Grade colours ── */
+  --grade-A: var(--green);
+  --grade-B: var(--gold);
+  --grade-C: var(--red);
+
+  /* ── Body background (starfield pattern) ── */
+  --bg-body-image:
+    radial-gradient(ellipse at 20% 20%, #1e2d52 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, #0d1a30 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+  /* ── Font roles ── */
+  --font-display:  'Playfair Display', 'Cinzel', Georgia, serif;
+  --font-heading:  'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-body:     'Cormorant Garamond', 'Crimson Pro', Georgia, serif;
+  --font-body-alt: 'Crimson Pro', 'Cormorant Garamond', Georgia, serif;
+  --font-ui:       'Syne', system-ui, sans-serif;
+  --font-mono:     'JetBrains Mono', 'Courier New', monospace;
+  --font-italic:   'IM Fell English', 'Cormorant Garamond', Georgia, serif;
 }
+
+/* Apply body background pattern */
+body { background-image: var(--bg-body-image); }

@@ -1,40 +1,163 @@
-:root {
-  /* ── Obsidian Palette — dark, blue-purple ── */
-  --ink: #0a0a0f;
-  --parchment: #1a1a2e;
-  --parchment-dark: #141422;
-  --parchment-mid: #1e1e32;
-  --gold: #7c6aff;
-  --gold-light: #a594ff;
-  --gold-deep: #4a38cc;
-  --crimson: #c084fc;
-  --crimson-light: #d8a6ff;
-  --navy: #07070f;
-  --navy-light: #10102a;
-  --border-ornate: #4a3f9e;
-  --text-body: #dcd8f0;
-  --text-muted: #8880aa;
-  --text-accent: #c084fc;
-  --surface: #12121f;
-  --surface-alt: #0f0f1c;
-  --shadow: rgba(0,0,0,0.45);
+/* ═══════════════════════════════════════════════════════════════════
+   theme-obsidian.css  —  Obsidian Dark Palette
+   Volcanic black · Amber · Teal · Ash white
+   Injected by ThemeLoader when theme = 'obsidian'
+   ═══════════════════════════════════════════════════════════════════ */
 
-  /* ── Legacy tokens ── */
-  --bg: var(--navy);
-  --surface2: var(--parchment-dark);
-  --border: var(--border-ornate);
-  --border-hi: var(--gold-light);
-  --text: var(--text-body);
-  --text-on-dark: var(--gold-light);
-  --muted: var(--text-muted);
-  --muted-on-dark: #6a6088;
-  --accent: #4a38cc;
-  --accent-on-dark: var(--gold-light);
-  --chem: #38bdf8;
-  --phys: #7c6aff;
-  --mcq: #c084fc;
-  --green: #4ade80;
-  --red: #f87171;
-  --accent2: var(--crimson);
-  --accent3: var(--gold);
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ── Core palette ── */
+  --ink:              #0a0a0c;
+  --parchment:        #1e1e24;
+  --parchment-dark:   #16161c;
+  --parchment-mid:    #1a1a20;
+  --gold:             #f59e0b;
+  --gold-light:       #fbbf24;
+  --gold-deep:        #b45309;
+  --crimson:          #14b8a6;
+  --crimson-light:    #2dd4bf;
+  --navy:             #f1f5f9;
+  --navy-light:       #cbd5e1;
+  --border-ornate:    #f59e0b;
+
+  /* ── Semantic roles ── */
+  --bg:               #0a0a0c;
+  --surface:          #1e1e24;
+  --surface-alt:      #16161c;
+  --text-body:        #e2e8f0;
+  --text-muted:       #94a3b8;
+  --text-accent:      #fbbf24;
+  --text-on-dark:     #f1f5f9;
+  --border:           rgba(245,158,11,0.25);
+  --shadow:           rgba(0,0,0,0.5);
+  --green:            #10b981;
+  --red:              #f43f5e;
+
+  /* ── Background surfaces ── */
+  --bg-page:          #0a0a0c;
+  --bg-header:        #111116;
+  --bg-header-grad:   linear-gradient(180deg, #111116 0%, #0d0d12 100%);
+  --bg-card:          #1e1e24;
+  --bg-card-grad:     linear-gradient(160deg, #1e1e24 0%, #16161c 100%);
+  --bg-card-dark:     linear-gradient(160deg, #111116 0%, #0d0d12 100%);
+  --bg-trap:          linear-gradient(160deg, #1e1824 0%, #180e1e 100%);
+  --bg-dark-surface:  rgba(255,255,255,0.04);
+  --bg-overlay:       rgba(5,5,8,0.95);
+
+  /* ── Quiz type accents ── */
+  --close: #818cf8; --multi: #fb7185; --trap: #fbbf24;
+  --scale: #34d399; --frame: #fb923c; --edge: #c084fc; --sign: #38bdf8;
+
+  /* ── Grade colours ── */
+  --grade-A: var(--green);
+  --grade-B: var(--gold);
+  --grade-C: var(--red);
+
+  /* ── Body background ── */
+  --bg-body-image:
+    radial-gradient(ellipse at 15% 10%, rgba(245,158,11,0.04) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 90%, rgba(20,184,166,0.04) 0%, transparent 55%),
+    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f59e0b' fill-opacity='0.025'%3E%3Ccircle cx='40' cy='40' r='1'/%3E%3Ccircle cx='0' cy='0' r='1'/%3E%3Ccircle cx='80' cy='0' r='1'/%3E%3Ccircle cx='0' cy='80' r='1'/%3E%3Ccircle cx='80' cy='80' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+  /* ── Font roles ── */
+  --font-display:  'Space Grotesk', 'Syne', system-ui, sans-serif;
+  --font-heading:  'Syne', 'Space Grotesk', system-ui, sans-serif;
+  --font-body:     'Inter', system-ui, sans-serif;
+  --font-body-alt: 'Inter', system-ui, sans-serif;
+  --font-ui:       'Syne', system-ui, sans-serif;
+  --font-mono:     'JetBrains Mono', 'Courier New', monospace;
+  --font-italic:   'Inter', system-ui, sans-serif;
+}
+
+/* Apply body background */
+body {
+  background-image: var(--bg-body-image);
+  /* Obsidian uses sans-serif body — slightly tighter line-height */
+  line-height: 1.6;
+}
+
+/* ── Obsidian-specific overrides ── */
+/* ── Obsidian: subject nav buttons — visible contrast ── */
+.btn-subject {
+  background: rgba(245,158,11,0.08);
+  border-color: rgba(245,158,11,0.3);
+}
+.btn-subject:hover {
+  background: color-mix(in srgb, var(--c) 12%, #1a1a20);
+}
+
+/* Activity items */
+.activity-item { border-bottom-color: rgba(245,158,11,0.15); }
+
+/* Stat boxes */
+.stat-box {
+  background: rgba(245,158,11,0.06);
+  border-color: rgba(245,158,11,0.2);
+}
+
+/* Hub header text on dark */
+.hub-title { color: #f1f5f9; }
+/* Cards: sharper, no warm gradient */
+.card,
+.formula-card        { border-radius: 8px; }
+.trap-card           { border-radius: 6px; }
+.q-card              { border-radius: 10px; }
+
+/* Header: flat dark bar, no parchment ornate frame */
+header.hub-header,
+.chem-compendium header {
+  background: #111116 !important;
+  background-image: none !important;
+  border: 1px solid rgba(245,158,11,0.2) !important;
+  box-shadow: 0 1px 0 rgba(245,158,11,0.1) !important;
+}
+header.hub-header::before,
+.chem-compendium header::before { display: none !important; }
+
+/* Tab active: amber instead of crimson */
+.tab.active,
+.tab-btn.active {
+  color: var(--gold-light);
+  border-bottom-color: var(--gold-light);
+}
+
+/* Card top stripe: amber */
+.card::before        { background: linear-gradient(90deg, var(--gold-deep), var(--gold-light), var(--gold-deep)); }
+.trap-card::before   { background: linear-gradient(90deg, var(--crimson), var(--crimson-light), var(--crimson)); }
+
+/* Trap card: teal accent (crimson token is teal in obsidian) */
+.trap-card {
+  background: linear-gradient(160deg, #1e1824 0%, #180e1e 100%);
+  border-color: var(--crimson-light);
+  border-left-color: var(--crimson);
+}
+.trap-card .trap-title,
+.trap-card .card-title { color: var(--crimson); }
+
+/* Formula card: deeper dark */
+.formula-card {
+  background: linear-gradient(160deg, #111116 0%, #0d0d12 100%);
+  border-color: var(--gold-deep);
+}
+
+/* h1 colour on dark cards */
+.chem-compendium h1 { color: var(--text-on-dark) !important; }
+.chem-compendium h1 span { color: var(--gold-light) !important; }
+/* ── Obsidian: theme swatch buttons ── */
+.theme-swatch {
+  background: rgba(245,158,11,0.06);
+  border-color: rgba(245,158,11,0.25);
+  color: #fbbf24;
+}
+.theme-swatch:hover {
+  background: rgba(245,158,11,0.15);
+  border-color: #fbbf24;
+}
+.theme-swatch.active {
+  background: rgba(245,158,11,0.22);
+  border-color: #fbbf24;
+  color: #fff;
+  box-shadow: 0 0 0 1px #fbbf24;
 }

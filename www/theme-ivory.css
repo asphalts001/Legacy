@@ -1,40 +1,167 @@
-:root {
-  /* ── Ivory Palette — warm cream, forest green, terracotta ── */
-  --ink: #1a1208;
-  --parchment: #fdf6e3;
-  --parchment-dark: #f5ecce;
-  --parchment-mid: #f9f2dc;
-  --gold: #2d7a4a;
-  --gold-light: #3d9e60;
-  --gold-deep: #1a5c34;
-  --crimson: #b85c38;
-  --crimson-light: #d4704a;
-  --navy: #fdf6e3;
-  --navy-light: #f5ecce;
-  --border-ornate: #c8a96a;
-  --text-body: #2a1f0e;
-  --text-muted: #6b5440;
-  --text-accent: #b85c38;
-  --surface: #fffdf5;
-  --surface-alt: #f7f0da;
-  --shadow: rgba(30,18,4,0.12);
+/* ═══════════════════════════════════════════════════════════════════
+   theme-ivory.css  —  Ivory Light Palette
+   Warm white · Slate · Terracotta · Sage
+   Injected by ThemeLoader when theme = 'ivory'
+   ═══════════════════════════════════════════════════════════════════ */
 
-  /* ── Legacy tokens ── */
-  --bg: var(--navy);
-  --surface2: var(--parchment-dark);
-  --border: var(--border-ornate);
-  --border-hi: var(--gold-light);
-  --text: var(--text-body);
-  --text-on-dark: #2a1f0e;
-  --muted: var(--text-muted);
-  --muted-on-dark: #5a4430;
-  --accent: #1a5c34;
-  --accent-on-dark: var(--gold-light);
-  --chem: #1a6b66;
-  --phys: #2d5a8a;
-  --mcq: #b85c38;
-  --green: #2d7a4a;
-  --red: var(--crimson);
-  --accent2: var(--crimson);
-  --accent3: var(--gold);
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+
+:root {
+  /* ── Core palette ── */
+  --ink:              #1c1917;
+  --parchment:        #fafaf9;
+  --parchment-dark:   #f5f5f4;
+  --parchment-mid:    #f7f6f3;
+  --gold:             #b45309;
+  --gold-light:       #d97706;
+  --gold-deep:        #78350f;
+  --crimson:          #c2410c;
+  --crimson-light:    #ea580c;
+  --navy:             #1c1917;
+  --navy-light:       #292524;
+  --border-ornate:    #d6c3a8;
+
+  /* ── Semantic roles ── */
+  --bg:               #fafaf9;
+  --surface:          #ffffff;
+  --surface-alt:      #f5f5f4;
+  --text-body:        #1c1917;
+  --text-muted:       #78716c;
+  --text-accent:      #c2410c;
+  --text-on-dark:     #1c1917;
+  --border:           rgba(120,83,50,0.2);
+  --shadow:           rgba(28,25,23,0.1);
+  --green:            #15803d;
+  --red:              #b91c1c;
+
+  /* ── Background surfaces ── */
+  --bg-page:          #fafaf9;
+  --bg-header:        #ffffff;
+  --bg-header-grad:   linear-gradient(180deg, #ffffff 0%, #f5f5f4 100%);
+  --bg-card:          #ffffff;
+  --bg-card-grad:     linear-gradient(160deg, #ffffff 0%, #f9f7f4 100%);
+  --bg-card-dark:     linear-gradient(160deg, #f5f5f4 0%, #ede8e3 100%);
+  --bg-trap:          linear-gradient(160deg, #fff7ed 0%, #ffedd5 100%);
+  --bg-dark-surface:  rgba(28,25,23,0.04);
+  --bg-overlay:       rgba(250,250,249,0.95);
+
+  /* ── Quiz type accents ── */
+  --close: #6366f1; --multi: #ef4444; --trap: #f59e0b;
+  --scale: #0d9488; --frame: #f97316; --edge: #a855f7; --sign: #0ea5e9;
+
+  /* ── Grade colours ── */
+  --grade-A: var(--green);
+  --grade-B: var(--gold);
+  --grade-C: var(--red);
+
+  /* ── Body background ── */
+  --bg-body-image:
+    radial-gradient(ellipse at 20% 0%, rgba(180,83,9,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(194,65,12,0.03) 0%, transparent 50%);
+
+  /* ── Font roles ── */
+  --font-display:  'Source Serif 4', 'Lora', Georgia, serif;
+  --font-heading:  'Lora', 'Source Serif 4', Georgia, serif;
+  --font-body:     'Source Serif 4', 'Lora', Georgia, serif;
+  --font-body-alt: 'Lora', 'Source Serif 4', Georgia, serif;
+  --font-ui:       'DM Sans', system-ui, sans-serif;
+  --font-mono:     'DM Mono', 'Courier New', monospace;
+  --font-italic:   'Lora', Georgia, serif;
 }
+
+/* Apply body background */
+body {
+  background-image: var(--bg-body-image);
+  /* Ivory is a light theme — flip text-on-dark to work on light surfaces */
+  color: var(--text-body);
+}
+
+/* ── Ivory-specific overrides ── */
+
+/* Sticky header: light, minimal border */
+header {
+  background: rgba(255,255,255,0.9) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border) !important;
+}
+
+/* Hub ornate header */
+header.hub-header,
+.chem-compendium header {
+  background: #ffffff !important;
+  background-image: linear-gradient(180deg, #ffffff 0%, #f5f5f4 100%) !important;
+  border-color: var(--border-ornate) !important;
+  box-shadow: 0 0 0 1px var(--gold-deep), 0 4px 24px var(--shadow), inset 0 1px 0 rgba(255,255,255,0.8) !important;
+}
+
+/* Card backgrounds: pure white, drop shadow */
+.card {
+  background: #ffffff;
+  background-image: var(--bg-card-grad);
+  border-color: var(--border-ornate);
+  box-shadow: 0 1px 8px var(--shadow), 0 4px 20px rgba(28,25,23,0.06);
+}
+.card:hover {
+  box-shadow: 0 4px 20px rgba(28,25,23,0.12), 0 8px 32px rgba(28,25,23,0.08);
+}
+
+/* Dark surface becomes light tinted */
+.q-card,
+#results,
+.hist-card,
+.select-zone,
+.format-hint,
+.menu-panel {
+  background: rgba(28,25,23,0.03) !important;
+  border-color: var(--border) !important;
+  color: var(--text-body) !important;
+}
+
+/* Options on light bg */
+.opt {
+  background: rgba(28,25,23,0.03);
+  border-color: rgba(120,83,50,0.2);
+  color: var(--text-body);
+}
+.opt:hover  { background: rgba(180,83,9,0.06); border-color: var(--gold-light); }
+
+/* Explanation on light */
+.explanation { background: rgba(180,83,9,0.05); color: var(--text-muted); }
+
+/* Tab active: terracotta */
+.tab.active,
+.tab-btn.active {
+  color: var(--crimson);
+  border-bottom-color: var(--crimson);
+}
+
+/* q-text on light */
+.q-text { color: var(--text-body); }
+
+/* Scrollbar: ivory */
+::-webkit-scrollbar-track { background: var(--surface-alt); }
+::-webkit-scrollbar-thumb { background: var(--border-ornate); }
+
+/* Logo text on light header */
+.logo { color: var(--gold-deep); }
+.logo span { color: var(--crimson); }
+
+/* HUD text on light sticky header */
+.hud, .hud-val, #timer-val { color: var(--text-body); }
+.hud-val { color: var(--navy); }
+
+/* Menu panel on light */
+.menu-panel {
+  background: rgba(255,255,255,0.97) !important;
+  box-shadow: 0 8px 32px rgba(28,25,23,0.15);
+}
+.panel-header, .panel-section label,
+.uid-group input, .uid-group button,
+.theme-swatch { color: var(--text-body) !important; }
+.uid-group input { background: rgba(28,25,23,0.05) !important; color: var(--text-body) !important; }
+
+/* Score/results panel */
+.score-big  { color: var(--gold-deep); }
+.bk-val     { color: var(--navy); }
+.bk-lbl     { color: var(--text-muted); }
