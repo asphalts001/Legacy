@@ -98,7 +98,8 @@
     scoreSessions.forEach((s) => {
       const d = s.details;
 
-      if (d.total) totalQuestions += d.total;
+      const attempted = (d.correct ?? 0) + (d.wrong ?? 0);
+      totalQuestions += attempted;
 
       let acc;
 
@@ -230,6 +231,48 @@
         null,
         2
       );
+    },
+
+    exportTXT: function () {
+      const scoreSessions = state.sessions
+        .filter(function(s) { return s.type === 'score'; })
+        .slice()
+        .reverse();
+
+      const now = new Date();
+      const dateStr = now.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+
+      const lines = [];
+      lines.push('LEGACY STUDY LOG');
+      lines.push('Exported: ' + dateStr);
+      lines.push('Total Sessions: ' + scoreSessions.length);
+      lines.push('');
+
+      scoreSessions.forEach(function(s, i) {
+        const d = s.details;
+        const date = new Date(s.timestamp);
+        const dateLabel = date.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' });
+        const timeLabel = date.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+
+        const correct  = d.correct  ?? 0;
+        const wrong    = d.wrong    ?? 0;
+        const skipped  = d.skipped  ?? 0;
+        const total    = d.total    ?? (correct + wrong + skipped);
+        const accuracy = d.accuracy !== undefined
+          ? d.accuracy
+          : (correct + wrong > 0 ? Math.round((correct / (correct + wrong)) * 100) : 0);
+
+        lines.push('─────────────────────────');
+        lines.push('Session ' + (i + 1) + ' \u2014 ' + (d.subject || 'MCQ'));
+        lines.push('Topic: ' + (d.topic || 'Session'));
+        lines.push('Date: ' + dateLabel + ', ' + timeLabel);
+        lines.push('Correct: ' + correct + '  |  Wrong: ' + wrong + '  |  Skipped: ' + skipped + '  |  Total: ' + total);
+        lines.push('Accuracy: ' + accuracy + '%');
+        lines.push('');
+      });
+
+      lines.push('─────────────────────────');
+      return lines.join('\n');
     },
 
     timeAgo: function (timestamp) {

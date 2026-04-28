@@ -68,7 +68,7 @@
 
     <div class="section fade-in">
       <div class="section-label">Data</div>
-      <button class="btn-export" onclick="exportData()">we know you are too dumb to track 18 sets, save history here</button>
+      <button class="btn-export" onclick="exportData()">export session history</button>
     </div>
   </div>
 
@@ -218,11 +218,11 @@
     }
 
     function exportData() {
-      const blob = new Blob([Tracker.exportJSON()], { type: 'application/json' });
+      const blob = new Blob([Tracker.exportTXT()], { type: 'text/plain' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `study-log-${new Date().toISOString().slice(0,10)}.json`;
+      a.download = `study-log-${new Date().toISOString().slice(0,10)}.txt`;
       a.click();
       URL.revokeObjectURL(url);
     }

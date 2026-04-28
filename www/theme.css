@@ -556,7 +556,6 @@ header {
    ─────────────────────────────────────────────────────────────────── */
 header.hub-header,
 .chem-compendium header {
-  display: block !important;
   position: relative !important;
   top: auto !important;
   z-index: auto !important;
@@ -588,7 +587,7 @@ header.hub-header::before,
 /* Hub header inner layout */
 .hub-header .header-left   { flex: 1; }
 
-.hub-header                { display: flex; align-items: flex-start; justify-content: space-between; padding: 28px 18px 20px; position: relative; }
+.hub-header                { display: flex !important; align-items: center; justify-content: space-between; padding: 20px 18px 18px; position: relative; }
 .hub-header.chem-header    { display: block; padding: 0; } /* let chem-compendium override */
 
 /* Crest / label row (Egyptian compendium) */
@@ -641,18 +640,18 @@ header.hub-header::before,
 .hub-title {
   font-family: var(--font-ui);
   font-size: 22px;
-  font-weight: 550;
+  font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.2;
-  color: var(--text-on-dark);
+  color: var(--text-body);
 }
 .hub-title .accent          { color: var(--gold-light); }
 .hub-date {
   font-family: var(--font-mono);
   font-size: 10px;
-  color: var(--navy-light);
-  opacity: 0.65;
-  margin-top: 5px;
+  color: var(--text-muted);
+  opacity: 0.8;
+  margin-top: 4px;
   line-height: 1.4;
 }
 
@@ -1316,8 +1315,8 @@ main {
   align-items: center;
   gap: 14px;
   padding: 15px 16px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(184,150,46,0.22);
+  background: var(--bg-card);
+  border: 1px solid rgba(184,150,46,0.30);
   border-radius: 12px;
   color: var(--text-on-dark);
   font-family: var(--font-ui);
@@ -1376,8 +1375,8 @@ main {
 /* Stats row (hub) */
 .stats-row              { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .stat-box {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(184,150,46,0.22);
+  background: var(--bg-card);
+  border: 1px solid rgba(184,150,46,0.28);
   border-radius: 10px;
   padding: 14px 10px;
   text-align: center;
@@ -1385,11 +1384,12 @@ main {
 }
 .stat-box:hover         { border-color: rgba(232,201,122,0.5); }
 .stat-val {
-  font-family: var(--font-ui);
-  font-size: 24px;
+  font-family: var(--font-ui) !important;
+  font-size: 26px;
   font-weight: 800;
   color: var(--gold-light);
   line-height: 1;
+  font-style: normal;
 }
 .stat-lbl {
   font-family: var(--font-mono);
