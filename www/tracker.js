@@ -98,7 +98,8 @@
     scoreSessions.forEach((s) => {
       const d = s.details;
 
-      if (d.total) totalQuestions += d.total;
+      const attempted = (d.correct ?? 0) + (d.wrong ?? 0);
+totalQuestions += attempted;
 
       let acc;
 
