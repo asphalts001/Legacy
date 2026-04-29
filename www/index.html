@@ -297,34 +297,52 @@
 
       // ── Cordova / native app path ──────────────────────────────────────────
       if (window.cordova && window.resolveLocalFileSystemURL) {
-        // Prefer external storage (Downloads folder) on Android; fall back to
-        // app's Documents dir which works on both Android & iOS.
-        const dir = (cordova.platformId === 'android' && cordova.file && cordova.file.externalRootDirectory)
-          ? cordova.file.externalRootDirectory + 'Download/'
-          : (cordova.file ? cordova.file.documentsDirectory : cordova.file.dataDirectory);
+        // Use cacheDirectory — no storage permissions needed on any Android version,
+        // and socialsharing can always attach files from here via FileProvider.
+        const dir = (cordova.file && cordova.file.cacheDirectory)
+          ? cordova.file.cacheDirectory
+          : cordova.file.dataDirectory;
 
         window.resolveLocalFileSystemURL(dir, function (dirEntry) {
           dirEntry.getFile(filename, { create: true, exclusive: false }, function (fileEntry) {
             fileEntry.createWriter(function (writer) {
               writer.onerror = function (e) { alert('Export failed: ' + e.toString()); };
               writer.onwriteend = function () {
-                // Try to open/share the file so the user can see it
+                if (writer.position === 0) return; // truncate pass, ignore
                 if (window.plugins && window.plugins.socialsharing) {
-                  // Share sheet — lets user save to Files, email, WhatsApp, etc.
-                  plugins.socialsharing.share(
-                    null,          // message
-                    filename,      // subject
-                    [fileEntry.toURL()], // files array
-                    null           // url
-                  );
+                  plugins.socialsharing.shareWithOptions({
+                    files:    [fileEntry.toURL()],
+                    subject:  filename,
+                    chooserTitle: 'Save or share your study log'
+                  }, null, function (e) {
+                    alert('Could not open share sheet: ' + JSON.stringify(e));
+                  });
                 } else {
                   alert('Saved to: ' + fileEntry.toURL());
                 }
               };
-              writer.write(new Blob([content], { type: 'text/plain' }));
+              // Truncate first (in case file already exists), then write
+              writer.truncate(0);
+              writer.onwriteend = function () {
+                writer.seek(0);
+                writer.onwriteend = function () {
+                  if (window.plugins && window.plugins.socialsharing) {
+                    plugins.socialsharing.shareWithOptions({
+                      files:    [fileEntry.toURL()],
+                      subject:  filename,
+                      chooserTitle: 'Save or share your study log'
+                    }, null, function (e) {
+                      alert('Could not open share sheet: ' + JSON.stringify(e));
+                    });
+                  } else {
+                    alert('Saved to: ' + fileEntry.toURL());
+                  }
+                };
+                writer.write(new Blob([content], { type: 'text/plain' }));
+              };
             }, function (e) { alert('Could not create file writer: ' + e.code); });
           }, function (e) { alert('Could not create file: ' + e.code); });
-        }, function (e) { alert('Could not access storage: ' + e.code + '\nCheck file permissions in config.xml'); });
+        }, function (e) { alert('Could not access cache dir: ' + e.code); });
 
       // ── Browser / dev preview path ─────────────────────────────────────────
       } else {
