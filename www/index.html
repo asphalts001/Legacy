@@ -309,14 +309,14 @@
               writer.onerror = function (e) { alert('Export failed: ' + e.toString()); };
               writer.onwriteend = function () {
                 // Try to open/share the file so the user can see it
-                if (window.cordova && window.cordova.plugins && window.cordova.plugins.fileOpener2) {
-                  cordova.plugins.fileOpener2.open(fileEntry.toURL(), 'text/plain', {
-                    error: function (e) { alert('Saved! Find it at: ' + fileEntry.toURL()); },
-                    success: function () {}
-                  });
-                } else if (window.plugins && window.plugins.socialsharing) {
-                  // fallback: share sheet (cordova-plugin-x-socialsharing)
-                  plugins.socialsharing.share(content, filename, null, null);
+                if (window.plugins && window.plugins.socialsharing) {
+                  // Share sheet — lets user save to Files, email, WhatsApp, etc.
+                  plugins.socialsharing.share(
+                    null,          // message
+                    filename,      // subject
+                    [fileEntry.toURL()], // files array
+                    null           // url
+                  );
                 } else {
                   alert('Saved to: ' + fileEntry.toURL());
                 }
