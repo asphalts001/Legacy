@@ -72,7 +72,7 @@
     <div class="section fade-in">
       <div class="section-label">Your Stupid Activities</div>
       <div class="stats-row">
-        <div class="stat-box"><div class="stat-val" id="stat-total">—</div><div class="stat-lbl">Questions attempted</div></div>
+        <div class="stat-box"><div class="stat-val" id="stat-total">—</div><div class="stat-lbl">Questions</div></div>
         <div class="stat-box"><div class="stat-val" id="stat-sessions">—</div><div class="stat-lbl">Sessions</div></div>
         <div class="stat-box"><div class="stat-val" id="stat-avg">—</div><div class="stat-lbl">Avg acc</div></div>
       </div>
@@ -87,7 +87,7 @@
 
     <div class="section fade-in">
       <div class="section-label">Data</div>
-      <button class="btn-export" onclick="exportData()">we know you are too dumb to track 18 sets, save history as text file here</button>
+      <button class="btn-export" onclick="exportData()">we know you are too dumb to track 18 sets, save history here</button>
     </div>
   </div>
 
@@ -293,13 +293,49 @@
       lines.push('═══════════════════════════════════════');
 
       const content = lines.join('\n');
-      const blob = new Blob([content], { type: 'text/plain' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `study-log-${new Date().toISOString().slice(0,10)}.txt`;
-      a.click();
-      URL.revokeObjectURL(url);
+      const filename = `study-log-${new Date().toISOString().slice(0,10)}.txt`;
+
+      // ── Cordova / native app path ──────────────────────────────────────────
+      if (window.cordova && window.resolveLocalFileSystemURL) {
+        // Prefer external storage (Downloads folder) on Android; fall back to
+        // app's Documents dir which works on both Android & iOS.
+        const dir = (cordova.platformId === 'android' && cordova.file && cordova.file.externalRootDirectory)
+          ? cordova.file.externalRootDirectory + 'Download/'
+          : (cordova.file ? cordova.file.documentsDirectory : cordova.file.dataDirectory);
+
+        window.resolveLocalFileSystemURL(dir, function (dirEntry) {
+          dirEntry.getFile(filename, { create: true, exclusive: false }, function (fileEntry) {
+            fileEntry.createWriter(function (writer) {
+              writer.onerror = function (e) { alert('Export failed: ' + e.toString()); };
+              writer.onwriteend = function () {
+                // Try to open/share the file so the user can see it
+                if (window.cordova && window.cordova.plugins && window.cordova.plugins.fileOpener2) {
+                  cordova.plugins.fileOpener2.open(fileEntry.toURL(), 'text/plain', {
+                    error: function (e) { alert('Saved! Find it at: ' + fileEntry.toURL()); },
+                    success: function () {}
+                  });
+                } else if (window.plugins && window.plugins.socialsharing) {
+                  // fallback: share sheet (cordova-plugin-x-socialsharing)
+                  plugins.socialsharing.share(content, filename, null, null);
+                } else {
+                  alert('Saved to: ' + fileEntry.toURL());
+                }
+              };
+              writer.write(new Blob([content], { type: 'text/plain' }));
+            }, function (e) { alert('Could not create file writer: ' + e.code); });
+          }, function (e) { alert('Could not create file: ' + e.code); });
+        }, function (e) { alert('Could not access storage: ' + e.code + '\nCheck file permissions in config.xml'); });
+
+      // ── Browser / dev preview path ─────────────────────────────────────────
+      } else {
+        const blob = new Blob([content], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        a.click();
+        URL.revokeObjectURL(url);
+      }
     }
 
     window.addEventListener('tracker:update', () => {

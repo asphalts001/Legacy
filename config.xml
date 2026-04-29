@@ -19,6 +19,7 @@
   <!-- Plugins -->
   <plugin name="cordova-plugin-media" spec="^6.1.0" />
   <plugin name="cordova-plugin-file" spec="^7.0.0" />
+  <plugin name="cordova-plugin-file-opener2" spec="^3.0.0" />
 
   <!-- General preferences -->
   <preference name="DisallowOverscroll" value="true" />
@@ -54,6 +55,13 @@
     <!-- Permissions -->
     <config-file target="AndroidManifest.xml" parent="/*">
       <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+    </config-file>
+
+    <!-- Allow legacy external storage on Android 10 (API 29) -->
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <application android:requestLegacyExternalStorage="true" />
     </config-file>
 
   </platform>

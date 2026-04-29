@@ -57,6 +57,7 @@ jobs:
           cordova plugin add cordova-plugin-customurlscheme \
             --variable URL_SCHEME=legacy
           cordova plugin add cordova-plugin-inappbrowser
+          cordova plugin add cordova-plugin-file-opener2
 
       - name: Prepare Cordova
         run: cordova prepare android
