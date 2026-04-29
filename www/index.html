@@ -6,6 +6,26 @@
   <link rel="stylesheet" href="theme.css">
   <title>Royalty</title>
 
+  <style>
+    .btn-view-more {
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      background: none;
+      border: 1px solid rgba(232,201,122,0.25);
+      border-radius: 8px;
+      color: #e8c97a;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .btn-view-more:hover {
+      background: rgba(232,201,122,0.08);
+    }
+  </style>
 </head>
 <body>
   <!-- Overlay (fixed, outside header, covers whole screen when active) -->
@@ -146,64 +166,138 @@
       document.getElementById('stat-avg').textContent = s.totalSessions ? s.avgAccuracy + '%' : '—';
     }
 
+    let _showingAllActivity = false;
+
+    function buildActivityItem(e) {
+      let scoreBadge = '';
+      let detail = '';
+      if (e.type === 'score') {
+        const accuracy = e.score || 0;
+        const cls = accuracy >= 75 ? 'high' : accuracy >= 50 ? 'mid' : 'low';
+        scoreBadge = `<span class="act-score ${cls}">${accuracy}%</span>`;
+        const totalQ = e.total || '?';
+        const correct = e.correct || 0;
+        const wrong = e.wrong || 0;
+        const skipped = e.skipped || 0;
+        const attempted = correct + wrong;
+        detail = `${e.topic} · ${totalQ}q · ${correct}/${attempted} correct`;
+        if (skipped > 0) detail += ` · ${skipped} skipped`;
+      } else {
+        detail = `Read: ${e.chapter}`;
+      }
+      let subjectClass = 'MCQ';
+      if (e.subject === 'Physics') subjectClass = 'Physics';
+      else if (e.subject === 'Chemistry') subjectClass = 'Chemistry';
+      return `
+        <div class="activity-item">
+          <div class="act-dot ${subjectClass}"></div>
+          <div class="act-body">
+            <div class="act-subject">${e.subject}</div>
+            <div class="act-detail">${detail}</div>
+          </div>
+          <div class="act-right">
+            ${scoreBadge}
+            <div class="act-time">${Tracker.timeAgo(e.ts)}</div>
+          </div>
+        </div>`;
+    }
+
+    function toggleAllActivity() {
+      _showingAllActivity = !_showingAllActivity;
+      renderActivity();
+    }
+
     function renderActivity() {
       if (typeof Tracker === 'undefined') return;
       const list = document.getElementById('activity-list');
-      let recent = Tracker.getRecent(8);
-      
-      console.log('📋 DASHBOARD received recent entries:', recent);
-      
-      if (!recent.length) {
+      const PREVIEW = 8;
+      const all = Tracker.getRecent(9999);
+
+      console.log('📋 DASHBOARD received recent entries:', all);
+
+      if (!all.length) {
         list.innerHTML = '<div class="empty-feed">DO SOMETHING LAZY<br>no history yet</div>';
         return;
       }
-      
-      list.innerHTML = recent.map(e => {
-        let scoreBadge = '';
-        let detail = '';
-        
-        if (e.type === 'score') {
-          const accuracy = e.score || 0;
-          const cls = accuracy >= 75 ? 'high' : accuracy >= 50 ? 'mid' : 'low';
-          scoreBadge = `<span class="act-score ${cls}">${accuracy}%</span>`;
-          
-          const totalQ = e.total || '?';
-          const correct = e.correct || 0;
-          const wrong = e.wrong || 0;
-          const skipped = e.skipped || 0;
-          const attempted = correct + wrong;
-          
-          detail = `${e.topic} · ${totalQ}q · ${correct}/${attempted} correct`;
-          if (skipped > 0) detail += ` · ${skipped} skipped`;
-        } else {
-          detail = `Read: ${e.chapter}`;
-        }
-        
-        let subjectClass = 'MCQ';
-        if (e.subject === 'Physics') subjectClass = 'Physics';
-        else if (e.subject === 'Chemistry') subjectClass = 'Chemistry';
-        
-        return `
-          <div class="activity-item">
-            <div class="act-dot ${subjectClass}"></div>
-            <div class="act-body">
-              <div class="act-subject">${e.subject}</div>
-              <div class="act-detail">${detail}</div>
-            </div>
-            <div class="act-right">
-              ${scoreBadge}
-              <div class="act-time">${Tracker.timeAgo(e.ts)}</div>
-            </div>
-          </div>`;
-      }).join('');
+
+      const entries = _showingAllActivity ? all : all.slice(0, PREVIEW);
+      const hasMore = all.length > PREVIEW;
+
+      let html = entries.map(buildActivityItem).join('');
+
+      if (hasMore) {
+        const label = _showingAllActivity
+          ? '▲ show less'
+          : `view all ${all.length} attempts ▾`;
+        html += `<button class="btn-view-more" onclick="toggleAllActivity()">${label}</button>`;
+      }
+
+      list.innerHTML = html;
     }
 
     function exportData() {
-      const blob = new Blob([Tracker.exportJSON()], { type: 'application/json' });
+      const raw = JSON.parse(Tracker.exportJSON());
+      const sessions = (raw.sessions || []).filter(s => s.type === 'score');
+
+      const lines = [];
+      const exportDate = new Date().toLocaleString('en-IN', {
+        weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
+        hour: '2-digit', minute: '2-digit'
+      });
+
+      lines.push('═══════════════════════════════════════');
+      lines.push('           STUDY SESSION LOG           ');
+      lines.push('═══════════════════════════════════════');
+      lines.push(`Exported on : ${exportDate}`);
+      lines.push(`Total Sessions : ${sessions.length}`);
+      lines.push('');
+
+      if (sessions.length === 0) {
+        lines.push('No sessions recorded yet. Go do something!');
+      } else {
+        sessions.forEach((s, i) => {
+          const d = s.details || {};
+          const topic    = d.topic   || s.topic   || 'Untitled Session';
+          const subject  = d.subject || s.subject || 'Unknown';
+          const total    = d.total   || s.total   || '?';
+          const correct  = d.correct  ?? s.correct  ?? 0;
+          const wrong    = d.wrong    ?? s.wrong    ?? 0;
+          const skipped  = d.skipped  ?? s.skipped  ?? 0;
+          const attempted = correct + wrong;
+          const accuracy = attempted > 0
+            ? Math.round((correct / attempted) * 100) + '%'
+            : 'N/A';
+          const ts = s.timestamp
+            ? new Date(s.timestamp).toLocaleString('en-IN', {
+                day: 'numeric', month: 'short', year: 'numeric',
+                hour: '2-digit', minute: '2-digit'
+              })
+            : 'Unknown time';
+
+          lines.push(`───────────────────────────────────────`);
+          lines.push(`Session ${i + 1}`);
+          lines.push(`  Name        : ${topic} (${subject})`);
+          lines.push(`  Questions   : ${total}`);
+          lines.push(`  Attempted   : ${attempted}`);
+          lines.push(`  Correct     : ${correct}`);
+          lines.push(`  Wrong       : ${wrong}`);
+          lines.push(`  Skipped     : ${skipped}`);
+          lines.push(`  Accuracy    : ${accuracy}`);
+          lines.push(`  Timestamp   : ${ts}`);
+          lines.push('');
+        });
+      }
+
+      lines.push('═══════════════════════════════════════');
+      lines.push('             end of log                ');
+      lines.push('═══════════════════════════════════════');
+
+      const content = lines.join('\n');
+      const blob = new Blob([content], { type: 'text/plain' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `study-log-${new Date().toISOString().slice(0,10)}.json`;
+      a.download = `study-log-${new Date().toISOString().slice(0,10)}.txt`;
       a.click();
       URL.revokeObjectURL(url);
     }
