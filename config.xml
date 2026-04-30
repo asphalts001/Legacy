@@ -48,7 +48,8 @@
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
-        <data android:scheme="legacy" android:host="callback" />
+        <!-- ✅ CORRECT — matches com.asphalts.legacy://login -->
+        <data android:scheme="com.asphalts.legacy" android:host="login" />
       </intent-filter>
     </config-file>
 
@@ -72,7 +73,8 @@
         <dict>
           <key>CFBundleURLSchemes</key>
           <array>
-            <string>legacy</string>
+            <!-- ✅ iOS fix -->
+            <string>com.asphalts.legacy</string>
           </array>
           <key>CFBundleURLName</key>
           <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
