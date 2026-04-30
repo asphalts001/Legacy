@@ -4,11 +4,11 @@
     "question": "The food reserve in brown algae is:",
     "options": [
       "Starch and cellulose",
-      "Laminarin and mannitol",
       "Floridean starch",
+      "Laminarin and mannitol",
       "Glycogen"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -18,11 +18,11 @@
     "question": "The characteristic photosynthetic pigment of brown algae is:",
     "options": [
       "r-phycoerythrin",
-      "Fucoxanthin",
       "Xanthophyll only",
-      "Chlorophyll b"
+      "Chlorophyll b",
+      "Fucoxanthin"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -31,10 +31,10 @@
     "id": "set_s2_q3",
     "question": "Red algae are characterised by the pigment:",
     "options": [
-      "Fucoxanthin",
+      "Phycocyanin",
       "r-phycoerythrin",
       "Xanthophyll",
-      "Phycocyanin"
+      "Fucoxanthin"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -45,10 +45,10 @@
     "id": "set_s2_q4",
     "question": "The food reserve in red algae is:",
     "options": [
+      "Glycogen",
       "Laminarin",
-      "Mannitol",
       "Floridean starch (similar to amylopectin)",
-      "Glycogen"
+      "Mannitol"
     ],
     "correctIndex": 2,
     "explanation": "",
@@ -59,12 +59,12 @@
     "id": "set_s2_q5",
     "question": "Which alga can grow up to 100 metres in length?",
     "options": [
+      "kelp",
       "Chara",
       "Ectocarpus",
-      "kelp",
       "Polysiphonia"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -73,12 +73,12 @@
     "id": "set_s2_q6",
     "question": "The holdfast, stipe and frond are structural parts of:",
     "options": [
-      "Red algae",
-      "Brown algae",
       "Green algae",
-      "Cyanobacteria"
+      "Cyanobacteria",
+      "Red algae",
+      "Brown algae"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -87,12 +87,12 @@
     "id": "set_s2_q7",
     "question": "Brown algae produce biflagellate, pear-shaped zoospores. The flagella are:",
     "options": [
-      "Equal and whiplash type",
       "Unequal",
+      "More than two",
       "Absent",
-      "More than two"
+      "Equal and whiplash type"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -117,8 +117,8 @@
     "options": [
       "Brown algae",
       "Red algae",
-      "Green algae",
-      "Diatoms"
+      "Diatoms",
+      "Green algae"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -129,12 +129,12 @@
     "id": "set_s2_q10",
     "question": "Dictyota is an example of:",
     "options": [
-      "Red algae",
-      "Green algae",
+      "Blue-green algae",
       "Brown algae",
-      "Blue-green algae"
+      "Green algae",
+      "Red algae"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -144,11 +144,11 @@
     "question": "Bryophytes are found in:",
     "options": [
       "Desert and dry habitats",
-      "Shaded, damp localities and bare rock/soil",
       "Deep marine environments",
-      "High altitude snow only"
+      "High altitude snow only",
+      "Shaded, damp localities and bare rock/soil"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -158,11 +158,11 @@
     "question": "In bryophytes, the dominant phase of the life cycle is:",
     "options": [
       "Sporophyte",
-      "Gametophyte",
       "Both are equally dominant",
-      "Diploid phase"
+      "Diploid phase",
+      "Gametophyte"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -172,11 +172,11 @@
     "question": "The sporophyte in bryophytes:",
     "options": [
       "Is independent and free-living",
+      "Produces gametes",
       "Derives nourishment from the gametophyte",
-      "Is the dominant phase",
-      "Produces gametes"
+      "Is the dominant phase"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -186,11 +186,11 @@
     "question": "Sphagnum (peat moss) is economically important because it:",
     "options": [
       "Fixes nitrogen",
+      "Produces antibiotics",
       "Acts as packing material and holds water",
-      "Is used as food",
-      "Produces antibiotics"
+      "Is used as food"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -213,12 +213,12 @@
     "id": "set_s2_q16",
     "question": "Gemmae in liverworts are:",
     "options": [
-      "Sexual reproductive structures",
-      "Asexual reproductive structures that detach and grow",
       "Spore capsules",
-      "Root-like structures"
+      "Sexual reproductive structures",
+      "Root-like structures",
+      "Asexual reproductive structures that detach and grow"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -241,12 +241,12 @@
     "id": "set_s2_q18",
     "question": "The male sex organ in bryophytes is called:",
     "options": [
-      "Archegonium",
       "Antheridium",
-      "Oogonium",
-      "Gametangium"
+      "Gametangium",
+      "Archegonium",
+      "Oogonium"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -257,8 +257,8 @@
     "options": [
       "Antheridium",
       "Archegonium",
-      "Sporangium",
-      "Gemma cup"
+      "Gemma cup",
+      "Sporangium"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -269,12 +269,12 @@
     "id": "set_s2_q20",
     "question": "Bryophytes help in:",
     "options": [
-      "Increasing soil salinity",
       "Colonizing bare rocks and preventing soil erosion",
-      "Producing oxygen only",
-      "Fixing atmospheric nitrogen"
+      "Increasing soil salinity",
+      "Fixing atmospheric nitrogen",
+      "Producing oxygen only"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -283,12 +283,12 @@
     "id": "set_s2_q21",
     "question": "Pteridophytes include:",
     "options": [
-      "Mosses and liverworts",
       "Horsetails and ferns",
-      "Cycads and conifers",
-      "Angiosperms"
+      "Angiosperms",
+      "Mosses and liverworts",
+      "Cycads and conifers"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -298,11 +298,11 @@
     "question": "Pteridophytes are used as:",
     "options": [
       "Only ornamentals",
-      "Medicinals, soil-binders and ornamentals",
+      "Timber sources",
       "Food crops only",
-      "Timber sources"
+      "Medicinals, soil-binders and ornamentals"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -311,12 +311,12 @@
     "id": "set_s2_q23",
     "question": "In pteridophytes, the dominant phase is:",
     "options": [
-      "Gametophyte",
-      "Sporophyte",
       "Both equally dominant",
-      "Neither"
+      "Gametophyte",
+      "Neither",
+      "Sporophyte"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -325,12 +325,12 @@
     "id": "set_s2_q24",
     "question": "The term \"homosporous\" means:",
     "options": [
+      "Producing microspores only",
       "Producing two types of spores",
-      "Producing one type of spore",
       "Producing no spores",
-      "Producing microspores only"
+      "Producing one type of spore"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -339,9 +339,9 @@
     "id": "set_s2_q25",
     "question": "Gymnosperms are characterized by:",
     "options": [
-      "Seeds enclosed in fruits",
-      "Naked seeds (ovules not enclosed in ovary)",
       "Absence of seeds",
+      "Naked seeds (ovules not enclosed in ovary)",
+      "Seeds enclosed in fruits",
       "Only vegetative reproduction"
     ],
     "correctIndex": 1,
@@ -353,12 +353,12 @@
     "id": "set_s2_q26",
     "question": "The word \"gymnos\" means:",
     "options": [
+      "Cone",
       "Seed",
       "Naked",
-      "Flower",
-      "Cone"
+      "Flower"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -368,11 +368,11 @@
     "question": "Microsporophylls bear:",
     "options": [
       "Megasporangia",
-      "Microsporangia",
+      "Seeds",
       "Ovules",
-      "Seeds"
+      "Microsporangia"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -381,12 +381,12 @@
     "id": "set_s2_q28",
     "question": "Megasporophylls bear:",
     "options": [
-      "Microsporangia",
-      "Megasporangia/ovules",
       "Pollen grains",
-      "Gametophytes"
+      "Microsporangia",
+      "Gametophytes",
+      "Megasporangia/ovules"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -395,10 +395,10 @@
     "id": "set_s2_q29",
     "question": "Some gymnosperms are known for:",
     "options": [
-      "Bearing fruits",
-      "N₂-fixing ability and tolerance to extremes of humidity",
       "Producing flowers",
-      "Being annual herbs"
+      "N₂-fixing ability and tolerance to extremes of humidity",
+      "Being annual herbs",
+      "Bearing fruits"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -409,12 +409,12 @@
     "id": "set_s2_q30",
     "question": "The cone-like structure in gymnosperms is called:",
     "options": [
-      "Sporangium",
-      "Strobilus/cone",
       "Sorus",
-      "Capitulum"
+      "Capitulum",
+      "Strobilus/cone",
+      "Sporangium"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -423,12 +423,12 @@
     "id": "set_s2_q31",
     "question": "Phyllode is a modification found in:",
     "options": [
-      "Monstera",
       "Australian Acacia",
+      "Monstera",
       "Silk cotton",
       "Guava"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -437,12 +437,12 @@
     "id": "set_s2_q32",
     "question": "Palmately compound leaves are found in:",
     "options": [
-      "Neem",
       "Silk cotton",
-      "Guava",
-      "Cassia"
+      "Cassia",
+      "Neem",
+      "Guava"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -452,11 +452,11 @@
     "question": "Pinnately compound leaves are found in:",
     "options": [
       "Silk cotton",
-      "Neem",
       "Monstera",
+      "Neem",
       "Lotus"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -465,12 +465,12 @@
     "id": "set_s2_q34",
     "question": "A bracteate flower has:",
     "options": [
-      "No bracts",
       "Bracts present",
+      "Fused petals",
       "Only petals, no sepals",
-      "Fused petals"
+      "No bracts"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -479,10 +479,10 @@
     "id": "set_s2_q35",
     "question": "A bisexual flower contains:",
     "options": [
-      "Only stamens",
       "Only carpels",
+      "Neither",
       "Both stamens and carpels",
-      "Neither"
+      "Only stamens"
     ],
     "correctIndex": 2,
     "explanation": "",
@@ -493,12 +493,12 @@
     "id": "set_s2_q36",
     "question": "Trimerous flowers have floral parts in multiples of:",
     "options": [
-      "4",
-      "5",
       "3",
-      "2"
+      "2",
+      "5",
+      "4"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -507,12 +507,12 @@
     "id": "set_s2_q37",
     "question": "Pentamerous flowers have floral parts in multiples of:",
     "options": [
-      "3",
       "4",
-      "5",
-      "6"
+      "6",
+      "3",
+      "5"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -521,12 +521,12 @@
     "id": "set_s2_q38",
     "question": "Gamosepalous condition means:",
     "options": [
-      "Sepals are free",
-      "Sepals are fused",
+      "Stamens are fused",
       "Petals are fused",
-      "Stamens are fused"
+      "Sepals are fused",
+      "Sepals are free"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -535,12 +535,12 @@
     "id": "set_s2_q39",
     "question": "Gamopetalous condition means:",
     "options": [
-      "Petals are free",
       "Petals are fused",
       "Sepals are fused",
+      "Petals are free",
       "Carpels are fused"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -549,9 +549,9 @@
     "id": "set_s2_q40",
     "question": "Epipetalous stamens are:",
     "options": [
-      "Free from petals",
-      "Attached to petals",
       "Attached to the ovary",
+      "Attached to petals",
+      "Free from petals",
       "Fused with each other"
     ],
     "correctIndex": 1,

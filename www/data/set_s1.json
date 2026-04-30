@@ -3,12 +3,12 @@
     "id": "set_s1_q1",
     "question": "Which of the following was NOT a criterion used in early classification systems?",
     "options": [
-      "Observable characters",
-      "Phylum/Division",
       "DNA sequencing",
-      "Aggregates of characters"
+      "Observable characters",
+      "Aggregates of characters",
+      "Phylum/Division"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -17,12 +17,12 @@
     "id": "set_s1_q2",
     "question": "Early classifications failed to distinguish between:",
     "options": [
-      "Autotrophs and heterotrophs",
+      "Both B and C",
       "Eukaryotes and prokaryotes",
-      "Unicellular and multicellular",
-      "Both B and C"
+      "Autotrophs and heterotrophs",
+      "Unicellular and multicellular"
     ],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -31,12 +31,12 @@
     "id": "set_s1_q3",
     "question": "Which classification system does NOT consider eukaryotes vs prokaryotes?",
     "options": [
-      "Three-domain system",
-      "Historical/early systems",
       "Five-kingdom system",
-      "Phylogenetic system"
+      "Three-domain system",
+      "Phylogenetic system",
+      "Historical/early systems"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -45,9 +45,9 @@
     "id": "set_s1_q4",
     "question": "The three-domain system recognizes domains that are found:",
     "options": [
-      "Only in oceans",
-      "Everywhere",
       "Only in harsh environments",
+      "Everywhere",
+      "Only in oceans",
       "Only in marshy areas"
     ],
     "correctIndex": 1,
@@ -59,12 +59,12 @@
     "id": "set_s1_q5",
     "question": "Which of the following is a characteristic of Monera (bacteria)?",
     "options": [
-      "Multicellular with organ system",
-      "Rod-shaped, rigid, autotrophs or heterotrophs",
+      "Holozoic nutrition only",
       "Eukaryotic, filamentous",
-      "Holozoic nutrition only"
+      "Rod-shaped, rigid, autotrophs or heterotrophs",
+      "Multicellular with organ system"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -73,12 +73,12 @@
     "id": "set_s1_q6",
     "question": "Bacteria reproduce by:",
     "options": [
-      "Budding",
       "Binary fission",
-      "Zoospores",
-      "Conidia"
+      "Conidia",
+      "Budding",
+      "Zoospores"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -87,12 +87,12 @@
     "id": "set_s1_q7",
     "question": "Which of the following is a correct pairing of nutrition type with organism group?",
     "options": [
-      "Monera — holozoic only",
       "Fungi — photosynthetic",
       "Monera — chemosynthetic or photosynthetic",
+      "Monera — holozoic only",
       "Algae — saprophytic"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -102,11 +102,11 @@
     "question": "Sleeping sickness is caused by:",
     "options": [
       "Paramoecium",
-      "Trypanosoma",
       "Sporozoans",
-      "Puccinia"
+      "Puccinia",
+      "Trypanosoma"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -115,12 +115,12 @@
     "id": "set_s1_q9",
     "question": "Paramoecium moves food into its body via a structure called the:",
     "options": [
-      "Hypostome",
       "Gullet",
-      "Osculum",
-      "Stipe"
+      "Hypostome",
+      "Stipe",
+      "Osculum"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -129,10 +129,10 @@
     "id": "set_s1_q10",
     "question": "Sporozoans are named because they produce:",
     "options": [
-      "Spores for reproduction",
+      "Zoospores",
       "Spore-like infective stages",
       "Sporangiospores",
-      "Zoospores"
+      "Spores for reproduction"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -143,12 +143,12 @@
     "id": "set_s1_q11",
     "question": "Which organism is associated with sleeping sickness?",
     "options": [
-      "Puccinia",
-      "Paramoecium",
+      "Desmids",
       "Trypanosoma",
-      "Desmids"
+      "Paramoecium",
+      "Puccinia"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -158,11 +158,11 @@
     "question": "Desmids are found in:",
     "options": [
       "Marine environments",
-      "Fresh water",
       "Harsh/snow environments",
-      "Soil only"
+      "Soil only",
+      "Fresh water"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -171,12 +171,12 @@
     "id": "set_s1_q13",
     "question": "The term \"phycobiont\" refers to the algal partner in:",
     "options": [
-      "Mycorrhiza",
-      "Lichens",
       "Coral reefs",
-      "Bryophytes"
+      "Bryophytes",
+      "Lichens",
+      "Mycorrhiza"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -185,10 +185,10 @@
     "id": "set_s1_q14",
     "question": "The fungal partner in a lichen is called:",
     "options": [
-      "Phycobiont",
-      "Mycobiont",
       "Symbiont",
-      "Saprophyte"
+      "Mycobiont",
+      "Saprophyte",
+      "Phycobiont"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -199,12 +199,12 @@
     "id": "set_s1_q15",
     "question": "Which taxonomic approach uses chemical characters of plants?",
     "options": [
-      "Cytotaxonomy",
       "Chemotaxonomy / Phytochemistry",
-      "Numerical taxonomy",
-      "Classical taxonomy"
+      "Classical taxonomy",
+      "Cytotaxonomy",
+      "Numerical taxonomy"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -213,12 +213,12 @@
     "id": "set_s1_q16",
     "question": "Cytotaxonomy involves the study of:",
     "options": [
-      "Chemical constituents",
       "Cytological/chromosomal characters",
       "Computer-based data",
+      "Chemical constituents",
       "Ultrastructure only"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -227,10 +227,10 @@
     "id": "set_s1_q17",
     "question": "Bentham and Hooker's classification system:",
     "options": [
-      "Uses computer-based data",
+      "Is based entirely on chemotaxonomy",
       "Considers ultrastructure",
       "Gave weightage to observable morphological affinities",
-      "Is based entirely on chemotaxonomy"
+      "Uses computer-based data"
     ],
     "correctIndex": 2,
     "explanation": "",
@@ -241,10 +241,10 @@
     "id": "set_s1_q18",
     "question": "Fungi obtain nutrition as:",
     "options": [
-      "Autotrophs",
-      "Saprophytes or symbionts",
       "Holozoic feeders",
-      "Chemoautotrophs"
+      "Saprophytes or symbionts",
+      "Chemoautotrophs",
+      "Autotrophs"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -255,12 +255,12 @@
     "id": "set_s1_q19",
     "question": "Fungal hyphae that lack cross-walls (septa) are called:",
     "options": [
-      "Septate hyphae",
       "Aseptate / coenocytic hyphae (multinucleated)",
       "Rhizoids",
-      "Stolons"
+      "Stolons",
+      "Septate hyphae"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -269,12 +269,12 @@
     "id": "set_s1_q20",
     "question": "Which of the following spore types is produced by Zygomycetes?",
     "options": [
+      "Zygospores",
       "Ascospores",
       "Basidiospores",
-      "Zygospores",
       "Conidia"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -283,12 +283,12 @@
     "id": "set_s1_q21",
     "question": "Isogamous sexual reproduction in fungi refers to:",
     "options": [
-      "Fusion of morphologically dissimilar gametes",
-      "Fusion of morphologically similar gametes",
       "Fusion without gametes",
-      "Vegetative reproduction"
+      "Fusion of morphologically dissimilar gametes",
+      "Vegetative reproduction",
+      "Fusion of morphologically similar gametes"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -298,11 +298,11 @@
     "question": "Anisogamous reproduction involves:",
     "options": [
       "Similar gametes",
-      "Dissimilar gametes",
       "Spore formation only",
+      "Dissimilar gametes",
       "Binary fission"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -311,12 +311,12 @@
     "id": "set_s1_q23",
     "question": "Ascomycetes are also called:",
     "options": [
-      "Club fungi",
       "Sac fungi",
-      "Imperfect fungi",
-      "Bread moulds"
+      "Bread moulds",
+      "Club fungi",
+      "Imperfect fungi"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -325,12 +325,12 @@
     "id": "set_s1_q24",
     "question": "Coprophilous fungi grow on:",
     "options": [
-      "Wood/logs",
       "Dung",
+      "Wood/logs",
       "Living plants",
       "Aquatic substrates"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -340,11 +340,11 @@
     "question": "The fruiting bodies of Ascomycetes are called:",
     "options": [
       "Basidiocarps",
-      "Ascocarps",
       "Sporangia",
-      "Zygosporangia"
+      "Zygosporangia",
+      "Ascocarps"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -354,11 +354,11 @@
     "question": "Basidia are characteristic structures of:",
     "options": [
       "Ascomycetes",
+      "Deuteromycetes",
       "Zygomycetes",
-      "Basidiomycetes",
-      "Deuteromycetes"
+      "Basidiomycetes"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -381,12 +381,12 @@
     "id": "set_s1_q28",
     "question": "Rusts and smuts belong to:",
     "options": [
-      "Ascomycetes",
       "Basidiomycetes",
-      "Zygomycetes",
-      "Imperfect fungi"
+      "Imperfect fungi",
+      "Ascomycetes",
+      "Zygomycetes"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -395,12 +395,12 @@
     "id": "set_s1_q29",
     "question": "Deuteromycetes (imperfect fungi) reproduce only by:",
     "options": [
-      "Sexual spores",
-      "Asexual/vegetative means",
       "Zygospores",
-      "Basidiospores"
+      "Sexual spores",
+      "Basidiospores",
+      "Asexual/vegetative means"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -409,12 +409,12 @@
     "id": "set_s1_q30",
     "question": "Colletotrichum belongs to:",
     "options": [
-      "Basidiomycetes",
-      "Ascomycetes",
       "Deuteromycetes",
-      "Zygomycetes"
+      "Zygomycetes",
+      "Ascomycetes",
+      "Basidiomycetes"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -424,11 +424,11 @@
     "question": "Puccinia is a:",
     "options": [
       "Deuteromycete causing leaf spots",
-      "Basidiomycete (rust fungus) cosmopolitan in distribution",
       "Zygomycete found on bread",
+      "Basidiomycete (rust fungus) cosmopolitan in distribution",
       "Ascomycete found in soil"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -437,12 +437,12 @@
     "id": "set_s1_q32",
     "question": "Yeasts are economically important because they are used in:",
     "options": [
-      "Nitrogen fixation",
       "Beer and bread making",
-      "Antibiotic production",
-      "Biogas production"
+      "Nitrogen fixation",
+      "Biogas production",
+      "Antibiotic production"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -451,12 +451,12 @@
     "id": "set_s1_q33",
     "question": "Viruses were first recognized as infectious agents passing through bacteria-proof filters in:",
     "options": [
-      "1875",
       "1892",
-      "1931",
-      "1960"
+      "1960",
+      "1875",
+      "1931"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -465,10 +465,10 @@
     "id": "set_s1_q34",
     "question": "Viruses are described as truly non-cellular because they:",
     "options": [
-      "Have no DNA",
+      "Are made only of lipids",
       "Are inert outside a host and only replicate inside living cells",
-      "Cannot cause disease",
-      "Are made only of lipids"
+      "Have no DNA",
+      "Cannot cause disease"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -480,9 +480,9 @@
     "question": "The genetic material of viruses can be:",
     "options": [
       "Only double-stranded DNA",
-      "Only RNA",
+      "Only single-stranded RNA",
       "Single or double stranded DNA or RNA",
-      "Only single-stranded RNA"
+      "Only RNA"
     ],
     "correctIndex": 2,
     "explanation": "",
@@ -495,8 +495,8 @@
     "options": [
       "Sleeping sickness",
       "Mumps, pox, influenza",
-      "Leprosy",
-      "Tapeworm infection"
+      "Tapeworm infection",
+      "Leprosy"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -507,12 +507,12 @@
     "id": "set_s1_q37",
     "question": "Plant viral infections cause symptoms such as:",
     "options": [
-      "Root nodule formation",
-      "Rolling/curling of leaves, yellowing, dwarfing, mosaic",
+      "Gall formation only",
       "Excessive branching",
-      "Gall formation only"
+      "Root nodule formation",
+      "Rolling/curling of leaves, yellowing, dwarfing, mosaic"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -521,12 +521,12 @@
     "id": "set_s1_q38",
     "question": "Creutzfeldt-Jakob disease is associated with:",
     "options": [
-      "Bacteria",
-      "Viruses",
       "Prions (neurological agents)",
-      "Fungi"
+      "Fungi",
+      "Bacteria",
+      "Viruses"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -535,10 +535,10 @@
     "id": "set_s1_q39",
     "question": "Which of the following is an economically important red alga used for making ice creams and jellies?",
     "options": [
-      "Laminaria",
+      "Chara",
       "Porphyra",
       "Gelidium and Gracilaria",
-      "Chara"
+      "Laminaria"
     ],
     "correctIndex": 2,
     "explanation": "",
@@ -550,11 +550,11 @@
     "question": "Porphyra and Laminaria are described as:",
     "options": [
       "Green algae used as food",
+      "Terrestrial algae",
       "Brown-red algae of economic importance",
-      "Freshwater algae",
-      "Terrestrial algae"
+      "Freshwater algae"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"

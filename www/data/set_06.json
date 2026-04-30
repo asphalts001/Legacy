@@ -3,12 +3,12 @@
     "id": "set_06_q1",
     "question": "Group O individuals are called \"universal donors\" because:",
     "options": [
+      "Their blood has both anti-A and anti-B antibodies that protect the recipient",
       "Their blood has no antigens and no antibodies",
       "Their blood has no antigenson RBCs, so no agglutination occurs when transfused into A, B, AB, or O recipients",
-      "Their blood has both anti-A and anti-B antibodies that protect the recipient",
       "Their blood type is the most common globally"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -19,10 +19,10 @@
     "options": [
       "Haploid (n)",
       "Diploid (2n)",
-      "Triploid (3n)",
-      "Tetraploid (4n)"
+      "Tetraploid (4n)",
+      "Triploid (3n)"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -31,12 +31,12 @@
     "id": "set_06_q3",
     "question": "Cyclic photophosphorylation is said to occur in the STROMA LAMELLAE. Which of the following correctly explains why?",
     "options": [
-      "Stroma lamellae have PS II but lack PS I",
       "Stroma lamellae lack PS II and NADP reductase",
       "Stroma lamellae have higher concentrations of RuBisCO",
+      "Stroma lamellae have PS II but lack PS I",
       "Stroma lamellae are the only site where water splitting can occur"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -59,12 +59,12 @@
     "id": "set_06_q5",
     "question": "Morgan coined the term \"LINKAGE.\" Linkage is defined as:",
     "options": [
-      "The physical association of genes on the same chromosome, causing them to be inherited together more than expected",
       "The independent assortment of genes on different chromosomes",
+      "The attachment of chromosomes to spindle fibres during cell division",
       "The tendency of alleles to segregate during meiosis",
-      "The attachment of chromosomes to spindle fibres during cell division"
+      "The physical association of genes on the same chromosome, causing them to be inherited together more than expected"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -74,11 +74,11 @@
     "question": "The intrinsic rate of natural increase (r) is calculated as r = b − d (per capita birth rate minus per capita death rate). Among the following organisms, which has the HIGHEST r value as given in the NCERT text?",
     "options": [
       "Norway rat — r = 0.015",
-      "India human population (1981) — r = 0.0205",
+      "Paramecium — r = 0.5",
       "Flour beetle — r = 0.12",
-      "Paramecium — r = 0.5"
+      "India human population (1981) — r = 0.0205"
     ],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "explanation": "this type of questions where answers are evident in options ,are intentional, just by reading the questions and options, you got info of multiple questions.",
     "tags": [],
     "difficulty": "medium"
@@ -87,12 +87,12 @@
     "id": "set_06_q7",
     "question": "Bacterial cells are made competent (able to take up DNA) by treating them with divalent cations to increase DNA entry through pores. They are then incubated with recombinant DNA on ice, followed by a brief heat shock at a specific temperature, then placed back on ice. What is the temperature of the heat shock step?",
     "options": [
-      "0°C",
-      "37°C",
+      "70°C",
       "42°C",
-      "70°C"
+      "37°C",
+      "0°C"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -101,12 +101,12 @@
     "id": "set_06_q8",
     "question": "After fertilisation, the zygote undergoes repeated mitotic divisions (cleavage) as it moves through the oviduct. At the 8–16 blastomere stage, the embryo is called a morula. As the morula continues dividing and moves to the uterus, it becomes a blastocyst. The blastocyst consists of an outer layer of cells (trophoblast) and an inner cluster of cells. What is this inner cluster called, and what does it differentiate into?",
     "options": [
-      "Trophoblast — forms the placenta",
       "Inner cell mass — differentiates into the embryo",
-      "Zona pellucida — forms the amniotic sac",
-      "Chorionic villi — form the umbilical cord"
+      "Chorionic villi — form the umbilical cord",
+      "Trophoblast — forms the placenta",
+      "Zona pellucida — forms the amniotic sac"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -115,12 +115,12 @@
     "id": "set_06_q9",
     "question": "The gastrointestinal tract secretes four major peptide hormones. Among these, which hormone acts on the exocrine pancreas to stimulate water and bicarbonate ion secretion?",
     "options": [
-      "Gastrin",
-      "Secretin",
       "Cholecystokinin (CCK)",
-      "Gastric inhibitory peptide (GIP)"
+      "Gastrin",
+      "Gastric inhibitory peptide (GIP)",
+      "Secretin"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -130,11 +130,11 @@
     "question": "In canna, the flower cannot be divided into two similar halves by any vertical plane. This type of symmetry is called:",
     "options": [
       "Actinomorphic",
-      "Zygomorphic",
       "Asymmetric",
+      "Zygomorphic",
       "Radial"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -143,12 +143,12 @@
     "id": "set_06_q11",
     "question": "Anabolic steroids are misused by some sportspersons. In MALES, the side effects include:",
     "options": [
-      "Breast enlargement (gynaecomastia), acne, testicular size reduction, decreased sperm production, prostate enlargement, premature baldness",
-      "Voice deepening, clitoris enlargement, abnormal menstrual cycles",
       "Increased height and longer limbs",
-      "Improved liver and kidney function"
+      "Voice deepening, clitoris enlargement, abnormal menstrual cycles",
+      "Improved liver and kidney function",
+      "Breast enlargement (gynaecomastia), acne, testicular size reduction, decreased sperm production, prostate enlargement, premature baldness"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -157,12 +157,12 @@
     "id": "set_06_q12",
     "question": "The estimated number of genes in the human genome (HGP result) was approximately 30,000. This was LOWER than previous estimates of:",
     "options": [
-      "50,000-60,000 genes",
       "80,000-140,000 genes",
       "200,000-300,000 genes",
+      "50,000-60,000 genes",
       "10,000-15,000 genes"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -171,12 +171,12 @@
     "id": "set_06_q13",
     "question": "Which of the following is correctly matched — mollusc with its common name?",
     "options": [
-      "Pinctada — Apple snail",
+      "Sepia — Devil fish",
       "Aplysia — Cuttlefish",
-      "Loligo — Squid",
-      "Sepia — Devil fish"
+      "Pinctada — Apple snail",
+      "Loligo — Squid"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -187,8 +187,8 @@
     "options": [
       "Seeds enclosed in fruits",
       "Vascular tissues — xylem and phloem",
-      "Alternation of generations",
-      "Multicellular sex organs"
+      "Multicellular sex organs",
+      "Alternation of generations"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -201,10 +201,10 @@
     "options": [
       "2 cells, diploid (2n)",
       "2 cells, haploid (n)",
-      "4 cells, haploid (n)",
-      "4 cells, diploid (2n)"
+      "4 cells, diploid (2n)",
+      "4 cells, haploid (n)"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -213,12 +213,12 @@
     "id": "set_06_q16",
     "question": "Mendel's work published in 1865 was unrecognised until 1900. The THREE scientists who INDEPENDENTLY rediscovered his work in 1900 were:",
     "options": [
-      "Sutton, Boveri, and Morgan",
       "de Vries, Correns, and von Tschermak",
-      "Watson, Crick, and Franklin",
-      "Avery, MacLeod, and McCarty"
+      "Sutton, Boveri, and Morgan",
+      "Avery, MacLeod, and McCarty",
+      "Watson, Crick, and Franklin"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -227,12 +227,12 @@
     "id": "set_06_q17",
     "question": "An ecological pyramid that is ALWAYS upright (never inverted) regardless of the ecosystem type is the pyramid of:",
     "options": [
-      "Numbers",
-      "Biomass",
       "Energy",
-      "Both numbers and biomass"
+      "Biomass",
+      "Both numbers and biomass",
+      "Numbers"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -242,11 +242,11 @@
     "question": "In the Southern blot DNA fingerprinting procedure, the CORRECT order of steps is:",
     "options": [
       "PCR → gel electrophoresis → restriction digestion → hybridise probe",
+      "Isolate DNA → blot → restrict → hybridise → PCR",
       "Isolate DNA → restrict with endonucleases → gel electrophoresis → blot to membrane → hybridise VNTR probe → detect by autoradiography",
-      "Hybridise probe → restrict DNA → gel electrophoresis → blot",
-      "Isolate DNA → blot → restrict → hybridise → PCR"
+      "Hybridise probe → restrict DNA → gel electrophoresis → blot"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -255,10 +255,10 @@
     "id": "set_06_q19",
     "question": "At a chemical synapse, the action potential at the axon terminal causes synaptic vesicles to fuse with the plasma membrane and release neurotransmitters into the synaptic cleft. The neurotransmitter binds to receptors on the post-synaptic membrane, opening ion channels that generate a new potential. This new potential can be:",
     "options": [
-      "Only excitatory",
+      "Always inhibitory in the brain",
       "Only inhibitory",
       "Either excitatory or inhibitory",
-      "Always inhibitory in the brain"
+      "Only excitatory"
     ],
     "correctIndex": 2,
     "explanation": "",
@@ -270,11 +270,11 @@
     "question": "In 1997, a transgenic cow named Rosie was produced that secreted human protein-enriched milk. The specific human protein present in Rosie's milk was alpha-lactalbumin, at a concentration of 2.4 g/L. This protein-enriched milk was considered nutritionally superior for:",
     "options": [
       "Adults with lactose intolerance",
-      "Human babies — more balanced nutritional composition",
+      "Athletes requiring high protein supplementation",
       "Patients with diabetes",
-      "Athletes requiring high protein supplementation"
+      "Human babies — more balanced nutritional composition"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -283,12 +283,12 @@
     "id": "set_06_q21",
     "question": "The concept of biodiversity hotspots was developed to identify areas of maximum conservation priority. A biodiversity hotspot is characterised by very high species richness AND high endemism. Originally 25 hotspots were identified; now how many are recognised?",
     "options": [
-      "25",
       "34",
       "50",
-      "100"
+      "100",
+      "25"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -297,12 +297,12 @@
     "id": "set_06_q22",
     "question": "Alfred Wallace arrived at conclusions similar to Darwin about natural selection. He was a naturalist working in:",
     "options": [
-      "Galapagos Islands",
-      "Malay Archipelago",
       "Amazon rainforest",
-      "Australian outback"
+      "Australian outback",
+      "Galapagos Islands",
+      "Malay Archipelago"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -311,12 +311,12 @@
     "id": "set_06_q23",
     "question": "In sewage treatment, BOD (Biochemical Oxygen Demand) is used as a measure of pollution. A HIGHER BOD indicates:",
     "options": [
-      "Cleaner water with more dissolved oxygen",
-      "More organic pollution — more oxygen consumed by bacteria to oxidise organic matter in that water sample",
       "Lower bacterial activity",
-      "Higher inorganic mineral content"
+      "Higher inorganic mineral content",
+      "Cleaner water with more dissolved oxygen",
+      "More organic pollution — more oxygen consumed by bacteria to oxidise organic matter in that water sample"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -326,8 +326,8 @@
     "question": "DNA-dependent DNA polymerase synthesises DNA only in the 5'→3' direction. On the 5'→3' template strand, synthesis is:",
     "options": [
       "Continuous (leading strand)",
-      "Discontinuous in fragments (Okazaki fragments, lagging strand)",
       "Impossible — no synthesis occurs on 5'→3' template",
+      "Discontinuous in fragments (Okazaki fragments, lagging strand)",
       "Bidirectional"
     ],
     "correctIndex": 0,
@@ -339,12 +339,12 @@
     "id": "set_06_q25",
     "question": "The pelvic girdle consists of two coxal bones, each formed by the fusion of three bones. The socket where the head of the femur articulates (hip joint) is found at the point of fusion of these three bones. This socket is called the:",
     "options": [
-      "Glenoid cavity",
       "Acetabulum",
+      "Pubic symphysis",
       "Iliac crest",
-      "Pubic symphysis"
+      "Glenoid cavity"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -355,8 +355,8 @@
     "options": [
       "VC only",
       "VC + RV (or RV + ERV + TV + IRV)",
-      "FRC + TV",
-      "IC + ERV"
+      "IC + ERV",
+      "FRC + TV"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -368,11 +368,11 @@
     "question": "The frog's eye is protected underwater by a transparent membrane. This protective membrane covering the eye is called the:",
     "options": [
       "Cornea",
-      "Iris",
       "Nictitating membrane",
-      "Tympanum"
+      "Tympanum",
+      "Iris"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -381,10 +381,10 @@
     "id": "set_06_q28",
     "question": "Abscisic Acid (ABA) is known as the \"stress hormone.\" Its primary role in stress response involves:",
     "options": [
-      "Promoting stomatal opening to increase CO₂ uptake",
+      "Promoting lateral bud growth",
       "Stimulating stomatal closure, thereby increasing water stress tolerance",
-      "Activating cytokinin synthesis in root tips",
-      "Promoting lateral bud growth"
+      "Promoting stomatal opening to increase CO₂ uptake",
+      "Activating cytokinin synthesis in root tips"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -395,12 +395,12 @@
     "id": "set_06_q29",
     "question": "The title of Linnaeus's publication from which the term \"Systematics\" is derived was \"Systema Naturae.\" The word \"Systematics\" is derived from the Latin word \"Systema,\" meaning:",
     "options": [
-      "Natural order",
-      "Systematic arrangement",
       "Living beings",
-      "Classification method"
+      "Natural order",
+      "Classification method",
+      "Systematic arrangement"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -410,11 +410,11 @@
     "question": "The enzyme that catalyses the oxidative decarboxylation of pyruvate to Acetyl CoA in the mitochondrial matrix requires which coenzyme?",
     "options": [
       "FAD⁺ only",
-      "NAD⁺ and Coenzyme A (CoA)",
       "NADP⁺ and CoA",
-      "CoA only"
+      "CoA only",
+      "NAD⁺ and Coenzyme A (CoA)"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -423,12 +423,12 @@
     "id": "set_06_q31",
     "question": "In the frog's nervous system, the brain is divided into forebrain, midbrain, and hindbrain. The midbrain is characterised by a pair of structures related to vision. These are the:",
     "options": [
-      "Olfactory lobes",
       "Cerebral hemispheres",
-      "Optic lobes",
-      "Cerebellum"
+      "Cerebellum",
+      "Olfactory lobes",
+      "Optic lobes"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -437,12 +437,12 @@
     "id": "set_06_q32",
     "question": "The cell envelope of bacteria consists of three layers in a specific order from outside to inside. What is the correct sequence?",
     "options": [
+      "Plasma membrane → Glycocalyx → Cell wall",
       "Cell wall → Glycocalyx → Plasma membrane",
       "Plasma membrane → Cell wall → Glycocalyx",
-      "Glycocalyx → Cell wall → Plasma membrane",
-      "Plasma membrane → Glycocalyx → Cell wall"
+      "Glycocalyx → Cell wall → Plasma membrane"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -451,12 +451,12 @@
     "id": "set_06_q33",
     "question": "The enzyme carbonic anhydrase catalyses the reaction: CO₂ + H₂O ⇌ H₂CO₃. Without this enzyme, approximately 200 molecules of H₂CO₃ form per hour. With carbonic anhydrase, the rate accelerates to 600,000 per second — an acceleration of approximately:",
     "options": [
-      "1 million times",
       "10 million times",
       "100 thousand times",
-      "1 billion times"
+      "1 billion times",
+      "1 million times"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -465,12 +465,12 @@
     "id": "set_06_q34",
     "question": "The statutory marriageable age in India is 18 years for females and 21 years for males. The condom brand 'Nirodh' is a popular male condom. Vasectomy involves removal or tying of a small part of the vas deferens. The female equivalent surgical sterilisation where a small part of the fallopian tube is removed or tied is called:",
     "options": [
-      "Hysterectomy",
       "Oophorectomy",
-      "Tubectomy",
-      "Colposcopy"
+      "Hysterectomy",
+      "Colposcopy",
+      "Tubectomy"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -479,12 +479,12 @@
     "id": "set_06_q35",
     "question": "In coelenterates, the phenomenon where polyps produce medusae asexually and medusae produce polyps sexually is called:",
     "options": [
-      "Parthenogenesis",
-      "Metagenesis",
       "Metamorphosis",
-      "Paedogenesis"
+      "Paedogenesis",
+      "Metagenesis",
+      "Parthenogenesis"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -493,12 +493,12 @@
     "id": "set_06_q36",
     "question": "Stanley Cohen and Herbert Boyer made a landmark discovery in 1972 by combining restriction enzymes and plasmids to create recombinant DNA. The first recombinant DNA molecule was created by linking which gene to a Salmonella typhimurium plasmid?",
     "options": [
-      "Insulin gene",
-      "Antibiotic resistance gene",
       "ADA gene",
-      "β-galactosidase gene"
+      "β-galactosidase gene",
+      "Insulin gene",
+      "Antibiotic resistance gene"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -507,12 +507,12 @@
     "id": "set_06_q37",
     "question": "Monocotyledonous stems differ from dicot stems in several ways. Which of the following is a feature SPECIFIC to monocot stems and NOT found in dicot stems?",
     "options": [
-      "Conjoint vascular bundles",
-      "Collenchymatous hypodermis",
       "Sclerenchymatous hypodermis with scattered vascular bundles",
+      "Collenchymatous hypodermis",
+      "Conjoint vascular bundles",
       "Ring arrangement of vascular bundles"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -522,11 +522,11 @@
     "question": "Hemichordates were earlier classified under Chordata but are now placed under non-chordates. Their excretory organ is:",
     "options": [
       "Nephridia",
-      "Proboscis gland",
       "Malpighian tubules",
+      "Proboscis gland",
       "Flame cells"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -535,10 +535,10 @@
     "id": "set_06_q39",
     "question": "In the counter current mechanism of the kidney, the osmolarity of the medullary interstitium increases progressively from the cortex to the inner medulla. The approximate osmolarity range from cortex to inner medulla is:",
     "options": [
-      "100 to 600 mOsmol/L",
+      "500 to 2000 mOsmol/L",
       "300 to 1200 mOsmol/L",
       "200 to 800 mOsmol/L",
-      "500 to 2000 mOsmol/L"
+      "100 to 600 mOsmol/L"
     ],
     "correctIndex": 1,
     "explanation": "",

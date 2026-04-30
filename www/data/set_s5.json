@@ -17,12 +17,12 @@
     "id": "set_s5_q2",
     "question": "Birds have ossified (bony) structures that help in:",
     "options": [
-      "Flying only",
-      "Grinding food (gizzard) among other functions",
+      "Reproduction",
       "Hearing",
-      "Reproduction"
+      "Flying only",
+      "Grinding food (gizzard) among other functions"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -31,12 +31,12 @@
     "id": "set_s5_q3",
     "question": "Pteropus is the scientific name of:",
     "options": [
-      "Rat",
       "Flying fox/fruit bat",
-      "Camel",
-      "Monkey"
+      "Monkey",
+      "Rat",
+      "Camel"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -45,12 +45,12 @@
     "id": "set_s5_q4",
     "question": "Camelus is the scientific name of:",
     "options": [
+      "Whale",
       "Elephant",
-      "Camel",
       "Horse",
-      "Whale"
+      "Camel"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -60,11 +60,11 @@
     "question": "Delphinus is a:",
     "options": [
       "Whale",
+      "Sea cow",
       "Dolphin",
-      "Seal",
-      "Sea cow"
+      "Seal"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -74,11 +74,11 @@
     "question": "Balaenoptera is a:",
     "options": [
       "Dolphin",
-      "Blue whale",
+      "Sea turtle",
       "Shark",
-      "Sea turtle"
+      "Blue whale"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -87,9 +87,9 @@
     "id": "set_s5_q7",
     "question": "Equus is the scientific name of:",
     "options": [
-      "Elephant",
-      "Horse",
       "Camel",
+      "Horse",
+      "Elephant",
       "Rhino"
     ],
     "correctIndex": 1,
@@ -102,11 +102,11 @@
     "question": "Macaca is the scientific name of:",
     "options": [
       "Rat",
-      "Monkey/macaque",
       "Dog",
+      "Monkey/macaque",
       "Cat"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -115,12 +115,12 @@
     "id": "set_s5_q9",
     "question": "The outermost layer of the root is called:",
     "options": [
-      "Cortex",
-      "Epiblema (root epidermis)",
+      "Pericycle",
       "Endodermis",
-      "Pericycle"
+      "Cortex",
+      "Epiblema (root epidermis)"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -129,12 +129,12 @@
     "id": "set_s5_q10",
     "question": "In root anatomy, protoxylem is:",
     "options": [
-      "Located toward the periphery (exarch)",
       "Located toward the centre (endarch)",
       "Absent in roots",
-      "Scattered throughout"
+      "Scattered throughout",
+      "Located toward the periphery (exarch)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -143,12 +143,12 @@
     "id": "set_s5_q11",
     "question": "In stem anatomy, protoxylem is:",
     "options": [
+      "Mesarch",
       "Exarch",
       "Endarch (towards centre of vascular bundle)",
-      "Absent",
-      "Mesarch"
+      "Absent"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -157,12 +157,12 @@
     "id": "set_s5_q12",
     "question": "The barrel-shaped cells in the root epidermis are characteristic of:",
     "options": [
-      "Cortex parenchyma",
-      "Epiblema cells",
       "Endodermal cells",
-      "Pericycle cells"
+      "Pericycle cells",
+      "Epiblema cells",
+      "Cortex parenchyma"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -171,12 +171,12 @@
     "id": "set_s5_q13",
     "question": "Curd formation involves bacteria that improve:",
     "options": [
-      "Only taste",
-      "Nutritive value (including Vitamin B12) and taste",
       "Only texture",
-      "Only shelf life"
+      "Only taste",
+      "Only shelf life",
+      "Nutritive value (including Vitamin B12) and taste"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -186,11 +186,11 @@
     "question": "Idli and dosa are prepared by:",
     "options": [
       "Baking with yeast",
+      "Chemical leavening",
       "Fermentation of rice and bengal gram batter",
-      "Direct cooking without fermentation",
-      "Chemical leavening"
+      "Direct cooking without fermentation"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -213,12 +213,12 @@
     "id": "set_s5_q16",
     "question": "Wine and beer are produced using:",
     "options": [
-      "Bacteria",
       "Yeast (ferments malted cereals/fruit)",
       "Moulds",
-      "Algae"
+      "Algae",
+      "Bacteria"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -227,12 +227,12 @@
     "id": "set_s5_q17",
     "question": "Whisky, brandy and rum are produced by:",
     "options": [
-      "Simple fermentation with no distillation",
       "Fermentation followed by distillation",
-      "Yeast alone without fermentation",
-      "Bacterial fermentation"
+      "Simple fermentation with no distillation",
+      "Bacterial fermentation",
+      "Yeast alone without fermentation"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -241,12 +241,12 @@
     "id": "set_s5_q18",
     "question": "The first antibiotic discovered was:",
     "options": [
-      "Streptomycin",
-      "Penicillin",
       "Tetracycline",
-      "Erythromycin"
+      "Streptomycin",
+      "Erythromycin",
+      "Penicillin"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -255,12 +255,12 @@
     "id": "set_s5_q19",
     "question": "Antibiotics are described as substances that:",
     "options": [
-      "Only kill bacteria",
       "Kill or retard the growth of microbes (bio against life)",
+      "Stimulate immune response",
       "Only inhibit fungi",
-      "Stimulate immune response"
+      "Only kill bacteria"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -269,12 +269,12 @@
     "id": "set_s5_q20",
     "question": "Whooping cough (Kali Khansi) is caused by:",
     "options": [
-      "Virus",
       "Bacterium (treated with antibiotics)",
-      "Fungus",
-      "Protozoan"
+      "Protozoan",
+      "Virus",
+      "Fungus"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -283,12 +283,12 @@
     "id": "set_s5_q21",
     "question": "Leprosy (Kusht Rog) is caused by:",
     "options": [
-      "Virus",
       "Bacterium",
       "Fungus",
+      "Virus",
       "Protozoan"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -298,11 +298,11 @@
     "question": "Biogas (gobar gas) is produced from:",
     "options": [
       "Coal",
+      "Algae only",
       "Bio-wastes/slurry in biogas plants",
-      "Petroleum",
-      "Algae only"
+      "Petroleum"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -325,12 +325,12 @@
     "id": "set_s5_q24",
     "question": "The BOD (Biochemical Oxygen Demand) of municipal wastewater is approximately:",
     "options": [
-      "8 mg/L",
-      "200–400 mg/L",
       "20 mg/L",
-      "1000 mg/L"
+      "1000 mg/L",
+      "200–400 mg/L",
+      "8 mg/L"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -339,12 +339,12 @@
     "id": "set_s5_q25",
     "question": "Pectinases are used commercially to:",
     "options": [
-      "Make bread",
       "Clarify bottled fruit juices",
-      "Produce antibiotics",
-      "Fix nitrogen"
+      "Make bread",
+      "Fix nitrogen",
+      "Produce antibiotics"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -353,12 +353,12 @@
     "id": "set_s5_q26",
     "question": "Azospirillum and Azotobacter are used as:",
     "options": [
-      "Biopesticides",
-      "Biofertilizers (nitrogen-fixing bacteria)",
       "Antibiotics",
-      "Food additives"
+      "Food additives",
+      "Biofertilizers (nitrogen-fixing bacteria)",
+      "Biopesticides"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -367,12 +367,12 @@
     "id": "set_s5_q27",
     "question": "Ladybird beetles are used as:",
     "options": [
+      "Pollinator",
       "Biopesticide against brassica pests",
-      "Biocontrol agent against aphids",
       "Biofertilizer",
-      "Pollinator"
+      "Biocontrol agent against aphids"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -381,12 +381,12 @@
     "id": "set_s5_q28",
     "question": "Dragonflies are used as biocontrol agents against:",
     "options": [
-      "Aphids",
       "Mosquitoes",
       "Stem borers",
-      "Locusts"
+      "Locusts",
+      "Aphids"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -395,10 +395,10 @@
     "id": "set_s5_q29",
     "question": "Bt cotton involves a gene from:",
     "options": [
-      "A virus",
+      "Agrobacterium",
       "Bacillus thuringiensis",
-      "Rhizobium",
-      "Agrobacterium"
+      "A virus",
+      "Rhizobium"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -409,12 +409,12 @@
     "id": "set_s5_q30",
     "question": "The \"cry\" genes in Bt crops produce:",
     "options": [
-      "Insecticidal crystal proteins toxic to specific insect groups",
+      "Nitrogen-fixing enzymes",
       "Herbicide-resistant proteins",
       "Drought-tolerance proteins",
-      "Nitrogen-fixing enzymes"
+      "Insecticidal crystal proteins toxic to specific insect groups"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -423,12 +423,12 @@
     "id": "set_s5_q31",
     "question": "Restriction enzymes are also called:",
     "options": [
+      "Polymerases",
       "Ligases",
       "Molecular scissors",
-      "Polymerases",
       "Helicases"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -438,11 +438,11 @@
     "question": "Restriction enzymes cut DNA at specific sequences called:",
     "options": [
       "Promoters",
+      "Introns",
       "Palindromic sequences",
-      "Codons",
-      "Introns"
+      "Codons"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -451,12 +451,12 @@
     "id": "set_s5_q33",
     "question": "A palindromic sequence reads the same:",
     "options": [
-      "Only in 5' to 3' direction",
-      "In both forward and backward (on complementary strands in 5'→3')",
+      "On non-complementary strands",
       "Only on one strand",
-      "On non-complementary strands"
+      "Only in 5' to 3' direction",
+      "In both forward and backward (on complementary strands in 5'→3')"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -465,12 +465,12 @@
     "id": "set_s5_q34",
     "question": "Gel electrophoresis separates DNA fragments based on:",
     "options": [
-      "Colour",
-      "Size; fragments move from cathode to anode",
       "Chemical composition",
-      "Temperature"
+      "Colour",
+      "Temperature",
+      "Size; fragments move from cathode to anode"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -479,12 +479,12 @@
     "id": "set_s5_q35",
     "question": "Plasmids are used as cloning vectors because they are:",
     "options": [
-      "Linear chromosomes",
       "Autonomously replicating circular DNA in bacteria",
+      "Linear chromosomes",
       "Viral genomes",
       "Eukaryotic chromosomes"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -507,10 +507,10 @@
     "id": "set_s5_q37",
     "question": "Agrobacterium tumifaciens is used to deliver genes into:",
     "options": [
-      "Animal cells",
+      "Fungal cells",
       "Plant cells",
       "Bacterial cells",
-      "Fungal cells"
+      "Animal cells"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -521,12 +521,12 @@
     "id": "set_s5_q38",
     "question": "The biolistics/gene gun method uses:",
     "options": [
-      "Bacterial injection",
-      "Gold or tungsten particles to bombard DNA into cells",
       "Chemical transformation",
-      "Viral vectors"
+      "Bacterial injection",
+      "Viral vectors",
+      "Gold or tungsten particles to bombard DNA into cells"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -535,10 +535,10 @@
     "id": "set_s5_q39",
     "question": "PCR (Polymerase Chain Reaction) is used to:",
     "options": [
-      "Cut DNA at specific sites",
+      "Join DNA fragments",
       "Amplify specific DNA sequences using primers",
       "Sequence DNA",
-      "Join DNA fragments"
+      "Cut DNA at specific sites"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -549,12 +549,12 @@
     "id": "set_s5_q40",
     "question": "In PCR, short nucleotide sequences used to initiate amplification are called:",
     "options": [
+      "Ligases",
       "Restriction enzymes",
       "Primers (oligonucleotides)",
-      "Ligases",
       "Probes"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"

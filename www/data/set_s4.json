@@ -3,12 +3,12 @@
     "id": "set_s4_q1",
     "question": "Annelids are:",
     "options": [
+      "Diploblastic",
       "Acoelomate",
       "Metamerically segmented, true coelomates",
-      "Pseudocoelomate",
-      "Diploblastic"
+      "Pseudocoelomate"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -17,12 +17,12 @@
     "id": "set_s4_q2",
     "question": "The exoskeleton of arthropods is made of:",
     "options": [
-      "Calcium carbonate",
       "Chitin",
-      "Spongin",
-      "Silica"
+      "Silica",
+      "Calcium carbonate",
+      "Spongin"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -45,12 +45,12 @@
     "id": "set_s4_q4",
     "question": "Statocysts in arthropods function as:",
     "options": [
-      "Respiratory organs",
       "Balancing organs",
+      "Respiratory organs",
       "Excretory organs",
       "Reproductive organs"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -59,12 +59,12 @@
     "id": "set_s4_q5",
     "question": "Book lungs are found in:",
     "options": [
-      "Insects",
       "Arachnids (scorpions/spiders)",
       "Crustaceans",
-      "Myriapods"
+      "Myriapods",
+      "Insects"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -73,12 +73,12 @@
     "id": "set_s4_q6",
     "question": "Arthropods breathe through:",
     "options": [
-      "Gills only",
       "Trachea (in insects), book lungs (in arachnids), or gills",
-      "Lungs only",
-      "Skin only"
+      "Gills only",
+      "Skin only",
+      "Lungs only"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -87,12 +87,12 @@
     "id": "set_s4_q7",
     "question": "The visceral hump in molluscs is covered by the:",
     "options": [
+      "Radula",
       "Shell",
       "Mantle",
-      "Foot",
-      "Radula"
+      "Foot"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -101,12 +101,12 @@
     "id": "set_s4_q8",
     "question": "Pila is the scientific name for:",
     "options": [
+      "Octopus",
       "Pearl oyster",
       "Apple snail",
-      "Octopus",
       "Chiton"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -115,12 +115,12 @@
     "id": "set_s4_q9",
     "question": "Dentalium is also called:",
     "options": [
-      "Chiton",
-      "Tusk shell",
+      "Nautilus",
       "Sea hare",
-      "Nautilus"
+      "Chiton",
+      "Tusk shell"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -130,11 +130,11 @@
     "question": "Chaetopleura/Chiton is characterised by:",
     "options": [
       "A single coiled shell",
+      "Two shells",
       "Eight dorsal shell plates",
-      "No shell",
-      "Two shells"
+      "No shell"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -144,11 +144,11 @@
     "question": "Molluscs are:",
     "options": [
       "Segmented",
-      "Unsegmented with a calcareous shell (mostly)",
+      "Acoelomate",
       "Pseudocoelomate",
-      "Acoelomate"
+      "Unsegmented with a calcareous shell (mostly)"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -157,12 +157,12 @@
     "id": "set_s4_q12",
     "question": "Echinoderms have an:",
     "options": [
-      "Exoskeleton of chitin",
-      "Endoskeleton of calcareous ossicles (spiny-bodied)",
       "No skeleton",
-      "Exoskeleton of calcium carbonate only on the outside"
+      "Exoskeleton of calcium carbonate only on the outside",
+      "Endoskeleton of calcareous ossicles (spiny-bodied)",
+      "Exoskeleton of chitin"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -171,12 +171,12 @@
     "id": "set_s4_q13",
     "question": "Asterias is an example of:",
     "options": [
-      "Sea urchin",
       "Starfish",
+      "Brittle star",
       "Sea cucumber",
-      "Brittle star"
+      "Sea urchin"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -185,12 +185,12 @@
     "id": "set_s4_q14",
     "question": "Echinus is a:",
     "options": [
-      "Starfish",
       "Sea urchin",
       "Sea cucumber",
-      "Feather star"
+      "Feather star",
+      "Starfish"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -200,11 +200,11 @@
     "question": "Cucumaria is a:",
     "options": [
       "Starfish",
+      "Sea lily",
       "Sea urchin",
-      "Sea cucumber",
-      "Sea lily"
+      "Sea cucumber"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -215,8 +215,8 @@
     "options": [
       "Nauplius larva",
       "Bipinnaria/distinctive larva",
-      "Trochophore larva",
-      "Veliger larva"
+      "Veliger larva",
+      "Trochophore larva"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -241,12 +241,12 @@
     "id": "set_s4_q18",
     "question": "The stomochord in Hemichordata is a:",
     "options": [
+      "Pharyngeal slit",
       "True notochord",
       "Worm-like, short buccal diverticulum (not a true notochord)",
-      "Pharyngeal slit",
       "Post-anal tail"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -255,12 +255,12 @@
     "id": "set_s4_q19",
     "question": "Ascidia and Salpa belong to subphylum:",
     "options": [
-      "Vertebrata",
       "Tunicata (Urochordata)",
-      "Cephalochordata",
-      "Hemichordata"
+      "Vertebrata",
+      "Hemichordata",
+      "Cephalochordata"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -269,10 +269,10 @@
     "id": "set_s4_q20",
     "question": "Protochordates have a notochord that is:",
     "options": [
-      "Permanent and extends the full length",
+      "Replaced by vertebral column from birth",
       "Present only in larva or restricted region (not fully persistent)",
       "Absent",
-      "Replaced by vertebral column from birth"
+      "Permanent and extends the full length"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -283,12 +283,12 @@
     "id": "set_s4_q21",
     "question": "Petromyzon is commonly called:",
     "options": [
-      "Hagfish",
       "Lamprey",
       "Shark",
-      "Ray"
+      "Ray",
+      "Hagfish"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -298,11 +298,11 @@
     "question": "Myxine is commonly called:",
     "options": [
       "Lamprey",
-      "Hagfish",
+      "Eel",
       "Catfish",
-      "Eel"
+      "Hagfish"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -311,12 +311,12 @@
     "id": "set_s4_q23",
     "question": "Cyclostomes are:",
     "options": [
+      "Bony fish",
       "Jawed vertebrates",
       "Jawless vertebrates (Agnatha)",
-      "Cartilaginous fish",
-      "Bony fish"
+      "Cartilaginous fish"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -339,12 +339,12 @@
     "id": "set_s4_q25",
     "question": "Pristis is commonly known as:",
     "options": [
-      "Shark",
       "Sawfish",
+      "Torpedo",
       "Ray",
-      "Torpedo"
+      "Shark"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -353,12 +353,12 @@
     "id": "set_s4_q26",
     "question": "Carcharodon is:",
     "options": [
-      "A ray",
       "Great white shark",
+      "A ray",
       "Lamprey",
       "Catfish"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -367,12 +367,12 @@
     "id": "set_s4_q27",
     "question": "The scales found in bony fishes are:",
     "options": [
-      "Placoid only",
-      "Cycloid or ctenoid",
+      "No scales",
       "Ganoid only",
-      "No scales"
+      "Cycloid or ctenoid",
+      "Placoid only"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -382,11 +382,11 @@
     "question": "Labeo rohita is commonly called:",
     "options": [
       "Catla",
-      "Rohu",
+      "Fighting fish",
       "Magur",
-      "Fighting fish"
+      "Rohu"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -410,11 +410,11 @@
     "question": "Pterophyllum is commonly called:",
     "options": [
       "Fighting fish",
-      "Angel fish",
+      "Guppy",
       "Goldfish",
-      "Guppy"
+      "Angel fish"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -424,11 +424,11 @@
     "question": "Ichthyophis is a:",
     "options": [
       "Fish",
+      "Salamander",
       "Limbless amphibian (caecilian)",
-      "Reptile",
-      "Salamander"
+      "Reptile"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -437,12 +437,12 @@
     "id": "set_s4_q32",
     "question": "Salamandra is a:",
     "options": [
-      "Frog",
-      "Salamander (amphibian)",
       "Lizard",
-      "Caecilian"
+      "Caecilian",
+      "Frog",
+      "Salamander (amphibian)"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -452,11 +452,11 @@
     "question": "The skin of reptiles is covered by:",
     "options": [
       "Moist smooth skin",
-      "Cornified (dry, scaly) skin with scutes",
+      "Fur",
       "Feathers",
-      "Fur"
+      "Cornified (dry, scaly) skin with scutes"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -465,12 +465,12 @@
     "id": "set_s4_q34",
     "question": "Chelone is a:",
     "options": [
-      "Tortoise",
-      "Marine turtle",
       "Crocodile",
-      "Lizard"
+      "Tortoise",
+      "Lizard",
+      "Marine turtle"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -479,12 +479,12 @@
     "id": "set_s4_q35",
     "question": "Testudo is a:",
     "options": [
-      "Turtle",
-      "Tortoise",
+      "Snake",
       "Crocodile",
-      "Snake"
+      "Turtle",
+      "Tortoise"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -493,9 +493,9 @@
     "id": "set_s4_q36",
     "question": "Naja is the scientific name of:",
     "options": [
-      "Krait",
-      "Cobra",
       "Viper",
+      "Cobra",
+      "Krait",
       "Python"
     ],
     "correctIndex": 1,
@@ -507,12 +507,12 @@
     "id": "set_s4_q37",
     "question": "Bangarus is the scientific name of:",
     "options": [
-      "Cobra",
       "Krait",
       "Viper",
+      "Cobra",
       "Rat snake"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -521,12 +521,12 @@
     "id": "set_s4_q38",
     "question": "Vipera is the scientific name of:",
     "options": [
-      "Cobra",
-      "Krait",
       "Viper",
-      "Boa"
+      "Boa",
+      "Cobra",
+      "Krait"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -535,10 +535,10 @@
     "id": "set_s4_q39",
     "question": "Struthio is the scientific name of:",
     "options": [
-      "Peacock",
-      "Ostrich",
       "Pigeon",
-      "Parrot"
+      "Ostrich",
+      "Parrot",
+      "Peacock"
     ],
     "correctIndex": 1,
     "explanation": "",

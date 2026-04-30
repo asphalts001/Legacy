@@ -3,9 +3,9 @@
     "id": "set_s6_q1",
     "question": "A bioreactor is a vessel used for:",
     "options": [
-      "Storing DNA",
-      "Large-scale production of biological products using organisms/cells/enzymes",
       "Gel electrophoresis",
+      "Large-scale production of biological products using organisms/cells/enzymes",
+      "Storing DNA",
       "PCR amplification"
     ],
     "correctIndex": 1,
@@ -17,9 +17,9 @@
     "id": "set_s6_q2",
     "question": "Bioreactors are typically cylindrical or curved with a:",
     "options": [
-      "Static culture",
-      "Stirrer/agitator, temperature/pH control ports, and sparger for aeration",
       "Only anaerobic conditions",
+      "Stirrer/agitator, temperature/pH control ports, and sparger for aeration",
+      "Static culture",
       "No mixing mechanism"
     ],
     "correctIndex": 1,
@@ -31,9 +31,9 @@
     "id": "set_s6_q3",
     "question": "Downstream processing involves:",
     "options": [
-      "Upstream gene cloning",
-      "Separation, purification and formulation of the final product",
       "PCR amplification",
+      "Separation, purification and formulation of the final product",
+      "Upstream gene cloning",
       "Restriction digestion"
     ],
     "correctIndex": 1,
@@ -45,9 +45,9 @@
     "id": "set_s6_q4",
     "question": "Transgenic animals are used for:",
     "options": [
-      "Only meat production",
-      "Studying gene function, disease models, and producing biologicals",
       "Silk production",
+      "Studying gene function, disease models, and producing biologicals",
+      "Only meat production",
       "Biofertilizer production"
     ],
     "correctIndex": 1,
@@ -59,12 +59,12 @@
     "id": "set_s6_q5",
     "question": "Insulin produced by rDNA technology differs from animal-derived insulin because it:",
     "options": [
-      "Is less effective",
-      "Does not cause allergy reactions common with cattle/pig insulin",
       "Requires more doses",
-      "Cannot be administered orally"
+      "Cannot be administered orally",
+      "Is less effective",
+      "Does not cause allergy reactions common with cattle/pig insulin"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -75,8 +75,8 @@
     "options": [
       "The need for new GMO crops",
       "Biopiracy and protection of traditional knowledge/biodiversity",
-      "Antibiotic resistance",
-      "Bioremediation failures"
+      "Bioremediation failures",
+      "Antibiotic resistance"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -88,11 +88,11 @@
     "question": "Natality refers to:",
     "options": [
       "Death rate in a population",
-      "Birth rate in a population",
       "Immigration rate",
-      "Emigration rate"
+      "Emigration rate",
+      "Birth rate in a population"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -102,11 +102,11 @@
     "question": "A J-shaped growth curve in a population indicates:",
     "options": [
       "Logistic growth with carrying capacity",
-      "Exponential/unrestricted growth",
       "Population decline",
-      "Stable population"
+      "Stable population",
+      "Exponential/unrestricted growth"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -115,12 +115,12 @@
     "id": "set_s6_q9",
     "question": "The carrying capacity of an environment is denoted by:",
     "options": [
-      "r",
-      "K",
+      "t",
       "N",
-      "t"
+      "r",
+      "K"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -129,9 +129,9 @@
     "id": "set_s6_q10",
     "question": "Gause's competitive exclusion principle states that:",
     "options": [
-      "Two species can coexist if resources are unlimited",
-      "Two species competing for identical resources cannot coexist indefinitely",
       "Predation always leads to extinction",
+      "Two species competing for identical resources cannot coexist indefinitely",
+      "Two species can coexist if resources are unlimited",
       "Mutualism is more common than competition"
     ],
     "correctIndex": 1,
@@ -144,11 +144,11 @@
     "question": "The interaction between Clownfish and Sea anemone is an example of:",
     "options": [
       "Parasitism",
-      "Mutualism",
+      "Competition",
       "Predation",
-      "Competition"
+      "Mutualism"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -157,12 +157,12 @@
     "id": "set_s6_q12",
     "question": "Mycorrhiza is an example of:",
     "options": [
+      "Amensalism",
       "Parasitism",
       "Mutualism between fungus and plant roots",
-      "Commensalism",
-      "Amensalism"
+      "Commensalism"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -171,12 +171,12 @@
     "id": "set_s6_q13",
     "question": "The interaction where one organism benefits and the other is neither harmed nor helped is:",
     "options": [
+      "Predation",
       "Mutualism",
-      "Commensalism",
       "Parasitism",
-      "Predation"
+      "Commensalism"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -185,12 +185,12 @@
     "id": "set_s6_q14",
     "question": "Egret and cattle share which type of relationship?",
     "options": [
+      "Mutualism",
       "Parasitism",
       "Commensalism",
-      "Mutualism",
       "Competition"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -199,10 +199,10 @@
     "id": "set_s6_q15",
     "question": "Pisaster starfish removing mussels from a rocky shore is an example of:",
     "options": [
-      "Mutualism",
+      "Competition",
       "A keystone predator maintaining species diversity",
       "Commensalism",
-      "Competition"
+      "Mutualism"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -213,12 +213,12 @@
     "id": "set_s6_q16",
     "question": "The species-area relationship follows:",
     "options": [
-      "A linear curve",
       "A rectangular hyperbola (log species vs log area is linear)",
       "An exponential decline",
-      "A J-curve"
+      "A J-curve",
+      "A linear curve"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -227,12 +227,12 @@
     "id": "set_s6_q17",
     "question": "Biodiversity hotspots are defined by areas with:",
     "options": [
-      "High species diversity and low endemism",
-      "High species richness AND high levels of endemism under threat",
+      "Maximum forest cover",
       "Low human disturbance only",
-      "Maximum forest cover"
+      "High species richness AND high levels of endemism under threat",
+      "High species diversity and low endemism"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -241,12 +241,12 @@
     "id": "set_s6_q18",
     "question": "In situ conservation includes:",
     "options": [
-      "Zoos and botanical gardens",
       "National parks, wildlife sanctuaries, and biosphere reserves",
       "Seed banks",
-      "Cryopreservation"
+      "Cryopreservation",
+      "Zoos and botanical gardens"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -255,10 +255,10 @@
     "id": "set_s6_q19",
     "question": "Ex situ conservation includes:",
     "options": [
-      "Wildlife sanctuaries",
-      "Zoos, botanical gardens, seed banks",
       "National parks",
-      "Sacred groves"
+      "Zoos, botanical gardens, seed banks",
+      "Sacred groves",
+      "Wildlife sanctuaries"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -269,12 +269,12 @@
     "id": "set_s6_q20",
     "question": "The dodo became extinct due to:",
     "options": [
-      "Climate change",
       "Overexploitation and hunting (Mauritius)",
       "Disease",
-      "Competition with native species"
+      "Competition with native species",
+      "Climate change"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -283,12 +283,12 @@
     "id": "set_s6_q21",
     "question": "Lantana and Eichhornia are examples of:",
     "options": [
-      "Native species that went extinct",
-      "Invasive alien species threatening native biodiversity",
       "Keystone species",
-      "Endangered species"
+      "Native species that went extinct",
+      "Endangered species",
+      "Invasive alien species threatening native biodiversity"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -297,10 +297,10 @@
     "id": "set_s6_q22",
     "question": "The total number of species recorded worldwide is approximately:",
     "options": [
-      "45,000",
+      "28,000",
       "1.5 million",
       "300,000",
-      "28,000"
+      "45,000"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -311,12 +311,12 @@
     "id": "set_s6_q23",
     "question": "The IUCN Red List currently lists approximately how many threatened species?",
     "options": [
-      "784",
       "15,500",
-      "1,000",
-      "45,000"
+      "45,000",
+      "784",
+      "1,000"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -325,12 +325,12 @@
     "id": "set_s6_q24",
     "question": "Sacred groves are examples of:",
     "options": [
-      "Ex situ conservation",
       "Community-based in situ conservation",
-      "Government-run national parks",
-      "Bioprospecting sites"
+      "Ex situ conservation",
+      "Bioprospecting sites",
+      "Government-run national parks"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -340,11 +340,11 @@
     "question": "Energy flow in an ecosystem is:",
     "options": [
       "Bidirectional and recycled",
-      "Unidirectional and non-recyclable",
+      "Random",
       "Cyclical like nutrients",
-      "Random"
+      "Unidirectional and non-recyclable"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -353,10 +353,10 @@
     "id": "set_s6_q26",
     "question": "The 10% law of energy transfer states that only ___% of energy passes from one trophic level to the next:",
     "options": [
-      "1%",
+      "50%",
       "10%",
       "20%",
-      "50%"
+      "1%"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -381,12 +381,12 @@
     "id": "set_s6_q28",
     "question": "Sedimentary cycles involve nutrients like:",
     "options": [
-      "Carbon and nitrogen",
       "Phosphorus and sulphur",
       "Oxygen and hydrogen",
+      "Carbon and nitrogen",
       "Nitrogen and oxygen"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -395,12 +395,12 @@
     "id": "set_s6_q29",
     "question": "The productivity of an ecosystem is measured in:",
     "options": [
-      "kg/ha",
       "g m⁻² yr⁻¹ or kcal m⁻² yr⁻¹",
+      "mg/L",
       "mol/L",
-      "mg/L"
+      "kg/ha"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -409,12 +409,12 @@
     "id": "set_s6_q30",
     "question": "Deep-sea hydrothermal vent ecosystems are an exception because they are driven by:",
     "options": [
+      "Tidal energy",
       "Solar energy",
       "Chemosynthesis (not solar energy)",
-      "Wind energy",
-      "Tidal energy"
+      "Wind energy"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -423,12 +423,12 @@
     "id": "set_s6_q31",
     "question": "Deaddiction from drug/alcohol abuse requires:",
     "options": [
-      "Only willpower",
-      "Help from qualified psychologists/psychiatrists and rehabilitation",
+      "Social isolation",
       "Only medication",
-      "Social isolation"
+      "Only willpower",
+      "Help from qualified psychologists/psychiatrists and rehabilitation"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -438,11 +438,11 @@
     "question": "Waterborne diseases can be prevented by:",
     "options": [
       "Vaccination only",
-      "Cleanliness, decontamination, and antimicrobial measures",
       "Antibiotics alone",
-      "Isolation"
+      "Isolation",
+      "Cleanliness, decontamination, and antimicrobial measures"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -451,10 +451,10 @@
     "id": "set_s6_q33",
     "question": "Alcoholic fermentation of soyabean and bamboo shoots is used to make:",
     "options": [
-      "Wine and beer",
-      "Fermented foods common in some cuisines",
       "Antibiotics",
-      "Biofuels"
+      "Fermented foods common in some cuisines",
+      "Biofuels",
+      "Wine and beer"
     ],
     "correctIndex": 1,
     "explanation": "",

@@ -3,12 +3,12 @@
     "id": "set_10_q1",
     "question": "The fluid mosaic model of the plasma membrane was proposed by Singer and Nicolson in 1972. According to this model, the membrane has a quasi-fluid lipid bilayer. The erythrocyte membrane has been studied extensively. What is the approximate protein content of the erythrocyte membrane?",
     "options": [
-      "20% protein, 70% lipids",
       "52% protein, 40% lipids",
-      "40% protein, 52% lipids",
-      "70% protein, 20% lipids"
+      "20% protein, 70% lipids",
+      "70% protein, 20% lipids",
+      "40% protein, 52% lipids"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -18,11 +18,11 @@
     "question": "A child has blood group O (genotype ii). The father has blood group A. The mother has blood group B. What are the POSSIBLE genotypes of the parents?",
     "options": [
       "Father IAiA, Mother IBiB — impossible",
-      "Father IAIA or IAi, Mother IBIB or IBi — but to produce 'ii' child, both must carry 'i': Father IAi, Mother IBi",
       "Father ii, Mother IBi",
-      "Father IAIA, Mother IBIB only"
+      "Father IAIA, Mother IBIB only",
+      "Father IAIA or IAi, Mother IBIB or IBi — but to produce 'ii' child, both must carry 'i': Father IAi, Mother IBi"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -31,10 +31,10 @@
     "id": "set_10_q3",
     "question": "The proximal convoluted tubule (PCT) is lined by a simple cuboidal brush border epithelium that increases the surface area for reabsorption. The PCT reabsorbs what percentage of electrolytes and water from the filtrate?",
     "options": [
-      "40–50%",
-      "70–80%",
       "90–95%",
-      "99%"
+      "70–80%",
+      "99%",
+      "40–50%"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -45,12 +45,12 @@
     "id": "set_10_q4",
     "question": "In gymnosperms, the megaspore mother cell is differentiated from which tissue of the ovule?",
     "options": [
-      "Integument",
-      "Micropyle",
       "Nucellus",
-      "Chalaza"
+      "Chalaza",
+      "Integument",
+      "Micropyle"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -60,11 +60,11 @@
     "question": "The ability of plants to grow throughout their life due to the presence of meristems is referred to as:",
     "options": [
       "Determinate growth",
-      "Indeterminate (open) growth",
       "Secondary growth",
+      "Indeterminate (open) growth",
       "Intercalary growth"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -73,10 +73,10 @@
     "id": "set_10_q6",
     "question": "The forebrain of a frog includes olfactory lobes, paired cerebral hemispheres, and an unpaired structure. This unpaired forebrain component is:",
     "options": [
-      "Medulla oblongata",
+      "Optic lobe",
       "Cerebellum",
       "Diencephalon",
-      "Optic lobe"
+      "Medulla oblongata"
     ],
     "correctIndex": 2,
     "explanation": "",
@@ -87,8 +87,8 @@
     "id": "set_10_q7",
     "question": "A remarkable fact about fungal species diversity is that the number of fungal species exceeds the combined total of which group of organisms?",
     "options": [
-      "All plants combined",
       "All bacteria combined",
+      "All plants combined",
       "Combined fishes, amphibians, reptiles, and mammals",
       "All invertebrates combined"
     ],
@@ -102,11 +102,11 @@
     "question": "Bacillus thuringiensis (Bt) is used as a BIOCONTROL agent. Its mechanism of action against insect larvae is:",
     "options": [
       "It produces a volatile toxin that repels insects",
-      "Dried Bt spores are sprayed on plants; when eaten by insect larvae, the toxin is released in the gut, KILLING the larvae — but is harmless to other insects",
       "It parasitises adult insects and sterilises them",
-      "It produces ethylene that destroys insect eggs"
+      "It produces ethylene that destroys insect eggs",
+      "Dried Bt spores are sprayed on plants; when eaten by insect larvae, the toxin is released in the gut, KILLING the larvae — but is harmless to other insects"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -129,12 +129,12 @@
     "id": "set_10_q10",
     "question": "The PRIMARY respiratory rhythm centre is located in:",
     "options": [
+      "The cerebellum",
       "The pons (pneumotaxic centre)",
       "The cerebral cortex",
-      "The medulla oblongata",
-      "The cerebellum"
+      "The medulla oblongata"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -143,10 +143,10 @@
     "id": "set_10_q11",
     "question": "The Photosynthetically Active Radiation (PAR) constitutes less than 50% of total solar radiation incident on Earth. Of this PAR, what fraction do producers typically capture for photosynthesis?",
     "options": [
-      "50% of PAR",
+      "Less than 0.5% of PAR",
       "25% of PAR",
       "2–10% of PAR",
-      "Less than 0.5% of PAR"
+      "50% of PAR"
     ],
     "correctIndex": 2,
     "explanation": "",
@@ -157,12 +157,12 @@
     "id": "set_10_q12",
     "question": "Griffith's transformation experiment (1928) used Streptococcus pneumoniae. Which combination resulted in MICE DYING?",
     "options": [
-      "Live R strain alone",
-      "Heat-killed S strain alone",
       "Heat-killed S strain + Live R strain (R bacteria transformed to virulent S by \"transforming principle\")",
-      "Live S strain heated to 100°C"
+      "Heat-killed S strain alone",
+      "Live S strain heated to 100°C",
+      "Live R strain alone"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -171,12 +171,12 @@
     "id": "set_10_q13",
     "question": "In Aschelminthes (roundworms), the sexes are separate (dioecious) and females are often longer than males. Wastes are removed from the body through a specialised structure called:",
     "options": [
-      "Flame cells",
-      "Nephridia",
       "Excretory tube opening through excretory pore",
-      "Malpighian tubules"
+      "Flame cells",
+      "Malpighian tubules",
+      "Nephridia"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -185,12 +185,12 @@
     "id": "set_10_q14",
     "question": "In the predator-prey interaction, prickly pear cactus (Opuntia) introduced in Australia in the 1920s spread over millions of hectares of land. This invasive species was eventually controlled by the introduction of a moth from the cactus's native habitat. This biological control is an example of:",
     "options": [
+      "Predator controlling prey population — an ecological principle of biological control",
       "Commensalism",
       "Mutualism",
-      "Predator controlling prey population — an ecological principle of biological control",
       "Competition between two herbivores"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -213,12 +213,12 @@
     "id": "set_10_q16",
     "question": "In a resting neuron, the axonal membrane maintains a specific ionic distribution through the Na-K pump. The resting axoplasm has HIGH concentration of K+ and negatively charged proteins, and LOW concentration of Na+. The Na-K pump actively transports:",
     "options": [
-      "2 Na+ outward for 3 K+ inward",
-      "3 Na+ outward for 2 K+ inward",
+      "3 Na+ inward for 2 K+ outward",
       "Equal Na+ and K+ in both directions",
-      "3 Na+ inward for 2 K+ outward"
+      "2 Na+ outward for 3 K+ inward",
+      "3 Na+ outward for 2 K+ inward"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -227,12 +227,12 @@
     "id": "set_10_q17",
     "question": "Zinc is a metal ion co-factor required for the activity of which of the following enzymes?",
     "options": [
-      "Carbonic anhydrase",
-      "Carboxypeptidase",
       "Succinic dehydrogenase",
+      "Carboxypeptidase",
+      "Carbonic anhydrase",
       "Peroxidase"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -241,12 +241,12 @@
     "id": "set_10_q18",
     "question": "The three small bones present in the middle ear that are involved in sound transmission are called ossicles. These three ossicles, from the eardrum inward, are:",
     "options": [
+      "Incus, malleus, stapes",
       "Malleus, incus, stapes",
       "Stapes, incus, malleus",
-      "Incus, malleus, stapes",
       "Stapes, malleus, incus"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -255,12 +255,12 @@
     "id": "set_10_q19",
     "question": "For a permanent cure of ADA deficiency through gene therapy, the introduced gene should be present in all cells from the beginning. This would require the gene to be introduced at which stage of the patient's life?",
     "options": [
+      "At adult stage using bone marrow transplantation",
       "During adolescence when the immune system is fully developed",
       "At early embryonic stages for a permanent cure",
-      "After birth when lymphocytes are fully formed",
-      "At adult stage using bone marrow transplantation"
+      "After birth when lymphocytes are fully formed"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -269,12 +269,12 @@
     "id": "set_10_q20",
     "question": "Coelacanth, a lobefin fish thought to be extinct, was found living in:",
     "options": [
-      "Amazon river, 1938",
-      "South Africa, 1938",
+      "Indian Ocean, 1958",
       "Galapagos Islands, 1938",
-      "Indian Ocean, 1958"
+      "South Africa, 1938",
+      "Amazon river, 1938"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -283,12 +283,12 @@
     "id": "set_10_q21",
     "question": "In diplotene of meiosis I, the synaptonemal complex dissolves and the recombined homologous chromosomes begin to separate, but remain attached at certain points. These X-shaped attachment points where crossing over occurred are called:",
     "options": [
-      "Bivalents",
       "Tetrads",
-      "Chiasmata",
-      "Synaptonemal nodes"
+      "Bivalents",
+      "Synaptonemal nodes",
+      "Chiasmata"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -297,12 +297,12 @@
     "id": "set_10_q22",
     "question": "A typical angiosperm anther is bilobed (dithecous) with four microsporangia — two per lobe — making it tetrasporangiate. Each microsporangium is surrounded by four wall layers from outside to inside. The innermost layer that nourishes the developing pollen grains, has cells with dense cytoplasm and generally more than one nucleus (bi-nucleate tapetal cells), is called the:",
     "options": [
-      "Endothecium",
       "Middle layer",
+      "Tapetum",
       "Epidermis",
-      "Tapetum"
+      "Endothecium"
     ],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -311,12 +311,12 @@
     "id": "set_10_q23",
     "question": "Mendel's Law of Independent Assortment states that:",
     "options": [
-      "Two genes on the same chromosome always segregate together",
       "When two pairs of traits are combined in a hybrid, the segregation of one pair of characters is INDEPENDENT of the other pair",
       "Characters do not blend in heterozygotes",
+      "Two genes on the same chromosome always segregate together",
       "Each gamete receives only one allele per gene"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -325,12 +325,12 @@
     "id": "set_10_q24",
     "question": "The vector for malaria, filariasis, and dengue respectively is:",
     "options": [
+      "Malaria: housefly; Filariasis: Aedes; Dengue: Anopheles",
       "Malaria: Aedes mosquito; Filariasis: Anopheles; Dengue: Culex",
-      "Malaria: female Anopheles; Filariasis: female mosquito vectors; Dengue: Aedes mosquito",
       "All three: Culex mosquito",
-      "Malaria: housefly; Filariasis: Aedes; Dengue: Anopheles"
+      "Malaria: female Anopheles; Filariasis: female mosquito vectors; Dengue: Aedes mosquito"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -353,12 +353,12 @@
     "id": "set_10_q26",
     "question": "Histones are positively charged proteins that help package DNA in eukaryotic cells. Their positive charge is due to richness in which amino acids?",
     "options": [
-      "Aspartate and glutamate (acidic)",
-      "Lysine and arginine (basic)",
       "Cysteine and methionine (sulphur-containing)",
-      "Glycine and alanine (non-polar)"
+      "Aspartate and glutamate (acidic)",
+      "Glycine and alanine (non-polar)",
+      "Lysine and arginine (basic)"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -368,11 +368,11 @@
     "question": "The stomatal aperture, the guard cells, and the surrounding subsidiary cells together constitute a functional unit called the:",
     "options": [
       "Stomatal complex",
+      "Epidermal unit",
       "Stomatal apparatus",
-      "Guard cell apparatus",
-      "Epidermal unit"
+      "Guard cell apparatus"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -381,10 +381,10 @@
     "id": "set_10_q28",
     "question": "Which of the following correctly states the principle about taxonomic rank and shared characteristics?",
     "options": [
-      "Higher the category, more common characteristics are shared",
+      "All taxa at any level share equal numbers of characteristics",
       "Lower taxa have fewer shared characteristics among members",
       "Higher the category, FEWER common characteristics are shared among members",
-      "All taxa at any level share equal numbers of characteristics"
+      "Higher the category, more common characteristics are shared"
     ],
     "correctIndex": 2,
     "explanation": "",
@@ -395,12 +395,12 @@
     "id": "set_10_q29",
     "question": "Ctenophores are exclusively marine animals that show bioluminescence. Their locomotion is achieved by:",
     "options": [
-      "Nematocysts on tentacles",
       "Eight external rows of ciliated comb plates",
+      "Nematocysts on tentacles",
       "Parapodia on body surface",
       "Tube feet of water vascular system"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -411,10 +411,10 @@
     "options": [
       "Coccus",
       "Bacillus",
-      "Vibrium",
-      "Spirillum"
+      "Spirillum",
+      "Vibrium"
     ],
-    "correctIndex": 3,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -423,12 +423,12 @@
     "id": "set_10_q31",
     "question": "Nereis, an aquatic annelid, possesses lateral appendages for swimming. These structures are called:",
     "options": [
-      "Setae",
-      "Suckers",
       "Parapodia",
-      "Claspers"
+      "Claspers",
+      "Setae",
+      "Suckers"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -437,12 +437,12 @@
     "id": "set_10_q32",
     "question": "In oogenesis, oogonia are formed during embryonic development — approximately 2 million oogonia are formed in each fetal ovary. After birth, no more oogonia are formed. At puberty, how many primary follicles per ovary are typically present?",
     "options": [
-      "2 million per ovary",
       "200,000 per ovary",
+      "10,000 per ovary",
       "60,000–80,000 per ovary",
-      "10,000 per ovary"
+      "2 million per ovary"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -451,12 +451,12 @@
     "id": "set_10_q33",
     "question": "Steroid hormones and iodothyronines (thyroid hormones) use intracellular receptors mostly located in the nucleus. When the hormone-receptor complex forms, it regulates cellular metabolism by:",
     "options": [
-      "Generating second messengers like cyclic AMP",
       "Directly regulating gene expression or chromosome function",
       "Opening ion channels in the plasma membrane",
-      "Activating adenylate cyclase at the cell surface"
+      "Activating adenylate cyclase at the cell surface",
+      "Generating second messengers like cyclic AMP"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -465,12 +465,12 @@
     "id": "set_10_q34",
     "question": "Basophils (0.5–1% of WBCs) secrete which substances involved in inflammatory reactions?",
     "options": [
-      "Histamine, serotonin, heparin",
-      "Antibodies (IgG and IgM)",
+      "Lysozyme and defensins",
       "Perforin and granzymes",
-      "Lysozyme and defensins"
+      "Antibodies (IgG and IgM)",
+      "Histamine, serotonin, heparin"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -479,12 +479,12 @@
     "id": "set_10_q35",
     "question": "The thread-like extensions of epidermal cells in the root maturation zone that are responsible for absorption of water and minerals from soil are called:",
     "options": [
-      "Root hairs",
       "Lenticels",
       "Hydathodes",
+      "Root hairs",
       "Stipules"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -493,10 +493,10 @@
     "id": "set_10_q36",
     "question": "In one complete turn of the Krebs cycle (starting from one acetyl CoA), how many molecules of CO₂ are released?",
     "options": [
-      "1",
+      "4",
       "2",
-      "3",
-      "4"
+      "1",
+      "3"
     ],
     "correctIndex": 1,
     "explanation": "",

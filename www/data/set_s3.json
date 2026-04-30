@@ -3,12 +3,12 @@
     "id": "set_s3_q1",
     "question": "A staminode is:",
     "options": [
-      "A fertile stamen",
-      "A sterile/non-functional stamen",
       "A type of carpel",
-      "A modified petal"
+      "A modified petal",
+      "A fertile stamen",
+      "A sterile/non-functional stamen"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -17,12 +17,12 @@
     "id": "set_s3_q2",
     "question": "In Salvia, stamens are:",
     "options": [
-      "Polyandrous",
-      "Epipetalous and reduced to two",
+      "Fused into a bundle",
       "Free and numerous",
-      "Fused into a bundle"
+      "Epipetalous and reduced to two",
+      "Polyandrous"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -32,11 +32,11 @@
     "question": "Apocarpous gynoecium means:",
     "options": [
       "Carpels are fused",
-      "Carpels are free",
       "Only one carpel present",
+      "Carpels are free",
       "Ovary is inferior"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -47,8 +47,8 @@
     "options": [
       "Syncarpous",
       "Apocarpous",
-      "Monocarpellary",
-      "Inferior ovary"
+      "Inferior ovary",
+      "Monocarpellary"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -59,10 +59,10 @@
     "id": "set_s3_q5",
     "question": "A drupe fruit is:",
     "options": [
-      "Dry and dehiscent",
-      "Fleshy with a stony endocarp (monocarpellary, one-seeded)",
       "Formed from multiple carpels",
-      "A dry indehiscent fruit"
+      "Fleshy with a stony endocarp (monocarpellary, one-seeded)",
+      "A dry indehiscent fruit",
+      "Dry and dehiscent"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -73,12 +73,12 @@
     "id": "set_s3_q6",
     "question": "Non-endospermous seeds include:",
     "options": [
-      "Castor and maize",
       "Gram and orchids",
-      "Wheat and rice",
-      "Maize only"
+      "Maize only",
+      "Castor and maize",
+      "Wheat and rice"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -87,12 +87,12 @@
     "id": "set_s3_q7",
     "question": "The shield-shaped cotyledon in monocot seeds is called:",
     "options": [
-      "Plumule",
       "Scutellum",
       "Radicle",
-      "Testa"
+      "Testa",
+      "Plumule"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -103,8 +103,8 @@
     "options": [
       "Zygomorphic symmetry",
       "Actinomorphic (radial) symmetry",
-      "Bisexual flower",
-      "Inferior ovary"
+      "Inferior ovary",
+      "Bisexual flower"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -115,12 +115,12 @@
     "id": "set_s3_q9",
     "question": "Brassicaceae is characterized by:",
     "options": [
-      "K4 C4 A2+4 G(2)",
-      "K5 C5 A∞ G(2)",
       "K(5) C(5) A5 G(2)",
-      "K3 C3 A6 G(3)"
+      "K3 C3 A6 G(3)",
+      "K5 C5 A∞ G(2)",
+      "K4 C4 A2+4 G(2)"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -130,11 +130,11 @@
     "question": "Ashwagandha belongs to which family?",
     "options": [
       "Brassicaceae",
-      "Solanaceae",
       "Fabaceae",
-      "Liliaceae"
+      "Liliaceae",
+      "Solanaceae"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -143,12 +143,12 @@
     "id": "set_s3_q11",
     "question": "Which placentation type is found in Argemone?",
     "options": [
-      "Axile",
-      "Parietal",
       "Basal",
-      "Free central"
+      "Free central",
+      "Axile",
+      "Parietal"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -157,12 +157,12 @@
     "id": "set_s3_q12",
     "question": "Axile placentation is found in:",
     "options": [
-      "Argemone",
-      "Dianthus",
+      "Sunflower",
       "China rose (multilocular ovary)",
-      "Sunflower"
+      "Dianthus",
+      "Argemone"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -171,12 +171,12 @@
     "id": "set_s3_q13",
     "question": "Animals with no true symmetry are called:",
     "options": [
-      "Radially symmetrical",
       "Asymmetrical",
-      "Bilaterally symmetrical",
-      "Dorsoventrally flattened"
+      "Radially symmetrical",
+      "Dorsoventrally flattened",
+      "Bilaterally symmetrical"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -185,10 +185,10 @@
     "id": "set_s3_q14",
     "question": "Diploblastic animals have how many embryonic layers?",
     "options": [
-      "One",
+      "Four",
       "Two (ectoderm and endoderm)",
-      "Three",
-      "Four"
+      "One",
+      "Three"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -199,12 +199,12 @@
     "id": "set_s3_q15",
     "question": "Triploblastic animals have:",
     "options": [
-      "Two germ layers",
       "Three germ layers (ectoderm, mesoderm, endoderm)",
+      "Two germ layers",
       "One germ layer",
       "No germ layers"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -214,11 +214,11 @@
     "question": "Mesoglea is found in:",
     "options": [
       "Platyhelminthes",
+      "Echinodermata",
       "Cnidaria (between ectoderm and endoderm)",
-      "Annelida",
-      "Echinodermata"
+      "Annelida"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -241,12 +241,12 @@
     "id": "set_s3_q18",
     "question": "Pseudocoelomates have a body cavity that is:",
     "options": [
+      "Absent",
       "Lined by mesoderm on both sides",
       "Not lined by mesoderm (between mesoderm and endoderm)",
-      "Absent",
       "Same as true coelom"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -256,11 +256,11 @@
     "question": "Metamerism refers to:",
     "options": [
       "Presence of a coelom",
-      "Serial repetition of body segments (metameres)",
+      "Presence of spicules",
       "Radial symmetry",
-      "Presence of spicules"
+      "Serial repetition of body segments (metameres)"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -271,8 +271,8 @@
     "options": [
       "Hollow dorsal nerve cord",
       "Mesodermally derived rod-like structure",
-      "Pharyngeal gill slit",
-      "Post-anal tail"
+      "Post-anal tail",
+      "Pharyngeal gill slit"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -284,11 +284,11 @@
     "question": "Water enters a sponge through:",
     "options": [
       "Osculum",
+      "Spongin fibres",
       "Ostia (pores)",
-      "Spicules",
-      "Spongin fibres"
+      "Spicules"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -297,12 +297,12 @@
     "id": "set_s3_q22",
     "question": "Water exits a sponge through the:",
     "options": [
-      "Ostia",
       "Osculum",
+      "Ostia",
       "Spicules",
       "Choanocytes"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -311,10 +311,10 @@
     "id": "set_s3_q23",
     "question": "The skeleton of sponges is made of:",
     "options": [
-      "Chitin",
+      "Cellulose",
       "Spicules and/or spongin",
-      "Calcium carbonate shells only",
-      "Cellulose"
+      "Chitin",
+      "Calcium carbonate shells only"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -325,12 +325,12 @@
     "id": "set_s3_q24",
     "question": "Sponges are:",
     "options": [
-      "Dioecious",
       "Hermaphrodite",
-      "Parthenogenetic",
-      "Always asexual"
+      "Dioecious",
+      "Always asexual",
+      "Parthenogenetic"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -339,9 +339,9 @@
     "id": "set_s3_q25",
     "question": "Sycon is also known as:",
     "options": [
-      "Spongilla",
-      "Scypha",
       "Euplectella",
+      "Scypha",
+      "Spongilla",
       "Hyalonema"
     ],
     "correctIndex": 1,
@@ -353,12 +353,12 @@
     "id": "set_s3_q26",
     "question": "Cnidarians are characterised by the presence of:",
     "options": [
+      "Radula",
       "Spicules",
-      "Stinging cells (nematocysts/cnidoblasts)",
       "Setae",
-      "Radula"
+      "Stinging cells (nematocysts/cnidoblasts)"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -367,9 +367,9 @@
     "id": "set_s3_q27",
     "question": "The hypostome in Hydra is:",
     "options": [
-      "The base of attachment",
-      "The mouth region surrounded by tentacles",
       "A reproductive structure",
+      "The mouth region surrounded by tentacles",
+      "The base of attachment",
       "A type of nematocyst"
     ],
     "correctIndex": 1,
@@ -381,12 +381,12 @@
     "id": "set_s3_q28",
     "question": "Digestion in Cnidaria is:",
     "options": [
-      "Only intracellular",
-      "Extracellular (in gastrovascular cavity)",
       "Absent",
-      "Only intracellular in polyp stage"
+      "Only intracellular in polyp stage",
+      "Only intracellular",
+      "Extracellular (in gastrovascular cavity)"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -396,11 +396,11 @@
     "question": "Aurelia is an example of:",
     "options": [
       "Polyp form of Cnidaria",
-      "Medusa form (jellyfish)",
       "Colonial coral",
+      "Medusa form (jellyfish)",
       "Sea fan"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -409,12 +409,12 @@
     "id": "set_s3_q30",
     "question": "Obelia shows:",
     "options": [
-      "Only polyp stage",
       "Only medusa stage",
       "Alternation of polyp and medusa stages",
-      "No medusa stage"
+      "No medusa stage",
+      "Only polyp stage"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -423,12 +423,12 @@
     "id": "set_s3_q31",
     "question": "Adamsia is a:",
     "options": [
-      "Coral",
-      "Sea anemone",
       "Jellyfish",
-      "Sea fan"
+      "Coral",
+      "Sea fan",
+      "Sea anemone"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -438,11 +438,11 @@
     "question": "Platyhelminthes are:",
     "options": [
       "Radially symmetrical",
-      "Dorsoventrally flattened, bilaterally symmetrical flatworms",
+      "Free-living only",
       "Triploblastic coelomates",
-      "Free-living only"
+      "Dorsoventrally flattened, bilaterally symmetrical flatworms"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -451,10 +451,10 @@
     "id": "set_s3_q33",
     "question": "Taenia is a:",
     "options": [
-      "Free-living flatworm",
-      "Tapeworm (endoparasite)",
       "Fluke",
-      "Roundworm"
+      "Tapeworm (endoparasite)",
+      "Roundworm",
+      "Free-living flatworm"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -465,12 +465,12 @@
     "id": "set_s3_q34",
     "question": "Fasciola is a:",
     "options": [
-      "Tapeworm",
       "Liver fluke",
       "Roundworm",
+      "Tapeworm",
       "Hookworm"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -479,10 +479,10 @@
     "id": "set_s3_q35",
     "question": "Platyhelminthes are:",
     "options": [
-      "Coelomate",
+      "Eucoelomate",
       "Acoelomate",
       "Pseudocoelomate",
-      "Eucoelomate"
+      "Coelomate"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -493,10 +493,10 @@
     "id": "set_s3_q36",
     "question": "Ascaris is a:",
     "options": [
-      "Tapeworm",
+      "Hookworm",
       "Roundworm (pseudocoelomate)",
-      "Fluke",
-      "Hookworm"
+      "Tapeworm",
+      "Fluke"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -507,12 +507,12 @@
     "id": "set_s3_q37",
     "question": "Ancylostoma is commonly known as:",
     "options": [
-      "Roundworm",
       "Hookworm",
-      "Pinworm",
-      "Filaria worm"
+      "Roundworm",
+      "Filaria worm",
+      "Pinworm"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -521,10 +521,10 @@
     "id": "set_s3_q38",
     "question": "Aschelminthes are:",
     "options": [
-      "Acoelomate",
+      "Diploblastic",
       "Pseudocoelomate",
       "True coelomate",
-      "Diploblastic"
+      "Acoelomate"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -536,11 +536,11 @@
     "question": "Pheretima is the scientific name for:",
     "options": [
       "Leech",
+      "Tubeworm",
       "Earthworm",
-      "Nereis",
-      "Tubeworm"
+      "Nereis"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -549,12 +549,12 @@
     "id": "set_s3_q40",
     "question": "Hirudinaria is:",
     "options": [
+      "Polychaete",
       "Earthworm",
       "Leech",
-      "Polychaete",
       "Marine worm"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"

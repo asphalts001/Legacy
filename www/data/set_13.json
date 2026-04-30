@@ -3,12 +3,12 @@
     "id": "set_13_q1",
     "question": "H.H. Cousins (1910) observed that a volatile substance from ripened oranges could hasten the ripening of unripened bananas. This volatile substance was later identified as:",
     "options": [
+      "Ethylene (C₂H₄)",
       "IAA (Indole-3-acetic acid)",
       "Gibberellic acid",
-      "Ethylene (C₂H₄)",
       "Abscisic acid"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -17,10 +17,10 @@
     "id": "set_13_q2",
     "question": "The three STOP codons of the genetic code are:",
     "options": [
-      "AUG, UAA, UAG",
+      "UAG, UGA, ACG",
       "UAA, UAG, UGA",
       "UGA, AUG, UAA",
-      "UAG, UGA, ACG"
+      "AUG, UAA, UAG"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -31,12 +31,12 @@
     "id": "set_13_q3",
     "question": "CO₂ diffuses across the alveolar membrane more efficiently than O₂ despite a smaller partial pressure gradient. The reason is:",
     "options": [
-      "CO₂ molecules are smaller than O₂ molecules",
-      "CO₂ has 20–25 times higher solubility than O₂ in body fluids",
       "CO₂ is actively transported by carrier proteins",
-      "CO₂ has a higher partial pressure gradient than O₂"
+      "CO₂ molecules are smaller than O₂ molecules",
+      "CO₂ has a higher partial pressure gradient than O₂",
+      "CO₂ has 20–25 times higher solubility than O₂ in body fluids"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -45,12 +45,12 @@
     "id": "set_13_q4",
     "question": "In Antirrhinum (snapdragon), a cross between true-breeding RED (RR) and WHITE (rr) flowers gives F1 PINK flowers. This phenomenon is called:",
     "options": [
-      "Co-dominance",
-      "Incomplete dominance",
+      "Pleiotropy",
       "Epistasis",
-      "Pleiotropy"
+      "Co-dominance",
+      "Incomplete dominance"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -60,11 +60,11 @@
     "question": "Charles Darwin made his famous sea voyage on which ship, and what was the primary observation that led to his theory?",
     "options": [
       "H.M.S. Challenger; variation in plankton species",
-      "H.M.S. Beagle; existing living forms share similarities with each other and with extinct forms; new forms arose at different periods",
       "H.M.S. Victory; variation in insect populations",
+      "H.M.S. Beagle; existing living forms share similarities with each other and with extinct forms; new forms arose at different periods",
       "H.M.S. Discovery; geological changes caused evolution"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -73,12 +73,12 @@
     "id": "set_13_q6",
     "question": "Julius von Sachs (1854) made which key contribution to understanding photosynthesis?",
     "options": [
+      "He identified the action spectrum of photosynthesis using bacteria",
       "He discovered that O₂ is released from water, not CO₂",
       "He demonstrated that glucose is produced during growth and stored as starch in chloroplasts within cells",
-      "He identified the action spectrum of photosynthesis using bacteria",
       "He isolated auxin from oat coleoptile tips"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -87,12 +87,12 @@
     "id": "set_13_q7",
     "question": "Synergids have special cellular thickenings at their micropylar tip called the filiform apparatus. What is the specific role of the filiform apparatus?",
     "options": [
+      "It synthesises sporopollenin for the pollen wall",
       "It provides nutrition to the egg cell",
       "It guides the entry of the pollen tube into the synergid",
-      "It synthesises sporopollenin for the pollen wall",
       "It prevents polyspermy (entry of multiple pollen tubes)"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -101,12 +101,12 @@
     "id": "set_13_q8",
     "question": "The pectoral girdle consists of a clavicle and scapula. The scapula has a spine ridge that projects as a process called acromion, which articulates with the clavicle. The depression below the acromion where the head of the humerus articulates to form the shoulder joint is called the:",
     "options": [
-      "Acetabulum",
       "Pubic symphysis",
-      "Glenoid cavity",
-      "Olecranon fossa"
+      "Acetabulum",
+      "Olecranon fossa",
+      "Glenoid cavity"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -116,11 +116,11 @@
     "question": "The placenta is formed by the interdigitation of chorionic villi with the uterine tissue. The placenta is also endocrine in function — it produces hCG, hPL, estrogens, and progestogens. One hormone is produced by the ovary (not placenta) later in pregnancy. This hormone is:",
     "options": [
       "hCG",
-      "Relaxin",
+      "Oxytocin",
       "Prolactin",
-      "Oxytocin"
+      "Relaxin"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -129,12 +129,12 @@
     "id": "set_13_q10",
     "question": "Ernst Mayr received the Balzan Prize in 1983 and the International Prize for Biology in 1994. What was the primary field of his research that earned him the title \"Darwin of the 20th century\"?",
     "options": [
-      "Genetics and molecular biology",
-      "Ornithology, taxonomy, and evolutionary biology",
+      "Ecology and conservation biology",
       "Biochemistry and cell biology",
-      "Ecology and conservation biology"
+      "Genetics and molecular biology",
+      "Ornithology, taxonomy, and evolutionary biology"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -144,11 +144,11 @@
     "question": "The pituitary gland is located in a bony cavity called the sella turcica and is attached to the hypothalamus by a stalk. It is divided into adenohypophysis and neurohypophysis. The pars intermedia of the adenohypophysis secretes which hormone, and what does it act on?",
     "options": [
       "GH — stimulates body growth",
-      "MSH — acts on melanocytes, regulates skin pigmentation",
       "TSH — stimulates thyroid hormone synthesis",
+      "MSH — acts on melanocytes, regulates skin pigmentation",
       "Prolactin — stimulates milk production"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -157,10 +157,10 @@
     "id": "set_13_q12",
     "question": "In some leguminous plants, the leaf base is swollen. This swollen leaf base is specifically called:",
     "options": [
-      "Stipule",
+      "Petiole",
       "Sheath",
       "Pulvinus",
-      "Petiole"
+      "Stipule"
     ],
     "correctIndex": 2,
     "explanation": "",
@@ -171,12 +171,12 @@
     "id": "set_13_q13",
     "question": "When Antirrhinum F1 PINK (Rr) flowers are self-pollinated, the F2 phenotypic ratio is:",
     "options": [
-      "3 Red : 1 White",
       "1 Red : 1 White",
-      "1 Red : 2 Pink : 1 White",
-      "All Pink"
+      "All Pink",
+      "3 Red : 1 White",
+      "1 Red : 2 Pink : 1 White"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -185,12 +185,12 @@
     "id": "set_13_q14",
     "question": "Methanogens (e.g., Methanobacterium) are important for biogas production. Where are these bacteria naturally found?",
     "options": [
+      "In the xylem vessels of trees",
       "In the aerial parts of plants only",
       "In the rumen of cattle (aid cellulose digestion) and in anaerobic sewage sludge",
-      "In the atmosphere",
-      "In the xylem vessels of trees"
+      "In the atmosphere"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -200,11 +200,11 @@
     "question": "METASTASIS is the most feared property of malignant tumours. It refers to:",
     "options": [
       "The formation of the initial benign tumour",
+      "Resistance of cancer cells to chemotherapy",
       "The ability of cancer cells to INVADE surrounding tissue, enter the bloodstream, and establish NEW tumours at distant sites",
-      "Uncontrolled cell division at one localised site only",
-      "Resistance of cancer cells to chemotherapy"
+      "Uncontrolled cell division at one localised site only"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -213,12 +213,12 @@
     "id": "set_13_q16",
     "question": "The singular form of \"taxa\" is:",
     "options": [
+      "Taxum",
       "Taxus",
       "Taxon",
-      "Taxum",
       "Taxi"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -227,12 +227,12 @@
     "id": "set_13_q17",
     "question": "Starch forms a helical secondary structure and can hold iodine (I₂) within its helical portion, giving a characteristic blue colour. Cellulose, which is also a glucose polymer, does NOT give this blue colour because:",
     "options": [
-      "Cellulose contains fructose, not glucose",
-      "Cellulose cannot hold I₂ as it does not form complex helices",
       "Cellulose is a heteropolymer and reacts differently",
-      "Cellulose is water-soluble and I₂ escapes"
+      "Cellulose is water-soluble and I₂ escapes",
+      "Cellulose cannot hold I₂ as it does not form complex helices",
+      "Cellulose contains fructose, not glucose"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -241,12 +241,12 @@
     "id": "set_13_q18",
     "question": "The minute U-shaped capillary vessel running parallel to Henle's loop that plays a crucial role in the counter current mechanism of urine concentration is called:",
     "options": [
-      "Afferent arteriole",
+      "Vasa recta",
       "Efferent arteriole",
       "Peritubular capillary",
-      "Vasa recta"
+      "Afferent arteriole"
     ],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -255,10 +255,10 @@
     "id": "set_13_q19",
     "question": "Which enzyme was used by Ochoa for template-INDEPENDENT polymerisation of RNA (useful in deciphering the genetic code)?",
     "options": [
-      "RNA-dependent RNA polymerase",
-      "Polynucleotide phosphorylase",
       "Primase",
-      "RNA polymerase II"
+      "Polynucleotide phosphorylase",
+      "RNA polymerase II",
+      "RNA-dependent RNA polymerase"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -270,11 +270,11 @@
     "question": "Brood parasitism in birds is a fascinating example of parasitism where a bird (e.g., koel) lays its eggs in the nest of a host bird (e.g., crow). The host then incubates the parasite's eggs. The brood parasite has evolved to:",
     "options": [
       "Hatch before the host chicks and destroy them all",
+      "Produce eggs identical in DNA to host eggs",
       "Mimic host eggs in size and colour to reduce detection and ejection probability",
-      "Call louder than host chicks to receive more food",
-      "Produce eggs identical in DNA to host eggs"
+      "Call louder than host chicks to receive more food"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -284,11 +284,11 @@
     "question": "During the S phase of interphase in animal cells, along with DNA replication in the nucleus, which organelle also duplicates in the cytoplasm?",
     "options": [
       "Mitochondria",
-      "Golgi apparatus",
       "Centriole",
+      "Golgi apparatus",
       "Ribosome"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -297,12 +297,12 @@
     "id": "set_13_q22",
     "question": "After meiosis of the megaspore mother cell in gymnosperms, how many megaspores are produced, and how many of them develop into the female gametophyte?",
     "options": [
-      "2 megaspores; both develop",
-      "4 megaspores; only one develops",
       "4 megaspores; all develop",
-      "2 megaspores; only one develops"
+      "2 megaspores; only one develops",
+      "4 megaspores; only one develops",
+      "2 megaspores; both develop"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -312,11 +312,11 @@
     "question": "In 1997, an American company patented a Basmati variety through the US Patent Office. This Basmati was derived from crossing traditional Indian Basmati varieties (known for unique aroma and flavour) with semi-dwarf varieties. How many distinct Basmati varieties are traditionally recognised in India, and in how many countries was India growing Basmati at the time?",
     "options": [
       "10 varieties; present in 5 countries",
-      "27 varieties in India; described in ancient Indian texts",
+      "5 varieties; confined only to India",
       "50 varieties; present globally in 20 countries",
-      "5 varieties; confined only to India"
+      "27 varieties in India; described in ancient Indian texts"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -339,12 +339,12 @@
     "id": "set_13_q25",
     "question": "The medulla oblongata of the hindbrain is connected to the spinal cord. The medulla controls vital involuntary functions. Which of the following functions is CONTROLLED by the medulla oblongata?",
     "options": [
-      "Coordination of voluntary movements",
       "Regulation of circadian rhythms",
-      "Respiration, cardiovascular reflexes, and gastric secretions",
-      "Memory and intelligence"
+      "Coordination of voluntary movements",
+      "Memory and intelligence",
+      "Respiration, cardiovascular reflexes, and gastric secretions"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -367,9 +367,9 @@
     "id": "set_13_q27",
     "question": "Some cells in the human body characteristically LACK a nucleus in their mature form. Which of the following correctly identifies TWO such cell types?",
     "options": [
-      "Liver cells and kidney cells",
-      "Mammalian erythrocytes and sieve tube cells of vascular plants",
       "Nerve cells and muscle cells",
+      "Mammalian erythrocytes and sieve tube cells of vascular plants",
+      "Liver cells and kidney cells",
       "Osteocytes and chondrocytes"
     ],
     "correctIndex": 1,
@@ -382,11 +382,11 @@
     "question": "India is one of the 12 mega diversity countries of the world. India covers 2.4% of the world's land area but harbours what percentage of global species diversity?",
     "options": [
       "2.4%",
-      "4.2%",
       "8.1%",
+      "4.2%",
       "12%"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"

@@ -3,12 +3,12 @@
     "id": "set_12_q1",
     "question": "Mitochondria are described as the powerhouses of the cell. The inner membrane of mitochondria has inward folds that increase the surface area for enzymatic reactions. These inward folds are called:",
     "options": [
-      "Thylakoids",
-      "Cristae",
+      "Grana",
       "Stroma lamellae",
-      "Grana"
+      "Cristae",
+      "Thylakoids"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -17,12 +17,12 @@
     "id": "set_12_q2",
     "question": "The vascular bundles in roots are described as radial because xylem and phloem are arranged alternately along different radii. In stems and leaves, the vascular bundles are of which type where xylem and phloem lie along the same radius?",
     "options": [
-      "Radial bundles",
       "Conjoint bundles",
+      "Open bundles",
       "Closed bundles",
-      "Open bundles"
+      "Radial bundles"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -31,12 +31,12 @@
     "id": "set_12_q3",
     "question": "Gibberellins are used commercially on sugarcane crops. The effect is:",
     "options": [
+      "Promotion of female flowers and increased fruit set",
       "Increased root depth and drought resistance",
       "Increased stem length (elongation), increasing yield by ~20 tonnes/acre",
-      "Delayed maturity and reduced seed production",
-      "Promotion of female flowers and increased fruit set"
+      "Delayed maturity and reduced seed production"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -45,12 +45,12 @@
     "id": "set_12_q4",
     "question": "Post-transcriptional processing of hnRNA in eukaryotes involves three major steps. Which of the following is the CORRECT description of \"capping\"?",
     "options": [
+      "Removal of introns and joining of exons",
       "Addition of 200-300 adenylate residues at the 3'-end",
       "Addition of methyl guanosine triphosphate at the 5'-END",
-      "Removal of introns and joining of exons",
       "Transport of processed mRNA from nucleus to cytoplasm"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -59,12 +59,12 @@
     "id": "set_12_q5",
     "question": "Katherine Esau, who made significant contributions to plant anatomy, discovered that curly top virus spreads through the plant via which tissue?",
     "options": [
-      "Xylem",
       "Epidermis",
-      "Phloem",
-      "Cortex"
+      "Cortex",
+      "Xylem",
+      "Phloem"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -73,12 +73,12 @@
     "id": "set_12_q6",
     "question": "Euchromatin vs Heterochromatin: which correctly describes each?",
     "options": [
-      "Euchromatin: densely packed, dark stain, transcriptionally inactive; Heterochromatin: loosely packed, light stain, active",
-      "Euchromatin: loosely packed, light stain, transcriptionally ACTIVE; Heterochromatin: densely packed, dark stain, INACTIVE",
       "Both are equally transcriptionally active",
-      "Euchromatin is found only in prokaryotes"
+      "Euchromatin is found only in prokaryotes",
+      "Euchromatin: densely packed, dark stain, transcriptionally inactive; Heterochromatin: loosely packed, light stain, active",
+      "Euchromatin: loosely packed, light stain, transcriptionally ACTIVE; Heterochromatin: densely packed, dark stain, INACTIVE"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -88,11 +88,11 @@
     "question": "Plasma constitutes approximately 55% of blood. The most abundant protein in plasma that maintains OSMOTIC BALANCE is:",
     "options": [
       "Fibrinogen",
+      "Haemoglobin",
       "Globulin",
-      "Albumin",
-      "Haemoglobin"
+      "Albumin"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -101,12 +101,12 @@
     "id": "set_12_q8",
     "question": "In metaphase of mitosis, chromosomes are maximally condensed and are aligned at the equatorial plate. The disc-shaped structures present on the centromeres that serve as attachment sites for spindle fibres are called:",
     "options": [
-      "Chiasmata",
       "Kinetochores",
-      "Centrioles",
-      "Telomeres"
+      "Chiasmata",
+      "Telomeres",
+      "Centrioles"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -115,12 +115,12 @@
     "id": "set_12_q9",
     "question": "Excess secretion of Growth Hormone (GH) in adults (middle age), after the long bones have fused, causes a condition characterised by severe disfigurement especially of the face. This condition is:",
     "options": [
-      "Gigantism",
-      "Cretinism",
       "Acromegaly",
-      "Pituitary dwarfism"
+      "Gigantism",
+      "Pituitary dwarfism",
+      "Cretinism"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -129,12 +129,12 @@
     "id": "set_12_q10",
     "question": "The Human Genome Project (HGP) was launched in 1990 and completed in 2003. The total number of base pairs in the human haploid genome is approximately:",
     "options": [
-      "3.3 × 10⁶ bp (3.3 million)",
-      "3.3 × 10⁹ bp (3.3 billion)",
+      "46 × 10⁶ bp",
       "3.3 × 10¹² bp (3.3 trillion)",
-      "46 × 10⁶ bp"
+      "3.3 × 10⁶ bp (3.3 million)",
+      "3.3 × 10⁹ bp (3.3 billion)"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -145,8 +145,8 @@
     "options": [
       "Eucalyptus",
       "Wolffia",
-      "Lemna",
-      "Azolla"
+      "Azolla",
+      "Lemna"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -158,11 +158,11 @@
     "question": "Which disease affecting humans is caused by Clostridium tetani, associated with soil-contaminated wounds?",
     "options": [
       "Typhoid",
+      "Citrus canker",
       "Tetanus",
-      "Cholera",
-      "Citrus canker"
+      "Cholera"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -171,12 +171,12 @@
     "id": "set_12_q13",
     "question": "Cytochrome c is described as a \"mobile carrier\" in the ETS. It carries electrons between:",
     "options": [
-      "Complex I and Complex II",
-      "Complex II and Complex III",
+      "Complex IV and oxygen",
       "Complex III and Complex IV",
-      "Complex IV and oxygen"
+      "Complex II and Complex III",
+      "Complex I and Complex II"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -185,12 +185,12 @@
     "id": "set_12_q14",
     "question": "The cerebellum, part of the hindbrain, has a highly convoluted surface that allows for a greater number of neurons in a small space. The cerebellum is primarily responsible for:",
     "options": [
-      "Conscious thought and memory",
-      "Integration of information from semicircular canals and auditory system; coordination of movement and balance",
       "Control of hunger, thirst, and body temperature",
-      "Processing visual and auditory inputs at the midbrain level"
+      "Processing visual and auditory inputs at the midbrain level",
+      "Conscious thought and memory",
+      "Integration of information from semicircular canals and auditory system; coordination of movement and balance"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -201,8 +201,8 @@
     "options": [
       "ICMR (Indian Council of Medical Research)",
       "GEAC (Genetic Engineering Approval Committee)",
-      "CSIR (Council of Scientific and Industrial Research)",
-      "DBT (Department of Biotechnology)"
+      "DBT (Department of Biotechnology)",
+      "CSIR (Council of Scientific and Industrial Research)"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -213,12 +213,12 @@
     "id": "set_12_q16",
     "question": "Alpha-thalassemia involves reduced synthesis of alpha-globin chains. Alpha-globin is controlled by:",
     "options": [
-      "A single gene HBB on chromosome 11",
       "Two linked genes HBA1 and HBA2 on chromosome 16 from each parent (four genes total)",
+      "Three genes on chromosome 21",
       "A single gene on the X chromosome",
-      "Three genes on chromosome 21"
+      "A single gene HBB on chromosome 11"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -227,12 +227,12 @@
     "id": "set_12_q17",
     "question": "The term \"biodiversity\" was popularised by a sociobiologist. Who is credited with popularising this term?",
     "options": [
-      "Robert May",
       "Alexander von Humboldt",
-      "Edward Wilson",
-      "David Tilman"
+      "David Tilman",
+      "Robert May",
+      "Edward Wilson"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -243,10 +243,10 @@
     "options": [
       "Bacterial lung infection",
       "Occupational dust exposure",
-      "Cigarette smoking",
-      "High altitude hypoxia"
+      "High altitude hypoxia",
+      "Cigarette smoking"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -256,11 +256,11 @@
     "question": "Co-factors are non-protein components bound to enzymes to make them catalytically active. The protein portion of an enzyme without its co-factor is called the:",
     "options": [
       "Holoenzyme",
-      "Coenzyme",
       "Apoenzyme",
+      "Coenzyme",
       "Prosthetic group"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -283,12 +283,12 @@
     "id": "set_12_q21",
     "question": "During embryonic development, after implantation the inner cell mass differentiates into ectoderm (outer) and endoderm (inner), with mesoderm appearing between them. Regarding developmental milestones: at the end of 12 weeks (first trimester), major organ systems are formed. At the END OF 5TH MONTH, which two events occur for the first time?",
     "options": [
-      "Limbs and digits develop; external genitals formed",
-      "First movements of the foetus felt; hair on head appears",
+      "Heart is formed; first heart sounds heard",
       "Eye-lids separate; eye-lashes formed",
-      "Heart is formed; first heart sounds heard"
+      "First movements of the foetus felt; hair on head appears",
+      "Limbs and digits develop; external genitals formed"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -297,12 +297,12 @@
     "id": "set_12_q22",
     "question": "During decomposition, a dark-coloured, amorphous, highly resistant organic substance is formed from complex organic materials. This material decomposes very slowly but serves as a nutrient reservoir. This substance is called:",
     "options": [
+      "Compost",
       "Detritus",
       "Humus",
-      "Peat",
-      "Compost"
+      "Peat"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -311,12 +311,12 @@
     "id": "set_12_q23",
     "question": "In the remarkable relationship between Yucca plant and its moth pollinator, both the moth and the plant cannot complete their life cycles without each other. The moth deposits eggs in the locule of the ovary. What does the moth receive in return from the flower?",
     "options": [
-      "Nectar from nectaries",
       "Pollen as food",
+      "Nectar from nectaries",
       "Pollination (gets pollinated by the moth)",
       "Safe shelter during winter"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -325,10 +325,10 @@
     "id": "set_12_q24",
     "question": "When a population undergoes exponential growth, it produces a J-shaped curve. In this model, the equation is dN/dt = rN, and the integrated form is N_t = N_0 e^(rt). This type of growth occurs under which condition?",
     "options": [
-      "When resources are limited and population is near carrying capacity",
+      "When death rate exceeds birth rate",
       "When resources are unlimited and the organism realizes its innate potential",
-      "When immigration is greater than emigration",
-      "When death rate exceeds birth rate"
+      "When resources are limited and population is near carrying capacity",
+      "When immigration is greater than emigration"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -354,11 +354,11 @@
     "question": "Which of the following is NOT one of the five factors that disturb Hardy-Weinberg equilibrium?",
     "options": [
       "Gene migration (gene flow)",
-      "Genetic drift",
+      "Photosynthesis",
       "Mutation",
-      "Photosynthesis"
+      "Genetic drift"
     ],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -367,12 +367,12 @@
     "id": "set_12_q27",
     "question": "In sponges (Porifera), the body cavity into which water enters through ostia and exits through the osculum is called the:",
     "options": [
-      "Coelom",
-      "Spongocoel",
       "Gastrovascular cavity",
-      "Pseudocoelom"
+      "Pseudocoelom",
+      "Spongocoel",
+      "Coelom"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -381,12 +381,12 @@
     "id": "set_12_q28",
     "question": "Each muscle bundle (fascicle) is held together by a connective tissue sheath called fascia. Each muscle fibre is a syncytium (multinucleate). The plasma membrane of the muscle fibre is specifically called:",
     "options": [
-      "Sarcoplasmic reticulum",
       "Sarcolemma",
+      "Sarcoplasmic reticulum",
       "Myofibril",
       "Fascicle"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -395,12 +395,12 @@
     "id": "set_12_q29",
     "question": "The composition of normal human urine includes its characteristic light yellow colour, watery nature, slight acidity (pH 6.0), and a specific amount of urea excreted per day. What is the average amount of urea excreted by a healthy adult per day?",
     "options": [
-      "5–10 g/day",
       "10–15 g/day",
       "25–30 g/day",
+      "5–10 g/day",
       "50–60 g/day"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -409,12 +409,12 @@
     "id": "set_12_q30",
     "question": "Ringworm (a common fungal infection) is caused by which genera of fungi?",
     "options": [
-      "Aspergillus, Penicillium, Candida",
-      "Microsporum, Trichophyton, Epidermophyton",
       "Rhizopus, Mucor, Fusarium",
-      "Alternaria, Claviceps, Ustilago"
+      "Aspergillus, Penicillium, Candida",
+      "Alternaria, Claviceps, Ustilago",
+      "Microsporum, Trichophyton, Epidermophyton"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -423,12 +423,12 @@
     "id": "set_12_q31",
     "question": "The biogas plant technology in India was developed by:",
     "options": [
-      "CSIR and DRDO",
-      "IARI (Indian Agricultural Research Institute) and KVIC (Khadi and Village Industries Commission)",
       "BARC and IIT",
-      "ICMR and AIIMS"
+      "ICMR and AIIMS",
+      "CSIR and DRDO",
+      "IARI (Indian Agricultural Research Institute) and KVIC (Khadi and Village Industries Commission)"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -437,12 +437,12 @@
     "id": "set_12_q32",
     "question": "Joseph Priestley demonstrated that plants could \"restore\" air damaged by animals. Which of the following correctly describes the sequence of his experiments?",
     "options": [
-      "Candle burns in closed jar → mint plant added → mouse survives",
-      "Mouse suffocates in open jar → candle added → air restored",
+      "Mint plant placed in jar → mouse added → both thrive due to CO₂ release",
       "Candle burns in closed jar, air \"damaged\" → mint plant added → candle burns again and mouse survives",
-      "Mint plant placed in jar → mouse added → both thrive due to CO₂ release"
+      "Candle burns in closed jar → mint plant added → mouse survives",
+      "Mouse suffocates in open jar → candle added → air restored"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"

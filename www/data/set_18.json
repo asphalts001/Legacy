@@ -3,12 +3,12 @@
     "id": "set_18_q1",
     "question": "A sigmoid (S-shaped) growth curve has three distinct phases. In the CORRECT order, these phases are:",
     "options": [
+      "Stationary → Lag → Exponential",
       "Exponential → Lag → Stationary",
       "Lag → Stationary → Exponential",
-      "Lag → Exponential (log) → Stationary",
-      "Stationary → Lag → Exponential"
+      "Lag → Exponential (log) → Stationary"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -17,12 +17,12 @@
     "id": "set_18_q2",
     "question": "In the human evolutionary timeline, the CORRECT order of hominid species from OLDEST to most RECENT is:",
     "options": [
+      "Neanderthal → Homo erectus → Homo habilis → Homo sapiens",
       "Homo sapiens → Homo erectus → Homo habilis → Australopithecus",
       "Australopithecus → Homo habilis → Homo erectus → Neanderthal → Homo sapiens",
-      "Homo habilis → Australopithecus → Homo erectus → Homo sapiens",
-      "Neanderthal → Homo erectus → Homo habilis → Homo sapiens"
+      "Homo habilis → Australopithecus → Homo erectus → Homo sapiens"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -31,12 +31,12 @@
     "id": "set_18_q3",
     "question": "The human skeletal system consists of 206 bones and a few cartilages. Cartilages are pliable due to the presence of:",
     "options": [
-      "Calcium salts",
-      "Chondroitin salts",
       "Phosphate crystals",
-      "Collagen fibres only"
+      "Collagen fibres only",
+      "Chondroitin salts",
+      "Calcium salts"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -47,10 +47,10 @@
     "options": [
       "Adaxial surface only",
       "Abaxial surface only",
-      "Both adaxial and abaxial surfaces",
-      "Only in the midrib region"
+      "Only in the midrib region",
+      "Both adaxial and abaxial surfaces"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -59,10 +59,10 @@
     "id": "set_18_q5",
     "question": "Which elements' cycling specifically involves chemosynthetic bacteria according to the syllabus?",
     "options": [
-      "Carbon and hydrogen only",
+      "Silicon and calcium",
       "Nitrogen, phosphorus, iron, and sulfur",
       "Oxygen and chlorine",
-      "Silicon and calcium"
+      "Carbon and hydrogen only"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -73,12 +73,12 @@
     "id": "set_18_q6",
     "question": "Humans have four parathyroid glands located on the back of the thyroid — one pair per thyroid lobe. PTH (parathyroid hormone) is a hypercalcemic hormone. Which of the following is NOT an action of PTH?",
     "options": [
-      "Stimulates bone resorption (dissolution/demineralisation)",
       "Stimulates renal tubule Ca2+ reabsorption",
-      "Increases Ca2+ absorption from digested food",
-      "Decreases blood Ca2+ levels"
+      "Stimulates bone resorption (dissolution/demineralisation)",
+      "Decreases blood Ca2+ levels",
+      "Increases Ca2+ absorption from digested food"
     ],
-    "correctIndex": 3,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -87,10 +87,10 @@
     "id": "set_18_q7",
     "question": "In alcoholic fermentation by yeast, pyruvic acid is first converted to acetaldehyde by the enzyme pyruvic acid decarboxylase. Then acetaldehyde is reduced to ethanol by:",
     "options": [
-      "Lactate dehydrogenase",
       "Pyruvate kinase",
+      "Citrate synthase",
       "Alcohol dehydrogenase",
-      "Citrate synthase"
+      "Lactate dehydrogenase"
     ],
     "correctIndex": 2,
     "explanation": "",
@@ -102,11 +102,11 @@
     "question": "Cyanobacteria possess membranous extensions with photosynthetic pigments. These pigment-bearing membranous extensions in cyanobacteria are called:",
     "options": [
       "Mesosomes",
-      "Chromatophores",
       "Thylakoids",
-      "Grana"
+      "Grana",
+      "Chromatophores"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -115,10 +115,10 @@
     "id": "set_18_q9",
     "question": "Panchanan Maheshwari was a distinguished botanist who made landmark contributions to plant embryology. He contributed to the NCERT Biology textbooks for Higher Secondary Schools and led the establishment of a major research centre. He died in 1966. His work on test-tube fertilisation and intra-ovarian pollination brought him international acclaim. He established the Department of Botany at which university?",
     "options": [
-      "University of Allahabad",
+      "Banaras Hindu University",
       "University of Delhi",
-      "University of Calcutta",
-      "Banaras Hindu University"
+      "University of Allahabad",
+      "University of Calcutta"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -129,12 +129,12 @@
     "id": "set_18_q10",
     "question": "Cocaine (coke/crack) interferes with which neurotransmitter system, causing euphoria and increased energy?",
     "options": [
-      "Serotonin reuptake — increases serotonin levels",
       "Dopamine transport — blocks dopamine reuptake, increasing dopamine levels in synapses",
-      "Acetylcholine breakdown — inhibits acetylcholinesterase",
-      "GABA receptors — acts as GABA agonist"
+      "GABA receptors — acts as GABA agonist",
+      "Serotonin reuptake — increases serotonin levels",
+      "Acetylcholine breakdown — inhibits acetylcholinesterase"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -144,11 +144,11 @@
     "question": "The most abundant protein in the animal world is collagen (intercellular ground substance). The most abundant protein in the entire biosphere (found in leaves) is:",
     "options": [
       "Trypsin",
+      "GLUT-4",
       "Insulin",
-      "RuBisCO",
-      "GLUT-4"
+      "RuBisCO"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -157,8 +157,8 @@
     "id": "set_18_q12",
     "question": "STATINS are blood-cholesterol-lowering agents that competitively inhibit the enzyme responsible for cholesterol synthesis. They are produced by:",
     "options": [
-      "Trichoderma polysporum",
       "Streptomyces",
+      "Trichoderma polysporum",
       "Monascus purpureus",
       "Aspergillus fumigatus"
     ],
@@ -171,12 +171,12 @@
     "id": "set_18_q13",
     "question": "T.H. Morgan worked on Drosophila melanogaster for genetics research. Which feature of Drosophila made it most suitable for genetic experiments?",
     "options": [
-      "It has very large chromosomes visible without a microscope",
-      "It is grown on a complex medium requiring 6 months per life cycle",
       "Its life cycle is only TWO WEEKS, a single mating produces large progeny, and it shows clear sex differentiation",
+      "It is grown on a complex medium requiring 6 months per life cycle",
+      "It has very large chromosomes visible without a microscope",
       "It has only 2 pairs of chromosomes making crosses simpler"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -185,12 +185,12 @@
     "id": "set_18_q14",
     "question": "The species-area relationship was first observed by Alexander von Humboldt. For a given taxonomic group in a region, the relationship between species richness (S) and area (A) follows the equation: log S = log C + Z log A. The slope Z typically falls within what range for most groups studied in smaller areas/regions?",
     "options": [
-      "0.6 to 1.2",
-      "0.01 to 0.05",
       "0.1 to 0.2",
-      "2.0 to 3.0"
+      "2.0 to 3.0",
+      "0.01 to 0.05",
+      "0.6 to 1.2"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -199,12 +199,12 @@
     "id": "set_18_q15",
     "question": "The ATP synthase complex of chloroplasts has two components. The CF₀ component acts as a proton channel, while CF₁ protrudes into the stroma. The function of CF₁ is to:",
     "options": [
+      "Split water molecules on the lumen side",
       "Pump protons from stroma to lumen against the gradient",
       "Catalyse ATP synthesis as protons flow down the gradient through CF₀",
-      "Split water molecules on the lumen side",
       "Carry electrons between PS II and PS I"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -213,12 +213,12 @@
     "id": "set_18_q16",
     "question": "Gregor Mendel conducted hybridisation experiments on garden peas during which period, and what was his FIRST major contribution to biology?",
     "options": [
-      "1900-1910; he discovered chromosomes",
       "1856-1863; he was the first to apply statistical analysis and mathematical logic to biology problems",
+      "1900-1910; he proposed the chromosomal theory of inheritance",
       "1856-1863; he discovered the chemical nature of genes",
-      "1900-1910; he proposed the chromosomal theory of inheritance"
+      "1900-1910; he discovered chromosomes"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -227,10 +227,10 @@
     "id": "set_18_q17",
     "question": "In the floral formula of family Solanaceae, the gynoecium is described as bicarpellary, syncarpous, with a superior ovary, bilocular, and with axile placentation. The correct representation of this gynoecium in floral formula is:",
     "options": [
-      "G(2) with a line below",
+      "G∞",
       "G(2) with a line above",
       "G2 free carpels",
-      "G∞"
+      "G(2) with a line below"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -241,12 +241,12 @@
     "id": "set_18_q18",
     "question": "The word \"Gymnosperm\" is derived from Greek words meaning:",
     "options": [
-      "Naked flower",
-      "Naked seed",
+      "Wind pollinated",
       "Exposed ovule",
-      "Wind pollinated"
+      "Naked seed",
+      "Naked flower"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"

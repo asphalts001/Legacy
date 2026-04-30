@@ -3,12 +3,12 @@
     "id": "set_11_q1",
     "question": "A tRNA molecule reads the codon via its ANTICODON loop and carries the amino acid at its:",
     "options": [
-      "5'-end (free phosphate end)",
       "Anticodon loop",
       "3'-end (CCA-OH, amino acid ACCEPTOR end)",
-      "D-loop"
+      "D-loop",
+      "5'-end (free phosphate end)"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -31,12 +31,12 @@
     "id": "set_11_q3",
     "question": "Cnidoblasts (cnidocytes) containing nematocysts in Coelenterata are used for all of the following EXCEPT:",
     "options": [
-      "Anchorage",
       "Defense",
+      "Digestion of food internally",
       "Prey capture",
-      "Digestion of food internally"
+      "Anchorage"
     ],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -45,12 +45,12 @@
     "id": "set_11_q4",
     "question": "Erythroblastosis foetalis is a serious condition in newborns caused by Rh incompatibility. It occurs when:",
     "options": [
-      "An Rh-positive mother carries an Rh-negative foetus in any pregnancy",
       "An Rh-negative mother, sensitised in a FIRST Rh-positive pregnancy, produces anti-Rh antibodies that attack the RBCs of a SUBSEQUENT Rh-positive foetus",
-      "The foetus has blood group O while the mother has group AB",
-      "The ABO antigens of the foetus differ from the mother in both A and B"
+      "The ABO antigens of the foetus differ from the mother in both A and B",
+      "An Rh-positive mother carries an Rh-negative foetus in any pregnancy",
+      "The foetus has blood group O while the mother has group AB"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -61,8 +61,8 @@
     "options": [
       "Males with XXY karyotype, gynecomastia, sterile",
       "Females, sterile with rudimentary ovaries, lacking secondary sexual characters",
-      "Males with only one X chromosome, fertile",
-      "Females with an extra chromosome 21"
+      "Females with an extra chromosome 21",
+      "Males with only one X chromosome, fertile"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -73,12 +73,12 @@
     "id": "set_11_q6",
     "question": "In eukaryotes, THREE different RNA polymerases transcribe different RNA types. Which RNA polymerase transcribes mRNA precursor (hnRNA)?",
     "options": [
-      "RNA Polymerase I (transcribes 28S, 18S, 5.8S rRNAs)",
-      "RNA Polymerase II (transcribes hnRNA → mRNA)",
       "RNA Polymerase III (transcribes tRNA, 5S rRNA, snRNAs)",
-      "A single RNA polymerase for all RNA types (prokaryotic pattern)"
+      "A single RNA polymerase for all RNA types (prokaryotic pattern)",
+      "RNA Polymerase II (transcribes hnRNA → mRNA)",
+      "RNA Polymerase I (transcribes 28S, 18S, 5.8S rRNAs)"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -87,12 +87,12 @@
     "id": "set_11_q7",
     "question": "After TWO generations of replication in ¹⁴N medium (Meselson-Stahl), the DNA density distribution was:",
     "options": [
-      "All hybrid density",
-      "All light density",
       "50% hybrid (¹⁵N/¹⁴N) + 50% light (¹⁴N/¹⁴N) — proving semiconservative replication",
-      "75% heavy + 25% light"
+      "75% heavy + 25% light",
+      "All hybrid density",
+      "All light density"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -103,10 +103,10 @@
     "options": [
       "Casparian strip layer",
       "Pericycle",
-      "Starch sheath",
-      "Bundle sheath"
+      "Bundle sheath",
+      "Starch sheath"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -115,10 +115,10 @@
     "id": "set_11_q9",
     "question": "Different Bt toxin genes are specific to different insect groups. The genes cryIAc and cryIIAb control which pest in cotton, while cryIAb controls which pest in corn?",
     "options": [
-      "cryIAc/cryIIAb = corn borer; cryIAb = cotton bollworms",
-      "cryIAc/cryIIAb = cotton bollworms; cryIAb = corn borer",
       "Both control the same pest — tobacco budworm",
-      "cryIAc/cryIIAb = rice stem borer; cryIAb = cotton bollworm"
+      "cryIAc/cryIIAb = cotton bollworms; cryIAb = corn borer",
+      "cryIAc/cryIIAb = rice stem borer; cryIAb = cotton bollworm",
+      "cryIAc/cryIIAb = corn borer; cryIAb = cotton bollworms"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -129,10 +129,10 @@
     "id": "set_11_q10",
     "question": "The conducting part of the human respiratory system extends from the external nostrils to the terminal bronchioles. The EXCHANGE (respiratory) part consists of:",
     "options": [
+      "Secondary and tertiary bronchi",
       "Trachea and primary bronchi",
-      "Larynx and pharynx",
       "Alveolar ducts and alveoli",
-      "Secondary and tertiary bronchi"
+      "Larynx and pharynx"
     ],
     "correctIndex": 2,
     "explanation": "",
@@ -143,12 +143,12 @@
     "id": "set_11_q11",
     "question": "Solanum tuberosum (potato) and Solanum melongena (brinjal) are placed in the same genus Solanum. This grouping indicates that these two organisms:",
     "options": [
-      "Are the same species",
-      "Belong to different families",
       "Share more common characters than species from different genera",
-      "Have identical morphological features in all respects"
+      "Are the same species",
+      "Have identical morphological features in all respects",
+      "Belong to different families"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -159,8 +159,8 @@
     "options": [
       "Urea and ammonia",
       "Sterols, hydrocarbons, and waxes",
-      "Bile pigments and cholesterol",
-      "CO2 and water vapour"
+      "CO2 and water vapour",
+      "Bile pigments and cholesterol"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -171,12 +171,12 @@
     "id": "set_11_q13",
     "question": "In gymnosperms, needle-like leaves of conifers are an adaptation to reduce water loss. Which structural features of these leaves serve this purpose?",
     "options": [
+      "Thin cuticle and raised stomata",
       "Large surface area and open stomata",
       "Thick cuticle and sunken stomata",
-      "Thin cuticle and raised stomata",
       "Waxy coating and large lenticels"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -185,12 +185,12 @@
     "id": "set_11_q14",
     "question": "In the sarcomere, the dark band contains myosin and is called the A-band (anisotropic). The light band contains actin and is called the I-band (isotropic). The central region of the A-band that is NOT overlapped by thin filaments in a resting muscle is called the:",
     "options": [
+      "H zone",
       "Z line",
       "M line",
-      "H zone",
       "Sarcomere"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -199,12 +199,12 @@
     "id": "set_11_q15",
     "question": "Decomposition rates are influenced by the chemical composition of detritus and environmental conditions. Which of the following detritus types would decompose FASTEST?",
     "options": [
-      "Detritus rich in lignin and chitin",
       "Detritus rich in nitrogen and soluble sugars, warm and moist conditions",
+      "Detritus rich in lignin and chitin",
       "Detritus in cold and anaerobic conditions",
       "Detritus from conifer needles with thick wax coatings"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -213,10 +213,10 @@
     "id": "set_11_q16",
     "question": "The interaction between Balanus and Chthamalus in intertidal zones, studied by Connell, demonstrated competitive exclusion. Balanus (barnacle) dominates and excludes Chthamalus from its zone when both are present. This is evidence for:",
     "options": [
-      "Predation controlling Chthamalus populations",
-      "Competitive exclusion — Balanus is the competitively superior species in that zone",
       "Mutualism between the two barnacle species",
-      "Commensalism where Balanus benefits without affecting Chthamalus"
+      "Competitive exclusion — Balanus is the competitively superior species in that zone",
+      "Commensalism where Balanus benefits without affecting Chthamalus",
+      "Predation controlling Chthamalus populations"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -227,12 +227,12 @@
     "id": "set_11_q17",
     "question": "For the oxidation of tripalmitin (a fat), the RQ is approximately 0.7. This is LOWER than 1 because:",
     "options": [
-      "Fats contain more oxygen relative to carbon, requiring less O₂",
       "Fats are more reduced (less oxygen per carbon) than carbohydrates, requiring more O₂ to oxidise, so CO₂/O₂ ratio < 1",
-      "Fats are completely oxidised in glycolysis, bypassing the Krebs cycle",
-      "Fats produce less CO₂ because they have fewer carbon atoms"
+      "Fats produce less CO₂ because they have fewer carbon atoms",
+      "Fats contain more oxygen relative to carbon, requiring less O₂",
+      "Fats are completely oxidised in glycolysis, bypassing the Krebs cycle"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -241,12 +241,12 @@
     "id": "set_11_q18",
     "question": "The nucleoside formed when adenine is attached to a sugar is called adenosine. When a phosphate group is esterified to the sugar of a nucleoside, it becomes a nucleotide. The nucleotide formed from guanosine with a phosphate group is called:",
     "options": [
-      "Guanylic acid",
       "Guanosine",
-      "Cytidylic acid",
-      "Thymidylic acid"
+      "Thymidylic acid",
+      "Guanylic acid",
+      "Cytidylic acid"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -255,12 +255,12 @@
     "id": "set_11_q19",
     "question": "Transfer of pollen grains from the anther to the stigma of a flower on a DIFFERENT plant of the same species is called:",
     "options": [
-      "Autogamy",
       "Geitonogamy",
-      "Xenogamy",
-      "Cleistogamy"
+      "Autogamy",
+      "Cleistogamy",
+      "Xenogamy"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -269,10 +269,10 @@
     "id": "set_11_q20",
     "question": "The cell body of a neuron contains organelles, cytoplasm, and characteristic granules called Nissl's granules. The short fibres that branch repeatedly from the cell body and transmit impulses TOWARDS the cell body are called:",
     "options": [
-      "Axons",
+      "Schwann cells",
       "Dendrites",
       "Synaptic knobs",
-      "Schwann cells"
+      "Axons"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -283,12 +283,12 @@
     "id": "set_11_q21",
     "question": "Estrogen is synthesised and secreted by growing ovarian follicles. After ovulation, the ruptured Graafian follicle transforms into a structure that secretes mainly progesterone. This structure is the:",
     "options": [
-      "Primary follicle",
       "Corpus luteum",
-      "Zona pellucida",
-      "Secondary follicle"
+      "Secondary follicle",
+      "Primary follicle",
+      "Zona pellucida"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -297,12 +297,12 @@
     "id": "set_11_q22",
     "question": "Cancer cells differ from normal cells in that they have LOST:",
     "options": [
-      "The ability to perform mitosis",
       "Contact inhibition — the property that normally stops cells from proliferating when they contact other cells",
       "Their nucleus and organelles",
+      "The ability to perform mitosis",
       "The ability to metabolise glucose"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -311,12 +311,12 @@
     "id": "set_11_q23",
     "question": "The arrangement of sepals or petals in a bud in relation to other members of the same whorl is called aestivation. In which type of aestivation does one margin of each member overlap the next one in one direction only?",
     "options": [
-      "Valvate",
-      "Imbricate",
       "Twisted",
-      "Vexillary"
+      "Valvate",
+      "Vexillary",
+      "Imbricate"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -325,9 +325,9 @@
     "id": "set_11_q24",
     "question": "The slime mould plasmodium spreads over which type of substrate?",
     "options": [
-      "Living plant leaf surfaces only",
-      "Decaying twigs and leaves, engulfing organic material",
       "Water surfaces in stagnant ponds",
+      "Decaying twigs and leaves, engulfing organic material",
+      "Living plant leaf surfaces only",
       "Mineral-rich soil and rock surfaces"
     ],
     "correctIndex": 1,
@@ -339,12 +339,12 @@
     "id": "set_11_q25",
     "question": "In terms of CO₂ concentration and photosynthesis, which of the following is CORRECT?",
     "options": [
+      "Both C3 and C4 saturate at the same CO₂ concentration",
       "C4 plants saturate at CO₂ levels above 450 µL/L, while C3 saturate at ~360 µL/L",
       "C4 plants saturate at ~360 µL/L, while C3 plants can respond to CO₂ concentrations above 450 µL/L",
-      "Both C3 and C4 saturate at the same CO₂ concentration",
       "Neither C3 nor C4 responds to increased CO₂ at high light intensity"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -353,10 +353,10 @@
     "id": "set_11_q26",
     "question": "For very large areas like continents, the Z value (slope of species-area relationship) is steeper. For frugivorous birds and mammals in tropical forests, the Z value is approximately:",
     "options": [
-      "0.1 to 0.2",
+      "2.5",
       "0.5",
       "1.15",
-      "2.5"
+      "0.1 to 0.2"
     ],
     "correctIndex": 2,
     "explanation": "",
@@ -367,12 +367,12 @@
     "id": "set_11_q27",
     "question": "Cyclosporin A is an immunosuppressive agent used in organ transplant patients. It is produced by:",
     "options": [
-      "Monascus purpureus",
-      "Trichoderma polysporum",
       "Streptococcus",
-      "Aspergillus niger"
+      "Aspergillus niger",
+      "Monascus purpureus",
+      "Trichoderma polysporum"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -381,10 +381,10 @@
     "id": "set_11_q28",
     "question": "The \"Bakanae\" (foolish seedling) disease of rice is caused by the fungus Gibberella fujikuroi. The scientist who demonstrated that symptoms could be produced by sterile fungal filtrates was:",
     "options": [
-      "F.W. Went",
-      "E. Kurosawa (1926)",
       "F. Skoog",
-      "H.H. Cousins"
+      "E. Kurosawa (1926)",
+      "H.H. Cousins",
+      "F.W. Went"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -395,12 +395,12 @@
     "id": "set_11_q29",
     "question": "Lamarck's theory of evolution proposed use/disuse of organs as the mechanism. His classic example was:",
     "options": [
-      "Dark moths surviving after industrialisation",
-      "Giraffes elongating their necks by stretching to reach tall trees, and passing this acquired trait to offspring",
       "Darwin's finches changing beak shapes across generations",
-      "Antibiotic resistance in bacteria"
+      "Antibiotic resistance in bacteria",
+      "Dark moths surviving after industrialisation",
+      "Giraffes elongating their necks by stretching to reach tall trees, and passing this acquired trait to offspring"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -410,11 +410,11 @@
     "question": "Mitochondria contain their own genetic material and ribosomes. The ribosomes present in the mitochondrial matrix are of which type?",
     "options": [
       "80S (cytoplasmic type)",
-      "70S (prokaryotic type)",
+      "40S (small subunit only)",
       "60S (unique to mitochondria)",
-      "40S (small subunit only)"
+      "70S (prokaryotic type)"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -423,12 +423,12 @@
     "id": "set_11_q31",
     "question": "The organ system responsible for excretion and osmoregulation in Annelida is:",
     "options": [
-      "Flame cells",
       "Malpighian tubules",
       "Nephridia",
-      "Green glands"
+      "Green glands",
+      "Flame cells"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -437,12 +437,12 @@
     "id": "set_11_q32",
     "question": "After telophase I and cytokinesis, the two cells formed are called a dyad. The brief stage between meiosis I and meiosis II, during which NO DNA replication occurs, is called:",
     "options": [
-      "G1 phase",
       "G2 phase",
       "Interkinesis",
+      "G1 phase",
       "S phase"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -451,12 +451,12 @@
     "id": "set_11_q33",
     "question": "In co-dominance (IA IB genotype), which phenotype is expressed?",
     "options": [
-      "Only blood group A (IA dominant)",
-      "Only blood group B (IB dominant)",
       "Blood group AB — both IA and IB express their own sugar antigens simultaneously on RBC surfaces",
+      "Only blood group B (IB dominant)",
+      "Only blood group A (IA dominant)",
       "Blood group O — both cancel each other out"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -465,12 +465,12 @@
     "id": "set_11_q34",
     "question": "A tertiary follicle develops into a mature Graafian follicle. The primary oocyte within the tertiary follicle completes the first meiotic division producing a large haploid secondary oocyte and a small structure. What is this small structure called?",
     "options": [
-      "Second polar body",
       "First polar body",
       "Ootid",
+      "Second polar body",
       "Zona pellucida"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"

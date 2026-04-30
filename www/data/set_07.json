@@ -3,9 +3,9 @@
     "id": "set_07_q1",
     "question": "After reaching adulthood, animals of Kingdom Animalia grow to what extent?",
     "options": [
-      "They continue growing indefinitely throughout their life",
-      "They grow into adults with a definite shape and size",
       "They grow in spurts determined by seasonal factors",
+      "They grow into adults with a definite shape and size",
+      "They continue growing indefinitely throughout their life",
       "Their growth depends entirely on food availability"
     ],
     "correctIndex": 1,
@@ -17,10 +17,10 @@
     "id": "set_07_q2",
     "question": "During the cardiac cycle, the closure of the TRICUSPID and BICUSPID (AV) valves produces the FIRST heart sound (\"lub\"). These valves close when:",
     "options": [
-      "Atria contract (atrial systole)",
-      "Ventricular pressure RISES during ventricular systole, exceeding atrial pressure",
       "The semilunar valves open",
-      "The ventricles relax during diastole"
+      "Ventricular pressure RISES during ventricular systole, exceeding atrial pressure",
+      "The ventricles relax during diastole",
+      "Atria contract (atrial systole)"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -31,12 +31,12 @@
     "id": "set_07_q3",
     "question": "GIFT (Gamete Intra Fallopian Transfer) is a technique where a donor ovum is transferred to the fallopian tube of another female who cannot produce ova but can provide the environment for fertilisation. ICSI (Intra Cytoplasmic Sperm Injection) involves:",
     "options": [
-      "Injecting sperms into the vagina artificially",
       "Injecting a single sperm directly into the ovum in the laboratory",
-      "Introducing semen into the uterus (IUI)",
-      "Transferring gametes to the fallopian tube"
+      "Injecting sperms into the vagina artificially",
+      "Transferring gametes to the fallopian tube",
+      "Introducing semen into the uterus (IUI)"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -47,8 +47,8 @@
     "options": [
       "A measure of mutation rate in that region",
       "A measure of the distance between genes on a chromosome, enabling construction of genetic maps",
-      "A way to determine the dominance relationship between alleles",
-      "Evidence for the chromosomal theory of inheritance"
+      "Evidence for the chromosomal theory of inheritance",
+      "A way to determine the dominance relationship between alleles"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -60,11 +60,11 @@
     "question": "Chondrichthyes (cartilaginous fishes) do NOT have an air bladder. The consequence of this is:",
     "options": [
       "They cannot regulate buoyancy at all",
-      "They must swim constantly to avoid sinking",
       "They rely on their scales for buoyancy",
-      "They float passively using stored fat"
+      "They float passively using stored fat",
+      "They must swim constantly to avoid sinking"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -73,10 +73,10 @@
     "id": "set_07_q6",
     "question": "In the blue-white colony selection system for identifying recombinant clones, a foreign DNA insert is placed within the β-galactosidase coding sequence (insertional inactivation). When a chromogenic substrate is provided, which of the following outcomes correctly identifies recombinant colonies?",
     "options": [
-      "Blue colonies = recombinants (β-galactosidase inactivated, no colour)",
+      "There is no colour difference between recombinant and non-recombinant colonies",
       "Colourless colonies = recombinants (β-galactosidase inactivated, cannot cleave substrate)",
-      "Blue colonies = non-recombinants; all colourless = recombinants or non-recombinants equally",
-      "There is no colour difference between recombinant and non-recombinant colonies"
+      "Blue colonies = recombinants (β-galactosidase inactivated, no colour)",
+      "Blue colonies = non-recombinants; all colourless = recombinants or non-recombinants equally"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -87,10 +87,10 @@
     "id": "set_07_q7",
     "question": "The adrenal cortex is divided into three zones. Identify the CORRECT sequence from outer to inner zone:",
     "options": [
-      "Zona fasciculata → Zona glomerulosa → Zona reticularis",
+      "Zona glomerulosa → Zona reticularis → Zona fasciculata",
       "Zona reticularis → Zona fasciculata → Zona glomerulosa",
       "Zona glomerulosa → Zona fasciculata → Zona reticularis",
-      "Zona glomerulosa → Zona reticularis → Zona fasciculata"
+      "Zona fasciculata → Zona glomerulosa → Zona reticularis"
     ],
     "correctIndex": 2,
     "explanation": "",
@@ -101,12 +101,12 @@
     "id": "set_07_q8",
     "question": "The biomass pyramid is inverted in aquatic ecosystems. This means that in aquatic systems, the biomass of producers (phytoplankton) is LESS than that of primary consumers (zooplankton/fish). This inverted pyramid is possible because:",
     "options": [
+      "Zooplankton synthesise their own food in aquatic systems",
       "Phytoplankton have a very high turnover rate, so even though biomass at any instant is low, productivity is high",
       "Fish do not depend on phytoplankton for food in aquatic systems",
-      "The 10% law does not apply in aquatic systems",
-      "Zooplankton synthesise their own food in aquatic systems"
+      "The 10% law does not apply in aquatic systems"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -117,8 +117,8 @@
     "options": [
       "The base of natural logarithm",
       "The growth rate or elongation per unit time",
-      "The final size",
-      "The relative growth rate efficiency index"
+      "The relative growth rate efficiency index",
+      "The final size"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -129,12 +129,12 @@
     "id": "set_07_q10",
     "question": "Monarch butterfly is distasteful to its predators because of a toxic chemical accumulated in its body as a caterpillar. This chemical comes from which source?",
     "options": [
-      "The butterfly synthesises the toxin in its salivary glands",
-      "A specific weed that the caterpillar feeds on",
       "Symbiotic bacteria in the caterpillar's gut",
-      "The milkweed toxin synthesised de novo by the caterpillar"
+      "The milkweed toxin synthesised de novo by the caterpillar",
+      "The butterfly synthesises the toxin in its salivary glands",
+      "A specific weed that the caterpillar feeds on"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -143,10 +143,10 @@
     "id": "set_07_q11",
     "question": "In the female frog's reproductive system, the ovaries have no functional connection with the kidneys. The pair of oviducts arising from the ovaries open:",
     "options": [
-      "Into the ureters",
+      "Into the urinary bladder",
       "Into the kidneys",
       "Into the cloaca separately",
-      "Into the urinary bladder"
+      "Into the ureters"
     ],
     "correctIndex": 2,
     "explanation": "",
@@ -157,10 +157,10 @@
     "id": "set_07_q12",
     "question": "In frogs, there is a special venous connection between the liver and the intestine. This is called the hepatic portal system. A similar special venous connection exists between the kidney and lower body parts. This is called the:",
     "options": [
+      "Coronary venous system",
       "Hepatic portal system",
-      "Pulmonary venous system",
       "Renal portal system",
-      "Coronary venous system"
+      "Pulmonary venous system"
     ],
     "correctIndex": 2,
     "explanation": "",
@@ -171,12 +171,12 @@
     "id": "set_07_q13",
     "question": "The full therapeutic potential of penicillin was established by:",
     "options": [
+      "Waksman and Schatz",
       "Fleming alone",
       "Ernest Chain and Howard Florey — who shared the Nobel Prize 1945 with Fleming",
-      "Waksman and Schatz",
       "Dubos and Avery"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -186,11 +186,11 @@
     "question": "Vital Capacity (VC) is defined as the MAXIMUM volume of air a person can breathe in after a forced expiration (or out after forced inspiration). VC equals which combination of volumes?",
     "options": [
       "TV + IRV",
-      "ERV + RV",
       "ERV + TV + IRV",
+      "ERV + RV",
       "RV + ERV + TV + IRV"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -199,12 +199,12 @@
     "id": "set_07_q15",
     "question": "Haem is a prosthetic group (organic, tightly bound co-factor) found in which of the following enzymes that catalyse the breakdown of hydrogen peroxide (H₂O₂) into water and oxygen?",
     "options": [
-      "Trypsin and lipase",
-      "Peroxidase and catalase",
+      "Succinic dehydrogenase and malate dehydrogenase",
       "Carbonic anhydrase and trypsin",
-      "Succinic dehydrogenase and malate dehydrogenase"
+      "Trypsin and lipase",
+      "Peroxidase and catalase"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -213,12 +213,12 @@
     "id": "set_07_q16",
     "question": "Guard cells in grasses have a distinct shape that differs from the typical bean-shaped guard cells found in other plants. In grasses, guard cells are described as:",
     "options": [
-      "Circular",
       "Kidney-shaped",
-      "Dumb-bell shaped",
-      "Elongated cylindrical"
+      "Circular",
+      "Elongated cylindrical",
+      "Dumb-bell shaped"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -227,10 +227,10 @@
     "id": "set_07_q17",
     "question": "In industrial England, the proportion of DARK-WINGED (melanised) moths increased dramatically AFTER industrialisation. The correct explanation is:",
     "options": [
-      "Smoke caused mutations in white moths turning them dark",
-      "Before industrialisation: trees covered with white lichens (lichens are pollution indicators — absent in polluted areas), so white moths survived and dark were eaten by predators; after: tree trunks became dark due to soot, white moths became conspicuous and dark moths survived (natural selection)",
       "Dark moths are always more fit regardless of environment",
-      "Lichens grew faster after industrialisation, favouring dark moths"
+      "Before industrialisation: trees covered with white lichens (lichens are pollution indicators — absent in polluted areas), so white moths survived and dark were eaten by predators; after: tree trunks became dark due to soot, white moths became conspicuous and dark moths survived (natural selection)",
+      "Lichens grew faster after industrialisation, favouring dark moths",
+      "Smoke caused mutations in white moths turning them dark"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -241,12 +241,12 @@
     "id": "set_07_q18",
     "question": "The limbic system includes the inner parts of the cerebral hemispheres and deep structures such as the amygdala and hippocampus. Together with the hypothalamus, the limbic system regulates which of the following functions?",
     "options": [
-      "Regulation of body temperature and posture",
-      "Sexual behaviour, emotional reactions (excitement, pleasure, rage, fear), and motivation",
+      "Control of respiratory rate and cardiovascular reflexes",
       "Coordination of voluntary movements",
-      "Control of respiratory rate and cardiovascular reflexes"
+      "Regulation of body temperature and posture",
+      "Sexual behaviour, emotional reactions (excitement, pleasure, rage, fear), and motivation"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -255,12 +255,12 @@
     "id": "set_07_q19",
     "question": "Chlorophyll a is the CHIEF pigment for photosynthesis. The absorption spectrum of chlorophyll a shows maximum absorption at:",
     "options": [
-      "Green and yellow wavelengths",
-      "Blue and red wavelengths",
+      "Infrared and blue-green wavelengths",
       "Orange and violet wavelengths",
-      "Infrared and blue-green wavelengths"
+      "Green and yellow wavelengths",
+      "Blue and red wavelengths"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -269,12 +269,12 @@
     "id": "set_07_q20",
     "question": "Approximately what percentage of the human genome actually CODES for proteins?",
     "options": [
-      "50%",
       "25%",
       "Less than 2%",
+      "50%",
       "10%"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -283,12 +283,12 @@
     "id": "set_07_q21",
     "question": "Mitosis is called equational division because the chromosome number remains the same in parent and progeny cells. In which stage of mitosis do centromeres split and sister chromatids begin moving to opposite poles?",
     "options": [
-      "Prophase",
-      "Metaphase",
       "Anaphase",
-      "Telophase"
+      "Prophase",
+      "Telophase",
+      "Metaphase"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -298,11 +298,11 @@
     "question": "The evolutionary significance of heterospory in pteridophytes is that the female gametophyte is retained on the parent sporophyte and the zygote develops into an embryo within it. This is considered the precursor to which important evolutionary step?",
     "options": [
       "Development of vascular tissue",
-      "Seed habit",
+      "Origin of double fertilisation",
       "Development of flowers",
-      "Origin of double fertilisation"
+      "Seed habit"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -311,10 +311,10 @@
     "id": "set_07_q23",
     "question": "An antibody molecule (immunoglobulin) has the structure H₂L₂. This means:",
     "options": [
-      "2 heavy chains + 2 long chains",
+      "4 identical polypeptide chains of equal length",
       "2 heavy chains (longer) + 2 light chains (shorter/smaller)",
       "1 heavy chain + 2 light chains",
-      "4 identical polypeptide chains of equal length"
+      "2 heavy chains + 2 long chains"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -325,12 +325,12 @@
     "id": "set_07_q24",
     "question": "Large-scale production of recombinant proteins requires bioreactors. The most common type is the stirred-tank bioreactor. What is the typical volume range of large-scale bioreactors used for industrial production?",
     "options": [
-      "1–10 litres",
+      "5000–10000 litres",
       "10–50 litres",
       "100–1000 litres",
-      "5000–10000 litres"
+      "1–10 litres"
     ],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -339,10 +339,10 @@
     "id": "set_07_q25",
     "question": "Thalassemia differs from sickle-cell anaemia in that thalassemia is a ________ defect, whereas sickle-cell anaemia is a ________ defect.",
     "options": [
-      "Qualitative (incorrect protein function); Quantitative (too little protein)",
+      "X-linked; autosomal",
       "Quantitative (too few globin chains produced); Qualitative (incorrect globin chain function)",
       "Single gene; multigenic",
-      "X-linked; autosomal"
+      "Qualitative (incorrect protein function); Quantitative (too little protein)"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -355,8 +355,8 @@
     "options": [
       "Adult body",
       "Larval tail only",
-      "Head region of adult",
-      "Throughout life from head to tail"
+      "Throughout life from head to tail",
+      "Head region of adult"
     ],
     "correctIndex": 1,
     "explanation": "",
@@ -367,12 +367,12 @@
     "id": "set_07_q27",
     "question": "When blood pressure increases, the atrial wall of the heart releases a hormone that causes vasodilation and thereby decreases blood pressure. This hormone also checks the renin-angiotensin mechanism. This hormone is:",
     "options": [
-      "Aldosterone",
       "ADH (vasopressin)",
       "Atrial Natriuretic Factor (ANF)",
-      "Erythropoietin"
+      "Erythropoietin",
+      "Aldosterone"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -381,10 +381,10 @@
     "id": "set_07_q28",
     "question": "The genetic code is described as \"nearly universal.\" Exceptions are found in:",
     "options": [
+      "The nuclear genome of all mammals",
       "All plant chloroplasts",
-      "All bacterial genomes",
       "Mitochondrial codons and some protozoans",
-      "The nuclear genome of all mammals"
+      "All bacterial genomes"
     ],
     "correctIndex": 2,
     "explanation": "",
@@ -395,12 +395,12 @@
     "id": "set_07_q29",
     "question": "Plastids are classified based on the pigments they contain. Among leucoplasts, the type that specifically stores starch (e.g., in potato) is called:",
     "options": [
+      "Amyloplast",
       "Elaioplast",
       "Aleuroplast",
-      "Amyloplast",
       "Chromoplast"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -409,12 +409,12 @@
     "id": "set_07_q30",
     "question": "Tissue culture allows the regeneration of a whole plant from any plant cell or explant — a property called totipotency. When thousands of genetically identical plants are produced in short durations through tissue culture, this process is called micro-propagation. Plants produced this way are genetically identical to the original and are called:",
     "options": [
-      "Hybrids",
-      "Somatic hybrids",
       "Somaclones",
-      "Transgenic plants"
+      "Transgenic plants",
+      "Hybrids",
+      "Somatic hybrids"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -423,12 +423,12 @@
     "id": "set_07_q31",
     "question": "The acrosome is a cap-like structure covering the anterior part of the elongated haploid nucleus in the sperm head. It is filled with enzymes necessary for fertilisation of the ovum. The middle piece of the sperm contains numerous mitochondria that provide energy for:",
     "options": [
+      "Capacitation of the sperm",
       "DNA replication in the sperm",
-      "Tail movement (sperm motility) for fertilisation",
       "Acrosomal enzyme synthesis",
-      "Capacitation of the sperm"
+      "Tail movement (sperm motility) for fertilisation"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -438,11 +438,11 @@
     "question": "The scientific name \"Mangifera indica Linn.\" contains three elements. What does \"Linn.\" specifically represent in this nomenclature?",
     "options": [
       "The species epithet abbreviated",
+      "The locality where the organism was first found",
       "The abbreviated name of the author who described the species",
-      "The family name of the organism",
-      "The locality where the organism was first found"
+      "The family name of the organism"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -451,12 +451,12 @@
     "id": "set_07_q33",
     "question": "Among reptiles, which group is exceptional in having a four-chambered heart, while all other reptiles typically have a three-chambered heart?",
     "options": [
-      "Snakes",
-      "Lizards",
       "Crocodiles",
-      "Turtles"
+      "Lizards",
+      "Turtles",
+      "Snakes"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -465,12 +465,12 @@
     "id": "set_07_q34",
     "question": "Cleistogamous flowers are flowers that never open. In such flowers, the anthers dehisce within the closed bud, and pollen grains contact the stigma within the same bud, ensuring pollination. Cleistogamous flowers are:",
     "options": [
-      "Always cross-pollinated",
       "Invariably autogamous with no chance of cross-pollen landing",
       "Pollinated by insects that enter the closed bud",
-      "Wind-pollinated exclusively"
+      "Wind-pollinated exclusively",
+      "Always cross-pollinated"
     ],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -480,11 +480,11 @@
     "question": "Joint types include fibrous, cartilaginous, and synovial joints. Which of the following is a correctly matched example of a synovial joint type?",
     "options": [
       "Skull sutures — ball and socket joint",
-      "Between vertebrae — hinge joint",
       "Between atlas and axis vertebra — pivot joint",
+      "Between vertebrae — hinge joint",
       "Between carpal bones — saddle joint"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -493,9 +493,9 @@
     "id": "set_07_q36",
     "question": "Glycolysis is also called the EMP pathway. \"EMP\" stands for the names of three scientists. Which set is CORRECT?",
     "options": [
-      "Engelmann, Meyerhof, Parnas",
-      "Embden, Meyerhof, Parnas",
       "Embden, Miller, Priestley",
+      "Embden, Meyerhof, Parnas",
+      "Engelmann, Meyerhof, Parnas",
       "Engelmann, Morgan, Parnas"
     ],
     "correctIndex": 1,
@@ -507,12 +507,12 @@
     "id": "set_07_q37",
     "question": "India has established a network of protected areas for in situ conservation. How many biosphere reserves, national parks, and wildlife sanctuaries does India have respectively?",
     "options": [
+      "10 biosphere reserves, 70 national parks, 350 sanctuaries",
       "8 biosphere reserves, 50 national parks, 200 sanctuaries",
       "14 biosphere reserves, 90 national parks, 448 wildlife sanctuaries",
-      "20 biosphere reserves, 120 national parks, 600 sanctuaries",
-      "10 biosphere reserves, 70 national parks, 350 sanctuaries"
+      "20 biosphere reserves, 120 national parks, 600 sanctuaries"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -521,12 +521,12 @@
     "id": "set_07_q38",
     "question": "Gamow proposed a triplet codon. The mathematical basis for triplet code (rather than doublet or singlet) is:",
     "options": [
-      "4¹ = 4 codons for 20 amino acids (insufficient)",
-      "4² = 16 codons for 20 amino acids (insufficient)",
+      "4⁴ = 256 codons (unnecessarily redundant)",
       "4³ = 64 codons — more than enough for 20 amino acids",
-      "4⁴ = 256 codons (unnecessarily redundant)"
+      "4¹ = 4 codons for 20 amino acids (insufficient)",
+      "4² = 16 codons for 20 amino acids (insufficient)"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
@@ -536,11 +536,11 @@
     "question": "In vexillary (papilionaceous) aestivation, there are five petals with a specific overlapping pattern. The two smallest anterior petals are called:",
     "options": [
       "Standard and wings",
-      "Keel petals",
       "Vexillum",
-      "Lateral wings"
+      "Lateral wings",
+      "Keel petals"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "",
     "tags": [],
     "difficulty": "medium"
