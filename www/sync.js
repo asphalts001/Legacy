@@ -1,4 +1,11 @@
-// sync.js – robust version
+// Must be defined at the TOP of sync.js, before anything else,
+// before DOMContentLoaded, before deviceready — Cordova calls this
+// very early on resume from the system browser.
+window.handleOpenURL = function(url) {
+  console.log('handleOpenURL fired:', url);  // add this to confirm it's firing
+  
+}
+
 // Handles authentication (Google, email) and cloud sync for session data.
 // Uses Supabase as backend and Cordova InAppBrowser for OAuth redirects.
 
