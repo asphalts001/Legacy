@@ -88,6 +88,10 @@ function setSessions(sessions) {
 
 // ----------------------------------------------------------------------
 // Google Sign-In (opens system browser because Google blocks embedded WebViews)
+// FIX 1: Removed skipBrowserRedirect:true — it was preventing the redirect
+//         back to the app after Google authorization completed.
+// FIX 2: Changed window.open target from '_blank' (embedded webview, blocked
+//         by Google) to '_system' (device's real browser, works correctly).
 // ----------------------------------------------------------------------
 export async function signInWithGoogle() {
   showStatus('Opening Google sign-in...');
@@ -96,7 +100,8 @@ export async function signInWithGoogle() {
     provider: 'google',
     options: {
       redirectTo: 'com.asphalts.legacy://login'
-      // skipBrowserRedirect removed
+      // skipBrowserRedirect removed — it was telling Supabase to NOT redirect
+      // back to the app after auth, causing the flow to stall on account picker.
     }
   });
 
@@ -105,21 +110,14 @@ export async function signInWithGoogle() {
     return;
   }
 
+  // _system opens in the device's default browser (required for Google OAuth).
+  // '_blank' would open an embedded webview which Google blocks for OAuth.
   if (window.cordova) {
     cordova.InAppBrowser.open(data.url, '_system', '');
   } else {
     window.open(data.url, '_system');
   }
 }
-
-
-  // _system opens in the device's default browser (required for Google OAuth)
-  if (window.cordova) {
-    cordova.InAppBrowser.open(data.url, '_system', '');
-  } else {
-    window.open(data.url, '_blank');
-  }
-
 
 // ----------------------------------------------------------------------
 // Email / Password Sign-In
