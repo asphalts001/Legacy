@@ -95,8 +95,8 @@ export async function signInWithGoogle() {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: 'com.asphalts.legacy://login',
-      skipBrowserRedirect: true
+      redirectTo: 'com.asphalts.legacy://login'
+      // skipBrowserRedirect removed
     }
   });
 
@@ -105,13 +105,21 @@ export async function signInWithGoogle() {
     return;
   }
 
+  if (window.cordova) {
+    cordova.InAppBrowser.open(data.url, '_system', '');
+  } else {
+    window.open(data.url, '_system');
+  }
+}
+
+
   // _system opens in the device's default browser (required for Google OAuth)
   if (window.cordova) {
     cordova.InAppBrowser.open(data.url, '_system', '');
   } else {
     window.open(data.url, '_blank');
   }
-}
+
 
 // ----------------------------------------------------------------------
 // Email / Password Sign-In
