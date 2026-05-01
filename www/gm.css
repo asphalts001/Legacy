@@ -1,0 +1,430 @@
+/* ═══════════════════════════════════════════════════════════════════
+   gm.css  —  Germania Quiz Interface  ✦ Royal Chemistry Edition ✦
+   Mobile-first. No sidebar. Works with exact HTML structure.
+   Requires theme.css tokens.
+   ═══════════════════════════════════════════════════════════════════ */
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════════════════════════════ */
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--navy-light);
+  border-bottom: 1.5px solid var(--gold-deep);
+  box-shadow: 0 2px 16px var(--shadow);
+}
+
+#header-label {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+}
+
+#header-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+#header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+#timer {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 2px;
+  font-variant-numeric: tabular-nums;
+}
+#timer.urgent { color: var(--crimson); }
+
+#attempted-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+#submit-btn {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: var(--gold-light);
+  border: none;
+  border-radius: 6px;
+  padding: 7px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+#submit-btn:hover { background: var(--gold); }
+
+/* Results stats (injected by JS after submit) */
+#results-stats {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.stat-box { text-align: center; }
+.stat-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--gold-light);
+}
+.stat-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  margin-top: 3px;
+}
+#marks-box {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 5px 12px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   LAYOUT — sidebar hidden, main is the whole page
+   ═══════════════════════════════════════════════════════════════════ */
+#layout {
+  display: flex;
+  flex: 1;
+}
+
+/* Sidebar completely hidden — question map replaced by progress bar */
+#sidebar { display: none; }
+
+#main {
+  flex: 1;
+  padding: 16px 16px 100px; /* bottom clearance for nav bar */
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PROGRESS STRIP — replaces the 45-cell grid
+   ═══════════════════════════════════════════════════════════════════ */
+#progress-strip {
+  height: 3px;
+  background: rgba(184, 150, 46, 0.12);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+#progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-deep), var(--gold-light));
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   QUESTION CARD
+   ═══════════════════════════════════════════════════════════════════ */
+#q-card {
+  background: var(--navy-light);
+  border: 1px solid rgba(184, 150, 46, 0.28);
+  border-left: 3px solid var(--gold);
+  border-radius: 10px;
+  padding: 18px 16px 14px;
+  position: relative;
+}
+
+#q-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  gap: 10px;
+}
+
+#q-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+#topic-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+
+#q-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+#flag-btn {
+  font-family: 'Syne', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid rgba(184, 150, 46, 0.25);
+  border-radius: 4px;
+  color: var(--text-muted);
+  padding: 4px 10px;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+#flag-btn:hover { border-color: var(--gold); color: var(--gold-light); }
+#flag-btn.flagged { background: rgba(139, 26, 26, 0.1); border-color: var(--crimson); color: var(--crimson); }
+
+#q-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--parchment);
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   OPTIONS
+   ═══════════════════════════════════════════════════════════════════ */
+#options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.opt-btn {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(184, 150, 46, 0.15);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+.opt-btn:hover:not(.locked) {
+  background: rgba(201, 168, 76, 0.07);
+  border-color: rgba(184, 150, 46, 0.4);
+}
+.opt-btn.selected {
+  background: rgba(79, 195, 247, 0.06);
+  border-color: #4FC3F7;
+  box-shadow: inset 3px 0 0 #4FC3F7;
+}
+.opt-btn.correct-ans {
+  background: rgba(102, 187, 106, 0.07);
+  border-color: var(--green);
+  box-shadow: inset 3px 0 0 var(--green);
+}
+.opt-btn.wrong-ans {
+  background: rgba(239, 83, 80, 0.07);
+  border-color: #EF5350;
+  box-shadow: inset 3px 0 0 #EF5350;
+}
+
+.opt-prefix {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.opt-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 15px;
+  line-height: 1.6;
+  padding-top: 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ACTIONS (Save Answer / Saved badge / Show Explanation + nav)
+   ═══════════════════════════════════════════════════════════════════ */
+#actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Save Answer — JS injects inline styles but we set base shape */
+#save-btn {
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+#explain-btn {
+  background: transparent;
+  border: 1px solid rgba(184, 150, 46, 0.3);
+  border-radius: 8px;
+  padding: 9px 16px;
+  color: var(--gold-light);
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#explain-btn:hover { border-color: var(--gold); background: rgba(201, 168, 76, 0.08); }
+
+#nav {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(184, 150, 46, 0.25);
+  border-radius: 6px;
+  padding: 9px 18px;
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.nav-btn:hover:not(:disabled) {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+.nav-btn:disabled { opacity: 0.3; cursor: default; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   EXPLANATION
+   ═══════════════════════════════════════════════════════════════════ */
+#explanation {
+  padding: 16px 18px;
+  border: 1px solid rgba(184, 150, 46, 0.25);
+  border-left: 3px solid var(--gold-deep);
+  background: rgba(255, 255, 255, 0.025);
+  border-radius: 0 8px 8px 0;
+}
+#explanation-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 8px;
+}
+#explanation-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 15px;
+  color: var(--parchment-mid);
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PERFORMANCE SUMMARY
+   ═══════════════════════════════════════════════════════════════════ */
+#perf-summary {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(184, 150, 46, 0.25);
+  border-radius: 10px;
+  padding: 18px 16px;
+}
+#perf-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 14px;
+}
+#perf-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.perf-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(184, 150, 46, 0.18);
+  border-radius: 8px;
+  padding: 14px 10px;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+.perf-card:hover { border-color: rgba(232, 201, 122, 0.45); }
+.perf-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+}
+.perf-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: var(--gold-light);
+  opacity: 0.55;
+  margin-top: 5px;
+  letter-spacing: 0.06em;
+}
