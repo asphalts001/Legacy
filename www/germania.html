@@ -13,7 +13,7 @@
 <div id="header">
   <div>
     <div id="header-label">Germania</div>
-    <div id="header-title"> Set — 45 Questions</div>
+    <div id="header-title">Practice Set — 45 Questions</div>
   </div>
   <div id="header-right">
     <div id="timer">⏱ 45:00</div>
@@ -27,43 +27,35 @@
 
 <!-- Layout -->
 <div id="layout">
-  <!-- Sidebar hidden via CSS (q-grid kept for JS state tracking) -->
-  <div id="sidebar">
+  <div id="sidebar" style="display:none">
     <div id="q-grid"></div>
     <div id="legend"></div>
   </div>
 
-  <!-- Main -->
+  <!-- Main: all questions scrollable -->
   <div id="main">
-    <!-- Question Card -->
-    <div id="q-card">
-      <div id="q-card-top">
-        <div id="q-meta">
-          <div id="topic-badge"></div>
-          <div id="q-num"></div>
-        </div>
-        <button id="flag-btn" onclick="toggleFlag()">⚑ Flag</button>
-      </div>
-      <div id="q-text"></div>
+
+    <!-- Intro banner -->
+    <div id="intro-banner">
+      <div id="intro-title">45-Question <span>Chemistry</span> Set</div>
+      <div id="intro-sub">Answer each question and save — or submit all at once to reveal results.</div>
+      <div id="intro-legend"></div>
     </div>
 
-    <!-- Options -->
-    <div id="options"></div>
+    <!-- Question list rendered by JS -->
+    <div id="question-list"></div>
 
-    <!-- Actions -->
-    <div id="actions"></div>
-
-    <!-- Explanation -->
-    <div id="explanation" style="display:none;">
-      <div id="explanation-label">EXPLANATION</div>
-      <div id="explanation-text"></div>
+    <!-- Global submit -->
+    <div id="global-submit-wrap">
+      <button id="global-submit-btn" onclick="submitQuiz()">Submit All &amp; See Results →</button>
     </div>
 
-    <!-- Performance Summary -->
+    <!-- Performance Summary (post-submit) -->
     <div id="perf-summary" style="display:none;">
       <div id="perf-label">PERFORMANCE SUMMARY</div>
       <div id="perf-grid"></div>
     </div>
+
   </div>
 </div>
 
@@ -135,332 +127,553 @@ const topicColors = {
 };
 
 // State
-let current = 0;
-let selected = null;
-let answered = Array(45).fill(null);
-let showExplanation = false;
-let submitted = false;
-let timeLeft = 45 * 60;
+let selected    = Array(45).fill(null);  // currently highlighted (live)
+let answered    = Array(45).fill(null);  // confirmed/saved
+let checked     = Array(45).fill(false); // answer revealed per question
+let submitted   = false;
+let timeLeft    = 45 * 60;
 let timerActive = true;
-let flagged = Array(45).fill(false);
+let flagged     = Array(45).fill(false);
 let timerInterval = null;
 
-// Init
+// ── Boot ─────────────────────────────────────────────────────────
 window.onload = () => {
-  buildGrid();
-  buildLegend();
+  buildIntroLegend();
+  buildQuestionList();
   startTimer();
-  render();
+  updateHUD();
 };
 
+// ── Timer ─────────────────────────────────────────────────────────
 function startTimer() {
   timerInterval = setInterval(() => {
     if (!timerActive || submitted) return;
     timeLeft--;
-    updateTimer();
+    updateTimerEl();
     if (timeLeft <= 0) { clearInterval(timerInterval); submitQuiz(); }
   }, 1000);
 }
-
-function updateTimer() {
-  const mins = Math.floor(timeLeft / 60).toString().padStart(2, '0');
-  const secs = (timeLeft % 60).toString().padStart(2, '0');
+function updateTimerEl() {
+  const mins = Math.floor(timeLeft / 60).toString().padStart(2,'0');
+  const secs = (timeLeft % 60).toString().padStart(2,'0');
   const el = document.getElementById('timer');
   el.textContent = `⏱ ${mins}:${secs}`;
   el.className = timeLeft < 300 ? 'urgent' : '';
 }
 
-function buildGrid() {
-  const grid = document.getElementById('q-grid');
-  grid.innerHTML = '';
-  questions.forEach((_, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'q-btn';
-    btn.id = `qb-${i}`;
-    btn.onclick = () => goTo(i);
-    btn.innerHTML = `${i+1}<span class="flag-dot" id="fd-${i}" style="display:none">🚩</span>`;
-    grid.appendChild(btn);
-  });
+// ── Intro legend (topic badges) ────────────────────────────────────
+function buildIntroLegend() {
+  const uniqueTopics = [...new Set(questions.map(q => q.topic))];
+  const el = document.getElementById('intro-legend');
+  el.innerHTML = uniqueTopics.map(t => {
+    const c = topicColors[t] || '#4FC3F7';
+    return `<span class="intro-topic-badge" style="background:${c}18;border:1px solid ${c}40;color:${c}">${t}</span>`;
+  }).join('');
 }
 
-function buildLegend() {
-  const legend = document.getElementById('legend');
-  legend.innerHTML = '';
-  const items = [
-    { color: '#AB47BC', label: 'Attempted' },
-    { color: '#4a5568', label: 'Not Attempted' },
-  ];
-  items.forEach(l => {
-    const div = document.createElement('div');
-    div.className = 'legend-item';
-    div.innerHTML = `<div class="legend-dot" style="background:${l.color}40;border:1px solid ${l.color}"></div>${l.label}`;
-    legend.appendChild(div);
-  });
-}
+// ── Build all question cards ───────────────────────────────────────
+function buildQuestionList() {
+  const container = document.getElementById('question-list');
+  container.innerHTML = '';
+  questions.forEach((q, i) => {
+    const color = topicColors[q.topic] || '#4FC3F7';
+    const card = document.createElement('div');
+    card.className = 'gm-q-card';
+    card.id = `qcard-${i}`;
+    card.style.borderLeftColor = color;
 
-function updateLegend() {
-  const legend = document.getElementById('legend');
-  legend.innerHTML = '';
-  const items = submitted
-    ? [
-        { color: '#AB47BC', label: 'Attempted' },
-        { color: '#4a5568', label: 'Not Attempted' },
-        { color: '#66BB6A', label: 'Correct' },
-        { color: '#EF5350', label: 'Wrong' },
-      ]
-    : [
-        { color: '#AB47BC', label: 'Attempted' },
-        { color: '#4a5568', label: 'Not Attempted' },
-      ];
-  items.forEach(l => {
-    const div = document.createElement('div');
-    div.className = 'legend-item';
-    div.innerHTML = `<div class="legend-dot" style="background:${l.color}40;border:1px solid ${l.color}"></div>${l.label}`;
-    legend.appendChild(div);
-  });
-}
-
-function getStatus(i) {
-  if (answered[i] === null) return 'unattempted';
-  if (answered[i] === questions[i].answer) return 'correct';
-  return 'wrong';
-}
-
-function updateGrid() {
-  questions.forEach((_, i) => {
-    const btn = document.getElementById(`qb-${i}`);
-    btn.className = 'q-btn';
-    if (i === current) btn.classList.add('current');
-    if (submitted) {
-      const st = getStatus(i);
-      if (st !== 'unattempted') btn.classList.add(st);
-    } else if (answered[i] !== null) {
-      btn.classList.add('attempted');
-    }
-    document.getElementById(`fd-${i}`).style.display = flagged[i] ? 'inline' : 'none';
-  });
-}
-
-function render() {
-  const q = questions[current];
-  const color = topicColors[q.topic] || '#4FC3F7';
-
-  // Header title
-  document.getElementById('header-title').textContent = submitted ? '📊 Results' : 'Practice Set — 45 Questions';
-
-  // Header right
-  const attempted = answered.filter(a => a !== null).length;
-  document.getElementById('attempted-count').textContent = `${attempted}/45 done`;
-
-  // Progress strip
-  const pct = Math.round((attempted / 45) * 100);
-  document.getElementById('progress-fill').style.width = pct + '%';
-  document.getElementById('submit-btn').style.display = submitted ? 'none' : 'inline-block';
-  document.getElementById('timer').style.display = submitted ? 'none' : 'inline-block';
-  document.getElementById('attempted-count').style.display = submitted ? 'none' : 'inline-block';
-
-  // Results header
-  let resultsEl = document.getElementById('results-stats');
-  if (!resultsEl) {
-    resultsEl = document.createElement('div');
-    resultsEl.id = 'results-stats';
-    document.getElementById('header-right').appendChild(resultsEl);
-  }
-  if (submitted) {
-    const score = answered.filter((a, i) => a === questions[i].answer).length;
-    const wrong = attempted - score;
-    const skipped = 45 - attempted;
-    const marks = score * 4 - wrong;
-    const scoreColor = score >= 30 ? '#66BB6A' : score >= 20 ? '#FFA726' : '#EF5350';
-    resultsEl.innerHTML = `
-      <div class="stat-box"><div class="stat-val" style="color:${scoreColor}">${score}</div><div class="stat-lbl">CORRECT</div></div>
-      <div class="stat-box"><div class="stat-val" style="color:#EF5350">${wrong}</div><div class="stat-lbl">WRONG</div></div>
-      <div class="stat-box"><div class="stat-val" style="color:#6b7280">${skipped}</div><div class="stat-lbl">SKIPPED</div></div>
-      <div id="marks-box" style="background:${score>=30?'rgba(102,187,106,0.1)':'rgba(239,83,80,0.1)'};border:1px solid ${score>=30?'#66BB6A':'#EF5350'};color:${score>=30?'#66BB6A':'#EF5350'}">${marks}/${45*4} marks</div>
+    card.innerHTML = `
+      <div class="gm-q-meta">
+        <span class="gm-q-num">Q${String(i+1).padStart(2,'0')}</span>
+        <span class="gm-topic-badge" style="background:${color}18;border:1px solid ${color}40;color:${color}">${q.topic}</span>
+        <button class="gm-flag-btn" id="flagbtn-${i}" onclick="toggleFlag(${i})">⚑ Flag</button>
+      </div>
+      <div class="gm-q-text">${q.q}</div>
+      <div class="gm-options" id="opts-${i}">
+        ${q.options.map((opt, j) => `
+          <button class="gm-opt" id="opt-${i}-${j}" onclick="selectOption(${i},${j})">
+            <span class="gm-opt-key" id="optkey-${i}-${j}">${String.fromCharCode(65+j)}</span>
+            <span class="gm-opt-text">${opt}</span>
+          </button>`).join('')}
+      </div>
+      <div class="gm-q-footer">
+        <div class="gm-footer-left">
+          <button class="gm-btn-check" id="chkbtn-${i}" onclick="checkOne(${i})" disabled>Check</button>
+          <div class="gm-saved-badge" id="savedbadge-${i}" style="display:none">✓ Saved</div>
+        </div>
+        <div class="gm-footer-right">
+          <button class="gm-btn-explain" id="explbtn-${i}" onclick="toggleExplanation(${i})" style="display:none">Show Explanation</button>
+        </div>
+      </div>
+      <div class="gm-explanation" id="expl-${i}" style="display:none">
+        <div class="gm-explanation-label">EXPLANATION</div>
+        <div class="gm-explanation-text">${q.explanation}</div>
+      </div>
     `;
-    resultsEl.style.display = 'flex';
-  } else {
-    resultsEl.style.display = 'none';
-  }
+    container.appendChild(card);
+  });
+}
 
-  // Question card
-  document.getElementById('q-card').style.borderLeftColor = color;
-  const badge = document.getElementById('topic-badge');
-  badge.textContent = q.topic;
-  badge.style.background = color + '20';
-  badge.style.border = `1px solid ${color}40`;
-  badge.style.color = color;
-  document.getElementById('q-num').textContent = `Q ${current + 1} / 45`;
-  document.getElementById('q-text').textContent = q.q;
+// ── Select option (highlight only) ────────────────────────────────
+function selectOption(qi, optIdx) {
+  if (checked[qi]) return; // locked after reveal
+  selected[qi] = optIdx;
+  renderOptions(qi);
+  // Enable Check button
+  document.getElementById(`chkbtn-${qi}`).disabled = false;
+}
 
-  // Flag button
-  const flagBtn = document.getElementById('flag-btn');
-  flagBtn.textContent = flagged[current] ? '🚩 Flagged' : '⚑ Flag';
-  flagBtn.className = flagged[current] ? 'flagged' : '';
+// ── Check / reveal answer for one question ─────────────────────────
+// FIX: this now SAVES the answer AND shows correct/wrong immediately
+function checkOne(qi) {
+  if (checked[qi]) return;
+  if (selected[qi] === null) return;
 
-  // Options
-  const optContainer = document.getElementById('options');
-  optContainer.innerHTML = '';
-  const showResult = submitted || answered[current] !== null;
-  q.options.forEach((opt, i) => {
-    const isCorrect = i === q.answer;
-    const isUserAnswer = answered[current] === i;
-    const isSelectedNow = selected === i;
+  // Save the answer
+  answered[qi] = selected[qi];
+  checked[qi] = true;
 
-    const btn = document.createElement('button');
-    btn.className = 'opt-btn';
+  // Reveal result colours
+  renderOptions(qi);
 
-    let prefixText = String.fromCharCode(65 + i);
-    let prefixBg = '#1e253530';
-    let prefixBorder = '#1e2535';
-    let prefixColor = '#9ca3af';
-    let textColor = '#9ca3af';
+  // Show explanation button
+  document.getElementById(`explbtn-${qi}`).style.display = 'inline-block';
+  document.getElementById(`chkbtn-${qi}`).style.display = 'none';
+  document.getElementById(`savedbadge-${qi}`).style.display = 'inline-flex';
 
-    if (showResult) {
+  updateHUD();
+}
+
+// ── Render option states for card qi ─────────────────────────────
+function renderOptions(qi) {
+  const q = questions[qi];
+  const isRevealed = checked[qi] || submitted;
+
+  q.options.forEach((_, j) => {
+    const btn    = document.getElementById(`opt-${qi}-${j}`);
+    const keyEl  = document.getElementById(`optkey-${qi}-${j}`);
+    const isCorrect   = j === q.answer;
+    const isUserPick  = answered[qi] === j || (!isRevealed && selected[qi] === j);
+
+    btn.className = 'gm-opt';
+
+    if (isRevealed) {
       if (isCorrect) {
         btn.classList.add('correct-ans');
-        prefixText = '✓'; prefixBg = '#66BB6A30'; prefixBorder = '#66BB6A'; prefixColor = '#86efac'; textColor = '#86efac';
-      } else if (isUserAnswer) {
+        keyEl.textContent = '✓';
+      } else if (answered[qi] === j) {
         btn.classList.add('wrong-ans');
-        prefixText = '✗'; prefixBg = '#EF535030'; prefixBorder = '#EF5350'; prefixColor = '#fca5a5'; textColor = '#fca5a5';
+        keyEl.textContent = '✗';
+      } else {
+        keyEl.textContent = String.fromCharCode(65 + j);
       }
-    } else if (isSelectedNow) {
-      btn.classList.add('selected');
-      prefixBg = '#4FC3F730'; prefixBorder = '#4FC3F7'; prefixColor = '#7dd3fc'; textColor = '#7dd3fc';
-    }
-
-    if (showResult) btn.classList.add('locked');
-
-    btn.innerHTML = `
-      <span class="opt-prefix" style="background:${prefixBg};border:1px solid ${prefixBorder};color:${prefixColor}">${prefixText}</span>
-      <span class="opt-text" style="color:${textColor}">${opt}</span>
-    `;
-    if (!showResult) btn.onclick = () => selectOption(i);
-    optContainer.appendChild(btn);
-  });
-
-  // Actions
-  renderActions(color);
-
-  // Explanation
-  const expEl = document.getElementById('explanation');
-  expEl.style.display = showExplanation ? 'block' : 'none';
-  if (showExplanation) document.getElementById('explanation-text').textContent = q.explanation;
-
-  // Performance summary (show only on Q1 after submit)
-  const perfEl = document.getElementById('perf-summary');
-  if (submitted && current === 0) {
-    const score = answered.filter((a, i) => a === questions[i].answer).length;
-    const att = answered.filter(a => a !== null).length;
-    const wrong = att - score;
-    const marks = score * 4 - wrong;
-    const acc = att > 0 ? Math.round((score / att) * 100) + '%' : 'N/A';
-    const scoreColor = score >= 30 ? '#66BB6A' : '#EF5350';
-    document.getElementById('perf-grid').innerHTML = `
-      <div class="perf-card"><div class="perf-val" style="color:#66BB6A">${score}/45</div><div class="perf-lbl">SCORE</div></div>
-      <div class="perf-card"><div class="perf-val" style="color:#4FC3F7">${marks}/${45*4}</div><div class="perf-lbl">NEET MARKS</div></div>
-      <div class="perf-card"><div class="perf-val" style="color:#FFA726">${acc}</div><div class="perf-lbl">ACCURACY</div></div>
-      <div class="perf-card"><div class="perf-val" style="color:#6b7280">${45-att}</div><div class="perf-lbl">UNATTEMPTED</div></div>
-    `;
-    perfEl.style.display = 'block';
-  } else {
-    perfEl.style.display = 'none';
-  }
-
-  updateGrid();
-  updateLegend();
-}
-
-function renderActions(color) {
-  const actions = document.getElementById('actions');
-  actions.innerHTML = '';
-
-  if (!submitted) {
-    if (answered[current] === null) {
-      const saveBtn = document.createElement('button');
-      saveBtn.id = 'save-btn';
-      saveBtn.textContent = 'Save Answer';
-      saveBtn.disabled = selected === null;
-      saveBtn.style.background = selected !== null ? `linear-gradient(135deg, ${color}, ${color}99)` : '#1e2535';
-      saveBtn.style.color = selected !== null ? '#000' : '#4a5568';
-      saveBtn.style.cursor = selected !== null ? 'pointer' : 'default';
-      saveBtn.style.border = 'none';
-      saveBtn.style.borderRadius = '8px';
-      saveBtn.style.padding = '10px 24px';
-      saveBtn.style.fontWeight = '700';
-      saveBtn.style.fontSize = '13px';
-      saveBtn.style.letterSpacing = '0.5px';
-      saveBtn.onclick = confirmAnswer;
-      actions.appendChild(saveBtn);
+      btn.classList.add('locked');
     } else {
-      const savedBadge = document.createElement('div');
-      savedBadge.id = 'saved-badge';
-      savedBadge.textContent = '✓ Saved';
-      savedBadge.style.cssText = 'background:rgba(102,187,106,0.1);border:1px solid #66BB6A;border-radius:8px;padding:10px 18px;color:#66BB6A;font-size:13px;font-weight:600;';
-      actions.appendChild(savedBadge);
-
-      const expBtn = document.createElement('button');
-      expBtn.id = 'explain-btn';
-      expBtn.textContent = (showExplanation ? 'Hide' : 'Show') + ' Explanation';
-      expBtn.onclick = toggleExplanation;
-      actions.appendChild(expBtn);
+      keyEl.textContent = String.fromCharCode(65 + j);
+      if (selected[qi] === j) btn.classList.add('selected');
     }
-  } else {
-    const expBtn = document.createElement('button');
-    expBtn.id = 'explain-btn';
-    expBtn.textContent = (showExplanation ? 'Hide' : 'Show') + ' Explanation';
-    expBtn.onclick = toggleExplanation;
-    actions.appendChild(expBtn);
-  }
-
-  const nav = document.createElement('div');
-  nav.id = 'nav';
-  nav.innerHTML = `
-    <button class="nav-btn" onclick="goTo(${current-1})" ${current===0?'disabled':''}>← Prev</button>
-    <button class="nav-btn" onclick="goTo(${current+1})" ${current===44?'disabled':''}>Next →</button>
-  `;
-  actions.appendChild(nav);
+  });
 }
 
-function selectOption(i) {
-  selected = i;
-  render();
+// ── Toggle explanation ─────────────────────────────────────────────
+function toggleExplanation(qi) {
+  const el  = document.getElementById(`expl-${qi}`);
+  const btn = document.getElementById(`explbtn-${qi}`);
+  const visible = el.style.display !== 'none';
+  el.style.display = visible ? 'none' : 'block';
+  btn.textContent = visible ? 'Show Explanation' : 'Hide Explanation';
 }
 
-function confirmAnswer() {
-  if (selected === null) return;
-  answered[current] = selected;
-  showExplanation = false;
-  render();
+// ── Toggle flag ────────────────────────────────────────────────────
+function toggleFlag(qi) {
+  flagged[qi] = !flagged[qi];
+  const btn = document.getElementById(`flagbtn-${qi}`);
+  btn.textContent = flagged[qi] ? '🚩 Flagged' : '⚑ Flag';
+  btn.className = 'gm-flag-btn' + (flagged[qi] ? ' flagged' : '');
 }
 
-function toggleExplanation() {
-  showExplanation = !showExplanation;
-  render();
+// ── HUD update ─────────────────────────────────────────────────────
+function updateHUD() {
+  const attempted = answered.filter(a => a !== null).length;
+  document.getElementById('attempted-count').textContent = `${attempted}/45 done`;
+  const pct = Math.round((attempted / 45) * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
 }
 
-function toggleFlag() {
-  flagged[current] = !flagged[current];
-  render();
-}
-
-function goTo(i) {
-  if (i < 0 || i > 44) return;
-  current = i;
-  selected = answered[i];
-  showExplanation = false;
-  render();
-}
-
+// ── Submit all ─────────────────────────────────────────────────────
 function submitQuiz() {
   submitted = true;
   timerActive = false;
   clearInterval(timerInterval);
-  current = 0;
-  selected = answered[0];
-  showExplanation = false;
-  render();
+
+  // Force-save any selected-but-unchecked answers; reveal all
+  questions.forEach((q, i) => {
+    if (!checked[i]) {
+      if (selected[i] !== null) answered[i] = selected[i];
+      checked[i] = true;
+      renderOptions(i);
+      if (answered[i] !== null) {
+        document.getElementById(`explbtn-${i}`).style.display = 'inline-block';
+        document.getElementById(`chkbtn-${i}`).style.display = 'none';
+        document.getElementById(`savedbadge-${i}`).style.display = 'inline-flex';
+      }
+    }
+  });
+
+  // Hide timer/submit, update header
+  document.getElementById('timer').style.display = 'none';
+  document.getElementById('attempted-count').style.display = 'none';
+  document.getElementById('submit-btn').style.display = 'none';
+  document.getElementById('header-title').textContent = '📊 Results';
+  document.getElementById('global-submit-wrap').style.display = 'none';
+
+  // Show results in header
+  showResultsHeader();
+
+  // Show perf summary
+  showPerfSummary();
+}
+
+function showResultsHeader() {
+  const score   = answered.filter((a, i) => a === questions[i].answer).length;
+  const att     = answered.filter(a => a !== null).length;
+  const wrong   = att - score;
+  const skipped = 45 - att;
+  const marks   = score * 4 - wrong;
+  const scoreColor = score >= 30 ? '#66BB6A' : score >= 20 ? '#FFA726' : '#EF5350';
+
+  let el = document.getElementById('results-stats');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'results-stats';
+    document.getElementById('header-right').appendChild(el);
+  }
+  el.innerHTML = `
+    <div class="stat-box"><div class="stat-val" style="color:${scoreColor}">${score}</div><div class="stat-lbl">CORRECT</div></div>
+    <div class="stat-box"><div class="stat-val" style="color:#EF5350">${wrong}</div><div class="stat-lbl">WRONG</div></div>
+    <div class="stat-box"><div class="stat-val" style="color:#6b7280">${skipped}</div><div class="stat-lbl">SKIPPED</div></div>
+    <div id="marks-box" style="background:${score>=30?'rgba(102,187,106,0.1)':'rgba(239,83,80,0.1)'};border:1px solid ${score>=30?'#66BB6A':'#EF5350'};color:${score>=30?'#66BB6A':'#EF5350'}">${marks}/${45*4} marks</div>
+  `;
+  el.style.display = 'flex';
+}
+
+function showPerfSummary() {
+  const score  = answered.filter((a, i) => a === questions[i].answer).length;
+  const att    = answered.filter(a => a !== null).length;
+  const wrong  = att - score;
+  const marks  = score * 4 - wrong;
+  const acc    = att > 0 ? Math.round((score / att) * 100) + '%' : 'N/A';
+
+  document.getElementById('perf-grid').innerHTML = `
+    <div class="perf-card"><div class="perf-val" style="color:#66BB6A">${score}/45</div><div class="perf-lbl">SCORE</div></div>
+    <div class="perf-card"><div class="perf-val" style="color:#4FC3F7">${marks}/${45*4}</div><div class="perf-lbl">NEET MARKS</div></div>
+    <div class="perf-card"><div class="perf-val" style="color:#FFA726">${acc}</div><div class="perf-lbl">ACCURACY</div></div>
+    <div class="perf-card"><div class="perf-val" style="color:#6b7280">${45-att}</div><div class="perf-lbl">UNATTEMPTED</div></div>
+  `;
+  document.getElementById('perf-summary').style.display = 'block';
+  document.getElementById('perf-summary').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 </script>
+
+<!-- Phiross-style presentation CSS (scoped to Germania's IDs/classes) -->
+<style>
+/* ── Intro banner ── */
+#intro-banner {
+  text-align: center;
+  padding: 36px 20px 28px;
+  border-bottom: 1px solid rgba(184,150,46,0.2);
+  margin-bottom: 28px;
+}
+#intro-title {
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #fff;
+  margin-bottom: 8px;
+}
+#intro-title span { color: var(--gold-light); }
+#intro-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  color: var(--gold-light);
+  opacity: 0.75;
+  margin-bottom: 18px;
+}
+#intro-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+.intro-topic-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+/* ── Question cards (Phiross style) ── */
+.gm-q-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(184,150,46,0.22);
+  border-left: 3px solid var(--gold);
+  border-radius: 10px;
+  padding: 22px 20px 16px;
+  margin-bottom: 20px;
+  position: relative;
+  transition: border-color 0.2s;
+}
+
+.gm-q-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.gm-q-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--gold-light);
+  font-weight: 700;
+  min-width: 30px;
+}
+
+.gm-topic-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.gm-flag-btn {
+  margin-left: auto;
+  font-family: 'Syne', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid rgba(184,150,46,0.25);
+  border-radius: 4px;
+  color: var(--text-muted);
+  padding: 4px 10px;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.gm-flag-btn:hover { border-color: var(--gold); color: var(--gold-light); }
+.gm-flag-btn.flagged { background: rgba(139,26,26,0.1); border-color: var(--crimson); color: var(--crimson); }
+
+.gm-q-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--parchment);
+  margin-bottom: 18px;
+}
+
+/* ── Options (Phiross style) ── */
+.gm-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.gm-opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 11px 15px;
+  border: 1px solid rgba(184,150,46,0.28);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  background: rgba(255,255,255,0.025);
+  transition: all 0.15s ease;
+  width: 100%;
+}
+.gm-opt:hover:not(.locked) {
+  border-color: var(--gold-light);
+  background: rgba(184,150,46,0.07);
+}
+.gm-opt.selected {
+  border-color: var(--gold-light);
+  background: rgba(184,150,46,0.10);
+  box-shadow: inset 3px 0 0 var(--gold-light);
+}
+.gm-opt.correct-ans {
+  border-color: var(--green) !important;
+  background: rgba(76,175,125,0.09) !important;
+  box-shadow: inset 3px 0 0 var(--green);
+}
+.gm-opt.wrong-ans {
+  border-color: var(--crimson) !important;
+  background: rgba(139,26,26,0.10) !important;
+  box-shadow: inset 3px 0 0 var(--crimson);
+}
+.gm-opt.locked { cursor: default; }
+
+.gm-opt-key {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold-light);
+  min-width: 18px;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+.gm-opt.selected .gm-opt-key { color: #fff; }
+.gm-opt.correct-ans .gm-opt-key { color: var(--green); }
+.gm-opt.wrong-ans   .gm-opt-key { color: var(--crimson); }
+
+.gm-opt-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: #e8dfc8;
+}
+
+/* ── Footer ── */
+.gm-q-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.gm-footer-left  { display: flex; align-items: center; gap: 10px; }
+.gm-footer-right { display: flex; align-items: center; gap: 10px; }
+
+.gm-btn-check {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 7px 18px;
+  border-radius: 5px;
+  border: 1px solid var(--gold-light);
+  background: transparent;
+  color: var(--gold-light);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.gm-btn-check:hover:not(:disabled) { background: var(--gold-deep); color: #fff; border-color: var(--gold-deep); }
+.gm-btn-check:disabled { opacity: 0.3; cursor: default; }
+
+.gm-saved-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(76,175,125,0.12);
+  border: 1px solid var(--green);
+  border-radius: 5px;
+  padding: 6px 14px;
+  color: var(--green);
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.gm-btn-explain {
+  background: transparent;
+  border: 1px solid rgba(184,150,46,0.3);
+  border-radius: 5px;
+  padding: 7px 14px;
+  color: var(--gold-light);
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.gm-btn-explain:hover { border-color: var(--gold); background: rgba(201,168,76,0.08); }
+
+/* ── Explanation ── */
+.gm-explanation {
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: rgba(184,150,46,0.06);
+  border: 1px solid rgba(184,150,46,0.28);
+  border-left: 3px solid var(--gold-deep);
+  border-radius: 0 8px 8px 0;
+}
+.gm-explanation-label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 8px;
+}
+.gm-explanation-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 15px;
+  color: var(--parchment-mid);
+  line-height: 1.7;
+}
+
+/* ── Global submit wrap ── */
+#global-submit-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0 40px;
+}
+#global-submit-btn {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 40px;
+  border-radius: 8px;
+  border: none;
+  background: var(--gold-deep);
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  box-shadow: 0 4px 24px rgba(138,100,32,0.4);
+}
+#global-submit-btn:hover { opacity: 0.88; }
+
+/* ── Performance summary ── */
+#perf-summary {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(184,150,46,0.25);
+  border-radius: 10px;
+  padding: 24px 20px;
+  margin-bottom: 48px;
+}
+#perf-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 16px;
+}
+
+/* gm.css already provides .perf-card, .perf-val, .perf-lbl, #perf-grid */
+</style>
+
 </body>
 </html>
