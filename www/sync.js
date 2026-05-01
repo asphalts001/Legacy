@@ -2,8 +2,7 @@
 // before DOMContentLoaded, before deviceready — Cordova calls this
 // very early on resume from the system browser.
 window.handleOpenURL = function(url) {
-  console.log('handleOpenURL fired:', url);  // add this to confirm it's firing
-  
+  console.log('handleOpenURL fired:', url);
 }
 
 // Handles authentication (Google, email) and cloud sync for session data.
@@ -17,8 +16,9 @@ const SYNC_API_URL = `${SUPABASE_URL}/functions/v1/sync-api`;
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-let currentUser = null;     // Currently authenticated Supabase user
-let syncInterval = null;    // Handle for hourly auto-sync
+let currentUser = null;       // Currently authenticated Supabase user
+let syncInterval = null;      // Handle for hourly auto-sync fallback
+let debounceTimer = null;     // Handle for event-driven push debounce
 
 // ----------------------------------------------------------------------
 // Deep link handler for Google OAuth redirect (Cordova specific)
@@ -82,12 +82,9 @@ function setSessions(sessions) {
   state.stats = window.StateManager.computeStats(sessions);
   window.StateManager.saveState(state);
 
-  // Notify Tracker to reload its internal state from localStorage.
-  // Tracker.reload() will itself dispatch a 'tracker:update' event.
   if (window.Tracker && window.Tracker.reload) {
     window.Tracker.reload();
   } else {
-    // Fallback for older or missing Tracker implementation.
     window.dispatchEvent(new Event('tracker:update'));
   }
   return true;
@@ -95,10 +92,6 @@ function setSessions(sessions) {
 
 // ----------------------------------------------------------------------
 // Google Sign-In (opens system browser because Google blocks embedded WebViews)
-// FIX 1: Removed skipBrowserRedirect:true — it was preventing the redirect
-//         back to the app after Google authorization completed.
-// FIX 2: Changed window.open target from '_blank' (embedded webview, blocked
-//         by Google) to '_system' (device's real browser, works correctly).
 // ----------------------------------------------------------------------
 export async function signInWithGoogle() {
   showStatus('Opening Google sign-in...');
@@ -107,8 +100,6 @@ export async function signInWithGoogle() {
     provider: 'google',
     options: {
       redirectTo: 'com.asphalts.legacy://login'
-      // skipBrowserRedirect removed — it was telling Supabase to NOT redirect
-      // back to the app after auth, causing the flow to stall on account picker.
     }
   });
 
@@ -117,8 +108,6 @@ export async function signInWithGoogle() {
     return;
   }
 
-  // _system opens in the device's default browser (required for Google OAuth).
-  // '_blank' would open an embedded webview which Google blocks for OAuth.
   if (window.cordova) {
     cordova.InAppBrowser.open(data.url, '_system', '');
   } else {
@@ -210,7 +199,6 @@ async function pullSync(showToast = true) {
     if (!res.ok) throw new Error(await res.text());
 
     let cloudData = await res.json();
-    // The Edge Function may wrap the array in an object with a 'data' property.
     if (cloudData && typeof cloudData === 'object' && !Array.isArray(cloudData)) {
       cloudData = cloudData.data || [];
     }
@@ -230,7 +218,6 @@ async function pullSync(showToast = true) {
 
 // ----------------------------------------------------------------------
 // UI helpers: toggle visibility of auth section vs. sync controls.
-// Also populates the logged-in user's email display.
 // ----------------------------------------------------------------------
 function updateUIForLoggedInUser() {
   document.getElementById('auth-section')?.classList.add('hidden');
@@ -248,26 +235,9 @@ function updateUIForLoggedOutUser() {
 }
 
 // ----------------------------------------------------------------------
-// Auto-sync every hour (silent push, no toast)
+// Event-driven push: fires 3s after any StateManager.saveState() call.
+// Hourly interval acts as a fallback safety net.
 // ----------------------------------------------------------------------
-/*
-function startAutoSync() {
-  if (syncInterval) clearInterval(syncInterval);
-  syncInterval = setInterval(() => pushSync(false), 3600000);
-}
-
-function stopAutoSync() {
-  if (syncInterval) {
-    clearInterval(syncInterval);
-    syncInterval = null;
-  }
-}*/
-
-// Replace startAutoSync / stopAutoSync with this:
-
-let debounceTimer = null;
-let syncInterval = null;
-
 function schedulePush() {
   if (!currentUser) return;
   clearTimeout(debounceTimer);
@@ -286,6 +256,7 @@ function stopAutoSync() {
   debounceTimer = null;
   if (syncInterval) { clearInterval(syncInterval); syncInterval = null; }
 }
+
 // ----------------------------------------------------------------------
 // Initialise authentication state, set up listeners, and start auto-sync.
 // ----------------------------------------------------------------------
@@ -295,8 +266,6 @@ async function initAuth() {
     currentUser = session.user;
     updateUIForLoggedInUser();
     startAutoSync();
-    // Don't pull on startup — user must explicitly restore,
-    // or push first to seed the cloud with local data.
   } else {
     updateUIForLoggedOutUser();
   }
@@ -306,7 +275,6 @@ async function initAuth() {
       currentUser = session.user;
       updateUIForLoggedInUser();
       startAutoSync();
-      // Same — no auto pull on sign in
     } else if (event === 'SIGNED_OUT') {
       currentUser = null;
       updateUIForLoggedOutUser();
@@ -343,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-signout')?.addEventListener('click', () => signOut());
 });
 
-// Cordova deviceready event – Google sign-in handler is already registered above.
+// Cordova deviceready event
 document.addEventListener('deviceready', () => {
   console.log('Cordova ready');
 }, false);
