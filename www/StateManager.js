@@ -36,6 +36,7 @@ window.StateManager = (function() {
 
   function saveState(state) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    window.dispatchEvent(new CustomEvent('statemanager:saved'));
   }
 
   return { loadState, saveState, computeStats, defaultState, STATE_VERSION, STORAGE_KEY };

@@ -250,6 +250,7 @@ function updateUIForLoggedOutUser() {
 // ----------------------------------------------------------------------
 // Auto-sync every hour (silent push, no toast)
 // ----------------------------------------------------------------------
+/*
 function startAutoSync() {
   if (syncInterval) clearInterval(syncInterval);
   syncInterval = setInterval(() => pushSync(false), 3600000);
@@ -260,8 +261,31 @@ function stopAutoSync() {
     clearInterval(syncInterval);
     syncInterval = null;
   }
+}*/
+
+// Replace startAutoSync / stopAutoSync with this:
+
+let debounceTimer = null;
+let syncInterval = null;
+
+function schedulePush() {
+  if (!currentUser) return;
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(() => pushSync(false), 3000);
 }
 
+function startAutoSync() {
+  window.addEventListener('statemanager:saved', schedulePush);
+  if (syncInterval) clearInterval(syncInterval);
+  syncInterval = setInterval(() => pushSync(false), 3600000);
+}
+
+function stopAutoSync() {
+  window.removeEventListener('statemanager:saved', schedulePush);
+  clearTimeout(debounceTimer);
+  debounceTimer = null;
+  if (syncInterval) { clearInterval(syncInterval); syncInterval = null; }
+}
 // ----------------------------------------------------------------------
 // Initialise authentication state, set up listeners, and start auto-sync.
 // ----------------------------------------------------------------------
