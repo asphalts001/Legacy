@@ -115,3 +115,13 @@ setInterval(() => {
     SyncEngine.processQueue().catch(() => {});
   }
 }, 60000);
+// ... bottom of sync.js ...
+
+// ── Bridge to Global Scope ────────────────────────────────────────────────
+if (typeof window !== 'undefined') {
+  window.SyncEngine = SyncEngine; 
+  
+  window.addEventListener('load', () => {
+    setTimeout(runHeartbeat, 5000); 
+  });
+}
