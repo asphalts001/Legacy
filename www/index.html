@@ -457,14 +457,52 @@
     });
 
     // Manual Sync Buttons
-    document.getElementById('btn-sync-push')?.addEventListener('click', () => {
-        window.SyncEngine.processQueue();
-    });
+    // Inside initMenu() in index.html
+const pushBtn = document.getElementById('btn-sync-push');
+const pullBtn = document.getElementById('btn-sync-pull');
+const msgLabel = document.getElementById('sync-status-msg');
 
-    document.getElementById('btn-sync-pull')?.addEventListener('click', () => {
-        window.SyncEngine.pullFromServer();
-    });
-  }
+pushBtn?.addEventListener('click', async () => {
+    if (!window.SyncEngine) return console.error("SyncEngine not loaded");
+    
+    pushBtn.textContent = "Pushing...";
+    pushBtn.disabled = true;
+
+    const result = await window.SyncEngine.processQueue();
+    
+    if (result && result.success) {
+        msgLabel.textContent = "✓ Data pushed to cloud";
+        msgLabel.style.color = "#4CAF50";
+    } else {
+        msgLabel.textContent = "✗ Push failed: " + (result?.error || "Offline");
+        msgLabel.style.color = "#f44336";
+    }
+    
+    pushBtn.textContent = "Sync to Cloud";
+    pushBtn.disabled = false;
+});
+
+pullBtn?.addEventListener('click', async () => {
+    if (!window.SyncEngine) return console.error("SyncEngine not loaded");
+    
+    pullBtn.textContent = "Pulling...";
+    pullBtn.disabled = true;
+
+    const serverData = await window.SyncEngine.pullFromServer();
+    
+    if (serverData) {
+        // Tell tracker.js to refresh the UI with new data
+        if (window.Tracker) window.Tracker.reload();
+        msgLabel.textContent = "✓ Restored from cloud";
+        msgLabel.style.color = "#4CAF50";
+    } else {
+        msgLabel.textContent = "✗ Pull failed";
+        msgLabel.style.color = "#f44336";
+    }
+
+    pullBtn.textContent = "Restore from Cloud";
+    pullBtn.disabled = false;
+});
 
   // Script is at bottom of body so DOM is already parsed — run immediately
   initMenu();
