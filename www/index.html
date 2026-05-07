@@ -151,10 +151,14 @@
 </div>
   <!-- Scripts (load order matters) -->
   <script src="cordova.js"></script> 
-  <script src="StateManager.js"></script>
-  <script src="tracker.js"></script>
-  <script type="module" src="sync.js"></script> <!-- Ensure sync.js has only ONE listener for #btn-more-menu -->
-  <script src="audio.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="auth.js"></script> <script src="StateManager.js"></script>
+<script src="tracker.js"></script>
+<script type="module">
+  import { SyncEngine } from './sync.js';
+  window.SyncEngine = SyncEngine; // Attach to window for the buttons
+</script>
+<script src="audio.js"></script>
 
   <script>
     // Date display
@@ -431,6 +435,34 @@
     document.getElementById('toggle-password-visibility')?.addEventListener('click', () => {
       const input = document.getElementById('auth-password');
       input.type = input.type === 'password' ? 'text' : 'password';
+    });
+  document.getElementById('btn-signin')?.addEventListener('click', () => {
+        const email = document.getElementById('auth-email').value;
+        const pass = document.getElementById('auth-password').value;
+        Auth.signIn(email, pass);
+    });
+
+    document.getElementById('btn-signup')?.addEventListener('click', () => {
+        const email = document.getElementById('auth-email').value;
+        const pass = document.getElementById('auth-password').value;
+        Auth.signUp(email, pass);
+    });
+
+    document.getElementById('btn-google-signin')?.addEventListener('click', () => {
+        Auth.signInWithGoogle();
+    });
+
+    document.getElementById('btn-signout')?.addEventListener('click', () => {
+        Auth.signOut();
+    });
+
+    // Manual Sync Buttons
+    document.getElementById('btn-sync-push')?.addEventListener('click', () => {
+        window.SyncEngine.processQueue();
+    });
+
+    document.getElementById('btn-sync-pull')?.addEventListener('click', () => {
+        window.SyncEngine.pullFromServer();
     });
   }
 
