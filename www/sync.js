@@ -8,12 +8,12 @@ const SYNC_API_URL = `${SUPABASE_URL}/functions/v1/sync-api`;
 
 export const SyncEngine = {
   // ── Block A3: Local Store Operations ──────────────────────────────────────
-  
+
   async saveAndSync(payload) {
     const snapshot = {
       ...payload,
-      timestamp: Date.now(), 
-      status: 'pending'      
+      timestamp: Date.now(),
+      status: 'pending'
     };
 
     const localData = this.getLocalData();
@@ -32,77 +32,104 @@ export const SyncEngine = {
 
   async processQueue() {
     if (!navigator.onLine) {
-      console.warn("Sync Engine: Device Offline (G6)");
+      console.warn('Sync Engine: Device Offline (G6)');
       return { success: false, mode: 'degraded' };
     }
 
     const localData = this.getLocalData();
-    if (localData.length === 0) return { success: true };
+    const pendingData = localData.filter(item => item.status !== 'synced');
+
+    if (pendingData.length === 0) {
+      return { success: true };
+    }
 
     try {
       const token = await this.getAuthToken();
-      if (!token) throw new Error("No active session found");
+      if (!token) {
+        throw new Error('No active session found');
+      }
 
       const response = await fetch(SYNC_API_URL, {
         method: 'PUT',
         headers: {
-          'Authorization': `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
-          'apikey': 'sb_publishable_CNDbJZzUgXZAxLvp6_oBHg_FSsIWGWp' // Anon key for routing
+          apikey: 'sb_publishable_CNDbJZzUgXZAxLvp6_oBHg_FSsIWGWp'
         },
-        body: JSON.stringify({ data: localData })
+        body: JSON.stringify({ data: pendingData })
       });
 
-      if (response.ok) {
-        const result = await response.json();
-        this.markAllAsSynced();
-        return { success: true, total: result.total };
-      } else {
-        const errData = await response.json();
+      if (!response.ok) {
+        const errData = await response.json().catch(() => ({}));
         throw new Error(errData.error || `Server Error: ${response.status}`);
       }
+
+      const result = await response.json();
+      this.markPendingAsSynced();
+
+      return {
+        success: true,
+        total: result.total
+      };
     } catch (error) {
-      console.error("Sync Engine Error:", error.message);
-      return { success: false, error: error.message };
+      console.error('Sync Engine Error:', error.message);
+      return {
+        success: false,
+        error: error.message
+      };
     }
   },
 
   // ── Block D1: State Management ──────────────────────────────────────────
 
-  markAllAsSynced() {
-    const syncedData = this.getLocalData().map(s => ({ ...s, status: 'synced' }));
+  markPendingAsSynced() {
+    const syncedData = this.getLocalData().map(item =>
+      item.status === 'synced'
+        ? item
+        : { ...item, status: 'synced' }
+    );
+
     localStorage.setItem('user_sync_data', JSON.stringify(syncedData));
   },
 
   async pullFromServer() {
     try {
       const token = await this.getAuthToken();
+      if (!token) {
+        throw new Error('No active session found');
+      }
+
       const response = await fetch(SYNC_API_URL, {
-        headers: { 
-          'Authorization': `Bearer ${token}`,
-          'apikey': 'sb_publishable_CNDbJZzUgXZAxLvp6_oBHg_FSsIWGWp'
+        headers: {
+          Authorization: `Bearer ${token}`,
+          apikey: 'sb_publishable_CNDbJZzUgXZAxLvp6_oBHg_FSsIWGWp'
         }
       });
-      
-      if (response.ok) {
-        const serverData = await response.json();
-        localStorage.setItem('user_sync_data', JSON.stringify(serverData));
-        return serverData;
+
+      if (!response.ok) {
+        throw new Error(`Pull failed: ${response.status}`);
       }
+
+      const serverData = await response.json();
+      localStorage.setItem('user_sync_data', JSON.stringify(serverData));
+      return serverData;
     } catch (error) {
-      console.error("Pull Failed:", error);
+      console.error('Pull Failed:', error.message);
+      return null;
     }
   },
 
   async getAuthToken() {
-    // Dynamically targeting your specific Supabase project reference
-    const key = `sb-oscpkrgxjpsyoylxdpxg-auth-token`;
+    const key = 'sb-oscpkrgxjpsyoylxdpxg-auth-token';
     const sessionData = localStorage.getItem(key);
-    if (!sessionData) return null;
-    
+
+    if (!sessionData) {
+      return null;
+    }
+
     try {
-      const { access_token } = JSON.parse(sessionData);
-      return access_token;
+      const parsed = JSON.parse(sessionData);
+      return parsed.access_token || parsed.currentSession?.access_token || null;
     } catch {
       return null;
     }
@@ -110,18 +137,21 @@ export const SyncEngine = {
 };
 
 // ── Block F1: Automatic Heartbeat (60s) ────────────────────────────────────
-setInterval(() => {
+
+function runHeartbeat() {
   if (navigator.onLine) {
     SyncEngine.processQueue().catch(() => {});
   }
-}, 60000);
-// ... bottom of sync.js ...
+}
+
+setInterval(runHeartbeat, 60000);
 
 // ── Bridge to Global Scope ────────────────────────────────────────────────
+
 if (typeof window !== 'undefined') {
-  window.SyncEngine = SyncEngine; 
-  
+  window.SyncEngine = SyncEngine;
+
   window.addEventListener('load', () => {
-    setTimeout(runHeartbeat, 5000); 
+    setTimeout(runHeartbeat, 5000);
   });
 }
