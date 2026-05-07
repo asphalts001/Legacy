@@ -18,6 +18,12 @@
   function persist() {
     saveState(state);
     window.dispatchEvent(new CustomEvent('tracker:update'));
+    
+    // ── NEW: Cloud Sync Trigger ──
+    // Every time we save locally, we tell the SyncEngine to push the new state
+    if (window.SyncEngine) {
+      window.SyncEngine.saveAndSync(state.sessions);
+    }
   }
 
   function sessionToOldFormat(session) {
