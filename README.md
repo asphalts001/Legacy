@@ -112,6 +112,5 @@ The app signs users in with email/password or Google OAuth, queues local snapsho
 
 - The project is intentionally framework-free: no React/Vue build step, no bundler, and no backend code in this repo.
 - Most page logic is inline inside HTML files, with shared persistence/sync/audio scripts under `www/`.
-- Some UI copy is informal and student-specific; review it before publishing to a wider audience.
 - Supabase project URL and publishable anon key are embedded client-side, which is normal for Supabase public clients, but Row Level Security and Edge Function authorization must be correct server-side.
 
