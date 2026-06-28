@@ -1184,93 +1184,101 @@
       //  LOAD QUIZ — with ExamGuard start check
       // ═══════════════════════════════════════════════════════════════════════
       async function loadQuiz() {
-        if (!loadedQuestionSet) return;
+  console.log('[Phiross] loadQuiz called');
+  if (!loadedQuestionSet) {
+    console.warn('[Phiross] No loaded question set');
+    return;
+  }
 
-        // ── 1. Check exam start conditions via ExamGuard ──
-        if (typeof ExamGuard !== 'undefined' && ExamGuard.canStartExam) {
-          const result = ExamGuard.canStartExam();
-          if (!result.allowed) {
-            const errEl = document.getElementById('parse-error');
-            errEl.textContent = '🚫 ' + result.reason;
-            errEl.style.display = 'block';
-            // Also show a modal alert
-            await showExamGuardModal({
-              icon: '🚫',
-              title: 'Cannot Start Exam',
-              message: result.reason + '<br><br><strong>Please disable Wi-Fi and mobile data, then try again.</strong>',
-              countLabel: '⛔ Start blocked',
-              btnText: 'OK',
-              danger: true
-            });
-            return;
-          }
-        } else {
-          console.warn('ExamGuard not available — skipping proctoring check.');
-        }
+  // ── Check exam start conditions ──
+  if (typeof ExamGuard !== 'undefined' && ExamGuard.canStartExam) {
+    console.log('[Phiross] Calling ExamGuard.canStartExam()');
+    const result = await ExamGuard.canStartExam();
+    console.log('[Phiross] Start check result:', result);
+    if (!result.allowed) {
+      const errEl = document.getElementById('parse-error');
+      errEl.textContent = '🚫 ' + result.reason;
+      errEl.style.display = 'block';
+      // Show modal
+      await showExamGuardModal({
+        icon: '🚫',
+        title: 'Cannot Start Exam',
+        message: result.reason + '<br><br><strong>Please disable Wi-Fi and mobile data, then try again.</strong>',
+        countLabel: '⛔ Start blocked',
+        btnText: 'OK',
+        danger: true
+      });
+      return;
+    }
+  } else {
+    console.warn('[Phiross] ExamGuard not available – skipping proctoring check.');
+  }
 
-        // ── 2. Proceed with quiz ──
-        Q = loadedQuestionSet;
-        state = { selected: {}, checked: {}, startTime: Date.now(), timerInterval: null };
+  // ── Proceed ──
+  console.log('[Phiross] Starting quiz with', loadedQuestionSet.length, 'questions');
+  Q = loadedQuestionSet;
+  state = { selected: {}, checked: {}, startTime: Date.now(), timerInterval: null };
 
-        document.getElementById('timer-label').textContent = Q.length + ' min timer';
-        document.getElementById('quiz-title').innerHTML = `<span>${escHtml(currentSetName)}</span>`;
-        document.getElementById('quiz-sub').textContent = `JSON · ${Q.length} questions`;
-        document.getElementById('q-count').textContent = Q.length;
+  document.getElementById('timer-label').textContent = Q.length + ' min timer';
+  document.getElementById('quiz-title').innerHTML = `<span>${escHtml(currentSetName)}</span>`;
+  document.getElementById('quiz-sub').textContent = `JSON · ${Q.length} questions`;
+  document.getElementById('q-count').textContent = Q.length;
 
-        showScreen('quiz-screen');
-        document.getElementById('quiz-hud').style.display = 'flex';
-        buildUI();
+  showScreen('quiz-screen');
+  document.getElementById('quiz-hud').style.display = 'flex';
+  buildUI();
 
-        // ── 3. Start ExamGuard monitoring ──
-        if (typeof ExamGuard !== 'undefined' && ExamGuard.startMonitoring) {
-          ExamGuard.startMonitoring({
-            onViolation: async function(count, source) {
-              // Show warning based on violation count
-              if (count === 1) {
-                await showExamGuardModal({
-                  icon: '⚠️',
-                  title: 'Warning — Violation 1/3',
-                  message: 'You have <strong>violated exam rules</strong>.<br>' +
-                    'Internet connection detected, app switch, or screen hide.<br><br>' +
-                    '<em>One more violation will trigger a final warning.</em>',
-                  countLabel: '⚠️ Violation ' + count + ' / 3',
-                  btnText: 'I Understand',
-                  danger: false
-                });
-              } else if (count === 2) {
-                await showExamGuardModal({
-                  icon: '🔴',
-                  title: 'Final Warning — Violation 2/3',
-                  message: 'You have <strong>violated exam rules again</strong>.<br>' +
-                    'This is your <strong>final warning</strong>.<br><br>' +
-                    '<em>One more violation will auto-submit your test immediately.</em>',
-                  countLabel: '🔴 Violation ' + count + ' / 3',
-                  btnText: 'I Understand',
-                  danger: true
-                });
-              } else if (count >= 3) {
-                // Auto-submit — show modal then submit
-                await showExamGuardModal({
-                  icon: '⛔',
-                  title: 'Test Auto-Submitted',
-                  message: 'You have reached <strong>3 violations</strong>.<br>' +
-                    'Your test has been <strong>auto-submitted</strong> immediately.',
-                  countLabel: '⛔ Auto-Submit',
-                  btnText: 'OK',
-                  danger: true
-                });
-                // Call submitAll to finish the exam
-                window.submitAll();
-              }
-            },
-            onAutoSubmit: function() {
-              // Fallback auto-submit if the violation handler doesn't trigger it
-              window.submitAll();
-            }
+  // ── Start ExamGuard monitoring ──
+  if (typeof ExamGuard !== 'undefined' && ExamGuard.startMonitoring) {
+    console.log('[Phiross] Starting ExamGuard monitoring');
+    ExamGuard.startMonitoring({
+      onViolation: async function(count, source) {
+        console.log('[Phiross] onViolation called:', count, source);
+        if (count === 1) {
+          await showExamGuardModal({
+            icon: '⚠️',
+            title: 'Warning — Violation 1/3',
+            message: 'You have <strong>violated exam rules</strong>.<br>' +
+              'Internet connection detected, app switch, or screen hide.<br><br>' +
+              '<em>One more violation will trigger a final warning.</em>',
+            countLabel: '⚠️ Violation ' + count + ' / 3',
+            btnText: 'I Understand',
+            danger: false
           });
+        } else if (count === 2) {
+          await showExamGuardModal({
+            icon: '🔴',
+            title: 'Final Warning — Violation 2/3',
+            message: 'You have <strong>violated exam rules again</strong>.<br>' +
+              'This is your <strong>final warning</strong>.<br><br>' +
+              '<em>One more violation will auto-submit your test immediately.</em>',
+            countLabel: '🔴 Violation ' + count + ' / 3',
+            btnText: 'I Understand',
+            danger: true
+          });
+        } else if (count >= 3) {
+          await showExamGuardModal({
+            icon: '⛔',
+            title: 'Test Auto-Submitted',
+            message: 'You have reached <strong>3 violations</strong>.<br>' +
+              'Your test has been <strong>auto-submitted</strong> immediately.',
+            countLabel: '⛔ Auto-Submit',
+            btnText: 'OK',
+            danger: true
+          });
+          console.log('[Phiross] Auto-submitting via submitAll()');
+          window.submitAll();
         }
+      },
+      onAutoSubmit: function() {
+        console.log('[Phiross] onAutoSubmit called (fallback)');
+        window.submitAll();
       }
-
+    });
+  } else {
+    console.warn('[Phiross] ExamGuard not available – monitoring not started.');
+  }
+}
       // ═══════════════════════════════════════════════════════════════════════
       //  BUILD QUESTION CARDS
       // ═══════════════════════════════════════════════════════════════════════
