@@ -2,7 +2,7 @@
 
 Legacy is a mobile-first study app built as a static web application and packaged with Cordova. It combines revision compendiums, timed MCQ practice, local progress tracking, optional Supabase login/sync, audio ambience, and exportable study logs.
 
-The app is currently focused on NEET-style preparation content:
+The app is currently focused on NEET-style preparation content-
 
 - Chemistry compendium and reaction/reagent reference.
 - Physics concept/revision reference.
